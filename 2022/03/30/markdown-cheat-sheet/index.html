@@ -177,27 +177,27 @@
 <li>Bananas</li>
 <li>Peanut butter</li>
 </ul>
-<h3 id="Checklists"><a href="#Checklists" class="headerlink" title="Checklists"></a>Checklists</h3><p>Some but not all markdown parsers support checklists. E.g., this works on GitHub and with several markdown plugins for VS Code, for example, but it won’t work within the <a target="_blank" rel="noopener" href="https://markdown.land/wordpress-markdown">WordPress</a> Gutenberg editor:</p>
+<h3 id="Checklists"><a href="#Checklists" class="headerlink" title="Checklists"></a>Checklists</h3><p>Some but not all markdown parsers support checklists. E.g., this works on GitHub and with several markdown plugins for VS Code, for example, but it won’t work within the <a href="https://markdown.land/wordpress-markdown">WordPress</a> Gutenberg editor:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [x] Apples</span><br><span class="line">- [ ] Bananas</span><br><span class="line">- [ ] Peanut butter</span><br></pre></td></tr></table></figure>
 
 <h2 id="Links-in-Markdown"><a href="#Links-in-Markdown" class="headerlink" title="Links in Markdown"></a>Links in Markdown</h2><p>You can use Markdown to link to a website or local file. In fact, most markdown converters will automatically convert a URL to a link, but you better not rely on it. In case of doubt, it’s best to try and see what happens in your specific case.</p>
 <h3 id="A-basic-link"><a href="#A-basic-link" class="headerlink" title="A basic link"></a>A basic link</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">This is an inline-style link to our [markdown cheat sheet](/markdown-cheat-sheet)</span><br><span class="line">You can also create a relative link: [code repo](../repo/code)</span><br><span class="line">Or an absolute, inline-style link to [Google](https://google.com)</span><br><span class="line">URLs like &lt;https://google.com&gt;, and sometimes https://google.com</span><br><span class="line">or even google.com, get converted to clickable links.</span><br><span class="line">Inline-style link with a title attribute to [Markdown Land](https://markdown.land &quot;Markdown Land&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>This is an inline-style link to our <a target="_blank" rel="noopener" href="https://markdown.land/markdown-cheat-sheet">markdown cheat sheet</a> You can also create a relative link: <a target="_blank" rel="noopener" href="https://markdown.land/repo/code">code repo</a> Or an absolute, inline-style link to <a target="_blank" rel="noopener" href="https://google.com/">Google</a> URLs like <a target="_blank" rel="noopener" href="https://google.com/">https://google.com</a>, and sometimes <a target="_blank" rel="noopener" href="https://google.com/">https://google.com</a> or even <a target="_blank" rel="noopener" href="https://google.com/">google.com</a>, get converted to clickable links. Inline-style link with a title attribute to <a target="_blank" rel="noopener" href="https://markdown.land/">Markdown Land</a></p>
+<p>This is an inline-style link to our <a href="https://markdown.land/markdown-cheat-sheet">markdown cheat sheet</a> You can also create a relative link: <a href="https://markdown.land/repo/code">code repo</a> Or an absolute, inline-style link to <a href="https://google.com/">Google</a> URLs like <a href="https://google.com/">https://google.com</a>, and sometimes <a href="https://google.com/">https://google.com</a> or even <a href="https://google.com/">google.com</a>, get converted to clickable links. Inline-style link with a title attribute to <a href="https://markdown.land/">Markdown Land</a></p>
 <h3 id="Reference-style-links"><a href="#Reference-style-links" class="headerlink" title="Reference style links"></a>Reference style links</h3><p>In addition to regular links, markdown also supports reference-style links. We can define these links somewhere in a file, usually at the bottom, and reference them in the text anywhere.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[This website about Markdown][Case-insensitive reference link to Markdown.land]</span><br><span class="line">[The Python.land tutorial with a numbered link][1]</span><br><span class="line">Or leave it empty and use the link text itself, like this: [Python Land].</span><br><span class="line">Text and other Markdown markup, to demonstrate that the reference links can be put anywhere.</span><br><span class="line">Usually, they are placed at the bottom of a document. Because they are reference links, they</span><br><span class="line">won&#x27;t show up by themselves. So you won&#x27;t see the links below.</span><br><span class="line">[Case-insensitive reference link to Markdown.land]: https://www.markdown.land</span><br><span class="line">[1]: https://python.land/python-tutorial</span><br><span class="line">[Python Land]: http://python.land</span><br></pre></td></tr></table></figure>
 
-<p><a target="_blank" rel="noopener" href="https://www.markdown.land/">This website about Markdown</a></p>
-<p><a target="_blank" rel="noopener" href="https://python.land/python-tutorial">The Python.land tutorial with a numbered link</a></p>
-<p>Or leave it empty and use the link text itself, like this: <a target="_blank" rel="noopener" href="http://python.land/">Python Land</a>.</p>
+<p><a href="https://www.markdown.land/">This website about Markdown</a></p>
+<p><a href="https://python.land/python-tutorial">The Python.land tutorial with a numbered link</a></p>
+<p>Or leave it empty and use the link text itself, like this: <a href="http://python.land/">Python Land</a>.</p>
 <p>Text and other Markdown markup, to demonstrate that the reference links can be put anywhere.</p>
 <p>Usually, they are placed at the bottom of a document. Because they are reference links, they</p>
 <p>won’t show up by themselves. So you won’t see the links below.</p>
-<p><a target="_blank" rel="noopener" href="https://www.markdown.land/">This website about Markdown</a> <a target="_blank" rel="noopener" href="https://python.land/python-tutorial">The Python.land tutorial with a numbered link</a> Or leave it empty and use the link text itself, like this: <a target="_blank" rel="noopener" href="http://python.land/">Python Land</a>.  Text and other Markdown markup, to demonstrate that the reference links can be put anywhere.  Usually, they are placed at the bottom of a document. Because they are reference links, they won’t show up by themselves. So you won’t see the links below.</p>
-<h2 id="Tables"><a href="#Tables" class="headerlink" title="Tables"></a>Tables</h2><p>I created a separate page explaining all the details about <a target="_blank" rel="noopener" href="https://markdown.land/markdown-table">Markdown tables</a>, but for quick reference here’s an example of a Markdown table with the alignment of the price and availability columns:</p>
+<p><a href="https://www.markdown.land/">This website about Markdown</a> <a href="https://python.land/python-tutorial">The Python.land tutorial with a numbered link</a> Or leave it empty and use the link text itself, like this: <a href="http://python.land/">Python Land</a>.  Text and other Markdown markup, to demonstrate that the reference links can be put anywhere.  Usually, they are placed at the bottom of a document. Because they are reference links, they won’t show up by themselves. So you won’t see the links below.</p>
+<h2 id="Tables"><a href="#Tables" class="headerlink" title="Tables"></a>Tables</h2><p>I created a separate page explaining all the details about <a href="https://markdown.land/markdown-table">Markdown tables</a>, but for quick reference here’s an example of a Markdown table with the alignment of the price and availability columns:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">| Item         | Price | # In stock |</span><br><span class="line"></span><br><span class="line">|--------------|:-----:|-----------:|</span><br><span class="line"></span><br><span class="line">| Juicy Apples |  1.99 |        739 |</span><br><span class="line"></span><br><span class="line">| Bananas      |  1.89 |          6 |</span><br></pre></td></tr></table></figure>
 
-<p>Head over to the <a target="_blank" rel="noopener" href="https://markdown.land/markdown-table">Markdown table</a> page for all the details, including column alignment and links to handy table generators to save you time and effort.</p>
+<p>Head over to the <a href="https://markdown.land/markdown-table">Markdown table</a> page for all the details, including column alignment and links to handy table generators to save you time and effort.</p>
 
       </div>
       
@@ -220,18 +220,18 @@
     </article></div><div class="comments" id="comments"></div></div>
       </main>
 
-      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
-        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
-        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
-        <a target="_blank" rel="noopener" href="https://instagram.com/jimxia" class="iconfont icon-instagram" title="instagram"></a>
+      <footer id="footer" class="footer"><div class="social-links"><a href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a href="https://instagram.com/jimxia" class="iconfont icon-instagram" title="instagram"></a>
         </div><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
   <span class="copyright-year">&copy;2022<span class="heart">
