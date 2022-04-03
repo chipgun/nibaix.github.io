@@ -47,7 +47,7 @@
       </a><a href="/tags/">
         <li class="mobile-menu-item">Tags
           </li>
-      </a><a href="/categories/">
+      </a><a href="/">
         <li class="mobile-menu-item">Categories
           </li>
       </a><a href="/about/">
@@ -76,7 +76,7 @@
             </a>
         </li>
       <li class="menu-item">
-          <a class="menu-item-link" href="/categories/">
+          <a class="menu-item-link" href="/">
             Categories
             </a>
         </li>
@@ -237,45 +237,28 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Tip: Special registers:</span><br><span class="line"> 0 - last yank</span><br><span class="line"> &quot; - unnamed register, last delete or yank</span><br><span class="line"> % - current file name</span><br><span class="line"> \# - alternate file name</span><br><span class="line"> * - clipboard contents (X11 primary)</span><br><span class="line"> + - clipboard contents (X11 clipboard)</span><br><span class="line"> / - last search pattern</span><br><span class="line"> : - last command-line</span><br><span class="line"> . - last inserted text</span><br><span class="line"> - - last small (less than a line) delete</span><br><span class="line"> = - expression register</span><br><span class="line"> _ - black hole register</span><br></pre></td></tr></table></figure>
 
 <h2 id="Marks-and-positions"><a href="#Marks-and-positions" class="headerlink" title="Marks and positions"></a>Marks and positions</h2><ul>
-<li><p>:marks - list of marks</p>
-</li>
-<li><p>ma - set current position for mark A</p>
-</li>
-<li><p>&#96;a - jump to position of mark A</p>
-</li>
-<li><p>y&#96;a - yank text to position of mark A</p>
-</li>
-<li><p>&#96;0 - go to the position where Vim was previously exited</p>
-</li>
-<li><p>&#96;” - go to the position when last editing this file</p>
-</li>
-<li><p>&#96;. - go to the position of the last change in this file</p>
-</li>
-<li><p>&#96;&#96; - go to the position before the last jump</p>
-</li>
-<li><p>:ju[mps] - list of jumps</p>
-</li>
-<li><p>Ctrl + i - go to newer position in jump list</p>
-</li>
-<li><p>Ctrl + o - go to older position in jump list</p>
-</li>
-<li><p>:changes - list of changes</p>
-</li>
-<li><p>g, - go to newer position in change list</p>
-</li>
-<li><p>g; - go to older position in change list</p>
-</li>
-<li><p>Ctrl + ] - jump to the tag under cursor</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tip: To jump to a mark you can either use a backtick (`) or an apostrophe (&#x27;). Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.</span><br></pre></td></tr></table></figure>
-<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2></li>
-<li><p>qa - record macro a</p>
-</li>
-<li><p>q - stop recording macro</p>
-</li>
-<li><p>@a - run macro a</p>
-</li>
-<li><p>@@ - rerun last run macro</p>
-</li>
+<li>:marks - list of marks</li>
+<li>ma - set current position for mark A</li>
+<li>&#96;a - jump to position of mark A</li>
+<li>y&#96;a - yank text to position of mark A</li>
+<li>&#96;0 - go to the position where Vim was previously exited</li>
+<li>&#96;” - go to the position when last editing this file</li>
+<li>&#96;. - go to the position of the last change in this file</li>
+<li>&#96;&#96; - go to the position before the last jump</li>
+<li>:ju[mps] - list of jumps</li>
+<li>Ctrl + i - go to newer position in jump list</li>
+<li>Ctrl + o - go to older position in jump list</li>
+<li>:changes - list of changes</li>
+<li>g, - go to newer position in change list</li>
+<li>g; - go to older position in change list</li>
+<li>Ctrl + ] - jump to the tag under cursor</li>
+</ul>
+<p><code>Tip: To jump to a mark you can either use a backtick (`) or an apostrophe (&#39;). Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.</code></p>
+<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><ul>
+<li>qa - record macro a</li>
+<li>q - stop recording macro</li>
+<li>@a - run macro a</li>
+<li>@@ - rerun last run macro</li>
 </ul>
 <h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><ul>
 <li>yy - yank (copy) a line</li>
