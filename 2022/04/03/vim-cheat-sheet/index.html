@@ -109,257 +109,33 @@
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Global"><span class="toc-text">Global</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cursor-movement"><span class="toc-text">Cursor movement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert-mode-inserting-x2F-appending-text"><span class="toc-text">Insert mode - inserting&#x2F;appending text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Editing"><span class="toc-text">Editing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Marking-text-visual-mode"><span class="toc-text">Marking text (visual mode)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Visual-commands"><span class="toc-text">Visual commands</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Registers"><span class="toc-text">Registers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Marks-and-positions"><span class="toc-text">Marks and positions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Macros"><span class="toc-text">Macros</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cut-and-paste"><span class="toc-text">Cut and paste</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Indent-text"><span class="toc-text">Indent text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exiting"><span class="toc-text">Exiting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Search-and-replace"><span class="toc-text">Search and replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Search-in-multiple-files"><span class="toc-text">Search in multiple files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabs"><span class="toc-text">Tabs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Working-with-multiple-files"><span class="toc-text">Working with multiple files</span></a></li></ol>
     </div>
-  </div><div class="post-content"><h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><ul>
-<li>:h[elp] keyword - open help for keyword</li>
-<li>:sav[eas] file - save file as</li>
-<li>:clo[se] - close current pane</li>
-<li>:ter[minal] - open a terminal window</li>
-<li>K - open man page for word under the cursor</li>
-</ul>
+  </div><div class="post-content"><h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><p>:h[elp] keyword - open help for keyword<br>:sav[eas] file - save file as<br>:clo[se] - close current pane<br>:ter[minal] - open a terminal window<br>K - open man page for word under the cursor</p>
 <span id="more"></span>
 
 <p><code>Tip: Run vimtutor in a terminal to learn the first Vim commands.</code></p>
-<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><ul>
-<li>h - move cursor left</li>
-<li>j - move cursor down</li>
-<li>k - move cursor up</li>
-<li>l - move cursor right</li>
-<li>gj - move cursor down (multi-line text)</li>
-<li>gk - move cursor up (multi-line text)</li>
-<li>H - move to top of screen</li>
-<li>M - move to middle of screen</li>
-<li>L - move to bottom of screen</li>
-<li>w - jump forwards to the start of a word</li>
-<li>W - jump forwards to the start of a word (words can contain punctuation)</li>
-<li>e - jump forwards to the end of a word</li>
-<li>E - jump forwards to the end of a word (words can contain punctuation)</li>
-<li>b - jump backwards to the start of a word</li>
-<li>B - jump backwards to the start of a word (words can contain punctuation)</li>
-<li>ge - jump backwards to the end of a word</li>
-<li>gE - jump backwards to the end of a word (words can contain punctuation)</li>
-<li>% - move to matching character (default supported pairs: ‘()’, ‘{}’, ‘[]’ - use <code>:h matchpairs</code> in vim for more info)</li>
-<li>0 - jump to the start of the line</li>
-<li>^ - jump to the first non-blank character of the line</li>
-<li>$ - jump to the end of the line</li>
-<li>g_ - jump to the last non-blank character of the line</li>
-<li>gg - go to the first line of the document</li>
-<li>G - go to the last line of the document</li>
-<li>5gg or 5G - go to line 5</li>
-<li>gd - move to local declaration</li>
-<li>gD - move to global declaration</li>
-<li>fx - jump to next occurrence of character x</li>
-<li>tx - jump to before next occurrence of character x</li>
-<li>Fx - jump to the previous occurrence of character x</li>
-<li>Tx - jump to after previous occurrence of character x</li>
-<li>; - repeat previous f, t, F or T movement</li>
-<li>, - repeat previous f, t, F or T movement, backwards</li>
-<li>} - jump to next paragraph (or function&#x2F;block, when editing code)</li>
-<li>{ - jump to previous paragraph (or function&#x2F;block, when editing code)</li>
-<li>zz - center cursor on screen</li>
-<li>Ctrl + e - move screen down one line (without moving cursor)</li>
-<li>Ctrl + y - move screen up one line (without moving cursor)</li>
-<li>Ctrl + b - move back one full screen</li>
-<li>Ctrl + f - move forward one full screen</li>
-<li>Ctrl + d - move forward 1&#x2F;2 a screen</li>
-<li>Ctrl + u - move back 1&#x2F;2 a screen</li>
-</ul>
+<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><p>h - move cursor left<br>j - move cursor down<br>k - move cursor up<br>l - move cursor right<br>gj - move cursor down (multi-line text)<br>gk - move cursor up (multi-line text)<br>H - move to top of screen<br>M - move to middle of screen<br>L - move to bottom of screen<br>w - jump forwards to the start of a word<br>W - jump forwards to the start of a word (words can contain punctuation)<br>e - jump forwards to the end of a word<br>E - jump forwards to the end of a word (words can contain punctuation)<br>b - jump backwards to the start of a word<br>B - jump backwards to the start of a word (words can contain punctuation)<br>ge - jump backwards to the end of a word<br>gE - jump backwards to the end of a word (words can contain punctuation)<br>% - move to matching character (default supported pairs: ‘()’, ‘{}’, ‘[]’ - use <code>:h matchpairs</code> in vim for more info)<br>0 - jump to the start of the line<br>^ - jump to the first non-blank character of the line<br>$ - jump to the end of the line<br>g_ - jump to the last non-blank character of the line<br>gg - go to the first line of the document<br>G - go to the last line of the document<br>5gg or 5G - go to line 5<br>gd - move to local declaration<br>gD - move to global declaration<br>fx - jump to next occurrence of character x<br>tx - jump to before next occurrence of character x<br>Fx - jump to the previous occurrence of character x<br>Tx - jump to after previous occurrence of character x<br>; - repeat previous f, t, F or T movement<br>, - repeat previous f, t, F or T movement, backwards<br>} - jump to next paragraph (or function&#x2F;block, when editing code)<br>{ - jump to previous paragraph (or function&#x2F;block, when editing code)<br>zz - center cursor on screen<br>Ctrl + e - move screen down one line (without moving cursor)<br>Ctrl + y - move screen up one line (without moving cursor)<br>Ctrl + b - move back one full screen<br>Ctrl + f - move forward one full screen<br>Ctrl + d - move forward 1&#x2F;2 a screen<br>Ctrl + u - move back 1&#x2F;2 a screen</p>
 <p><code>Tip: Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.</code></p>
-<h2 id="Insert-mode-inserting-x2F-appending-text"><a href="#Insert-mode-inserting-x2F-appending-text" class="headerlink" title="Insert mode - inserting&#x2F;appending text"></a>Insert mode - inserting&#x2F;appending text</h2><ul>
-<li>i - insert before the cursor</li>
-<li>I - insert at the beginning of the line</li>
-<li>a - insert (append) after the cursor</li>
-<li>A - insert (append) at the end of the line</li>
-<li>o - append (open) a new line below the current line</li>
-<li>O - append (open) a new line above the current line</li>
-<li>ea - insert (append) at the end of the word</li>
-<li>Ctrl + h - delete the character before the cursor during insert mode</li>
-<li>Ctrl + w - delete word before the cursor during insert mode</li>
-<li>Ctrl + j - begin new line during insert mode</li>
-<li>Ctrl + t - indent (move right) line one shiftwidth during insert mode</li>
-<li>Ctrl + d - de-indent (move left) line one shiftwidth during insert mode</li>
-<li>Ctrl + n - insert (auto-complete) next match before the cursor during insert mode</li>
-<li>Ctrl + p - insert (auto-complete) previous match before the cursor during insert mode</li>
-<li>Ctrl + rx - insert the contents of register x</li>
-<li>Ctrl + ox - Temporarily enter normal mode to issue one normal-mode command x.</li>
-<li>Esc - exit insert mode</li>
-</ul>
-<h2 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h2><ul>
-<li>r - replace a single character.</li>
-<li>R - replace more than one character, until ESC is pressed.</li>
-<li>J - join line below to the current one with one space in between</li>
-<li>gJ - join line below to the current one without space in between</li>
-<li>gwip - reflow paragraph</li>
-<li>g~ - switch case up to motion</li>
-<li>gu - change to lowercase up to motion</li>
-<li>gU - change to uppercase up to motion</li>
-<li>cc - change (replace) entire line</li>
-<li>c$ or C - change (replace) to the end of the line</li>
-<li>ciw - change (replace) entire word</li>
-<li>cw or ce - change (replace) to the end of the word</li>
-<li>s - delete character and substitute text</li>
-<li>S - delete line and substitute text (same as cc)</li>
-<li>xp - transpose two letters (delete and paste)</li>
-<li>u - undo</li>
-<li>U - restore (undo) last changed line</li>
-<li>Ctrl + r - redo</li>
-<li>. - repeat last command</li>
-</ul>
-<h2 id="Marking-text-visual-mode"><a href="#Marking-text-visual-mode" class="headerlink" title="Marking text (visual mode)"></a>Marking text (visual mode)</h2><ul>
-<li>v - start visual mode, mark lines, then do a command (like y-yank)</li>
-<li>V - start linewise visual mode</li>
-<li>o - move to other end of marked area</li>
-<li>Ctrl + v - start visual block mode</li>
-<li>O - move to other corner of block</li>
-<li>aw - mark a word</li>
-<li>ab - a block with ()</li>
-<li>aB - a block with {}</li>
-<li>at - a block with &lt;&gt; tags</li>
-<li>ib - inner block with ()</li>
-<li>iB - inner block with {}</li>
-<li>it - inner block with &lt;&gt; tags</li>
-<li>Esc - exit visual mode</li>
-</ul>
+<h2 id="Insert-mode-inserting-x2F-appending-text"><a href="#Insert-mode-inserting-x2F-appending-text" class="headerlink" title="Insert mode - inserting&#x2F;appending text"></a>Insert mode - inserting&#x2F;appending text</h2><p>i - insert before the cursor<br>I - insert at the beginning of the line<br>a - insert (append) after the cursor<br>A - insert (append) at the end of the line<br>o - append (open) a new line below the current line<br>O - append (open) a new line above the current line<br>ea - insert (append) at the end of the word<br>Ctrl + h - delete the character before the cursor during insert mode<br>Ctrl + w - delete word before the cursor during insert mode<br>Ctrl + j - begin new line during insert mode<br>Ctrl + t - indent (move right) line one shiftwidth during insert mode<br>Ctrl + d - de-indent (move left) line one shiftwidth during insert mode<br>Ctrl + n - insert (auto-complete) next match before the cursor during insert mode<br>Ctrl + p - insert (auto-complete) previous match before the cursor during insert mode<br>Ctrl + rx - insert the contents of register x<br>Ctrl + ox - Temporarily enter normal mode to issue one normal-mode command x.<br>Esc - exit insert mode</p>
+<h2 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h2><p>r - replace a single character.<br>R - replace more than one character, until ESC is pressed.<br>J - join line below to the current one with one space in between<br>gJ - join line below to the current one without space in between<br>gwip - reflow paragraph<br>g~ - switch case up to motion<br>gu - change to lowercase up to motion<br>gU - change to uppercase up to motion<br>cc - change (replace) entire line<br>c$ or C - change (replace) to the end of the line<br>ciw - change (replace) entire word<br>cw or ce - change (replace) to the end of the word<br>s - delete character and substitute text<br>S - delete line and substitute text (same as cc)<br>xp - transpose two letters (delete and paste)<br>u - undo<br>U - restore (undo) last changed line<br>Ctrl + r - redo<br>. - repeat last command</p>
+<h2 id="Marking-text-visual-mode"><a href="#Marking-text-visual-mode" class="headerlink" title="Marking text (visual mode)"></a>Marking text (visual mode)</h2><p>v - start visual mode, mark lines, then do a command (like y-yank)<br>V - start linewise visual mode<br>o - move to other end of marked area<br>Ctrl + v - start visual block mode<br>O - move to other corner of block<br>aw - mark a word<br>ab - a block with ()<br>aB - a block with {}<br>at - a block with &lt;&gt; tags<br>ib - inner block with ()<br>iB - inner block with {}<br>it - inner block with &lt;&gt; tags<br>Esc - exit visual mode</p>
 <p><code>Tip: Instead of b or B one can also use ( or &#123; respectively.</code></p>
-<h2 id="Visual-commands"><a href="#Visual-commands" class="headerlink" title="Visual commands"></a>Visual commands</h2><ul>
-<li>&gt; - shift text right</li>
-<li>&lt; - shift text left</li>
-<li>y - yank (copy) marked text</li>
-<li>d - delete marked text</li>
-<li>~ - switch case</li>
-<li>u - change marked text to lowercase</li>
-<li>U - change marked text to uppercase</li>
-</ul>
-<h2 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h2><ul>
-<li>:reg[isters] - show registers content</li>
-<li>“xy - yank into register x</li>
-<li>“xp - paste contents of register x</li>
-<li>“+y - yank into the system clipboard register</li>
-<li>“+p - paste from the system clipboard register</li>
-</ul>
+<h2 id="Visual-commands"><a href="#Visual-commands" class="headerlink" title="Visual commands"></a>Visual commands</h2><p>&gt; - shift text right<br>&lt; - shift text left<br>y - yank (copy) marked text<br>d - delete marked text<br>~ - switch case<br>u - change marked text to lowercase<br>U - change marked text to uppercase</p>
+<h2 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h2><p>:reg[isters] - show registers content<br>“xy - yank into register x<br>“xp - paste contents of register x<br>“+y - yank into the system clipboard register<br>“+p - paste from the system clipboard register</p>
 <p><code>Tip: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Tip: Special registers:</span><br><span class="line"> 0 - last yank</span><br><span class="line"> &quot; - unnamed register, last delete or yank</span><br><span class="line"> % - current file name</span><br><span class="line"> \# - alternate file name</span><br><span class="line"> * - clipboard contents (X11 primary)</span><br><span class="line"> + - clipboard contents (X11 clipboard)</span><br><span class="line"> / - last search pattern</span><br><span class="line"> : - last command-line</span><br><span class="line"> . - last inserted text</span><br><span class="line"> - - last small (less than a line) delete</span><br><span class="line"> = - expression register</span><br><span class="line"> _ - black hole register</span><br></pre></td></tr></table></figure>
 
-<h2 id="Marks-and-positions"><a href="#Marks-and-positions" class="headerlink" title="Marks and positions"></a>Marks and positions</h2><ul>
-<li>:marks - list of marks</li>
-<li>ma - set current position for mark A</li>
-<li>&#96;a - jump to position of mark A</li>
-<li>y&#96;a - yank text to position of mark A</li>
-<li>&#96;0 - go to the position where Vim was previously exited</li>
-<li>&#96;” - go to the position when last editing this file</li>
-<li>&#96;. - go to the position of the last change in this file</li>
-<li>&#96;&#96; - go to the position before the last jump</li>
-<li>:ju[mps] - list of jumps</li>
-<li>Ctrl + i - go to newer position in jump list</li>
-<li>Ctrl + o - go to older position in jump list</li>
-<li>:changes - list of changes</li>
-<li>g, - go to newer position in change list</li>
-<li>g; - go to older position in change list</li>
-<li>Ctrl + ] - jump to the tag under cursor</li>
-</ul>
+<h2 id="Marks-and-positions"><a href="#Marks-and-positions" class="headerlink" title="Marks and positions"></a>Marks and positions</h2><p>:marks - list of marks<br>ma - set current position for mark A<br><code>a - jump to position of mark A y</code>a - yank text to position of mark A<br><code>0 - go to the position where Vim was previously exited </code>“ - go to the position when last editing this file<br>&#96;. - go to the position of the last change in this file<br>&#96;&#96; - go to the position before the last jump<br>:ju[mps] - list of jumps<br>Ctrl + i - go to newer position in jump list<br>Ctrl + o - go to older position in jump list<br>:changes - list of changes<br>g, - go to newer position in change list<br>g; - go to older position in change list<br>Ctrl + ] - jump to the tag under cursor</p>
 <p><code>Tip: To jump to a mark you can either use a backtick (`) or an apostrophe (&#39;). Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.</code></p>
-<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><ul>
-<li>qa - record macro a</li>
-<li>q - stop recording macro</li>
-<li>@a - run macro a</li>
-<li>@@ - rerun last run macro</li>
-</ul>
-<h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><ul>
-<li>yy - yank (copy) a line</li>
-<li>2yy - yank (copy) 2 lines</li>
-<li>yw - yank (copy) the characters of the word from the cursor position to the start of the next word</li>
-<li>yiw - yank (copy) word under the cursor</li>
-<li>yaw - yank (copy) word under the cursor and the space after or before it</li>
-<li>y$ or Y - yank (copy) to end of line</li>
-<li>p - put (paste) the clipboard after cursor</li>
-<li>P - put (paste) before cursor</li>
-<li>gp - put (paste) the clipboard after cursor and leave cursor after the new text</li>
-<li>gP - put (paste) before cursor and leave cursor after the new text</li>
-<li>dd - delete (cut) a line</li>
-<li>2dd - delete (cut) 2 lines</li>
-<li>dw - delete (cut) the characters of the word from the cursor position to the start of the next word</li>
-<li>diw - delete (cut) word under the cursor</li>
-<li>daw - delete (cut) word under the cursor and the space after or before it</li>
-<li>d$ or D - delete (cut) to the end of the line</li>
-<li>x - delete (cut) character</li>
-</ul>
-<h2 id="Indent-text"><a href="#Indent-text" class="headerlink" title="Indent text"></a>Indent text</h2><ul>
-<li>&gt;&gt; - indent (move right) line one shiftwidth</li>
-<li>&lt;&lt; - de-indent (move left) line one shiftwidth</li>
-<li>&gt;% - indent a block with () or {} (cursor on brace)</li>
-<li>&gt;ib - indent inner block with ()</li>
-<li>&gt;at - indent a block with &lt;&gt; tags</li>
-<li>3&#x3D;&#x3D; - re-indent 3 lines</li>
-<li>&#x3D;% - re-indent a block with () or {} (cursor on brace)</li>
-<li>&#x3D;iB - re-indent inner block with {}</li>
-<li>gg&#x3D;G - re-indent entire buffer</li>
-<li>]p - paste and adjust indent to current line</li>
-</ul>
-<h2 id="Exiting"><a href="#Exiting" class="headerlink" title="Exiting"></a>Exiting</h2><ul>
-<li>:w - write (save) the file, but don’t exit</li>
-<li>:w !sudo tee % - write out the current file using sudo</li>
-<li>:wq or :x or ZZ - write (save) and quit</li>
-<li>:q - quit (fails if there are unsaved changes)</li>
-<li>:q! or ZQ - quit and throw away unsaved changes</li>
-<li>:wqa - write (save) and quit on all tabs</li>
-</ul>
-<h2 id="Search-and-replace"><a href="#Search-and-replace" class="headerlink" title="Search and replace"></a>Search and replace</h2><ul>
-<li>&#x2F;pattern - search for pattern</li>
-<li>?pattern - search backward for pattern</li>
-<li>\vpattern - ‘very magic’ pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)</li>
-<li>n - repeat search in same direction</li>
-<li>N - repeat search in opposite direction</li>
-<li>:%s&#x2F;old&#x2F;new&#x2F;g - replace all old with new throughout file</li>
-<li>:%s&#x2F;old&#x2F;new&#x2F;gc - replace all old with new throughout file with confirmations</li>
-<li>:noh[lsearch] - remove highlighting of search matches</li>
-</ul>
-<h2 id="Search-in-multiple-files"><a href="#Search-in-multiple-files" class="headerlink" title="Search in multiple files"></a>Search in multiple files</h2><ul>
-<li>:vim[grep] &#x2F;pattern&#x2F; {<code>&#123;file&#125;</code>} - search for pattern in multiple files</li>
-</ul>
+<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><p>qa - record macro a<br>q - stop recording macro<br>@a - run macro a<br>@@ - rerun last run macro</p>
+<h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><p>yy - yank (copy) a line<br>2yy - yank (copy) 2 lines<br>yw - yank (copy) the characters of the word from the cursor position to the start of the next word<br>yiw - yank (copy) word under the cursor<br>yaw - yank (copy) word under the cursor and the space after or before it<br>y$ or Y - yank (copy) to end of line<br>p - put (paste) the clipboard after cursor<br>P - put (paste) before cursor<br>gp - put (paste) the clipboard after cursor and leave cursor after the new text<br>gP - put (paste) before cursor and leave cursor after the new text<br>dd - delete (cut) a line<br>2dd - delete (cut) 2 lines<br>dw - delete (cut) the characters of the word from the cursor position to the start of the next word<br>diw - delete (cut) word under the cursor<br>daw - delete (cut) word under the cursor and the space after or before it<br>d$ or D - delete (cut) to the end of the line<br>x - delete (cut) character</p>
+<h2 id="Indent-text"><a href="#Indent-text" class="headerlink" title="Indent text"></a>Indent text</h2><p>&gt;&gt; - indent (move right) line one shiftwidth<br>&lt;&lt; - de-indent (move left) line one shiftwidth<br>&gt;% - indent a block with () or {} (cursor on brace)<br>&gt;ib - indent inner block with ()<br>&gt;at - indent a block with &lt;&gt; tags<br>3&#x3D;&#x3D; - re-indent 3 lines<br>&#x3D;% - re-indent a block with () or {} (cursor on brace)<br>&#x3D;iB - re-indent inner block with {}<br>gg&#x3D;G - re-indent entire buffer<br>]p - paste and adjust indent to current line</p>
+<h2 id="Exiting"><a href="#Exiting" class="headerlink" title="Exiting"></a>Exiting</h2><p>:w - write (save) the file, but don’t exit<br>:w !sudo tee % - write out the current file using sudo<br>:wq or :x or ZZ - write (save) and quit<br>:q - quit (fails if there are unsaved changes)<br>:q! or ZQ - quit and throw away unsaved changes<br>:wqa - write (save) and quit on all tabs</p>
+<h2 id="Search-and-replace"><a href="#Search-and-replace" class="headerlink" title="Search and replace"></a>Search and replace</h2><p>&#x2F;pattern - search for pattern<br>?pattern - search backward for pattern<br>\vpattern - ‘very magic’ pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)<br>n - repeat search in same direction<br>N - repeat search in opposite direction<br>:%s&#x2F;old&#x2F;new&#x2F;g - replace all old with new throughout file<br>:%s&#x2F;old&#x2F;new&#x2F;gc - replace all old with new throughout file with confirmations<br>:noh[lsearch] - remove highlighting of search matches</p>
+<h2 id="Search-in-multiple-files"><a href="#Search-in-multiple-files" class="headerlink" title="Search in multiple files"></a>Search in multiple files</h2><p>:vim[grep] &#x2F;pattern&#x2F; {<code>&#123;file&#125;</code>} - search for pattern in multiple files</p>
 <p>e.g. :vim[grep] &#x2F;foo&#x2F; **&#x2F;*</p>
-<ul>
-<li>:cn[ext] - jump to the next match</li>
-<li>:cp[revious] - jump to the previous match</li>
-<li>:cope[n] - open a window containing the list of matches</li>
-<li>:ccl[ose] - close the quickfix window</li>
-</ul>
-<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><ul>
-<li>:tabnew or :tabnew {page.words.file} - open a file in a new tab</li>
-<li>Ctrl + wT - move the current split window into its own tab</li>
-<li>gt or :tabn[ext] - move to the next tab</li>
-<li>gT or :tabp[revious] - move to the previous tab</li>
-<li>#gt - move to tab number #</li>
-<li>:tabm[ove] # - move current tab to the #th position (indexed from 0)</li>
-<li>:tabc[lose] - close the current tab and all its windows</li>
-<li>:tabo[nly] - close all tabs except for the current one</li>
-<li>:tabdo command - run the <code>command</code> on all tabs (e.g. <code>:tabdo q</code> - closes all opened tabs)</li>
-</ul>
-<h2 id="Working-with-multiple-files"><a href="#Working-with-multiple-files" class="headerlink" title="Working with multiple files"></a>Working with multiple files</h2><ul>
-<li>:e[dit] file - edit a file in a new buffer</li>
-<li>:bn[ext] - go to the next buffer</li>
-<li>:bp[revious] - go to the previous buffer</li>
-<li>:bd[elete] - delete a buffer (close a file)</li>
-<li>:b[uffer]# - go to a buffer by index #</li>
-<li>:b[uffer] file - go to a buffer by file</li>
-<li>:ls or :buffers - list all open buffers</li>
-<li>:sp[lit] file - open a file in a new buffer and split window</li>
-<li>:vs[plit] file - open a file in a new buffer and vertically split window</li>
-<li>:vert[ical] ba[ll] - edit all buffers as vertical windows</li>
-<li>:tab ba[ll] - edit all buffers as tabs</li>
-<li>Ctrl + ws - split window</li>
-<li>Ctrl + wv - split window vertically</li>
-<li>Ctrl + ww - switch windows</li>
-<li>Ctrl + wq - quit a window</li>
-<li>Ctrl + wx - exchange current window with next one</li>
-<li>Ctrl + w&#x3D; - make all windows equal height &amp; width</li>
-<li>Ctrl + wh - move cursor to the left window (vertical split)</li>
-<li>Ctrl + wl - move cursor to the right window (vertical split)</li>
-<li>Ctrl + wj - move cursor to the window below (horizontal split)</li>
-<li>Ctrl + wk - move cursor to the window above (horizontal split)</li>
-<li>Ctrl + wH - make current window full height at far left (leftmost vertical window)</li>
-<li>Ctrl + wL - make current window full height at far right (rightmost vertical window)</li>
-<li>Ctrl + wJ - make current window full width at the very bottom (bottommost horizontal window)</li>
-<li>Ctrl + wK - make current window full width at the very top (topmost horizontal window)</li>
-</ul>
+<p>:cn[ext] - jump to the next match<br>:cp[revious] - jump to the previous match<br>:cope[n] - open a window containing the list of matches<br>:ccl[ose] - close the quickfix window</p>
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p>:tabnew or :tabnew {page.words.file} - open a file in a new tab<br>Ctrl + wT - move the current split window into its own tab<br>gt or :tabn[ext] - move to the next tab<br>gT or :tabp[revious] - move to the previous tab<br>#gt - move to tab number #<br>:tabm[ove] # - move current tab to the #th position (indexed from 0)<br>:tabc[lose] - close the current tab and all its windows<br>:tabo[nly] - close all tabs except for the current one<br>:tabdo command - run the <code>command</code> on all tabs (e.g. <code>:tabdo q</code> - closes all opened tabs)</p>
+<h2 id="Working-with-multiple-files"><a href="#Working-with-multiple-files" class="headerlink" title="Working with multiple files"></a>Working with multiple files</h2><p>:e[dit] file - edit a file in a new buffer<br>:bn[ext] - go to the next buffer<br>:bp[revious] - go to the previous buffer<br>:bd[elete] - delete a buffer (close a file)<br>:b[uffer]# - go to a buffer by index #<br>:b[uffer] file - go to a buffer by file<br>:ls or :buffers - list all open buffers<br>:sp[lit] file - open a file in a new buffer and split window<br>:vs[plit] file - open a file in a new buffer and vertically split window<br>:vert[ical] ba[ll] - edit all buffers as vertical windows<br>:tab ba[ll] - edit all buffers as tabs<br>Ctrl + ws - split window<br>Ctrl + wv - split window vertically<br>Ctrl + ww - switch windows<br>Ctrl + wq - quit a window<br>Ctrl + wx - exchange current window with next one<br>Ctrl + w&#x3D; - make all windows equal height &amp; width<br>Ctrl + wh - move cursor to the left window (vertical split)<br>Ctrl + wl - move cursor to the right window (vertical split)<br>Ctrl + wj - move cursor to the window below (horizontal split)<br>Ctrl + wk - move cursor to the window above (horizontal split)<br>Ctrl + wH - make current window full height at far left (leftmost vertical window)<br>Ctrl + wL - make current window full height at far right (rightmost vertical window)<br>Ctrl + wJ - make current window full width at the very bottom (bottommost horizontal window)<br>Ctrl + wK - make current window full width at the very top (topmost horizontal window)</p>
 
       </div>
       
