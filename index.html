@@ -84,6 +84,32 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/08/install-ic618/">Install-Ic618</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-08
+        </span></div>
+    </header>
+
+    <div class="post-content"><h2 id="OS-Platform"><a href="#OS-Platform" class="headerlink" title="OS Platform"></a>OS Platform</h2><p>It’s recommended to install Cadence IC6.1.8 on <strong>RHEL7.x</strong></p>
+<h2 id="Install-IC6-18"><a href="#Install-IC6-18" class="headerlink" title="Install IC6.18"></a>Install IC6.18</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$PATH_TO_CDS_ISCAPE</span>/iscape/bin/iscape.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="Install-Necessary-Packages"><a href="#Install-Necessary-Packages" class="headerlink" title="Install Necessary Packages"></a>Install Necessary Packages</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yum install libXext.so.6</span><br><span class="line">yum install libstdc++.so.6</span><br><span class="line">yum install ksh</span><br><span class="line">yum install -y redhat-lsb</span><br><span class="line">yum install xorg-x11-fonts-ISO8859-1-75dpi</span><br><span class="line">yum install libXp.so.6</span><br><span class="line">yum install libXt.so.6 -y</span><br><span class="line">yum install libXtst.so.6 –y</span><br><span class="line">yum install libXss* -y</span><br></pre></td></tr></table></figure>
+<h2 id="Check-System-Configuration"><a href="#Check-System-Configuration" class="headerlink" title="Check System Configuration"></a>Check System Configuration</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$PATH_TO_CDS_IC618</span>/tools/bin/checkSysConf IC6.1.8</span><br></pre></td></tr></table></figure>
+
+<p>The checkSysconf command goes through and check the dependency of IC6.18. If any items are shown up with FAIL result fix it before you use IC6.18.</p>
+<h2 id="System-Environment"><a href="#System-Environment" class="headerlink" title="System Environment"></a>System Environment</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setenv CDS_LIC_FILE <span class="variable">$PATH_TO_CDS_LIC_FILE</span></span><br><span class="line">setenv CDS_USE_XVFB 1</span><br><span class="line">setenv path = (<span class="variable">$PATH_TO_CDS_IC618</span>/bin <span class="variable">$PATH_TO_CDS_IC618</span>/tools/bin <span class="variable">$path</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Start-IC6-18"><a href="#Start-IC6-18" class="headerlink" title="Start IC6.18"></a>Start IC6.18</h2><p>Now you can start IC618 with the command of virtuoso in a Linux terminal.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtuoso &amp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Customization"><a href="#Customization" class="headerlink" title="Customization"></a>Customization</h2><p>Put your customized settings in ~&#x2F;.cdsinit</p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/04/08/cadence-platform-support-plan-2021/">Cadence Supported Platforms</a>
         </h1>
 
@@ -94,7 +120,6 @@
     </header>
 
     <div class="post-content"><img src="/2022/04/08/cadence-platform-support-plan-2021/cadence-platform-support-plan.jpg" class="">
-
 
 <p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/08/cadence-platform-support-plan-2021/supported-platforms-matrix.pdf" title="Download full matrix of Cadence supported platforms">Download full matrix of Cadence supported platforms</a></p>
 
@@ -430,23 +455,6 @@
 <img src="/2022/03/31/ascii-table/asciifull.gif" class="">
           <div class="read-more">
             <a href="/2022/03/31/ascii-table/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/03/30/markdown-cheat-sheet/">Markdown Cheat Sheet</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-03-30
-        </span></div>
-    </header>
-
-    <div class="post-content"><img src="/2022/03/30/markdown-cheat-sheet/markdown-cheat-sheet.png" class="verilog-mode.el">
-<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/03/30/markdown-cheat-sheet/markdown_cheat_sheet.pdf" title="Download Markdown Cheat Sheet">Download Markdown Cheat Sheet</a></p>
-          <div class="read-more">
-            <a href="/2022/03/30/markdown-cheat-sheet/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
