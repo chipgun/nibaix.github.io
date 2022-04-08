@@ -84,7 +84,7 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/08/install-ic618/">Install-Ic618</a>
+      <h1 class="post-title"><a class="post-link" href="/2022/04/08/install-ic618/">Install Cadence IC6.1.8</a>
         </h1>
 
       <div class="post-meta">
@@ -93,19 +93,19 @@
         </span></div>
     </header>
 
-    <div class="post-content"><h2 id="OS-Platform"><a href="#OS-Platform" class="headerlink" title="OS Platform"></a>OS Platform</h2><p>It’s recommended to install Cadence IC6.1.8 on <strong>RHEL7.x</strong></p>
-<h2 id="Install-IC6-18"><a href="#Install-IC6-18" class="headerlink" title="Install IC6.18"></a>Install IC6.18</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$PATH_TO_CDS_ISCAPE</span>/iscape/bin/iscape.sh</span><br></pre></td></tr></table></figure>
+    <div class="post-content"><h3 id="OS-Platform"><a href="#OS-Platform" class="headerlink" title="OS Platform"></a>OS Platform</h3><p>It’s recommended to install Cadence IC6.1.8 on <strong>RHEL7.x</strong></p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$PATH_TO_CDS_ISCAPE</span>/iscape/bin/iscape.sh</span><br></pre></td></tr></table></figure>
 
-<h2 id="Install-Necessary-Packages"><a href="#Install-Necessary-Packages" class="headerlink" title="Install Necessary Packages"></a>Install Necessary Packages</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yum install libXext.so.6</span><br><span class="line">yum install libstdc++.so.6</span><br><span class="line">yum install ksh</span><br><span class="line">yum install -y redhat-lsb</span><br><span class="line">yum install xorg-x11-fonts-ISO8859-1-75dpi</span><br><span class="line">yum install libXp.so.6</span><br><span class="line">yum install libXt.so.6 -y</span><br><span class="line">yum install libXtst.so.6 –y</span><br><span class="line">yum install libXss* -y</span><br></pre></td></tr></table></figure>
-<h2 id="Check-System-Configuration"><a href="#Check-System-Configuration" class="headerlink" title="Check System Configuration"></a>Check System Configuration</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$PATH_TO_CDS_IC618</span>/tools/bin/checkSysConf IC6.1.8</span><br></pre></td></tr></table></figure>
+<h3 id="Install-Necessary-Packages"><a href="#Install-Necessary-Packages" class="headerlink" title="Install Necessary Packages"></a>Install Necessary Packages</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yum install libXext.so.6</span><br><span class="line">yum install libstdc++.so.6</span><br><span class="line">yum install ksh</span><br><span class="line">yum install -y redhat-lsb</span><br><span class="line">yum install xorg-x11-fonts-ISO8859-1-75dpi</span><br><span class="line">yum install libXp.so.6</span><br><span class="line">yum install libXt.so.6 -y</span><br><span class="line">yum install libXtst.so.6 –y</span><br><span class="line">yum install libXss* -y</span><br></pre></td></tr></table></figure>
+<h3 id="Check-System-Configuration"><a href="#Check-System-Configuration" class="headerlink" title="Check System Configuration"></a>Check System Configuration</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$PATH_TO_CDS_IC618</span>/tools/bin/checkSysConf IC6.1.8</span><br></pre></td></tr></table></figure>
 
 <p>The checkSysconf command goes through and check the dependency of IC6.18. If any items are shown up with FAIL result fix it before you use IC6.18.</p>
-<h2 id="System-Environment"><a href="#System-Environment" class="headerlink" title="System Environment"></a>System Environment</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setenv CDS_LIC_FILE <span class="variable">$PATH_TO_CDS_LIC_FILE</span></span><br><span class="line">setenv CDS_USE_XVFB 1</span><br><span class="line">setenv path = (<span class="variable">$PATH_TO_CDS_IC618</span>/bin <span class="variable">$PATH_TO_CDS_IC618</span>/tools/bin <span class="variable">$path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="System-Environment"><a href="#System-Environment" class="headerlink" title="System Environment"></a>System Environment</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setenv CDS_LIC_FILE <span class="variable">$PATH_TO_CDS_LIC_FILE</span></span><br><span class="line">setenv CDS_USE_XVFB 1</span><br><span class="line">setenv path = (<span class="variable">$PATH_TO_CDS_IC618</span>/bin <span class="variable">$PATH_TO_CDS_IC618</span>/tools/bin <span class="variable">$path</span>)</span><br></pre></td></tr></table></figure>
 
-<h2 id="Start-IC6-18"><a href="#Start-IC6-18" class="headerlink" title="Start IC6.18"></a>Start IC6.18</h2><p>Now you can start IC618 with the command of virtuoso in a Linux terminal.</p>
+<h3 id="Start-IC6-18"><a href="#Start-IC6-18" class="headerlink" title="Start IC6.18"></a>Start IC6.18</h3><p>Now you can start IC618 with the command of virtuoso in a Linux terminal.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtuoso &amp;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Customization"><a href="#Customization" class="headerlink" title="Customization"></a>Customization</h2><p>Put your customized settings in ~&#x2F;.cdsinit</p>
+<h3 id="Customization"><a href="#Customization" class="headerlink" title="Customization"></a>Customization</h3><p>Put your customized settings in ~&#x2F;.cdsinit</p>
 
         </div></article>
       <article class="post">
@@ -385,7 +385,7 @@
         </span></div>
     </header>
 
-    <div class="post-content"><p>Python 3 is a truly versatile programming language, loved both by <a href="https://websitesetup.org/become-web-developer/">web developers</a>, data scientists, and software engineers. And there are several good reasons for that!</p>
+    <div class="post-content"><p>Python 3 is a truly versatile programming language, loved both by <a target="_blank" rel="noopener" href="https://websitesetup.org/become-web-developer/">web developers</a>, data scientists, and software engineers. And there are several good reasons for that!</p>
 <ul>
 <li>Python is open-source and has a great support community,</li>
 <li>Plus, extensive support libraries.</li>
@@ -394,7 +394,7 @@
 <p>Best of all:</p>
 <p>Once you get a hang of it, your development speed and productivity will soar!</p>
 <p>If you want to master two lucrative codings skills at once — server-side website development and machine learning — Python is your best bet.</p>
-<p>In case you’re interested, we also have complete cheat sheets for <a href="https://websitesetup.org/bootstrap-cheat-sheet/">Bootstrap</a>, <a href="https://websitesetup.org/html5-cheat-sheet/">HTML</a>, <a href="https://websitesetup.org/css3-cheat-sheet/">CSS</a>, <a href="https://websitesetup.org/mysql-cheat-sheet/">MySQL</a>, and <a href="https://websitesetup.org/javascript-cheat-sheet/">JavaScript</a>.</p>
+<p>In case you’re interested, we also have complete cheat sheets for <a target="_blank" rel="noopener" href="https://websitesetup.org/bootstrap-cheat-sheet/">Bootstrap</a>, <a target="_blank" rel="noopener" href="https://websitesetup.org/html5-cheat-sheet/">HTML</a>, <a target="_blank" rel="noopener" href="https://websitesetup.org/css3-cheat-sheet/">CSS</a>, <a target="_blank" rel="noopener" href="https://websitesetup.org/mysql-cheat-sheet/">MySQL</a>, and <a target="_blank" rel="noopener" href="https://websitesetup.org/javascript-cheat-sheet/">JavaScript</a>.</p>
 <p>So download a copy of our Python cheat sheet and get that first .py program up and running!</p>
 <p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/02/python-cheat-sheet/Python-cheat-sheet-April-2021.pdf" title="Python Cheat Sheet (Download PDF version)">Python Cheat Sheet (Download PDF version)</a></p>
 <a href="/2022/04/02/python-cheat-sheet/Python-Cheat-Sheet.png" title="Python Cheat Sheet (Download PNG version)">Python Cheat Sheet (Download PNG version)</a>
@@ -450,7 +450,7 @@
         </span></div>
     </header>
 
-    <div class="post-content"><p><a href="https://www.lookuptables.com/text/html-character-codes">HTML Character Codes and Entities (lookuptables.com)</a></p>
+    <div class="post-content"><p><a target="_blank" rel="noopener" href="https://www.lookuptables.com/text/html-character-codes">HTML Character Codes and Entities (lookuptables.com)</a></p>
 <p>ASCII stands for American Standard Code for Information Interchange. Computers can only understand numbers, so an ASCII code is the numerical representation of a character such as ‘a’ or ‘@’ or an action of some sort. ASCII was developed a long time ago and now the non-printing characters are rarely used for their original purpose. Below is the ASCII character table and this includes descriptions of the first 32 non-printing characters. ASCII was actually designed for use with teletypes and so the descriptions are somewhat obscure. If someone says they want your CV however in ASCII format, all this means is they want ‘plain’ text with no formatting such as tabs, bold or underscoring - the raw format that any computer can understand. This is usually so they can easily import the file into their own applications without issues. Notepad.exe creates ASCII text, or in MS Word you can save a file as ‘text only’</p>
 <img src="/2022/03/31/ascii-table/asciifull.gif" class="">
           <div class="read-more">
@@ -464,18 +464,18 @@
     </nav></section></div></div>
       </main>
 
-      <footer id="footer" class="footer"><div class="social-links"><a href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
-        <a href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
-        <a href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
-        <a href="https://instagram.com/jimxia" class="iconfont icon-instagram" title="instagram"></a>
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/jimxia" class="iconfont icon-instagram" title="instagram"></a>
         </div><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
   <span class="copyright-year">&copy;2022<span class="heart">
