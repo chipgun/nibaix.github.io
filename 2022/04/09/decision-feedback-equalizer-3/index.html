@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="判决反馈均衡器（下）"/><meta name="keywords" content="dsp, algorithm, serdes, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://nibaix.com/2022/04/09/decision-feedback-equalizer-3/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>判决反馈均衡器（下） - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">判决反馈均衡器（下）
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-09
+        </span></div>
+    </header>
+
+    <div class="post-content"><p><strong>Part7. VerilogA模型</strong></p>
+<p>Verilog-A Hardware Description Language(HDL)是IEEE定义的用于描述模拟系统(Analog Systems)行为的硬件描述语言。通过对子模块建模，可实现项目初期系统级模型搭建和仿真验证。提供研究阶段的可行性分析。自顶向下(TOP-DOWN)设计流程，方便从系统角度，明确定义关键子模块参数和指标要求。</p>
+<p>如图1，Verilog-A是Verilog-AMS的一个纯模拟子集(Analog-Only Subset)，结合verilog或者VHDL可实现数模混合信号的系统验证。目前主流仿真器工具spectre，spice，ADS等都支持Verilog-A语言。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE1.jpg" class="">
+
+<p>相对于Verilog&#x2F;VHDL语言，模拟设计人员更熟悉Verilog-A，也表现的更友好。常见模块如运放，比较器，AD&#x2F;DA，PLL等。可以很方便的实现理想替代，方便及加速模拟设计验证。</p>
+<p>在前文判决反馈均衡器DFE(中）中我们对SerDes Rx部分进行纯Verilog-A的建模，并重点分析了DFE这个小系统。 </p>
+<p>实际上，像CTLE，DFE，CDR，DESER等可以建模实现，同样可以构成TX和PLL，并最终形成具有层级（hierarchy）关系的大系统。</p>
+<p>通常EDA工具都会提供 Verilog-A帮助文档，详细语法解释和实用例子都能帮助新手比较快的入门。图2简单列举了下Verilog-A中常见的功能函数。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE2.jpg" class="">
+
+<p>针对具体的建模需求，Reference文档外加互联网资源都可作为参考，多练多用，相信很快就能构建模块基本功能的建模需求。更复杂的功能就需要深度理解电路非理想特性，定制高阶功能性能了。图3的教材提供了AMS系统设计及仿真的说明，有兴趣的可以参考下。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE3.jpg" class="">
+
+<p><strong>Part8. 模型结果说明</strong></p>
+<p>这里着重介绍下DFE相关的模型，涉及到模拟部分的Verilog-A建模和算法的Verilog或者Verilog-A实现。</p>
+<p>   图4列出了DFE模拟模块，包含加法器，动态比较器，乘法器，延迟单元，多路选择器，数据对齐（Align）及DFE算法VA模型。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE4.jpg" class="">
+
+<p>算法的实现可以数字HDL语言的方式通过Verilog或者VHDL实现，最后使用混合仿真的方式来验证。当然在初期模型阶段，使用VerilogA实现的算法模型可以通过浮点型数据实现更接近基本原理的算法Demo。规模也更小，验证速度也会更快。</p>
+<p>通过图4的基本模型单元，就可以搭建前边DFE系列文章中提到的不同架构，对比评估架构差异和性能表现。图5所示是其中的一个DFE评估的子系统。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE5.jpg" class="">
+
+<p>​    图4-5中DFE的子模块功能只包含了基本功能，当然也可能实现更复杂的功能。比如加法器建立时间、tap分辨率，动态比较器的输入失调、噪声及延迟时间。收敛算法的更新速率、精度等。</p>
+<p>​    模型的复杂度和仿真速度是正相关的。这个就需要根据建模验证的目的选择合适的模型精度。</p>
+<p>​    最后，要注意的是，接收机部分包含了LEQ均衡及算法、CDR的环路，DFE补偿及算法，多环路多种算法之间耦合，造成相互影响，所有的小系统功能点评估最后都需要在整体系统整体上做性能回归，保证小系统评估的准确性。</p>
+<p>​    </p>
+<p><strong>Part9. PAM4下的DFE</strong></p>
+<p>随着SerDes线速率按照几乎翻倍的形式提升，信号带宽的变化面临着信道插损越来越高的难题，也对均衡能力提出了更高的挑战。</p>
+<p>目前看来，更高阶的编码方式，从NRZ(或者PAM2)转变到PAM4，是一种比较有效的解决方案。从而维持奈奎斯特频率不变的基础上加倍数据率。PAM4的编码相对于NRZ的变化如图6所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE6.jpg" class="">
+
+<p>PAM4相对NRZ编码信号幅度下降到1&#x2F;3，SNR 下降了9.5dB，绝对眼宽也会减小。这些对接受侧的实现会有更高的要求，但总体上，牺牲信噪比换来的带宽保持不变还是有收益的。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE7.jpg" class="">
+
+<p>目前从主流协议标准来看，如图8是光互联论坛OIF针对56&#x2F;112G定义的不同互联场景，信道距离SR-MR-LR及信号编码等都差异化定义，针对不同场景，可以对接收侧的架构实际上差异化设计。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE8.jpg" class="">
+
+<p>目前PAM4编码的接收侧架构，针对SR低插损场景，主要是基于传统NRZ升级结构的实现形式，如图9[1]和图10[2]所示。包含多电平量化，PAM4编解码，CDR 鉴相pattern变化等新增功能点。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE9.jpg" class="">
+
+<p>插损较小的XSR&#x2F;VSR场景，甚至都不需要纠错机制就能保证比较低的误码率，就能实现高效能的数据传输。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE10.jpg" class="">
+
+<p>针对MR-LR信道高插损场景，图11是基于ADC采样结构的SerDes RX结构[3],接收端AFE包含CTLE+VGA的均衡，经过6-8bits精度的TI-ADC采样量化，在数字域使用DSP实现FFE+DFE的组合均衡。</p>
+<p>这种ADC+DSP的实现形式，因为其后续强大的数字均衡能力，具有很高的潜力。在超高速的中长距应用中越来越广泛。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE11.jpg" class="">
+
+<p>图12是文献[4]提供的DSP实现框图，包含多阶FFE+1Tap DFE的。数字域实现的均衡算法收益很多，因为算法实现对工艺相对不敏感，可充分利用先进工艺的特点，能够实现高速低功耗，小面积目标，数字实现也更加灵活，工艺演进中迁移更容易。当然也就更考验算法调教，算法鲁棒性等。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE12.jpg" class="">
+
+<p>最后，送上一个用excel模拟离散时间域DFE算法的简单Demo，如图13-15。采用全速率直接反馈结构，Vref和Tap自适应，Tap收敛使用的仍然是前文介绍的SS-LMS算法。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE13.jpg" class="">
+
+<p>图13所示，脉冲响应主标H0(Main Cursor)是0.6，后标H1-H3分别为0.2、0.15和0.05。Vref&#x2F;Tap更新步长也存在差异，3个DFE Tap补偿全部开启。  </p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE14.jpg" class="">
+
+<p>图14是Vref和3个Tap的收敛过程。可以看到收敛完成结束时，后标H1-H3都几乎完美地被消除掉。</p>
+<p>图15是采样点收敛过程散点图，眼高可以从0.4Vppd增加到1.2Vppd。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE15.jpg" class="">
+
+<p>关于DFE的这个系列内容就这么多了，希望大家能够有所收获。</p>
+<p><strong>缩略语</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NRZ     Non Return to Zero</span><br><span class="line">PAM4    Pluse Amplitude Modulation 4-Level</span><br><span class="line">TI-ADC  Time Interleaved Analog to Digital Converter</span><br><span class="line">CTLE    Continuous Time Linear Equalizer</span><br><span class="line">DFE     Decision Feedback Equalizer</span><br><span class="line">S/M/LR  Short/Medium/Long Reach</span><br></pre></td></tr></table></figure>
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/dsp/">dsp</a>
+            <a href="/tags/algorithm/">algorithm</a>
+            <a href="/tags/serdes/">serdes</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2022/04/09/decision-feedback-equalizer-2/">
+        <span class="next-text nav-default">判决反馈均衡器（中）</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/jimxia" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>
