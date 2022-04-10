@@ -93,14 +93,38 @@
         </span></div>
     </header>
 
-    <div class="post-content"><p><strong>查看当前swap</strong>  <code>free -h</code></p>
-<p><strong>停用所有swap</strong> <code>swapoff -a</code></p>
-<p><strong>创建文件夹作为虚拟swap分区</strong> <code>mkdir /home/swap</code></p>
-<p><strong>创建swap分区</strong> <code>dd if=/dev/zero of=/home/swap/swapfile bs=1G count=64</code></p>
-<p><strong>格式化swap分区</strong> <code>mkswap /home/swap/swapfile</code><br>mkswap会产生一个UUID，复制这个UUID信息，下面挂在分区需要用到。</p>
-<p><strong>启用swap</strong> <code>swapon /home/swap/swapfile</code></p>
-<p><strong>添加swap分区信息到系统分区表</strong> <code>echo &quot;UUID==uuid_info_generated_in_above_mkswap_command /home/swap/swapfile swap default 0 0&quot; &gt;&gt;/etc/fstab</code></p>
-<p><strong>查看新增swap分区是否成功</strong> <code>free -h</code></p>
+    <div class="post-content"><p><strong>查看当前swap</strong>  </p>
+<pre><code class="sh">free -h```
+
+**停用所有swap** 
+```sh
+swapoff -a```
+
+**创建文件夹作为虚拟swap分区** 
+```sh
+mkdir /home/swap```
+
+**创建swap分区** 
+```sh
+dd if=/dev/zero of=/home/swap/swapfile bs=1G count=64```
+
+**格式化swap分区** 
+```sh
+mkswap /home/swap/swapfile```
+mkswap会产生一个UUID，复制这个UUID信息，下面挂在分区需要用到。
+
+**启用swap** 
+```sh
+swapon /home/swap/swapfile```
+
+**添加swap分区信息到系统分区表** 
+```sh
+echo &quot;UUID==uuid_info_generated_in_above_mkswap_command /home/swap/swapfile swap default 0 0&quot; &gt;&gt;/etc/fstab```
+
+**查看新增swap分区是否成功** 
+```sh
+free -h```
+</code></pre>
 
         </div></article>
       <article class="post">
