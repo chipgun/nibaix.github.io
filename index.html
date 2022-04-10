@@ -93,8 +93,7 @@
         </span></div>
     </header>
 
-    <div class="post-content"><h4 id="查看当前swap"><a href="#查看当前swap" class="headerlink" title="查看当前swap"></a>查看当前swap</h4><p><code>free -h</code></p>
-<h4 id="停用所有swap"><a href="#停用所有swap" class="headerlink" title="停用所有swap"></a>停用所有swap</h4><p><code>swapoff -a</code></p>
+    <div class="post-content"><h4 id="查看当前swap-free-h"><a href="#查看当前swap-free-h" class="headerlink" title="查看当前swap free -h"></a>查看当前swap <code>free -h</code></h4><h4 id="停用所有swap"><a href="#停用所有swap" class="headerlink" title="停用所有swap"></a>停用所有swap</h4><p><code>swapoff -a</code></p>
 <h4 id="创建文件夹作为虚拟swap分区"><a href="#创建文件夹作为虚拟swap分区" class="headerlink" title="创建文件夹作为虚拟swap分区"></a>创建文件夹作为虚拟swap分区</h4><p><code>mkdir /home/swap</code></p>
 <h4 id="创建swap分区"><a href="#创建swap分区" class="headerlink" title="创建swap分区"></a>创建swap分区</h4><p><code>dd if=/dev/zero of=/home/swap/swapfile bs=1G count=64</code></p>
 <h4 id="格式化swap分区"><a href="#格式化swap分区" class="headerlink" title="格式化swap分区"></a>格式化swap分区</h4><p><code>mkswap /home/swap/swapfile</code></p>
