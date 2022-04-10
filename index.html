@@ -100,7 +100,7 @@
 <p><strong>格式化swap分区</strong> <code>mkswap /home/swap/swapfile</code><br>mkswap会产生一个UUID，复制这个UUID信息，下面挂在分区需要用到。</p>
 <p><strong>启用swap</strong> <code>swapon /home/swap/swapfile</code></p>
 <p><strong>添加swap分区信息到系统分区表</strong> <code>echo &quot;UUID==uuid_info_generated_in_above_mkswap_command /home/swap/swapfile swap default 0 0&quot; &gt;&gt;/etc/fstab</code></p>
-<p><strong>查看当前新增swap分区是否成功</strong> <code>free -h</code></p>
+<p><strong>查看新增swap分区是否成功</strong> <code>free -h</code></p>
 
         </div></article>
       <article class="post">
