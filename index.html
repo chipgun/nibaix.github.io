@@ -93,14 +93,14 @@
         </span></div>
     </header>
 
-    <div class="post-content"><h4 id="查看当前swap-free-h"><a href="#查看当前swap-free-h" class="headerlink" title="查看当前swap free -h"></a>查看当前swap <code>free -h</code></h4><h4 id="停用所有swap"><a href="#停用所有swap" class="headerlink" title="停用所有swap"></a>停用所有swap</h4><p><code>swapoff -a</code></p>
-<h4 id="创建文件夹作为虚拟swap分区"><a href="#创建文件夹作为虚拟swap分区" class="headerlink" title="创建文件夹作为虚拟swap分区"></a>创建文件夹作为虚拟swap分区</h4><p><code>mkdir /home/swap</code></p>
-<h4 id="创建swap分区"><a href="#创建swap分区" class="headerlink" title="创建swap分区"></a>创建swap分区</h4><p><code>dd if=/dev/zero of=/home/swap/swapfile bs=1G count=64</code></p>
-<h4 id="格式化swap分区"><a href="#格式化swap分区" class="headerlink" title="格式化swap分区"></a>格式化swap分区</h4><p><code>mkswap /home/swap/swapfile</code></p>
-<p>mkswap会产生一个UUID，复制这个UUID信息，下面挂在分区需要用到。</p>
-<h4 id="启用swap"><a href="#启用swap" class="headerlink" title="启用swap"></a>启用swap</h4><p><code>swapon /home/swap/swapfile</code></p>
-<h4 id="添加swap分区信息到系统分区表"><a href="#添加swap分区信息到系统分区表" class="headerlink" title="添加swap分区信息到系统分区表"></a>添加swap分区信息到系统分区表</h4><p><code>echo &quot;UUID==uuid_info_generated_in_above_mkswap_command /home/swap/swapfile swap default 0 0&quot; &gt;&gt;/etc/fstab</code></p>
-<h4 id="查看当前新增swap分区是否成功"><a href="#查看当前新增swap分区是否成功" class="headerlink" title="查看当前新增swap分区是否成功"></a>查看当前新增swap分区是否成功</h4><p><code>free -h</code></p>
+    <div class="post-content"><p><strong>查看当前swap</strong>  <code>free -h</code></p>
+<p><strong>停用所有swap</strong> <code>swapoff -a</code></p>
+<p><strong>创建文件夹作为虚拟swap分区</strong> <code>mkdir /home/swap</code></p>
+<p><strong>创建swap分区</strong> <code>dd if=/dev/zero of=/home/swap/swapfile bs=1G count=64</code></p>
+<p><strong>格式化swap分区</strong> <code>mkswap /home/swap/swapfile</code><br>mkswap会产生一个UUID，复制这个UUID信息，下面挂在分区需要用到。</p>
+<p><strong>启用swap</strong> <code>swapon /home/swap/swapfile</code></p>
+<p><strong>添加swap分区信息到系统分区表</strong> <code>echo &quot;UUID==uuid_info_generated_in_above_mkswap_command /home/swap/swapfile swap default 0 0&quot; &gt;&gt;/etc/fstab</code></p>
+<p><strong>查看当前新增swap分区是否成功</strong> <code>free -h</code></p>
 
         </div></article>
       <article class="post">
