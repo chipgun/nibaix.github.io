@@ -96,7 +96,13 @@
     <div class="post-content"><p>Create $top.sgdc with content of follow 2 lines.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">current_design <span class="variable">$top</span></span><br><span class="line">sdc_data -file <span class="variable">$PATH_TO_SDC_FILE</span></span><br></pre></td></tr></table></figure>
 
-<p>After first run $top.sgdc Spyglass will generate auto SGDC format constraint files which are located at like -<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;autoclocks.sgdc<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;autoresets.sgdc</p>
+<p>After first run $top.sgdc Spyglass will generate auto SGDC format constraint files which are located at like,<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;autoclocks.sgdc<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;autoresets.sgdc<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;generated_clocks.sgdc<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;generated_resets.sgdc</p>
+<p>Then you can <code>cat</code> above four auto SGDC files and replace all content of $top.sgdc.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ./work/<span class="variable">$top</span>/cdc/clock_reset_integrity/spyglass_reports/clock-reset/*.sgdc &gt;&gt; <span class="variable">$PATH_TO_SDC_FILE</span></span><br></pre></td></tr></table></figure>
+
+<p>Now the $top.sgdc looks like,</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">current_design <span class="string">&quot;xxx&quot;</span></span><br><span class="line"><span class="comment">#DEFINITE CLOCKS:</span></span><br><span class="line">clock -name <span class="string">&quot;xxx.clk&quot;</span> -domain0 -tag SG_AUTO_TAG_1</span><br><span class="line"></span><br><span class="line"><span class="comment">##ASYNCHRONOUS RESETS##</span></span><br><span class="line"><span class="comment">#DEFINITE RESETS:</span></span><br><span class="line">reset -name <span class="string">&quot;xxx.rstn&quot;</span> -value 0</span><br></pre></td></tr></table></figure>
+
 
         </div></article>
       <article class="post">
