@@ -110,8 +110,10 @@
 <ul>
 <li>逻辑卷管理(LVM)，是 Logical Volume Manager（逻辑卷管理）的简写，lvm是卷的一种管理方式，并不是分区工具（也可不采用这种LVM管理方式）。</li>
 </ul>
-<p><img src="https://pic3.zhimg.com/80/v2-dfc00c98d5575117d05ec9267e5a454a_1440w.jpg" alt="img">LVM管理导图1</p>
-<p><img src="https://pic3.zhimg.com/80/v2-58aedbb61388db4507d260599414c572_1440w.jpg" alt="img">LVM管理导图2</p>
+<p><img src="https://pic3.zhimg.com/80/v2-dfc00c98d5575117d05ec9267e5a454a_1440w.jpg" alt="img"></p>
+<p><em>LVM管理导图1</em></p>
+<p><img src="https://pic3.zhimg.com/80/v2-58aedbb61388db4507d260599414c572_1440w.jpg" alt="img"></p>
+<p><em>LVM管理导图2</em></p>
 <p>上图所示： 如果直接扩展&#x2F;home逻辑卷目录，会提示逻辑卷组没有空间。</p>
 <p>LVM扩容思维流程：创建一个物理分区–&gt;将这个物理分区转换为物理卷–&gt;把这个物理卷添加到要扩展的卷组中–&gt;然后才能用extend命令扩展此卷组中的逻辑卷 。。。还是有些乱，根据上图理解。</p>
 <p>问：如何查看本地机器是否使用LVM管理？</p>
@@ -119,22 +121,26 @@
 <p>vgdisplay #查看卷组</p>
 <p>lvdisplay #查看逻辑卷</p>
 <p>答：执行上面命令，如果没有采用LVM管理的话，是查看不到上面卷组，物理卷，逻辑卷的（有可执行fdisk -l查看）。 逻辑卷即是挂载在目录上的卷。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-891c40206d6d108a03ac1d1c888947c9_1440w.jpg" alt="img">非LVM</p>
+<p><img src="https://pic2.zhimg.com/80/v2-891c40206d6d108a03ac1d1c888947c9_1440w.jpg" alt="img">非<em>LVM</em></p>
 <h2 id="下面分别介绍LVM-和-非LVM-扩展根分区："><a href="#下面分别介绍LVM-和-非LVM-扩展根分区：" class="headerlink" title="下面分别介绍LVM 和 非LVM 扩展根分区："></a><strong>下面分别介绍LVM 和 非LVM 扩展根分区：</strong></h2><h2 id="二、CentOS7，LVM根分区扩容步骤："><a href="#二、CentOS7，LVM根分区扩容步骤：" class="headerlink" title="二、CentOS7，LVM根分区扩容步骤："></a>二、CentOS7，LVM根分区扩容步骤：</h2><p>1.查看现有分区大小</p>
 <p>df -TH</p>
-<p><img src="https://pic2.zhimg.com/80/v2-e40ddfd059504b108f8afd2d481e9459_1440w.jpg" alt="img">LVM分区，磁盘总大小为20G,根分区总容量为17G</p>
+<p><img src="https://pic2.zhimg.com/80/v2-e40ddfd059504b108f8afd2d481e9459_1440w.jpg" alt="img"></p>
+<p><em>LVM分区，磁盘总大小为20G,根分区总容量为17G</em></p>
 <p>2.关机增加大小为30G(测试环境使用的Vmware Workstation)</p>
-<p><img src="https://pic2.zhimg.com/80/v2-4699fbb82187ddfbe5c1465cca69d741_1440w.jpg" alt="img">扩展分区到30G</p>
+<p><img src="https://pic2.zhimg.com/80/v2-4699fbb82187ddfbe5c1465cca69d741_1440w.jpg" alt="img"></p>
+<p><em>扩展分区到30G</em></p>
 <p>3.查看扩容后磁盘大小</p>
 <blockquote>
 <p>df -TH<br>lsblk</p>
 </blockquote>
-<p><img src="https://pic4.zhimg.com/80/v2-30228844cac0f2662300765ec33964cb_1440w.jpg" alt="img">磁盘总大小为30G,根分区为17G</p>
+<p><img src="https://pic4.zhimg.com/80/v2-30228844cac0f2662300765ec33964cb_1440w.jpg" alt="img"></p>
+<p><em>磁盘总大小为30G,根分区为17G</em></p>
 <p>4.创建分区</p>
 <blockquote>
 <p>fdisk &#x2F;dev&#x2F;sda</p>
 </blockquote>
-<p><img src="https://pic3.zhimg.com/80/v2-fbf899e4780b8f382c6341e92c25a02e_1440w.jpg" alt="img">将sda剩余空间全部给sda3</p>
+<p><img src="https://pic3.zhimg.com/80/v2-fbf899e4780b8f382c6341e92c25a02e_1440w.jpg" alt="img"></p>
+<p><em>将sda剩余空间全部给sda3</em></p>
 <p>5.刷新分区并创建物理卷</p>
 <blockquote>
 <p>partprobe &#x2F;dev&#x2F;sda<br>pvcreate &#x2F;dev&#x2F;sda3</p>
@@ -144,17 +150,20 @@
 <blockquote>
 <p>vgdisplay</p>
 </blockquote>
-<p><img src="https://pic4.zhimg.com/80/v2-8b6c62eeefc2d1a703afa920650a6167_1440w.jpg" alt="img">VG Name为centos</p>
+<p><img src="https://pic4.zhimg.com/80/v2-8b6c62eeefc2d1a703afa920650a6167_1440w.jpg" alt="img"></p>
+<p><em>VG Name为centos</em></p>
 <p>7.将物理卷扩展到卷组</p>
 <blockquote>
 <p>vgextend centos &#x2F;dev&#x2F;sda3</p>
 </blockquote>
-<p><img src="https://pic2.zhimg.com/80/v2-130e5d0fc72b27b6b6174f38ce72fa15_1440w.jpg" alt="img">使用sda3扩展VG centos</p>
+<p><img src="https://pic2.zhimg.com/80/v2-130e5d0fc72b27b6b6174f38ce72fa15_1440w.jpg" alt="img"></p>
+<p><em>使用sda3扩展VG centos</em></p>
 <p>8.查看当前逻辑卷的空间状态</p>
 <blockquote>
 <p>lvdisplay</p>
 </blockquote>
-<p><img src="https://pic3.zhimg.com/80/v2-b885f1d5ab7e723dfcc62fc03f1bd87e_1440w.jpg" alt="img">需要扩展LV &#x2F;dev&#x2F;centos&#x2F;root</p>
+<p><img src="https://pic3.zhimg.com/80/v2-b885f1d5ab7e723dfcc62fc03f1bd87e_1440w.jpg" alt="img"></p>
+<p><em>需要扩展LV &#x2F;dev&#x2F;centos&#x2F;root</em></p>
 <p>9.将卷组中的空闲空间扩展到根分区逻辑卷</p>
 <blockquote>
 <p>lvextend -l +100%FREE &#x2F;dev&#x2F;centos&#x2F;root</p>
@@ -166,17 +175,20 @@
 </blockquote>
 <p><img src="https://pic2.zhimg.com/80/v2-c695d34f319e9f20d32014c8fc544fbd_1440w.jpg" alt="img"></p>
 <p>11.查看磁盘使用情况，扩展之前和之后是不一样的</p>
-<p><img src="https://pic2.zhimg.com/80/v2-f74417677a3eecf4127e9f52ff2aedbd_1440w.jpg" alt="img">根分区已经变成27G</p>
+<p><img src="https://pic2.zhimg.com/80/v2-f74417677a3eecf4127e9f52ff2aedbd_1440w.jpg" alt="img"></p>
+<p><em>根分区已经变成27G</em></p>
 <hr>
 <h2 id="三、CentOS7，非LVM根分区扩容步骤："><a href="#三、CentOS7，非LVM根分区扩容步骤：" class="headerlink" title="三、CentOS7，非LVM根分区扩容步骤："></a><strong>三、CentOS7，非LVM根分区扩容步骤：</strong></h2><p>1.查看现有的分区大小</p>
-<p><img src="https://pic1.zhimg.com/80/v2-4cf07d8e407ec0ebf8a0349e975a1678_1440w.jpg" alt="img">非LVM分区，目前磁盘大小为20G，根分区总容量为17G</p>
+<p><img src="https://pic1.zhimg.com/80/v2-4cf07d8e407ec0ebf8a0349e975a1678_1440w.jpg" alt="img"></p>
+<p><em>非LVM分区，目前磁盘大小为20G，根分区总容量为17G</em></p>
 <p>2.关机增加磁盘大小为30G</p>
 <p><img src="https://pic2.zhimg.com/80/v2-edac78f7c47d7309b2d142525aa2f449_1440w.jpg" alt="img"></p>
 <p>3.查看磁盘扩容后状态</p>
 <blockquote>
 <p>lsblk<br>dh -TH</p>
 </blockquote>
-<p><img src="https://pic4.zhimg.com/80/v2-ac8d0790ab5c4338526de4a709deeb43_1440w.jpg" alt="img">现在磁盘总大小为30G,根分区为17G</p>
+<p><img src="https://pic4.zhimg.com/80/v2-ac8d0790ab5c4338526de4a709deeb43_1440w.jpg" alt="img"></p>
+<p><em>现在磁盘总大小为30G,根分区为17G</em></p>
 <p>4.进行分区扩展磁盘，<strong>记住根分区起始位置和结束位置</strong></p>
 <p><img src="https://pic2.zhimg.com/80/v2-9a5fb2f176a935b4c311ace6dabf9171_1440w.jpg" alt="img"></p>
 <p>5.删除根分区，切记不要保存</p>
@@ -189,7 +201,8 @@
 </blockquote>
 <p><img src="https://pic4.zhimg.com/80/v2-8cc885107f2b2da2f5d48f915b7eed43_1440w.jpg" alt="img"></p>
 <p>8.查看分区状态</p>
-<p><img src="https://pic2.zhimg.com/80/v2-b7804ebd78571a65e42935a3111d87d9_1440w.jpg" alt="img">这里不知道为啥变成19G了。。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-b7804ebd78571a65e42935a3111d87d9_1440w.jpg" alt="img"></p>
+<p><em>这里不知道为啥变成19G了</em></p>
 <p>9.刷新根分区并查看状态</p>
 <blockquote>
 <p>xfs_growfs &#x2F;dev&#x2F;sda3 (这里先看自己的文件系统是xfs，还是ext4…)</p>
@@ -200,7 +213,7 @@
 <li>xfs_growfs 针对文件系统xfs</li>
 </ul>
 <p><img src="https://pic4.zhimg.com/80/v2-9c1d9a204eceae5fcc66457dd1d24b4f_1440w.jpg" alt="img"></p>
-<p>根分区大小已变为27G</p>
+<p><em>根分区大小已变为27G</em></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/83340525?msclkid=2ac5211fbe7111ec90d3601057be5799">转自: https://zhuanlan.zhihu.com/p/83340525?msclkid=2ac5211fbe7111ec90d3601057be5799</a></p>
 
       </div>
