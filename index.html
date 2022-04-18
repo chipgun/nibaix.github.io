@@ -84,6 +84,32 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/18/start-flexLM-on-RHEL7-bootup/">Start flexLM on RHEL7 Bootup</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-18
+        </span></div>
+    </header>
+
+    <div class="post-content"><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
+<p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
+
+<p>mgcld脚本内容：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cat</span> /t/m/license/mgcld</span><br><span class="line"><span class="comment">#! /bin/bash</span></span><br><span class="line"><span class="comment">#chkconfig: 2345 70 30</span></span><br><span class="line"></span><br><span class="line">/t/m/mgls_v9-21_3-2-0.aol/bin/lmgrd \</span><br><span class="line">  -c /t/m/license/license.dat \</span><br><span class="line">  -l /t/m/license/license.log</span><br></pre></td></tr></table></figure>
+
+<p>mgcld首行chkconfig说明：</p>
+<p><strong>2345</strong>是指脚本的运行级别，linux有0~6种状态，即在2345这4种模式下都可以运行，234都是文本界面，5就是图形界面X<br><strong>70</strong>是指脚本将来的启动顺序号，如果别的程序的启动顺序号比70小，则脚本需要等这些程序都启动以后才启动。<br><strong>30</strong>是指系统关闭时，脚本的停止顺序号</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>直接将脚本内容添加到&#x2F;etc&#x2F;rc.local</p>
+<p>在RHEL7中rc.local权限被降低了，需要将其赋予可执行权限。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /etc/rc.local</span><br></pre></td></tr></table></figure>
+
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/04/18/expand-redhat-root-dir-partition/">RedHat根目录/分区扩容（LVM+非LVM）</a>
         </h1>
 
@@ -402,22 +428,6 @@
           <div class="read-more">
             <a href="/2022/04/08/install-ic618/" class="read-more-link">Read more &raquo;</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/08/cadence-platform-support-plan-2021/">Cadence Supported Platforms</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-08
-        </span></div>
-    </header>
-
-    <div class="post-content"><img src="/2022/04/08/cadence-platform-support-plan-2021/cadence-platform-support-plan.jpg" class="">
-
-<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/08/cadence-platform-support-plan-2021/supported-platforms-matrix.pdf" title="Download full matrix of Cadence supported platforms">Download full matrix of Cadence supported platforms</a></p>
-
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
         <span class="next-text">Next</span>
