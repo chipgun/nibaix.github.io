@@ -93,7 +93,8 @@
         </span></div>
     </header>
 
-    <div class="post-content"><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
+    <div class="post-content"><p><strong>方法一</strong></p>
+<p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
 <p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
           <div class="read-more">

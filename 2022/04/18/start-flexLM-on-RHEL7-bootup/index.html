@@ -93,12 +93,8 @@
         </span></div>
     </header>
 
-    <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-text">方法二</span></a></li></ol>
-    </div>
-  </div><div class="post-content"><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
+    <div class="post-content"><p><strong>方法一</strong></p>
+<p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
 <p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
 
@@ -109,7 +105,8 @@
 
 <p>mgcld首行chkconfig说明：</p>
 <p><strong>2345</strong>是指脚本的运行级别，linux有0~6种状态，即在2345这4种模式下都可以运行，234都是文本界面，5就是图形界面X<br><strong>70</strong>是指脚本将来的启动顺序号，如果别的程序的启动顺序号比70小，则脚本需要等这些程序都启动以后才启动。<br><strong>30</strong>是指系统关闭时，脚本的停止顺序号</p>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>直接将脚本内容添加到&#x2F;etc&#x2F;rc.local</p>
+<p><strong>方法二</strong></p>
+<p>直接将脚本内容添加到&#x2F;etc&#x2F;rc.local</p>
 <p>在RHEL7中rc.local权限被降低了，需要将其赋予可执行权限。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /etc/rc.local</span><br></pre></td></tr></table></figure>
 
