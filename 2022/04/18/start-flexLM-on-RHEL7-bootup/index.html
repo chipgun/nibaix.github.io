@@ -102,6 +102,8 @@
 <p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
 
+<span id="more"></span>
+
 <p>mgcld脚本内容：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cat</span> /t/m/license/mgcld</span><br><span class="line"><span class="comment">#! /bin/bash</span></span><br><span class="line"><span class="comment">#chkconfig: 2345 70 30</span></span><br><span class="line"></span><br><span class="line">/t/m/mgls_v9-21_3-2-0.aol/bin/lmgrd \</span><br><span class="line">  -c /t/m/license/license.dat \</span><br><span class="line">  -l /t/m/license/license.log</span><br></pre></td></tr></table></figure>
 

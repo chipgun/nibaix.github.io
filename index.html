@@ -96,17 +96,9 @@
     <div class="post-content"><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
 <p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
-
-<p>mgcld脚本内容：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cat</span> /t/m/license/mgcld</span><br><span class="line"><span class="comment">#! /bin/bash</span></span><br><span class="line"><span class="comment">#chkconfig: 2345 70 30</span></span><br><span class="line"></span><br><span class="line">/t/m/mgls_v9-21_3-2-0.aol/bin/lmgrd \</span><br><span class="line">  -c /t/m/license/license.dat \</span><br><span class="line">  -l /t/m/license/license.log</span><br></pre></td></tr></table></figure>
-
-<p>mgcld首行chkconfig说明：</p>
-<p><strong>2345</strong>是指脚本的运行级别，linux有0~6种状态，即在2345这4种模式下都可以运行，234都是文本界面，5就是图形界面X<br><strong>70</strong>是指脚本将来的启动顺序号，如果别的程序的启动顺序号比70小，则脚本需要等这些程序都启动以后才启动。<br><strong>30</strong>是指系统关闭时，脚本的停止顺序号</p>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>直接将脚本内容添加到&#x2F;etc&#x2F;rc.local</p>
-<p>在RHEL7中rc.local权限被降低了，需要将其赋予可执行权限。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /etc/rc.local</span><br></pre></td></tr></table></figure>
-
-
+          <div class="read-more">
+            <a href="/2022/04/18/start-flexLM-on-RHEL7-bootup/" class="read-more-link">Read more &raquo;</a>
+          </div>
         </div></article>
       <article class="post">
     <header class="post-header">
@@ -125,35 +117,9 @@
 <li>CentOS7，LVM根分区扩容步骤</li>
 <li>CentOS7，非LVM根分区扩容步骤：</li>
 </ol>
-<p><strong>一、背景，概述</strong></p>
-<ul>
-<li>MBR（Master Boot Record）（主引导记录）和GPT（GUID Partition Table）（GUID意为全局唯一标识符）是在磁盘上存储分区信息的两种不同方式</li>
-</ul>
-<p>对于传统的MBR分区方式，有很多的限制：</p>
-<ol>
-<li><p>最多4个主分区（3个主分区+1个扩展分区(扩展分区里面可以放多个逻辑分区)），无法创建大于2TB的分区，使用fdisk分区工具，而GPT分区方式不受这样的限制。</p>
-</li>
-<li><p>GPT分区方式将不会有这种限制，使用的工具是parted；</p>
-</li>
-</ol>
           <div class="read-more">
             <a href="/2022/04/18/expand-redhat-root-dir-partition/" class="read-more-link">Read more &raquo;</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/15/greek-alphabet-quick-reference/">Greek Alphabet Quick Reference</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-15
-        </span></div>
-    </header>
-
-    <div class="post-content"><p>α <strong>Α</strong> alpha<br>β <strong>Β</strong> beta<br>γ <strong>Γ</strong> gamma<br>δ <strong>Δ</strong> delta<br>ε <strong>Ε</strong> epsilon<br>ζ <strong>Ζ</strong> zeta<br>η <strong>Η</strong> eta<br>θ <strong>Θ</strong> theta<br>ι <strong>Ι</strong> iota<br>κ <strong>Κ</strong> kappa<br>λ <strong>Λ</strong> lambda<br>μ <strong>Μ</strong> mu<br>ν <strong>Ν</strong> nu<br>ξ <strong>Ξ</strong> xi<br>ο <strong>Ο</strong> omicron<br>π <strong>Π</strong> pi<br>ρ <strong>Ρ</strong> rho<br>σ <strong>Σ</strong> sigma<br>τ <strong>Τ</strong> tau<br>υ <strong>Υ</strong> upsilon<br>φ <strong>Φ</strong> phi<br>χ <strong>Χ</strong> chi<br>ψ <strong>Ψ</strong> psi<br>ω <strong>Ω</strong> omega</p>
-<a href="/2022/04/02/greek-alphabet-letters/" title="Greek Alphabet Letters">Greek Alphabet Letters</a> &raquo; 
-
         </div></article>
       <article class="post">
     <header class="post-header">
@@ -167,23 +133,11 @@
     </header>
 
     <div class="post-content"><ol start="0">
-<li><p>Abbreviations<br>SDC &#x3D; Synopsys Design Constraints<br>SGDC &#x3D; Spyglass Design Constraints<br>CDC &#x3D; Clock Domain Crossing</p>
-</li>
-<li><p>In Spygalss project file e.g. work.proj add this option</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_option sdc2sgdc &#123; <span class="built_in">yes</span> &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Create $top.sgdc with content of follow 2 lines.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">current_design <span class="variable">$top</span></span><br><span class="line">sdc_data -file <span class="variable">$PATH_TO_SDC_FILE</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>After first run $top.sgdc Spyglass will generate auto SGDC format constraint files which are located at like,<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;autoclocks.sgdc<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;autoresets.sgdc<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;generated_clocks.sgdc<br>.&#x2F;work&#x2F;$top&#x2F;cdc&#x2F;clock_reset_integrity&#x2F;spyglass_reports&#x2F;clock-reset&#x2F;generated_resets.sgdc</p>
-</li>
-<li><p>Then you can <code>cat</code> above four auto SGDC files and replace all content of $top.sgdc.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ./work/<span class="variable">$top</span>/cdc/clock_reset_integrity/spyglass_reports/clock-reset/*.sgdc &gt; <span class="variable">$PATH_TO_SDC_FILE</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Now the $top.sgdc looks like,</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">current_design <span class="string">&quot;xxx&quot;</span></span><br><span class="line"><span class="comment">#DEFINITE CLOCKS:</span></span><br><span class="line">clock -name <span class="string">&quot;xxx.clk&quot;</span> -domain0 -tag SG_AUTO_TAG_1</span><br><span class="line"></span><br><span class="line"><span class="comment">##ASYNCHRONOUS RESETS##</span></span><br><span class="line"><span class="comment">#DEFINITE RESETS:</span></span><br><span class="line">reset -name <span class="string">&quot;xxx.rstn&quot;</span> -value 0</span><br></pre></td></tr></table></figure></li>
+<li>Abbreviations<br>SDC &#x3D; Synopsys Design Constraints<br>SGDC &#x3D; Spyglass Design Constraints<br>CDC &#x3D; Clock Domain Crossing</li>
 </ol>
-
+          <div class="read-more">
+            <a href="/2022/04/13/spyglass-constraint-convert-from-SDC-to-SGDC/" class="read-more-link">Read more &raquo;</a>
+          </div>
         </div></article>
       <article class="post">
     <header class="post-header">
@@ -254,10 +208,6 @@
 
 <p><strong>Part7. VerilogA模型</strong></p>
 <p>Verilog-A Hardware Description Language(HDL)是IEEE定义的用于描述模拟系统(Analog Systems)行为的硬件描述语言。通过对子模块建模，可实现项目初期系统级模型搭建和仿真验证。提供研究阶段的可行性分析。自顶向下(TOP-DOWN)设计流程，方便从系统角度，明确定义关键子模块参数和指标要求。</p>
-<p>如图1，Verilog-A是Verilog-AMS的一个纯模拟子集(Analog-Only Subset)，结合verilog或者VHDL可实现数模混合信号的系统验证。目前主流仿真器工具spectre，spice，ADS等都支持Verilog-A语言。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-3/%E5%9B%BE1.jpg" class="">
-
-<p>相对于Verilog&#x2F;VHDL语言，模拟设计人员更熟悉Verilog-A，也表现的更友好。常见模块如运放，比较器，AD&#x2F;DA，PLL等。可以很方便的实现理想替代，方便及加速模拟设计验证。</p>
           <div class="read-more">
             <a href="/2022/04/09/decision-feedback-equalizer-3/" class="read-more-link">Read more &raquo;</a>
           </div>
@@ -304,10 +254,6 @@
 
 <p><strong>Part1 DFE基本概念</strong></p>
 <p>判决反馈均衡器（Decision Feedback Equalier, DFE)，是目前SerDes中常见于于RX部分的一种均衡方式，能够有效提升RX的接收性能。</p>
-<p>先前我们在讲均衡之FFE中提到了信道的时域响应存在拖尾现象，拖尾会影响到下一个码元，也就是常说的码间干扰(ISI)，当然信道的非理想还包含串扰，反射等现象。对于比较高的信道插损，线性均衡CTLE的效果存在上限，需要进一步的均衡机制。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE1.jpg" class="">
-
-<p>如图1，时域上，一种最直接原始的想法是，如果能够根据当前码元的判决结果，将该码元的后续影响依次全部消减，就可以把当前码元ISI的影响降到最低，甚至消除。这也是DFE作用最直观的描述。</p>
           <div class="read-more">
             <a href="/2022/04/09/decision-feedback-equalizer-1/" class="read-more-link">Read more &raquo;</a>
           </div>
@@ -324,12 +270,26 @@
     </header>
 
     <div class="post-content"><h3 id="OS-Platform"><a href="#OS-Platform" class="headerlink" title="OS Platform"></a>OS Platform</h3><p>It’s recommended to install Cadence IC6.1.8 on <strong>RHEL7.x</strong></p>
-<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$PATH_TO_CDS_ISCAPE</span>/iscape/bin/iscape.sh</span><br></pre></td></tr></table></figure>
-
-<h3 id="Install-Necessary-Packages"><a href="#Install-Necessary-Packages" class="headerlink" title="Install Necessary Packages"></a>Install Necessary Packages</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">yum install -y libXext.so.6</span><br><span class="line">yum install -y libstdc++.so.6</span><br><span class="line">yum install -y redhat-lsb</span><br><span class="line">yum install -y xorg-x11-fonts-ISO8859-1-75dpi</span><br><span class="line">yum install -y libXp.so.6</span><br><span class="line">yum install -y libXt.so.6</span><br><span class="line">yum install -y libXtst.so.6</span><br><span class="line">yum install -y libXss*</span><br><span class="line">yum install -y glibc.i686</span><br><span class="line">yum install -y ksh</span><br></pre></td></tr></table></figure>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3>
           <div class="read-more">
             <a href="/2022/04/08/install-ic618/" class="read-more-link">Read more &raquo;</a>
           </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/08/cadence-platform-support-plan-2021/">Cadence Supported Platforms</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-08
+        </span></div>
+    </header>
+
+    <div class="post-content"><img src="/2022/04/08/cadence-platform-support-plan-2021/cadence-platform-support-plan.jpg" class="">
+
+<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/08/cadence-platform-support-plan-2021/supported-platforms-matrix.pdf" title="Download full matrix of Cadence supported platforms">Download full matrix of Cadence supported platforms</a></p>
+
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
         <span class="next-text">Next</span>

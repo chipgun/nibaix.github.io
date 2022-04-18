@@ -99,12 +99,12 @@
 
 <p><strong>Part1 DFE基本概念</strong></p>
 <p>判决反馈均衡器（Decision Feedback Equalier, DFE)，是目前SerDes中常见于于RX部分的一种均衡方式，能够有效提升RX的接收性能。</p>
+<span id="more"></span>
+
 <p>先前我们在讲均衡之FFE中提到了信道的时域响应存在拖尾现象，拖尾会影响到下一个码元，也就是常说的码间干扰(ISI)，当然信道的非理想还包含串扰，反射等现象。对于比较高的信道插损，线性均衡CTLE的效果存在上限，需要进一步的均衡机制。</p>
 <img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE1.jpg" class="">
 
 <p>如图1，时域上，一种最直接原始的想法是，如果能够根据当前码元的判决结果，将该码元的后续影响依次全部消减，就可以把当前码元ISI的影响降到最低，甚至消除。这也是DFE作用最直观的描述。</p>
-<span id="more"></span>
-
 <p>基于上述思路，那么重点就是该如何实施和实现，如何做到对信道的自适应，系统的鲁棒性如何提高，算法如何设计的高效等一些列问题？本系列将试着研究回答这些问题。</p>
 <img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE2.jpg" class="">
 

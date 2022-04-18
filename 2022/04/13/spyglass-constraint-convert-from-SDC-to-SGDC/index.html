@@ -94,11 +94,16 @@
     </header>
 
     <div class="post-content"><ol start="0">
-<li><p>Abbreviations<br>SDC &#x3D; Synopsys Design Constraints<br>SGDC &#x3D; Spyglass Design Constraints<br>CDC &#x3D; Clock Domain Crossing</p>
-</li>
-<li><p>In Spygalss project file e.g. work.proj add this option</p>
+<li>Abbreviations<br>SDC &#x3D; Synopsys Design Constraints<br>SGDC &#x3D; Spyglass Design Constraints<br>CDC &#x3D; Clock Domain Crossing</li>
+</ol>
+<span id="more"></span>
+
+<ol>
+<li>In Spygalss project file e.g. work.proj add this option</li>
+</ol>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_option sdc2sgdc &#123; <span class="built_in">yes</span> &#125;</span><br></pre></td></tr></table></figure>
-</li>
+
+<ol start="2">
 <li><p>Create $top.sgdc with content of follow 2 lines.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">current_design <span class="variable">$top</span></span><br><span class="line">sdc_data -file <span class="variable">$PATH_TO_SDC_FILE</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -120,9 +125,9 @@
             <a href="/tags/spyglass/">spyglass</a>
             </div>
         
-        <nav class="post-nav"><a class="prev" href="/2022/04/15/greek-alphabet-quick-reference/">
+        <nav class="post-nav"><a class="prev" href="/2022/04/18/expand-redhat-root-dir-partition/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Greek Alphabet Quick Reference</span>
+        <span class="prev-text nav-default">RedHat根目录/分区扩容（LVM+非LVM）</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     <a class="next" href="/2022/04/12/symbolic-links-in-windows/">
