@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="How to Enable Sudo for a User"/><meta name="keywords" content="linux, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://nibaix.com/2022/04/20/how-to-enable-sudo-for-a-user/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>How to Enable Sudo for a User - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">How to Enable Sudo for a User
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-20
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Allow-root-to-run-any-commands-anywhere"><span class="toc-text">Allow root to run any commands anywhere</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Allows-members-of-the-%E2%80%98sys%E2%80%99-group-to-run-networking-software"><span class="toc-text">Allows members of the ‘sys’ group to run networking, software,</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#service-management-apps-and-more"><span class="toc-text">service management apps and more.</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sys-ALL-x3D-NETWORKING-SOFTWARE-SERVICES-STORAGE-DELEGATING-PROCESSES-LOCATE-DRIVERS"><span class="toc-text">%sys ALL &#x3D; NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Allows-people-in-group-wheel-to-run-all-commands"><span class="toc-text">Allows people in group wheel to run all commands</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#wheel-ALL-x3D-ALL-ALL"><span class="toc-text">%wheel    ALL&#x3D;(ALL)   ALL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Same-thing-without-a-password"><span class="toc-text">Same thing without a password</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Allows-members-of-the-users-group-to-mount-and-unmount-the"><span class="toc-text">Allows members of the users group to mount and unmount the</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cdrom-as-root"><span class="toc-text">cdrom as root</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#users-ALL-x3D-x2F-sbin-x2F-mount-x2F-mnt-x2F-cdrom-x2F-sbin-x2F-umount-x2F-mnt-x2F-cdrom"><span class="toc-text">%users  ALL&#x3D;&#x2F;sbin&#x2F;mount &#x2F;mnt&#x2F;cdrom, &#x2F;sbin&#x2F;umount &#x2F;mnt&#x2F;cdrom</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Allows-members-of-the-users-group-to-shutdown-this-system"><span class="toc-text">Allows members of the users group to shutdown this system</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#users-localhost-x3D-x2F-sbin-x2F-shutdown-h-now"><span class="toc-text">%users  localhost&#x3D;&#x2F;sbin&#x2F;shutdown -h now</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Read-drop-in-files-from-x2F-etc-x2F-sudoers-d-the-here-does-not-mean-a-comment"><span class="toc-text">Read drop-in files from &#x2F;etc&#x2F;sudoers.d (the # here does not mean a comment)</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root]<span class="comment"># su -</span></span><br><span class="line">[root]<span class="comment"># usermod -aG wheel *username*</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h2 id="Allow-root-to-run-any-commands-anywhere"><a href="#Allow-root-to-run-any-commands-anywhere" class="headerlink" title="Allow root to run any commands anywhere"></a>Allow root to run any commands anywhere</h2><p>root    ALL&#x3D;(ALL)   ALL</p>
+<h2 id="Allows-members-of-the-‘sys’-group-to-run-networking-software"><a href="#Allows-members-of-the-‘sys’-group-to-run-networking-software" class="headerlink" title="Allows members of the ‘sys’ group to run networking, software,"></a>Allows members of the ‘sys’ group to run networking, software,</h2><h2 id="service-management-apps-and-more"><a href="#service-management-apps-and-more" class="headerlink" title="service management apps and more."></a>service management apps and more.</h2><h1 id="sys-ALL-x3D-NETWORKING-SOFTWARE-SERVICES-STORAGE-DELEGATING-PROCESSES-LOCATE-DRIVERS"><a href="#sys-ALL-x3D-NETWORKING-SOFTWARE-SERVICES-STORAGE-DELEGATING-PROCESSES-LOCATE-DRIVERS" class="headerlink" title="%sys ALL &#x3D; NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS"></a>%sys ALL &#x3D; NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</h1><h2 id="Allows-people-in-group-wheel-to-run-all-commands"><a href="#Allows-people-in-group-wheel-to-run-all-commands" class="headerlink" title="Allows people in group wheel to run all commands"></a>Allows people in group wheel to run all commands</h2><h1 id="wheel-ALL-x3D-ALL-ALL"><a href="#wheel-ALL-x3D-ALL-ALL" class="headerlink" title="%wheel    ALL&#x3D;(ALL)   ALL"></a>%wheel    ALL&#x3D;(ALL)   ALL</h1><h2 id="Same-thing-without-a-password"><a href="#Same-thing-without-a-password" class="headerlink" title="Same thing without a password"></a>Same thing without a password</h2><p>%wheel  ALL&#x3D;(ALL)   NOPASSWD: ALL</p>
+<h2 id="Allows-members-of-the-users-group-to-mount-and-unmount-the"><a href="#Allows-members-of-the-users-group-to-mount-and-unmount-the" class="headerlink" title="Allows members of the users group to mount and unmount the"></a>Allows members of the users group to mount and unmount the</h2><h2 id="cdrom-as-root"><a href="#cdrom-as-root" class="headerlink" title="cdrom as root"></a>cdrom as root</h2><h1 id="users-ALL-x3D-x2F-sbin-x2F-mount-x2F-mnt-x2F-cdrom-x2F-sbin-x2F-umount-x2F-mnt-x2F-cdrom"><a href="#users-ALL-x3D-x2F-sbin-x2F-mount-x2F-mnt-x2F-cdrom-x2F-sbin-x2F-umount-x2F-mnt-x2F-cdrom" class="headerlink" title="%users  ALL&#x3D;&#x2F;sbin&#x2F;mount &#x2F;mnt&#x2F;cdrom, &#x2F;sbin&#x2F;umount &#x2F;mnt&#x2F;cdrom"></a>%users  ALL&#x3D;&#x2F;sbin&#x2F;mount &#x2F;mnt&#x2F;cdrom, &#x2F;sbin&#x2F;umount &#x2F;mnt&#x2F;cdrom</h1><h2 id="Allows-members-of-the-users-group-to-shutdown-this-system"><a href="#Allows-members-of-the-users-group-to-shutdown-this-system" class="headerlink" title="Allows members of the users group to shutdown this system"></a>Allows members of the users group to shutdown this system</h2><h1 id="users-localhost-x3D-x2F-sbin-x2F-shutdown-h-now"><a href="#users-localhost-x3D-x2F-sbin-x2F-shutdown-h-now" class="headerlink" title="%users  localhost&#x3D;&#x2F;sbin&#x2F;shutdown -h now"></a>%users  localhost&#x3D;&#x2F;sbin&#x2F;shutdown -h now</h1><h2 id="Read-drop-in-files-from-x2F-etc-x2F-sudoers-d-the-here-does-not-mean-a-comment"><a href="#Read-drop-in-files-from-x2F-etc-x2F-sudoers-d-the-here-does-not-mean-a-comment" class="headerlink" title="Read drop-in files from &#x2F;etc&#x2F;sudoers.d (the # here does not mean a comment)"></a>Read drop-in files from &#x2F;etc&#x2F;sudoers.d (the # here does not mean a comment)</h2><p>#includedir &#x2F;etc&#x2F;sudoers.d</p>
+</blockquote>
+<p>In above file, uncomment line of “%wheel ALL&#x3D;(ALL) ALL”.</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2022/04/19/modify-linux-system-date-and-time/">
+        <span class="next-text nav-default">Modify Linux System Date and Time</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>

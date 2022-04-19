@@ -84,6 +84,27 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/20/how-to-enable-sudo-for-a-user/">How to Enable Sudo for a User</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-20
+        </span></div>
+    </header>
+
+    <div class="post-content"><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root]<span class="comment"># su -</span></span><br><span class="line">[root]<span class="comment"># usermod -aG wheel *username*</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h2 id="Allow-root-to-run-any-commands-anywhere"><a href="#Allow-root-to-run-any-commands-anywhere" class="headerlink" title="Allow root to run any commands anywhere"></a>Allow root to run any commands anywhere</h2><p>root    ALL&#x3D;(ALL)   ALL</p>
+<h2 id="Allows-members-of-the-‘sys’-group-to-run-networking-software"><a href="#Allows-members-of-the-‘sys’-group-to-run-networking-software" class="headerlink" title="Allows members of the ‘sys’ group to run networking, software,"></a>Allows members of the ‘sys’ group to run networking, software,</h2><h2 id="service-management-apps-and-more"><a href="#service-management-apps-and-more" class="headerlink" title="service management apps and more."></a>service management apps and more.</h2><h1 id="sys-ALL-x3D-NETWORKING-SOFTWARE-SERVICES-STORAGE-DELEGATING-PROCESSES-LOCATE-DRIVERS"><a href="#sys-ALL-x3D-NETWORKING-SOFTWARE-SERVICES-STORAGE-DELEGATING-PROCESSES-LOCATE-DRIVERS" class="headerlink" title="%sys ALL &#x3D; NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS"></a>%sys ALL &#x3D; NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</h1><h2 id="Allows-people-in-group-wheel-to-run-all-commands"><a href="#Allows-people-in-group-wheel-to-run-all-commands" class="headerlink" title="Allows people in group wheel to run all commands"></a>Allows people in group wheel to run all commands</h2><h1 id="wheel-ALL-x3D-ALL-ALL"><a href="#wheel-ALL-x3D-ALL-ALL" class="headerlink" title="%wheel    ALL&#x3D;(ALL)   ALL"></a>%wheel    ALL&#x3D;(ALL)   ALL</h1><h2 id="Same-thing-without-a-password"><a href="#Same-thing-without-a-password" class="headerlink" title="Same thing without a password"></a>Same thing without a password</h2><p>%wheel  ALL&#x3D;(ALL)   NOPASSWD: ALL</p>
+<h2 id="Allows-members-of-the-users-group-to-mount-and-unmount-the"><a href="#Allows-members-of-the-users-group-to-mount-and-unmount-the" class="headerlink" title="Allows members of the users group to mount and unmount the"></a>Allows members of the users group to mount and unmount the</h2><h2 id="cdrom-as-root"><a href="#cdrom-as-root" class="headerlink" title="cdrom as root"></a>cdrom as root</h2><h1 id="users-ALL-x3D-x2F-sbin-x2F-mount-x2F-mnt-x2F-cdrom-x2F-sbin-x2F-umount-x2F-mnt-x2F-cdrom"><a href="#users-ALL-x3D-x2F-sbin-x2F-mount-x2F-mnt-x2F-cdrom-x2F-sbin-x2F-umount-x2F-mnt-x2F-cdrom" class="headerlink" title="%users  ALL&#x3D;&#x2F;sbin&#x2F;mount &#x2F;mnt&#x2F;cdrom, &#x2F;sbin&#x2F;umount &#x2F;mnt&#x2F;cdrom"></a>%users  ALL&#x3D;&#x2F;sbin&#x2F;mount &#x2F;mnt&#x2F;cdrom, &#x2F;sbin&#x2F;umount &#x2F;mnt&#x2F;cdrom</h1><h2 id="Allows-members-of-the-users-group-to-shutdown-this-system"><a href="#Allows-members-of-the-users-group-to-shutdown-this-system" class="headerlink" title="Allows members of the users group to shutdown this system"></a>Allows members of the users group to shutdown this system</h2><h1 id="users-localhost-x3D-x2F-sbin-x2F-shutdown-h-now"><a href="#users-localhost-x3D-x2F-sbin-x2F-shutdown-h-now" class="headerlink" title="%users  localhost&#x3D;&#x2F;sbin&#x2F;shutdown -h now"></a>%users  localhost&#x3D;&#x2F;sbin&#x2F;shutdown -h now</h1><h2 id="Read-drop-in-files-from-x2F-etc-x2F-sudoers-d-the-here-does-not-mean-a-comment"><a href="#Read-drop-in-files-from-x2F-etc-x2F-sudoers-d-the-here-does-not-mean-a-comment" class="headerlink" title="Read drop-in files from &#x2F;etc&#x2F;sudoers.d (the # here does not mean a comment)"></a>Read drop-in files from &#x2F;etc&#x2F;sudoers.d (the # here does not mean a comment)</h2><p>#includedir &#x2F;etc&#x2F;sudoers.d</p>
+</blockquote>
+<p>In above file, uncomment line of “%wheel ALL&#x3D;(ALL) ALL”.</p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/04/19/modify-linux-system-date-and-time/">Modify Linux System Date and Time</a>
         </h1>
 
@@ -276,29 +297,6 @@
 <p>Verilog-A Hardware Description Language(HDL)是IEEE定义的用于描述模拟系统(Analog Systems)行为的硬件描述语言。通过对子模块建模，可实现项目初期系统级模型搭建和仿真验证。提供研究阶段的可行性分析。自顶向下(TOP-DOWN)设计流程，方便从系统角度，明确定义关键子模块参数和指标要求。</p>
           <div class="read-more">
             <a href="/2022/04/09/decision-feedback-equalizer-3/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/09/decision-feedback-equalizer-2/">判决反馈均衡器（中）</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-09
-        </span></div>
-    </header>
-
-    <div class="post-content"><a href="/2022/04/09/decision-feedback-equalizer-1/" title="判决反馈均衡器（上）">判决反馈均衡器（上）</a>&raquo;<br/>
-
-<a href="/2022/04/09/decision-feedback-equalizer-3/" title="判决反馈均衡器（下）">判决反馈均衡器（下）</a>&raquo;
-
-
-
-<p><strong>Part4 瞬态波形和眼图</strong></p>
-<p>判决反馈均衡器DFE(上）章节中提到的不同结构，其瞬态波形会存在差异。其采样前的眼图直观反映了采样器的幅度Margin和CDR采样时刻的裕度。</p>
-          <div class="read-more">
-            <a href="/2022/04/09/decision-feedback-equalizer-2/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
