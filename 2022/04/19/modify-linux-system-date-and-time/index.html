@@ -94,42 +94,36 @@
     </header>
 
     <div class="post-content"><ol>
-<li>date {�鿴Ŀǰ���ص�ʱ��}</li>
-<li>hwclock –show {�鿴Ӳ����ʱ��}</li>
-<li>���Ӳ��ʱ���ϵͳʱ�䲻ͬ���ǾͶ�Ӳ����ʱ������޸�</li>
-<li>hwclock –set –date “2014-12-15 15:15:15” {����Ӳ��ʱ��Ϊ14��12��15��15��15��15��}</li>
-<li>hwclock –hctosys {����ϵͳʱ���Ӳ��ʱ��ͬ��}</li>
-<li>clock -w {����ʱ��}</li>
+<li>date {check local date and time}</li>
+<li>hwclock –show {check bios time}</li>
+<li>hwclock –set –date “2014-12-15 15:15:15” {set bios time}</li>
+<li>hwclock –hctosys {sync system time}</li>
+<li>clock -w {save system time}</li>
 </ol>
-<p>������������ʱ�䣺ntpdate asia.pool.ntp.org (���µ�ʱ��Ϊϵͳʱ��)</p>
+<p><code>ntpdate asia.pool.ntp.org</code> {update system time to asia clock}</p>
 <ol>
-<li><p>hwclock -w (��ϵͳʱ��д�뵽Ӳ��ʱ��)</p>
+<li><p>hwclock -w (write system time into bios)</p>
 </li>
-<li><p>hwclock -w (����ʱ��)</p>
+<li><p>reboot</p>
 </li>
-<li><p>����ϵͳ������ʱ���Ѿ�Ϊ���º��ʱ��</p>
-</li>
-<li><p>�鿴��ǰϵͳʱ��date��</p>
-</li>
-</ol>
+<li><p>Check System Date</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@surfer ~]<span class="comment">#date</span></span><br><span class="line">2018��06�� 26�����ڶ� 10:09:21 CST</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>����ϵͳʱ��date -s +ʱ��</p>
+</li>
+<li><p>Set System Date</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@surfer ~]<span class="comment">#date -s 10:10:10</span></span><br><span class="line">2018��06�� 26�����ڶ� 10:10:10 CST</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>����ϵͳʱ��ʱ���������Ҫ�������ڣ���Ҫ��������ʱ��ֵ��˫���Ű�������</p>
+<li><p>Set System Date and Time</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@surfer ~]<span class="comment">#date -s &quot;2018/8/8 10:00:00&quot;</span></span><br><span class="line">2018��08�� 08�������� 10:00:00 CST</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>�鿴Ӳ��ʱ����hwclock����clock���</p>
+<li><p>Check BIOS Time</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@surfer ~]<span class="comment">#hwclock</span></span><br><span class="line">2018��06��26�� ���ڶ� 10ʱ13��02�� -0.805503 ��</span><br><span class="line">[root@surfer ~]<span class="comment">#clock</span></span><br><span class="line">2018��06��26�� ���ڶ� 10ʱ13��07�� -0.507462 ��</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>��Ӳ��ʱ��д�뵽ϵͳʱ�䣺</p>
+<li><p>Write BIOS Time into System Time</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@surfer ~]<span class="comment">#hwclock -s</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>��ϵͳʱ��д�뵽Ӳ��ʱ��</p>
+<li><p>Write System Time into BIOS Time</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@surfer ~]<span class="comment">#hwclock -w</span></span><br></pre></td></tr></table></figure></li>
-<li><p>ʱ��ͬ����Linuxϵͳ�谲װntpdate<br>����Ƿ�װ��ntpdate: <code>rpm -qa | grep ntpdate</code><br>���û�а�װ��������������: <code>yum install ntpdate</code></p>
+<li><p>Sync Time Need to Install ntpdate<br><code>yum install ntpdate</code></p>
 </li>
 </ol>
 
