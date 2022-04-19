@@ -101,11 +101,8 @@
 <p><strong>Update user’s information in the config file</strong><br><code># vim vncserver@:7.service</code></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Remote desktop service (VNC)</span><br><span class="line">After=syslog.target network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># Clean any existing files in /tmp/.X11-unix environment</span></span><br><span class="line">ExecStartPre=/bin/sh -c <span class="string">&#x27;/usr/bin/vncserver -kill %i &gt; /dev/null 2&gt;&amp;1 || :&#x27;</span></span><br><span class="line">ExecStart=/sbin/vncserver_wrapper -l jim -c <span class="string">&quot;/user/bin/vncserver %i&quot;</span></span><br><span class="line">ExecStop=/bin/sh -c <span class="string">&#x27;/usr/bin/vncserver -kill %i &gt; /dev/null 2&gt;&amp;1 || :&#x27;</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 
-<p><strong>Set the Firewall Rule if firewall is enabled on your linux box.</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># firewall-cmd --permanent --zone=public --add-port=5901-5999/tcp</span></span><br><span class="line">success</span><br><span class="line"><span class="comment"># firewall-cmd --reload</span></span><br><span class="line">success</span><br></pre></td></tr></table></figure>
-
-<p><strong>Start and enable VNC service at boot</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># systemctl daemon-reload</span></span><br><span class="line"><span class="comment"># ssytemctl start vncserver@:7.service</span></span><br><span class="line"><span class="comment"># ssytemctl enable vncserver@:7.service</span></span><br></pre></td></tr></table></figure>
+<p><strong>Set the Firewall Rule if firewall is enabled on your linux box.</strong><br><code># firewall-cmd --permanent --zone=public --add-port=5901-5999/tcp</code><br><code># firewall-cmd --reload</code></p>
+<p><strong>Start and enable VNC service at boot</strong><br><code># systemctl daemon-reload</code><br><code># ssytemctl start vncserver@:7.service</code><br><code># ssytemctl enable vncserver@:7.service</code></p>
 
       </div>
       
@@ -116,7 +113,12 @@
             <a href="/tags/rhel7/">rhel7</a>
             </div>
         
-        <nav class="post-nav"><a class="next" href="/2022/04/18/start-flexLM-on-RHEL7-bootup/">
+        <nav class="post-nav"><a class="prev" href="/2022/04/19/install-and-configure-vsftpd-server-in-RHEL7/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Install and Configure Vsftpd Server in RHEL7</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2022/04/18/start-flexLM-on-RHEL7-bootup/">
         <span class="next-text nav-default">Start FlexLM on RHEL7 Bootup</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
