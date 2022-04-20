@@ -94,37 +94,26 @@
     </header>
 
     <div class="post-content"><ol>
-<li>date {check local date and time}</li>
-<li>hwclock –show {check bios time}</li>
-<li>hwclock –set –date “2014-12-15 15:15:15” {set bios time}</li>
-<li>hwclock –hctosys {sync system time}</li>
-<li>clock -w {save system time}</li>
-</ol>
-<p><code>ntpdate asia.pool.ntp.org</code> {update system time to asia clock}</p>
-<ol>
-<li><p>hwclock -w (write system time into bios)</p>
-</li>
-<li><p>reboot</p>
-</li>
 <li><p>Check System Date</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># date</span></span><br><span class="line">2018��06��26�� ���ڶ� 10:09:21 CST</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">date</span></span><br><span class="line">Wed Apr 20 06:11:59 CST 2022</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Set System Date</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># date -s 10:10:10</span></span><br><span class="line">2018��06��26�� ���ڶ� 10:10:10 CST</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s 10:10:10</span><br><span class="line">Wed Apr 20 10:10:10 CST 2022</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Set System Date and Time</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># date -s &quot;2018/8/8 10:00:00&quot;</span></span><br><span class="line">2018��08��08�� ������ 10:00:00 CST</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s <span class="string">&quot;2018/8/8 10:00:00&quot;</span></span><br><span class="line">Wed Aug 8 10:10:10 CST 2018</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Check BIOS Time</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hwclock</span></span><br><span class="line">2018��06��26�� ���ڶ� 10ʱ13��02�� -0.805503 ��</span><br><span class="line"><span class="comment"># clock</span></span><br><span class="line">2018��06��26�� ���ڶ� 10ʱ13��07�� -0.507462 ��</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% sudo hwclock</span><br><span class="line">Wed 20 Apr 2022 06:49:34 AM CST  -0.110403 seconds</span><br><span class="line">% sudo clock</span><br><span class="line">Wed 20 Apr 2022 06:49:52 AM CST  -0.641359 seconds</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Write BIOS Time into System Time</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hwclock -s</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% sudo hwclock -s</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Write System Time into BIOS Time</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hwclock -w</span></span><br></pre></td></tr></table></figure></li>
-<li><p>Sync Time Need to Install ntpdate</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install ntpdate</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% sudo hwclock -w</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Sync Time Need to Install ntpdate<br>Update system time to Asia clock</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% sudo yum install ntpdate</span><br><span class="line">% sudo ntpdate asia.pool.ntp.org</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       </div>
