@@ -93,7 +93,7 @@
         </span></div>
     </header>
 
-    <div class="post-content"><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root]<span class="comment"># su -</span></span><br><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
+    <div class="post-content"><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root]<span class="comment"># su -</span></span><br><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
 
 <p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
           <div class="read-more">
@@ -112,26 +112,10 @@
     </header>
 
     <div class="post-content"><p><strong>Check System Date</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">date</span></span><br><span class="line">Wed Apr 20 06:11:59 CST 2022</span><br></pre></td></tr></table></figure>
-
-<p><strong>Set System Date</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s 10:10:10</span><br><span class="line">Wed Apr 20 10:10:10 CST 2022</span><br></pre></td></tr></table></figure>
-
-<p><strong>Set System Date and Time</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s <span class="string">&quot;2018/8/8 10:00:00&quot;</span></span><br><span class="line">Wed Aug 8 10:10:10 CST 2018</span><br></pre></td></tr></table></figure>
-
-<p><strong>Check BIOS Time</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% sudo hwclock</span><br><span class="line">Wed 20 Apr 2022 06:49:34 AM CST  -0.110403 seconds</span><br><span class="line">% sudo clock</span><br><span class="line">Wed 20 Apr 2022 06:49:52 AM CST  -0.641359 seconds</span><br></pre></td></tr></table></figure>
-
-<p><strong>Write BIOS Time into System Time</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% sudo hwclock -s</span><br></pre></td></tr></table></figure>
-
-<p><strong>Write System Time into BIOS Time</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% sudo hwclock -w</span><br></pre></td></tr></table></figure>
-
-<p><strong>Sync Time Need to Install ntpdate</strong><br>Update system time to Asia clock</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% sudo yum install ntpdate</span><br><span class="line">% sudo ntpdate asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">date</span></span><br><span class="line">Wed Apr 20 06:11:59 CST 2022</span><br></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2022/04/19/modify-linux-system-date-and-time/" class="read-more-link">Read more &raquo;</a>
+          </div>
         </div></article>
       <article class="post">
     <header class="post-header">
