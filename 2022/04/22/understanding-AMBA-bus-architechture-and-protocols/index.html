@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Understanding AMBA Bus Architechture and Protocols"/><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://nibaix.com/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Understanding AMBA Bus Architechture and Protocols - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Understanding AMBA Bus Architechture and Protocols
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-22
+        </span></div>
+    </header>
+
+    <div class="post-content"><p>The Advanced Micro controller Bus Architecture (<strong>AMBA</strong>) bus protocols is a set of interconnect specifications from ARM that standardizes on chip communication mechanisms between various functional blocks (or IP) for building high performance SOC designs. These designs typically have one or more micro controllers or microprocessors along with several other components — internal memory or external memory bridge, DSP, DMA, accelerators and various other peripherals like USB, UART, PCIE, I2C etc — all integrated on a single chip. The primary motivation of AMBA protocols is to have a standard and efficient way to interconnecting these blocks with re-use across multiple designs.</p>
+<span id="more"></span>
+
+<p>The first step in learning AMBA protocols is to understand where exactly these different protocols are used , how these evolved and how all of them fit into a SOC design.Following diagram (<em>reference from the AMBA 2.0 spec</em>) illustrates a traditional AMBA based SOC design that uses the AHB (Advanced High performance) or ASB (Advanced System Bus) protocols for high bandwidth interconnect and an APB (Advanced Peripheral Bus) protocol for low bandwidth peripheral interconnects.</p>
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/0U-61cb7vuTjzUts5.jpg" class="">
+
+<p>With increasing number of functional blocks (IP) integrating into SOC designs, the shared bus protocols (AHB&#x2F;ASB) started hitting limitations sooner and in 2003 , the new revision of AMBA 3 introduced a point to point connectivity protocol — AXI (<em>Advanced Extensible Interface</em>). Further in 2010, an enhanced version was introduced — A<em>XI 4.</em> Following diagram illustrates this evolution of protocols along with the SOC design trends in industry.</p>
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1rAeAWtd2K3bWLw-59IKGbQ.png" class="">
+
+<p>Following diagram illustrates how an AXI interconnect can be used to build an SOC with various functional blocks talking through a master-slave protocol. The interconnect could be a custom crossbar or a switch design or even an off the shelve NOC (Network on Chip) IP that supports multiple AXI masters and slaves. The AXI interconnect helps in scaling up connectivity for number of agents compared to previous AHB&#x2F;ASB bus. An AXI to APB bridge on one of the slave port is normally used to bridge communications to a set of peripherals shared on an APB bus.</p>
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1Mmu5nD-cdqBqL0LlI_w-sg.png" class="">
+
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1pWCEylvjOZXTQmOhiwitrQ.png" class="">
+
+<p>Further evolution happened in the era of mobile and smartphones with SOCs having dual&#x2F;quad&#x2F;octa core processors with shared caches integrated and the need for hardware managed coherency across the memory subsystem. This lead to the introduction of ACE (AXI Coherency Protocol Extension) in AMBA revision 4.</p>
+<p>Lastly, in the current era of heterogeneous computing for HPC and data center markets, the integration trend continues with increasing number of processor cores along with several heterogeneous computing elements like GPU, DSP, FPGAs, memory controllers and IO sub systems. In 2013, AMBA 5 introduced the CHI (Coherent Hub Interconnect) protocol as a re-design of the AXI&#x2F;ACE protocol. The signal based AXI&#x2F;ACE protocol was replaced with the new packet based CHI layered protocol that can scale very well for near term future.</p>
+<p>Now that hopefully you understand how the protocols evolved and how each of them fit in to an SOC design— here are few basics and references to resources that you can use to learn more in depth about each of the protocol.</p>
+<p>ARM has open sourced all of the protocols and all the specifications can be downloaded from the ARM website free by signing up.</p>
+<ol>
+<li><strong>APB :</strong> The <em>Advanced Peripheral Bus (APB)</em> is used for connecting low bandwidth peripherals. It is a simple non-pipelined protocol that can be used to communicate(read or write) from a bridge&#x2F;master to a number of slaves through the shared bus. The reads and writes shares the same set of signals and no burst data transfers are supported. The latest spec (APB 2.0) is available on<a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0024c/index.html"> <strong>ARM website here</strong></a> and is a relatively easy protocol to learn**.**</li>
+<li><strong>AHB</strong>: The <em>Advanced High-performance Bus (AHB)</em> is used for connecting components that need higher bandwidth on a shared bus. These could be a internal memory or an external memory interface, DMA , DSP etc but the shared bus would limit the number of agents. Similar to APB, this is a shared bus protocol for multiple masters and slaves, but higher bandwidth is possible through burst data transfers. The latest spec can be found on <a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0033/index.html"><strong>ARM website here</strong></a> and is relatively easy to learn</li>
+<li><strong>AHB-lite</strong> protocol is a simplified version of AHB. The simplification comes with support for only a single master design and that removes need for any arbitration, retry, split transactions etc.</li>
+<li><strong>AXI</strong>: The <em>Advanced Extensible interface (AXI)</em> is useful for high bandwidth and low latency interconnects. This is a point to point interconnect and overcomes the limitations of a shared bus protocol in terms of number of agents that can be connected. The protocol also was an enhancement from AHB in terms of supporting multiple outstanding data transfers (pipe-lined), burst data transfers, separate read and write paths and supporting different bus widths.</li>
+<li><strong>AXI-lite</strong> protocol is a simplified version of AXI and the simplification comes in terms of no support for burst data transfers.</li>
+<li><strong>AXI-stream</strong> protocol is another flavor of the AXI protocol that supports only streaming of data from a master to a slave. There is no separate read&#x2F;write channels in the stream protocol unlike a full AXI or AXI-lite as the intend is to only stream in one direction. Multiple streams of data can be transferred (even with interleaving) across a master and slave. This becomes useful in designs like video streaming applications.</li>
+<li>The full AXI and AXI-lite specification can be downloaded on <a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0022d/index.html"><strong>ARM website here</strong></a><strong>.</strong> The AXI-stream protocol has a different spec and is <a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0051a/index.html"><strong>available here for download.</strong></a></li>
+<li><strong>ACE —</strong> <em>AXI Coherence extension</em> protocol is an extension to AXI 4 protocol and evolved in the era of multiple CPU cores with coherent caches getting integrated on a single chip. The ACE protocol extends the AXI read and write data channels by introducing separate snoop address, snoop data and snoop response channels. These extra channels provides mechanisms to implement a snoop based coherency protocol. If you are new to coherency, understanding that will be a pre-requisite before learning ACE protocol. The spec is available for download from <a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0022d/index.html"><strong>ARM here as part of AXI4 spec</strong></a></li>
+<li><strong>ACE-Lite —</strong> The ACE also has a simplified version of protocol for those agents that does not have a cache of its own but still are part of the shareable coherency domain. Typical agents like DMA or network interface agents fall implement this “one-way” coherency using a ACE-lite protocol.</li>
+<li><strong>CHI —(</strong> <em>Coherent Hub Interface)</em> — The ACE protocol was developed as an extension to AXI to support coherent interconnects. The ACE protocol used a signal level communication between master&#x2F;slave and hence the interconnects needed large number of wires with added channels for snoops and responses. This worked well for small coherent clusters with dual&#x2F;quad core mobile SOC designs. With increasing number of coherent clusters on SOC along with other heterogeneous compute elements and memory controllers — the AMBA 5 revision introduced CHI protocol as a complete re-design of the ACE protocol. The CHI protocol uses a layered packet based communication protocol with protocol, link layer and physical layer implementation and also supports QoS based flow control and retry mechanisms.</li>
+</ol>
+<p>Hope this gives an overview and helps getting started to learn more in depth into these protocols. The best way to learn further is to read the specifications to understand details of each protocol. The APB and AHB are relatively easy and can be learned easily. AXI and ACE&#x2F;CHI are relatively complex and will need detailed reading along with understanding of basics of cache coherency and general communication protocols.</p>
+<p>If you are not actively working on any of these on any projects, but do have time, you can also develop a IP&#x2F;VIP for a master or slave for any of these protocols, simulate and understand the details in depth.</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        
+        <nav class="post-nav"><a class="next" href="/2022/04/22/AMBA-APB-revisions/">
+        <span class="next-text nav-default">AMBA APB Revisions</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>
