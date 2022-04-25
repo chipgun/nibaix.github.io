@@ -84,6 +84,22 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/">Expand Tab in Emacs-Verilog Auto Code</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-25
+        </span></div>
+    </header>
+
+    <div class="post-content"><p>When you use Emacs-verilog to generate code automatically, tabs are inserted in stead of whitespace by default. For me I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
+<p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below and it’s done and enjoy! </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cat</span> verilog-mode.el</span><br><span class="line">;;         verilog-auto-lineup              <span class="string">&#x27;declarations</span></span><br><span class="line"><span class="string">;;         verilog-linter                   &quot;my_lint_shell_command&quot;</span></span><br><span class="line"><span class="string">;;         )</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;(custom-set-variables :: begin --&gt;jim</span></span><br><span class="line"><span class="string">;; expand tab to whitespace</span></span><br><span class="line"><span class="string">(setq-default tab-width 8)</span></span><br><span class="line"><span class="string">(setq-default indent-tabs-mode nil)</span></span><br><span class="line"><span class="string">;(custom-set-variables :: end --&gt;jim</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">;;; History:</span></span><br><span class="line"><span class="string">;;</span></span><br><span class="line"><span class="string">;; See commit history at https://www.veripool.org/verilog-mode</span></span><br></pre></td></tr></table></figure>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/">上海每日疫情走势2022-4-23</a>
         </h1>
 
@@ -291,23 +307,6 @@
 <p><strong>Start vsftpd service</strong><br><code># systemctl start vsftpd.service</code></p>
           <div class="read-more">
             <a href="/2022/04/19/install-and-configure-vsftpd-server-in-RHEL7/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/">Install and Configure VNC Server in RHEL7</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-19
-        </span></div>
-    </header>
-
-    <div class="post-content"><p><strong>Make sure the desktop is installed</strong><br><code># yum groupinstall &quot;GNOME Desktop&quot;</code></p>
-<p><strong>Install TigerVNC and other dependency</strong><br><code># yum install tigervnc-server xorg-x11-fonts-Type1</code></p>
-          <div class="read-more">
-            <a href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
