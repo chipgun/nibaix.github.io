@@ -93,7 +93,52 @@
         </span></div>
     </header>
 
-    <div class="post-content">
+    <div class="post-content"><p>These are special shell variables which are set internally by the shell and which are available to the user.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$0</td>
+<td align="left">The filename of the current script.</td>
+</tr>
+<tr>
+<td align="left">$n</td>
+<td align="left">These variables correspond to the arguments with which a script was invoked. Here n is a positive decimal number corresponding to the position of an argument (the first argument is $1, the second argument is $2, and so on).</td>
+</tr>
+<tr>
+<td align="left">$$</td>
+<td align="left">The process ID of the current shell. For shell scripts, this is the process ID under which they are executing.</td>
+</tr>
+<tr>
+<td align="left">$#</td>
+<td align="left">The number of arguments supplied to a script.</td>
+</tr>
+<tr>
+<td align="left">$@</td>
+<td align="left">All the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to $1 $2.</td>
+</tr>
+<tr>
+<td align="left">$*</td>
+<td align="left">All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2.</td>
+</tr>
+<tr>
+<td align="left">$?</td>
+<td align="left">The exit status of the last command executed.</td>
+</tr>
+<tr>
+<td align="left">$!</td>
+<td align="left">The process ID of the last background command.</td>
+</tr>
+<tr>
+<td align="left">$_</td>
+<td align="left">The last argument of the previous command.</td>
+</tr>
+</tbody></table>
+
         </div></article>
       <article class="post">
     <header class="post-header">
@@ -109,7 +154,7 @@
     <div class="post-content"><p>I’ve got two methods to get strings or substrings within current Linux shell command-line. For instance, sometimes we want to get the file full path when source it in shell. Here are my ways to do so.</p>
 <ol>
 <li>Use command of <strong>lsof</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `/usr/sbin/lsof -p &amp;&amp; -w | grep -oE <span class="string">&quot;\s+\/.*\Sourced_Filename&quot;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
-<li>Use command of <strong>history</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `<span class="built_in">history</span> 1 | sed -e <span class="string">&#x27;s/^.*source\ //g&#x27;</span>`</span><br><span class="line"><span class="keyword">if</span>( <span class="variable">$sourced_file</span> =~ <span class="string">&#x27;/&#x27;</span>* ) <span class="keyword">then</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>( <span class="variable">$sourced_file</span> =~ <span class="string">&#x27;$&#x27;</span>* ) <span class="keyword">then</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>( <span class="variable">$sourced_file</span> =~ <span class="string">&#x27;~&#x27;</span>* ) <span class="keyword">then</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">set</span> sourced_file = <span class="variable">$PWD</span>/<span class="variable">$sourced_file</span></span><br><span class="line">endif</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
+<li>Use command of <strong>history</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `<span class="built_in">history</span> 1 | sed -e <span class="string">&#x27;s/^.*source\ //g&#x27;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
 </ol>
 
         </div></article>

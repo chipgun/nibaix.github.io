@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="Linux Shell System Variables"/><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<meta name="description" content="Linux Shell System Variables"/><meta name="keywords" content="linux, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
 <link rel="canonical" href="http://nibaix.com/2022/04/26/linux-shell-system-variables/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
@@ -93,10 +93,58 @@
         </span></div>
     </header>
 
-    <div class="post-content">
+    <div class="post-content"><p>These are special shell variables which are set internally by the shell and which are available to the user.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$0</td>
+<td align="left">The filename of the current script.</td>
+</tr>
+<tr>
+<td align="left">$n</td>
+<td align="left">These variables correspond to the arguments with which a script was invoked. Here n is a positive decimal number corresponding to the position of an argument (the first argument is $1, the second argument is $2, and so on).</td>
+</tr>
+<tr>
+<td align="left">$$</td>
+<td align="left">The process ID of the current shell. For shell scripts, this is the process ID under which they are executing.</td>
+</tr>
+<tr>
+<td align="left">$#</td>
+<td align="left">The number of arguments supplied to a script.</td>
+</tr>
+<tr>
+<td align="left">$@</td>
+<td align="left">All the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to $1 $2.</td>
+</tr>
+<tr>
+<td align="left">$*</td>
+<td align="left">All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2.</td>
+</tr>
+<tr>
+<td align="left">$?</td>
+<td align="left">The exit status of the last command executed.</td>
+</tr>
+<tr>
+<td align="left">$!</td>
+<td align="left">The process ID of the last background command.</td>
+</tr>
+<tr>
+<td align="left">$_</td>
+<td align="left">The last argument of the previous command.</td>
+</tr>
+</tbody></table>
+
       </div>
       
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            </div>
         
         <nav class="post-nav"><a class="next" href="/2022/04/26/get-strings-within-current-commandline/">
         <span class="next-text nav-default">Get Strings Within Commandline</span>
