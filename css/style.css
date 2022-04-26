@@ -467,7 +467,7 @@ h6 {
     .header .logo-wrapper {
       display: none; } }
   .header .site-navbar {
-    float: right; }
+    float: left; }
     .header .site-navbar .menu {
       display: inline-block;
       position: relative;
