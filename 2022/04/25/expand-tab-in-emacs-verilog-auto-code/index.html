@@ -104,7 +104,7 @@
         </div>
     </header>
 
-    <div class="post-content"><p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For me I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
+    <div class="post-content"><p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
 <p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below. Yeah, it’s done and enjoy! </p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(setq-default tab-width 8)</span><br><span class="line">(setq-default indent-tabs-mode nil)</span><br></pre></td></tr></table></figure>
 
