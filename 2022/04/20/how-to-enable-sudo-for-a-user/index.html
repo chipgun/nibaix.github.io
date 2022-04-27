@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 <meta name="description" content="How to Enable Sudo for a User"/><meta name="keywords" content="linux, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
-<link rel="canonical" href="http://nibaix.com/2022/04/20/how-to-enable-sudo-for-a-user/"/>
+<link rel="canonical" href="http://blog.nibaix.com/2022/04/20/how-to-enable-sudo-for-a-user/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
@@ -47,6 +47,9 @@
       </a><a href="/tags/">
         <li class="mobile-menu-item">Tags
           </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
       </a><a href="/about/">
         <li class="mobile-menu-item">About
           </li>
@@ -73,6 +76,11 @@
             </a>
         </li>
       <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
           <a class="menu-item-link" href="/about/">
             About
             </a>
@@ -90,7 +98,10 @@
       <div class="post-meta">
         <span class="post-time">
           2022-04-20
-        </span></div>
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
     </header>
 
     <div class="post-content"><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root]<span class="comment"># su -</span></span><br><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
@@ -99,7 +110,6 @@
 <span id="more"></span>
 <p>Uncomment line of <code>%wheel ALL=(ALL) ALL</code> will ask for password when sudo.<br>Uncomment line of <code>%wheel ALL=(ALL) NOPASSWD: ALL</code> won’t ask for password when sudo.</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">## Allow root <span class="keyword">to</span> run any commands anywhere</span><br><span class="line">root    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the <span class="string">&#x27;sys&#x27;</span> group <span class="keyword">to</span> run networking, software,</span><br><span class="line">## service management apps <span class="built_in">and</span> more.</span><br><span class="line"># %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</span><br><span class="line"></span><br><span class="line">## Allows people in group wheel <span class="keyword">to</span> run <span class="keyword">all</span> commands</span><br><span class="line"># %wheel    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Same thing without <span class="keyword">a</span> password</span><br><span class="line">%wheel  ALL=(ALL)   NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> mount <span class="built_in">and</span> unmount the</span><br><span class="line">## cdrom <span class="keyword">as</span> root</span><br><span class="line"># %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> shutdown this <span class="built_in">system</span></span><br><span class="line"># %users  localhost=/sbin/shutdown -h now</span><br><span class="line"></span><br><span class="line">## Read <span class="keyword">drop</span>-in <span class="keyword">files</span> from /etc/sudoers.d (the # here does not mean <span class="keyword">a</span> comment)</span><br><span class="line">#includedir /etc/sudoers.d</span><br></pre></td></tr></table></figure>
-
 
 
       </div>
