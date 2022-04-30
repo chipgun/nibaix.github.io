@@ -107,9 +107,9 @@
     <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><span class="toc-text">Platform Identifiers for Calibre Install Files and Runtime Directories</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calibre-Support-Overview"><span class="toc-text">Calibre Support Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calibre-Support-Summary-for-Linux-x86-64"><span class="toc-text">Calibre Support Summary for Linux x86-64</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calibre-Patch-Summary"><span class="toc-text">Calibre Patch Summary</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><span class="toc-text">Platform Identifiers for Calibre Install Files and Runtime Directories</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calibre-Support-Overview"><span class="toc-text">Calibre Support Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calibre-Support-Summary-for-Linux-x86-64"><span class="toc-text">Calibre Support Summary for Linux x86-64</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calibre-Patch-Summary"><span class="toc-text">Calibre Patch Summary</span></a></li></ol>
     </div>
-  </div><div class="post-content"><h3 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h3><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
+  </div><div class="post-content"><h2 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h2><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
 <span id="more"></span>
 
 <table>
@@ -155,7 +155,7 @@
 <li>AOJ and AOK MGC_HOME trees as well as all MGC_HOME trees starting with Calibre 2024.3 require the AVX2 minimum CPU instruction set.</li>
 <li>Important Note: The RSH utility is not provided with RHEL 8. Customers currently using the RSH utility for Cali­bre distributed processing will need to switch to a different utility, such as SSH, before they can use the Calibre AOK MGC_HOME software on RHEL 8.</li>
 </ul>
-<h3 id="Calibre-Support-Overview"><a href="#Calibre-Support-Overview" class="headerlink" title="Calibre Support Overview"></a>Calibre Support Overview</h3><p>Calibre Support Overview Forecast, 2022-2024</p>
+<h2 id="Calibre-Support-Overview"><a href="#Calibre-Support-Overview" class="headerlink" title="Calibre Support Overview"></a>Calibre Support Overview</h2><p>Calibre Support Overview Forecast, 2022-2024</p>
 <img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-20220430093831366.png" class="">
 
 <ul>
@@ -166,14 +166,14 @@
 <li>Please see Table 1, Calibre Platform Identifiers, for full details on which platform identifiers that can be used with each OS version.</li>
 <li>RHEL&#x2F;CentOS 6.10 is last minor release for RHEL&#x2F;CentOS 6. RHEL&#x2F;CentOS 7.9 is the last minor release for RHEL&#x2F;CentOS 7.</li>
 </ul>
-<h3 id="Calibre-Support-Summary-for-Linux-x86-64"><a href="#Calibre-Support-Summary-for-Linux-x86-64" class="headerlink" title="Calibre Support Summary for Linux x86-64"></a>Calibre Support Summary for Linux x86-64</h3><img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-20220430094056325.png" class="">
+<h2 id="Calibre-Support-Summary-for-Linux-x86-64"><a href="#Calibre-Support-Summary-for-Linux-x86-64" class="headerlink" title="Calibre Support Summary for Linux x86-64"></a>Calibre Support Summary for Linux x86-64</h2><img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-20220430094056325.png" class="">
 
 <ul>
 <li>All 2018-2020 Calibre releases are supported with AOI and AOJ MGC_HOME trees.</li>
 <li>All 2021 Calibre releases are supported with AOI, AOJ, and AOK MGC_HOME trees.</li>
 <li>Please see Table 1, Calibre Platform Identifiers, for full details on each platform identifier.</li>
 </ul>
-<h3 id="Calibre-Patch-Summary"><a href="#Calibre-Patch-Summary" class="headerlink" title="Calibre Patch Summary"></a>Calibre Patch Summary</h3><table>
+<h2 id="Calibre-Patch-Summary"><a href="#Calibre-Patch-Summary" class="headerlink" title="Calibre Patch Summary"></a>Calibre Patch Summary</h2><table>
 <thead>
 <tr>
 <th><strong>Calibre release</strong></th>
