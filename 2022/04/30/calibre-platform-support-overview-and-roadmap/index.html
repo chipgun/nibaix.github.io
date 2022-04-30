@@ -112,12 +112,12 @@
   </div><div class="post-content"><h3 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h3><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
 <img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-202204301028.png" class="">
 
+<span id="more"></span>
+
 <ul>
 <li>AOJ and AOK MGC_HOME trees as well as all MGC_HOME trees starting with Calibre 2024.3 require the AVX2 minimum CPU instruction set.</li>
 <li>Important Note: The RSH utility is not provided with RHEL 8. Customers currently using the RSH utility for Cali­bre distributed processing will need to switch to a different utility, such as SSH, before they can use the Calibre AOK MGC_HOME software on RHEL 8.</li>
 </ul>
-<span id="more"></span>
-
 <h3 id="Calibre-Support-Overview"><a href="#Calibre-Support-Overview" class="headerlink" title="Calibre Support Overview"></a>Calibre Support Overview</h3><p>Calibre Support Overview Forecast, 2022-2024</p>
 <img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-20220430093831366.png" class="">
 
