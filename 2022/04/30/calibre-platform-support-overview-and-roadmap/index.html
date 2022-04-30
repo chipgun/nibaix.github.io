@@ -110,51 +110,14 @@
       <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><span class="toc-text">Platform Identifiers for Calibre Install Files and Runtime Directories</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calibre-Support-Overview"><span class="toc-text">Calibre Support Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calibre-Support-Summary-for-Linux-x86-64"><span class="toc-text">Calibre Support Summary for Linux x86-64</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calibre-Patch-Summary"><span class="toc-text">Calibre Patch Summary</span></a></li></ol>
     </div>
   </div><div class="post-content"><h3 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h3><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
-<span id="more"></span>
+<img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-202204301028.png" class="">
 
-<table>
-<thead>
-<tr>
-<th><strong>Platform Identifier (VCO)</strong></th>
-<th><strong>RHEL&#x2F;CentOS version(s) supported</strong></th>
-<th><strong>SLES version(s) supported</strong></th>
-<th><strong>Minimum x86-64 CPU Instruction Set Required</strong></th>
-<th><strong>Notes</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>IXL</strong></td>
-<td>RHEL&#x2F;CentOS 5</td>
-<td>SLES 11 SP1</td>
-<td>SSE3 (introduced 2004)</td>
-<td>Discontinued as of 2021.1</td>
-</tr>
-<tr>
-<td><strong>AOI</strong></td>
-<td>RHEL&#x2F;CentOS 6 RHEL&#x2F;CentOS 7</td>
-<td>SLES 11 SP4 SLES 12 SP5</td>
-<td>SSE3 (introduced 2004)</td>
-<td>Discontinued 2024.3, when RHEL&#x2F;CentOS 6 and SLES 11 SP4 support discontinued</td>
-</tr>
-<tr>
-<td><strong>AOJ</strong></td>
-<td>RHEL&#x2F;CentOS 6.8&#x2F;9&#x2F;10 RHEL&#x2F;CentOS 7</td>
-<td>SLES 11 SP4 SLES 12 SP5</td>
-<td>AVX2 (introduced 2013)</td>
-<td>As of 2024.3, AOJ will support RHEL&#x2F;CentOS 7 and SLES 12 only</td>
-</tr>
-<tr>
-<td><strong>AOK</strong></td>
-<td>RHEL 8</td>
-<td>N&#x2F;A</td>
-<td>AVX2 (introduced 2013)</td>
-<td>Introduced with 2021.1</td>
-</tr>
-</tbody></table>
 <ul>
 <li>AOJ and AOK MGC_HOME trees as well as all MGC_HOME trees starting with Calibre 2024.3 require the AVX2 minimum CPU instruction set.</li>
 <li>Important Note: The RSH utility is not provided with RHEL 8. Customers currently using the RSH utility for Cali­bre distributed processing will need to switch to a different utility, such as SSH, before they can use the Calibre AOK MGC_HOME software on RHEL 8.</li>
 </ul>
+<span id="more"></span>
+
 <h3 id="Calibre-Support-Overview"><a href="#Calibre-Support-Overview" class="headerlink" title="Calibre Support Overview"></a>Calibre Support Overview</h3><p>Calibre Support Overview Forecast, 2022-2024</p>
 <img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-20220430093831366.png" class="">
 
