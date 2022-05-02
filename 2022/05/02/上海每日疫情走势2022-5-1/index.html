@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="Get Synopsys Newer Than 2018 to Properly Work"/><meta name="keywords" content="eda, synopsys, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
-<link rel="canonical" href="http://blog.nibaix.com/2022/04/01/getting-snps-newer-than-2018-to-properly-work/"/>
+<meta name="description" content="上海每日疫情走势2022-5-1"/><meta name="keywords" content="covid19, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/05/02/上海每日疫情走势2022-5-1/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
@@ -23,7 +23,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
 </script>
 
-    <title>Get Synopsys Newer Than 2018 to Properly Work - nibaix's digital footprints</title><meta name="robots" content="noindex">
+    <title>上海每日疫情走势2022-5-1 - nibaix's digital footprints</title>
   <meta name="generator" content="Hexo 6.1.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -92,39 +92,33 @@
         <div class="content-wrapper">
           <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">Get Synopsys Newer Than 2018 to Properly Work
+      <h1 class="post-title">上海每日疫情走势2022-5-1
         </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2022-04-01
+          2022-05-02
         </span><span class="post-category">
-            <a href="/categories/Semiconductor/">Semiconductor</a>
+            <a href="/categories/Diary/">Diary</a>
             </span>
         </div>
     </header>
 
-    <div class="post-content"><p>It looks like there are still users who do not manage to get the most recent syn@psys tools (version newer than 2018.12) to properly work even after the great realease of the proper patcher which you can find in here <a target="_blank" rel="noopener" href="https://bbs.eetop.cn/thread-879031-1-1.html">bbs.eetop.cn&#x2F;thread-879031-1-1.html</a>. As a matter of fact, as explained in the “readme.txt” file found in the pubkey1.6 package, everything should go fairly smoothly by following the instructions but … apparently not all the steps are included in the operation list ! Therefore, as done in the past for other tools, I decided to create a tutorial to succesfully apply the patch and create the license to finally clarify the complete procedure. The first 6 steps from the “readme.txt” are indeed correct:</p>
-<p><strong>1. Patch files on Linux. Goto your product directory (eg syn_vP-20yy.mm), run <code>pubkey_verify -y</code></strong><br>   - (where yy.mm indicates the year and the month, eg 20.12)</p>
-<p><strong>2. Patch files’ checksum on Linux. Goto your product directory (e.g. syn_vP-20yy.mm), run <code>synopsys_checksum -y</code></strong><br>   - (where yy.mm indicates the year and the month, eg 20.12)</p>
-<p><strong>3. Repeat 1, 2 with all your $ynopsys on Linux, including the daemon scl_v2018.06 (or higher).</strong></p>
-<p><strong>4. Generate license file(Synopsys.dat) with scl_keygen.exe on Windows.</strong><br>   - on first run this will generate the settings.ini file which you can edit to specify hostid and expiration date for the SSS feature<br>   - and the Synopsys.src file which includes the tools version (e.g., 2108.12) and the expiration date (31-dec-2020) on the INCREMENT lines and you have to modify those to match your tools and to set the desired expiration date (e.g., INCREMENT FEATURE_NAME snpslmd 2030.12 31-dec-2030 …)<br>   - remember to add teh full path for the daemon line as: DAEMON snpslmd <full_path_to_daemon>&#x2F;snplmd</p>
-<p><strong>5. Drap &amp; drop the generated Synopsys.dat to fix.bat on Windows. This will add dummy SIGN&#x3D; to the license file.</strong></p>
-<p><strong>6. Copy the license file to you linux box, and start the license daemon.</strong><br>   - E.g. lmgrd -c <path_to_license_file>&#x2F;license.dat</p>
-<p><strong>7. At this point the following unexpected message from the daemon may appear, which will make your license file useless !!!</strong></p>
-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(snpslmd) checking the integrity of the license file ...</span><br><span class="line">(snpslmd) The SSS features are garbled.</span><br><span class="line">(snpslmd) All revenue keys (&quot;SN=RK:... &quot; on feature line) have been excluded</span><br></pre></td></tr></table></figure>
+    <div class="post-content"><img src="/2022/05/02/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-1/image-20220502100739352.png" class="">
 
-<p><strong>8. Luckily there is an easy solution: just reread the license with <code>lmreread, e.g. lmreread -c &lt;path_to_license_file&gt;/license.dat</code> and all the features will be re-enable and you will be all set !</strong></p>
-<!-- flag of hidden posts -->
       </div>
       
       <footer class="post-footer">
         <div class="post-tags">
-            <a href="/tags/eda/">eda</a>
-            <a href="/tags/synopsys/">synopsys</a>
+            <a href="/tags/covid19/">covid19</a>
             </div>
         
-        <nav class="post-nav"></nav></footer>
+        <nav class="post-nav"><a class="next" href="/2022/04/30/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-29/">
+        <span class="next-text nav-default">上海每日疫情走势2022-4-29</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
     </article></div><div class="comments" id="comments"></div></div>
       </main>
 
