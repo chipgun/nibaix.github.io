@@ -92,6 +92,19 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/05/05/synopsys-computer-platforms-roadmap/">Synopsys Computer Platforms Roadmap</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-05-05
+        </span></div>
+    </header>
+
+    <div class="post-content">
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/05/04/OCV-evolution/">OCV Evolution</a>
         </h1>
 
@@ -295,30 +308,6 @@
 <li>Use command of <strong>lsof</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `/usr/sbin/lsof -p &amp;&amp; -w | grep -oE <span class="string">&quot;\s+\/.*\Sourced_Filename&quot;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
 <li>Use command of <strong>history</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `<span class="built_in">history</span> 1 | sed -e <span class="string">&#x27;s/^.*source\ //g&#x27;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
 </ol>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/26/deploy-github-pages-at-vercel/">Deploy Github Pages at Vercel</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-26
-        </span><span class="post-category">
-            <a href="/categories/Blog/">Blog</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>Accessing GitHub pages from China is pretty slow. Vercel has much better user experience although Vercel’s servers are located in oversea countries, same as GitHub servers. So many of bloggers in China migrate their static Blog site onto Vercel. To do the migration it’s quite simple. All you have to do are merely 3 steps.</p>
-<ol>
-<li><strong>With your GitHub account create an account at <a target="_blank" rel="noopener" href="https://vercel.com/">https://vercel.com</a>.</strong> It seems like you just sign-in Vercel with your GitHub account. By doing this your GitHub pages will be able to accessed from Vercel.</li>
-<li><strong>Create a new project on your Vercel dashboard.</strong> The guide will take you to import your GitHub existing projects. Just select one and click “Import” button.</li>
-<li><strong>Set your project name and click “Deploy” button.</strong>  Keep all default settings. Now simply wait to see magical things happen.</li>
-</ol>
-<p>By now the deployment process is done. If it succeeds colorful flowers will be scattered on your screen. If it fails you need to check the deployment status and building logs.</p>
-<p>If your have your own domain name, you can also add your domain to point your site address.</p>
 
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
