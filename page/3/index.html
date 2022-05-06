@@ -92,6 +92,27 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/20/how-to-enable-sudo-for-a-user/">How to Enable Sudo for a User</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-20
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root]<span class="comment"># su -</span></span><br><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
+
+<p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
+          <div class="read-more">
+            <a href="/2022/04/20/how-to-enable-sudo-for-a-user/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/04/19/modify-linux-system-date-and-time/">Modify Linux System Date and Time</a>
         </h1>
 
@@ -282,32 +303,6 @@
 <p>Verilog-A Hardware Description Language(HDL)是IEEE定义的用于描述模拟系统(Analog Systems)行为的硬件描述语言。通过对子模块建模，可实现项目初期系统级模型搭建和仿真验证。提供研究阶段的可行性分析。自顶向下(TOP-DOWN)设计流程，方便从系统角度，明确定义关键子模块参数和指标要求。</p>
           <div class="read-more">
             <a href="/2022/04/09/decision-feedback-equalizer-3/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/09/decision-feedback-equalizer-2/">判决反馈均衡器（中）</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-09
-        </span><span class="post-category">
-            <a href="/categories/Semiconductor/">Semiconductor</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><a href="/2022/04/09/decision-feedback-equalizer-1/" title="判决反馈均衡器（上）">判决反馈均衡器（上）</a>&raquo;<br/>
-
-<a href="/2022/04/09/decision-feedback-equalizer-3/" title="判决反馈均衡器（下）">判决反馈均衡器（下）</a>&raquo;
-
-
-
-<p><strong>Part4 瞬态波形和眼图</strong></p>
-<p>判决反馈均衡器DFE(上）章节中提到的不同结构，其瞬态波形会存在差异。其采样前的眼图直观反映了采样器的幅度Margin和CDR采样时刻的裕度。</p>
-          <div class="read-more">
-            <a href="/2022/04/09/decision-feedback-equalizer-2/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/2/">
