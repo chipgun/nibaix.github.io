@@ -107,7 +107,7 @@
     <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#OCV-On-Chip-Variation"><span class="toc-text">OCV (On Chip Variation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AOCV-Advanced-On-Chip-Variation"><span class="toc-text">AOCV (Advanced On Chip Variation)</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#OCV-On-Chip-Variation"><span class="toc-text">OCV (On Chip Variation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AOCV-Advanced-On-Chip-Variation"><span class="toc-text">AOCV (Advanced On Chip Variation)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POCV-Parametric-On-Chip-Variation"><span class="toc-text">POCV (Parametric On Chip Variation)</span></a>
     </div>
   </div><div class="post-content"><p>芯片在实际生产中，同一片晶圆上的不同区域的芯片，因为各种外部条件和生产条件的变化（variation），比如：工艺（Process），电压（Voltage），温度（Temperature）等，可能会产生不同的误差从而导致同一块晶圆上某些区域上的芯片里的晶体管整体速度变快或变慢，因此有了corner的概念。而与此同时，在同一块芯片上的不同区域，也会因为上述因素而有进一步的差异（variation），因此产生了OCV（On Chip Variation）的概念。</p>
 <span id="more"></span>
@@ -116,6 +116,7 @@
 <p>从OCV的概念出现至今，随着工艺的发展，OCV也经历了如下的一系列进化：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-1.jpg" class="">
 
+<p><strong>OCV的发展</strong></p>
 <p>那么它们都是什么意思呢？在设计中又有什么不同呢？在详细解说之前我们先考虑以下一条timing path的setup分析：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-2.jpg" class="">
 
@@ -141,6 +142,31 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">object_type: lib_cell</span><br><span class="line">delay_type:  cell</span><br><span class="line">object_spec: -quiet  libName/cellName</span><br><span class="line">rf_type:     rise</span><br><span class="line">derate_type: early</span><br><span class="line">depth: 1  2  3  4  5  6  8  10  20  30  40  50  60  80  100</span><br><span class="line">distance: 0  5000000  10000000  20000000  30000000  40000000</span><br><span class="line">table:    0.7232  0.8043  0.8402  0.8616  0.8762  0.8870  0.9021  0.9125  0.9381  0.9495  0.9562  0.9609  0.9643  0.9691  0.9723  \</span><br><span class="line">    0.7166  0.7970  0.8326  0.8538  0.8682  0.8789  0.8939  0.9042  0.9296  0.9408  0.9475  0.9521  0.9555  0.9602  0.9635  \</span><br><span class="line">    0.7139  0.7939  0.8294  0.8505  0.8649  0.8756  0.8905  0.9007  0.9260  0.9372  0.9439  0.9485  0.9518  0.9566  0.9598  \</span><br><span class="line">    0.7101  0.7897  0.8249  0.8459  0.8603  0.8709  0.8857  0.8959  0.9210  0.9322  0.9388  0.9434  0.9467  0.9514  0.9546  \</span><br><span class="line">    0.7071  0.7864  0.8215  0.8424  0.8567  0.8672  0.8820  0.8921  0.9172  0.9283  0.9349  0.9394  0.9428  0.9474  0.9506  \</span><br><span class="line">    0.7046  0.7836  0.8186  0.8395  0.8537  0.8642  0.8790  0.8890  0.9140  0.9251  0.9317  0.9362  0.9395  0.9442  0.9473 </span><br></pre></td></tr></table></figure>
 
 <p>有些AOCV表是depth和distance而对应derate数值的二维查表，有些只是depth对应derate的一维查表，上述例子属于后者。我们可以看出，级数(depth)越深，对应的derate越小。通过这种方式来剔除部分不必要的悲观量，使得设计在尽量覆盖实际情况的前提下更加容易收敛。</p>
+<p>接下来我们继续谈谈它们的升级版：POCV和LVF。上次我们说过，实际中由于PVT (Process, Voltage, Temperature) 导致的variation并不是一个或几个固定的值，而是服从类似高斯分布的形态。因此，反映在cell的delay上亦如此：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-1.jpg" class="">
+
+<p><strong>Normal Derating vs. POCV</strong></p>
+<h2 id="POCV-Parametric-On-Chip-Variation"><a href="#POCV-Parametric-On-Chip-Variation" class="headerlink" title="POCV (Parametric On Chip Variation)"></a>POCV (Parametric On Chip Variation)</h2><p>如上图所示，所谓POCV，也称SOCV(Statistical On Chip Variation)，就是将cell的delay模拟成一个数学期望为 <img src="https://www.zhihu.com/equation?tex=%5Cmu" alt="[公式]"> ，标准差为 <img src="https://www.zhihu.com/equation?tex=%5Csigma" alt="[公式]"> 的高斯分布。简单地讲，每个cell的delay都有最高的概率出现在期望值上，有一定的概率出现在大于或者小于期望值一定范围内的区间上。整体上落在期望值 <img src="https://www.zhihu.com/equation?tex=%5Cpm3%5Csigma" alt="[公式]"> 区间内的概率为99.7%，即所谓的3 sigma。那么实际中工具是如何算得cell的delay呢？基本公式如下：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-2.jpg" class="">
+
+<p>如果在.lib中提供了sigma的数值，则可以通过公式(1)算出，如果通过read_aocvm读取的POCV的参数文件(包含参数C)，则可以通过公式(2)算出，这种通过给定的<strong>参数</strong>计算cell的OCV delay的方式就是’<strong>Parametric</strong>‘的含义。</p>
+<p>那么这和LVF和上面这些东西有什么关系呢？下面我们详细说说。</p>
+<p><strong>LVF(Liberty Variation Format)</strong></p>
+<p>从它的名字Liberty Variation Format我们可以看出LVF是一种和liberty库文件(.lib)有关的数据格式。我们知道一般情况下无论是AOCV或者POCV，都会有一个专门的文本文件通过特定的命令读取到工具中。以PrimeTime为例，读取AOCV和POCV的命令如下：</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">read_aocvm <span class="variable">$file_name</span></span><br></pre></td></tr></table></figure>
+
+<p>而除了这种方式之外，我们还有另外一种选择：将POCV的内容集成到类似于liberty文件中，如下图所示：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-3.jpg" class="">
+
+<p><strong>Slew-Load Based LVF</strong></p>
+<p>我们可以看出来，这种形式很像liberty文件中的delay查表。在这里，POCV的coefficient同样是一个基于slew-load的表格。同时，LVF中也可以是基于distance的查表：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-4.jpg" class="">
+
+<p><strong>Distance Based LVF</strong></p>
+<p>需要注意的是，在使用LVF的时候就不能通过<code>read_aocvm</code>读取专用的POCV文本。在PrimeTime中我们也可以通过如下方式report POCV的结果：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-5.jpg" class="">
+
+<p><strong>Report POCV Analysis</strong></p>
 
       </div>
       
