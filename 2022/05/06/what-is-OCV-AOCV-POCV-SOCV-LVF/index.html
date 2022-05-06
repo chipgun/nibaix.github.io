@@ -107,19 +107,19 @@
     <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#OCV-On-Chip-Variation"><span class="toc-text">OCV (On Chip Variation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AOCV-Advanced-On-Chip-Variation"><span class="toc-text">AOCV (Advanced On Chip Variation)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POCV-Parametric-On-Chip-Variation"><span class="toc-text">POCV (Parametric On Chip Variation)</span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OCV-On-Chip-Variation"><span class="toc-text">OCV (On Chip Variation)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOCV-Advanced-On-Chip-Variation"><span class="toc-text">AOCV (Advanced On Chip Variation)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POCV-Parametric-On-Chip-Variation"><span class="toc-text">POCV (Parametric On Chip Variation)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LVF-Liberty-Variation-Format"><span class="toc-text">LVF (Liberty Variation Format)</span></a></li></ol>
     </div>
   </div><div class="post-content"><p>芯片在实际生产中，同一片晶圆上的不同区域的芯片，因为各种外部条件和生产条件的变化（variation），比如：工艺（Process），电压（Voltage），温度（Temperature）等，可能会产生不同的误差从而导致同一块晶圆上某些区域上的芯片里的晶体管整体速度变快或变慢，因此有了corner的概念。而与此同时，在同一块芯片上的不同区域，也会因为上述因素而有进一步的差异（variation），因此产生了OCV（On Chip Variation）的概念。</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-0.jpg" class="">
 
-<p><strong>Corner vs. OCV</strong></p>
+<p><em><strong>Corner vs. OCV</strong></em></p>
 <span id="more"></span>
 
 <p>在设计中引入OCV的目的在于从设计角度考虑芯片在实际生产中可能出现的各种差异（variation），从而适度增加设计余量（margin），减少不必要的设计悲观量（pessimism）。那么在实际中是如何将OCV带入design的呢？</p>
 <p>从OCV的概念出现至今，随着工艺的发展，OCV也经历了如下的一系列进化：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-1.jpg" class="">
 
-<p><strong>OCV的发展</strong></p>
+<p><em><strong>OCV的发展</strong></em></p>
 <p>那么它们都是什么意思呢？在设计中又有什么不同呢？在详细解说之前我们先考虑以下一条timing path的setup分析：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-2.jpg" class="">
 
@@ -133,12 +133,12 @@
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-5.jpg" class="">
 
 <p>在x, y, z都是正数的时候，只满足理想状况下setup的电路是不一定能够满足上述条件的。这样就会导致实际生产出来的芯片有一定的概率不能满足需要的频率等条件，严重的甚至会导致芯片失效而降低良率。那么对此我们有什么解决办法呢？</p>
-<h3 id="OCV-On-Chip-Variation"><a href="#OCV-On-Chip-Variation" class="headerlink" title="OCV (On Chip Variation)"></a>OCV (On Chip Variation)</h3><p>这是针对上述问题提出的第一个方法。它的基本理念是，对launch, capture和data line上的cell或者net加一个固定的derate数值，使得setup和hold等时序约束比理想状况更加悲观从而能够覆盖部分实际生产中所产生的variation。实际设计中的效果如下：</p>
+<h2 id="OCV-On-Chip-Variation"><a href="#OCV-On-Chip-Variation" class="headerlink" title="OCV (On Chip Variation)"></a>OCV (On Chip Variation)</h2><p>这是针对上述问题提出的第一个方法。它的基本理念是，对launch, capture和data line上的cell或者net加一个固定的derate数值，使得setup和hold等时序约束比理想状况更加悲观从而能够覆盖部分实际生产中所产生的variation。实际设计中的效果如下：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-6.jpg" class="">
 
 <p>可以看到，对于launch clock，加上一个统一的大于1的derate值，就会在timing report中反映出来，相应的delay也会在原始值的基础上乘以这个derate值。</p>
 <p>对于capture clock line，相应地就会加上一个小于1的derate来计算delay。通过这样的方法来让时序约束更加悲观，以此来覆盖生产中和实际应用中的各种variation，提高良率。</p>
-<h3 id="AOCV-Advanced-On-Chip-Variation"><a href="#AOCV-Advanced-On-Chip-Variation" class="headerlink" title="AOCV (Advanced On Chip Variation)"></a>AOCV (Advanced On Chip Variation)</h3><p>AOCV的概念之所以被提出来，是由于OCV存在以下缺点：在实际中的variation，绝少是一个统一的数值，而大概率是服从正态分布的。以一条timing path的data line为例，可能并不是所有的cell都因为variation而变慢或变快，而是大部分variation较小，少量variation较大。如果我们采用OCV的方式，就会引入不必要的悲观量使得设计更难收敛，同时可能增加不必要的面积和功耗。</p>
+<h2 id="AOCV-Advanced-On-Chip-Variation"><a href="#AOCV-Advanced-On-Chip-Variation" class="headerlink" title="AOCV (Advanced On Chip Variation)"></a>AOCV (Advanced On Chip Variation)</h2><p>AOCV的概念之所以被提出来，是由于OCV存在以下缺点：在实际中的variation，绝少是一个统一的数值，而大概率是服从正态分布的。以一条timing path的data line为例，可能并不是所有的cell都因为variation而变慢或变快，而是大部分variation较小，少量variation较大。如果我们采用OCV的方式，就会引入不必要的悲观量使得设计更难收敛，同时可能增加不必要的面积和功耗。</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-7.jpg" class="">
 
 <p>针对这个问题，AOCV提出：对于一条path上，级数越多其variation分布越接近正态分布，因而这条path整体的variation也越小。在实际设计中，会根据一条line上cell的级数不同而设置不同的dereate值。实现这中设置的方法，是通过一种AOCV table来查表决定。这种table文件的内容格式大致如下：</p>
@@ -148,28 +148,27 @@
 <p>接下来我们继续谈谈它们的升级版：POCV和LVF。上次我们说过，实际中由于PVT (Process, Voltage, Temperature) 导致的variation并不是一个或几个固定的值，而是服从类似高斯分布的形态。因此，反映在cell的delay上亦如此：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-1.jpg" class="">
 
-<p><strong>Normal Derating vs. POCV</strong></p>
+<p><em><strong>Normal Derating vs. POCV</strong></em></p>
 <h2 id="POCV-Parametric-On-Chip-Variation"><a href="#POCV-Parametric-On-Chip-Variation" class="headerlink" title="POCV (Parametric On Chip Variation)"></a>POCV (Parametric On Chip Variation)</h2><p>如上图所示，所谓POCV，也称SOCV(Statistical On Chip Variation)，就是将cell的delay模拟成一个数学期望为 <img src="https://www.zhihu.com/equation?tex=%5Cmu" alt="[公式]"> ，标准差为 <img src="https://www.zhihu.com/equation?tex=%5Csigma" alt="[公式]"> 的高斯分布。简单地讲，每个cell的delay都有最高的概率出现在期望值上，有一定的概率出现在大于或者小于期望值一定范围内的区间上。整体上落在期望值 <img src="https://www.zhihu.com/equation?tex=%5Cpm3%5Csigma" alt="[公式]"> 区间内的概率为99.7%，即所谓的3 sigma。那么实际中工具是如何算得cell的delay呢？基本公式如下：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-2.jpg" class="">
 
-<p>如果在.lib中提供了sigma的数值，则可以通过公式(1)算出，如果通过read_aocvm读取的POCV的参数文件(包含参数C)，则可以通过公式(2)算出，这种通过给定的<strong>参数</strong>计算cell的OCV delay的方式就是’<strong>Parametric</strong>‘的含义。</p>
+<p>如果在.lib中提供了sigma的数值，则可以通过公式(1)算出，如果通过read_aocvm读取的POCV的参数文件(包含参数C)，则可以通过公式(2)算出，这种通过给定的参数计算cell的OCV delay的方式就是’Parametric’的含义。</p>
 <p>那么这和LVF和上面这些东西有什么关系呢？下面我们详细说说。</p>
-<p><strong>LVF(Liberty Variation Format)</strong></p>
-<p>从它的名字Liberty Variation Format我们可以看出LVF是一种和liberty库文件(.lib)有关的数据格式。我们知道一般情况下无论是AOCV或者POCV，都会有一个专门的文本文件通过特定的命令读取到工具中。以PrimeTime为例，读取AOCV和POCV的命令如下：</p>
+<h2 id="LVF-Liberty-Variation-Format"><a href="#LVF-Liberty-Variation-Format" class="headerlink" title="LVF (Liberty Variation Format)"></a>LVF (Liberty Variation Format)</h2><p>从它的名字Liberty Variation Format我们可以看出LVF是一种和liberty库文件(.lib)有关的数据格式。我们知道一般情况下无论是AOCV或者POCV，都会有一个专门的文本文件通过特定的命令读取到工具中。以PrimeTime为例，读取AOCV和POCV的命令如下：</p>
 <figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">read_aocvm <span class="variable">$file_name</span></span><br></pre></td></tr></table></figure>
 
 <p>而除了这种方式之外，我们还有另外一种选择：将POCV的内容集成到类似于liberty文件中，如下图所示：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-3.jpg" class="">
 
-<p><strong>Slew-Load Based LVF</strong></p>
+<p><em><strong>Slew-Load Based LVF</strong></em></p>
 <p>我们可以看出来，这种形式很像liberty文件中的delay查表。在这里，POCV的coefficient同样是一个基于slew-load的表格。同时，LVF中也可以是基于distance的查表：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-4.jpg" class="">
 
-<p><strong>Distance Based LVF</strong></p>
+<p><em><strong>Distance Based LVF</strong></em></p>
 <p>需要注意的是，在使用LVF的时候就不能通过<code>read_aocvm</code>读取专用的POCV文本。在PrimeTime中我们也可以通过如下方式report POCV的结果：</p>
 <img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-5.jpg" class="">
 
-<p><strong>Report POCV Analysis</strong></p>
+<p><em><strong>Report POCV Analysis</strong></em></p>
 
       </div>
       
