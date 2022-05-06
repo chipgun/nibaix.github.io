@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="We grow when we confront challenge and glow when we conquer it."/><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
-<link rel="canonical" href="http://blog.nibaix.com/"/>
+<meta name="description" content="PrimeTime and Timing Derate"/><meta name="keywords" content="ocv, synopsys, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/05/07/PrimeTime-and-OCV/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
@@ -23,7 +23,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
 </script>
 
-    <title>nibaix's digital footprints</title>
+    <title>PrimeTime and Timing Derate - nibaix's digital footprints</title>
   <meta name="generator" content="Hexo 6.1.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -90,9 +90,9 @@
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content"><section id="posts" class="posts"><article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/07/PrimeTime-and-OCV/">PrimeTime and Timing Derate</a>
+      <h1 class="post-title">PrimeTime and Timing Derate
         </h1>
 
       <div class="post-meta">
@@ -198,348 +198,21 @@
 <p><strong>POCV analysis with xtalk:</strong> POCV analysis is only applied on non-SI cell delay. However, POCV can indirectly change crosstalk delta delay due to the difference in timing window alignment.</p>
 <p><strong>POCV characterization</strong>: POCV data can be generated via Synopsys SiliconSmart too, It can generate sigma for use in LVF, or coeff for use in pocv side file. distance based derating in sidefile can’t be generated via any tool, and is generated via silicon measurements</p>
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/">What Is OCV/AOCV/POCV/SOCV/LVF?</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-06
-        </span><span class="post-category">
-            <a href="/categories/Semiconductor/">Semiconductor</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>芯片在实际生产中，同一片晶圆上的不同区域的芯片，因为各种外部条件和生产条件的变化（variation），比如：工艺（Process），电压（Voltage），温度（Temperature）等，可能会产生不同的误差从而导致同一块晶圆上某些区域上的芯片里的晶体管整体速度变快或变慢，因此有了corner的概念。而与此同时，在同一块芯片上的不同区域，也会因为上述因素而有进一步的差异（variation），因此产生了OCV（On Chip Variation）的概念。</p>
-<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-0.jpg" class="">
-
-<p><em><strong>Corner vs. OCV</strong></em></p>
-          <div class="read-more">
-            <a href="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/">上海每日疫情走势2022-5-5</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-06
-        </span><span class="post-category">
-            <a href="/categories/Diary/">Diary</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><img src="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/image-20220505095419109.jpg" class="">
-
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/05/synopsys-computer-platforms-roadmap/">Synopsys Computer Platforms Roadmap</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-05
-        </span><span class="post-category">
-            <a href="/categories/Semiconductor/">Semiconductor</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><table>
-<thead>
-<tr>
-<th align="right"><strong>Foundation</strong></th>
-<th><strong>ROs</strong></th>
-<th><strong>Linux O&#x2F;S Versions</strong></th>
-<th><strong>Windows Platform</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right"><strong>U</strong></td>
-<td>2023.06</td>
-<td>CentOS: 7.3+ RHEL: 7.3+; 8+ SLES: 12-SP4+; 15+</td>
-<td>Windows 10 Windows Server 2016 Windows Server 2019</td>
-</tr>
-<tr>
-<td align="right"><strong>U</strong></td>
-<td>2023.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>U</strong></td>
-<td>2022.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>T</strong></td>
-<td>2022.09</td>
-<td>CentOS: 7.3+ RHEL: 7.3+; 8+ SLES: 12-SP4+; 15+</td>
-<td>Windows 10 Windows Server 2016 Windows Server 2019</td>
-</tr>
-<tr>
-<td align="right"><strong>T</strong></td>
-<td>2022.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>T</strong></td>
-<td>2022.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>S</strong></td>
-<td>2021.12</td>
-<td>CentOS: 7.3+; 8+ RHEL: 7.3+; 8+ SLES: 12-SP4+; 15+</td>
-<td>Windows 10 Windows Server 2016</td>
-</tr>
-<tr>
-<td align="right"><strong>S</strong></td>
-<td>2021.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>S</strong></td>
-<td>2021.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>R</strong></td>
-<td>2021.03</td>
-<td>RHEL 6.6+, 7.x, 8+ CentOS 6.6+, 7.1.1503+, 8+ SLES 12+, 15+</td>
-<td>Windows7, 10Windows Server 2016</td>
-</tr>
-<tr>
-<td align="right"><strong>R</strong></td>
-<td>2020.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>R</strong></td>
-<td>2020.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>Q</strong></td>
-<td>2020.06</td>
-<td>RHEL 6.6+, 7.x, 8+ CentOS 6.6+, 7.1.1503+, 8+ SLES 12+, 15+</td>
-<td>Windows7, 10Windows Server 2008 R2, 2016</td>
-</tr>
-<tr>
-<td align="right"><strong>Q</strong></td>
-<td>2020.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>Q</strong></td>
-<td>2019.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>P</strong></td>
-<td>2019.09</td>
-<td>RHEL 6.6+, 7.x CentOS 6.6+, 7.x SLES 11.4+ and 12.x</td>
-<td>Windows 7, 10Windows Server 2008 R2, 2016</td>
-</tr>
-<tr>
-<td align="right"><strong>P</strong></td>
-<td>2019.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>P</strong></td>
-<td>2019.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>O</strong></td>
-<td>2018.12</td>
-<td>RHEL 6.6+, 7.x CentOS 6.6+, 7.x SLES 11.4 and 12.x</td>
-<td>Windows 7, 10Windows Server 2008 R2, 2016</td>
-</tr>
-<tr>
-<td align="right"><strong>O</strong></td>
-<td>2018.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>O</strong></td>
-<td>2018.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>N</strong></td>
-<td>2018.03</td>
-<td>RHEL 6.6+, 7.x SLES 11.x and 12.x</td>
-<td>Windows 7, 8, 10</td>
-</tr>
-<tr>
-<td align="right"><strong>N</strong></td>
-<td>2017.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>N</strong></td>
-<td>2017.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>M</strong></td>
-<td>2017.06</td>
-<td>RHEL 6.6+, 7.x SLES 11.x and 12.x</td>
-<td>Windows 7, 8, 10</td>
-</tr>
-<tr>
-<td align="right"><strong>M</strong></td>
-<td>2017.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="right"><strong>M</strong></td>
-<td>2016.12</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/04/OCV-evolution/">OCV Evolution</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-04
-        </span><span class="post-category">
-            <a href="/categories/Semiconductor/">Semiconductor</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>EDA (Electronic Design Automation) cell characterization tools have been used extensively to generate models for timing, power and noise at a rapidly growing number of process corners. Today, model variation has become a critical component of cell characterization. Variation can impact circuit timing due to process, voltage, and temperature changes and can lead to timing violations, resulting in a costly re-spin of the design. While global variation is captured by analyzing the design at different process corners, local variation cannot be handled effectively with just the traditional corner-based static timing analysis (STA). As designers try to squeeze every ounce of power-performance-area (PPA), packing millions of transistors into the chip, local variation effects have become more and more prominent. In today’s most advanced nodes at 7nm and below, there is a strong need for innovative methods to reduce pessimism and to provide a better design margining methodology to accurately account for the impact of variation.</p>
-          <div class="read-more">
-            <a href="/2022/05/04/OCV-evolution/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/">上海每日疫情走势2022-5-3</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-04
-        </span><span class="post-category">
-            <a href="/categories/Diary/">Diary</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><img src="/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/image-20220504095419109.png" class="">
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/03/UVM-online-documentation/">UVM Online Documentation</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-03
-        </span><span class="post-category">
-            <a href="/categories/Semiconductor/">Semiconductor</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p><a target="_blank" rel="noopener" href="https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/">https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/</a></p>
-<img src="/2022/05/03/UVM-online-documentation/image-20220503111434904.png" class="">
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/02/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-1/">上海每日疫情走势2022-5-1</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-02
-        </span><span class="post-category">
-            <a href="/categories/Diary/">Diary</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><img src="/2022/05/02/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-1/image-20220502100739352.png" class="">
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/30/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-29/">上海每日疫情走势2022-4-29</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-30
-        </span><span class="post-category">
-            <a href="/categories/Diary/">Diary</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><img src="/2022/04/30/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-29/image-20220430102009072.png" class="">
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/30/calibre-platform-support-overview-and-roadmap/">Calibre Supported Platforms</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-30
-        </span><span class="post-category">
-            <a href="/categories/Semiconductor/">Semiconductor</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h3 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h3><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
-<img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-202204301028.png" class="">
-          <div class="read-more">
-            <a href="/2022/04/30/calibre-platform-support-overview-and-roadmap/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <nav class="pagination"><a class="next" href="/page/2/">
-        <span class="next-text">Next</span>
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/ocv/">ocv</a>
+            <a href="/tags/synopsys/">synopsys</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/">
+        <span class="next-text nav-default">What Is OCV/AOCV/POCV/SOCV/LVF?</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    </nav></section></div></div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
