@@ -92,6 +92,26 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/30/calibre-platform-support-overview-and-roadmap/">Calibre Supported Platforms</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-30
+        </span><span class="post-category">
+            <a href="/categories/Semiconductor/">Semiconductor</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><h3 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h3><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
+<img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-202204301028.png" class="">
+          <div class="read-more">
+            <a href="/2022/04/30/calibre-platform-support-overview-and-roadmap/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/">上海每日疫情走势2022-4-27</a>
         </h1>
 
@@ -304,92 +324,6 @@
           <div class="read-more">
             <a href="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/" class="read-more-link">Read more &raquo;</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/22/AMBA-APB-revisions/">AMBA APB Revisions</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-22
-        </span><span class="post-category">
-            <a href="/categories/Semiconductor/">Semiconductor</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><table>
-<thead>
-<tr>
-<th>APB2</th>
-<th>APB3</th>
-<th>APB4</th>
-<th>Signal Direction</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>PADDR[31:0]</td>
-<td>PADDR[31:0]</td>
-<td>PADDR[31:0]</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><em><strong>PRPOT[2:0]</strong></em></td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td>PSEL</td>
-<td>PSEL</td>
-<td>PSEL</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td>PENABLE</td>
-<td>PENABLE</td>
-<td>PENABLE</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td>PWRITE</td>
-<td>PWRITE</td>
-<td>PWRITE</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td>PWDATA[31:0]</td>
-<td>PWDATA[31:0]</td>
-<td>PWDATA[31:0]</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><em><strong>PSTRB[3:0]</strong></em></td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>PREADY</strong></td>
-<td><strong>PREADY</strong></td>
-<td>SoMi</td>
-</tr>
-<tr>
-<td>PRDATA[31:0]</td>
-<td>PRDATA[31:0]</td>
-<td>PRDATA[31:0]</td>
-<td>SoMi</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>PSLVERR</strong></td>
-<td><strong>PSLVERR</strong></td>
-<td>SoMi</td>
-</tr>
-</tbody></table>
-
         </div></article>
       <nav class="pagination"><a class="prev" href="/">
         <i class="iconfont icon-left"></i>

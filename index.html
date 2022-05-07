@@ -92,6 +92,43 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/05/07/PrimeTime-PX-flow/">PrimeTime-PX Flow</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-05-07
+        </span><span class="post-category">
+            <a href="/categories/Semiconductor/">Semiconductor</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p><strong>PT-PX:</strong></p>
+<p>PT-PX is PT with power analysis. It’s a tool within PT (requires separate license of PT-PX). PT-PX combines simulation time window to report power within a window.</p>
+<p><strong>Steps:</strong> Following are the steps to invoke PT-SI:</p>
+<p><strong>0. invoke pt_shell normally</strong><br><code>pt_shell-2012.12-SP3 -f scripts/run_power.tcl |tee logs/run_power.log</code> &#x3D;&gt; can be invoked in gui mode too.</p>
+<p>run_power.tcl has following cmds:<br><strong>1. set library, read gate level verilog netlist and spef file</strong> &#x3D;&gt; same as in normal PT flow. pwr is calc for chosen PVT corner.</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> search_path <span class="string">&quot;$search_path /db/pdkoa/1533e035/current/diglib/pml48h/synopsys/bin&quot;</span></span><br><span class="line"><span class="keyword">set</span> target_library PML48H_W_85_3_CORE.db</span><br><span class="line"><span class="keyword">set</span> link_library &#123;* PML48H_W_85_3_CORE.db&#125;</span><br><span class="line"></span><br><span class="line">read_verilog /db/ATAGO/.../FinalFiles/digtop_final_route.v =&gt; <span class="keyword">read</span> final routed netlist</span><br><span class="line">current_design digtop</span><br><span class="line">link</span><br><span class="line"></span><br><span class="line">read_parasitics /db/ATAGO/.../FinalFiles/digtop_final_route_max.spef =&gt; <span class="keyword">read</span> max spef <span class="keyword">file</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. set power analysis so that PTPX license is invoked</strong></p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> power_enable_analysis true</span><br><span class="line"><span class="keyword">set</span> power_analysis_mode averaged</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. Read VCD file from one of the simulation</strong> (it needs to be gate level VCD file with back annotation of parasitics)</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read_vcd /sim/ATAGO/.../sim1_max.vcd.gz -strip_path digtop_tb/IDUT/spi_regs -<span class="keyword">time</span> &#123;<span class="number">100489</span> <span class="number">800552</span>&#125; =&gt; strips module of interest so that pwr is reported starting from that module as top level. <span class="keyword">time</span> is in ns.</span><br><span class="line">report_switching_activity &gt; reports/power_swtching.rpt =&gt; to examine tr/sp (see below) and vcd <span class="keyword">file</span> syntax</span><br></pre></td></tr></table></figure>
+<p><strong>4. report power</strong></p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\#check_power -verbose =&gt; prior to analysis, verifies that analysis i/p are valid</span><br><span class="line">\#update_power =&gt; This is needed <span class="keyword">for</span> RTL VCD or when no vcd provided to propagate activity to nets/registers not annotated from RTL VCD <span class="keyword">file</span>.</span><br><span class="line">\#report_switching_activity =&gt; to examine propagated values of tr/sp</span><br><span class="line">\#create_power_waveforms -cycle_accurate =&gt; to show pwr waveform</span><br><span class="line">report_power &gt; ./reports/power_summary.rpt</span><br><span class="line">report_power -hier &gt; ./reports/power_hierarchy.rpt</span><br><span class="line">\#report_power -cell -flat -net -hier -verbose -nosplit &gt; power_detail.rpt</span><br><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Report:</strong> power summary report:</p>
+<p><strong>1. static power:</strong> Cell Leakage power. It’s leakage in the cell from VDD to VSS when cell i&#x2F;p is at 0 or 1 (subthreshold lkg from src to drn since gates never turn off completely). It includes gate lkg also (gate lkg is captured only for i&#x2F;p pins for each transistor, as o&#x2F;p pin will finally connect to i&#x2F;p pin of some other transistor. gate lkg is just the current flowing into the gate when i&#x2F;p of gate is 0 or 1). cell lkg pwr number comes from <em>.lib file. Pwr(lkg)&#x3D;V</em>I(subthreshold_lkg)+V*I(gate_lkg).<br>It has a default lkg pwr number for each cell, as well as different lkg pwr numbers depending on diff i&#x2F;p values. ex:<br>cell (AN210_3V) {<br>cell_leakage_power : 1.731915E+00; &#x3D;&gt; default lkg pwr<br>leakage_power () { &#x3D;&gt; we can have many of these conditions for each cell<br>value : 1.718650E+00; &#x3D;&gt; lkg pwr &#x3D; 1.7pW when A&#x3D;1 and B&#x3D;0. pwr unit defined as pw by “leakage_power_unit : “1pW”;” in .lib file<br>when : “A&amp;!B”;<br>}</p>
+<p><strong>2. dynamic power:</strong> 2 components to this:</p>
+<p><em><strong>A. internal pwr:</strong></em> This includes short ckt pwr when cell o&#x2F;p is switching, as well as pwr due to charging of internal nodes in the cell (due to src&#x2F;drn cap on all o&#x2F;p nodes and gate cap on internal nodes). cell int pwr number comes from <em>.lib file. Pwr(int)&#x3D;Eint</em>Tr where Tr&#x3D;number of toggles&#x2F;time.<br>Just like timing() section, we have internal_power() section for o&#x2F;p pin. It shows int pwr for each combination of i&#x2F;p values (as pwr will change due to short ckt current, drn&#x2F;src cap changing). ex:<br>cell (AN210_3V) {<br>pin (Y) { &#x3D;&gt; pwr is always for o&#x2F;p pin, since i&#x2F;p pin pwr is calcualted separately as switching pwr.<br>internal_power () { &#x3D;&gt; pwr unit is in pJ &#x3D; power unit(pW) * time_unit(s) (it’s energy, not power).<br>related_pin : “A”; &#x3D;&gt; this is when o&#x2F;p changes due to i&#x2F;p pin A changing<br>rise_power (outputpower_cap4_trans5) { … 34.39 .. } &#x3D;&gt; pwr under diff cap load on o&#x2F;p pin, and diff slew on i&#x2F;p pin<br>fall_power (outputpower_cap4_trans5) { … 34.39 .. } &#x3D;&gt; fall_power is when o&#x2F;p pin falls due to pin A rising&#x2F;falling<br>}<br>internal_power () {<br>related_pin : “B”; &#x3D;&gt; this is when o&#x2F;p changes due to i&#x2F;p pin B changing<br>rise_power (outputpower_cap4_trans5) { … 34.39 .. } &#x3D;&gt; rise_power is when o&#x2F;p pin rises due to pin B rising&#x2F;falling<br>fall_power (outputpower_cap4_trans5) { … 40 .. } &#x3D;&gt; 40pJ energy per toggle. Since time is in ns, pwr&#x3D;mw??<br>}<br>}<br>}</p>
+<p><em><strong>B. switching pwr:</strong></em> This is due to charging&#x2F;discharging of all the o&#x2F;p load in design. This includes wire cap and gate cap on i&#x2F;p pins which switch whenever o&#x2F;p pin of any gate switches. Pwr(sw)&#x3D;0.5<em>C</em>V^2*Tr. Tr&#x3D;number of toggles&#x2F;time.</p>
+<p>Total_pwr &#x3D; Pwr(lkg) + Pwr(int) + Pwr(sw) &#x3D; Pwr(lkg) + Eint<em>Tr + 0.5</em>C<em>V^2</em>Tr (Pwr(lkg) and Eint come from.lib).<br>To calc avg pwr, static probability (Sp) is calcualted for all the nodes to be at 1 or 0. This is then used to calc lkg pwr for each cell. Toggle rate is caluclated for each node to calc dynamic pwr.<br>To calc peak pwr, vcd file is required to analyze events. It’s useful for dynamic IR drop. If vcd file not provided, then tool doesn’t know the seq of events. Merely toggle rate doesn’t tell it whether all nodes toggle at same time or not.<br>When VCd file is not provided, default Tr&#x2F;Sp is applied to starting points (PI, black box o&#x2F;p). default Tr&#x2F;Sp can be modified using (power_default_toggle_rate, power_default_static_probability)</p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/05/07/PrimeTime-and-OCV/">PrimeTime and Timing Derate</a>
         </h1>
 
@@ -425,26 +462,6 @@
 
     <div class="post-content"><img src="/2022/04/30/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-29/image-20220430102009072.png" class="">
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/30/calibre-platform-support-overview-and-roadmap/">Calibre Supported Platforms</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-30
-        </span><span class="post-category">
-            <a href="/categories/Semiconductor/">Semiconductor</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h3 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h3><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
-<img src="/2022/04/30/calibre-platform-support-overview-and-roadmap/image-202204301028.png" class="">
-          <div class="read-more">
-            <a href="/2022/04/30/calibre-platform-support-overview-and-roadmap/" class="read-more-link">Read more &raquo;</a>
-          </div>
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
         <span class="next-text">Next</span>
