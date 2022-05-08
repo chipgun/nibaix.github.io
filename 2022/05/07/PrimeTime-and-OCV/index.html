@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="PrimeTime and Timing Derate"/><meta name="keywords" content="ocv, synopsys, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<meta name="description" content="PrimeTime and Timing Derate"/><meta name="keywords" content="ocv, synopsys, sta, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
 <link rel="canonical" href="http://blog.nibaix.com/2022/05/07/PrimeTime-and-OCV/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
@@ -104,8 +104,7 @@
         </div>
     </header>
 
-    <div class="post-content"><p><strong>Derate:</strong></p>
-<p>We learned OCV in a few other posts. However running OCV at 2 different PVT corners may not always be practical. For ex, consider the voltage drops seen on a chip due to IR. We may not be able to get lib at that particular voltage corner after accounting for the voltage drop due to IR. Similarly for temperature, we may not be able to lib for that exact temperature after accounting for on chip heating. Also, even if we are able to get these libs, ocv analysis requires running at 2 extreme corners. If we do not want to run analysis at 2 diff corners for ocv, we can run it at 1 corner only by specifying derating. Derating is an alternate approach where we speed up or slow down certain paths so that they can indirectly achieve same results as OCV. Derating is basically applying a certain multiplying factor to each gate delay so that the delay can be scaled up (by having a multiplying factor &gt; 1), or can be scaled down (by having a multiplying factor &lt; 1). The advantage of derate is that each and every gate in design can now be customized to have a particular delay on it. With OCV analysis, we weren’t able to do this, as the flow just chose b&#x2F;w WC and BC lib and applied one or the other to each gate in design. Here, we first choose a nominal voltage, for which we have library available, and then apply derate to achieve effects of Voltage and Temperature variations.</p>
+    <div class="post-content"><p>We learned OCV in a few other posts. However running OCV at 2 different PVT corners may not always be practical. For ex, consider the voltage drops seen on a chip due to IR. We may not be able to get lib at that particular voltage corner after accounting for the voltage drop due to IR. Similarly for temperature, we may not be able to lib for that exact temperature after accounting for on chip heating. Also, even if we are able to get these libs, ocv analysis requires running at 2 extreme corners. If we do not want to run analysis at 2 diff corners for ocv, we can run it at 1 corner only by specifying derating. Derating is an alternate approach where we speed up or slow down certain paths so that they can indirectly achieve same results as OCV. Derating is basically applying a certain multiplying factor to each gate delay so that the delay can be scaled up (by having a multiplying factor &gt; 1), or can be scaled down (by having a multiplying factor &lt; 1). The advantage of derate is that each and every gate in design can now be customized to have a particular delay on it. With OCV analysis, we weren’t able to do this, as the flow just chose b&#x2F;w WC and BC lib and applied one or the other to each gate in design. Here, we first choose a nominal voltage, for which we have library available, and then apply derate to achieve effects of Voltage and Temperature variations.</p>
 <span id="more"></span>
 
 <p>There are different kind of derates:</p>
@@ -207,6 +206,7 @@
         <div class="post-tags">
             <a href="/tags/ocv/">ocv</a>
             <a href="/tags/synopsys/">synopsys</a>
+            <a href="/tags/sta/">sta</a>
             </div>
         
         <nav class="post-nav"><a class="prev" href="/2022/05/07/PrimeTime-PX-flow/">
