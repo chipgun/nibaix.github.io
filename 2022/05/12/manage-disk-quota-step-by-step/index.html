@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Manage Disk Quota Step by Step"/><meta name="keywords" content="linux, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/05/12/manage-disk-quota-step-by-step/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Manage Disk Quota Step by Step - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Manage Disk Quota Step by Step
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-05-12
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Enable-Quota"><span class="toc-text">Enable Quota</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Remount-File-System"><span class="toc-text">Remount File System</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-Quota-File"><span class="toc-text">Create Quota File</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-Quota-Policies"><span class="toc-text">Configure Quota Policies</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Configure-Limit-for-User-and-Group"><span class="toc-text">Configure Limit for User and Group</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Configure-Grace-Period"><span class="toc-text">Configure Grace Period</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test-Disk-Quota"><span class="toc-text">Test Disk Quota</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary-important-commands-for-quota-management"><span class="toc-text">Summary: important commands for quota management</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><h2 id="Enable-Quota"><a href="#Enable-Quota" class="headerlink" title="Enable Quota"></a>Enable Quota</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cat</span> /etc/fstab</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># /etc/fstab</span></span><br><span class="line"><span class="comment"># Created by anaconda on Fri Jul 26 19:45:28 2019</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Accessible filesystems, by reference, are maintained under &#x27;/dev/disk&#x27;</span></span><br><span class="line"><span class="comment"># See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">/dev/vg_chipgun0/lv_root		/		ext4	defaults	1 1</span><br><span class="line">UUID=1d4e1b07-4ab2-46d0-989d-95968627ffa0 /boot                   ext4    defaults        1 2</span><br><span class="line">UUID=7738-A39E          /boot/efi               vfat    <span class="built_in">umask</span>=0077,shortname=winnt 0 0</span><br><span class="line">/dev/mapper/vg_chipgun0-lv_swap swap                    swap    defaults        0 0</span><br><span class="line">tmpfs                   /dev/shm                tmpfs   defaults        0 0</span><br><span class="line">devpts                  /dev/pts                devpts  gid=5,mode=620  0 0</span><br><span class="line">sysfs                   /sys                    sysfs   defaults        0 0</span><br><span class="line">proc                    /proc                   proc    defaults        0 0</span><br><span class="line">/t/iso/rhel-server-6.10-x86_64-dvd.iso	/t/iso/loop		iso9660 defaults,ro,loop 0 0</span><br><span class="line">UUID=<span class="string">&quot;4bcb3b77-8b05-416e-8650-dad4cb38f8ca&quot;</span> /p                   xfs    defaults        0 0</span><br><span class="line">UUID=<span class="string">&quot;1298f072-6db9-46a5-8129-89a40d5fc14f&quot;</span> /l                   xfs    defaults        0 0</span><br><span class="line">UUID=<span class="string">&quot;bb8414b8-181f-43ef-a8f4-0e21841ef4a0&quot;</span> /h                   xfs    defaults        0 0</span><br><span class="line">UUID=<span class="string">&quot;90359d7e-0ad8-41f6-83f1-a168e27c11b3&quot;</span> /p/w   xfs  defaults,usrquota,grpquota      1 2</span><br></pre></td></tr></table></figure>
+<p>Looking at the last line of &#x2F;etc&#x2F;fstab above, both <strong>usrquota</strong> and <strong>grpguota</strong> are added in option domain.</p>
+<p>Any changes made in <em>&#x2F;etc&#x2F;fstab</em> file will not apply until next time system reboots. This is also applies on the disk quota options which we have recently added in this file. We have two choices here; either restart the system or remount the associated partition. Wherever possible we should always choose the first option. But in several situations immediate restart is not possible. In that case we can use second option.</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Filed</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UUID&#x3D;””</td>
+<td>What to mount</td>
+<td>Device which we want to mount. We can use device name, UUID and label in this filed to represent the device.</td>
+</tr>
+<tr>
+<td>&#x2F;p&#x2F;w</td>
+<td>Where to mount</td>
+<td>The directory in main Linux File System where we want to mount the device.</td>
+</tr>
+<tr>
+<td>xfs</td>
+<td>File system</td>
+<td>File system type of device.</td>
+</tr>
+<tr>
+<td><strong>defaults,usrquota,grpquota</strong></td>
+<td>Options</td>
+<td>Mount options which control the mount process. To enable user quota add <strong>usrquota</strong> option and to enable group quota add <strong>grpquota</strong> option.</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Dump support</td>
+<td>To enable the dump on this device use 1. Use 0 to disable the dump.</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Automatic check</td>
+<td>Whether this device should be checked while mounting or not. To disable use 0, to enable use 1 (for root partition) or 2 (for all partitions except root partition).</td>
+</tr>
+</tbody></table>
+<h2 id="Remount-File-System"><a href="#Remount-File-System" class="headerlink" title="Remount File System"></a>Remount File System</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% sudo mount -o remount /p/w</span><br><span class="line">% mount | grep /p/w </span><br></pre></td></tr></table></figure>
+
+<h2 id="Create-Quota-File"><a href="#Create-Quota-File" class="headerlink" title="Create Quota File"></a>Create Quota File</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% sudo quotacheck -cug /p/w</span><br><span class="line">% <span class="built_in">ls</span> /p/w/</span><br><span class="line">aquota.group   aquota.user  lost+found/</span><br></pre></td></tr></table></figure>
+
+<p>This command will create necessary files for quota. Let’s understand this command in detail.</p>
+<p><strong>quotacheck</strong> : This command is used to check the quota implementation in partition.</p>
+<p><strong>-c</strong> : This option is used to create the quota files in specified partition.</p>
+<p><strong>-u</strong> : This option is used to check the user quota.</p>
+<p><strong>-g</strong> : This option is used to check the group quota.</p>
+<p>Basically this command will check quota entries in specified partition. If <em>aquota.user</em> and <em>aquota.group</em> files are not available in specified partition, it will create them.</p>
+<p>We need to run above command only once for each partition where we want to configure the disk quota. Once necessary files are created, following command is used to sync the disk quota database table with current disk usages.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% sudo quotacheck -avug</span><br><span class="line">quotacheck: Your kernel probably supports journaled quota but you are not using it. Consider switching to journaled quota to avoid running quotacheck after an clean shutdown.</span><br><span class="line">quotacheck: Scanning /dev/sdb1 [/p/w] <span class="keyword">done</span></span><br><span class="line">quotacheck: Checked 2 directories and 2 files</span><br></pre></td></tr></table></figure>
+
+<p><strong>-a</strong> : This option is used to check all quota enabled partitions.</p>
+<p><strong>-v</strong> : This option is used to print real time updates as command proceeds.</p>
+<p><strong>-u</strong> : This option is used to check user disk quota information.</p>
+<p><strong>-g</strong> : This option is used to check group disk quota information.</p>
+<blockquote>
+<p><strong>aquota.user</strong> and <strong>aquota.group</strong> files are used to store quota configuration values for user and group respectively. Quota database keeps track of disk usage. How much space is allowed to a particular user is configured in <strong>aquota.user</strong> file while how much space has been used by that user is tracked in quota database table. The <strong>aquota.user</strong> and <strong>aquota.group</strong> both are binary files which mean we cannot read or write them directly.</p>
+</blockquote>
+<h2 id="Configure-Quota-Policies"><a href="#Configure-Quota-Policies" class="headerlink" title="Configure Quota Policies"></a>Configure Quota Policies</h2><p>To configure quota policies, we have to define three values; soft limit, hard limit and grace period.</p>
+<p><strong>Soft limit</strong>: - This limit is flexible. User or group is allowed to cross this limit temporary.</p>
+<p><strong>Hard limit</strong>: - This is fixed limit. User or group is not allowed to cross this limit.</p>
+<p><strong>Grace period</strong>: - This is the time period in which user or group is allowed to use additional space beyond the soft limit.</p>
+<p>To understand quota policies practically, let’s create some dummy requirements.</p>
+<table>
+<thead>
+<tr>
+<th>User &#x2F;Group</th>
+<th>Block Size Soft Limit</th>
+<th>Block Size Hard Limit</th>
+<th>Grace period</th>
+<th>Inode Soft Limit</th>
+<th>Inode Hard limit</th>
+<th>Grace period</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>100Mb</td>
+<td>200Mb</td>
+<td>2 Minutes</td>
+<td>10</td>
+<td>10</td>
+<td><strong>Nil</strong></td>
+</tr>
+<tr>
+<td>b</td>
+<td>200Mb</td>
+<td>200Mb</td>
+<td><strong>Nil</strong></td>
+<td>10</td>
+<td>20</td>
+<td>5 hours</td>
+</tr>
+<tr>
+<td>quotatest</td>
+<td>1000Mb</td>
+<td>1500Mb</td>
+<td>1 Day</td>
+<td>100</td>
+<td>150</td>
+<td>5 days</td>
+</tr>
+</tbody></table>
+<p><em>Nil: - If both soft limit and hard limit are same, there is no need to configure this value.</em></p>
+<h3 id="Configure-Limit-for-User-and-Group"><a href="#Configure-Limit-for-User-and-Group" class="headerlink" title="Configure Limit for User and Group"></a>Configure Limit for User and Group</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% sudo edquota -a</span><br></pre></td></tr></table></figure>
+
+<p>Above command will open user quota configuration file.</p>
+<img src="/2022/05/12/manage-disk-quota-step-by-step/ls20-12-edquota-a.jpg" class="">
+
+<p>This file has seven columns</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Filesystem</td>
+<td>Partition where this quota will apply</td>
+</tr>
+<tr>
+<td>2</td>
+<td>blocks</td>
+<td>Number of blocks currently used by this user</td>
+</tr>
+<tr>
+<td>3</td>
+<td>soft</td>
+<td>Soft block size limit for user</td>
+</tr>
+<tr>
+<td>4</td>
+<td>hard</td>
+<td>Hard block size limit for user</td>
+</tr>
+<tr>
+<td>5</td>
+<td>inodes</td>
+<td>Number of inodes currently used by this user</td>
+</tr>
+<tr>
+<td>6</td>
+<td>soft</td>
+<td>Soft inodes limit for user</td>
+</tr>
+<tr>
+<td>7</td>
+<td>hard</td>
+<td>hard inodes limit for user</td>
+</tr>
+</tbody></table>
+<p>Let’s update this file</p>
+<img src="/2022/05/12/manage-disk-quota-step-by-step/ls20-13-edquota-a.jpg" class="">
+
+<p><em><strong>Default block size is 1Kb. (1block &#x3D; 1Kb).</strong></em></p>
+<p>Configure the quota limit for user <strong>b</strong></p>
+<img src="/2022/05/12/manage-disk-quota-step-by-step/ls20-14-edquota-b.jpg" class="">
+
+<p>Group quota is also defined in same manner. By default <strong>edquota</strong> command is used to set quota for users. To set quota for group we have to use <strong>–g</strong> option with this command. Let’s define group quota for group <em>quotatest</em>.</p>
+<img src="/2022/05/12/manage-disk-quota-step-by-step/ls20-15-edquota-group.jpg" class="">
+
+<h3 id="Configure-Grace-Period"><a href="#Configure-Grace-Period" class="headerlink" title="Configure Grace Period"></a>Configure Grace Period</h3><p>By default grace period is set to seven days. It means user or group will be able to use resources (block size or inodes after soft limit) till seven days. After seven days they will be denied to use any additional resources. We can adjust grace period as per our requirement.</p>
+<p>Let’s configure grace period for user <strong>a</strong> and user <strong>b</strong>.</p>
+<img src="/2022/05/12/manage-disk-quota-step-by-step/ls20-17-edquota-t-a.jpg" class="">
+
+<img src="/2022/05/12/manage-disk-quota-step-by-step/ls20-18-grace-perid-user-b.jpg" class="">
+
+<p>Configure grace period for group <strong>quotatest</strong>.</p>
+<img src="/2022/05/12/manage-disk-quota-step-by-step/ls20-19-grace-period-group.jpg" class="">
+
+<blockquote>
+<p>Never put space between value and unit for example “5 days” will be wrong entry, correct entry will be “5days”. A space between value and unit or undefined value will generate <em><strong>edquota cannot read individual grace time from file</strong></em> error message.</p>
+</blockquote>
+<p>Finally enable quota with following command.</p>
+<p><code>quotaon /p/w</code></p>
+<h2 id="Test-Disk-Quota"><a href="#Test-Disk-Quota" class="headerlink" title="Test Disk Quota"></a>Test Disk Quota</h2><p>To verify disk quota setup, we can use following commands.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>quota [user name]</td>
+<td>To view quota uses by user</td>
+</tr>
+<tr>
+<td>quota –g [group name]</td>
+<td>To view quota uses by group</td>
+</tr>
+<tr>
+<td>repquota –a</td>
+<td>To view quota uses by all users and groups</td>
+</tr>
+</tbody></table>
+<h2 id="Summary-important-commands-for-quota-management"><a href="#Summary-important-commands-for-quota-management" class="headerlink" title="Summary: important commands for quota management"></a>Summary: important commands for quota management</h2><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>quotacheck</td>
+<td>This command is used to check quota implementation and update quota database from file system. This command is also used to create aquota.user and aquota.group files, if they are not created manually.</td>
+</tr>
+<tr>
+<td>edquota</td>
+<td>This command is used to configure quota values for user and group.</td>
+</tr>
+<tr>
+<td>quota</td>
+<td>This command is used to view the quota uses for specific user or group.</td>
+</tr>
+<tr>
+<td>repquota</td>
+<td>This command is used to view the quota uses for all users and group.</td>
+</tr>
+<tr>
+<td>quotaoff</td>
+<td>This command is used to turnoff quota temporary.</td>
+</tr>
+<tr>
+<td>quotaon</td>
+<td>This command is used to enable quota again if it is disabled.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2022/05/12/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-11/">
+        <span class="next-text nav-default">上海每日疫情走势2022-5-11</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>
