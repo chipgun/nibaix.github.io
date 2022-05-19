@@ -92,6 +92,24 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/">上海每日疫情走势2022-5-5</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-05-06
+        </span><span class="post-category">
+            <a href="/categories/Diary/">Diary</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><img src="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/image-20220505095419109.jpg" class="">
+
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/05/05/synopsys-computer-platforms-roadmap/">Synopsys Computer Platforms Roadmap</a>
         </h1>
 
@@ -462,27 +480,6 @@
 <td align="left">The last argument of the previous command.</td>
 </tr>
 </tbody></table>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/26/get-strings-within-current-commandline/">Get Strings Within Commandline</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-26
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>I’ve got two methods to get strings or substrings within current Linux shell command-line. For instance, sometimes we want to get the file full path when source it in shell. Here are my ways to do so.</p>
-<ol>
-<li>Use command of <strong>lsof</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `/usr/sbin/lsof -p &amp;&amp; -w | grep -oE <span class="string">&quot;\s+\/.*\Sourced_Filename&quot;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
-<li>Use command of <strong>history</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `<span class="built_in">history</span> 1 | sed -e <span class="string">&#x27;s/^.*source\ //g&#x27;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
-</ol>
 
         </div></article>
       <nav class="pagination"><a class="prev" href="/">
