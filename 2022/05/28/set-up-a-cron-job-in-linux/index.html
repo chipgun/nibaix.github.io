@@ -107,7 +107,7 @@
     <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introdution"><span class="toc-text">Introdution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prerequisites"><span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Crontab-Syntax"><span class="toc-text">Basic Crontab Syntax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Cron-Job-Time-Format"><span class="toc-text">1. Cron Job Time Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Command-to-Execute"><span class="toc-text">2. Command to Execute</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Output-Optional"><span class="toc-text">3. Output (Optional)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Using-Operators-Optional"><span class="toc-text">4. Using Operators (Optional)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-Up-a-Cron-Job"><span class="toc-text">Setting Up a Cron Job</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-Edit-the-crontab-File"><span class="toc-text">How to Edit the crontab File?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Edit-crontab-for-a-Different-User"><span class="toc-text">Edit crontab for a Different User</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cron-Job-Examples"><span class="toc-text">Cron Job Examples</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-Special-Characters"><span class="toc-text">Using Special Characters</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List-Existing-Cron-Jobs"><span class="toc-text">List Existing Cron Jobs</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introdution"><span class="toc-text">Introdution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prerequisites"><span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Crontab-Syntax"><span class="toc-text">Basic Crontab Syntax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Cron-Job-Time-Format"><span class="toc-text">1. Cron Job Time Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Command-to-Execute"><span class="toc-text">2. Command to Execute</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Output-Optional"><span class="toc-text">3. Output (Optional)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Using-Operators-Optional"><span class="toc-text">4. Using Operators (Optional)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-Up-a-Cron-Job"><span class="toc-text">Setting Up a Cron Job</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-How-to-Edit-the-crontab-File"><span class="toc-text">1. How to Edit the crontab File?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Edit-crontab-for-a-Different-User"><span class="toc-text">2. Edit crontab for a Different User</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cron-Job-Examples"><span class="toc-text">Cron Job Examples</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-Special-Characters"><span class="toc-text">Using Special Characters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List-Existing-Cron-Jobs"><span class="toc-text">List Existing Cron Jobs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
     </div>
   </div><div class="post-content"><h2 id="Introdution"><a href="#Introdution" class="headerlink" title="Introdution"></a>Introdution</h2><p>The Cron daemon is a built-in Linux utility that runs processes on your system at a scheduled time. Cron reads the <strong>crontab</strong> (cron tables) for predefined commands and scripts.</p>
 <p>By using a specific syntax, you can configure a <em><strong>cron job</strong></em> to schedule scripts or other commands to run automatically.</p>
@@ -135,10 +135,10 @@
 <table>
 <thead>
 <tr>
-<th><strong>Field</strong></th>
-<th><strong>Possible Values</strong></th>
-<th><strong>Syntax</strong></th>
-<th><strong>Description</strong></th>
+<th>Field</th>
+<th>Possible Values</th>
+<th>Syntax [<em>placeholder</em>]</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -188,13 +188,13 @@
 <li><strong>A forward-slash (&#x2F;)</strong> is used to divide a value into steps. (*&#x2F;2 would be every other value, *&#x2F;3 would be every third, *&#x2F;10 would be every tenth, etc.)</li>
 </ul>
 <h2 id="Setting-Up-a-Cron-Job"><a href="#Setting-Up-a-Cron-Job" class="headerlink" title="Setting Up a Cron Job"></a>Setting Up a Cron Job</h2><p>To configure a cron job, open the crontab with a preferred text editor and input the syntax for the command you want to run.</p>
-<h3 id="How-to-Edit-the-crontab-File"><a href="#How-to-Edit-the-crontab-File" class="headerlink" title="How to Edit the crontab File?"></a>How to Edit the crontab File?</h3><p>To open the crontab configuration file for the current user, enter the following command in your terminal window:</p>
+<h3 id="1-How-to-Edit-the-crontab-File"><a href="#1-How-to-Edit-the-crontab-File" class="headerlink" title="1. How to Edit the crontab File?"></a>1. How to Edit the crontab File?</h3><p>To open the crontab configuration file for the current user, enter the following command in your terminal window:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab –e</span><br></pre></td></tr></table></figure>
 
 <p>You can add any number of scheduled tasks, one per line.</p>
 <p>Once you have finished adding tasks, <strong>save the file</strong> and exit. The cron daemon will read and execute the instructions provided.</p>
 <p>Remember, Cron does not need to be restarted to apply changes.</p>
-<h3 id="Edit-crontab-for-a-Different-User"><a href="#Edit-crontab-for-a-Different-User" class="headerlink" title="Edit crontab for a Different User"></a>Edit crontab for a Different User</h3><p>To edit the crontab for a another user, enter the following command:</p>
+<h3 id="2-Edit-crontab-for-a-Different-User"><a href="#2-Edit-crontab-for-a-Different-User" class="headerlink" title="2. Edit crontab for a Different User"></a>2. Edit crontab for a Different User</h3><p>To edit the crontab for a another user, enter the following command:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab –u other_username –e</span><br></pre></td></tr></table></figure>
 
 <h2 id="Cron-Job-Examples"><a href="#Cron-Job-Examples" class="headerlink" title="Cron Job Examples"></a>Cron Job Examples</h2><p>When specifying jobs, use the asterisk to specify all values. Putting a value in one of the fields only runs the command on that value. For example:</p>
@@ -248,7 +248,7 @@
 <td>0 0 * * 6 &#x2F;root&#x2F;backup.sh</td>
 </tr>
 </tbody></table>
-<h3 id="Using-Special-Characters"><a href="#Using-Special-Characters" class="headerlink" title="Using Special Characters"></a>Using Special Characters</h3><p>You can use the slash to divide a time string into steps. To run a backup every 15 minutes:</p>
+<h2 id="Using-Special-Characters"><a href="#Using-Special-Characters" class="headerlink" title="Using Special Characters"></a>Using Special Characters</h2><p>You can use the slash to divide a time string into steps. To run a backup every 15 minutes:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/15 * * * *</span><br></pre></td></tr></table></figure>
 
 <p>The <strong><code>\*</code></strong> means all values, and the <strong><code>/15</code></strong> counts and repeats every 15th minute.</p>
@@ -267,8 +267,7 @@
 <h2 id="List-Existing-Cron-Jobs"><a href="#List-Existing-Cron-Jobs" class="headerlink" title="List Existing Cron Jobs"></a>List Existing Cron Jobs</h2><p>You can <a target="_blank" rel="noopener" href="https://phoenixnap.com/kb/how-to-list-display-view-all-cron-jobs-linux">list all cron jobs on your system</a> without opening the crontab configuration file. Type in the following command in a terminal window:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab –l</span><br></pre></td></tr></table></figure>
 
-<p>Conclusion</p>
-<p>You now have a good understanding of how to use <strong><code>cron</code></strong> to schedule tasks in Linux. Use the examples presented in this tutorial to <strong>create and schedule cron jobs</strong> on your system. Over time, expand the tasks by using special characters to automate most of your mundane tasks.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>You now have a good understanding of how to use <strong><code>cron</code></strong> to schedule tasks in Linux. Use the examples presented in this tutorial to <strong>create and schedule cron jobs</strong> on your system. Over time, expand the tasks by using special characters to automate most of your mundane tasks.</p>
 
       </div>
       
