@@ -253,7 +253,7 @@
 <h2 id="Using-Special-Characters"><a href="#Using-Special-Characters" class="headerlink" title="Using Special Characters"></a>Using Special Characters</h2><p>You can use the slash to divide a time string into steps. To run a backup every 15 minutes:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/15 * * * *</span><br></pre></td></tr></table></figure>
 
-<p>The <strong><code>\*</code></strong> means all values, and the <strong><code>/15</code></strong> counts and repeats every 15th minute.</p>
+<p>The <strong><code>*</code></strong> means all values, and the <strong><code>/15</code></strong> counts and repeats every 15th minute.</p>
 <p>Use the dash character to specify a range. To run the code every weekday at 4 am:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 4 * * 1-5 /root/backup.sh</span><br></pre></td></tr></table></figure>
 
