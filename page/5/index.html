@@ -92,6 +92,92 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/22/AMBA-APB-revisions/">AMBA APB Revisions</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-22
+        </span><span class="post-category">
+            <a href="/categories/Semiconductor/">Semiconductor</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><table>
+<thead>
+<tr>
+<th>APB2</th>
+<th>APB3</th>
+<th>APB4</th>
+<th>Signal Direction</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PADDR[31:0]</td>
+<td>PADDR[31:0]</td>
+<td>PADDR[31:0]</td>
+<td>MoSi</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><em><strong>PRPOT[2:0]</strong></em></td>
+<td>MoSi</td>
+</tr>
+<tr>
+<td>PSEL</td>
+<td>PSEL</td>
+<td>PSEL</td>
+<td>MoSi</td>
+</tr>
+<tr>
+<td>PENABLE</td>
+<td>PENABLE</td>
+<td>PENABLE</td>
+<td>MoSi</td>
+</tr>
+<tr>
+<td>PWRITE</td>
+<td>PWRITE</td>
+<td>PWRITE</td>
+<td>MoSi</td>
+</tr>
+<tr>
+<td>PWDATA[31:0]</td>
+<td>PWDATA[31:0]</td>
+<td>PWDATA[31:0]</td>
+<td>MoSi</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><em><strong>PSTRB[3:0]</strong></em></td>
+<td>MoSi</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>PREADY</strong></td>
+<td><strong>PREADY</strong></td>
+<td>SoMi</td>
+</tr>
+<tr>
+<td>PRDATA[31:0]</td>
+<td>PRDATA[31:0]</td>
+<td>PRDATA[31:0]</td>
+<td>SoMi</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>PSLVERR</strong></td>
+<td><strong>PSLVERR</strong></td>
+<td>SoMi</td>
+</tr>
+</tbody></table>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/04/20/add-a-new-disk-in-linux-with-parted/">Add a New Disk in Linux With Parted</a>
         </h1>
 
@@ -276,25 +362,6 @@
 </ol>
           <div class="read-more">
             <a href="/2022/04/13/spyglass-constraint-convert-from-SDC-to-SGDC/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/12/symbolic-links-in-windows/">Symbolic Links in Windows</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-12
-        </span></div>
-    </header>
-
-    <div class="post-content"><p><strong>Create Symbolic Link to File in CMD Prompt</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink <span class="string">&quot;Link&quot;</span> <span class="string">&quot;Source_Target&quot;</span></span><br></pre></td></tr></table></figure>
-<p><strong>Create Symbolic Link to Directory in CMD Prompt</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /d <span class="string">&quot;Link&quot;</span> <span class="string">&quot;Source_Target&quot;</span></span><br></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2022/04/12/symbolic-links-in-windows/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/4/">
