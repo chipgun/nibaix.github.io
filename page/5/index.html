@@ -92,6 +92,27 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/">Expand Tab in Emacs-Verilog Auto Code</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-25
+        </span><span class="post-category">
+            <a href="/categories/Semiconductor/">Semiconductor</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
+<p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below. Yeah, it’s done and enjoy! </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(setq-default tab-width 8)</span><br><span class="line">(setq-default indent-tabs-mode nil)</span><br></pre></td></tr></table></figure>
+
+<p>Check out everything about Emacs-verilog at <a target="_blank" rel="noopener" href="https://veripool.org/verilog-mode/">https://veripool.org/verilog-mode/</a>.</p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/">上海每日疫情走势2022-4-23</a>
         </h1>
 
@@ -326,26 +347,6 @@
 <p><strong>Start vsftpd service</strong><br><code># systemctl start vsftpd.service</code></p>
           <div class="read-more">
             <a href="/2022/04/19/install-and-configure-vsftpd-server-in-RHEL7/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/">Install and Configure VNC Server in RHEL7</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-19
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p><strong>Make sure the desktop is installed</strong><br><code># yum groupinstall &quot;GNOME Desktop&quot;</code></p>
-<p><strong>Install TigerVNC and other dependency</strong><br><code># yum install tigervnc-server xorg-x11-fonts-Type1</code></p>
-          <div class="read-more">
-            <a href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/4/">
