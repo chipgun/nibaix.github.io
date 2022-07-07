@@ -101,11 +101,12 @@
         </span></div>
     </header>
 
-    <div class="post-content"><p>Linux—禁止用户SSH登录方法总结</p>
-<p>一、禁止用户登录</p>
+    <div class="post-content"><p>一、禁止用户登录</p>
 <p>1、修改用户配置文件&#x2F;etc&#x2F;shadow<br>    将第二栏设置为“<em>”，如下。那么该用户就无法登录。但是使用这种方式会导致该用户的密码丢失，也就是当你再次允许他登录的时候，你还得让他重新设置密码。（再次启用这个帐号的方法是把“</em>”去掉就可以了）<br>    如：<code>tom:\*:14245:0:99999:7:::</code></p>
 <p>2、使用命令usermod<br>    这个方式简单又实用，而且没有（1）中的副作用。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">usermod -L tom<span class="comment">##Lock 帐号tom</span></span><br><span class="line">usermod -U tom<span class="comment">##Unlock 帐号tom</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <p>3、通过修改shell类型<br>    这种方式会更加人性化一点，因为你不仅可以禁止用户登录，还可以告诉他你这么做的原因。如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">chsh tom-s /sbin/nologin #将用户tom的shell进行更改</span><br><span class="line"><span class="meta prompt_"> </span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##############</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">#修改/etc/nologin.txt(没有就新建一个)，</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">#在里面添加给被禁止用户的提示</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##############</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">解禁用户的方式就是把shell改为他原有的就可以了。</span></span><br></pre></td></tr></table></figure>
