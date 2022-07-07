@@ -126,7 +126,8 @@
     </header>
 
     <div class="post-content"><p>一、禁止用户登录</p>
-<p>1、修改用户配置文件&#x2F;etc&#x2F;shadow<br>    将第二栏设置为“<em>”，如下。那么该用户就无法登录。但是使用这种方式会导致该用户的密码丢失，也就是当你再次允许他登录的时候，你还得让他重新设置密码。（再次启用这个帐号的方法是把“</em>”去掉就可以了）<br>    如：<code>tom:\*:14245:0:99999:7:::</code></p>
+<p>1、修改用户配置文件&#x2F;etc&#x2F;shadow<br>    将第二栏设置为“*”，如下。那么该用户就无法登录。但是使用这种方式会导致该用户的密码丢失，也就是当你再次允许他登录的时候，你还得让他重新设置密码。（再次启用这个帐号的方法是把“*”去掉就可以了）<br>    如：<code>tom:*:14245:0:99999:7:::</code></p>
+<p>​    为了是原密码不丢失，可以在原密码前面加一个特殊字符，比如”!”。需要再次启用这个用户的方法是删除此感叹号”!”。</p>
 <p>2、使用命令usermod<br>    这个方式简单又实用，而且没有（1）中的副作用。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">usermod -L tom<span class="comment">##Lock 帐号tom</span></span><br><span class="line">usermod -U tom<span class="comment">##Unlock 帐号tom</span></span><br></pre></td></tr></table></figure>
           <div class="read-more">
