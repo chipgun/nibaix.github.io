@@ -92,6 +92,31 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/07/08/synopsys-safefy-aware-solution-for-automotive/">Synopsys Safefy-Aware Solution for Automotive</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-07-08
+        </span><span class="post-category">
+            <a href="/categories/Semiconductor/">Semiconductor</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p><img src="/synopsys-safefy-aware-olution-for-automotive%5Cimage-20220708104331952.jpg" alt="Synopsys Safety-aware Solution for Automotive"></p>
+<ul>
+<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
+<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
+<li>Reduce documentation work with automated work products and supporting evidence</li>
+<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
+<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
+<li>Optimize machine resources with faster native tools that use less memory</li>
+</ul>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/07/07/install-vim9-supporting-python3/">Install Vim9 Supporting Python3</a>
         </h1>
 
@@ -370,25 +395,6 @@
 
 <h3 id="3-Set-the-new-version-by-default"><a href="#3-Set-the-new-version-by-default" class="headerlink" title="3. Set the new version by default"></a>3. Set the new version by default</h3><p>For individual user: <code>alias python &#39;/usr/local/bin/python3.10&#39;</code><br>For system-wide activation: <a href="/2022/06/02/update-alternatives/">update-alternatives</a></p>
 <h3 id="4-Check-the-new-installation"><a href="#4-Check-the-new-installation" class="headerlink" title="4. Check the new installation"></a>4. Check the new installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jim@localhost% python --version</span><br></pre></td></tr></table></figure>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/06/02/update-alternatives/">Update Alternatives</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-06-02
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>If there are several versions of a tool installed in Redhat. Use command <code>update-alternatives</code> for prioritization.</p>
-<p>For instance with Python, saying Python 2.6, 2.7 and 3.6 versions are installed. With root following bundle of commands activates Python3.6 to be the system-wide default version. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@localhost<span class="comment"># update-alternatives --display python</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/bin/python2.6 1</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/local/bin/python2.7 2</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/local/bin/python3.6 3</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --display python</span></span><br><span class="line">/usr/bin/python2.6 - priority 1</span><br><span class="line">/usr/local/bin/python2.7 - priority 2</span><br><span class="line">/usr/local/bin/python3.6 - priority 3</span><br><span class="line">Current <span class="string">&#x27;best&#x27;</span> version is /usr/local/bin/python3.6.</span><br></pre></td></tr></table></figure>
 
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
