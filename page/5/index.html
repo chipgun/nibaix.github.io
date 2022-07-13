@@ -92,6 +92,27 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/04/26/get-strings-within-current-commandline/">Get Strings Within Commandline</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-26
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>I’ve got two methods to get strings or substrings within current Linux shell command-line. For instance, sometimes we want to get the file full path when source it in shell. Here are my ways to do so.</p>
+<ol>
+<li>Use command of <strong>lsof</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `/usr/sbin/lsof -p &amp;&amp; -w | grep -oE <span class="string">&quot;\s+\/.*\Sourced_Filename&quot;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
+<li>Use command of <strong>history</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `<span class="built_in">history</span> 1 | sed -e <span class="string">&#x27;s/^.*source\ //g&#x27;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/04/26/deploy-github-pages-at-vercel/">Deploy Github Pages at Vercel</a>
         </h1>
 
@@ -328,27 +349,6 @@
     <div class="post-content"><p><em>The <strong>fdisk</strong> disk utility can only be used for disk partition no larger than 2TB.</em></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">% sudo lsblk</span><br><span class="line">% sudo fdisk -l</span><br><span class="line">% sudo fdisk /dev/sdb</span><br><span class="line">% sudo lsblk</span><br><span class="line">% sudo partprobe</span><br><span class="line">% sudo mkfs.xfs /dev/sdb1</span><br><span class="line">% sudo <span class="built_in">mkdir</span> /tools</span><br><span class="line">% sudo mount /dev/sdb1 /tools</span><br><span class="line">% sudo <span class="built_in">df</span> -hT</span><br><span class="line">% sudo blkid</span><br><span class="line">% sudo <span class="built_in">echo</span> <span class="string">&quot;UUID=0f559a31-08b5-47aa-9a60-d9a6594941ad /tools xfs defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br><span class="line">% sudo reboot</span><br></pre></td></tr></table></figure>
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/20/how-to-enable-sudo-for-a-user/">How to Enable Sudo for a User</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-20
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root]<span class="comment"># su -</span></span><br><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
-
-<p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
-          <div class="read-more">
-            <a href="/2022/04/20/how-to-enable-sudo-for-a-user/" class="read-more-link">Read more &raquo;</a>
-          </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/4/">
         <i class="iconfont icon-left"></i>

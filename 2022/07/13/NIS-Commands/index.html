@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="Vim: Generate and Increment Numbers"/><meta name="keywords" content="editor, vim, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
-<link rel="canonical" href="http://blog.nibaix.com/2022/07/08/vim-generate-and-increment-numbers/"/>
+<meta name="description" content="NIS Commands"/><meta name="keywords" content="linux, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/07/13/NIS-Commands/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
@@ -23,7 +23,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
 </script>
 
-    <title>Vim: Generate and Increment Numbers - nibaix's digital footprints</title>
+    <title>NIS Commands - nibaix's digital footprints</title>
   <meta name="generator" content="Hexo 6.1.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -92,47 +92,30 @@
         <div class="content-wrapper">
           <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">Vim: Generate and Increment Numbers
+      <h1 class="post-title">NIS Commands
         </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2022-07-08
+          2022-07-13
         </span><span class="post-category">
-            <a href="/categories/Program/">Program</a>
+            <a href="/categories/Linux/">Linux</a>
             </span>
         </div>
     </header>
 
-    <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Increment-Numbers"><span class="toc-text">Increment Numbers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-Numbers"><span class="toc-text">Generate Numbers</span></a></li></ol>
-    </div>
-  </div><div class="post-content"><h3 id="Increment-Numbers"><a href="#Increment-Numbers" class="headerlink" title="Increment Numbers"></a>Increment Numbers</h3><ol>
-<li>C-v to enter visual mode</li>
-<li>Move the cursor up&#x2F;down to select columns</li>
-<li>g + C-a</li>
-</ol>
-<h3 id="Generate-Numbers"><a href="#Generate-Numbers" class="headerlink" title="Generate Numbers"></a>Generate Numbers</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="keyword">put</span>=<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5</span>) # Generate <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span> by column</span><br><span class="line">:<span class="keyword">put</span>=<span class="built_in">range</span>(<span class="number">10</span>,<span class="number">2</span>,-<span class="number">2</span>) # Generate <span class="number">10</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">2</span> by column</span><br><span class="line">:<span class="keyword">put</span>=<span class="built_in">range</span>(<span class="built_in">line</span>(<span class="string">&#x27;.&#x27;</span>),<span class="number">100</span>) # Generate numbers from current <span class="built_in">line</span> <span class="keyword">number</span> <span class="keyword">to</span> <span class="number">100</span></span><br></pre></td></tr></table></figure>
-
-<p><em><strong>This feature is supported only in Vim 8.0 or higher versions.</strong></em></p>
+    <div class="post-content"><p><code>/usr/lib64/yp/ypinit -m</code></p>
+<p><code>sudo service ypbind status/start/stop/restart/reload</code></p>
 
       </div>
       
       <footer class="post-footer">
         <div class="post-tags">
-            <a href="/tags/editor/">editor</a>
-            <a href="/tags/vim/">vim</a>
+            <a href="/tags/linux/">linux</a>
             </div>
         
-        <nav class="post-nav"><a class="prev" href="/2022/07/13/NIS-Commands/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">NIS Commands</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
-    <a class="next" href="/2022/07/08/synopsys-safety-aware-solution-for-automotive/">
-        <span class="next-text nav-default">Synopsys Safety-Aware Solution for Automotive</span>
+        <nav class="post-nav"><a class="next" href="/2022/07/08/vim-generate-and-increment-numbers/">
+        <span class="next-text nav-default">Vim: Generate and Increment Numbers</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
