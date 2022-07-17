@@ -103,8 +103,8 @@
 
     <div class="post-content"><p><strong>1. Win+R -&gt; regedit</strong></p>
 <p><strong>2. Goto</strong><br>Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions</p>
-<p><strong>3. Change the value of ThisPCPolicy from “Show” to “Hide” in following domains</strong><br><em><strong>Pictures:</strong></em> {0ddd015d-b06c-45d5-8c4c-f59713854639}\PropertyBag<br><em><strong>Videos:</strong></em> {35286a68-3c57-41a1-bbb1-0eae73d76c95}\PropertyBag<br><em><strong>Downloads:</strong></em> {7d83ee9b-2244-4e70-b1f5-5393042af1e4}\PropertyBag<br><em><strong>Music:</strong></em> {a0c69a99-21c8-4671-8703-7934162fcf1d}\PropertyBag<br><em><strong>Documents:</strong></em> {f42ee2d3-909f-4907-8871-4c22fc0bf756}\PropertyBag</p>
-<p><strong>4. Delete the following domain</strong><br><em><strong>Desktop:</strong></em> {B4BFCC3A-DB2C-424C-B029-7FE99A87C641}</p>
+<p><strong>3. Change the string value of “ThisPCPolicy” from “Show” to “Hide” in following domains</strong><br><em><strong>Pictures:</strong></em> {0ddd015d-b06c-45d5-8c4c-f59713854639}\PropertyBag<br><em><strong>Videos:</strong></em> {35286a68-3c57-41a1-bbb1-0eae73d76c95}\PropertyBag<br><em><strong>Downloads:</strong></em> {7d83ee9b-2244-4e70-b1f5-5393042af1e4}\PropertyBag<br><em><strong>Music:</strong></em> {a0c69a99-21c8-4671-8703-7934162fcf1d}\PropertyBag<br><em><strong>Documents:</strong></em> {f42ee2d3-909f-4907-8871-4c22fc0bf756}\PropertyBag</p>
+<p><strong>4. New a string value of ThisPCPolicy &#x3D; “Hide” in following domain</strong><br><em><strong>Desktop:</strong></em> {B4BFCC3A-DB2C-424C-B029-7FE99A87C641}\PropertyBag</p>
 
       </div>
       
