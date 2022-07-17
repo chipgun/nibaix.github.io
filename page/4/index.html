@@ -92,6 +92,25 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/05/07/PrimeTime-and-OCV/">PrimeTime and Timing Derate</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-05-07
+        </span><span class="post-category">
+            <a href="/categories/Semiconductor/">Semiconductor</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>We learned OCV in a few other posts. However running OCV at 2 different PVT corners may not always be practical. For ex, consider the voltage drops seen on a chip due to IR. We may not be able to get lib at that particular voltage corner after accounting for the voltage drop due to IR. Similarly for temperature, we may not be able to lib for that exact temperature after accounting for on chip heating. Also, even if we are able to get these libs, ocv analysis requires running at 2 extreme corners. If we do not want to run analysis at 2 diff corners for ocv, we can run it at 1 corner only by specifying derating. Derating is an alternate approach where we speed up or slow down certain paths so that they can indirectly achieve same results as OCV. Derating is basically applying a certain multiplying factor to each gate delay so that the delay can be scaled up (by having a multiplying factor &gt; 1), or can be scaled down (by having a multiplying factor &lt; 1). The advantage of derate is that each and every gate in design can now be customized to have a particular delay on it. With OCV analysis, we weren’t able to do this, as the flow just chose b&#x2F;w WC and BC lib and applied one or the other to each gate in design. Here, we first choose a nominal voltage, for which we have library available, and then apply derate to achieve effects of Voltage and Temperature variations.</p>
+          <div class="read-more">
+            <a href="/2022/05/07/PrimeTime-and-OCV/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/">What Is OCV/AOCV/POCV/SOCV/LVF?</a>
         </h1>
 
@@ -425,23 +444,6 @@
           <div class="read-more">
             <a href="/2022/04/30/calibre-platform-support-overview-and-roadmap/" class="read-more-link">Read more &raquo;</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/">上海每日疫情走势2022-4-27</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-04-28
-        </span><span class="post-category">
-            <a href="/categories/Diary/">Diary</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><img src="/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/image-20220428084632964.png" class="">
-
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/3/">
         <i class="iconfont icon-left"></i>

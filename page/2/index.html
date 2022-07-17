@@ -92,6 +92,23 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/06/14/hide-unused-quick-links-in-windows/">Hide Unused Quick Links in Windows</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-06-14
+        </span></div>
+    </header>
+
+    <div class="post-content"><p><strong>1. Win+R -&gt; regedit</strong></p>
+<p><strong>2. Goto</strong><br>Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions</p>
+<p><strong>3. Change the value of ThisPCPolicy from “Show” to “Hide” in following domains</strong><br><em><strong>Pictures:</strong></em> {0ddd015d-b06c-45d5-8c4c-f59713854639}\PropertyBag<br><em><strong>Videos:</strong></em> {35286a68-3c57-41a1-bbb1-0eae73d76c95}\PropertyBag<br><em><strong>Downloads:</strong></em> {7d83ee9b-2244-4e70-b1f5-5393042af1e4}\PropertyBag<br><em><strong>Music:</strong></em> {a0c69a99-21c8-4671-8703-7934162fcf1d}\PropertyBag<br><em><strong>Documents:</strong></em> {f42ee2d3-909f-4907-8871-4c22fc0bf756}\PropertyBag</p>
+<p><strong>4. Delete the following domain</strong><br><em><strong>Desktop:</strong></em> {B4BFCC3A-DB2C-424C-B029-7FE99A87C641}</p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/06/10/how-many-birds-do-cats-kill-every-year/">How Many Birds Do Cats Kill Every Year</a>
         </h1>
 
@@ -325,76 +342,6 @@
           <div class="read-more">
             <a href="/2022/05/28/set-up-a-cron-job-in-linux/" class="read-more-link">Read more &raquo;</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/">上海每日疫情走势2022-5-23</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-24
-        </span><span class="post-category">
-            <a href="/categories/Diary/">Diary</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p><strong>2022&#x2F;5&#x2F;23</strong></p>
-<table>
-<thead>
-<tr>
-<th align="right">区县</th>
-<th align="center">浦东</th>
-<th align="center">黄浦</th>
-<th align="center">徐汇</th>
-<th align="center">长宁</th>
-<th align="center">静安</th>
-<th align="center">普陀</th>
-<th align="center">虹口</th>
-<th align="center">杨浦</th>
-<th align="center">闵行</th>
-<th align="center">宝山</th>
-<th align="center">嘉定</th>
-<th align="center">松江</th>
-<th align="center">青浦</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">新增确诊</td>
-<td align="center">5</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">1</td>
-<td align="center">6</td>
-<td align="center">2</td>
-<td align="center">0</td>
-<td align="center">3</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="right">新增无症状</td>
-<td align="center">53</td>
-<td align="center">29</td>
-<td align="center">26</td>
-<td align="center">14</td>
-<td align="center">50</td>
-<td align="center">11</td>
-<td align="center">82</td>
-<td align="center">108</td>
-<td align="center">13</td>
-<td align="center">35</td>
-<td align="center">1</td>
-<td align="center">7</td>
-<td align="center">3</td>
-</tr>
-</tbody></table>
-<img src="/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/image_20220523.jpg" class="">
-
         </div></article>
       <nav class="pagination"><a class="prev" href="/">
         <i class="iconfont icon-left"></i>
