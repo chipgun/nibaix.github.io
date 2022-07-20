@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="We grow when we confront challenge and glow when we conquer it."/><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
-<link rel="canonical" href="http://blog.nibaix.com/archives/2022/03/"/>
+<meta name="description" content="Coloring the C-Shell Prompt"/><meta name="keywords" content="linux, csh, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/07/20/Coloring-the-C-shell-Prompt/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
@@ -23,8 +23,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
 </script>
 
-    <title>Archives - nibaix's digital footprints
-  </title>
+    <title>Coloring the C-Shell Prompt - nibaix's digital footprints</title>
   <meta name="generator" content="Hexo 6.1.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -91,65 +90,37 @@
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content"><section id="archive" class="archive"><div class="archive-title">
-          <span class="archive-post-counter">
-            78 Posts In Total
-          </span>
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Coloring the C-Shell Prompt
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-07-20
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
         </div>
-      <div class="collection-title">
-            <h2 class="archive-year">2022</h2>
-          </div>
-        <div class="archive-post">
-        <span class="archive-post-time">
-          03-31
-          </span>
-        <span class="archive-post-title">
-          <a href="/2022/03/31/emacs-verilog-mode/" class="archive-post-link">
-            Emacs Verilog-Mode
-          </a>
-        </span>
+    </header>
+
+    <div class="post-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">set   black = &quot;%&#123;\033[0;30m%&#125;&quot;</span><br><span class="line">set  Bblack = &quot;%&#123;\033[B;30m%&#125;&quot;</span><br><span class="line">set     red = &quot;%&#123;\033[0;31m%&#125;&quot;</span><br><span class="line">set    Bred = &quot;%&#123;\033[1;31m%&#125;&quot;</span><br><span class="line">set   green = &quot;%&#123;\033[0;32m%&#125;&quot;</span><br><span class="line">set  Bgreen = &quot;%&#123;\033[1;32m%&#125;&quot;</span><br><span class="line">set  yellow = &quot;%&#123;\033[0;33m%&#125;&quot;</span><br><span class="line">set Byellow = &quot;%&#123;\033[1;33m%&#125;&quot;</span><br><span class="line">set    blue = &quot;%&#123;\033[0;34m%&#125;&quot;</span><br><span class="line">set   Bblue = &quot;%&#123;\033[1;34m%&#125;&quot;</span><br><span class="line">set  purple = &quot;%&#123;\033[0;35m%&#125;&quot;</span><br><span class="line">set Bpurple = &quot;%&#123;\033[1;35m%&#125;&quot;</span><br><span class="line">set    cyan = &quot;%&#123;\033[0;36m%&#125;&quot;</span><br><span class="line">set   Bcyan = &quot;%&#123;\033[1;36m%&#125;&quot;</span><br><span class="line">set   white = &quot;%&#123;\033[0;37m%&#125;&quot;</span><br><span class="line">set  Bwhite = &quot;%&#123;\033[1;37m%&#125;&quot;</span><br><span class="line">set     end = &quot;%&#123;\033[0m%&#125;&quot;</span><br><span class="line"></span><br><span class="line">alias setprompt &#x27;set prompt = &quot;\n$&#123;cyan&#125;%~\n$&#123;Bpurple&#125;%n@%m$&#123;Bwhite&#125;[`id -ng`]$&#123;end&#125; &quot;&#x27;</span><br><span class="line">alias cd &#x27;chdir \!* &amp;&amp; setprompt&#x27;</span><br><span class="line">setprompt</span><br></pre></td></tr></table></figure>
+
       </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          03-31
-          </span>
-        <span class="archive-post-title">
-          <a href="/2022/03/31/perl-cheat-sheet/" class="archive-post-link">
-            Perl Cheat Sheet
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          03-31
-          </span>
-        <span class="archive-post-title">
-          <a href="/2022/03/31/ascii-table/" class="archive-post-link">
-            ASCII Table
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          03-30
-          </span>
-        <span class="archive-post-title">
-          <a href="/2022/03/30/markdown-cheat-sheet/" class="archive-post-link">
-            Markdown Cheat Sheet
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          03-30
-          </span>
-        <span class="archive-post-title">
-          <a href="/2022/03/30/hello-world/" class="archive-post-link">
-            Hello World
-          </a>
-        </span>
-      </div>
-    </section><nav class="pagination"></nav></div></div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            <a href="/tags/csh/">csh</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2022/07/17/Disable-Clipboard-in-NoMachine/">
+        <span class="next-text nav-default">Disable Clipboard in NoMachine</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
