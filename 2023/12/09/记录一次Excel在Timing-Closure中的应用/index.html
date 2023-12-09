@@ -109,14 +109,12 @@
 <hr>
 <p>这次timing closure的难点在于design有5个同步异频的clock。所谓同步异频是指这5个clock的source  clock相同，但是经过了不同的clock divider, clock gating, 以及clock mux。clock  structure简化为如下图所示：</p>
 <ul>
-<li><p>Generated clock从PLL出来就分叉：OCV严重</p>
-</li>
-<li><p>PLL clock频率巨高：&gt;1000MHz</p>
-</li>
-<li><p>三个clock group两两之间都有talk：CLK0, CLK1_0&#x2F;CLK1_1&#x2F;CLK1_2, CLK2。</p>
-</li>
+<li>Generated clock从PLL出来就分叉：OCV严重</li>
+<li>PLL clock频率巨高：&gt;1000MHz</li>
+<li>三个clock group两两之间都有talk：CLK0, CLK1_0&#x2F;CLK1_1&#x2F;CLK1_2, CLK2。</li>
 </ul>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaialObscWakDoKYeZCgKYyQDaoMu4SrYV1pchLvolkTWjVT3xiaO2whAyhQPXGksKfb6iaRicicGgiaCh23cX8qsTHmQ/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<img src="/2023/12/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Excel%E5%9C%A8Timing-Closure%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/1.jpg" class="">
+
 <p>CTS clock skew已经控制得很好了，CTS report global skew小于100ps。但是post-route  timing显示hold time TNS数量巨多，WNS数值巨大，尤其是inter-clock之间问题尤为严峻，而且各个方向上都有。</p>
 <p><strong>【Analysis】</strong></p>
 <hr>
@@ -126,9 +124,11 @@
 <hr>
 <p>那么下面来看看，我是如何利用Excel快速找到调整clock latency的方向和数值的。</p>
 <p>第一步：把clock以及inter-clock的WNS在Excel中以matrix的形式列出来，如下图所示：</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaialObscWakDoKYeZCgKYyQDaoMu4SrYVRv1udt1EZhlGia1Z9gy0KYfIraBDX9Y7DqzfCz96Wvjy6L4oMefEGXg/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<img src="/2023/12/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Excel%E5%9C%A8Timing-Closure%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/2.jpg" class="">
+
 <p>第二步：做”what-if adjustment”，在上表的基础上增加Adjustment行，以及通过调整某个或某几个clock latency后的what-if结果。what-if timing结果是利用<strong>Excel公式</strong>计算所得，如下图所示：</p>
-<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaialObscWakDoKYeZCgKYyQDaoMu4SrYVaLYWJGxzLrnmxicAvN6ibor8Yeg6G84TDk9Pm0tGVxP9vpfqoPwgkK7w/640?wx_fmt=png&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<img src="/2023/12/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Excel%E5%9C%A8Timing-Closure%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/3.jpg" class="">
+
 <p>第三步：反复调整Adjustment的值，直到获得满意的what-if timing结果。通常尽量调到WNS&gt;0，如果无法达到WNS&gt;0，那就使得inter-clock相互之间的WNS尽量balance。</p>
 <p>第四步：在STA中apply上述clock adjustment  value，研究调整后timing结果，考察WNS是否和上表中的what-if结果接近，同时也考察TNS是否满意，如果对STA结果不满意，可以回到第三步对clock latency再次进行调整。</p>
 <p>第五步：在PnR中apply上述clock adjustment value，此时要考验PnR对调整clock delay的经验了。如果结果符合预期就可以进行DMSA了，后面的timing closure flow和本文无关，此处不做赘述。</p>
