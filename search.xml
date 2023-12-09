@@ -12641,6 +12641,8 @@ service messagebus restart;
 <li>PLL clock频率巨高：&gt;1000MHz</li>
 <li>三个clock group两两之间都有talk：CLK0, CLK1_0&#x2F;CLK1_1&#x2F;CLK1_2, CLK2。</li>
 </ul>
+<span id="more"></span>
+
 <img src="/2023/12/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Excel%E5%9C%A8Timing-Closure%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/1.jpg" class="">
 
 <p>CTS clock skew已经控制得很好了，CTS report global skew小于100ps。但是post-route  timing显示hold time TNS数量巨多，WNS数值巨大，尤其是inter-clock之间问题尤为严峻，而且各个方向上都有。</p>
