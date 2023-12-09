@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Special File Permissions of SUID GUID and Sticky Bit"/><meta name="keywords" content="linux, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Special File Permissions of SUID GUID and Sticky Bit - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Special File Permissions of SUID GUID and Sticky Bit
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-05-31
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-SUID"><span class="toc-text">What is SUID?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-can-a-normal-user-not-change-the-password-of-other-users"><span class="toc-text">Why can a normal user not change the password of other users?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-set-SUID-bit"><span class="toc-text">How to set SUID bit?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-remove-SUID"><span class="toc-text">How to remove SUID?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Difference-between-small-s-and-capital-S-as-SUID-bit"><span class="toc-text">Difference between small s and capital S as SUID bit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-find-all-files-with-SUID-set"><span class="toc-text">How to find all files with SUID set?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-SGID"><span class="toc-text">What is SGID?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-set-SGID"><span class="toc-text">How to set SGID?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-remove-SGID-bit"><span class="toc-text">How to remove SGID bit?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-find-files-with-SGID-set-in-Linux"><span class="toc-text">How to find files with SGID set in Linux</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-a-Sticky-Bit"><span class="toc-text">What is a Sticky Bit?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-set-the-sticky-bit"><span class="toc-text">How to set the sticky bit?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-remove-the-sticky-bit"><span class="toc-text">How to remove the sticky bit:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-to-find-files-with-sticky-bit-set-in-Linux"><span class="toc-text">How to find files with sticky bit set in Linux</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172749073.jpg" class="">
+
+<span id="more"></span>
+
+<p>You see an s instead of x in the file permissions? Linux has some special file permissions called SUID, GUID and Sticky Bit. Know more about them.</p>
+<p><em>File permissions and ownership are the basic and yet essential security concept in Linux. You probably are already familiar with these terms already. It typically looks like this:</em></p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531171129953.jpg" class="">
+
+<p>Apart from these regular permissions, there are a few special file permissions and not many Linux users are aware of it.</p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531171306909.jpg" class="">
+
+<p>To start talking about of special permissions, I am going to presume that you have some knowledge of the basic file permissions. If not, please <a target="_blank" rel="noopener" href="https://linuxhandbook.com/linux-file-permissions/">read our excellent guide explaining Linux file permission</a>.</p>
+<p>Now I’m gonna show you some special permissions with new letters on Linux file system.</p>
+<p>In this example, the <code>passwd</code> command, responsible to change the password of a user, has the letter <code>s</code> on the same place we expect to see <code>x</code> or <code>-</code>, for user permissions. It’s important to notice that this file belongs to root user and root group.</p>
+<p>With this permission you don’t need to give <code>sudo</code> access to a specific user when you want him to run some root script.</p>
+<h2 id="What-is-SUID"><a href="#What-is-SUID" class="headerlink" title="What is SUID?"></a>What is SUID?</h2><p><em><strong>When the SUID bit is set on an executable file, this means that the file will be executed with the same permissions as the owner of the executable file.</strong></em></p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531171446561.jpg" class="">
+
+<p>Let’s take a practical example. If you look at the binary executable file of the <code>passwd</code> command, it has the SUID bit set.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ <span class="built_in">ls</span> -l /usr/bin/passwd</span><br><span class="line">-rwsr-xr-x 1 root root 59640 Mar 22  2019 /usr/bin/passwd</span><br></pre></td></tr></table></figure>
+
+<p>This means that any user running the <code>passwd</code> command will be running it with the same permission as root.</p>
+<p>What’s the benefit? The <code>passwd</code> command needs to edit files like &#x2F;etc&#x2F;passwd, &#x2F;etc&#x2F;shadow to change the password. These files are owned by root and can only be modified by root. But thanks to the setuid flag (SUID bit), a regular user will also be able to modify these files (that are owned by root) and change his&#x2F;her password.</p>
+<p>This is the reason why you can use the <code>passwd</code> command to change your own password despite of the fact that the files this command modifies are owned by root.</p>
+<h3 id="Why-can-a-normal-user-not-change-the-password-of-other-users"><a href="#Why-can-a-normal-user-not-change-the-password-of-other-users" class="headerlink" title="Why can a normal user not change the password of other users?"></a>Why can a normal user not change the password of other users?</h3><p>Note that a normal user can’t change passwords for other users, only for himself&#x2F;herself. But why? If you can run the <code>passwd</code> command as a regular user with the same permissions as root and modify the files like &#x2F;etc&#x2F;passwd, why can you not change the password of other users?</p>
+<p>If you check the code for the <code>passwd</code> command, you’ll find that it checks the UID of the user whose password is being modified with the UID of the user that ran the command. If it doesn’t match and if the command wasn’t run by root, it throws an error.</p>
+<p>The setuid&#x2F;SUID concept is tricky and should be used with utmost cautious otherwise you’ll leave security gaps in your system. It’s an essential security concept and many commands (like <code>ping</code> command) and programs (like <code>sudo</code>) utilize it.</p>
+<p>Now that you understand the concept SUID, let’s see how to set the SUID bit.</p>
+<h3 id="How-to-set-SUID-bit"><a href="#How-to-set-SUID-bit" class="headerlink" title="How to set SUID bit?"></a>How to set SUID bit?</h3><p>I find the symbolic way easier while setting SUID bit. You can use the <code>chmod</code> command in this way:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> u+s file_name</span><br></pre></td></tr></table></figure>
+<p>Here’s an example:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ <span class="built_in">ls</span> -l test.txt</span><br><span class="line">-rwxrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:51 test.txt</span><br><span class="line">linuxhandbook:~$ <span class="built_in">chmod</span> u+s test.txt</span><br><span class="line">linuxhandbook:~$ <span class="built_in">ls</span> -l test.txt</span><br><span class="line">-rwsrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:52 test.txt</span><br></pre></td></tr></table></figure>
+
+<p>You can also use the numeric way. You just need to add a fourth digit to the normal permissions. <strong>The octal number used to set SUID is always 4.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -l test2.txt</span><br><span class="line">-rwxrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:53 test2.txt</span><br><span class="line">linuxhandbook:~$ chmod 4766 test2.txt</span><br><span class="line">linuxhandbook:~$ ls -l test2.txt</span><br><span class="line">-rwsrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:54 test2.txt</span><br></pre></td></tr></table></figure>
+<h3 id="How-to-remove-SUID"><a href="#How-to-remove-SUID" class="headerlink" title="How to remove SUID?"></a>How to remove SUID?</h3><p>You can use either the symbolic mode in <code>chmod</code> command like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u-s test.txt</span><br></pre></td></tr></table></figure>
+
+<p>Or, use the numeric way with 0 instead of 4 with the permissions you want to set:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 0766 test2.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="Difference-between-small-s-and-capital-S-as-SUID-bit"><a href="#Difference-between-small-s-and-capital-S-as-SUID-bit" class="headerlink" title="Difference between small s and capital S as SUID bit"></a>Difference between small s and capital S as SUID bit</h3><p>Remember the definition of SUID? It allows a file to be <em><strong>executed</strong></em> with the same permissions as the owner of the file.</p>
+<p>But what if the file doesn’t have execute bit set in the first place? Like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -l test.txt</span><br><span class="line">-rw-rw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:51 test.txt</span><br></pre></td></tr></table></figure>
+
+<p>If you set the SUID bit, it will show a capital S, not small s:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ chmod u+s test.txt</span><br><span class="line">linuxhandbook:~$ ls -l test.txt</span><br><span class="line">-rwSrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:52 test.txt</span><br></pre></td></tr></table></figure>
+
+<p>The S as SUID flag means there is an error that you should look into. You want the file to be executed with the same permission as the owner but there is no executable permission on the file. Which means that not even the owner is allowed to execute the file and if file cannot be executed, you won’t get the permission as the owner. This fails the entire point of setting the SUID bit.</p>
+<h3 id="How-to-find-all-files-with-SUID-set"><a href="#How-to-find-all-files-with-SUID-set" class="headerlink" title="How to find all files with SUID set?"></a>How to find all files with SUID set?</h3><p>If you want to search files with this permission, use <code>find</code> command in the terminal with option -perm.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -perm /4000</span><br></pre></td></tr></table></figure>
+
+<h2 id="What-is-SGID"><a href="#What-is-SGID" class="headerlink" title="What is SGID?"></a>What is SGID?</h2><p><em><strong>SGID is similar to SUID. With the SGID bit set, any user executing the file will have same permissions as the group owner of the file.</strong></em></p>
+<p>It’s benefit is in handling the directory. When SGID permission is applied to a directory, all sub directories and files created inside this directory will get the same group ownership as main directory (not the group ownership of the user that created the files and directories).</p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172317903.jpg" class="">
+
+<p>Open your terminal and check the permission on the file &#x2F;var&#x2F;local:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld /var/local</span><br><span class="line">drwxrwsr-x 1 root staff 512 Apr 24  2018 /var/local</span><br></pre></td></tr></table></figure>
+
+<p>This folder &#x2F;var&#x2F;local has the letter ‘s’ on the same place you expect to see ‘x’ or ‘-‘ for group permissions.</p>
+<p>A practical example of SGID is with Samba server for sharing files on your local network. It’s guaranteed that all new files will not lose the permissions desired, no matter who created it.</p>
+<h3 id="How-to-set-SGID"><a href="#How-to-set-SGID" class="headerlink" title="How to set SGID?"></a>How to set SGID?</h3><p>You can set the SGID bit in symbolic mode like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod g+s directory_name</span><br></pre></td></tr></table></figure>
+
+<p>Here’s an example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld folder/</span><br><span class="line">drwxrwxr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:32 folder/</span><br><span class="line">linuxhandbook:~$ chmod g+s folder</span><br><span class="line">linuxhandbook:~$ ls -ld folder/</span><br><span class="line">drwxrwsr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:32 folder/</span><br></pre></td></tr></table></figure>
+
+<p>You may also use the numeric way. You just need to add a fourth digit to the normal permissions. <strong>The octal number used to SGID is always 2.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld folder2/</span><br><span class="line">drwxrwxr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:33 folder2/</span><br><span class="line">linuxhandbook:~$ chmod 2775 folder2</span><br><span class="line">linuxhandbook:~$ ls -ld folder2/</span><br><span class="line">drwxrwsr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:33 folder2/</span><br></pre></td></tr></table></figure>
+
+<h3 id="How-to-remove-SGID-bit"><a href="#How-to-remove-SGID-bit" class="headerlink" title="How to remove SGID bit?"></a>How to remove SGID bit?</h3><p>Just use the -s instead of +s like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod g-s folder</span><br></pre></td></tr></table></figure>
+
+<p>Removing SGID is the same as removing SGID. Use the additional 0 before the permissions you want to set:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 0755 folder</span><br></pre></td></tr></table></figure>
+
+<h3 id="How-to-find-files-with-SGID-set-in-Linux"><a href="#How-to-find-files-with-SGID-set-in-Linux" class="headerlink" title="How to find files with SGID set in Linux"></a>How to find files with SGID set in Linux</h3><p>To find all the files with SGID bit set, use this command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -perm /2000</span><br></pre></td></tr></table></figure>
+
+<h2 id="What-is-a-Sticky-Bit"><a href="#What-is-a-Sticky-Bit" class="headerlink" title="What is a Sticky Bit?"></a>What is a Sticky Bit?</h2><p><em><strong>The sticky bit works on the directory. With sticky bit set on a directory, all the files in the directory can only be deleted or renamed by the file owners only or the root.</strong></em></p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172546528.jpg" class="">
+
+<p>This is typically used in the &#x2F;tmp directory that works as the trash can of temporary files.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld /tmp</span><br><span class="line">drwxrwxrwt 1 root root 512 Apr 12 13:24 /tmp</span><br></pre></td></tr></table></figure>
+
+<p>As you can see, the folder &#x2F;tmp, has the letter <em><strong>*t*</strong></em> on the same place we expect to see <strong>x</strong> or <strong>–</strong> for others permissions. This means that a user (except root) cannot delete the temporary files created by other users in the &#x2F;tmp directory.</p>
+<h3 id="How-to-set-the-sticky-bit"><a href="#How-to-set-the-sticky-bit" class="headerlink" title="How to set the sticky bit?"></a>How to set the sticky bit?</h3><p>As always, you can use both symbolic and numeric mode to set the sticky bit in Linux.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +t my_dir</span><br></pre></td></tr></table></figure>
+
+<p>Here’s an example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld my_dir/</span><br><span class="line">drwxrwxr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:54 my_dir/</span><br><span class="line">linuxhandbook:~$ chmod +t my_dir/</span><br><span class="line">linuxhandbook:~$ ls -ld my_dir/</span><br><span class="line">drwxrwxr-t 2 linuxhandbook linuxhandbook 4096 Apr 12 19:54 my_dir/</span><br></pre></td></tr></table></figure>
+
+<p>The numeric way is to add a fourth digit to the normal permissions. The octal number used for sticky bit is always 1.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld my_dir/</span><br><span class="line">drwxrwxr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:55 my_dir/</span><br><span class="line">linuxhandbook:~$ chmod 1775 tmp2/</span><br><span class="line">linuxhandbook:~$ ls -ld tmp2/</span><br><span class="line">drwxrwxr-t 2 linuxhandbook linuxhandbook 4096 Apr 12 19:55 my_dir/</span><br></pre></td></tr></table></figure>
+
+<h3 id="How-to-remove-the-sticky-bit"><a href="#How-to-remove-the-sticky-bit" class="headerlink" title="How to remove the sticky bit:"></a>How to remove the sticky bit:</h3><p>You can use the symbolic mode:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -t my_dir</span><br></pre></td></tr></table></figure>
+
+<p>Or the numeric mode with 0 before the regular permissions:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 0775 tmp2</span><br></pre></td></tr></table></figure>
+
+<h3 id="How-to-find-files-with-sticky-bit-set-in-Linux"><a href="#How-to-find-files-with-sticky-bit-set-in-Linux" class="headerlink" title="How to find files with sticky bit set in Linux"></a>How to find files with sticky bit set in Linux</h3><p>This command will return all files&#x2F;directories in with sticky bit set:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ find . -perm /1000</span><br></pre></td></tr></table></figure>
+
+<p>If the directory doesn’t have the execute permission set for all, setting a sticky bit will result in showing T instead of t. An indication that things are not entirely correct with the sticky bit.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>I’ll put this picture here to recall what you have just learned:</p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172749073.jpg" class="">
+
+<p>This flexibility to manage folders, files and all their permissions are so important in the daily work of a sysadmin. You could see that all those special permissions are not so difficult to understand but it must be used with utmost caution.</p>
+<p>I hope this article gave you a good understanding of the SUID, GUID and Sticky Bit in Linux. If you have questions or suggestions, please drop a comment below.</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2022/06/01/SH-re-open-after-70-days-lockdown/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">SH Re-Open After 70 Days Lockdown</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2022/05/29/first-day-of-workout-after-2-months-lockdown/">
+        <span class="next-text nav-default">First Day of Workout After 2 Months Lockdown</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022 - 2023<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>

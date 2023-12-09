@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Vim Cheat Sheet"/><meta name="keywords" content="linux, vim, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/04/03/vim-cheat-sheet/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Vim Cheat Sheet - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Vim Cheat Sheet
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-04-03
+        </span><span class="post-category">
+            <a href="/categories/Program/">Program</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Global"><span class="toc-text">Global</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cursor-movement"><span class="toc-text">Cursor movement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert-mode-inserting-x2F-appending-text"><span class="toc-text">Insert mode - inserting&#x2F;appending text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Editing"><span class="toc-text">Editing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Marking-text-visual-mode"><span class="toc-text">Marking text (visual mode)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Visual-commands"><span class="toc-text">Visual commands</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Registers"><span class="toc-text">Registers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Marks-and-positions"><span class="toc-text">Marks and positions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Macros"><span class="toc-text">Macros</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cut-and-paste"><span class="toc-text">Cut and paste</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Indent-text"><span class="toc-text">Indent text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exiting"><span class="toc-text">Exiting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Search-and-replace"><span class="toc-text">Search and replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Search-in-multiple-files"><span class="toc-text">Search in multiple files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabs"><span class="toc-text">Tabs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Working-with-multiple-files"><span class="toc-text">Working with multiple files</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><p><strong>:h[elp] keyword</strong> - open help for keyword<br><strong>:sav[eas] file</strong> - save file as<br><strong>:clo[se]</strong> - close current pane<br><strong>:ter[minal]</strong> - open a terminal window<br><strong>K</strong> - open man page for word under the cursor</p>
+<span id="more"></span>
+
+<p><code>Tip: Run vimtutor in a terminal to learn the first Vim commands.</code></p>
+<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><p><strong>h</strong> - move cursor left<br><strong>j</strong> - move cursor down<br><strong>k</strong> - move cursor up<br><strong>l</strong> - move cursor right<br><strong>gj</strong> - move cursor down (multi-line text)<br><strong>gk</strong> - move cursor up (multi-line text)<br><strong>H</strong> - move to top of screen<br><strong>M</strong> - move to middle of screen<br><strong>L</strong> - move to bottom of screen<br><strong>w</strong> - jump forwards to the start of a word<br><strong>W</strong> - jump forwards to the start of a word (words can contain punctuation)<br><strong>e</strong> - jump forwards to the end of a word<br><strong>E</strong> - jump forwards to the end of a word (words can contain punctuation)<br><strong>b</strong> - jump backwards to the start of a word<br><strong>B</strong> - jump backwards to the start of a word (words can contain punctuation)<br><strong>ge</strong> - jump backwards to the end of a word<br><strong>gE</strong> - jump backwards to the end of a word (words can contain punctuation)<br><strong>%</strong> - move to matching character (default supported pairs: ‘()’, ‘{}’, ‘[]’ - use <code>:h matchpairs</code> in vim for more info)<br><strong>0</strong> - jump to the start of the line<br><strong>^</strong> - jump to the first non-blank character of the line<br><strong>$</strong> - jump to the end of the line<br><strong>g_</strong> - jump to the last non-blank character of the line<br><strong>gg</strong> - go to the first line of the document<br><strong>G</strong> - go to the last line of the document<br><strong>5gg or 5G</strong> - go to line 5<br><strong>gd</strong> - move to local declaration<br><strong>gD</strong> - move to global declaration<br><strong>fx</strong> - jump to next occurrence of character x<br><strong>tx</strong> - jump to before next occurrence of character x<br><strong>Fx</strong> - jump to the previous occurrence of character x<br><strong>Tx</strong> - jump to after previous occurrence of character x<br><strong>;</strong> - repeat previous f, t, F or T movement<br><strong>,</strong> - repeat previous f, t, F or T movement, backwards<br><strong>}</strong> - jump to next paragraph (or function&#x2F;block, when editing code)<br><strong>{</strong> - jump to previous paragraph (or function&#x2F;block, when editing code)<br><strong>zz</strong> - center cursor on screen<br><strong>Ctrl + e</strong> - move screen down one line (without moving cursor)<br><strong>Ctrl + y</strong> - move screen up one line (without moving cursor)<br><strong>Ctrl + b</strong> - move back one full screen<br><strong>Ctrl + f</strong> - move forward one full screen<br><strong>Ctrl + d</strong> - move forward 1&#x2F;2 a screen<br><strong>Ctrl + u</strong> - move back 1&#x2F;2 a screen</p>
+<p><code>Tip: Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.</code></p>
+<h2 id="Insert-mode-inserting-x2F-appending-text"><a href="#Insert-mode-inserting-x2F-appending-text" class="headerlink" title="Insert mode - inserting&#x2F;appending text"></a>Insert mode - inserting&#x2F;appending text</h2><p><strong>i</strong> - insert before the cursor<br><strong>I</strong> - insert at the beginning of the line<br><strong>a</strong> - insert (append) after the cursor<br><strong>A</strong> - insert (append) at the end of the line<br><strong>o</strong> - append (open) a new line below the current line<br><strong>O</strong> - append (open) a new line above the current line<br><strong>ea</strong> - insert (append) at the end of the word<br><strong>Ctrl + h</strong> - delete the character before the cursor during insert mode<br><strong>Ctrl + w</strong> - delete word before the cursor during insert mode<br><strong>Ctrl + j</strong> - begin new line during insert mode<br><strong>Ctrl + t</strong> - indent (move right) line one shiftwidth during insert mode<br><strong>Ctrl + d</strong> - de-indent (move left) line one shiftwidth during insert mode<br><strong>Ctrl + n</strong> - insert (auto-complete) next match before the cursor during insert mode<br><strong>Ctrl + p</strong> - insert (auto-complete) previous match before the cursor during insert mode<br><strong>Ctrl + rx</strong> - insert the contents of register x<br><strong>Ctrl + ox</strong> - Temporarily enter normal mode to issue one normal-mode command x.<br><strong>Esc</strong> - exit insert mode</p>
+<h2 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h2><p><strong>r</strong> - replace a single character.<br><strong>R</strong> - replace more than one character, until ESC is pressed.<br><strong>J</strong> - join line below to the current one with one space in between<br><strong>gJ</strong> - join line below to the current one without space in between<br><strong>gwip</strong> - reflow paragraph<br><strong>g~</strong> - switch case up to motion<br><strong>gu</strong> - change to lowercase up to motion<br><strong>gU</strong> - change to uppercase up to motion<br><strong>cc</strong> - change (replace) entire line<br><strong>c$ or C</strong> - change (replace) to the end of the line<br><strong>ciw</strong> - change (replace) entire word<br><strong>cw or ce</strong> - change (replace) to the end of the word<br><strong>s</strong> - delete character and substitute text<br><strong>S</strong> - delete line and substitute text (same as cc)<br><strong>xp</strong> - transpose two letters (delete and paste)<br><strong>u</strong> - undo<br><strong>U</strong> - restore (undo) last changed line<br><strong>Ctrl + r</strong> - redo<br><strong>.</strong> - repeat last command</p>
+<h2 id="Marking-text-visual-mode"><a href="#Marking-text-visual-mode" class="headerlink" title="Marking text (visual mode)"></a>Marking text (visual mode)</h2><p><strong>v</strong> - start visual mode, mark lines, then do a command (like y-yank)<br><strong>V</strong> - start linewise visual mode<br><strong>o</strong> - move to other end of marked area<br><strong>Ctrl + v</strong> - start visual block mode<br><strong>O</strong> - move to other corner of block<br><strong>aw</strong> - mark a word<br><strong>ab</strong> - a block with ()<br><strong>aB</strong> - a block with {}<br><strong>at</strong> - a block with &lt;&gt; tags<br><strong>ib</strong> - inner block with ()<br><strong>iB</strong> - inner block with {}<br><strong>it</strong> - inner block with &lt;&gt; tags<br><strong>Esc</strong> - exit visual mode</p>
+<p><code>Tip: Instead of b or B one can also use ( or &#123; respectively.</code></p>
+<h2 id="Visual-commands"><a href="#Visual-commands" class="headerlink" title="Visual commands"></a>Visual commands</h2><p><strong>&gt;</strong> - shift text right<br><strong>&lt;</strong> - shift text left<br><strong>y</strong> - yank (copy) marked text<br><strong>d</strong> - delete marked text<br><strong>~</strong> - switch case<br><strong>u</strong> - change marked text to lowercase<br><strong>U</strong> - change marked text to uppercase</p>
+<h2 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h2><p><strong>:reg[isters]</strong> - show registers content<br><strong>“xy</strong> - yank into register x<br><strong>“xp</strong> - paste contents of register x<br><strong>“+y</strong> - yank into the system clipboard register<br><strong>“+p</strong> - paste from the system clipboard register</p>
+<p><code>Tip: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Tip: Special registers:</span><br><span class="line"> 0 - last yank</span><br><span class="line"> &quot; - unnamed register, last delete or yank</span><br><span class="line"> % - current file name</span><br><span class="line"> \# - alternate file name</span><br><span class="line"> * - clipboard contents (X11 primary)</span><br><span class="line"> + - clipboard contents (X11 clipboard)</span><br><span class="line"> / - last search pattern</span><br><span class="line"> : - last command-line</span><br><span class="line"> . - last inserted text</span><br><span class="line"> - - last small (less than a line) delete</span><br><span class="line"> = - expression register</span><br><span class="line"> _ - black hole register</span><br></pre></td></tr></table></figure>
+
+<h2 id="Marks-and-positions"><a href="#Marks-and-positions" class="headerlink" title="Marks and positions"></a>Marks and positions</h2><p><strong>:marks</strong> - list of marks<br><strong>ma</strong> - set current position for mark A<br>`a - jump to position of mark A<br><strong>y`a</strong> - yank text to position of mark A<br>`0 - go to the position where Vim was previously exited<br><strong>`&quot;</strong> - go to the position when last editing this file<br>`. - go to the position of the last change in this file<br><strong>``</strong> - go to the position before the last jump<br><strong>:ju[mps]</strong> - list of jumps<br><strong>Ctrl + i</strong> - go to newer position in jump list<br><strong>Ctrl + o</strong> - go to older position in jump list<br><strong>:changes</strong> - list of changes<br><strong>g,</strong> - go to newer position in change list<br><strong>g;</strong> - go to older position in change list<br><strong>Ctrl + ]</strong> - jump to the tag under cursor</p>
+<p><code>Tip: To jump to a mark you can either use a backtick (`) or an apostrophe (&#39;). Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.</code></p>
+<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><p><strong>qa</strong> - record macro a<br><strong>q</strong> - stop recording macro<br><strong>@a</strong> - run macro a<br><strong>@@</strong> - rerun last run macro</p>
+<h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><p><strong>yy</strong> - yank (copy) a line<br><strong>2yy</strong> - yank (copy) 2 lines<br><strong>yw</strong> - yank (copy) the characters of the word from the cursor position to the start of the next word<br><strong>yiw</strong> - yank (copy) word under the cursor<br><strong>yaw</strong> - yank (copy) word under the cursor and the space after or before it<br><strong>y$ or Y</strong> - yank (copy) to end of line<br><strong>p</strong> - put (paste) the clipboard after cursor<br><strong>P</strong> - put (paste) before cursor<br><strong>gp</strong> - put (paste) the clipboard after cursor and leave cursor after the new text<br><strong>gP</strong> - put (paste) before cursor and leave cursor after the new text<br><strong>dd</strong> - delete (cut) a line<br><strong>2dd</strong> - delete (cut) 2 lines<br><strong>dw</strong> - delete (cut) the characters of the word from the cursor position to the start of the next word<br><strong>diw</strong> - delete (cut) word under the cursor<br><strong>daw</strong> - delete (cut) word under the cursor and the space after or before it<br><strong>d$ or D</strong> - delete (cut) to the end of the line<br><strong>x</strong> - delete (cut) character</p>
+<h2 id="Indent-text"><a href="#Indent-text" class="headerlink" title="Indent text"></a>Indent text</h2><p><strong>&gt;&gt;</strong> - indent (move right) line one shiftwidth<br><strong>&lt;&lt;** - de-indent (move left) line one shiftwidth<br>**&gt;%</strong> - indent a block with () or {} (cursor on brace)<br><strong>&gt;ib</strong> - indent inner block with ()<br><strong>&gt;at</strong> - indent a block with &lt;&gt; tags<br><strong>3&#x3D;&#x3D;</strong> - re-indent 3 lines<br><strong>&#x3D;%</strong> - re-indent a block with () or {} (cursor on brace)<br><strong>&#x3D;iB</strong> - re-indent inner block with {}<br><strong>gg&#x3D;G</strong> - re-indent entire buffer<br><strong>]p</strong> - paste and adjust indent to current line</p>
+<h2 id="Exiting"><a href="#Exiting" class="headerlink" title="Exiting"></a>Exiting</h2><p><strong>:w</strong> - write (save) the file, but don’t exit<br><strong>:w !sudo tee %</strong> - write out the current file using sudo<br><strong>:wq or :x or ZZ</strong> - write (save) and quit<br><strong>:q</strong> - quit (fails if there are unsaved changes)<br><strong>:q! or ZQ</strong> - quit and throw away unsaved changes<br><strong>:wqa</strong> - write (save) and quit on all tabs</p>
+<h2 id="Search-and-replace"><a href="#Search-and-replace" class="headerlink" title="Search and replace"></a>Search and replace</h2><p><strong>&#x2F;pattern</strong> - search for pattern<br><strong>?pattern</strong> - search backward for pattern<br><strong>\vpattern</strong> - ‘very magic’ pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)<br><strong>n</strong> - repeat search in same direction<br><strong>N</strong> - repeat search in opposite direction<br><strong>:%s&#x2F;old&#x2F;new&#x2F;g</strong> - replace all old with new throughout file<br><strong>:%s&#x2F;old&#x2F;new&#x2F;gc</strong> - replace all old with new throughout file with confirmations<br><strong>:noh[lsearch]</strong> - remove highlighting of search matches</p>
+<h2 id="Search-in-multiple-files"><a href="#Search-in-multiple-files" class="headerlink" title="Search in multiple files"></a>Search in multiple files</h2><p><strong>:vim[grep] &#x2F;pattern&#x2F; {<code>&#123;file&#125;</code>}</strong> - search for pattern in multiple files, e.g. :vim[grep] &#x2F;foo&#x2F;\ **&#x2F;*<br><strong>:cn[ext]</strong> - jump to the next match<br><strong>:cp[revious]</strong> - jump to the previous match<br><strong>:cope[n]</strong> - open a window containing the list of matches<br><strong>:ccl[ose]</strong> - close the quickfix window</p>
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p><strong>:tabnew or :tabnew {page.words.file}</strong> - open a file in a new tab<br><strong>Ctrl + wT</strong> - move the current split window into its own tab<br><strong>gt or :tabn[ext]</strong> - move to the next tab<br><strong>gT or :tabp[revious]</strong> - move to the previous tab<br><strong>#gt</strong> - move to tab number #<br><strong>:tabm[ove] #</strong> - move current tab to the #th position (indexed from 0)<br><strong>:tabc[lose]</strong> - close the current tab and all its windows<br><strong>:tabo[nly]</strong> - close all tabs except for the current one<br><strong>:tabdo command</strong> - run the <code>command</code> on all tabs (e.g. <code>:tabdo q</code> - closes all opened tabs)</p>
+<h2 id="Working-with-multiple-files"><a href="#Working-with-multiple-files" class="headerlink" title="Working with multiple files"></a>Working with multiple files</h2><p><strong>:e[dit] file</strong> - edit a file in a new buffer<br><strong>:bn[ext]</strong> - go to the next buffer<br><strong>:bp[revious]</strong> - go to the previous buffer<br><strong>:bd[elete]</strong> - delete a buffer (close a file)<br><strong>:b[uffer]#</strong> - go to a buffer by index #<br><strong>:b[uffer] file</strong> - go to a buffer by file<br><strong>:ls or :buffers</strong> - list all open buffers<br><strong>:sp[lit] file</strong> - open a file in a new buffer and split window<br><strong>:vs[plit] file</strong> - open a file in a new buffer and vertically split window<br><strong>:vert[ical] ba[ll]</strong> - edit all buffers as vertical windows<br><strong>:tab ba[ll]</strong> - edit all buffers as tabs<br><strong>Ctrl + ws</strong> - split window<br><strong>Ctrl + wv</strong> - split window vertically<br><strong>Ctrl + ww</strong> - switch windows<br><strong>Ctrl + wq</strong> - quit a window<br><strong>Ctrl + wx</strong> - exchange current window with next one<br><strong>Ctrl + w&#x3D;</strong> - make all windows equal height &amp; width<br><strong>Ctrl + wh</strong> - move cursor to the left window (vertical split)<br><strong>Ctrl + wl</strong> - move cursor to the right window (vertical split)<br><strong>Ctrl + wj</strong> - move cursor to the window below (horizontal split)<br><strong>Ctrl + wk</strong> - move cursor to the window above (horizontal split)<br><strong>Ctrl + wH</strong> - make current window full height at far left (leftmost vertical window)<br><strong>Ctrl + wL</strong> - make current window full height at far right (rightmost vertical window)<br><strong>Ctrl + wJ</strong> - make current window full width at the very bottom (bottommost horizontal window)<br><strong>Ctrl + wK</strong> - make current window full width at the very top (topmost horizontal window)</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            <a href="/tags/vim/">vim</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2022/04/03/write-formatting-characters-in-markdown/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Write Formatting Characters in Markdown</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2022/04/03/what-is-entropy/">
+        <span class="next-text nav-default">What Is Entropy?</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022 - 2023<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>

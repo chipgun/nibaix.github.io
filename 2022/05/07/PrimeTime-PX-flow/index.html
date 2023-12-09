@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="PrimeTime-PX Flow"/><meta name="keywords" content="synopsys, primetime, sta, lowpower, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/05/07/PrimeTime-PX-flow/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>PrimeTime-PX Flow - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">PrimeTime-PX Flow
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-05-07
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Steps-Following-are-the-steps-to-invoke-PT-SI"><span class="toc-text">Steps: Following are the steps to invoke PT-SI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-invoke-pt-shell-normally"><span class="toc-text">0. invoke pt_shell normally</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-set-library-read-gate-level-verilog-netlist-and-spef-file-x3D-gt-same-as-in-normal-PT-flow-pwr-is-calc-for-chosen-PVT-corner"><span class="toc-text">1. set library, read gate level verilog netlist and spef file &#x3D;&gt; same as in normal PT flow. pwr is calc for chosen PVT corner.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-set-power-analysis-so-that-PTPX-license-is-invoked"><span class="toc-text">2. set power analysis so that PTPX license is invoked</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Read-VCD-file-from-one-of-the-simulation-it-needs-to-be-gate-level-VCD-file-with-back-annotation-of-parasitics"><span class="toc-text">3. Read VCD file from one of the simulation (it needs to be gate level VCD file with back annotation of parasitics)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-report-power"><span class="toc-text">4. report power</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reports-power-summary-report"><span class="toc-text">Reports: power summary report</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Static-Power"><span class="toc-text">Static Power</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dynamic-Power"><span class="toc-text">Dynamic Power</span></a></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><p><strong>PT-PX</strong> is PrimeTime with power analysis. It’s a tool within PT (requires separate license of PT-PX). PT-PX combines simulation time window to report power within a window.</p>
+<h2 id="Steps-Following-are-the-steps-to-invoke-PT-SI"><a href="#Steps-Following-are-the-steps-to-invoke-PT-SI" class="headerlink" title="Steps: Following are the steps to invoke PT-SI"></a>Steps: Following are the steps to invoke PT-SI</h2><h3 id="0-invoke-pt-shell-normally"><a href="#0-invoke-pt-shell-normally" class="headerlink" title="0. invoke pt_shell normally"></a>0. invoke pt_shell normally</h3><p><code>pt_shell-2012.12-SP3 -f scripts/run_power.tcl |tee logs/run_power.log</code> &#x3D;&gt; can be invoked in gui mode too.<br><strong>run_power.tcl</strong> has following cmds:</p>
+<h3 id="1-set-library-read-gate-level-verilog-netlist-and-spef-file-x3D-gt-same-as-in-normal-PT-flow-pwr-is-calc-for-chosen-PVT-corner"><a href="#1-set-library-read-gate-level-verilog-netlist-and-spef-file-x3D-gt-same-as-in-normal-PT-flow-pwr-is-calc-for-chosen-PVT-corner" class="headerlink" title="1. set library, read gate level verilog netlist and spef file &#x3D;&gt; same as in normal PT flow. pwr is calc for chosen PVT corner."></a>1. set library, read gate level verilog netlist and spef file &#x3D;&gt; same as in normal PT flow. pwr is calc for chosen PVT corner.</h3><span id="more"></span>
+
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> search_path <span class="string">&quot;$search_path /db/pdkoa/1533e035/current/diglib/pml48h/synopsys/bin&quot;</span></span><br><span class="line"><span class="keyword">set</span> target_library PML48H_W_85_3_CORE.db</span><br><span class="line"><span class="keyword">set</span> link_library &#123;* PML48H_W_85_3_CORE.db&#125;</span><br><span class="line"></span><br><span class="line">read_verilog /db/ATAGO/.../FinalFiles/digtop_final_route.v =&gt; <span class="keyword">read</span> final routed netlist</span><br><span class="line">current_design digtop</span><br><span class="line">link</span><br><span class="line"></span><br><span class="line">read_parasitics /db/ATAGO/.../FinalFiles/digtop_final_route_max.spef =&gt; <span class="keyword">read</span> max spef <span class="keyword">file</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-set-power-analysis-so-that-PTPX-license-is-invoked"><a href="#2-set-power-analysis-so-that-PTPX-license-is-invoked" class="headerlink" title="2. set power analysis so that PTPX license is invoked"></a>2. set power analysis so that PTPX license is invoked</h3><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> power_enable_analysis true</span><br><span class="line"><span class="keyword">set</span> power_analysis_mode averaged</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Read-VCD-file-from-one-of-the-simulation-it-needs-to-be-gate-level-VCD-file-with-back-annotation-of-parasitics"><a href="#3-Read-VCD-file-from-one-of-the-simulation-it-needs-to-be-gate-level-VCD-file-with-back-annotation-of-parasitics" class="headerlink" title="3. Read VCD file from one of the simulation (it needs to be gate level VCD file with back annotation of parasitics)"></a>3. Read VCD file from one of the simulation (it needs to be gate level VCD file with back annotation of parasitics)</h3><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read_vcd /sim/ATAGO/.../sim1_max.vcd.gz -strip_path digtop_tb/IDUT/spi_regs -<span class="keyword">time</span> &#123;<span class="number">100489</span> <span class="number">800552</span>&#125; =&gt; strips module of interest so that pwr is reported starting from that module as top level. <span class="keyword">time</span> is in ns.</span><br><span class="line">report_switching_activity &gt; reports/power_swtching.rpt =&gt; to examine tr/sp (see below) and vcd <span class="keyword">file</span> syntax</span><br></pre></td></tr></table></figure>
+<h3 id="4-report-power"><a href="#4-report-power" class="headerlink" title="4. report power"></a>4. report power</h3><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#check_power -verbose =&gt; prior to analysis, verifies that analysis i/p are valid</span></span><br><span class="line"><span class="comment">#update_power =&gt; This is needed for RTL VCD or when no vcd provided to propagate activity to nets/registers not annotated from RTL VCD file.</span></span><br><span class="line"><span class="comment">#report_switching_activity =&gt; to examine propagated values of tr/sp</span></span><br><span class="line"><span class="comment">#create_power_waveforms -cycle_accurate =&gt; to show pwr waveform</span></span><br><span class="line">report_power &gt; ./reports/power_summary.rpt</span><br><span class="line">report_power -hier &gt; ./reports/power_hierarchy.rpt</span><br><span class="line"><span class="comment">#report_power -cell -flat -net -hier -verbose -nosplit &gt; power_detail.rpt</span></span><br><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Reports-power-summary-report"><a href="#Reports-power-summary-report" class="headerlink" title="Reports: power summary report"></a>Reports: power summary report</h2><h3 id="Static-Power"><a href="#Static-Power" class="headerlink" title="Static Power"></a>Static Power</h3><p>Cell Leakage power. It’s leakage in the cell from VDD to VSS when cell i&#x2F;p is at 0 or 1 (subthreshold lkg from src to drn since gates never turn off completely). It includes gate lkg also (gate lkg is captured only for i&#x2F;p pins for each transistor, as o&#x2F;p pin will finally connect to i&#x2F;p pin of some other transistor. gate lkg is just the current flowing into the gate when i&#x2F;p of gate is 0 or 1). cell lkg pwr number comes from <em>.lib file. Pwr(lkg)&#x3D;V</em>I(subthreshold_lkg)+V*I(gate_lkg).<br>It has a default lkg pwr number for each cell, as well as different lkg pwr numbers depending on diff i&#x2F;p values. ex:<br>cell (AN210_3V) {<br>cell_leakage_power : 1.731915E+00; &#x3D;&gt; default lkg pwr<br>leakage_power () { &#x3D;&gt; we can have many of these conditions for each cell<br>value : 1.718650E+00; &#x3D;&gt; lkg pwr &#x3D; 1.7pW when A&#x3D;1 and B&#x3D;0. pwr unit defined as pw by “leakage_power_unit : “1pW”;” in .lib file<br>when : “A&amp;!B”;<br>}</p>
+<h3 id="Dynamic-Power"><a href="#Dynamic-Power" class="headerlink" title="Dynamic Power"></a>Dynamic Power</h3><p><em><strong>A. internal pwr:</strong></em> This includes short ckt pwr when cell o&#x2F;p is switching, as well as pwr due to charging of internal nodes in the cell (due to src&#x2F;drn cap on all o&#x2F;p nodes and gate cap on internal nodes). cell int pwr number comes from <em>.lib file. Pwr(int)&#x3D;Eint</em>Tr where Tr&#x3D;number of toggles&#x2F;time.<br>Just like timing() section, we have internal_power() section for o&#x2F;p pin. It shows int pwr for each combination of i&#x2F;p values (as pwr will change due to short ckt current, drn&#x2F;src cap changing). ex:<br>cell (AN210_3V) {<br>pin (Y) { &#x3D;&gt; pwr is always for o&#x2F;p pin, since i&#x2F;p pin pwr is calcualted separately as switching pwr.<br>internal_power () { &#x3D;&gt; pwr unit is in pJ &#x3D; power unit(pW) * time_unit(s) (it’s energy, not power).<br>related_pin : “A”; &#x3D;&gt; this is when o&#x2F;p changes due to i&#x2F;p pin A changing<br>rise_power (outputpower_cap4_trans5) { … 34.39 .. } &#x3D;&gt; pwr under diff cap load on o&#x2F;p pin, and diff slew on i&#x2F;p pin<br>fall_power (outputpower_cap4_trans5) { … 34.39 .. } &#x3D;&gt; fall_power is when o&#x2F;p pin falls due to pin A rising&#x2F;falling<br>}<br>internal_power () {<br>related_pin : “B”; &#x3D;&gt; this is when o&#x2F;p changes due to i&#x2F;p pin B changing<br>rise_power (outputpower_cap4_trans5) { … 34.39 .. } &#x3D;&gt; rise_power is when o&#x2F;p pin rises due to pin B rising&#x2F;falling<br>fall_power (outputpower_cap4_trans5) { … 40 .. } &#x3D;&gt; 40pJ energy per toggle. Since time is in ns, pwr&#x3D;mw??<br>}<br>}<br>}</p>
+<p><em><strong>B. switching pwr:</strong></em> This is due to charging&#x2F;discharging of all the o&#x2F;p load in design. This includes wire cap and gate cap on i&#x2F;p pins which switch whenever o&#x2F;p pin of any gate switches. Pwr(sw)&#x3D;0.5<em>C</em>V^2*Tr. Tr&#x3D;number of toggles&#x2F;time.</p>
+<p>Total_pwr &#x3D; Pwr(lkg) + Pwr(int) + Pwr(sw) &#x3D; Pwr(lkg) + Eint<em>Tr + 0.5</em>C<em>V^2</em>Tr (Pwr(lkg) and Eint come from.lib).<br>To calc avg pwr, static probability (Sp) is calcualted for all the nodes to be at 1 or 0. This is then used to calc lkg pwr for each cell. Toggle rate is caluclated for each node to calc dynamic pwr.<br>To calc peak pwr, vcd file is required to analyze events. It’s useful for dynamic IR drop. If vcd file not provided, then tool doesn’t know the seq of events. Merely toggle rate doesn’t tell it whether all nodes toggle at same time or not.<br>When VCd file is not provided, default Tr&#x2F;Sp is applied to starting points (PI, black box o&#x2F;p). default Tr&#x2F;Sp can be modified using (power_default_toggle_rate, power_default_static_probability)</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/synopsys/">synopsys</a>
+            <a href="/tags/primetime/">primetime</a>
+            <a href="/tags/sta/">sta</a>
+            <a href="/tags/lowpower/">lowpower</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2022/05/08/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-7/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">上海每日疫情走势2022-5-7</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2022/05/07/PrimeTime-and-OCV/">
+        <span class="next-text nav-default">PrimeTime and Timing Derate</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022 - 2023<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>

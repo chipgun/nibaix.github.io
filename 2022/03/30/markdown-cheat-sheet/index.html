@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Markdown Cheat Sheet"/><meta name="keywords" content="markdown, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/03/30/markdown-cheat-sheet/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Markdown Cheat Sheet - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Markdown Cheat Sheet
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-03-30
+        </span><span class="post-category">
+            <a href="/categories/Program/">Program</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown-Headers"><span class="toc-text">Markdown Headers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hashes"><span class="toc-text">Hashes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Underlined-headers"><span class="toc-text">Underlined headers</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Emphasis-bold-italic"><span class="toc-text">Emphasis (bold, italic)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Make-bold-text-with-markdown-strong-emphasis"><span class="toc-text">Make bold text with markdown (strong emphasis)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Italics-with-markdown-emphasis"><span class="toc-text">Italics with markdown (emphasis)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Combine-bold-and-italics"><span class="toc-text">Combine bold and italics</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown-Lists"><span class="toc-text">Markdown Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ordered-lists"><span class="toc-text">Ordered lists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unordered-lists"><span class="toc-text">Unordered lists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Checklists"><span class="toc-text">Checklists</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Links-in-Markdown"><span class="toc-text">Links in Markdown</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-basic-link"><span class="toc-text">A basic link</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference-style-links"><span class="toc-text">Reference style links</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tables"><span class="toc-text">Tables</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><img src="/2022/03/30/markdown-cheat-sheet/markdown-cheat-sheet.png" class="verilog-mode.el">
+
+<span id="more"></span>
+
+<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/03/30/markdown-cheat-sheet/markdown_cheat_sheet.pdf" title="Download Markdown Cheat Sheet">Download Markdown Cheat Sheet</a></p>
+<h2 id="Markdown-Headers"><a href="#Markdown-Headers" class="headerlink" title="Markdown Headers"></a>Markdown Headers</h2><p>There are two ways to create a header in Markdown: by using hashes or by using underlines.</p>
+<h3 id="Hashes"><a href="#Hashes" class="headerlink" title="Hashes"></a>Hashes</h3><p>The first option, creating headers with hash signs, is more compact and quicker to type:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Primary header (similar to HTML H1 tag)</span><br><span class="line">## Secondary header (similar to HTML H2 tag)</span><br><span class="line">### Tertiary header (similar to HTML H3 tag)</span><br><span class="line">#### Quaternary header (similar to HTML H4 tag)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Underlined-headers"><a href="#Underlined-headers" class="headerlink" title="Underlined headers"></a>Underlined headers</h3><p>Alternatively, you can ‘underline’ your header. It’s a bit more work, but some people prefer it, since it stands out more when looking at the plain text. Note that you can only use this for primary and secondary headers:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Primary header (similar to a HTML H1 tag)</span><br><span class="line">=========================================</span><br><span class="line"></span><br><span class="line">Secondary header (similar to a HTML H2 tag)</span><br><span class="line">-------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<h2 id="Emphasis-bold-italic"><a href="#Emphasis-bold-italic" class="headerlink" title="Emphasis (bold, italic)"></a>Emphasis (bold, italic)</h2><p>There are three ways to emphasize a piece of text that we’ll show in this markdown sheet cheat:</p>
+<ol>
+<li>By making it <strong>bolder</strong> than the surrounding text</li>
+<li>Using <em>italics</em></li>
+<li>Or combining *<strong>bold and italics*</strong></li>
+</ol>
+<h3 id="Make-bold-text-with-markdown-strong-emphasis"><a href="#Make-bold-text-with-markdown-strong-emphasis" class="headerlink" title="Make bold text with markdown (strong emphasis)"></a>Make bold text with markdown (strong emphasis)</h3><p>To create bold text, also called strong emphasis, surround it with two asterisks or two underscores. What you use is a matter of taste.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is how you create **bold** text</span><br></pre></td></tr></table></figure>
+
+<p>When converted to HTML or PDF, it will result in: “This is how you create <strong>bold</strong> text”.</p>
+<p>This same, but with underscores:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is how you create __bold__ text</span><br></pre></td></tr></table></figure>
+
+<h3 id="Italics-with-markdown-emphasis"><a href="#Italics-with-markdown-emphasis" class="headerlink" title="Italics with markdown (emphasis)"></a>Italics with markdown (emphasis)</h3><p>To create italic text, also called emphasis, support the text with single asterisks or underscores. Again, it’s a matter of tast which one you choose:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is how you create *italic* text</span><br></pre></td></tr></table></figure>
+
+<p>When converted to HTML or PDF, it will result in:: “This is how you create <em>italic</em> text.”</p>
+<p>The same, but with underscores:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is how you create _italic_ text</span><br></pre></td></tr></table></figure>
+
+<h3 id="Combine-bold-and-italics"><a href="#Combine-bold-and-italics" class="headerlink" title="Combine bold and italics"></a>Combine bold and italics</h3><p>You can combine both, resulting in *<strong>bold italics*</strong> text. You can either mix and match, or use triple underscores or triple asterisks, like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This is how you create **_bold italics_** text.</span><br><span class="line">This is how you create ___bold italics___ text.</span><br><span class="line">This is how you create ***bold italics*** text.</span><br></pre></td></tr></table></figure>
+
+<p>The result when converted to HTML or PDF:</p>
+<p>This is how you create <em><strong>bold italics</strong></em> text.</p>
+<h2 id="Markdown-Lists"><a href="#Markdown-Lists" class="headerlink" title="Markdown Lists"></a>Markdown Lists</h2><p>You can either create ordered (numbered) lists or unordered lists. Both types of markdown lists look very natural in plain text, as you’ll see in the examples in this markdown sheet cheat.</p>
+<h3 id="Ordered-lists"><a href="#Ordered-lists" class="headerlink" title="Ordered lists"></a>Ordered lists</h3><p>To create an ordered list, simple create a text list with numbers, one per line:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. Apples</span><br><span class="line">2. Bananas</span><br><span class="line">3. Peanut butter</span><br></pre></td></tr></table></figure>
+
+<p>I numbered the individual items properly, but you don’t have to. In fact, any number will do. However, properly numbering the items will look better in plain text, but it can be a pain sometimes. For example, if you need to add items in the middle of a long list, you need to renumber all of them.</p>
+<p>In the end, use whatever suits you best. I tend to number my lists properly since most lists are small anyway and it’s easier on the eyes when looking at the source text.</p>
+<p>All markdown converters I know of will convert the following into exactly the same list as the one above:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. Apples</span><br><span class="line">1. Bananas</span><br><span class="line">1. Peanut butter</span><br></pre></td></tr></table></figure>
+
+<p>The result:</p>
+<ol>
+<li>Apples </li>
+<li>Bananas</li>
+<li>Peanut butter</li>
+</ol>
+<h3 id="Unordered-lists"><a href="#Unordered-lists" class="headerlink" title="Unordered lists"></a>Unordered lists</h3><p>Unordered lists can be made in two ways:</p>
+<ul>
+<li>with asterisks</li>
+<li>or by using dashes</li>
+</ul>
+<p>The following lists give an identical output when converted into another document format like HTML or PDF:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- Apples</span><br><span class="line">- Bananas</span><br><span class="line">- Peanut butter</span><br></pre></td></tr></table></figure>
+
+<p>and:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* Apples</span><br><span class="line">* Bananas</span><br><span class="line">* Peanut butter</span><br></pre></td></tr></table></figure>
+
+<p>Both result in:</p>
+<ul>
+<li>Apples</li>
+<li>Bananas</li>
+<li>Peanut butter</li>
+</ul>
+<h3 id="Checklists"><a href="#Checklists" class="headerlink" title="Checklists"></a>Checklists</h3><p>Some but not all markdown parsers support checklists. E.g., this works on GitHub and with several markdown plugins for VS Code, for example, but it won’t work within the <a target="_blank" rel="noopener" href="https://markdown.land/wordpress-markdown">WordPress</a> Gutenberg editor:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [x] Apples</span><br><span class="line">- [ ] Bananas</span><br><span class="line">- [ ] Peanut butter</span><br></pre></td></tr></table></figure>
+
+<h2 id="Links-in-Markdown"><a href="#Links-in-Markdown" class="headerlink" title="Links in Markdown"></a>Links in Markdown</h2><p>You can use Markdown to link to a website or local file. In fact, most markdown converters will automatically convert a URL to a link, but you better not rely on it. In case of doubt, it’s best to try and see what happens in your specific case.</p>
+<h3 id="A-basic-link"><a href="#A-basic-link" class="headerlink" title="A basic link"></a>A basic link</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">This is an inline-style link to our [markdown cheat sheet](/markdown-cheat-sheet)</span><br><span class="line">You can also create a relative link: [code repo](../repo/code)</span><br><span class="line">Or an absolute, inline-style link to [Google](https://google.com)</span><br><span class="line">URLs like &lt;https://google.com&gt;, and sometimes https://google.com</span><br><span class="line">or even google.com, get converted to clickable links.</span><br><span class="line">Inline-style link with a title attribute to [Markdown Land](https://markdown.land &quot;Markdown Land&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>This is an inline-style link to our <a target="_blank" rel="noopener" href="https://markdown.land/markdown-cheat-sheet">markdown cheat sheet</a> You can also create a relative link: <a target="_blank" rel="noopener" href="https://markdown.land/repo/code">code repo</a> Or an absolute, inline-style link to <a target="_blank" rel="noopener" href="https://google.com/">Google</a> URLs like <a target="_blank" rel="noopener" href="https://google.com/">https://google.com</a>, and sometimes <a target="_blank" rel="noopener" href="https://google.com/">https://google.com</a> or even <a target="_blank" rel="noopener" href="https://google.com/">google.com</a>, get converted to clickable links. Inline-style link with a title attribute to <a target="_blank" rel="noopener" href="https://markdown.land/">Markdown Land</a></p>
+<h3 id="Reference-style-links"><a href="#Reference-style-links" class="headerlink" title="Reference style links"></a>Reference style links</h3><p>In addition to regular links, markdown also supports reference-style links. We can define these links somewhere in a file, usually at the bottom, and reference them in the text anywhere.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[This website about Markdown][Case-insensitive reference link to Markdown.land]</span><br><span class="line">[The Python.land tutorial with a numbered link][1]</span><br><span class="line">Or leave it empty and use the link text itself, like this: [Python Land].</span><br><span class="line">Text and other Markdown markup, to demonstrate that the reference links can be put anywhere.</span><br><span class="line">Usually, they are placed at the bottom of a document. Because they are reference links, they</span><br><span class="line">won&#x27;t show up by themselves. So you won&#x27;t see the links below.</span><br><span class="line">[Case-insensitive reference link to Markdown.land]: https://www.markdown.land</span><br><span class="line">[1]: https://python.land/python-tutorial</span><br><span class="line">[Python Land]: http://python.land</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.markdown.land/">This website about Markdown</a></p>
+<p><a target="_blank" rel="noopener" href="https://python.land/python-tutorial">The Python.land tutorial with a numbered link</a></p>
+<p>Or leave it empty and use the link text itself, like this: <a target="_blank" rel="noopener" href="http://python.land/">Python Land</a>.</p>
+<p>Text and other Markdown markup, to demonstrate that the reference links can be put anywhere.</p>
+<p>Usually, they are placed at the bottom of a document. Because they are reference links, they</p>
+<p>won’t show up by themselves. So you won’t see the links below.</p>
+<p><a target="_blank" rel="noopener" href="https://www.markdown.land/">This website about Markdown</a> <a target="_blank" rel="noopener" href="https://python.land/python-tutorial">The Python.land tutorial with a numbered link</a> Or leave it empty and use the link text itself, like this: <a target="_blank" rel="noopener" href="http://python.land/">Python Land</a>.  Text and other Markdown markup, to demonstrate that the reference links can be put anywhere.  Usually, they are placed at the bottom of a document. Because they are reference links, they won’t show up by themselves. So you won’t see the links below.</p>
+<h2 id="Tables"><a href="#Tables" class="headerlink" title="Tables"></a>Tables</h2><p>I created a separate page explaining all the details about <a target="_blank" rel="noopener" href="https://markdown.land/markdown-table">Markdown tables</a>, but for quick reference here’s an example of a Markdown table with the alignment of the price and availability columns:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">| Item         | Price | # In stock |</span><br><span class="line"></span><br><span class="line">|--------------|:-----:|-----------:|</span><br><span class="line"></span><br><span class="line">| Juicy Apples |  1.99 |        739 |</span><br><span class="line"></span><br><span class="line">| Bananas      |  1.89 |          6 |</span><br></pre></td></tr></table></figure>
+
+<p>Head over to the <a target="_blank" rel="noopener" href="https://markdown.land/markdown-table">Markdown table</a> page for all the details, including column alignment and links to handy table generators to save you time and effort.</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/markdown/">markdown</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2022/03/31/ascii-table/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">ASCII Table</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2022/03/30/hello-world/">
+        <span class="next-text nav-default">Hello World</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022 - 2023<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>

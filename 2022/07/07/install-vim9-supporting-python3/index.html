@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Install Vim9 Supporting Python3"/><meta name="keywords" content="linux, editor, python, vim, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2022/07/07/install-vim9-supporting-python3/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Install Vim9 Supporting Python3 - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Install Vim9 Supporting Python3
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-07-07
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>In June 28th, 2022 the major version of Vim 9.0 was officially released. You can download Vim 9.0 for appropriate platform at <a target="_blank" rel="noopener" href="https://www.vim.org/download.php">https://www.vim.org/download.php</a>.</p>
+<p>Download latest source code from GitHub by <code>git clone https://github.com/vim/vim.git</code>. </p>
+<p><strong>The installation procedure from source code:</strong> (You should have <a href="/2022/06/02/install-specific-version-of-python/">Python3</a> already installed in your Linux system.)</p>
+<span id="more"></span>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">jim@localhost% unzip vim9.zip</span><br><span class="line">jim@localhost% <span class="built_in">cd</span> vim</span><br><span class="line">jim@localhost% ./configure \</span><br><span class="line">--enable-cscope \</span><br><span class="line">--enable-gnome-check \</span><br><span class="line">--enable-gtk2-check \</span><br><span class="line">--enable-gui=auto \</span><br><span class="line">--enable-multibyte \</span><br><span class="line">--enable-perlinterp \</span><br><span class="line">--enable-pythoninterp \</span><br><span class="line">--enable-python3interp \</span><br><span class="line">--with-python3-config-dir=/usr/local/lib/python3.10/config-3.10-x86_64-linux-gnu \</span><br><span class="line">--with-features=huge \</span><br><span class="line">--enable-fail-if-missing</span><br><span class="line">jim@localhost% make</span><br><span class="line">jim@localhost% sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>If error of “python3 cannot be be found” occurs in the step of <strong>configure</strong>, make a symbolic link of python3 before doing <strong>configure</strong> .</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jim@localhost% <span class="built_in">cd</span> /usr/local/bin</span><br><span class="line">jim@localhost% <span class="built_in">ln</span> -s python3.10 python3</span><br></pre></td></tr></table></figure>
+
+<p> The newly installed Vim 9.0 is located at <strong>&#x2F;usr&#x2F;local&#x2F;bin&#x2F;vim</strong>. </p>
+<p>Check the Vim version information with command <code>vim --version</code>. It shows that +python and +python3 are configured correctly.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">jim@localhost% vim --version</span><br><span class="line">VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Jul  7 2022 15:20:50)</span><br><span class="line">Included patches: 1-44</span><br><span class="line">Compiled by jim@xiaoman</span><br><span class="line">Huge version with GTK2 GUI.  Features included (+) or not (-):</span><br><span class="line">+acl               +file_in_path      +mouse_urxvt       -tag_any_white</span><br><span class="line">+arabic            +find_in_path      +mouse_xterm       -tcl</span><br><span class="line">+autocmd           +<span class="built_in">float</span>             +multi_byte        +termguicolors</span><br><span class="line">+autochdir         +folding           +multi_lang        +terminal</span><br><span class="line">-autoservername    -footer            -mzscheme          +terminfo</span><br><span class="line">+balloon_eval      +fork()            +netbeans_intg     +termresponse</span><br><span class="line">+balloon_eval_term +gettext           +num64             +textobjects</span><br><span class="line">+browse            -hangul_input      +packages          +textprop</span><br><span class="line">++builtin_terms    +iconv             +path_extra        +timers</span><br><span class="line">+byte_offset       +insert_expand     +perl              +title</span><br><span class="line">+channel           +ipv6              +persistent_undo   +toolbar</span><br><span class="line">+cindent           +job               +popupwin          +user_commands</span><br><span class="line">+clientserver      +jumplist          +postscript        +vartabs</span><br><span class="line">+clipboard         +keymap            +printer           +vertsplit</span><br><span class="line">+cmdline_compl     +lambda            +profile           +vim9script</span><br><span class="line">+cmdline_hist      +langmap           +python/dyn        +viminfo</span><br><span class="line">+cmdline_info      +libcall           +python3/dyn       +virtualedit</span><br><span class="line">+comments          +linebreak         +quickfix          +visual</span><br><span class="line">+conceal           +lispindent        +reltime           +visualextra</span><br><span class="line">+cryptv            +listcmds          +rightleft         +vreplace</span><br><span class="line">+cscope            +localmap          -ruby              +wildignore</span><br><span class="line">+cursorbind        -lua               +scrollbind        +wildmenu</span><br><span class="line">+cursorshape       +menu              +signs             +windows</span><br><span class="line">+dialog_con_gui    +mksession         +smartindent       +writebackup</span><br><span class="line">+diff              +modify_fname      -sodium            +X11</span><br><span class="line">+digraphs          +mouse             -sound             -xfontset</span><br><span class="line">+dnd               +mouseshape        +spell             +xim</span><br><span class="line">-ebcdic            +mouse_dec         +startuptime       -xpm</span><br><span class="line">+emacs_tags        -mouse_gpm         +statusline        +xsmp_interact</span><br><span class="line">+<span class="built_in">eval</span>              -mouse_jsbterm     -sun_workshop      +xterm_clipboard</span><br><span class="line">+ex_extra          +mouse_netterm     +syntax            -xterm_save</span><br><span class="line">+extra_search      +mouse_sgr         +tag_binary        </span><br><span class="line">-farsi             -mouse_sysmouse    -tag_old_static    </span><br><span class="line">   system vimrc file: <span class="string">&quot;<span class="variable">$VIM</span>/vimrc&quot;</span></span><br><span class="line">     user vimrc file: <span class="string">&quot;<span class="variable">$HOME</span>/.vimrc&quot;</span></span><br><span class="line"> 2nd user vimrc file: <span class="string">&quot;~/.vim/vimrc&quot;</span></span><br><span class="line">      user exrc file: <span class="string">&quot;<span class="variable">$HOME</span>/.exrc&quot;</span></span><br><span class="line">  system gvimrc file: <span class="string">&quot;<span class="variable">$VIM</span>/gvimrc&quot;</span></span><br><span class="line">    user gvimrc file: <span class="string">&quot;<span class="variable">$HOME</span>/.gvimrc&quot;</span></span><br><span class="line">2nd user gvimrc file: <span class="string">&quot;~/.vim/gvimrc&quot;</span></span><br><span class="line">       defaults file: <span class="string">&quot;<span class="variable">$VIMRUNTIME</span>/defaults.vim&quot;</span></span><br><span class="line">    system menu file: <span class="string">&quot;<span class="variable">$VIMRUNTIME</span>/menu.vim&quot;</span></span><br><span class="line">  fall-back <span class="keyword">for</span> <span class="variable">$VIM</span>: <span class="string">&quot;/usr/local/share/vim&quot;</span></span><br><span class="line">Compilation: gcc -std=gnu99 -c -I. -Iproto -DHAVE_CONFIG_H -DFEAT_GUI_GTK -pthread -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -g -O2 -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 </span><br><span class="line">Linking: gcc -std=gnu99 -Wl,-E -Wl,-rpath,/usr/lib64/perl5/CORE -L/usr/local/lib -Wl,--as-needed -o vim -pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0 -lSM -lICE -lXt -lX11 -lXdmcp -lSM -lICE -lm -ltinfo -lelf -lselinux -lrt -lacl -lattr -Wl,-E -Wl,-rpath,/usr/lib64/perl5/CORE -fstack-protector -L/usr/lib64/perl5/CORE -lperl -lresolv -lnsl -ldl -lm -lcrypt -lutil -lpthread -lc </span><br></pre></td></tr></table></figure>
+
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            <a href="/tags/editor/">editor</a>
+            <a href="/tags/python/">python</a>
+            <a href="/tags/vim/">vim</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2022/07/08/synopsys-safety-aware-solution-for-automotive/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Synopsys Safety-Aware Solution for Automotive</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2022/07/07/approaches-to-disable-SSH/">
+        <span class="next-text nav-default">Approaches to Disable SSH</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022 - 2023<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>

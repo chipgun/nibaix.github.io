@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Umask"/><meta name="keywords" content="linux, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2023/03/12/umask/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Umask - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Umask
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-03-12
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Display-the-current-value-of-the-umask"><span class="toc-text">Display the current value of the umask</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Display-the-default-bash-umask"><span class="toc-text">Display the default bash umask</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Display-the-default-csh-umask"><span class="toc-text">Display the default csh umask</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Setting-the-umask-using-symbolic-values"><span class="toc-text">Setting the umask using symbolic values</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Changing-the-default-umask-for-a-specific-user"><span class="toc-text">Changing the default umask for a specific user</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Setting-default-permissions-for-newly-created-home-directories"><span class="toc-text">Setting default permissions for newly created home directories</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><p>You can use the umask utility to display, set, or change the current or default value of the umask. </p>
+<h3 id="Display-the-current-value-of-the-umask"><a href="#Display-the-current-value-of-the-umask" class="headerlink" title="Display the current value of the umask"></a>Display the current value of the umask</h3><p>To display the current value of the <em>umask</em> in symbolic mode, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% umask -S</span><br></pre></td></tr></table></figure>
+
+<p>To display the current value of the <em>umask</em> in octal mode, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% umask</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<blockquote>
+<p>When displaying the umask in octal mode, you may notice it displayed as a four digit number (0002 or 0022). The first digit of the umask represents a special bit (sticky bit, SGID bit, or SUID bit). If the first digit is set to 0, the special bit is not set. </p>
+</blockquote>
+<h3 id="Display-the-default-bash-umask"><a href="#Display-the-default-bash-umask" class="headerlink" title="Display the default bash umask"></a>Display the default bash umask</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% grep umask /etc/bashrc #for non-login shell</span><br><span class="line">% grep umask /etc/profile #for login shell</span><br></pre></td></tr></table></figure>
+
+<h3 id="Display-the-default-csh-umask"><a href="#Display-the-default-csh-umask" class="headerlink" title="Display the default csh umask"></a>Display the default csh umask</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% grep umask /etc/csh.cshrc #for non-login shell</span><br><span class="line">% grep umask /etc/csh.login #for login shell</span><br></pre></td></tr></table></figure>
+<p><strong>Usually we change <code>csh.cshrc</code> like this.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">% more /etc/csh.cshrc</span><br><span class="line">if ($uid &gt; 199 &amp;&amp; &quot;`/usr/bin/id -gn`&quot; == &quot;`/usr/bin/id -un`&quot;) then</span><br><span class="line">    umask 027</span><br><span class="line">else</span><br><span class="line">    umask 022</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="Setting-the-umask-using-symbolic-values"><a href="#Setting-the-umask-using-symbolic-values" class="headerlink" title="Setting the umask using symbolic values"></a>Setting the umask using symbolic values</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umask -S &lt;level&gt;&lt;operation&gt;&lt;permission&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>&lt;level&gt;:</strong> Permissions can be assigned to the following levels of ownership: </p>
+<ul>
+<li><code>u</code> User owner</li>
+<li><code>g</code> Group owner</li>
+<li><code>o</code> Other</li>
+<li><code>a</code> All</li>
+</ul>
+<p><strong>&lt;operation&gt;</strong>: To add or remove permissions you can use the following signs: </p>
+<ul>
+<li><code>+</code> to add the permissions on top of the existing permissions</li>
+<li><code>-</code> to remove the permissions from the existing permission</li>
+<li><code>=</code> to remove the existing permissions and explicitly define the new ones</li>
+</ul>
+<p><strong>&lt;permission&gt;:</strong> You can assign the following permissions:</p>
+<ul>
+<li><code>r</code> Read</li>
+<li><code>w</code> Write</li>
+<li><code>x</code> Execute</li>
+</ul>
+<blockquote>
+<p>Any permission that is not specified after the equals sign (&#x3D;) is automatically prohibited. </p>
+</blockquote>
+<p><strong>Example:</strong> <code>umask -S u=rwx,g=rx,o=rx</code></p>
+<h3 id="Changing-the-default-umask-for-a-specific-user"><a href="#Changing-the-default-umask-for-a-specific-user" class="headerlink" title="Changing the default umask for a specific user"></a>Changing the default umask for a specific user</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.bashrc #for bash</span><br><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.cshrc #for csh</span><br></pre></td></tr></table></figure>
+<h3 id="Setting-default-permissions-for-newly-created-home-directories"><a href="#Setting-default-permissions-for-newly-created-home-directories" class="headerlink" title="Setting default permissions for newly created home directories"></a>Setting default permissions for newly created home directories</h3><p>You can change the permission modes for home directories of newly created users by modifying the <code>/etc/login.defs</code> file. </p>
+<ol>
+<li>As root, open the &#x2F;etc&#x2F;login.defs file in the editor.</li>
+<li>Modify the following section to set a new default HOME_MODE: <blockquote>
+<p># HOME_MODE is used by useradd(8) and newusers(8) to set the mode for new<br># home directories.<br># If HOME_MODE is not set, the value of UMASK is used to create the mode.<br>Replace the default octal value (0700) with another octal value. The selected mode will be used to create the permissions for the home directory. </p>
+</blockquote>
+</li>
+<li>If HOME_MODE is set, save the changes and exit the editor.</li>
+<li>If HOME_MODE is not set, modify the UMASK to set the mode for the newly created home directories: <blockquote>
+<p># Default initial “umask” value used by login(1) on non-PAM enabled systems.<br># Default “umask” value for pam_umask(8) on PAM enabled systems.<br># UMASK is also used by useradd(8) and newusers(8) to set the mode for new<br># home directories if HOME_MODE is not set.<br># 022 is the default value, but 027, or even 077, could be considered<br># for increased privacy. There is no One True Answer here: each sysadmin<br># must make up their mind.</p>
+<p>UMASK           022</p>
+</blockquote>
+</li>
+</ol>
+<p>Replace the default octal value (022) with another octal value. See User file-creation mode mask for more details.<br>5. Save the changes and exit the editor. </p>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2023/03/13/U%E7%9B%98%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">U盘无法格式化</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2023/03/09/definition-of-TSMC-metal-layer-map/">
+        <span class="next-text nav-default">Definition of TSMC Metal Layer Map</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022 - 2023<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>

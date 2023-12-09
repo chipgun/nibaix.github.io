@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="配置Redhat7遇到的若干问题"/><meta name="keywords" content="linux, troubleshoot, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2023/03/16/配置Redhat7遇到的若干问题/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>配置Redhat7遇到的若干问题 - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">配置Redhat7遇到的若干问题
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-03-16
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vsftpd-533-could-not-create-file"><span class="toc-text">vsftpd: 533 could not create file</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#svnserve-%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5"><span class="toc-text">svnserve: 启动失败</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vncserver-%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5"><span class="toc-text">vncserver: 启动失败</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#eda-license-daemon"><span class="toc-text">eda license daemon</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><h1 id="vsftpd-533-could-not-create-file"><a href="#vsftpd-533-could-not-create-file" class="headerlink" title="vsftpd: 533 could not create file"></a>vsftpd: 533 could not create file</h1><p><strong>问题：</strong>成功启动vsftpd服务<code>system start vsftpd.service</code>后，FTP客户端传输文件到服务器失败，返回<code>533 could not create file</code></p>
+<p><strong>解决：</strong><code>setsebool -P ftpd_full_access=true</code> <em>&#x2F;&#x2F;-P (persistent) 表示reboot后设置永久有效</em></p>
+<span id="more"></span>
+
+<h1 id="svnserve-启动失败"><a href="#svnserve-启动失败" class="headerlink" title="svnserve: 启动失败"></a>svnserve: 启动失败</h1><p><strong>问题：</strong>修改配置文件<code>/etc/sysconfig/svnserve</code>，如果用–config-file指定所有repo共享config，启动SVN服务失败；而且如果不指定–config-file，则启动SVN成功。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/sysconfig/svnserve</span><br><span class="line">OPTIONS=&quot;-r /p/SVN --config-file=/p/SVN/conf/svnserve.conf&quot;</span><br><span class="line"># systemctl start svnserve.service</span><br><span class="line"># systemctl enable svnserve.service</span><br><span class="line"># systemctl status svnserve.service</span><br></pre></td></tr></table></figure>
+
+<p><strong>临时解决：</strong><code>setenforce 0</code></p>
+<p>其它有用的SELinux相关命令：</p>
+<p><code>getenforce</code> 查看当前SELinux状态</p>
+<p><code>semanage boolean -l</code> 查看当前SELinux所有布尔变量的值，类似与<code>getsebool -a</code></p>
+<p><code>cat /etc/selinux/config</code> 查看SELinux配置文件</p>
+<p><code>cat /var/log/audit/audit.log</code> 查看SELinux日志文件</p>
+<h1 id="vncserver-启动失败"><a href="#vncserver-启动失败" class="headerlink" title="vncserver: 启动失败"></a>vncserver: 启动失败</h1><p><strong>问题：</strong>按下面的流程建立端口7的VNC session，失败！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/lib/systemd/system</span><br><span class="line"># cp vncserver@.service vncserver@:7.service</span><br><span class="line"># vi vncserver@:7.service // Change &lt;USER&gt;</span><br><span class="line"># systemctl start vncserver@:7.service</span><br><span class="line"># systemctl enable vncserver@:7.service</span><br><span class="line"># systemctl status vncserver@:7.service</span><br></pre></td></tr></table></figure>
+
+<p><strong>解决：</strong>在为用户建立VNC session之前，必须要先为用户设置密码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># sudo passwd &lt;USER&gt;</span><br><span class="line"># sudo vncpasswd &lt;USER&gt;</span><br></pre></td></tr></table></figure>
+
+<p>完整设置vncserver的流程：<a href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/" title="install and configure VNC Server in RHEL7">install and configure VNC Server in RHEL7</a></p>
+<h1 id="eda-license-daemon"><a href="#eda-license-daemon" class="headerlink" title="eda license daemon"></a>eda license daemon</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/init.d/snpslmd</span><br><span class="line">lmgrd -c $licfile -l $logfile</span><br><span class="line"># systemctl start snpslmd</span><br><span class="line"># systemctl enable snpslmd</span><br><span class="line">cg-snpslmd.service is not a native service, redirecting to /sbin/chkconfig.</span><br><span class="line">Executing /sbin/chkconfig snpslmd on</span><br></pre></td></tr></table></figure>
+
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            <a href="/tags/troubleshoot/">troubleshoot</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2023/03/16/install-perl-PAR-Packer-in-RHEL7/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Install Perl PAR::Packer in RHEL7</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2023/03/15/failed-to-install-redhat-7-dracut-initqueue-timeout/">
+        <span class="next-text nav-default">Failed to Install Redhat 7: Dracut-Initqueue Timeout</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022 - 2023<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>

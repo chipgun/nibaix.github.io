@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Group_path"/><meta name="keywords" content="synopsys, eda, nibaix's digital footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's digital footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2023/01/18/group-path/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Group_path - nibaix's digital footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's digital footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's digital footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Group_path
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-01-18
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>NAME<br>       <strong>group_path</strong><br>              Groups a set of paths for cost function calculations.</p>
+<p>ARGUMENTS</p>
+<pre><code>   -weight weight_value
+          Specifies   a   cost   function  weight  for  this  group.   The
+          weight_value must be  a  number  between  0.0  and  100.0.   The
+          default  is  1.0.   A weight of 0.0 eliminates the paths in this
+          group from cost function calculations.  Do not  use  very  small
+          values (for example, 0.0001); smaller values can prevent compile
+          from implementing small improvements  to  the  design.   If  you
+          specify  -weight  when you add members to an existing group, the
+          new weight for the group is used.
+
+   -critical_range range_value
+          Specifies a margin of delay for group_name during  optimization.
+          The  range_value must be positive or 0.0.  If you do not specify
+          a range_value for a group, the default is the value set with the
+          set_critical_range  command  (the  default  setting  is 0.0).  A
+          range_value of 0.0 means that only the most critical paths  (the
+          ones  with the worst violation) are optimized.  If you specify a
+          nonzero range_value, other near-critical  violating  paths  (one
+          per  endpoint)  within  that  amount  of the worst path are also
+          optimized if possible.  If more than one  critical  path  to  an
+          endpoint  must  be  optimized, use a separate group_path command
+          for each distinct critical path to that endpoint.  To force com-
+          pile   to  optimize  all  violating  paths,  use  a  very  large
+          range_value (larger than any expected path violations).
+
+   -default
+          Specifies that endpoints or paths be moved to the default  group
+          and  removed  from the current group.  You must specify -default
+          unless you use -name; -name and -default are mutually exclusive.
+</code></pre>
+<span id="more"></span>
+
+<pre><code>   -name group_name
+          Specifies  a  name  for  the  group.   If a group with this name
+          already exists, the paths or endpoints are added to that  group.
+          Otherwise,  a  new  group  is created and named group_name.  You
+          must specify -name unless you use -default; -name  and  -default
+          are mutually exclusive.
+
+   -from from_list
+          Specifies a list of names of clocks, ports, or pins that specify
+          path startpoints.  If a clock is  given,  all  path  startpoints
+          related  to  that  clock are implicitly included.  This includes
+          flip-flops in the transitive fanout of the clocks source pin  or
+          port, and ports that have input delay related to the clock.
+
+   -rise_from rise_from_list
+          Specifies  a  list the same as the -from option, except that the
+          path must rise from the objects specified.  If a clock object is
+          specified,  this option selects startpoints clocked by the named
+          clock, but only the paths launched by rising edge of  the  clock
+          at  the clock source, taking into account any logical inversions
+          along  the  clock  path.   You  can  use  only  one  of   -from,
+          -rise_from, and -fall_from.
+
+   -fall_from fall_from_list
+          Specifies  a  list the as the -from option, except that the path
+          must fall from the objects specified.   If  a  clock  object  is
+          specified,  this option selects startpoints clocked by the named
+          clock, but only the paths launched by falling edge of the  clock
+          at  the clock source, taking into account any logical inversions
+          along  the  clock  path.   You  can  use  only  one  of   -from,
+          -rise_from, and -fall_from.
+
+   -through through_list
+          Specifies  a list of path throughpoints (port, pin, or leaf cell
+          names) of the current design.  The path grouping applies only to
+          paths  that  pass through one of the points in the through_list.
+          If more than  one  object  is  included,  the  objects  must  be
+          enclosed  either  in quotation marks (&quot;&quot;) or in braces (&#123;&#125;).  If
+          the -through option is specified multiple times, the group  path
+          setting  applies  to  paths  that  pass through a member of each
+          through_list in the order the lists were given.  In other words,
+          the  path  must  first  pass  through  a  member  of  the  first
+          through_list, then through a member of the second list,  and  so
+          on  for every specified through_list.  If the -through option is
+          used in combination with the -from or  -to  options,  the  group
+          path  applies  only if the -from or -to conditions are satisfied
+          and the -through conditions are satisfied.
+
+   -rise_through rise_through_list
+          Specifies a list the same as the -through  option,  but  applies
+          only to paths with a rising transition at the specified objects.
+          You can specify -rise_through more than one  time  in  a  single
+          command invocation, as with the -through option.
+
+   -fall_through fall_through_list
+          Specifies  a  list  the same as the -through option, but applies
+          only to  paths  with  a  falling  transition  at  the  specified
+          objects.   You can specify -fall_through more than one time in a
+          single command invocation as with the -through option.
+
+   -to to_list
+          Specifies a list of names of clocks, ports, or pins that specify
+          path endpoints.  If a clock is given, all path endpoints related
+          to that clock are implicitly included.  This includes flip-flops
+          in  the  transitive fanout of the clocks source pin or port, and
+          ports that have output delay related to the clock.
+
+   -rise_to rise_to_list
+          Specifies a list the same as the -to option, but applies only to
+          paths  rising  at the endpoint.  If a clock object is specified,
+          this option selects endpoints clocked by the  named  clock,  but
+          only  the  paths  captured  by rising edge of the clock at clock
+          source, taking into account any  logical  inversions  along  the
+          clock  path.   You  can  use  only  one  of  -to,  -rise_to, and
+          -fall_to.
+
+   -fall_to fall_to_list
+          Specifies a list the same as the -to option, but applies only to
+          paths  falling at the endpoint.  If a clock object is specified,
+          this option selects endpoints clocked by the  named  clock,  but
+          only  the  paths  launched  by  falling edge of the clock at the
+          clock source, taking into account any logical  inversions  along
+          the  clock  path.   You  can  use only one of -to, -rise_to, and
+          -fall_to.
+
+   -comment comment_string
+          Allows the command to accept a comment string. The  tool  honors
+          the  annotation and preserves it with the SDC object so that the
+          exact string is written out when the constraint is  written  out
+          when you use the write_sdc or write_script command.  The comment
+          remains intact through the synthesis, place-and-route, and  tim-
+          ing-analysis flows.
+
+   -priority priority_level
+          Assigns  a  priority  to the command to resolve conflicting path
+          selections between different group_path  commands.  By  default,
+          different  group_path commands follow ordinary rules of priority
+          to resolve conflicting path selections. For example,  a  command
+          using  -from  and  -to  to select paths has priority over a con-
+          flicting command that selects a  subset  of  those  paths  using
+          -through,  so  the  latter command is ignored for the paths that
+          could be in either. By setting a higher priority in the  command
+          using  the -through option, its path selection is honored, over-
+          riding the usual order of priority on paths in the  intersection
+          of  the  two  groups. If unspecified, the priority is 0. You can
+          set the priority for a group_path command to any  integer  0  or
+          greater.
+</code></pre>
+<p>DESCRIPTION<br>       Groups a set of paths or endpoints for cost function calculations.  The<br>       delay cost function is the sum of  all  groups  (weight  *  violation),<br>       where  violation  is  the  amount  for which setup was violated for all<br>       paths within the group.  If there is no violation within a  group,  its<br>       cost  is zero.  Groups enable you to specify a set of paths to optimize<br>       even though there might be larger violations in  another  group.   When<br>       endpoints  are  specified,  all  paths  leading  to those endpoints are<br>       grouped.</p>
+<pre><code>   If a clock is specified in the  from_list  or  to_list,  all  endpoints
+   related to that clock are included in the group.  The create_clock com-
+   mand automatically creates a group for a new clock with a weight of 1.0
+   and named the same as the clock name.
+
+   The  weight of the default group is 1.0.  If weight_value is not speci-
+   fied for a new group, the default is 1.0.
+
+   To undo group_path, use reset_design or group_path -default.
+
+   To list the path groups that are defined,  use  report_path_group.   To
+   show the maximum delay cost for each path group, use report_constraint.
+</code></pre>
+<p>   Multicorner-Multimode Support<br>       This command uses information from the current scenario only.</p>
+<p>EXAMPLES<br>       The following example groups all endpoints clocked by  CLK1A  or  CLK1B<br>       into a new group called group1 that has a weight &#x3D; 2.0:</p>
+<pre><code>     prompt&gt; group_path -name &quot;group1&quot; -weight 2.0 -to &#123;CLK1A CLK1B&#125;
+
+   The  following  example adds OUT1 and ff34/D to the existing path group
+   named ADDR:
+
+     prompt&gt; group_path -name &quot;ADDR&quot; -to &#123;OUT1 ff34/D&#125;
+
+   The following example removes OUT1 and CLK2 from  existing  groups  and
+   places them in the default group:
+
+     prompt&gt; group_path -default -to &#123;OUT1 CLK2&#125;
+
+   This command adds all paths that first pass through either u1/Z or u2/Z
+   and then pass through u5/Z or u6/Z into the group named blue:
+
+     prompt&gt; group_path -name blue \
+        -through &#123;u1/Z u2/Z&#125; -through &#123;u5/Z u6/Z&#125;
+
+       The following example groups all paths from inputs  I1  and  I2  to
+       outputs  O5  and O7 into a group named serious that has a weight of
+       10.0:
+
+         prompt&gt; group_path -name serious -weight 10.0 \
+            -from &#123;I1 I2&#125; -to &#123;O5 O7&#125;
+
+       The following example groups all endpoints clocked by  CLK  into  a
+       group with a critical range of 0.5:
+
+         prompt&gt; group_path -name CLK -critical_range 0.5 -to CLK
+
+       The following example uses a large critical range value to optimize
+       all paths. For example, assume that the worst violation is expected
+       to  be  100  units.  Setting a critical range value larger than the
+       worst violation causes optimization to speed up all  paths  if  the
+       transformations  do not increase the worst violation (that is, make
+       the worse path slower) for that group.  In this example, the criti-
+       cal  range value is set higher than the worst expected violation to
+       ensure that all violating paths are considered during optimization:
+
+         prompt&gt; group_path -name CLK -critical_range 1000.0 -to CLK
+</code></pre>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/synopsys/">synopsys</a>
+            <a href="/tags/eda/">eda</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2023/01/18/vim-open-files/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Vim: Open Files</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2023/01/14/verdi-configuration-file-novas-rc/">
+        <span class="next-text nav-default">Verdi Configuration File novas.rc</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022 - 2023<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>
