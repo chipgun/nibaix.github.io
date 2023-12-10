@@ -12679,4 +12679,83 @@ service messagebus restart;
         <tag>timing</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Low Power Techniques in VLSI</title>
+    <url>/2023/12/10/Low-Power-Techniques-in-VLSI/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>Design Level</th>
+<th>Strategies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Operating System Level</td>
+<td>Portioning, Power down</td>
+</tr>
+<tr>
+<td>Software Level</td>
+<td>Regularity, locality, concurrency</td>
+</tr>
+<tr>
+<td>Architecture Level</td>
+<td>Pipelining, Redundancy, data encoding</td>
+</tr>
+<tr>
+<td>Circuit&#x2F;Logic Level</td>
+<td>Logic style, transistor sizing, energy recovery</td>
+</tr>
+<tr>
+<td>Technology Level</td>
+<td>Threshold reduction, multiple threshold devices</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Traditional Techniques</th>
+<th>Dynamic power reduction</th>
+<th>Leakage power reduction</th>
+<th>Other power reduction techniques</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Clock gating</td>
+<td>Clock gating</td>
+<td>Minimize usage of LVt</td>
+<td>Multiple oxide devices</td>
+</tr>
+<tr>
+<td>Power gating</td>
+<td>Power efficient circuits</td>
+<td>Power gating</td>
+<td>Power efficient circuits</td>
+</tr>
+<tr>
+<td>Variable frequency</td>
+<td>Variable frequency</td>
+<td>Back biasing</td>
+<td>Minimize capacitance by custom design</td>
+</tr>
+<tr>
+<td>Variable voltage supply</td>
+<td>Variable voltage supply</td>
+<td>Reduce oxide thickness</td>
+<td></td>
+</tr>
+<tr>
+<td>Variable device threshold</td>
+<td>Voltage Islands</td>
+<td>Use FinFET</td>
+<td></td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>lowpower</tag>
+      </tags>
+  </entry>
 </search>

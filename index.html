@@ -92,6 +92,90 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/12/10/Low-Power-Techniques-in-VLSI/">Low Power Techniques in VLSI</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-12-10
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><table>
+<thead>
+<tr>
+<th>Design Level</th>
+<th>Strategies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Operating System Level</td>
+<td>Portioning, Power down</td>
+</tr>
+<tr>
+<td>Software Level</td>
+<td>Regularity, locality, concurrency</td>
+</tr>
+<tr>
+<td>Architecture Level</td>
+<td>Pipelining, Redundancy, data encoding</td>
+</tr>
+<tr>
+<td>Circuit&#x2F;Logic Level</td>
+<td>Logic style, transistor sizing, energy recovery</td>
+</tr>
+<tr>
+<td>Technology Level</td>
+<td>Threshold reduction, multiple threshold devices</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Traditional Techniques</th>
+<th>Dynamic power reduction</th>
+<th>Leakage power reduction</th>
+<th>Other power reduction techniques</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Clock gating</td>
+<td>Clock gating</td>
+<td>Minimize usage of LVt</td>
+<td>Multiple oxide devices</td>
+</tr>
+<tr>
+<td>Power gating</td>
+<td>Power efficient circuits</td>
+<td>Power gating</td>
+<td>Power efficient circuits</td>
+</tr>
+<tr>
+<td>Variable frequency</td>
+<td>Variable frequency</td>
+<td>Back biasing</td>
+<td>Minimize capacitance by custom design</td>
+</tr>
+<tr>
+<td>Variable voltage supply</td>
+<td>Variable voltage supply</td>
+<td>Reduce oxide thickness</td>
+<td></td>
+</tr>
+<tr>
+<td>Variable device threshold</td>
+<td>Voltage Islands</td>
+<td>Use FinFET</td>
+<td></td>
+</tr>
+</tbody></table>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2023/12/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Excel%E5%9C%A8Timing-Closure%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">记录一次Excel在Timing Closure中的应用</a>
         </h1>
 
@@ -296,35 +380,6 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
     <div class="post-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line"># Create a shell script which starts the license server</span><br><span class="line">#</span><br><span class="line">% cat /path/to/eda/script/snpslmd.sh</span><br><span class="line">admin=eda</span><br><span class="line">su $admin -c &quot;/path/to/lmgrd -l $logfile -c $licfile&quot;</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Create systemd service file</span><br><span class="line">#</span><br><span class="line">% cat /etc/systemd/system/snpslmd.service</span><br><span class="line">[Unit]</span><br><span class="line">Description=Synopsys License Server Daemon</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">RemainAfterExit=yes</span><br><span class="line">KillMode=process</span><br><span class="line">ExecStart=/bin/sh -c &quot;/path/to/eda/script/snpslmd.sh&quot;</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Startup license server</span><br><span class="line">#</span><br><span class="line">% sudo systemctl daemon-reload</span><br><span class="line">% sudo systemctl start snpslmd.service</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Enable license server onboot</span><br><span class="line">#</span><br><span class="line">% sudo systemctl enable snpslmd.service</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Check the status of the license server</span><br><span class="line">#</span><br><span class="line">% sudo systemctl status snpslmd.service</span><br><span class="line">% ps aux | grep lmgrd | grep snpslmd</span><br><span class="line">% lmstat</span><br></pre></td></tr></table></figure>
 
 <p><em><strong>Unresolved issue:</strong></em><br/>Unable to stop license server by <code>systemctl stop snpslmd.service</code></p>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/08/07/Beginning-of-SLS-Usage/">Beginning of SLS Usage</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-08-07
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>Starting from 2023, Siemens changes their EDA license managing utility.</p>
-<p>Previous MGLS (Mentor Graphic License Server) doesn’t support EDA softwares of 2023 or later. Calibre 2023 may be still in the supporting list, but Tenssent 2023 isn’t for sure. Instead, SLS (Siemens License Server) is the successor of MGLS.</p>
-<p>The SLS utility doesn’t need to be patched while EDA software itself should be patched and still be valid by OCAD 1patch v0.3.</p>
-<p>The license file generated by MentorKG.exe is still available for SLS. All you need to do is to modify the DAEMON (2nd line) by replacing ‘mgcld’ with ‘saltd’.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DAEMON saltd /PATH/TO/SLS/UTILITY/saltd</span><br></pre></td></tr></table></figure>
-
-<p>End user should set the environment variable SALT_LICENSE_SERVER, for example <code>setenv SALT_LICENSE_SERVER 27001@licsrv</code>. Some of old Mentor tools still check license within the old variable MGLS_LICENSE_FILE, so we need to set both variables with same value.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setenv SALT_LICENSE_SERVER 27001@licsrv</span><br><span class="line">setenv MGLS_LICENSE_FILE 27001@licsrv</span><br></pre></td></tr></table></figure>
-
-<p>Now enjoy the new Siemens&#x2F;Mentor softwares of 2023 or later.</p>
-<p>PS. how to check the availability of SLS floating license?</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% tessent -shell</span><br><span class="line">% calibredrv</span><br></pre></td></tr></table></figure>
-
 
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">

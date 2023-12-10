@@ -92,6 +92,24 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/07/24/how-to-enable-sudo-for-a-user-1/">How to Enable Sudo for a User</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-07-24
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% su -</span><br><span class="line"><span class="comment"># usermod -aG wheel username</span></span><br><span class="line"><span class="comment"># visudo</span></span><br></pre></td></tr></table></figure>
+<p>Uncomment the line of <code>%wheel ALL=(ALL) ALL</code> to enable password mode.<br>Uncomment the line of <code>%wheel ALL=(ALL) NOPASSWD:ALL</code> to enable no password mode.</p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/07/22/a-man-s-most-powerful-capacity/">A Man's Most Powerful Capacity</a>
         </h1>
 
@@ -284,27 +302,6 @@
 <li>Optimize machine resources with faster native tools that use less memory</li>
 </ul>
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/07/07/install-vim9-supporting-python3/">Install Vim9 Supporting Python3</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-07-07
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>In June 28th, 2022 the major version of Vim 9.0 was officially released. You can download Vim 9.0 for appropriate platform at <a target="_blank" rel="noopener" href="https://www.vim.org/download.php">https://www.vim.org/download.php</a>.</p>
-<p>Download latest source code from GitHub by <code>git clone https://github.com/vim/vim.git</code>. </p>
-<p><strong>The installation procedure from source code:</strong> (You should have <a href="/2022/06/02/install-specific-version-of-python/">Python3</a> already installed in your Linux system.)</p>
-          <div class="read-more">
-            <a href="/2022/07/07/install-vim9-supporting-python3/" class="read-more-link">Read more &raquo;</a>
-          </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/4/">
         <i class="iconfont icon-left"></i>
