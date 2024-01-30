@@ -92,6 +92,23 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/03/16/%E9%85%8D%E7%BD%AERedhat7%E9%81%87%E5%88%B0%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/">配置Redhat7遇到的若干问题</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-03-16
+        </span></div>
+    </header>
+
+    <div class="post-content"><h1 id="vsftpd-533-could-not-create-file"><a href="#vsftpd-533-could-not-create-file" class="headerlink" title="vsftpd: 533 could not create file"></a>vsftpd: 533 could not create file</h1><p><strong>问题：</strong>成功启动vsftpd服务<code>system start vsftpd.service</code>后，FTP客户端传输文件到服务器失败，返回<code>533 could not create file</code></p>
+<p><strong>解决：</strong><code>setsebool -P ftpd_full_access=true</code> <em>&#x2F;&#x2F;-P (persistent) 表示reboot后设置永久有效</em></p>
+          <div class="read-more">
+            <a href="/2023/03/16/%E9%85%8D%E7%BD%AERedhat7%E9%81%87%E5%88%B0%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2023/03/15/failed-to-install-redhat-7-dracut-initqueue-timeout/">Failed to Install Redhat 7: Dracut-Initqueue Timeout</a>
         </h1>
 
@@ -461,56 +478,6 @@
 
     <div class="post-content"><p><code>:e filename</code> Opens the file in the vim editor.<br><code>:new filename</code> Opens the file in horizontal split mode.<br><code>:vert new filename</code> Opens the file in vertical split mode.<br><code>:tabnew filename</code> Opens the file in a new tab.</p>
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/01/18/group-path/">Group_path</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-01-18
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>NAME<br>       <strong>group_path</strong><br>              Groups a set of paths for cost function calculations.</p>
-<p>ARGUMENTS</p>
-<pre><code>   -weight weight_value
-          Specifies   a   cost   function  weight  for  this  group.   The
-          weight_value must be  a  number  between  0.0  and  100.0.   The
-          default  is  1.0.   A weight of 0.0 eliminates the paths in this
-          group from cost function calculations.  Do not  use  very  small
-          values (for example, 0.0001); smaller values can prevent compile
-          from implementing small improvements  to  the  design.   If  you
-          specify  -weight  when you add members to an existing group, the
-          new weight for the group is used.
-
-   -critical_range range_value
-          Specifies a margin of delay for group_name during  optimization.
-          The  range_value must be positive or 0.0.  If you do not specify
-          a range_value for a group, the default is the value set with the
-          set_critical_range  command  (the  default  setting  is 0.0).  A
-          range_value of 0.0 means that only the most critical paths  (the
-          ones  with the worst violation) are optimized.  If you specify a
-          nonzero range_value, other near-critical  violating  paths  (one
-          per  endpoint)  within  that  amount  of the worst path are also
-          optimized if possible.  If more than one  critical  path  to  an
-          endpoint  must  be  optimized, use a separate group_path command
-          for each distinct critical path to that endpoint.  To force com-
-          pile   to  optimize  all  violating  paths,  use  a  very  large
-          range_value (larger than any expected path violations).
-
-   -default
-          Specifies that endpoints or paths be moved to the default  group
-          and  removed  from the current group.  You must specify -default
-          unless you use -name; -name and -default are mutually exclusive.
-</code></pre>
-          <div class="read-more">
-            <a href="/2023/01/18/group-path/" class="read-more-link">Read more &raquo;</a>
-          </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/2/">
         <i class="iconfont icon-left"></i>

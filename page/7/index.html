@@ -92,6 +92,25 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/06/02/update-alternatives/">Update Alternatives</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-06-02
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>If there are several versions of a tool installed in Redhat. Use command <code>update-alternatives</code> for prioritization.</p>
+<p>For instance with Python, saying Python 2.6, 2.7 and 3.6 versions are installed. With root following bundle of commands activates Python3.6 to be the system-wide default version. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@localhost<span class="comment"># update-alternatives --display python</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/bin/python2.6 1</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/local/bin/python2.7 2</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/local/bin/python3.6 3</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --display python</span></span><br><span class="line">/usr/bin/python2.6 - priority 1</span><br><span class="line">/usr/local/bin/python2.7 - priority 2</span><br><span class="line">/usr/local/bin/python3.6 - priority 3</span><br><span class="line">Current <span class="string">&#x27;best&#x27;</span> version is /usr/local/bin/python3.6.</span><br></pre></td></tr></table></figure>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/06/01/SH-re-open-after-70-days-lockdown/">SH Re-Open After 70 Days Lockdown</a>
         </h1>
 
@@ -407,26 +426,6 @@
 </tbody></table>
 <img src="/2022/05/16/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-15/image_20220515.jpg" class="">
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/12/manage-disk-quota-step-by-step/">Manage Disk Quota Step by Step</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-12
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h2 id="Enable-Quota"><a href="#Enable-Quota" class="headerlink" title="Enable Quota"></a>Enable Quota</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cat</span> /etc/fstab</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># /etc/fstab</span></span><br><span class="line"><span class="comment"># Created by anaconda on Fri Jul 26 19:45:28 2019</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Accessible filesystems, by reference, are maintained under &#x27;/dev/disk&#x27;</span></span><br><span class="line"><span class="comment"># See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">/dev/vg_chipgun0/lv_root		/		ext4	defaults	1 1</span><br><span class="line">UUID=1d4e1b07-4ab2-46d0-989d-95968627ffa0 /boot                   ext4    defaults        1 2</span><br><span class="line">UUID=7738-A39E          /boot/efi               vfat    <span class="built_in">umask</span>=0077,shortname=winnt 0 0</span><br><span class="line">/dev/mapper/vg_chipgun0-lv_swap swap                    swap    defaults        0 0</span><br><span class="line">tmpfs                   /dev/shm                tmpfs   defaults        0 0</span><br><span class="line">devpts                  /dev/pts                devpts  gid=5,mode=620  0 0</span><br><span class="line">sysfs                   /sys                    sysfs   defaults        0 0</span><br><span class="line">proc                    /proc                   proc    defaults        0 0</span><br><span class="line">/t/iso/rhel-server-6.10-x86_64-dvd.iso	/t/iso/loop		iso9660 defaults,ro,loop 0 0</span><br><span class="line">UUID=<span class="string">&quot;4bcb3b77-8b05-416e-8650-dad4cb38f8ca&quot;</span> /p                   xfs    defaults        0 0</span><br><span class="line">UUID=<span class="string">&quot;1298f072-6db9-46a5-8129-89a40d5fc14f&quot;</span> /l                   xfs    defaults        0 0</span><br><span class="line">UUID=<span class="string">&quot;bb8414b8-181f-43ef-a8f4-0e21841ef4a0&quot;</span> /h                   xfs    defaults        0 0</span><br><span class="line">UUID=<span class="string">&quot;90359d7e-0ad8-41f6-83f1-a168e27c11b3&quot;</span> /p/w   xfs  defaults,usrquota,grpquota      1 2</span><br></pre></td></tr></table></figure>
-<p>Looking at the last line of &#x2F;etc&#x2F;fstab above, both <strong>usrquota</strong> and <strong>grpquota</strong> are added in option domain.</p>
-          <div class="read-more">
-            <a href="/2022/05/12/manage-disk-quota-step-by-step/" class="read-more-link">Read more &raquo;</a>
-          </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/6/">
         <i class="iconfont icon-left"></i>
