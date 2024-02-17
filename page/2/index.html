@@ -92,6 +92,31 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/08/11/Synopsys-Command-report-timing/">Synopsys Command: Report_timing</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-08-11
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>There are some useful options of command report_timing, which I haven’t been aware of before.</p>
+<p><strong>-start_end_pair</strong></p>
+<p>This option should be quite useful if you want to report violations from all startpoints to endpoints. By default report_timing only report the most critical startpoint to a certain endpoint even if -nworst is specified. With the option of -start_end_pair all startpoints will be shown up.</p>
+<p><strong>-path_type <em>summary</em></strong></p>
+<p>Reports timing summary only with startpoints and endpoints.</p>
+<p><strong>-start_end_type <em>reg_to_reg</em> | <em>reg_to_out</em> | <em>in_to_reg</em> | <em>in_to_out</em></strong></p>
+<p>Restricts the report to one of four classes.</p>
+          <div class="read-more">
+            <a href="/2023/08/11/Synopsys-Command-report-timing/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2023/08/07/Setup-License-Server-with-Systemctl-in-Redhat7/">Setup License Server With Systemctl in Redhat7</a>
         </h1>
 
@@ -274,28 +299,6 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># chmod go-rx /bin/vncconfig</span><br><span class="line"># chmod go-rx /usr/bin/vncconfig</span><br></pre></td></tr></table></figure>
 
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/03/16/install-perl-PAR-Packer-in-RHEL7/">Install Perl PAR::Packer in RHEL7</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-03-16
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p><strong>Install System RPMs</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># yum install perl-ExtUtils-Embed</span><br><span class="line"># yum install perl-ExtUtils-CBuilder</span><br><span class="line"># yum install perl-Archive-*</span><br><span class="line"># yum install perl-Crypt-OpenSSL-*</span><br><span class="line"># yum install openssl</span><br></pre></td></tr></table></figure>
-
-<p><strong>Download &amp; Install Perl Modules</strong></p>
-          <div class="read-more">
-            <a href="/2023/03/16/install-perl-PAR-Packer-in-RHEL7/" class="read-more-link">Read more &raquo;</a>
-          </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/">
         <i class="iconfont icon-left"></i>

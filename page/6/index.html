@@ -92,6 +92,30 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/07/08/vim-generate-and-increment-numbers/">Vim: Generate and Increment Numbers</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-07-08
+        </span><span class="post-category">
+            <a href="/categories/Program/">Program</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><h3 id="Increment-Numbers"><a href="#Increment-Numbers" class="headerlink" title="Increment Numbers"></a>Increment Numbers</h3><ol>
+<li>C-v to enter visual mode</li>
+<li>Move the cursor up&#x2F;down to select columns</li>
+<li>g + C-a</li>
+</ol>
+<h3 id="Generate-Numbers"><a href="#Generate-Numbers" class="headerlink" title="Generate Numbers"></a>Generate Numbers</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="keyword">put</span>=<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5</span>) # Generate <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span> by column</span><br><span class="line">:<span class="keyword">put</span>=<span class="built_in">range</span>(<span class="number">10</span>,<span class="number">2</span>,-<span class="number">2</span>) # Generate <span class="number">10</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">2</span> by column</span><br><span class="line">:<span class="keyword">put</span>=<span class="built_in">range</span>(<span class="built_in">line</span>(<span class="string">&#x27;.&#x27;</span>),<span class="number">100</span>) # Generate numbers from current <span class="built_in">line</span> <span class="keyword">number</span> <span class="keyword">to</span> <span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<p><em><strong>This feature is supported only in Vim 8.0 or higher versions.</strong></em></p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/07/08/synopsys-safety-aware-solution-for-automotive/">Synopsys Safety-Aware Solution for Automotive</a>
         </h1>
 
@@ -385,27 +409,6 @@
 
     <div class="post-content"><p><img src=/2022/06/07/chipgun-new-logo-2022-06-06/ChipgunDark.png width=200> <br/><br><img src=/2022/06/07/chipgun-new-logo-2022-06-06/颀观Dark.png width=200> <br/></p>
 <p>» <a href="/2022/05/08/new-chipgun-logo-8may2022">Previous one</a></p>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/06/02/install-specific-version-of-python/">Install Specific Version of Python</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-06-02
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h3 id="1-Download-Python-source-tarball-for-your-specific-version"><a href="#1-Download-Python-source-tarball-for-your-specific-version" class="headerlink" title="1. Download Python source tarball for your specific version"></a>1. Download Python source tarball for your specific version</h3><p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/source/">https://www.python.org/downloads/source/</a></p>
-<h3 id="2-Unpack-the-tarball-and-install"><a href="#2-Unpack-the-tarball-and-install" class="headerlink" title="2. Unpack the tarball and install"></a>2. Unpack the tarball and install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@localhost<span class="comment"># tar xvf Python-3.10.4.tgz</span></span><br><span class="line">root@localhost<span class="comment"># cd Python-3.10.4</span></span><br><span class="line">root@localhost<span class="comment"># ./configure --enable-optimizations</span></span><br><span class="line">root@localhost<span class="comment"># make altinstall</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-Set-the-new-version-by-default"><a href="#3-Set-the-new-version-by-default" class="headerlink" title="3. Set the new version by default"></a>3. Set the new version by default</h3><p>For individual user: <code>alias python &#39;/usr/local/bin/python3.10&#39;</code><br>For system-wide activation: <a href="/2022/06/02/update-alternatives/">update-alternatives</a></p>
-<h3 id="4-Check-the-new-installation"><a href="#4-Check-the-new-installation" class="headerlink" title="4. Check the new installation"></a>4. Check the new installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jim@localhost% python --version</span><br></pre></td></tr></table></figure>
 
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/5/">

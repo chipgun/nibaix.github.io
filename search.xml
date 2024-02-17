@@ -12784,4 +12784,25 @@ service messagebus restart;
         <tag>css</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Perl Function Strftime</title>
+    <url>/2024/02/17/Perl-function-strftime/</url>
+    <content><![CDATA[<p>在 Perl 中处理时间，很多模块，很方便，但是刚开始玩的人，可能没有发现合适的模块，所以使用起来感觉很麻烦。这里给大家推荐一下一个模块 strftime。</p>
+<p>我们在推荐前，介绍一下 Perl 下取时间的今生前世吧。以前我想大家都是使用的 localtime 来取得当地日期时间和日期。这个函数如果在标量环境时，会以字符串的形式来传回目前的时间和日期 。默认的 localtime 的函数是以 1970 到今天的秒来做整数计算的。默认这个程序会调用 time 的函数来给它提供一个值。<br>使用方法：</p>
+<img src="/2024/02/17/Perl-function-strftime/image-20240217222015826.png" class="">
+
+<p>上面这个函数常用，但是返回值非常乱，可读性非常不好，让我们很容易出错，所以我推荐 strftime 这个时间函数。当然，还有另一个模块 DataTime 也相当不错。不过 strftime 非常象 Linux 常用的 date 的命令。strftime 是 C 中 POSIX 的一个功能函数，被包含进了 Perl 中。使用起来很容易，如下：</p>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/perl -w</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> strict;</span><br><span class="line"><span class="keyword">use</span> warnings;</span><br><span class="line"><span class="keyword">use</span> feature <span class="string">qw(say)</span>;</span><br><span class="line"><span class="keyword">use</span> POSIX <span class="string">qw(strftime)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">say</span> strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, <span class="keyword">localtime</span>);</span><br></pre></td></tr></table></figure>
+
+<p>执行输出：<code>2010-08-21 07:44:24</code></p>
+<p><strong>strftime 时间域（这个和 date 的命令的字符格式是一样的）</strong><br>%H 小时（00..23）<br>%I 小时（01..12）<br>%k 小时（0..23）<br>%l 小时（1..12）<br>%M 分（00..59）<br>%p 显示出AM或PM<br>%r 时间（hh：mm：ss AM或PM），12小时<br>%s 从1970年1月1日00：00：00到目前经历的秒数<br>%S 秒（00..59）<br>%T 时间（24小时制）（hh:mm:ss）<br>%X 显示时间的格式（％H:％M:％S）<br>%Z 时区 日期域<br>%a 星期几的简称（ Sun..Sat）<br>%A 星期几的全称（ Sunday..Saturday）<br>%b 月的简称（Jan..Dec）<br>%B 月的全称（January..December）<br>%c 日期和时间（ Mon Nov 8 14：12：46 CST 1999）<br>%d 一个月的第几天（01..31）<br>%D 日期（mm／dd／yy）<br>%h 和%b选项格式相同<br>%j 一年的第几天（001..366）<br>%m 月（01..12）<br>%w 一个星期的第几天（0代表星期天）<br>%W 一年的第几个星期（00..53，星期一为第一天）<br>%x 显示日期的格式（mm&#x2F;dd&#x2F;yy）<br>%y 年的最后两个数字（ 1999则是99）<br>%Y 年（例如：1970，1996等)</p>
+]]></content>
+      <categories>
+        <category>Program</category>
+      </categories>
+      <tags>
+        <tag>perl</tag>
+        <tag>script</tag>
+      </tags>
+  </entry>
 </search>
