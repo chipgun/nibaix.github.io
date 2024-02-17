@@ -12789,7 +12789,7 @@ service messagebus restart;
     <url>/2024/02/17/Perl-function-strftime/</url>
     <content><![CDATA[<p>在 Perl 中处理时间，很多模块，很方便，但是刚开始玩的人，可能没有发现合适的模块，所以使用起来感觉很麻烦。这里给大家推荐一下一个模块 strftime。</p>
 <p>我们在推荐前，介绍一下 Perl 下取时间的今生前世吧。以前我想大家都是使用的 localtime 来取得当地日期时间和日期。这个函数如果在标量环境时，会以字符串的形式来传回目前的时间和日期 。默认的 localtime 的函数是以 1970 到今天的秒来做整数计算的。默认这个程序会调用 time 的函数来给它提供一个值。使用方法：</p>
-
+<img src=/2024/02/17/Perl-function-strftime/image-20240217222015826.png width=320>
 
 <span id="more"></span>
 
