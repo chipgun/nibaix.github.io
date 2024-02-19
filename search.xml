@@ -1299,9 +1299,9 @@
       
         <tags>
             
-            <tag> automotive </tag>
-            
             <tag> synopsys </tag>
+            
+            <tag> automotive </tag>
             
         </tags>
       
@@ -1330,9 +1330,9 @@
             
             <tag> editor </tag>
             
-            <tag> vim </tag>
-            
             <tag> python </tag>
+            
+            <tag> vim </tag>
             
         </tags>
       
@@ -1924,9 +1924,9 @@
       
         <tags>
             
-            <tag> lowpower </tag>
-            
             <tag> synopsys </tag>
+            
+            <tag> lowpower </tag>
             
             <tag> primetime </tag>
             
@@ -1957,9 +1957,9 @@
             
             <tag> synopsys </tag>
             
-            <tag> sta </tag>
-            
             <tag> ocv </tag>
+            
+            <tag> sta </tag>
             
         </tags>
       
