@@ -825,10 +825,11 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
   <entry>
     <title>Tmux Clipboard To/from System Clipboard</title>
     <url>/2024/02/21/Tmux-clipboard-to-from-system-clipboard/</url>
-    <content><![CDATA[<p><strong>在~&#x2F;.tmux.conf中开启鼠标支持</strong></p>
+    <content><![CDATA[<p><strong>在~&#x2F;.tmux.conf中开启鼠标支持:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-option -g mouse on</span><br></pre></td></tr></table></figure>
 
-<p>复制 按住<code>shift</code>键,然后拖动鼠标复制要选择的内容，然后按下<code>shift+ctrl+c</code>,复制到系统剪贴板<br> 粘贴 按下<code>shift+ctrl+v</code> 粘贴系统剪贴板中的内容到tmux中<br> 需要注意的是<br> <code>shift+ctrl+v</code>是在终端设置的粘贴快捷键<br> <code>shift+ctrl+c</code>是在终端设置的复制快捷键</p>
+<p><strong>复制:</strong> 按住<code>shift</code>键,然后拖动鼠标复制要选择的内容，然后按下<code>shift+ctrl+c</code>,复制到系统剪贴板<br><strong>粘贴:</strong> 按下<code>shift+ctrl+v</code> 粘贴系统剪贴板中的内容到Tmux中</p>
+<p><strong>需要注意的是</strong><br><code>shift+ctrl+v</code>是在终端设置的粘贴快捷键<br><code>shift+ctrl+c</code>是在终端设置的复制快捷键</p>
 ]]></content>
       <categories>
         <category>Linux</category>
