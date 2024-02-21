@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2021-2024 Cadence Compute Platform Roadmap</title>
+    <url>/2023/01/30/2021-2024-cadence-compute-platform-roadmap/</url>
+    <content><![CDATA[<img src="/2023/01/30/2021-2024-cadence-compute-platform-roadmap/2021-2024_Cadence_Compute_Platform_Roadmap.png" class="">
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>cadence</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AMBA APB Revisions</title>
     <url>/2022/04/22/AMBA-APB-revisions/</url>
     <content><![CDATA[<table>
@@ -84,18 +96,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-2024 Cadence Compute Platform Roadmap</title>
-    <url>/2023/01/30/2021-2024-cadence-compute-platform-roadmap/</url>
-    <content><![CDATA[<img src="/2023/01/30/2021-2024-cadence-compute-platform-roadmap/2021-2024_Cadence_Compute_Platform_Roadmap.png" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>cadence</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Activate the Feature of Tabbed File Explorer</title>
     <url>/2022/07/17/Activate%20the%20Feature%20of%20Tabbed%20File%20Explorer/</url>
     <content><![CDATA[<p><strong>ViveTool GUI</strong>是一款用来激活Windows隐藏功能特性的工具。</p>
@@ -134,6 +134,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Coloring the C-Shell Prompt</title>
+    <url>/2022/07/20/Coloring-the-C-shell-Prompt/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set   black = &quot;%&#123;\033[0;30m%&#125;&quot;</span><br><span class="line">set  Bblack = &quot;%&#123;\033[B;30m%&#125;&quot;</span><br><span class="line">set     red = &quot;%&#123;\033[0;31m%&#125;&quot;</span><br><span class="line">set    Bred = &quot;%&#123;\033[1;31m%&#125;&quot;</span><br><span class="line">set   green = &quot;%&#123;\033[0;32m%&#125;&quot;</span><br><span class="line">set  Bgreen = &quot;%&#123;\033[1;32m%&#125;&quot;</span><br><span class="line">set  yellow = &quot;%&#123;\033[0;33m%&#125;&quot;</span><br><span class="line">set Byellow = &quot;%&#123;\033[1;33m%&#125;&quot;</span><br><span class="line">set    blue = &quot;%&#123;\033[0;34m%&#125;&quot;</span><br><span class="line">set   Bblue = &quot;%&#123;\033[1;34m%&#125;&quot;</span><br><span class="line">set  purple = &quot;%&#123;\033[0;35m%&#125;&quot;</span><br><span class="line">set Bpurple = &quot;%&#123;\033[1;35m%&#125;&quot;</span><br><span class="line">set    cyan = &quot;%&#123;\033[0;36m%&#125;&quot;</span><br><span class="line">set   Bcyan = &quot;%&#123;\033[1;36m%&#125;&quot;</span><br><span class="line">set   white = &quot;%&#123;\033[0;37m%&#125;&quot;</span><br><span class="line">set  Bwhite = &quot;%&#123;\033[1;37m%&#125;&quot;</span><br><span class="line">set     end = &quot;%&#123;\033[0m%&#125;&quot;</span><br><span class="line"></span><br><span class="line">alias setprompt &#x27;set prompt = &quot;\n$&#123;cyan&#125;%~\n$&#123;Bpurple&#125;%n@%m$&#123;Bwhite&#125;[`id -ng`]$&#123;end&#125; &quot;&#x27;</span><br><span class="line">alias cd &#x27;chdir \!* &amp;&amp; setprompt&#x27;</span><br><span class="line">setprompt</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>csh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Challenge: Spot a Snow Leopard in 15 Sec</title>
     <url>/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/</url>
     <content><![CDATA[<img src=/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/snow_leopard.jpg width=320>
@@ -157,19 +170,6 @@
       </categories>
       <tags>
         <tag>perl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Coloring the C-Shell Prompt</title>
-    <url>/2022/07/20/Coloring-the-C-shell-Prompt/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set   black = &quot;%&#123;\033[0;30m%&#125;&quot;</span><br><span class="line">set  Bblack = &quot;%&#123;\033[B;30m%&#125;&quot;</span><br><span class="line">set     red = &quot;%&#123;\033[0;31m%&#125;&quot;</span><br><span class="line">set    Bred = &quot;%&#123;\033[1;31m%&#125;&quot;</span><br><span class="line">set   green = &quot;%&#123;\033[0;32m%&#125;&quot;</span><br><span class="line">set  Bgreen = &quot;%&#123;\033[1;32m%&#125;&quot;</span><br><span class="line">set  yellow = &quot;%&#123;\033[0;33m%&#125;&quot;</span><br><span class="line">set Byellow = &quot;%&#123;\033[1;33m%&#125;&quot;</span><br><span class="line">set    blue = &quot;%&#123;\033[0;34m%&#125;&quot;</span><br><span class="line">set   Bblue = &quot;%&#123;\033[1;34m%&#125;&quot;</span><br><span class="line">set  purple = &quot;%&#123;\033[0;35m%&#125;&quot;</span><br><span class="line">set Bpurple = &quot;%&#123;\033[1;35m%&#125;&quot;</span><br><span class="line">set    cyan = &quot;%&#123;\033[0;36m%&#125;&quot;</span><br><span class="line">set   Bcyan = &quot;%&#123;\033[1;36m%&#125;&quot;</span><br><span class="line">set   white = &quot;%&#123;\033[0;37m%&#125;&quot;</span><br><span class="line">set  Bwhite = &quot;%&#123;\033[1;37m%&#125;&quot;</span><br><span class="line">set     end = &quot;%&#123;\033[0m%&#125;&quot;</span><br><span class="line"></span><br><span class="line">alias setprompt &#x27;set prompt = &quot;\n$&#123;cyan&#125;%~\n$&#123;Bpurple&#125;%n@%m$&#123;Bwhite&#125;[`id -ng`]$&#123;end&#125; &quot;&#x27;</span><br><span class="line">alias cd &#x27;chdir \!* &amp;&amp; setprompt&#x27;</span><br><span class="line">setprompt</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>csh</tag>
       </tags>
   </entry>
   <entry>
@@ -241,54 +241,71 @@
       </tags>
   </entry>
   <entry>
-    <title>ISO 26262 Hardware Dev Requirement</title>
-    <url>/2022/06/29/ISO-26262-hardware-dev-requirement/</url>
-    <content><![CDATA[<h2 id="Functional-Safety"><a href="#Functional-Safety" class="headerlink" title="Functional Safety"></a>Functional Safety</h2><table>
-<thead>
-<tr>
-<th>Design Integrity</th>
-<th>Device Quality</th>
-<th>Functional Safety</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Function correct? Performance &amp; power</td>
-<td>Silicon Design &amp; Manufactory</td>
-<td>Device Failure Detection and Response Mechanisms</td>
-</tr>
-<tr>
-<td>Function verification: Prevent&#x2F;Eliminate Bugs</td>
-<td>Reduced DPPM</td>
-<td>Detect&#x2F;Control Failures</td>
-</tr>
-<tr>
-<td>Use best-in-class Functionla verification methodolody and tools</td>
-<td>DFT&#x2F;Function patterns</td>
-<td>Assessed by Functional Safety Verification methodology and tools</td>
-</tr>
-<tr>
-<td>SYSTEMATIC FAULTS - Design Bugs</td>
-<td>RANDOM FAULTS</td>
-<td>RANDOM FAULTS - HW FAILURES</td>
-</tr>
-<tr>
-<td>Always permanent</td>
-<td>Permanent</td>
-<td>Permanent&#x2F;Transient</td>
-</tr>
-<tr>
-<td>Development</td>
-<td>Manufacturing</td>
-<td>In Operation</td>
-</tr>
-</tbody></table>
+    <title>Linux Command: Ip</title>
+    <url>/2022/09/26/Linux-Command-ip/</url>
+    <content><![CDATA[<p><code>ip</code> 是个命令， <code>ip</code> 命令的功能很多！基本上它整合了 <code>ifconfig</code> 与 <code>route</code> 这两个命令，不过 <code>ip</code> 的功能更强大。</p>
+<h2 id="ip命令用法"><a href="#ip命令用法" class="headerlink" title="ip命令用法"></a>ip命令用法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip</span><br><span class="line">Usage: ip [ OPTIONS ] OBJECT &#123; COMMAND | help &#125;</span><br><span class="line">       ip [ -force ] -batch filename</span><br><span class="line">where  OBJECT := &#123; link | addr | addrlabel | route | rule | neigh | ntable |</span><br><span class="line">                   tunnel | maddr | mroute | mrule | monitor | xfrm | token &#125;</span><br><span class="line">       OPTIONS := &#123; -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |</span><br><span class="line">                    -h[uman-readable] | -iec |</span><br><span class="line">                    -f[amily] &#123; inet | inet6 | ipx | dnet | link &#125; |</span><br><span class="line">                    -o[neline] | -t[imestamp] | -b[atch] [filename] |</span><br><span class="line">                    -rc[vbuf] [size]&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h3 id="OPTIONS：选项"><a href="#OPTIONS：选项" class="headerlink" title="OPTIONS：选项"></a>OPTIONS：选项</h3><ul>
+<li>-s：显示出该设备的统计数据(statistics)，例如总接受封包数等；</li>
+</ul>
+<h3 id="OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。"><a href="#OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。" class="headerlink" title="OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。"></a>OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。</h3><ul>
+<li>link：关于设备 (device) 的相关设定，包括 MTU，MAC 地址等。</li>
+<li>addr&#x2F;address：关于额外的 IP 设定，例如多 IP 的实现等。</li>
+<li>route ：与路由有关的相关设定。</li>
+</ul>
+<h2 id="ip命令解释"><a href="#ip命令解释" class="headerlink" title="ip命令解释"></a>ip命令解释</h2><h2 id="ip-link"><a href="#ip-link" class="headerlink" title="ip link"></a>ip link</h2><p><code>ip link</code> 可以设定与设备(device)有关的相关设定，包括MTU以及该网络设备的MAC等，当然也可以启动(up)或关闭(down)某个网络设备。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip link</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">2: em1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000</span><br><span class="line">    link/ether 4c:d9:8f:27:e7:d4 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">3: em2: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc mq state DOWN qlen 1000</span><br><span class="line">    link/ether 20:04:0f:e6:45:9b brd ff:ff:ff:ff:ff:ff</span><br><span class="line">4: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/ether 72:df:05:18:76:51 brd ff:ff:ff:ff:ff:ff</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>ip link show</code>可以显示出整个设备的硬件相关信息，如上所示，包括MAC地址、MTU等。lo是主机内部自行设定的，如果加上<code>-s</code>的参数后，则这个网卡的相关统计信息就会被列出来，包括接收(RX)及传送(TX)的封包数量等，详细的内容与<code>ifconfig</code>所输出的结果相同。</p>
+<h2 id="ip-address"><a href="#ip-address" class="headerlink" title="ip address"></a>ip address</h2><p>如果说<code>ip link</code>是与OSI七层模型的第二层数据链路层有关的话，那么<code>ip address/addr</code>就是与第三层网络层有关的了。主要是在设定与 IP 有关的各项参数，包括 netmask, broadcast 等。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip addr</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: em1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000</span><br><span class="line">    link/ether 4c:d9:8f:27:e7:d4 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.16.10.88/24 brd 172.16.10.255 scope global em1</span><br><span class="line">    inet6 fe80::4ed9:8fff:fe27:e7d4/64 scope link </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">3: em2: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc mq state DOWN qlen 1000</span><br><span class="line">    link/ether 20:04:0f:e6:45:9b brd ff:ff:ff:ff:ff:ff</span><br><span class="line">4: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/ether 72:df:05:18:76:51 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.17.42.1/16 scope global docker0</span><br><span class="line">    inet6 fe80::70df:5ff:fe18:7651/64 scope link </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
+
+<h3 id="ip-address-add-del-IP参数-dev-设备名-相关参数"><a href="#ip-address-add-del-IP参数-dev-设备名-相关参数" class="headerlink" title="ip address [add|del] [IP参数] [dev 设备名] [相关参数]"></a>ip address [add|del] [IP参数] [dev 设备名] [相关参数]</h3><p><strong>[add|del]：</strong></p>
+<ul>
+<li>add|del：进行相关参数的增加(add)或删除(del)设定。</li>
+<li>show：显示详细信息。</li>
+</ul>
+<p><strong>[IP 参数]：</strong></p>
+<p>主要就是网域的设定，例如 192.168.100.100&#x2F;24 之类的设定。</p>
+<p><strong>[dev 设备名]：</strong></p>
+<p>IP 参数所要设定的设备，例如eth0, eth1等。</p>
+<p><strong>[相关参数]：</strong></p>
+<p>broadcast：设定广播位址，如果设定值是 + 表示让系统自动计算；</p>
+<p>label：该设备的别名，例如eth0:0；</p>
+<p>scope：这个设备的领域，默认global，通常是以下几个大类：</p>
+<ul>
+<li>global：允许来自所有来源的连线；</li>
+<li>site：仅支持IPv6 ，仅允许本主机的连接；</li>
+<li>link：仅允许本设备自我连接；</li>
+<li>host：仅允许本主机内部的连接；</li>
+</ul>
+<h2 id="ip-route"><a href="#ip-route" class="headerlink" title="ip route"></a>ip route</h2><p>路由的查看与设定。事实上ip route 的功能几乎与 route 这个命令一样，但是，它还可以进行额外的参数设置，例如MTU的规划等。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip route</span><br><span class="line">172.16.10.0/24 dev em1  proto kernel  scope link  src 172.16.10.88  metric 1 </span><br><span class="line">172.17.0.0/16 dev docker0  proto kernel  scope link  src 172.17.42.1 </span><br><span class="line">default via 172.16.10.1 dev em1  proto static </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>proto：此路由的路由协定，主要有<code>redirect</code>, <code>kernel</code>, <code>boot</code>, <code>static</code>, <code>ra</code>等，其中<code>kernel</code>是直接由核心判断自动设定。</li>
+<li>scope：路由的范围，主要是<code>link</code>，是与本设备有关的直接连接。</li>
+</ul>
+<h3 id="ip-route-add-del-IP或网域-via-gateway-dev-设备"><a href="#ip-route-add-del-IP或网域-via-gateway-dev-设备" class="headerlink" title="ip route [add|del] [IP或网域] [via gateway] [dev 设备]"></a>ip route [add|del] [IP或网域] [via gateway] [dev 设备]</h3><p><strong>[add|del]：</strong></p>
+<ul>
+<li>add|del：增加(add)或删除(del)路由。</li>
+<li>show：显示详细信息。</li>
+</ul>
+<p><strong>[IP或网域]：</strong>可使用192.168.50.0&#x2F;24之类的网域或者是单纯的 IP 。</p>
+<p><strong>[via gateway]：</strong>从哪个gateway出去，不一定需要。</p>
+<p><strong>[dev 设备名]：</strong>所要设定的设备，例如eth0, eth1等。</p>
+<p><em><strong>用例</strong></em></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip route add 192.168.12.0/24 dev eth1 #添加路由</span><br><span class="line">% sudo ip route add 192.168.10.0/24 via 192.168.12.1 dev eth0 #添加通往外部路由</span><br><span class="line">% sudo ip route del 192.168.10.0/24 dev eth0 #删除路由</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>VLSI</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>iso26262</tag>
-        <tag>automotive</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -371,71 +388,54 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux Command: Ip</title>
-    <url>/2022/09/26/Linux-Command-ip/</url>
-    <content><![CDATA[<p><code>ip</code> 是个命令， <code>ip</code> 命令的功能很多！基本上它整合了 <code>ifconfig</code> 与 <code>route</code> 这两个命令，不过 <code>ip</code> 的功能更强大。</p>
-<h2 id="ip命令用法"><a href="#ip命令用法" class="headerlink" title="ip命令用法"></a>ip命令用法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip</span><br><span class="line">Usage: ip [ OPTIONS ] OBJECT &#123; COMMAND | help &#125;</span><br><span class="line">       ip [ -force ] -batch filename</span><br><span class="line">where  OBJECT := &#123; link | addr | addrlabel | route | rule | neigh | ntable |</span><br><span class="line">                   tunnel | maddr | mroute | mrule | monitor | xfrm | token &#125;</span><br><span class="line">       OPTIONS := &#123; -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |</span><br><span class="line">                    -h[uman-readable] | -iec |</span><br><span class="line">                    -f[amily] &#123; inet | inet6 | ipx | dnet | link &#125; |</span><br><span class="line">                    -o[neline] | -t[imestamp] | -b[atch] [filename] |</span><br><span class="line">                    -rc[vbuf] [size]&#125;</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h3 id="OPTIONS：选项"><a href="#OPTIONS：选项" class="headerlink" title="OPTIONS：选项"></a>OPTIONS：选项</h3><ul>
-<li>-s：显示出该设备的统计数据(statistics)，例如总接受封包数等；</li>
-</ul>
-<h3 id="OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。"><a href="#OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。" class="headerlink" title="OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。"></a>OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。</h3><ul>
-<li>link：关于设备 (device) 的相关设定，包括 MTU，MAC 地址等。</li>
-<li>addr&#x2F;address：关于额外的 IP 设定，例如多 IP 的实现等。</li>
-<li>route ：与路由有关的相关设定。</li>
-</ul>
-<h2 id="ip命令解释"><a href="#ip命令解释" class="headerlink" title="ip命令解释"></a>ip命令解释</h2><h2 id="ip-link"><a href="#ip-link" class="headerlink" title="ip link"></a>ip link</h2><p><code>ip link</code> 可以设定与设备(device)有关的相关设定，包括MTU以及该网络设备的MAC等，当然也可以启动(up)或关闭(down)某个网络设备。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip link</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">2: em1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000</span><br><span class="line">    link/ether 4c:d9:8f:27:e7:d4 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">3: em2: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc mq state DOWN qlen 1000</span><br><span class="line">    link/ether 20:04:0f:e6:45:9b brd ff:ff:ff:ff:ff:ff</span><br><span class="line">4: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/ether 72:df:05:18:76:51 brd ff:ff:ff:ff:ff:ff</span><br></pre></td></tr></table></figure>
-
-<p>使用<code>ip link show</code>可以显示出整个设备的硬件相关信息，如上所示，包括MAC地址、MTU等。lo是主机内部自行设定的，如果加上<code>-s</code>的参数后，则这个网卡的相关统计信息就会被列出来，包括接收(RX)及传送(TX)的封包数量等，详细的内容与<code>ifconfig</code>所输出的结果相同。</p>
-<h2 id="ip-address"><a href="#ip-address" class="headerlink" title="ip address"></a>ip address</h2><p>如果说<code>ip link</code>是与OSI七层模型的第二层数据链路层有关的话，那么<code>ip address/addr</code>就是与第三层网络层有关的了。主要是在设定与 IP 有关的各项参数，包括 netmask, broadcast 等。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip addr</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: em1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000</span><br><span class="line">    link/ether 4c:d9:8f:27:e7:d4 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.16.10.88/24 brd 172.16.10.255 scope global em1</span><br><span class="line">    inet6 fe80::4ed9:8fff:fe27:e7d4/64 scope link </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">3: em2: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc mq state DOWN qlen 1000</span><br><span class="line">    link/ether 20:04:0f:e6:45:9b brd ff:ff:ff:ff:ff:ff</span><br><span class="line">4: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/ether 72:df:05:18:76:51 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.17.42.1/16 scope global docker0</span><br><span class="line">    inet6 fe80::70df:5ff:fe18:7651/64 scope link </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
-
-<h3 id="ip-address-add-del-IP参数-dev-设备名-相关参数"><a href="#ip-address-add-del-IP参数-dev-设备名-相关参数" class="headerlink" title="ip address [add|del] [IP参数] [dev 设备名] [相关参数]"></a>ip address [add|del] [IP参数] [dev 设备名] [相关参数]</h3><p><strong>[add|del]：</strong></p>
-<ul>
-<li>add|del：进行相关参数的增加(add)或删除(del)设定。</li>
-<li>show：显示详细信息。</li>
-</ul>
-<p><strong>[IP 参数]：</strong></p>
-<p>主要就是网域的设定，例如 192.168.100.100&#x2F;24 之类的设定。</p>
-<p><strong>[dev 设备名]：</strong></p>
-<p>IP 参数所要设定的设备，例如eth0, eth1等。</p>
-<p><strong>[相关参数]：</strong></p>
-<p>broadcast：设定广播位址，如果设定值是 + 表示让系统自动计算；</p>
-<p>label：该设备的别名，例如eth0:0；</p>
-<p>scope：这个设备的领域，默认global，通常是以下几个大类：</p>
-<ul>
-<li>global：允许来自所有来源的连线；</li>
-<li>site：仅支持IPv6 ，仅允许本主机的连接；</li>
-<li>link：仅允许本设备自我连接；</li>
-<li>host：仅允许本主机内部的连接；</li>
-</ul>
-<h2 id="ip-route"><a href="#ip-route" class="headerlink" title="ip route"></a>ip route</h2><p>路由的查看与设定。事实上ip route 的功能几乎与 route 这个命令一样，但是，它还可以进行额外的参数设置，例如MTU的规划等。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip route</span><br><span class="line">172.16.10.0/24 dev em1  proto kernel  scope link  src 172.16.10.88  metric 1 </span><br><span class="line">172.17.0.0/16 dev docker0  proto kernel  scope link  src 172.17.42.1 </span><br><span class="line">default via 172.16.10.1 dev em1  proto static </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>proto：此路由的路由协定，主要有<code>redirect</code>, <code>kernel</code>, <code>boot</code>, <code>static</code>, <code>ra</code>等，其中<code>kernel</code>是直接由核心判断自动设定。</li>
-<li>scope：路由的范围，主要是<code>link</code>，是与本设备有关的直接连接。</li>
-</ul>
-<h3 id="ip-route-add-del-IP或网域-via-gateway-dev-设备"><a href="#ip-route-add-del-IP或网域-via-gateway-dev-设备" class="headerlink" title="ip route [add|del] [IP或网域] [via gateway] [dev 设备]"></a>ip route [add|del] [IP或网域] [via gateway] [dev 设备]</h3><p><strong>[add|del]：</strong></p>
-<ul>
-<li>add|del：增加(add)或删除(del)路由。</li>
-<li>show：显示详细信息。</li>
-</ul>
-<p><strong>[IP或网域]：</strong>可使用192.168.50.0&#x2F;24之类的网域或者是单纯的 IP 。</p>
-<p><strong>[via gateway]：</strong>从哪个gateway出去，不一定需要。</p>
-<p><strong>[dev 设备名]：</strong>所要设定的设备，例如eth0, eth1等。</p>
-<p><em><strong>用例</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip route add 192.168.12.0/24 dev eth1 #添加路由</span><br><span class="line">% sudo ip route add 192.168.10.0/24 via 192.168.12.1 dev eth0 #添加通往外部路由</span><br><span class="line">% sudo ip route del 192.168.10.0/24 dev eth0 #删除路由</span><br></pre></td></tr></table></figure>
-
+    <title>ISO 26262 Hardware Dev Requirement</title>
+    <url>/2022/06/29/ISO-26262-hardware-dev-requirement/</url>
+    <content><![CDATA[<h2 id="Functional-Safety"><a href="#Functional-Safety" class="headerlink" title="Functional Safety"></a>Functional Safety</h2><table>
+<thead>
+<tr>
+<th>Design Integrity</th>
+<th>Device Quality</th>
+<th>Functional Safety</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Function correct? Performance &amp; power</td>
+<td>Silicon Design &amp; Manufactory</td>
+<td>Device Failure Detection and Response Mechanisms</td>
+</tr>
+<tr>
+<td>Function verification: Prevent&#x2F;Eliminate Bugs</td>
+<td>Reduced DPPM</td>
+<td>Detect&#x2F;Control Failures</td>
+</tr>
+<tr>
+<td>Use best-in-class Functionla verification methodolody and tools</td>
+<td>DFT&#x2F;Function patterns</td>
+<td>Assessed by Functional Safety Verification methodology and tools</td>
+</tr>
+<tr>
+<td>SYSTEMATIC FAULTS - Design Bugs</td>
+<td>RANDOM FAULTS</td>
+<td>RANDOM FAULTS - HW FAILURES</td>
+</tr>
+<tr>
+<td>Always permanent</td>
+<td>Permanent</td>
+<td>Permanent&#x2F;Transient</td>
+</tr>
+<tr>
+<td>Development</td>
+<td>Manufacturing</td>
+<td>In Operation</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>VLSI</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>iso26262</tag>
+        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -591,18 +591,6 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
-    <title>Schedule Could Be Beautiful</title>
-    <url>/2023/09/15/Schedule-could-be-beautiful/</url>
-    <content><![CDATA[<img src="/2023/09/15/Schedule-could-be-beautiful/image-20230915222544736.png" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>starred</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SPI Mode: CPOL and CPHA</title>
     <url>/2023/07/06/SPI-mode-CPOL-and-CPHA/</url>
     <content><![CDATA[<img src="/2023/07/06/SPI-mode-CPOL-and-CPHA/400px-SPI_timing_diagram2.png" class="">
@@ -614,6 +602,18 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </categories>
       <tags>
         <tag>spi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Schedule Could Be Beautiful</title>
+    <url>/2023/09/15/Schedule-could-be-beautiful/</url>
+    <content><![CDATA[<img src="/2023/09/15/Schedule-could-be-beautiful/image-20230915222544736.png" class="">
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>starred</tag>
       </tags>
   </entry>
   <entry>
@@ -823,6 +823,21 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>Tmux Clipboard To/from System Clipboard</title>
+    <url>/2024/02/21/Tmux-clipboard-to-from-system-clipboard/</url>
+    <content><![CDATA[<p><strong>在~&#x2F;.tmux.conf中开启鼠标支持</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-option -g mouse on</span><br></pre></td></tr></table></figure>
+
+<p>复制 按住<code>shift</code>键,然后拖动鼠标复制要选择的内容，然后按下<code>shift+ctrl+c</code>,复制到系统剪贴板<br> 粘贴 按下<code>shift+ctrl+v</code> 粘贴系统剪贴板中的内容到tmux中<br> 需要注意的是<br> <code>shift+ctrl+v</code>是在终端设置的粘贴快捷键<br> <code>shift+ctrl+c</code>是在终端设置的复制快捷键</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Too Many Open Files错误导致VNC灰屏问题</title>
     <url>/2022/11/09/Too-Many-Open-Files%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4VNC%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>VNCserver启动数量过大，约53个时；vncviewer会出现灰屏现象；新起vncserver起不来；提示无法启动dbus-daemon，版本过低。</p>
@@ -1000,18 +1015,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>A Man&#39;s Most Powerful Capacity</title>
-    <url>/2022/07/22/a-man-s-most-powerful-capacity/</url>
-    <content><![CDATA[<p>A man’s most powerful capacity does not lie in how intelligent he is. It resides in -</p>
-<ul>
-<li>His&#x2F;her persistency in a tedious job until it perfectly gets done;</li>
-<li>His&#x2F;her relentless exploration for unknown things; </li>
-<li>His&#x2F;her passion for the skills he&#x2F;she loves;</li>
-<li>His&#x2F;her curiosity for every single trivial matter.</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>Add a New Disk in Linux With Fdisk</title>
     <url>/2022/04/20/add-a-new-disk-in-linux-with-fdisk/</url>
     <content><![CDATA[<p><em>The <strong>fdisk</strong> disk utility can only be used for disk partition no larger than 2TB.</em></p>
@@ -1023,6 +1026,18 @@ service messagebus restart;
       <tags>
         <tag>linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>A Man&#39;s Most Powerful Capacity</title>
+    <url>/2022/07/22/a-man-s-most-powerful-capacity/</url>
+    <content><![CDATA[<p>A man’s most powerful capacity does not lie in how intelligent he is. It resides in -</p>
+<ul>
+<li>His&#x2F;her persistency in a tedious job until it perfectly gets done;</li>
+<li>His&#x2F;her relentless exploration for unknown things; </li>
+<li>His&#x2F;her passion for the skills he&#x2F;she loves;</li>
+<li>His&#x2F;her curiosity for every single trivial matter.</li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>Add a New Disk in Linux With Parted</title>
@@ -1103,21 +1118,6 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cadence Supported Platforms</title>
-    <url>/2022/04/08/cadence-platform-support-plan-2021/</url>
-    <content><![CDATA[<img src="/2022/04/08/cadence-platform-support-plan-2021/cadence-platform-support-plan.jpg" class="">
-
-<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/08/cadence-platform-support-plan-2021/supported-platforms-matrix.pdf" title="Download full matrix of Cadence supported platforms">Download full matrix of Cadence supported platforms</a></p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>cadence</tag>
-        <tag>eda</tag>
       </tags>
   </entry>
   <entry>
@@ -1492,6 +1492,21 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Cadence Supported Platforms</title>
+    <url>/2022/04/08/cadence-platform-support-plan-2021/</url>
+    <content><![CDATA[<img src="/2022/04/08/cadence-platform-support-plan-2021/cadence-platform-support-plan.jpg" class="">
+
+<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/08/cadence-platform-support-plan-2021/supported-platforms-matrix.pdf" title="Download full matrix of Cadence supported platforms">Download full matrix of Cadence supported platforms</a></p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>cadence</tag>
+        <tag>eda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>判决反馈均衡器（下）</title>
     <url>/2022/04/09/decision-feedback-equalizer-3/</url>
     <content><![CDATA[<a href="/2022/04/09/decision-feedback-equalizer-1/" title="判决反馈均衡器（上）">判决反馈均衡器（上）</a>&raquo; <br>
@@ -1573,6 +1588,23 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Definition of TSMC Metal Layer Map</title>
+    <url>/2023/03/09/definition-of-TSMC-metal-layer-map/</url>
+    <content><![CDATA[<h1 id="1P10M-5X2Y2Z"><a href="#1P10M-5X2Y2Z" class="headerlink" title="1P10M_5X2Y2Z"></a>1P10M_5X2Y2Z</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221716667.jpg" class="">
+
+<h1 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221837347.jpg" class="">
+
+<h1 id="Via"><a href="#Via" class="headerlink" title="Via"></a>Via</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221910056.jpg" class="">
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>apr</tag>
+        <tag>tsmc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Deploy Github Pages at Vercel</title>
     <url>/2022/04/26/deploy-github-pages-at-vercel/</url>
     <content><![CDATA[<p>Accessing GitHub pages from China is pretty slow. Vercel has much better user experience although Vercel’s servers are located in oversea countries, same as GitHub servers. So many of bloggers in China migrate their static Blog site onto Vercel. To do the migration it’s quite simple. All you have to do are merely 3 steps.</p>
@@ -1590,23 +1622,6 @@ service messagebus restart;
       <tags>
         <tag>blog</tag>
         <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Definition of TSMC Metal Layer Map</title>
-    <url>/2023/03/09/definition-of-TSMC-metal-layer-map/</url>
-    <content><![CDATA[<h1 id="1P10M-5X2Y2Z"><a href="#1P10M-5X2Y2Z" class="headerlink" title="1P10M_5X2Y2Z"></a>1P10M_5X2Y2Z</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221716667.jpg" class="">
-
-<h1 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221837347.jpg" class="">
-
-<h1 id="Via"><a href="#Via" class="headerlink" title="Via"></a>Via</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221910056.jpg" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>apr</tag>
-        <tag>tsmc</tag>
       </tags>
   </entry>
   <entry>
@@ -1831,23 +1846,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Expand Tab in Emacs-Verilog Auto Code</title>
-    <url>/2022/04/25/expand-tab-in-emacs-verilog-auto-code/</url>
-    <content><![CDATA[<p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
-<p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below. Yeah, it’s done and enjoy! </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">(setq-default tab-width 8)</span><br><span class="line">(setq-default indent-tabs-mode nil)</span><br></pre></td></tr></table></figure>
-
-<p>Check out everything about Emacs-verilog at <a href="https://veripool.org/verilog-mode/">https://veripool.org/verilog-mode/</a>.</p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>verilog</tag>
-        <tag>emacs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Failed to Install Redhat 7: Dracut-Initqueue Timeout</title>
     <url>/2023/03/15/failed-to-install-redhat-7-dracut-initqueue-timeout/</url>
     <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dracut:/# cd /dev</span><br><span class="line">dracut:/# ls</span><br></pre></td></tr></table></figure>
@@ -1862,6 +1860,23 @@ service messagebus restart;
       <tags>
         <tag>linux</tag>
         <tag>troubleshoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Expand Tab in Emacs-Verilog Auto Code</title>
+    <url>/2022/04/25/expand-tab-in-emacs-verilog-auto-code/</url>
+    <content><![CDATA[<p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
+<p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below. Yeah, it’s done and enjoy! </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">(setq-default tab-width 8)</span><br><span class="line">(setq-default indent-tabs-mode nil)</span><br></pre></td></tr></table></figure>
+
+<p>Check out everything about Emacs-verilog at <a href="https://veripool.org/verilog-mode/">https://veripool.org/verilog-mode/</a>.</p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>verilog</tag>
+        <tag>emacs</tag>
       </tags>
   </entry>
   <entry>
@@ -2536,24 +2551,6 @@ service messagebus restart;
   </entry>
   <entry>
     <title>How to Enable Sudo for a User</title>
-    <url>/2022/04/20/how-to-enable-sudo-for-a-user/</url>
-    <content><![CDATA[<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
-
-<p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
-<span id="more"></span>
-<p>Uncomment line of <code>%wheel ALL=(ALL) ALL</code> will ask for password when sudo.<br>Uncomment line of <code>%wheel ALL=(ALL) NOPASSWD: ALL</code> won’t ask for password when sudo.</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">## Allow root <span class="keyword">to</span> run any commands anywhere</span><br><span class="line">root    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the <span class="string">&#x27;sys&#x27;</span> group <span class="keyword">to</span> run networking, software,</span><br><span class="line">## service management apps <span class="built_in">and</span> more.</span><br><span class="line"># %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</span><br><span class="line"></span><br><span class="line">## Allows people in group wheel <span class="keyword">to</span> run <span class="keyword">all</span> commands</span><br><span class="line"># %wheel    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Same thing without <span class="keyword">a</span> password</span><br><span class="line">%wheel  ALL=(ALL)   NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> mount <span class="built_in">and</span> unmount the</span><br><span class="line">## cdrom <span class="keyword">as</span> root</span><br><span class="line"># %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> shutdown this <span class="built_in">system</span></span><br><span class="line"># %users  localhost=/sbin/shutdown -h now</span><br><span class="line"></span><br><span class="line">## Read <span class="keyword">drop</span>-in <span class="keyword">files</span> from /etc/sudoers.d (the # here does not mean <span class="keyword">a</span> comment)</span><br><span class="line">#includedir /etc/sudoers.d</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>How to Enable Sudo for a User</title>
     <url>/2022/07/24/how-to-enable-sudo-for-a-user-1/</url>
     <content><![CDATA[<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% su -</span><br><span class="line"><span class="comment"># usermod -aG wheel username</span></span><br><span class="line"><span class="comment"># visudo</span></span><br></pre></td></tr></table></figure>
 <p>Uncomment the line of <code>%wheel ALL=(ALL) ALL</code> to enable password mode.<br>Uncomment the line of <code>%wheel ALL=(ALL) NOPASSWD:ALL</code> to enable no password mode.</p>
@@ -2615,6 +2612,24 @@ service messagebus restart;
         <tag>linux</tag>
         <tag>starred</tag>
         <tag>rhel7</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Enable Sudo for a User</title>
+    <url>/2022/04/20/how-to-enable-sudo-for-a-user/</url>
+    <content><![CDATA[<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
+
+<p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
+<span id="more"></span>
+<p>Uncomment line of <code>%wheel ALL=(ALL) ALL</code> will ask for password when sudo.<br>Uncomment line of <code>%wheel ALL=(ALL) NOPASSWD: ALL</code> won’t ask for password when sudo.</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">## Allow root <span class="keyword">to</span> run any commands anywhere</span><br><span class="line">root    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the <span class="string">&#x27;sys&#x27;</span> group <span class="keyword">to</span> run networking, software,</span><br><span class="line">## service management apps <span class="built_in">and</span> more.</span><br><span class="line"># %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</span><br><span class="line"></span><br><span class="line">## Allows people in group wheel <span class="keyword">to</span> run <span class="keyword">all</span> commands</span><br><span class="line"># %wheel    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Same thing without <span class="keyword">a</span> password</span><br><span class="line">%wheel  ALL=(ALL)   NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> mount <span class="built_in">and</span> unmount the</span><br><span class="line">## cdrom <span class="keyword">as</span> root</span><br><span class="line"># %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> shutdown this <span class="built_in">system</span></span><br><span class="line"># %users  localhost=/sbin/shutdown -h now</span><br><span class="line"></span><br><span class="line">## Read <span class="keyword">drop</span>-in <span class="keyword">files</span> from /etc/sudoers.d (the # here does not mean <span class="keyword">a</span> comment)</span><br><span class="line">#includedir /etc/sudoers.d</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2682,8 +2697,8 @@ service messagebus restart;
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>perl</tag>
         <tag>linux</tag>
+        <tag>perl</tag>
         <tag>starred</tag>
       </tags>
   </entry>
@@ -2702,8 +2717,8 @@ service messagebus restart;
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>perl</tag>
         <tag>linux</tag>
+        <tag>perl</tag>
       </tags>
   </entry>
   <entry>
@@ -2727,8 +2742,8 @@ service messagebus restart;
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>perl</tag>
         <tag>linux</tag>
+        <tag>perl</tag>
       </tags>
   </entry>
   <entry>
@@ -3103,72 +3118,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Modify Linux System Date and Time</title>
-    <url>/2022/04/19/modify-linux-system-date-and-time/</url>
-    <content><![CDATA[<p><strong>Check System Date</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">date</span></span><br><span class="line">Wed Apr 20 06:11:59 CST 2022</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p><strong>Set System Date</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s 10:10:10</span><br><span class="line">Wed Apr 20 10:10:10 CST 2022</span><br></pre></td></tr></table></figure>
-
-<p><strong>Set System Date and Time</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s <span class="string">&quot;2018/8/8 10:00:00&quot;</span></span><br><span class="line">Wed Aug 8 10:10:10 CST 2018</span><br></pre></td></tr></table></figure>
-
-<p><strong>Check BIOS Time</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock</span><br><span class="line">Wed 20 Apr 2022 06:49:34 AM CST  -0.110403 seconds</span><br><span class="line">% sudo clock</span><br><span class="line">Wed 20 Apr 2022 06:49:52 AM CST  -0.641359 seconds</span><br></pre></td></tr></table></figure>
-
-<p><strong>Write BIOS Time into System Time</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock -s</span><br></pre></td></tr></table></figure>
-
-<p><strong>Write System Time into BIOS Time</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock -w</span><br></pre></td></tr></table></figure>
-
-<p><strong>Sync Time Need to Install ntpdate</strong><br>Update system time to Asia clock</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo yum install ntpdate</span><br><span class="line">% sudo ntpdate asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>New Chipgun Logo 8May2022</title>
-    <url>/2022/05/08/new-chipgun-logo-8may2022/</url>
-    <content><![CDATA[<p><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_Logo_Darkblue.png alt=EN width=120> <br/><br><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_LogoCN_Darkblue.png alt=CN width=240> </p>
-]]></content>
-      <tags>
-        <tag>chipgun</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nomachine Server Admin</title>
-    <url>/2023/03/19/nomachine-server-admin/</url>
-    <content><![CDATA[<p><strong>1. Right click icon of the server connection and select <code>Server admin</code></strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319234139451.jpg width=300>
-
-<span id="more"></span>
-
-<p><strong>2. Select <code>Security</code> and enable the clipboard functionality with <code>Client</code> only, which makes it allowed of copying at client and paste at server and unallowed for opposite direction</strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319234629895.jpg width=440>
-
-<p><strong>3. Select <code>Devices</code> and uncheck all boxes, which disables sharing any resourse between server and client</strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319234346433.jpg width=440>
-
-<p><strong>4. Select <code>Satus</code> and click <code>Restart the server</code>, which makes above operation be effective</strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319235624677.jpg width=440>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Markdown Cheat Sheet</title>
     <url>/2022/03/30/markdown-cheat-sheet/</url>
     <content><![CDATA[<img src="/2022/03/30/markdown-cheat-sheet/markdown-cheat-sheet.png" class="verilog-mode.el">
@@ -3267,6 +3216,72 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Modify Linux System Date and Time</title>
+    <url>/2022/04/19/modify-linux-system-date-and-time/</url>
+    <content><![CDATA[<p><strong>Check System Date</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">date</span></span><br><span class="line">Wed Apr 20 06:11:59 CST 2022</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p><strong>Set System Date</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s 10:10:10</span><br><span class="line">Wed Apr 20 10:10:10 CST 2022</span><br></pre></td></tr></table></figure>
+
+<p><strong>Set System Date and Time</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s <span class="string">&quot;2018/8/8 10:00:00&quot;</span></span><br><span class="line">Wed Aug 8 10:10:10 CST 2018</span><br></pre></td></tr></table></figure>
+
+<p><strong>Check BIOS Time</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock</span><br><span class="line">Wed 20 Apr 2022 06:49:34 AM CST  -0.110403 seconds</span><br><span class="line">% sudo clock</span><br><span class="line">Wed 20 Apr 2022 06:49:52 AM CST  -0.641359 seconds</span><br></pre></td></tr></table></figure>
+
+<p><strong>Write BIOS Time into System Time</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock -s</span><br></pre></td></tr></table></figure>
+
+<p><strong>Write System Time into BIOS Time</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock -w</span><br></pre></td></tr></table></figure>
+
+<p><strong>Sync Time Need to Install ntpdate</strong><br>Update system time to Asia clock</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo yum install ntpdate</span><br><span class="line">% sudo ntpdate asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>New Chipgun Logo 8May2022</title>
+    <url>/2022/05/08/new-chipgun-logo-8may2022/</url>
+    <content><![CDATA[<p><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_Logo_Darkblue.png alt=EN width=120> <br/><br><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_LogoCN_Darkblue.png alt=CN width=240> </p>
+]]></content>
+      <tags>
+        <tag>chipgun</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nomachine Server Admin</title>
+    <url>/2023/03/19/nomachine-server-admin/</url>
+    <content><![CDATA[<p><strong>1. Right click icon of the server connection and select <code>Server admin</code></strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319234139451.jpg width=300>
+
+<span id="more"></span>
+
+<p><strong>2. Select <code>Security</code> and enable the clipboard functionality with <code>Client</code> only, which makes it allowed of copying at client and paste at server and unallowed for opposite direction</strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319234629895.jpg width=440>
+
+<p><strong>3. Select <code>Devices</code> and uncheck all boxes, which disables sharing any resourse between server and client</strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319234346433.jpg width=440>
+
+<p><strong>4. Select <code>Satus</code> and click <code>Restart the server</code>, which makes above operation be effective</strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319235624677.jpg width=440>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3595,22 +3610,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Symbolic Links in Windows</title>
-    <url>/2022/04/12/symbolic-links-in-windows/</url>
-    <content><![CDATA[<p><strong>Create Symbolic Link to File in CMD Prompt</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mklink <span class="string">&quot;Link&quot;</span> <span class="string">&quot;Source_Target&quot;</span></span><br></pre></td></tr></table></figure>
-<p><strong>Create Symbolic Link to Directory in CMD Prompt</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mklink /d <span class="string">&quot;Link&quot;</span> <span class="string">&quot;Source_Target&quot;</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<p><strong>Create Symbolic Link to File&#x2F;Directory in PowerShell</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">New-Item -ItemType SymbolicLink -Path <span class="string">&quot;Link&quot;</span> -Target <span class="string">&quot;Source Target&quot;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Synopsys Computer Platforms Roadmap</title>
     <url>/2022/05/05/synopsys-computer-platforms-roadmap/</url>
     <content><![CDATA[<table>
@@ -3795,6 +3794,44 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Symbolic Links in Windows</title>
+    <url>/2022/04/12/symbolic-links-in-windows/</url>
+    <content><![CDATA[<p><strong>Create Symbolic Link to File in CMD Prompt</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mklink <span class="string">&quot;Link&quot;</span> <span class="string">&quot;Source_Target&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Create Symbolic Link to Directory in CMD Prompt</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mklink /d <span class="string">&quot;Link&quot;</span> <span class="string">&quot;Source_Target&quot;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<p><strong>Create Symbolic Link to File&#x2F;Directory in PowerShell</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">New-Item -ItemType SymbolicLink -Path <span class="string">&quot;Link&quot;</span> -Target <span class="string">&quot;Source Target&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Synopsys Safety-Aware Solution for Automotive</title>
+    <url>/2022/07/08/synopsys-safety-aware-solution-for-automotive/</url>
+    <content><![CDATA[<img src="/2022/07/08/synopsys-safety-aware-solution-for-automotive/image-20220708104331952.jpg" class="">
+
+<ul>
+<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
+<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
+<li>Reduce documentation work with automated work products and supporting evidence</li>
+<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
+<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
+<li>Optimize machine resources with faster native tools that use less memory</li>
+</ul>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>synopsys</tag>
+        <tag>automotive</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Types of Power in a SoC Design</title>
     <url>/2023/12/07/types-of-power-in-an-SoC-design/</url>
     <content><![CDATA[<img src="/2023/12/07/types-of-power-in-an-SoC-design/image-20231207202606742.png" class="">
@@ -3824,28 +3861,6 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>lowpower</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Synopsys Safety-Aware Solution for Automotive</title>
-    <url>/2022/07/08/synopsys-safety-aware-solution-for-automotive/</url>
-    <content><![CDATA[<img src="/2022/07/08/synopsys-safety-aware-solution-for-automotive/image-20220708104331952.jpg" class="">
-
-<ul>
-<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
-<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
-<li>Reduce documentation work with automated work products and supporting evidence</li>
-<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
-<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
-<li>Optimize machine resources with faster native tools that use less memory</li>
-</ul>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>synopsys</tag>
-        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -4428,6 +4443,22 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>What Is Entropy?</title>
+    <url>/2022/04/03/what-is-entropy/</url>
+    <content><![CDATA[<p><strong>Entropy</strong> is a scientific concept as well as a measurable physical property that is most commonly associated with a state of disorder, randomness, or uncertainty. The term and the concept are used in diverse fields, from classical thermodynamics, where it was first recognized, to the microscopic description of nature in statistical physics, and to the principles of information theory. It has found far-ranging applications in chemistry and physics, in biological systems and their relation to life, in cosmology, economics, sociology, weather science, climate change, and information systems including the transmission of information in telecommunication.</p>
+<span id="more"></span>
+
+<p><strong>–From Wikipedia: <a href="https://en.wikipedia.org/wiki/Entropy">Entropy</a>–</strong></p>
+<img src="/2022/04/03/what-is-entropy/what-is-entropy.jpg" class="">
+]]></content>
+      <categories>
+        <category>Knowledge</category>
+      </categories>
+      <tags>
+        <tag>science</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Writing Aliases in Csh and Tcsh</title>
     <url>/2023/03/17/writing-aliases-in-csh-and-tcsh/</url>
     <content><![CDATA[<h2 id="Using-command-line-arguments"><a href="#Using-command-line-arguments" class="headerlink" title="Using command-line arguments"></a>Using command-line arguments</h2><p>Sometimes you want an alias to deal explicitly with its arguments, rather than just leaving them at the end of the command. For example, suppose you had a file in your home directory named <code>friends</code>:</p>
@@ -4549,22 +4580,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>What Is Entropy?</title>
-    <url>/2022/04/03/what-is-entropy/</url>
-    <content><![CDATA[<p><strong>Entropy</strong> is a scientific concept as well as a measurable physical property that is most commonly associated with a state of disorder, randomness, or uncertainty. The term and the concept are used in diverse fields, from classical thermodynamics, where it was first recognized, to the microscopic description of nature in statistical physics, and to the principles of information theory. It has found far-ranging applications in chemistry and physics, in biological systems and their relation to life, in cosmology, economics, sociology, weather science, climate change, and information systems including the transmission of information in telecommunication.</p>
-<span id="more"></span>
-
-<p><strong>–From Wikipedia: <a href="https://en.wikipedia.org/wiki/Entropy">Entropy</a>–</strong></p>
-<img src="/2022/04/03/what-is-entropy/what-is-entropy.jpg" class="">
-]]></content>
-      <categories>
-        <category>Knowledge</category>
-      </categories>
-      <tags>
-        <tag>science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>上海每日疫情走势2022-4-23</title>
     <url>/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/</url>
     <content><![CDATA[<img src="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/image-20220424103736004.png" class="">
@@ -4625,6 +4640,35 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>上海每日疫情走势2022-5-11</title>
+    <url>/2022/05/12/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-11/</url>
+    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;11</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">全市新增确诊</th>
+<th align="center">全市新增无症状</th>
+<th align="center">浦东新增确诊</th>
+<th align="center">浦东新增无症状</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">144</td>
+<td align="center">1305</td>
+<td align="center">9</td>
+<td align="center">240</td>
+</tr>
+</tbody></table>
+<img src="/2022/05/12/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-11/image_20220511.jpg" class="">
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>上海每日疫情走势2022-5-18</title>
     <url>/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/</url>
     <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;18</strong></p>
@@ -4653,9 +4697,9 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-5-11</title>
-    <url>/2022/05/12/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-11/</url>
-    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;11</strong></p>
+    <title>上海每日疫情走势2022-5-15</title>
+    <url>/2022/05/16/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-15/</url>
+    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;15</strong></p>
 <table>
 <thead>
 <tr>
@@ -4666,13 +4710,13 @@ service messagebus restart;
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">144</td>
-<td align="center">1305</td>
-<td align="center">9</td>
-<td align="center">240</td>
+<td align="center">69</td>
+<td align="center">869</td>
+<td align="center">3</td>
+<td align="center">95</td>
 </tr>
 </tbody></table>
-<img src="/2022/05/12/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-11/image_20220511.jpg" class="">
+<img src="/2022/05/16/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-15/image_20220515.jpg" class="">
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -4747,35 +4791,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-5-15</title>
-    <url>/2022/05/16/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-15/</url>
-    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;15</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">全市新增确诊</th>
-<th align="center">全市新增无症状</th>
-<th align="center">浦东新增确诊</th>
-<th align="center">浦东新增无症状</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">69</td>
-<td align="center">869</td>
-<td align="center">3</td>
-<td align="center">95</td>
-</tr>
-</tbody></table>
-<img src="/2022/05/16/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-15/image_20220515.jpg" class="">
-]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>covid19</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>上海每日疫情走势2022-5-28</title>
     <url>/2022/05/29/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-28/</url>
     <content><![CDATA[<table>
@@ -4839,9 +4854,10 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-5-3</title>
-    <url>/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/</url>
-    <content><![CDATA[<img src="/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/image-20220504095419109.png" class="">
+    <title>上海每日疫情走势2022-5-5</title>
+    <url>/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/</url>
+    <content><![CDATA[<img src="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/image-20220505095419109.jpg" class="">
+
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -4851,10 +4867,9 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-5-5</title>
-    <url>/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/</url>
-    <content><![CDATA[<img src="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/image-20220505095419109.jpg" class="">
-
+    <title>上海每日疫情走势2022-5-3</title>
+    <url>/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/</url>
+    <content><![CDATA[<img src="/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/image-20220504095419109.png" class="">
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -12805,21 +12820,6 @@ service messagebus restart;
       <tags>
         <tag>html</tag>
         <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tmux Clipboard To/from System Clipboard</title>
-    <url>/2024/02/21/Tmux-clipboard-to-from-system-clipboard/</url>
-    <content><![CDATA[<p><strong>在~&#x2F;.tmux.conf中开启鼠标支持</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-option -g mouse on</span><br></pre></td></tr></table></figure>
-
-<p>复制 按住<code>shift</code>键,然后拖动鼠标复制要选择的内容，然后按下<code>shift+ctrl+c</code>,复制到系统剪贴板<br> 粘贴 按下<code>shift+ctrl+v</code> 粘贴系统剪贴板中的内容到tmux中<br> 需要注意的是<br> <code>shift+ctrl+v</code>是在终端设置的粘贴快捷键<br> <code>shift+ctrl+c</code>是在终端设置的复制快捷键</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
 </search>
