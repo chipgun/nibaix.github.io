@@ -92,6 +92,31 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/09/06/GTECH-Flip-flop-Cell/">GTECH Flip-Flop Cell</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-09-06
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>When HDL Compiler reads in a Verilog or VHDL RTL description of the design, it translates<br>the design into a technology-independent representation (GTECH). In GTECH, both<br>registers and latches are represented by a SEQGEN cell, which is a<br>technology-independent model of a sequential element as shown in the figure below. SEQGEN<br>cells have all the possible control and data pins that can be present on a sequential element.</p>
+<img src="/2023/09/06/GTECH-Flip-flop-Cell/gtech_register_interface.jpg" class="">
+
+<img src="/2023/09/06/GTECH-Flip-flop-Cell/gtech_register_signals.jpg" class="">
+
+<p>Knowing this is important and useful when you would set constraint on a register in the synthesis phase of HDL mapping, e.g.,</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set_multicycle_path -from [get_pins A_Example_reg/clocked_on]</span><br><span class="line">set_false_path -to [get_pins B_Example_reg/next_state]</span><br></pre></td></tr></table></figure>
+
+<p>Refer to the document of ‘Design Compiler Optimization Reference Manual’ for details.</p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/">Challenge: Spot a Snow Leopard in 15 Sec</a>
         </h1>
 
@@ -271,26 +296,6 @@
 <img src=/2023/03/19/nomachine-server-admin/image-20230319234139451.jpg width=300>
           <div class="read-more">
             <a href="/2023/03/19/nomachine-server-admin/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/03/17/writing-aliases-in-csh-and-tcsh/">Writing Aliases in Csh and Tcsh</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-03-17
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h2 id="Using-command-line-arguments"><a href="#Using-command-line-arguments" class="headerlink" title="Using command-line arguments"></a>Using command-line arguments</h2><p>Sometimes you want an alias to deal explicitly with its arguments, rather than just leaving them at the end of the command. For example, suppose you had a file in your home directory named <code>friends</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Joe Schmoe     123 Main Street	212-987-6543</span><br><span class="line">Jane Doe       975 First Ave	516-357-6420</span><br><span class="line">Bob T. Slob    111 River Road	718-432-1098</span><br><span class="line">Bill T. Pill   1 South Ave	516-877-0000</span><br></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2023/03/17/writing-aliases-in-csh-and-tcsh/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/">

@@ -92,6 +92,23 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2024/02/22/Tmux-Cheat-Sheet/">Tmux Cheat Sheet</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2024-02-22
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><h2 id="Sessions"><a href="#Sessions" class="headerlink" title="Sessions"></a>Sessions</h2><img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222202219915.jpg" class="">
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2024/02/21/Tmux-clipboard-to-from-system-clipboard/">Tmux Clipboard To/from System Clipboard</a>
         </h1>
 
@@ -357,31 +374,6 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
     </header>
 
     <div class="post-content"><img src="/2023/09/15/Schedule-could-be-beautiful/image-20230915222544736.png" class="">
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/09/06/GTECH-Flip-flop-Cell/">GTECH Flip-Flop Cell</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-09-06
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>When HDL Compiler reads in a Verilog or VHDL RTL description of the design, it translates<br>the design into a technology-independent representation (GTECH). In GTECH, both<br>registers and latches are represented by a SEQGEN cell, which is a<br>technology-independent model of a sequential element as shown in the figure below. SEQGEN<br>cells have all the possible control and data pins that can be present on a sequential element.</p>
-<img src="/2023/09/06/GTECH-Flip-flop-Cell/gtech_register_interface.jpg" class="">
-
-<img src="/2023/09/06/GTECH-Flip-flop-Cell/gtech_register_signals.jpg" class="">
-
-<p>Knowing this is important and useful when you would set constraint on a register in the synthesis phase of HDL mapping, e.g.,</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set_multicycle_path -from [get_pins A_Example_reg/clocked_on]</span><br><span class="line">set_false_path -to [get_pins B_Example_reg/next_state]</span><br></pre></td></tr></table></figure>
-
-<p>Refer to the document of ‘Design Compiler Optimization Reference Manual’ for details.</p>
 
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">

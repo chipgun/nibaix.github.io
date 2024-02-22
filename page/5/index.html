@@ -92,6 +92,29 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/10/07/install-perl-module/">Install Perl Module</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-10-07
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p><strong>List all installed Perl modules</strong><br><code>perldoc perllocal</code> or <code>instmodsh</code></p>
+<p><strong>Check if a specified module is installed</strong><br><code>perldoc -li math::round</code> # -l &#x3D; list; -i &#x3D; ignore case</p>
+<p><strong>Install Perl modules</strong><br><em>Given an example of Math::Round to be installed</em></p>
+<ol>
+<li>Search &amp; download the module (Math-Round-0.07.tar.gz) at <a target="_blank" rel="noopener" href="https://metacpan.org/">https://metacpan.org/</a>.</li>
+<li>Install the module<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">% tar xvf Math-Round-0.07.tar.gz`</span><br><span class="line">% perl Makefile.PL</span><br><span class="line">% make</span><br><span class="line">% make test</span><br><span class="line">% sudo make install</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/10/06/integrate-SOS-in-virtuoso/">Integrate SOS in Virtuoso</a>
         </h1>
 
@@ -276,28 +299,6 @@
 <p><code>vivetool addconfig 34370472 2</code></p>
 <img src="/2022/07/17/Activate%20the%20Feature%20of%20Tabbed%20File%20Explorer/image-20220717125842508.jpg" class="">
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/07/16/Update-GLIBC-2-17-in-RHEL6/">Update GLIBC 2.17 in RHEL6</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-07-16
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h3 id="Update-From-RPMs-Recommended"><a href="#Update-From-RPMs-Recommended" class="headerlink" title="Update From RPMs (Recommended)"></a>Update From RPMs (Recommended)</h3><ol>
-<li>Download RPMs<br><a target="_blank" rel="noopener" href="https://copr-be.cloud.fedoraproject.org/results/mosquito/myrepo-el6/epel-6-x86_64/glibc-2.17-55.fc20/">https://copr-be.cloud.fedoraproject.org/results/mosquito/myrepo-el6/epel-6-x86_64/glibc-2.17-55.fc20/</a></li>
-<li>Install RPMs<br> <code>sudo rpm -Uvh glibc-2.17*.rpm</code><br> <em><strong>You might encounter some error like “error: Failed dependencies:…”.</strong></em><br> To fix it just add this parameter <code>--force --nodeps</code> at the end of the rpm command.<br> After finished up let’s check what versions of GLIBC we are having now.<br> <code>strings /lib64/libc.so.6 | grep GLIBC</code> or <code>sudo yum list | grep -i glibc</code></li>
-</ol>
-          <div class="read-more">
-            <a href="/2022/07/16/Update-GLIBC-2-17-in-RHEL6/" class="read-more-link">Read more &raquo;</a>
-          </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/4/">
         <i class="iconfont icon-left"></i>
