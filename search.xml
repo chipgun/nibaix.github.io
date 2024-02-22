@@ -134,6 +134,18 @@
       </tags>
   </entry>
   <entry>
+    <title>Challenge: Spot a Snow Leopard in 15 Sec</title>
+    <url>/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/</url>
+    <content><![CDATA[<img src=/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/snow_leopard.jpg width=320>
+]]></content>
+      <categories>
+        <category>Uncategorized</category>
+      </categories>
+      <tags>
+        <tag>fun</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Chop and Chomp</title>
     <url>/2023/02/22/Chop-and-Chomp/</url>
     <content><![CDATA[<p><strong>Perl Functions of chop() and chomp()</strong></p>
@@ -148,15 +160,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Challenge: Spot a Snow Leopard in 15 Sec</title>
-    <url>/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/</url>
-    <content><![CDATA[<img src=/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/snow_leopard.jpg width=320>
+    <title>Coloring the C-Shell Prompt</title>
+    <url>/2022/07/20/Coloring-the-C-shell-Prompt/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set   black = &quot;%&#123;\033[0;30m%&#125;&quot;</span><br><span class="line">set  Bblack = &quot;%&#123;\033[B;30m%&#125;&quot;</span><br><span class="line">set     red = &quot;%&#123;\033[0;31m%&#125;&quot;</span><br><span class="line">set    Bred = &quot;%&#123;\033[1;31m%&#125;&quot;</span><br><span class="line">set   green = &quot;%&#123;\033[0;32m%&#125;&quot;</span><br><span class="line">set  Bgreen = &quot;%&#123;\033[1;32m%&#125;&quot;</span><br><span class="line">set  yellow = &quot;%&#123;\033[0;33m%&#125;&quot;</span><br><span class="line">set Byellow = &quot;%&#123;\033[1;33m%&#125;&quot;</span><br><span class="line">set    blue = &quot;%&#123;\033[0;34m%&#125;&quot;</span><br><span class="line">set   Bblue = &quot;%&#123;\033[1;34m%&#125;&quot;</span><br><span class="line">set  purple = &quot;%&#123;\033[0;35m%&#125;&quot;</span><br><span class="line">set Bpurple = &quot;%&#123;\033[1;35m%&#125;&quot;</span><br><span class="line">set    cyan = &quot;%&#123;\033[0;36m%&#125;&quot;</span><br><span class="line">set   Bcyan = &quot;%&#123;\033[1;36m%&#125;&quot;</span><br><span class="line">set   white = &quot;%&#123;\033[0;37m%&#125;&quot;</span><br><span class="line">set  Bwhite = &quot;%&#123;\033[1;37m%&#125;&quot;</span><br><span class="line">set     end = &quot;%&#123;\033[0m%&#125;&quot;</span><br><span class="line"></span><br><span class="line">alias setprompt &#x27;set prompt = &quot;\n$&#123;cyan&#125;%~\n$&#123;Bpurple&#125;%n@%m$&#123;Bwhite&#125;[`id -ng`]$&#123;end&#125; &quot;&#x27;</span><br><span class="line">alias cd &#x27;chdir \!* &amp;&amp; setprompt&#x27;</span><br><span class="line">setprompt</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Uncategorized</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>fun</tag>
+        <tag>linux</tag>
+        <tag>csh</tag>
       </tags>
   </entry>
   <entry>
@@ -179,19 +192,6 @@
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Coloring the C-Shell Prompt</title>
-    <url>/2022/07/20/Coloring-the-C-shell-Prompt/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set   black = &quot;%&#123;\033[0;30m%&#125;&quot;</span><br><span class="line">set  Bblack = &quot;%&#123;\033[B;30m%&#125;&quot;</span><br><span class="line">set     red = &quot;%&#123;\033[0;31m%&#125;&quot;</span><br><span class="line">set    Bred = &quot;%&#123;\033[1;31m%&#125;&quot;</span><br><span class="line">set   green = &quot;%&#123;\033[0;32m%&#125;&quot;</span><br><span class="line">set  Bgreen = &quot;%&#123;\033[1;32m%&#125;&quot;</span><br><span class="line">set  yellow = &quot;%&#123;\033[0;33m%&#125;&quot;</span><br><span class="line">set Byellow = &quot;%&#123;\033[1;33m%&#125;&quot;</span><br><span class="line">set    blue = &quot;%&#123;\033[0;34m%&#125;&quot;</span><br><span class="line">set   Bblue = &quot;%&#123;\033[1;34m%&#125;&quot;</span><br><span class="line">set  purple = &quot;%&#123;\033[0;35m%&#125;&quot;</span><br><span class="line">set Bpurple = &quot;%&#123;\033[1;35m%&#125;&quot;</span><br><span class="line">set    cyan = &quot;%&#123;\033[0;36m%&#125;&quot;</span><br><span class="line">set   Bcyan = &quot;%&#123;\033[1;36m%&#125;&quot;</span><br><span class="line">set   white = &quot;%&#123;\033[0;37m%&#125;&quot;</span><br><span class="line">set  Bwhite = &quot;%&#123;\033[1;37m%&#125;&quot;</span><br><span class="line">set     end = &quot;%&#123;\033[0m%&#125;&quot;</span><br><span class="line"></span><br><span class="line">alias setprompt &#x27;set prompt = &quot;\n$&#123;cyan&#125;%~\n$&#123;Bpurple&#125;%n@%m$&#123;Bwhite&#125;[`id -ng`]$&#123;end&#125; &quot;&#x27;</span><br><span class="line">alias cd &#x27;chdir \!* &amp;&amp; setprompt&#x27;</span><br><span class="line">setprompt</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>csh</tag>
       </tags>
   </entry>
   <entry>
@@ -238,6 +238,57 @@
       <tags>
         <tag>synopsys</tag>
         <tag>starred</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ISO 26262 Hardware Dev Requirement</title>
+    <url>/2022/06/29/ISO-26262-hardware-dev-requirement/</url>
+    <content><![CDATA[<h2 id="Functional-Safety"><a href="#Functional-Safety" class="headerlink" title="Functional Safety"></a>Functional Safety</h2><table>
+<thead>
+<tr>
+<th>Design Integrity</th>
+<th>Device Quality</th>
+<th>Functional Safety</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Function correct? Performance &amp; power</td>
+<td>Silicon Design &amp; Manufactory</td>
+<td>Device Failure Detection and Response Mechanisms</td>
+</tr>
+<tr>
+<td>Function verification: Prevent&#x2F;Eliminate Bugs</td>
+<td>Reduced DPPM</td>
+<td>Detect&#x2F;Control Failures</td>
+</tr>
+<tr>
+<td>Use best-in-class Functionla verification methodolody and tools</td>
+<td>DFT&#x2F;Function patterns</td>
+<td>Assessed by Functional Safety Verification methodology and tools</td>
+</tr>
+<tr>
+<td>SYSTEMATIC FAULTS - Design Bugs</td>
+<td>RANDOM FAULTS</td>
+<td>RANDOM FAULTS - HW FAILURES</td>
+</tr>
+<tr>
+<td>Always permanent</td>
+<td>Permanent</td>
+<td>Permanent&#x2F;Transient</td>
+</tr>
+<tr>
+<td>Development</td>
+<td>Manufacturing</td>
+<td>In Operation</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>iso26262</tag>
+        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -306,57 +357,6 @@
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ISO 26262 Hardware Dev Requirement</title>
-    <url>/2022/06/29/ISO-26262-hardware-dev-requirement/</url>
-    <content><![CDATA[<h2 id="Functional-Safety"><a href="#Functional-Safety" class="headerlink" title="Functional Safety"></a>Functional Safety</h2><table>
-<thead>
-<tr>
-<th>Design Integrity</th>
-<th>Device Quality</th>
-<th>Functional Safety</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Function correct? Performance &amp; power</td>
-<td>Silicon Design &amp; Manufactory</td>
-<td>Device Failure Detection and Response Mechanisms</td>
-</tr>
-<tr>
-<td>Function verification: Prevent&#x2F;Eliminate Bugs</td>
-<td>Reduced DPPM</td>
-<td>Detect&#x2F;Control Failures</td>
-</tr>
-<tr>
-<td>Use best-in-class Functionla verification methodolody and tools</td>
-<td>DFT&#x2F;Function patterns</td>
-<td>Assessed by Functional Safety Verification methodology and tools</td>
-</tr>
-<tr>
-<td>SYSTEMATIC FAULTS - Design Bugs</td>
-<td>RANDOM FAULTS</td>
-<td>RANDOM FAULTS - HW FAILURES</td>
-</tr>
-<tr>
-<td>Always permanent</td>
-<td>Permanent</td>
-<td>Permanent&#x2F;Transient</td>
-</tr>
-<tr>
-<td>Development</td>
-<td>Manufacturing</td>
-<td>In Operation</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>iso26262</tag>
-        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -452,6 +452,24 @@
       </tags>
   </entry>
   <entry>
+    <title>No. Is Not the Abbreviation of Number</title>
+    <url>/2022/05/21/No-is-not-the-abbreviation-of-number/</url>
+    <content><![CDATA[<blockquote>
+<p><em>Quotation from <a href="http://www.quora.com/">www.quora.com</a></em><br>The abbreviation “no.” for the word “number” comes from the <strong>numero</strong> symbol, № (also written as “No.” or “no.”), which is in turn derived from Latin <strong>numero</strong>. As you can see, it has an “o” in it.</p>
+</blockquote>
+<p>Then do you know by the way, what the abbreviations of e.g., i.e., etc., are derived from?</p>
+<p><strong>i.e.</strong> is abbreviation of Latin expression of <em><strong>id est</strong></em>, which means “that is” in Latin. It introduces a rewording or a clarification of a statement.</p>
+<p><strong>e.g.</strong> is abbreviation of <em><strong>exempli gratia</strong></em> in Latin, which means “for example” or “for instance”. It introduces one or more examples that illustrate something stated.</p>
+<p><strong>etc.</strong> is abbreviation of <em><strong>et cetera</strong></em> in Latin phrase, which introduces a number of unspecified additional items (persons of things).</p>
+]]></content>
+      <categories>
+        <category>Knowledge</category>
+      </categories>
+      <tags>
+        <tag>english</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OCV Evolution</title>
     <url>/2022/05/04/OCV-evolution/</url>
     <content><![CDATA[<p>EDA (Electronic Design Automation) cell characterization tools have been used extensively to generate models for timing, power and noise at a rapidly growing number of process corners. Today, model variation has become a critical component of cell characterization. Variation can impact circuit timing due to process, voltage, and temperature changes and can lead to timing violations, resulting in a costly re-spin of the design. While global variation is captured by analyzing the design at different process corners, local variation cannot be handled effectively with just the traditional corner-based static timing analysis (STA). As designers try to squeeze every ounce of power-performance-area (PPA), packing millions of transistors into the chip, local variation effects have become more and more prominent. In today’s most advanced nodes at 7nm and below, there is a strong need for innovative methods to reduce pessimism and to provide a better design margining methodology to accurately account for the impact of variation.</p>
@@ -479,24 +497,6 @@
       <tags>
         <tag>synopsys</tag>
         <tag>ocv</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>No. Is Not the Abbreviation of Number</title>
-    <url>/2022/05/21/No-is-not-the-abbreviation-of-number/</url>
-    <content><![CDATA[<blockquote>
-<p><em>Quotation from <a href="http://www.quora.com/">www.quora.com</a></em><br>The abbreviation “no.” for the word “number” comes from the <strong>numero</strong> symbol, № (also written as “No.” or “no.”), which is in turn derived from Latin <strong>numero</strong>. As you can see, it has an “o” in it.</p>
-</blockquote>
-<p>Then do you know by the way, what the abbreviations of e.g., i.e., etc., are derived from?</p>
-<p><strong>i.e.</strong> is abbreviation of Latin expression of <em><strong>id est</strong></em>, which means “that is” in Latin. It introduces a rewording or a clarification of a statement.</p>
-<p><strong>e.g.</strong> is abbreviation of <em><strong>exempli gratia</strong></em> in Latin, which means “for example” or “for instance”. It introduces one or more examples that illustrate something stated.</p>
-<p><strong>etc.</strong> is abbreviation of <em><strong>et cetera</strong></em> in Latin phrase, which introduces a number of unspecified additional items (persons of things).</p>
-]]></content>
-      <categories>
-        <category>Knowledge</category>
-      </categories>
-      <tags>
-        <tag>english</tag>
       </tags>
   </entry>
   <entry>
@@ -591,6 +591,18 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
+    <title>Schedule Could Be Beautiful</title>
+    <url>/2023/09/15/Schedule-could-be-beautiful/</url>
+    <content><![CDATA[<img src="/2023/09/15/Schedule-could-be-beautiful/image-20230915222544736.png" class="">
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>starred</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SPI Mode: CPOL and CPHA</title>
     <url>/2023/07/06/SPI-mode-CPOL-and-CPHA/</url>
     <content><![CDATA[<img src="/2023/07/06/SPI-mode-CPOL-and-CPHA/400px-SPI_timing_diagram2.png" class="">
@@ -602,18 +614,6 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </categories>
       <tags>
         <tag>spi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Schedule Could Be Beautiful</title>
-    <url>/2023/09/15/Schedule-could-be-beautiful/</url>
-    <content><![CDATA[<img src="/2023/09/15/Schedule-could-be-beautiful/image-20230915222544736.png" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>starred</tag>
       </tags>
   </entry>
   <entry>
@@ -629,32 +629,6 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       <tags>
         <tag>license</tag>
         <tag>starred</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Synopsys Command: Report_timing</title>
-    <url>/2023/08/11/Synopsys-Command-report-timing/</url>
-    <content><![CDATA[<p>There are some useful options of command report_timing, which I haven’t been aware of before.</p>
-<p><strong>-start_end_pair</strong></p>
-<p>This option should be quite useful if you want to report violations from all startpoints to endpoints. By default report_timing only report the most critical startpoint to a certain endpoint even if -nworst is specified. With the option of -start_end_pair all startpoints will be shown up.</p>
-<p><strong>-path_type <em>summary</em></strong></p>
-<p>Reports timing summary only with startpoints and endpoints.</p>
-<p><strong>-start_end_type <em>reg_to_reg</em> | <em>reg_to_out</em> | <em>in_to_reg</em> | <em>in_to_out</em></strong></p>
-<p>Restricts the report to one of four classes.</p>
-<span id="more"></span>
-
-<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811145744487.png" class="">
-
-<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150538668.png" class="">
-
-<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150217212.png" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>synopsys</tag>
-        <tag>timing</tag>
       </tags>
   </entry>
   <entry>
@@ -790,19 +764,29 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
-    <title>Tmux Clipboard To/from System Clipboard</title>
-    <url>/2024/02/21/Tmux-clipboard-to-from-system-clipboard/</url>
-    <content><![CDATA[<p><strong>在~&#x2F;.tmux.conf中开启鼠标支持:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-option -g mouse on</span><br></pre></td></tr></table></figure>
+    <title>Synopsys Command: Report_timing</title>
+    <url>/2023/08/11/Synopsys-Command-report-timing/</url>
+    <content><![CDATA[<p>There are some useful options of command report_timing, which I haven’t been aware of before.</p>
+<p><strong>-start_end_pair</strong></p>
+<p>This option should be quite useful if you want to report violations from all startpoints to endpoints. By default report_timing only report the most critical startpoint to a certain endpoint even if -nworst is specified. With the option of -start_end_pair all startpoints will be shown up.</p>
+<p><strong>-path_type <em>summary</em></strong></p>
+<p>Reports timing summary only with startpoints and endpoints.</p>
+<p><strong>-start_end_type <em>reg_to_reg</em> | <em>reg_to_out</em> | <em>in_to_reg</em> | <em>in_to_out</em></strong></p>
+<p>Restricts the report to one of four classes.</p>
+<span id="more"></span>
 
-<p><strong>复制:</strong> 按住<code>shift</code>键,然后拖动鼠标复制要选择的内容，然后按下<code>shift+ctrl+c</code>,复制到系统剪贴板<br><strong>粘贴:</strong> 按下<code>shift+ctrl+v</code> 粘贴系统剪贴板中的内容到Tmux中</p>
-<p><strong>需要注意的是</strong><br><code>shift+ctrl+v</code>是在终端设置的粘贴快捷键<br><code>shift+ctrl+c</code>是在终端设置的复制快捷键</p>
+<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811145744487.png" class="">
+
+<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150538668.png" class="">
+
+<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150217212.png" class="">
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>VLSI</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>synopsys</tag>
+        <tag>timing</tag>
       </tags>
   </entry>
   <entry>
@@ -839,6 +823,22 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>Tmux Clipboard To/from System Clipboard</title>
+    <url>/2024/02/21/Tmux-clipboard-to-from-system-clipboard/</url>
+    <content><![CDATA[<p><strong>在~&#x2F;.tmux.conf中开启鼠标支持:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-option -g mouse on</span><br></pre></td></tr></table></figure>
+
+<p><strong>复制:</strong> 按住<code>shift</code>键,然后拖动鼠标复制要选择的内容，然后按下<code>shift+ctrl+c</code>,复制到系统剪贴板<br><strong>粘贴:</strong> 按下<code>shift+ctrl+v</code> 粘贴系统剪贴板中的内容到Tmux中</p>
+<p><strong>需要注意的是</strong><br><code>shift+ctrl+v</code>是在终端设置的粘贴快捷键<br><code>shift+ctrl+c</code>是在终端设置的复制快捷键</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Too Many Open Files错误导致VNC灰屏问题</title>
     <url>/2022/11/09/Too-Many-Open-Files%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4VNC%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>VNCserver启动数量过大，约53个时；vncviewer会出现灰屏现象；新起vncserver起不来；提示无法启动dbus-daemon，版本过低。</p>
@@ -871,6 +871,20 @@ service messagebus restart;
       <tags>
         <tag>linux</tag>
         <tag>vnc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UVM Online Documentation</title>
+    <url>/2022/05/03/UVM-online-documentation/</url>
+    <content><![CDATA[<p><a href="https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/">https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/</a></p>
+<img src="/2022/05/03/UVM-online-documentation/image-20220503111434904.png" class="">
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>uvm</tag>
+        <tag>verification</tag>
       </tags>
   </entry>
   <entry>
@@ -927,20 +941,6 @@ service messagebus restart;
       <tags>
         <tag>mentor</tag>
         <tag>eda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>UVM Online Documentation</title>
-    <url>/2022/05/03/UVM-online-documentation/</url>
-    <content><![CDATA[<p><a href="https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/">https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/</a></p>
-<img src="/2022/05/03/UVM-online-documentation/image-20220503111434904.png" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>uvm</tag>
-        <tag>verification</tag>
       </tags>
   </entry>
   <entry>
@@ -1016,6 +1016,18 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>A Man&#39;s Most Powerful Capacity</title>
+    <url>/2022/07/22/a-man-s-most-powerful-capacity/</url>
+    <content><![CDATA[<p>A man’s most powerful capacity does not lie in how intelligent he is. It resides in -</p>
+<ul>
+<li>His&#x2F;her persistency in a tedious job until it perfectly gets done;</li>
+<li>His&#x2F;her relentless exploration for unknown things; </li>
+<li>His&#x2F;her passion for the skills he&#x2F;she loves;</li>
+<li>His&#x2F;her curiosity for every single trivial matter.</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>Add a New Disk in Linux With Fdisk</title>
     <url>/2022/04/20/add-a-new-disk-in-linux-with-fdisk/</url>
     <content><![CDATA[<p><em>The <strong>fdisk</strong> disk utility can only be used for disk partition no larger than 2TB.</em></p>
@@ -1029,16 +1041,18 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>A Man&#39;s Most Powerful Capacity</title>
-    <url>/2022/07/22/a-man-s-most-powerful-capacity/</url>
-    <content><![CDATA[<p>A man’s most powerful capacity does not lie in how intelligent he is. It resides in -</p>
-<ul>
-<li>His&#x2F;her persistency in a tedious job until it perfectly gets done;</li>
-<li>His&#x2F;her relentless exploration for unknown things; </li>
-<li>His&#x2F;her passion for the skills he&#x2F;she loves;</li>
-<li>His&#x2F;her curiosity for every single trivial matter.</li>
-</ul>
+    <title>Add a New Disk in Linux With Parted</title>
+    <url>/2022/04/20/add-a-new-disk-in-linux-with-parted/</url>
+    <content><![CDATA[<p><em>The <strong>parted</strong> disk utility can be used for disk partition larger than 2TB.</em></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo lsblk</span><br><span class="line">% sudo parted /dev/sdb mklabel gpt</span><br><span class="line">% sudo parted /dev/sdb mkpart primary 0 100%</span><br><span class="line">% sudo mkfs.xfs /dev/sdb1</span><br><span class="line">% sudo <span class="built_in">mkdir</span> /tools</span><br><span class="line">% sudo mount /dev/sdb1 /tools</span><br><span class="line">% sudo lsblk</span><br><span class="line">% sudo <span class="built_in">df</span> -hT</span><br><span class="line">% sudo blkid</span><br><span class="line">% sudo <span class="built_in">echo</span> <span class="string">&quot;UUID=0f559a31-08b5-47aa-9a60-d9a6594941ad /tools xfs defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br><span class="line">% sudo reboot</span><br></pre></td></tr></table></figure>
+
 ]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Approaches to Disable SSH</title>
@@ -1100,20 +1114,6 @@ service messagebus restart;
 
 <p>Use command <code>showmount -e server</code> to show the NFS exported from <strong>server</strong>.</p>
 <h2 id="Step-4-Start-autofs-service"><a href="#Step-4-Start-autofs-service" class="headerlink" title="Step:4 Start autofs service"></a>Step:4 Start autofs service</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo systemctl start autofs.serivce</span><br><span class="line">% sudo systemctl enable autofs.serivce</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Add a New Disk in Linux With Parted</title>
-    <url>/2022/04/20/add-a-new-disk-in-linux-with-parted/</url>
-    <content><![CDATA[<p><em>The <strong>parted</strong> disk utility can be used for disk partition larger than 2TB.</em></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo lsblk</span><br><span class="line">% sudo parted /dev/sdb mklabel gpt</span><br><span class="line">% sudo parted /dev/sdb mkpart primary 0 100%</span><br><span class="line">% sudo mkfs.xfs /dev/sdb1</span><br><span class="line">% sudo <span class="built_in">mkdir</span> /tools</span><br><span class="line">% sudo mount /dev/sdb1 /tools</span><br><span class="line">% sudo lsblk</span><br><span class="line">% sudo <span class="built_in">df</span> -hT</span><br><span class="line">% sudo blkid</span><br><span class="line">% sudo <span class="built_in">echo</span> <span class="string">&quot;UUID=0f559a31-08b5-47aa-9a60-d9a6594941ad /tools xfs defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br><span class="line">% sudo reboot</span><br></pre></td></tr></table></figure>
-
-]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -1279,6 +1279,107 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>判决反馈均衡器（中）</title>
+    <url>/2022/04/09/decision-feedback-equalizer-2/</url>
+    <content><![CDATA[<a href="/2022/04/09/decision-feedback-equalizer-1/" title="判决反馈均衡器（上）">判决反馈均衡器（上）</a>&raquo;<br/>
+
+<a href="/2022/04/09/decision-feedback-equalizer-3/" title="判决反馈均衡器（下）">判决反馈均衡器（下）</a>&raquo;
+
+
+
+<p><strong>Part4 瞬态波形和眼图</strong></p>
+<p>判决反馈均衡器DFE(上）章节中提到的不同结构，其瞬态波形会存在差异。其采样前的眼图直观反映了采样器的幅度Margin和CDR采样时刻的裕度。</p>
+<span id="more"></span>
+
+<p>为了对比，这里使用VerilogA理想模型，激励条件尽可能保持了一致。模型数据率为10GT&#x2F;s，输入信号为800mVppd。信道插入损耗约为10dB@5Ghz，无CTLE，仅DFE补偿，2个Tap。通过信道后，采样前数据眼图如图1所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE1.jpg" class="">
+
+<p>全速率直接反馈结构的瞬态相关波形和稳态眼图分别如图2和3。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE2.jpg" class="">
+
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE3.jpg" class="">
+
+<p>收敛过程如动图4所示。可以比较明显观察到dfe补偿作用会导致采样时钟发生前移。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE4.jpg" class="">
+
+<p>半速率直接反馈结构的瞬态相关波形和稳态眼图分别如图5和6。图5可以看到加法器输入和加法器奇偶输出波形，通过interleave方式交替采样。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE5.jpg" class="">
+
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE6.jpg" class="">
+
+<p>图7是奇偶路收敛过程的眼图。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE7.jpg" class="">
+
+<p>图8和图7一样，也是改进型半速率直接反馈结构的眼图，不知道大家能否看出差异?</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE8.jpg" class="">
+
+<p>对于预判式全（半）速率结构其瞬态波形和眼图和上述两种直接反馈结构类似，只是tap1分量没有在summer节点上体现，需要根据判断出的数据选择对数据进行tap1量的加或者减。</p>
+<p><strong>Part5 DFE对边沿的影响</strong></p>
+<p>传统2x过采样CDR，通过edge定位锚定data采样位置，edge位置的抖动和分布实际上会影响到data采样的裕量，特别是在比较大插入损耗的情况下，眼睛裕量本身就比较小。</p>
+<p>前边一系列动图可以明显看到dfe对采样时钟的相位影响，随着各tap补偿量的逐渐增加，采样时钟相位在cdr的调节下，相位逐步前移。cdr相位锁定位置的变化，反应了dfe对边沿的影响。</p>
+<p>图9简单说明了DFE Tap1量的加减对边沿的影响，实际边沿数据变化和数据pattern，Tap阶数，响应时间密切相关。对于1-0的数据转换，pattern类型为110，可以看到Tap1量导致边沿提前；而pattern类型为010，因为存在tap1量符号反向，对边沿的影响和Tap量响应时间相关。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE9.jpg" class="">
+
+<p>实际上，对于多Tap的DFE补偿，边沿包含了历史多位数据的影响。综合影响评估需要结合具体电路实现。</p>
+<p>  其实，最明显的边沿影响，是预判式结构。因为Tap1量加减处理是在summer之后。如果不对edge采样进行处理，锁定后的数据采样位置就会偏后。如图10所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE10.jpg" class="">
+
+<p>那么该如何解决这个问题呢？这里就留给大家做个思考吧。</p>
+<p>图11是对edge补偿处理后的结果，可以看到等效的眼图收敛结果更优。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE11.jpg" class="">
+
+<p>另外对2x过采样CDR时钟相位的影响。也需要考虑data和edge的先后顺序，和具体电路实现结构密切相关，具体哪种顺序更优，需要仔细评估。</p>
+<p>这里总结下几种结构理想情况DFE收敛值情况，仅供参考。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE12.jpg" class="">
+
+<p>最后送上，用Matlab工具SerDes Toolbox计算的结果合成的封面图的近似收敛过程。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE13.jpg" class="">
+
+<p><strong>Part6 自适应算法简介</strong></p>
+<p>目前，自适应滤波器理论已经非常成熟，在通信和消费领域也有着广泛的应用。例如信道均衡，波束成形，噪声消除等。如图14所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE14.jpg" class="">
+
+<p>自适应滤波器如图15，简单来讲，就是通过调整滤波器，使滤波器输出信号和目标信号接近或者相等。主要是(非)线性离散时间系统对离散信号的处理。通常使用<strong>性能函数</strong>(Performance Function)，评估不同滤波器系数的性能。比如用误差信号的均方误差(Mean-Squared Error,MSE)。最小均方误差的滤波器，又称之为<strong>维纳滤波器</strong>(Wiener Filter)。各种自适应算法就是要得到滤波器的维纳解(Wiener Solution)。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE15.jpg" class="">
+
+<p>在通信领域，自适应滤波器主要用作信道均衡(Channel Equalization)，如图16所示。图中信道H(z)是信道传递函数。噪声v(n)可以看做是串扰及噪声等非理想因素的组合。图中均衡器W(z)就是要消除码间干扰，降低串扰和噪声影响的自适应滤波器，均衡器输出y(n)需要满足量化输出的数据在规定的误码率范围内。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE16.jpg" class="">
+
+<p>图17是维纳滤波器的数学推导<a href="%E7%B2%97%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%BE%88%E5%A4%8D%E6%9D%82%EF%BC%8C%E5%A4%A7%E5%AE%B6%E7%BB%86%E7%9C%8B%E8%BF%98%E6%98%AF%E8%83%BD%E7%9C%8B%E7%9A%84%E6%98%8E%E7%99%BD%E7%9A%84">1</a>，滤波器系数满足<strong>维纳-霍普方程</strong>，维纳解形式包含输入数据<strong>自相关矩阵R</strong>，输入数据和目标数据的<strong>互相关向量p</strong>的关系。可以看到维纳解是可以一步到位，但会涉及比较复杂的矩阵运算量。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE17.jpg" class="">
+
+<p>另一种方法通过迭代搜索算法，从任意一个Tap权重向量<strong>w</strong>i，逐步迭代收敛到最优权重向量<strong>w</strong>o。这里就要提到基于梯度的<strong>最速下降法</strong>(<em>method of steepest descent</em>)。图18[2]给出个动画，还是比较形象的说明了梯度下降法，整个性能误差面一定会存在最低点(可能包含多个局部最低点)，这个点也就是维纳解的位置。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE18.jpg" class="">
+
+<p>基于梯度的最速下降示意图及推导过程如图19所示。可以看到基于梯度的最速下降法能够以最快的方式按照负梯度方向，朝着维纳解位置运动。同时，迭代步长<strong>增益</strong><em>μ</em>和自相关矩阵<strong>R</strong>的特征根<strong>λi</strong>需要满足一定的关系从而保证收敛过程的稳定性。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE19.jpg" class="">
+
+<p>图19中基于梯度的最速下降法还是需要知道自相关矩阵<strong>R</strong>和互相关矩阵<strong>p</strong>。计算过程还是比较复杂。我们知道前述梯度是<em>误差平方期望的梯度</em>，如果我们用瞬时误差梯度代替期望误差梯度，则可以简化迭代过程为LMS算法实现，如图20所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE20.jpg" class="">
+
+<p>图20的LMS迭代过程使用了瞬时误差e(n)和历史数据矩阵**x(n)**。还是会涉及到浮点运算（乘法和加法）。运算硬件消耗也是比较大。于是就有了图21所示的简化版本。主要是误差或者历史数据的符号化。可以不同程度简化计算复杂度。不过图中也可以简化计算的代价是收敛时间，还有可能残余更大的均方误差MSE。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE21.jpg" class="">
+
+<p>判决反馈均衡器(Decision Feedback Equalizer,DFE)，正如其名字所示，需要通过历史判决值，构成反馈FIR滤波器，对输入信号进行补偿。如图22所示。需要注意的是，图中Tap反馈到加法器为负，也就是实现减法。同时误差信号的定义和前述基本滤波器定义也是相反的。负负为正。因此权重迭代表达式符号也和前述结果相同。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE22.jpg" class="">
+
+<p>图22中当采样器量化精度为1bits时，就实现图21中sign-sign LMS，实际电路实现时，通过分时复用和模版数据选择，可以进一步降低硬件实现成本。</p>
+<p>当滤波器收敛后，tap系数趋于稳定。滤波器输出值和输入数据及量化误差的传递函数如图23所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE23.jpg" class="">
+
+<p>图24是简单的一阶DFE传递函数及零极点分布，可以看到信号传递函数是高通(高阶DFE频响特性不一定具有全频段的高通特性)，衰减低频，提升高频。从而补偿输入数据的拖尾。误差传递函数整体增益是衰减的。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE24.jpg" class="">
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>dsp</tag>
+        <tag>algorithm</tag>
+        <tag>serdes</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>判决反馈均衡器（上）</title>
     <url>/2022/04/09/decision-feedback-equalizer-1/</url>
     <content><![CDATA[<a href="/2022/04/09/decision-feedback-equalizer-2/" title="判决反馈均衡器（中）">判决反馈均衡器（中）</a>&raquo; <br/>
@@ -1407,104 +1508,20 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>判决反馈均衡器（中）</title>
-    <url>/2022/04/09/decision-feedback-equalizer-2/</url>
-    <content><![CDATA[<a href="/2022/04/09/decision-feedback-equalizer-1/" title="判决反馈均衡器（上）">判决反馈均衡器（上）</a>&raquo;<br/>
+    <title>Definition of TSMC Metal Layer Map</title>
+    <url>/2023/03/09/definition-of-TSMC-metal-layer-map/</url>
+    <content><![CDATA[<h1 id="1P10M-5X2Y2Z"><a href="#1P10M-5X2Y2Z" class="headerlink" title="1P10M_5X2Y2Z"></a>1P10M_5X2Y2Z</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221716667.jpg" class="">
 
-<a href="/2022/04/09/decision-feedback-equalizer-3/" title="判决反馈均衡器（下）">判决反馈均衡器（下）</a>&raquo;
+<h1 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221837347.jpg" class="">
 
-
-
-<p><strong>Part4 瞬态波形和眼图</strong></p>
-<p>判决反馈均衡器DFE(上）章节中提到的不同结构，其瞬态波形会存在差异。其采样前的眼图直观反映了采样器的幅度Margin和CDR采样时刻的裕度。</p>
-<span id="more"></span>
-
-<p>为了对比，这里使用VerilogA理想模型，激励条件尽可能保持了一致。模型数据率为10GT&#x2F;s，输入信号为800mVppd。信道插入损耗约为10dB@5Ghz，无CTLE，仅DFE补偿，2个Tap。通过信道后，采样前数据眼图如图1所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE1.jpg" class="">
-
-<p>全速率直接反馈结构的瞬态相关波形和稳态眼图分别如图2和3。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE2.jpg" class="">
-
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE3.jpg" class="">
-
-<p>收敛过程如动图4所示。可以比较明显观察到dfe补偿作用会导致采样时钟发生前移。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE4.jpg" class="">
-
-<p>半速率直接反馈结构的瞬态相关波形和稳态眼图分别如图5和6。图5可以看到加法器输入和加法器奇偶输出波形，通过interleave方式交替采样。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE5.jpg" class="">
-
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE6.jpg" class="">
-
-<p>图7是奇偶路收敛过程的眼图。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE7.jpg" class="">
-
-<p>图8和图7一样，也是改进型半速率直接反馈结构的眼图，不知道大家能否看出差异?</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE8.jpg" class="">
-
-<p>对于预判式全（半）速率结构其瞬态波形和眼图和上述两种直接反馈结构类似，只是tap1分量没有在summer节点上体现，需要根据判断出的数据选择对数据进行tap1量的加或者减。</p>
-<p><strong>Part5 DFE对边沿的影响</strong></p>
-<p>传统2x过采样CDR，通过edge定位锚定data采样位置，edge位置的抖动和分布实际上会影响到data采样的裕量，特别是在比较大插入损耗的情况下，眼睛裕量本身就比较小。</p>
-<p>前边一系列动图可以明显看到dfe对采样时钟的相位影响，随着各tap补偿量的逐渐增加，采样时钟相位在cdr的调节下，相位逐步前移。cdr相位锁定位置的变化，反应了dfe对边沿的影响。</p>
-<p>图9简单说明了DFE Tap1量的加减对边沿的影响，实际边沿数据变化和数据pattern，Tap阶数，响应时间密切相关。对于1-0的数据转换，pattern类型为110，可以看到Tap1量导致边沿提前；而pattern类型为010，因为存在tap1量符号反向，对边沿的影响和Tap量响应时间相关。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE9.jpg" class="">
-
-<p>实际上，对于多Tap的DFE补偿，边沿包含了历史多位数据的影响。综合影响评估需要结合具体电路实现。</p>
-<p>  其实，最明显的边沿影响，是预判式结构。因为Tap1量加减处理是在summer之后。如果不对edge采样进行处理，锁定后的数据采样位置就会偏后。如图10所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE10.jpg" class="">
-
-<p>那么该如何解决这个问题呢？这里就留给大家做个思考吧。</p>
-<p>图11是对edge补偿处理后的结果，可以看到等效的眼图收敛结果更优。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE11.jpg" class="">
-
-<p>另外对2x过采样CDR时钟相位的影响。也需要考虑data和edge的先后顺序，和具体电路实现结构密切相关，具体哪种顺序更优，需要仔细评估。</p>
-<p>这里总结下几种结构理想情况DFE收敛值情况，仅供参考。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE12.jpg" class="">
-
-<p>最后送上，用Matlab工具SerDes Toolbox计算的结果合成的封面图的近似收敛过程。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE13.jpg" class="">
-
-<p><strong>Part6 自适应算法简介</strong></p>
-<p>目前，自适应滤波器理论已经非常成熟，在通信和消费领域也有着广泛的应用。例如信道均衡，波束成形，噪声消除等。如图14所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE14.jpg" class="">
-
-<p>自适应滤波器如图15，简单来讲，就是通过调整滤波器，使滤波器输出信号和目标信号接近或者相等。主要是(非)线性离散时间系统对离散信号的处理。通常使用<strong>性能函数</strong>(Performance Function)，评估不同滤波器系数的性能。比如用误差信号的均方误差(Mean-Squared Error,MSE)。最小均方误差的滤波器，又称之为<strong>维纳滤波器</strong>(Wiener Filter)。各种自适应算法就是要得到滤波器的维纳解(Wiener Solution)。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE15.jpg" class="">
-
-<p>在通信领域，自适应滤波器主要用作信道均衡(Channel Equalization)，如图16所示。图中信道H(z)是信道传递函数。噪声v(n)可以看做是串扰及噪声等非理想因素的组合。图中均衡器W(z)就是要消除码间干扰，降低串扰和噪声影响的自适应滤波器，均衡器输出y(n)需要满足量化输出的数据在规定的误码率范围内。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE16.jpg" class="">
-
-<p>图17是维纳滤波器的数学推导<a href="%E7%B2%97%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%BE%88%E5%A4%8D%E6%9D%82%EF%BC%8C%E5%A4%A7%E5%AE%B6%E7%BB%86%E7%9C%8B%E8%BF%98%E6%98%AF%E8%83%BD%E7%9C%8B%E7%9A%84%E6%98%8E%E7%99%BD%E7%9A%84">1</a>，滤波器系数满足<strong>维纳-霍普方程</strong>，维纳解形式包含输入数据<strong>自相关矩阵R</strong>，输入数据和目标数据的<strong>互相关向量p</strong>的关系。可以看到维纳解是可以一步到位，但会涉及比较复杂的矩阵运算量。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE17.jpg" class="">
-
-<p>另一种方法通过迭代搜索算法，从任意一个Tap权重向量<strong>w</strong>i，逐步迭代收敛到最优权重向量<strong>w</strong>o。这里就要提到基于梯度的<strong>最速下降法</strong>(<em>method of steepest descent</em>)。图18[2]给出个动画，还是比较形象的说明了梯度下降法，整个性能误差面一定会存在最低点(可能包含多个局部最低点)，这个点也就是维纳解的位置。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE18.jpg" class="">
-
-<p>基于梯度的最速下降示意图及推导过程如图19所示。可以看到基于梯度的最速下降法能够以最快的方式按照负梯度方向，朝着维纳解位置运动。同时，迭代步长<strong>增益</strong><em>μ</em>和自相关矩阵<strong>R</strong>的特征根<strong>λi</strong>需要满足一定的关系从而保证收敛过程的稳定性。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE19.jpg" class="">
-
-<p>图19中基于梯度的最速下降法还是需要知道自相关矩阵<strong>R</strong>和互相关矩阵<strong>p</strong>。计算过程还是比较复杂。我们知道前述梯度是<em>误差平方期望的梯度</em>，如果我们用瞬时误差梯度代替期望误差梯度，则可以简化迭代过程为LMS算法实现，如图20所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE20.jpg" class="">
-
-<p>图20的LMS迭代过程使用了瞬时误差e(n)和历史数据矩阵**x(n)**。还是会涉及到浮点运算（乘法和加法）。运算硬件消耗也是比较大。于是就有了图21所示的简化版本。主要是误差或者历史数据的符号化。可以不同程度简化计算复杂度。不过图中也可以简化计算的代价是收敛时间，还有可能残余更大的均方误差MSE。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE21.jpg" class="">
-
-<p>判决反馈均衡器(Decision Feedback Equalizer,DFE)，正如其名字所示，需要通过历史判决值，构成反馈FIR滤波器，对输入信号进行补偿。如图22所示。需要注意的是，图中Tap反馈到加法器为负，也就是实现减法。同时误差信号的定义和前述基本滤波器定义也是相反的。负负为正。因此权重迭代表达式符号也和前述结果相同。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE22.jpg" class="">
-
-<p>图22中当采样器量化精度为1bits时，就实现图21中sign-sign LMS，实际电路实现时，通过分时复用和模版数据选择，可以进一步降低硬件实现成本。</p>
-<p>当滤波器收敛后，tap系数趋于稳定。滤波器输出值和输入数据及量化误差的传递函数如图23所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE23.jpg" class="">
-
-<p>图24是简单的一阶DFE传递函数及零极点分布，可以看到信号传递函数是高通(高阶DFE频响特性不一定具有全频段的高通特性)，衰减低频，提升高频。从而补偿输入数据的拖尾。误差传递函数整体增益是衰减的。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE24.jpg" class="">
+<h1 id="Via"><a href="#Via" class="headerlink" title="Via"></a>Via</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221910056.jpg" class="">
 ]]></content>
       <categories>
         <category>VLSI</category>
       </categories>
       <tags>
-        <tag>dsp</tag>
-        <tag>algorithm</tag>
-        <tag>serdes</tag>
+        <tag>apr</tag>
+        <tag>tsmc</tag>
       </tags>
   </entry>
   <entry>
@@ -1609,23 +1626,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Definition of TSMC Metal Layer Map</title>
-    <url>/2023/03/09/definition-of-TSMC-metal-layer-map/</url>
-    <content><![CDATA[<h1 id="1P10M-5X2Y2Z"><a href="#1P10M-5X2Y2Z" class="headerlink" title="1P10M_5X2Y2Z"></a>1P10M_5X2Y2Z</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221716667.jpg" class="">
-
-<h1 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221837347.jpg" class="">
-
-<h1 id="Via"><a href="#Via" class="headerlink" title="Via"></a>Via</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221910056.jpg" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>apr</tag>
-        <tag>tsmc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Disable VNC Copy&amp;paste</title>
     <url>/2023/03/16/disable-VNC-copy-paste/</url>
     <content><![CDATA[<p><strong>Disable <code>Send clipboard to views</code></strong></p>
@@ -1669,6 +1669,43 @@ service messagebus restart;
       <tags>
         <tag>verilog</tag>
         <tag>emacs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Enlarge Linux Swap Space</title>
+    <url>/2022/04/10/enlarge-linux-swap/</url>
+    <content><![CDATA[<p><strong>查看当前swap</strong>  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
+
+<p><strong>停用所有swap</strong> </p>
+<span id="more"></span>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">swapoff -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建文件夹作为虚拟swap分区</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /home/swap</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建swap分区</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">dd if=/dev/zero of=/home/swap/swapfile bs=1G count=64</span><br></pre></td></tr></table></figure>
+
+<p><strong>格式化swap分区</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkswap /home/swap/swapfile</span><br></pre></td></tr></table></figure>
+<p>mkswap会产生一个UUID，复制这个UUID信息，下面挂载分区需要用到。</p>
+<p><strong>启用swap</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">swapon /home/swap/swapfile</span><br></pre></td></tr></table></figure>
+
+<p><strong>添加swap分区信息到系统分区表</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;UUID==uuid_info_generated_in_above_mkswap_command /home/swap/swapfile swap default 0 0&quot; &gt;&gt;/etc/fstab</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看新增swap分区是否成功</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1810,40 +1847,20 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Enlarge Linux Swap Space</title>
-    <url>/2022/04/10/enlarge-linux-swap/</url>
-    <content><![CDATA[<p><strong>查看当前swap</strong>  </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
+    <title>Expand Tab in Emacs-Verilog Auto Code</title>
+    <url>/2022/04/25/expand-tab-in-emacs-verilog-auto-code/</url>
+    <content><![CDATA[<p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
+<p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below. Yeah, it’s done and enjoy! </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">(setq-default tab-width 8)</span><br><span class="line">(setq-default indent-tabs-mode nil)</span><br></pre></td></tr></table></figure>
 
-<p><strong>停用所有swap</strong> </p>
-<span id="more"></span>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">swapoff -a</span><br></pre></td></tr></table></figure>
-
-<p><strong>创建文件夹作为虚拟swap分区</strong> </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /home/swap</span><br></pre></td></tr></table></figure>
-
-<p><strong>创建swap分区</strong> </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">dd if=/dev/zero of=/home/swap/swapfile bs=1G count=64</span><br></pre></td></tr></table></figure>
-
-<p><strong>格式化swap分区</strong> </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkswap /home/swap/swapfile</span><br></pre></td></tr></table></figure>
-<p>mkswap会产生一个UUID，复制这个UUID信息，下面挂载分区需要用到。</p>
-<p><strong>启用swap</strong> </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">swapon /home/swap/swapfile</span><br></pre></td></tr></table></figure>
-
-<p><strong>添加swap分区信息到系统分区表</strong> </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;UUID==uuid_info_generated_in_above_mkswap_command /home/swap/swapfile swap default 0 0&quot; &gt;&gt;/etc/fstab</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看新增swap分区是否成功</strong> </p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
-
+<p>Check out everything about Emacs-verilog at <a href="https://veripool.org/verilog-mode/">https://veripool.org/verilog-mode/</a>.</p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>VLSI</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>verilog</tag>
+        <tag>emacs</tag>
       </tags>
   </entry>
   <entry>
@@ -1861,23 +1878,6 @@ service messagebus restart;
       <tags>
         <tag>linux</tag>
         <tag>troubleshoot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Expand Tab in Emacs-Verilog Auto Code</title>
-    <url>/2022/04/25/expand-tab-in-emacs-verilog-auto-code/</url>
-    <content><![CDATA[<p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
-<p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below. Yeah, it’s done and enjoy! </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">(setq-default tab-width 8)</span><br><span class="line">(setq-default indent-tabs-mode nil)</span><br></pre></td></tr></table></figure>
-
-<p>Check out everything about Emacs-verilog at <a href="https://veripool.org/verilog-mode/">https://veripool.org/verilog-mode/</a>.</p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>verilog</tag>
-        <tag>emacs</tag>
       </tags>
   </entry>
   <entry>
@@ -1975,22 +1975,6 @@ service messagebus restart;
         <tag>windows</tag>
         <tag>linux</tag>
         <tag>ftp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Get Strings Within Commandline</title>
-    <url>/2022/04/26/get-strings-within-current-commandline/</url>
-    <content><![CDATA[<p>I’ve got two methods to get strings or substrings within current Linux shell command-line. For instance, sometimes we want to get the file full path when source it in shell. Here are my ways to do so.</p>
-<ol>
-<li>Use command of <strong>lsof</strong><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `/usr/sbin/lsof -p &amp;&amp; -w | grep -oE <span class="string">&quot;\s+\/.*\Sourced_Filename&quot;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
-<li>Use command of <strong>history</strong><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `<span class="built_in">history</span> 1 | sed -e <span class="string">&#x27;s/^.*source\ //g&#x27;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2235,27 +2219,19 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/03/30/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>Get Strings Within Commandline</title>
+    <url>/2022/04/26/get-strings-within-current-commandline/</url>
+    <content><![CDATA[<p>I’ve got two methods to get strings or substrings within current Linux shell command-line. For instance, sometimes we want to get the file full path when source it in shell. Here are my ways to do so.</p>
+<ol>
+<li>Use command of <strong>lsof</strong><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `/usr/sbin/lsof -p &amp;&amp; -w | grep -oE <span class="string">&quot;\s+\/.*\Sourced_Filename&quot;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
+<li>Use command of <strong>history</strong><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `<span class="built_in">history</span> 1 | sed -e <span class="string">&#x27;s/^.*source\ //g&#x27;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
       <categories>
-        <category>Blog</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2470,6 +2446,30 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/03/30/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hide Unused Quick Links in Windows</title>
     <url>/2022/06/14/hide-unused-quick-links-in-windows/</url>
     <content><![CDATA[<p><strong>1. Win+R -&gt; regedit</strong></p>
@@ -2530,19 +2530,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>How to Enable Sudo for a User</title>
-    <url>/2022/07/24/how-to-enable-sudo-for-a-user-1/</url>
-    <content><![CDATA[<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% su -</span><br><span class="line"><span class="comment"># usermod -aG wheel username</span></span><br><span class="line"><span class="comment"># visudo</span></span><br></pre></td></tr></table></figure>
-<p>Uncomment the line of <code>%wheel ALL=(ALL) ALL</code> to enable password mode.<br>Uncomment the line of <code>%wheel ALL=(ALL) NOPASSWD:ALL</code> to enable no password mode.</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>How to Enable XDMCP Service (GDM)</title>
     <url>/2023/03/23/how-to-enable-XDMCP-service-GDM/</url>
     <content><![CDATA[<p>GDM can be configured to allow remote access via XDMCP (X Display Manager Control Protocol). We can use Cygwin-X or Exceed, to connect remotely to a server and get a complete desktop GUI.</p>
@@ -2561,6 +2548,37 @@ service messagebus restart;
       <tags>
         <tag>linux</tag>
         <tag>remote</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Enable Sudo for a User</title>
+    <url>/2022/07/24/how-to-enable-sudo-for-a-user-1/</url>
+    <content><![CDATA[<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% su -</span><br><span class="line"><span class="comment"># usermod -aG wheel username</span></span><br><span class="line"><span class="comment"># visudo</span></span><br></pre></td></tr></table></figure>
+<p>Uncomment the line of <code>%wheel ALL=(ALL) ALL</code> to enable password mode.<br>Uncomment the line of <code>%wheel ALL=(ALL) NOPASSWD:ALL</code> to enable no password mode.</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Enable Sudo for a User</title>
+    <url>/2022/04/20/how-to-enable-sudo-for-a-user/</url>
+    <content><![CDATA[<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
+
+<p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
+<span id="more"></span>
+<p>Uncomment line of <code>%wheel ALL=(ALL) ALL</code> will ask for password when sudo.<br>Uncomment line of <code>%wheel ALL=(ALL) NOPASSWD: ALL</code> won’t ask for password when sudo.</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">## Allow root <span class="keyword">to</span> run any commands anywhere</span><br><span class="line">root    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the <span class="string">&#x27;sys&#x27;</span> group <span class="keyword">to</span> run networking, software,</span><br><span class="line">## service management apps <span class="built_in">and</span> more.</span><br><span class="line"># %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</span><br><span class="line"></span><br><span class="line">## Allows people in group wheel <span class="keyword">to</span> run <span class="keyword">all</span> commands</span><br><span class="line"># %wheel    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Same thing without <span class="keyword">a</span> password</span><br><span class="line">%wheel  ALL=(ALL)   NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> mount <span class="built_in">and</span> unmount the</span><br><span class="line">## cdrom <span class="keyword">as</span> root</span><br><span class="line"># %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> shutdown this <span class="built_in">system</span></span><br><span class="line"># %users  localhost=/sbin/shutdown -h now</span><br><span class="line"></span><br><span class="line">## Read <span class="keyword">drop</span>-in <span class="keyword">files</span> from /etc/sudoers.d (the # here does not mean <span class="keyword">a</span> comment)</span><br><span class="line">#includedir /etc/sudoers.d</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2584,24 +2602,6 @@ service messagebus restart;
         <tag>linux</tag>
         <tag>vnc</tag>
         <tag>rhel7</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>How to Enable Sudo for a User</title>
-    <url>/2022/04/20/how-to-enable-sudo-for-a-user/</url>
-    <content><![CDATA[<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
-
-<p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
-<span id="more"></span>
-<p>Uncomment line of <code>%wheel ALL=(ALL) ALL</code> will ask for password when sudo.<br>Uncomment line of <code>%wheel ALL=(ALL) NOPASSWD: ALL</code> won’t ask for password when sudo.</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">## Allow root <span class="keyword">to</span> run any commands anywhere</span><br><span class="line">root    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the <span class="string">&#x27;sys&#x27;</span> group <span class="keyword">to</span> run networking, software,</span><br><span class="line">## service management apps <span class="built_in">and</span> more.</span><br><span class="line"># %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</span><br><span class="line"></span><br><span class="line">## Allows people in group wheel <span class="keyword">to</span> run <span class="keyword">all</span> commands</span><br><span class="line"># %wheel    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Same thing without <span class="keyword">a</span> password</span><br><span class="line">%wheel  ALL=(ALL)   NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> mount <span class="built_in">and</span> unmount the</span><br><span class="line">## cdrom <span class="keyword">as</span> root</span><br><span class="line"># %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> shutdown this <span class="built_in">system</span></span><br><span class="line"># %users  localhost=/sbin/shutdown -h now</span><br><span class="line"></span><br><span class="line">## Read <span class="keyword">drop</span>-in <span class="keyword">files</span> from /etc/sudoers.d (the # here does not mean <span class="keyword">a</span> comment)</span><br><span class="line">#includedir /etc/sudoers.d</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2661,31 +2661,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Install Perl PAR::Packer</title>
-    <url>/2022/10/22/install-perl-PAR-Packer/</url>
-    <content><![CDATA[<h2 id="Online-Installation"><a href="#Online-Installation" class="headerlink" title="Online Installation"></a>Online Installation</h2><p><strong>Install Necessary RPMs</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root]# yum install perl-ExtUtils-Embed</span><br><span class="line">[root]# yum install perl-Crypt-OpenSSL*</span><br><span class="line">[root]# yum install openssl*</span><br><span class="line">[root]# yum install perl-CPAN</span><br></pre></td></tr></table></figure>
-<p><strong>Install Required Perl Modules</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root]# perl -MCPAN -e &#x27;install Filter::Crypto&#x27;</span><br><span class="line">[root]# perl -MCPAN -e &#x27;install ExtUtils::CBuilder&#x27;</span><br><span class="line">[root]# perl -MCPAN -e &#x27;install PAR::Packer&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>It will might report Errors when installing PAR::Packer. You must install the missing Perl package prior to installation of PAR::Packer.</p>
-<h2 id="Offline-Installation"><a href="#Offline-Installation" class="headerlink" title="Offline Installation"></a>Offline Installation</h2><span id="more"></span>
-
-<p>If your Linux system happens to be unable to connect internet, the Perl packages can not be installed online like above commands. You would have to download the package sources first from <a href="https://metacpan.org/">https://metacpan.org/</a>. And then upload to your Linux system and manually install the package with following commands.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[user]% tar zxvf perl_package_name.tar.gz</span><br><span class="line">[user]% cd perl_package_name</span><br><span class="line">[user]% perl Makefile.PL</span><br><span class="line">[user]% make</span><br><span class="line">[user]% sudo make install</span><br></pre></td></tr></table></figure>
-
-<p>The installed Perl packages can be found in -<br><code>/usr/share/perl5/</code> or<br><code>/usr/local/share/perl5/</code></p>
-<h2 id="Usage-of-pp"><a href="#Usage-of-pp" class="headerlink" title="Usage of pp"></a>Usage of pp</h2><p><code>/usr/local/bin/pp -f Crypto -F Crypto -M Filter::Crypto::Decrypt perl_script_entry -o perl_script_entry.exe</code></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>perl</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Install Perl PAR::Packer in RHEL7</title>
     <url>/2023/03/16/install-perl-PAR-Packer-in-RHEL7/</url>
     <content><![CDATA[<p><strong>Install System RPMs</strong></p>
@@ -2729,6 +2704,31 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Install Perl PAR::Packer</title>
+    <url>/2022/10/22/install-perl-PAR-Packer/</url>
+    <content><![CDATA[<h2 id="Online-Installation"><a href="#Online-Installation" class="headerlink" title="Online Installation"></a>Online Installation</h2><p><strong>Install Necessary RPMs</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root]# yum install perl-ExtUtils-Embed</span><br><span class="line">[root]# yum install perl-Crypt-OpenSSL*</span><br><span class="line">[root]# yum install openssl*</span><br><span class="line">[root]# yum install perl-CPAN</span><br></pre></td></tr></table></figure>
+<p><strong>Install Required Perl Modules</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root]# perl -MCPAN -e &#x27;install Filter::Crypto&#x27;</span><br><span class="line">[root]# perl -MCPAN -e &#x27;install ExtUtils::CBuilder&#x27;</span><br><span class="line">[root]# perl -MCPAN -e &#x27;install PAR::Packer&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>It will might report Errors when installing PAR::Packer. You must install the missing Perl package prior to installation of PAR::Packer.</p>
+<h2 id="Offline-Installation"><a href="#Offline-Installation" class="headerlink" title="Offline Installation"></a>Offline Installation</h2><span id="more"></span>
+
+<p>If your Linux system happens to be unable to connect internet, the Perl packages can not be installed online like above commands. You would have to download the package sources first from <a href="https://metacpan.org/">https://metacpan.org/</a>. And then upload to your Linux system and manually install the package with following commands.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[user]% tar zxvf perl_package_name.tar.gz</span><br><span class="line">[user]% cd perl_package_name</span><br><span class="line">[user]% perl Makefile.PL</span><br><span class="line">[user]% make</span><br><span class="line">[user]% sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>The installed Perl packages can be found in -<br><code>/usr/share/perl5/</code> or<br><code>/usr/local/share/perl5/</code></p>
+<h2 id="Usage-of-pp"><a href="#Usage-of-pp" class="headerlink" title="Usage of pp"></a>Usage of pp</h2><p><code>/usr/local/bin/pp -f Crypto -F Crypto -M Filter::Crypto::Decrypt perl_script_entry -o perl_script_entry.exe</code></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>perl</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Install Perl Module</title>
     <url>/2022/10/07/install-perl-module/</url>
     <content><![CDATA[<p><strong>List all installed Perl modules</strong><br><code>perldoc perllocal</code> or <code>instmodsh</code></p>
@@ -2765,28 +2765,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Integrate SOS in Virtuoso</title>
-    <url>/2022/10/06/integrate-SOS-in-virtuoso/</url>
-    <content><![CDATA[<p>To get Cliosoft SOS integrated in Cadence Virtuoso, what you need to do is just to put 3 files in your $HOME (~&#x2F;).</p>
-<p><strong>1) .cdsinit</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/.cdsinit</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cds_sosviadfII.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><strong>2) cdsLibMgr.il</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsLibMgr.il</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cdsLibMgr.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><strong>3) cdsinfo.tag</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsinfo.tag</span><br><span class="line">DMTYPE sos</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>cadence</tag>
-        <tag>eda</tag>
-        <tag>sos</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Install Vim9 Supporting Python3</title>
     <url>/2022/07/07/install-vim9-supporting-python3/</url>
     <content><![CDATA[<p>In June 28th, 2022 the major version of Vim 9.0 was officially released. You can download Vim 9.0 for appropriate platform at <a href="https://www.vim.org/download.php">https://www.vim.org/download.php</a>.</p>
@@ -2812,6 +2790,28 @@ service messagebus restart;
         <tag>editor</tag>
         <tag>python</tag>
         <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Integrate SOS in Virtuoso</title>
+    <url>/2022/10/06/integrate-SOS-in-virtuoso/</url>
+    <content><![CDATA[<p>To get Cliosoft SOS integrated in Cadence Virtuoso, what you need to do is just to put 3 files in your $HOME (~&#x2F;).</p>
+<p><strong>1) .cdsinit</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/.cdsinit</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cds_sosviadfII.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>2) cdsLibMgr.il</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsLibMgr.il</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cdsLibMgr.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3) cdsinfo.tag</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsinfo.tag</span><br><span class="line">DMTYPE sos</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>cadence</tag>
+        <tag>eda</tag>
+        <tag>sos</tag>
       </tags>
   </entry>
   <entry>
@@ -3220,6 +3220,39 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Nomachine Server Admin</title>
+    <url>/2023/03/19/nomachine-server-admin/</url>
+    <content><![CDATA[<p><strong>1. Right click icon of the server connection and select <code>Server admin</code></strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319234139451.jpg width=300>
+
+<span id="more"></span>
+
+<p><strong>2. Select <code>Security</code> and enable the clipboard functionality with <code>Client</code> only, which makes it allowed of copying at client and paste at server and unallowed for opposite direction</strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319234629895.jpg width=440>
+
+<p><strong>3. Select <code>Devices</code> and uncheck all boxes, which disables sharing any resourse between server and client</strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319234346433.jpg width=440>
+
+<p><strong>4. Select <code>Satus</code> and click <code>Restart the server</code>, which makes above operation be effective</strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319235624677.jpg width=440>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>New Chipgun Logo 8May2022</title>
+    <url>/2022/05/08/new-chipgun-logo-8may2022/</url>
+    <content><![CDATA[<p><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_Logo_Darkblue.png alt=EN width=120> <br/><br><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_LogoCN_Darkblue.png alt=CN width=240> </p>
+]]></content>
+      <tags>
+        <tag>chipgun</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Modify Linux System Date and Time</title>
     <url>/2022/04/19/modify-linux-system-date-and-time/</url>
     <content><![CDATA[<p><strong>Check System Date</strong></p>
@@ -3253,36 +3286,27 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Nomachine Server Admin</title>
-    <url>/2023/03/19/nomachine-server-admin/</url>
-    <content><![CDATA[<p><strong>1. Right click icon of the server connection and select <code>Server admin</code></strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319234139451.jpg width=300>
-
+    <title>Python Cheat Sheet</title>
+    <url>/2022/04/02/python-cheat-sheet/</url>
+    <content><![CDATA[<p>Python 3 is a truly versatile programming language, loved both by <a href="https://websitesetup.org/become-web-developer/">web developers</a>, data scientists, and software engineers. And there are several good reasons for that!</p>
 <span id="more"></span>
 
-<p><strong>2. Select <code>Security</code> and enable the clipboard functionality with <code>Client</code> only, which makes it allowed of copying at client and paste at server and unallowed for opposite direction</strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319234629895.jpg width=440>
-
-<p><strong>3. Select <code>Devices</code> and uncheck all boxes, which disables sharing any resourse between server and client</strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319234346433.jpg width=440>
-
-<p><strong>4. Select <code>Satus</code> and click <code>Restart the server</code>, which makes above operation be effective</strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319235624677.jpg width=440>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>New Chipgun Logo 8May2022</title>
-    <url>/2022/05/08/new-chipgun-logo-8may2022/</url>
-    <content><![CDATA[<p><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_Logo_Darkblue.png alt=EN width=120> <br/><br><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_LogoCN_Darkblue.png alt=CN width=240> </p>
+<ul>
+<li>Python is open-source and has a great support community,</li>
+<li>Plus, extensive support libraries.</li>
+<li>Its data structures are user-friendly.</li>
+</ul>
+<p>Best of all:</p>
+<p>Once you get a hang of it, your development speed and productivity will soar!</p>
+<p>If you want to master two lucrative codings skills at once — server-side website development and machine learning — Python is your best bet.</p>
+<p>In case you’re interested, we also have complete cheat sheets for <a href="https://websitesetup.org/bootstrap-cheat-sheet/">Bootstrap</a>, <a href="https://websitesetup.org/html5-cheat-sheet/">HTML</a>, <a href="https://websitesetup.org/css3-cheat-sheet/">CSS</a>, <a href="https://websitesetup.org/mysql-cheat-sheet/">MySQL</a>, and <a href="https://websitesetup.org/javascript-cheat-sheet/">JavaScript</a>.</p>
+<p>So download a copy of our Python cheat sheet and get that first .py program up and running!</p>
+<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/02/python-cheat-sheet/Python-cheat-sheet-April-2021.pdf" title="Python Cheat Sheet (Download PDF version)">Python Cheat Sheet (Download PDF version)</a></p>
+<a href="/2022/04/02/python-cheat-sheet/Python-Cheat-Sheet.png" title="Python Cheat Sheet (Download PNG version)">Python Cheat Sheet (Download PNG version)</a>
 ]]></content>
       <tags>
-        <tag>chipgun</tag>
+        <tag>script</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -3322,42 +3346,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Script: Add a Linux User</title>
-    <url>/2022/10/11/script-add-a-linux-user/</url>
-    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Script to add a user to Linux system</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) 2007 nixCraft project &lt;http://bash.cyberciti.biz/&gt;</span></span><br><span class="line"><span class="comment"># This script is licensed under GNU GPL version 2.0 or above</span></span><br><span class="line"><span class="comment"># Comment/suggestion: &lt;vivek at nixCraft DOT com&gt;</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># See url for more info:</span></span><br><span class="line"><span class="comment"># http://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">if</span> [ $(<span class="built_in">id</span> -u) -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">&quot;Enter username : &quot;</span> username</span><br><span class="line">	<span class="built_in">read</span> -s -p <span class="string">&quot;Enter password : &quot;</span> password</span><br><span class="line">	egrep <span class="string">&quot;^<span class="variable">$username</span>&quot;</span> /etc/passwd &gt;/dev/null</span><br><span class="line">	<span class="keyword">if</span> [ $? -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$username</span> exists!&quot;</span></span><br><span class="line">		<span class="built_in">exit</span> 1</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pass=$(perl -e <span class="string">&#x27;print crypt($ARGV[0], &quot;password&quot;)&#x27;</span> <span class="variable">$password</span>)</span><br><span class="line">		useradd -m -p <span class="variable">$pass</span> <span class="variable">$username</span></span><br><span class="line">		[ $? -eq 0 ] &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;User has been added to system!&quot;</span> || <span class="built_in">echo</span> <span class="string">&quot;Failed to add a user!&quot;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;Only root may add a user to the system&quot;</span></span><br><span class="line">	<span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python Cheat Sheet</title>
-    <url>/2022/04/02/python-cheat-sheet/</url>
-    <content><![CDATA[<p>Python 3 is a truly versatile programming language, loved both by <a href="https://websitesetup.org/become-web-developer/">web developers</a>, data scientists, and software engineers. And there are several good reasons for that!</p>
-<span id="more"></span>
-
-<ul>
-<li>Python is open-source and has a great support community,</li>
-<li>Plus, extensive support libraries.</li>
-<li>Its data structures are user-friendly.</li>
-</ul>
-<p>Best of all:</p>
-<p>Once you get a hang of it, your development speed and productivity will soar!</p>
-<p>If you want to master two lucrative codings skills at once — server-side website development and machine learning — Python is your best bet.</p>
-<p>In case you’re interested, we also have complete cheat sheets for <a href="https://websitesetup.org/bootstrap-cheat-sheet/">Bootstrap</a>, <a href="https://websitesetup.org/html5-cheat-sheet/">HTML</a>, <a href="https://websitesetup.org/css3-cheat-sheet/">CSS</a>, <a href="https://websitesetup.org/mysql-cheat-sheet/">MySQL</a>, and <a href="https://websitesetup.org/javascript-cheat-sheet/">JavaScript</a>.</p>
-<p>So download a copy of our Python cheat sheet and get that first .py program up and running!</p>
-<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/02/python-cheat-sheet/Python-cheat-sheet-April-2021.pdf" title="Python Cheat Sheet (Download PDF version)">Python Cheat Sheet (Download PDF version)</a></p>
-<a href="/2022/04/02/python-cheat-sheet/Python-Cheat-Sheet.png" title="Python Cheat Sheet (Download PNG version)">Python Cheat Sheet (Download PNG version)</a>
-]]></content>
-      <tags>
-        <tag>script</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Set_data_check</title>
     <url>/2023/09/22/set-data-check/</url>
     <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold 1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
@@ -3369,6 +3357,18 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>primetime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Script: Add a Linux User</title>
+    <url>/2022/10/11/script-add-a-linux-user/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Script to add a user to Linux system</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) 2007 nixCraft project &lt;http://bash.cyberciti.biz/&gt;</span></span><br><span class="line"><span class="comment"># This script is licensed under GNU GPL version 2.0 or above</span></span><br><span class="line"><span class="comment"># Comment/suggestion: &lt;vivek at nixCraft DOT com&gt;</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># See url for more info:</span></span><br><span class="line"><span class="comment"># http://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">if</span> [ $(<span class="built_in">id</span> -u) -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">&quot;Enter username : &quot;</span> username</span><br><span class="line">	<span class="built_in">read</span> -s -p <span class="string">&quot;Enter password : &quot;</span> password</span><br><span class="line">	egrep <span class="string">&quot;^<span class="variable">$username</span>&quot;</span> /etc/passwd &gt;/dev/null</span><br><span class="line">	<span class="keyword">if</span> [ $? -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$username</span> exists!&quot;</span></span><br><span class="line">		<span class="built_in">exit</span> 1</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pass=$(perl -e <span class="string">&#x27;print crypt($ARGV[0], &quot;password&quot;)&#x27;</span> <span class="variable">$password</span>)</span><br><span class="line">		useradd -m -p <span class="variable">$pass</span> <span class="variable">$username</span></span><br><span class="line">		[ $? -eq 0 ] &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;User has been added to system!&quot;</span> || <span class="built_in">echo</span> <span class="string">&quot;Failed to add a user!&quot;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;Only root may add a user to the system&quot;</span></span><br><span class="line">	<span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3545,35 +3545,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Start FlexLM on RHEL7 Bootup</title>
-    <url>/2022/04/18/start-flexLM-on-RHEL7-bootup/</url>
-    <content><![CDATA[<p><strong>方法一</strong></p>
-<p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
-<p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p>mgcld脚本内容：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> /t/m/license/mgcld</span><br><span class="line"><span class="comment">#! /bin/bash</span></span><br><span class="line"><span class="comment">#chkconfig: 2345 70 30</span></span><br><span class="line"></span><br><span class="line">/t/m/mgls_v9-21_3-2-0.aol/bin/lmgrd \</span><br><span class="line">  -c /t/m/license/license.dat \</span><br><span class="line">  -l /t/m/license/license.log</span><br></pre></td></tr></table></figure>
-
-<p>mgcld首行chkconfig说明：</p>
-<p><strong>2345</strong>是指脚本的运行级别，linux有0~6种状态，即在2345这4种模式下都可以运行，234都是文本界面，5就是图形界面X<br><strong>70</strong>是指脚本将来的启动顺序号，如果别的程序的启动顺序号比70小，则脚本需要等这些程序都启动以后才启动。<br><strong>30</strong>是指系统关闭时，脚本的停止顺序号</p>
-<p><strong>方法二</strong></p>
-<p>直接将脚本内容添加到&#x2F;etc&#x2F;rc.local</p>
-<p>在RHEL7中rc.local权限被降低了，需要将其赋予可执行权限。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /etc/rc.local</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>license</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Spyglass Constraint Convert From SDC to SGDC</title>
     <url>/2022/04/13/spyglass-constraint-convert-from-SDC-to-SGDC/</url>
     <content><![CDATA[<ol start="0">
@@ -3611,6 +3582,35 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Start FlexLM on RHEL7 Bootup</title>
+    <url>/2022/04/18/start-flexLM-on-RHEL7-bootup/</url>
+    <content><![CDATA[<p><strong>方法一</strong></p>
+<p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
+<p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>mgcld脚本内容：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> /t/m/license/mgcld</span><br><span class="line"><span class="comment">#! /bin/bash</span></span><br><span class="line"><span class="comment">#chkconfig: 2345 70 30</span></span><br><span class="line"></span><br><span class="line">/t/m/mgls_v9-21_3-2-0.aol/bin/lmgrd \</span><br><span class="line">  -c /t/m/license/license.dat \</span><br><span class="line">  -l /t/m/license/license.log</span><br></pre></td></tr></table></figure>
+
+<p>mgcld首行chkconfig说明：</p>
+<p><strong>2345</strong>是指脚本的运行级别，linux有0~6种状态，即在2345这4种模式下都可以运行，234都是文本界面，5就是图形界面X<br><strong>70</strong>是指脚本将来的启动顺序号，如果别的程序的启动顺序号比70小，则脚本需要等这些程序都启动以后才启动。<br><strong>30</strong>是指系统关闭时，脚本的停止顺序号</p>
+<p><strong>方法二</strong></p>
+<p>直接将脚本内容添加到&#x2F;etc&#x2F;rc.local</p>
+<p>在RHEL7中rc.local权限被降低了，需要将其赋予可执行权限。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /etc/rc.local</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>license</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Symbolic Links in Windows</title>
     <url>/2022/04/12/symbolic-links-in-windows/</url>
     <content><![CDATA[<p><strong>Create Symbolic Link to File in CMD Prompt</strong></p>
@@ -3624,28 +3624,6 @@ service messagebus restart;
 ]]></content>
       <tags>
         <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Synopsys Safety-Aware Solution for Automotive</title>
-    <url>/2022/07/08/synopsys-safety-aware-solution-for-automotive/</url>
-    <content><![CDATA[<img src="/2022/07/08/synopsys-safety-aware-solution-for-automotive/image-20220708104331952.jpg" class="">
-
-<ul>
-<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
-<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
-<li>Reduce documentation work with automated work products and supporting evidence</li>
-<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
-<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
-<li>Optimize machine resources with faster native tools that use less memory</li>
-</ul>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>synopsys</tag>
-        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -3865,6 +3843,156 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Umask</title>
+    <url>/2023/03/12/umask/</url>
+    <content><![CDATA[<p>You can use the umask utility to display, set, or change the current or default value of the umask. </p>
+<h3 id="Display-the-current-value-of-the-umask"><a href="#Display-the-current-value-of-the-umask" class="headerlink" title="Display the current value of the umask"></a>Display the current value of the umask</h3><p>To display the current value of the <em>umask</em> in symbolic mode, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% umask -S</span><br></pre></td></tr></table></figure>
+
+<p>To display the current value of the <em>umask</em> in octal mode, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% umask</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<blockquote>
+<p>When displaying the umask in octal mode, you may notice it displayed as a four digit number (0002 or 0022). The first digit of the umask represents a special bit (sticky bit, SGID bit, or SUID bit). If the first digit is set to 0, the special bit is not set. </p>
+</blockquote>
+<h3 id="Display-the-default-bash-umask"><a href="#Display-the-default-bash-umask" class="headerlink" title="Display the default bash umask"></a>Display the default bash umask</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% grep umask /etc/bashrc #for non-login shell</span><br><span class="line">% grep umask /etc/profile #for login shell</span><br></pre></td></tr></table></figure>
+
+<h3 id="Display-the-default-csh-umask"><a href="#Display-the-default-csh-umask" class="headerlink" title="Display the default csh umask"></a>Display the default csh umask</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% grep umask /etc/csh.cshrc #for non-login shell</span><br><span class="line">% grep umask /etc/csh.login #for login shell</span><br></pre></td></tr></table></figure>
+<p><strong>Usually we change <code>csh.cshrc</code> like this.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% more /etc/csh.cshrc</span><br><span class="line">if ($uid &gt; 199 &amp;&amp; &quot;`/usr/bin/id -gn`&quot; == &quot;`/usr/bin/id -un`&quot;) then</span><br><span class="line">    umask 027</span><br><span class="line">else</span><br><span class="line">    umask 022</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="Setting-the-umask-using-symbolic-values"><a href="#Setting-the-umask-using-symbolic-values" class="headerlink" title="Setting the umask using symbolic values"></a>Setting the umask using symbolic values</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">umask -S &lt;level&gt;&lt;operation&gt;&lt;permission&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>&lt;level&gt;:</strong> Permissions can be assigned to the following levels of ownership: </p>
+<ul>
+<li><code>u</code> User owner</li>
+<li><code>g</code> Group owner</li>
+<li><code>o</code> Other</li>
+<li><code>a</code> All</li>
+</ul>
+<p><strong>&lt;operation&gt;</strong>: To add or remove permissions you can use the following signs: </p>
+<ul>
+<li><code>+</code> to add the permissions on top of the existing permissions</li>
+<li><code>-</code> to remove the permissions from the existing permission</li>
+<li><code>=</code> to remove the existing permissions and explicitly define the new ones</li>
+</ul>
+<p><strong>&lt;permission&gt;:</strong> You can assign the following permissions:</p>
+<ul>
+<li><code>r</code> Read</li>
+<li><code>w</code> Write</li>
+<li><code>x</code> Execute</li>
+</ul>
+<blockquote>
+<p>Any permission that is not specified after the equals sign (&#x3D;) is automatically prohibited. </p>
+</blockquote>
+<p><strong>Example:</strong> <code>umask -S u=rwx,g=rx,o=rx</code></p>
+<h3 id="Changing-the-default-umask-for-a-specific-user"><a href="#Changing-the-default-umask-for-a-specific-user" class="headerlink" title="Changing the default umask for a specific user"></a>Changing the default umask for a specific user</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.bashrc #for bash</span><br><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.cshrc #for csh</span><br></pre></td></tr></table></figure>
+<h3 id="Setting-default-permissions-for-newly-created-home-directories"><a href="#Setting-default-permissions-for-newly-created-home-directories" class="headerlink" title="Setting default permissions for newly created home directories"></a>Setting default permissions for newly created home directories</h3><p>You can change the permission modes for home directories of newly created users by modifying the <code>/etc/login.defs</code> file. </p>
+<ol>
+<li>As root, open the &#x2F;etc&#x2F;login.defs file in the editor.</li>
+<li>Modify the following section to set a new default HOME_MODE: <blockquote>
+<p># HOME_MODE is used by useradd(8) and newusers(8) to set the mode for new<br># home directories.<br># If HOME_MODE is not set, the value of UMASK is used to create the mode.<br>Replace the default octal value (0700) with another octal value. The selected mode will be used to create the permissions for the home directory. </p>
+</blockquote>
+</li>
+<li>If HOME_MODE is set, save the changes and exit the editor.</li>
+<li>If HOME_MODE is not set, modify the UMASK to set the mode for the newly created home directories: <blockquote>
+<p># Default initial “umask” value used by login(1) on non-PAM enabled systems.<br># Default “umask” value for pam_umask(8) on PAM enabled systems.<br># UMASK is also used by useradd(8) and newusers(8) to set the mode for new<br># home directories if HOME_MODE is not set.<br># 022 is the default value, but 027, or even 077, could be considered<br># for increased privacy. There is no One True Answer here: each sysadmin<br># must make up their mind.</p>
+<p>UMASK           022</p>
+</blockquote>
+</li>
+</ol>
+<p>Replace the default octal value (022) with another octal value. See User file-creation mode mask for more details.<br>5. Save the changes and exit the editor. </p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Synopsys Safety-Aware Solution for Automotive</title>
+    <url>/2022/07/08/synopsys-safety-aware-solution-for-automotive/</url>
+    <content><![CDATA[<img src="/2022/07/08/synopsys-safety-aware-solution-for-automotive/image-20220708104331952.jpg" class="">
+
+<ul>
+<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
+<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
+<li>Reduce documentation work with automated work products and supporting evidence</li>
+<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
+<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
+<li>Optimize machine resources with faster native tools that use less memory</li>
+</ul>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>synopsys</tag>
+        <tag>automotive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Understanding AMBA Architechture and Protocols</title>
+    <url>/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/</url>
+    <content><![CDATA[<p>The Advanced Micro controller Bus Architecture (<strong>AMBA</strong>) bus protocols is a set of interconnect specifications from ARM that standardizes on chip communication mechanisms between various functional blocks (or IP) for building high performance SOC designs. These designs typically have one or more micro controllers or microprocessors along with several other components — internal memory or external memory bridge, DSP, DMA, accelerators and various other peripherals like USB, UART, PCIE, I2C etc — all integrated on a single chip. The primary motivation of AMBA protocols is to have a standard and efficient way to interconnecting these blocks with re-use across multiple designs.</p>
+<span id="more"></span>
+
+<p>The first step in learning AMBA protocols is to understand where exactly these different protocols are used , how these evolved and how all of them fit into a SOC design.Following diagram (<em>reference from the AMBA 2.0 spec</em>) illustrates a traditional AMBA based SOC design that uses the AHB (Advanced High performance) or ASB (Advanced System Bus) protocols for high bandwidth interconnect and an APB (Advanced Peripheral Bus) protocol for low bandwidth peripheral interconnects.</p>
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/0U-61cb7vuTjzUts5.jpg" class="">
+
+<p>With increasing number of functional blocks (IP) integrating into SOC designs, the shared bus protocols (AHB&#x2F;ASB) started hitting limitations sooner and in 2003 , the new revision of AMBA 3 introduced a point to point connectivity protocol — AXI (<em>Advanced Extensible Interface</em>). Further in 2010, an enhanced version was introduced — A<em>XI 4.</em> Following diagram illustrates this evolution of protocols along with the SOC design trends in industry.</p>
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1rAeAWtd2K3bWLw-59IKGbQ.png" class="">
+
+<p>Following diagram illustrates how an AXI interconnect can be used to build an SOC with various functional blocks talking through a master-slave protocol. The interconnect could be a custom crossbar or a switch design or even an off the shelve NOC (Network on Chip) IP that supports multiple AXI masters and slaves. The AXI interconnect helps in scaling up connectivity for number of agents compared to previous AHB&#x2F;ASB bus. An AXI to APB bridge on one of the slave port is normally used to bridge communications to a set of peripherals shared on an APB bus.</p>
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1Mmu5nD-cdqBqL0LlI_w-sg.png" class="">
+
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1pWCEylvjOZXTQmOhiwitrQ.png" class="">
+
+<p>Further evolution happened in the era of mobile and smartphones with SOCs having dual&#x2F;quad&#x2F;octa core processors with shared caches integrated and the need for hardware managed coherency across the memory subsystem. This lead to the introduction of ACE (AXI Coherency Protocol Extension) in AMBA revision 4.</p>
+<p>Lastly, in the current era of heterogeneous computing for HPC and data center markets, the integration trend continues with increasing number of processor cores along with several heterogeneous computing elements like GPU, DSP, FPGAs, memory controllers and IO sub systems. In 2013, AMBA 5 introduced the CHI (Coherent Hub Interconnect) protocol as a re-design of the AXI&#x2F;ACE protocol. The signal based AXI&#x2F;ACE protocol was replaced with the new packet based CHI layered protocol that can scale very well for near term future.</p>
+<p>Now that hopefully you understand how the protocols evolved and how each of them fit in to an SOC design— here are few basics and references to resources that you can use to learn more in depth about each of the protocol.</p>
+<p>ARM has open sourced all of the protocols and all the specifications can be downloaded from the ARM website free by signing up.</p>
+<h3 id="APB"><a href="#APB" class="headerlink" title="APB"></a>APB</h3><p>The <em>Advanced Peripheral Bus (APB)</em> is used for connecting low bandwidth peripherals. It is a simple non-pipelined protocol that can be used to communicate(read or write) from a bridge&#x2F;master to a number of slaves through the shared bus. The reads and writes shares the same set of signals and no burst data transfers are supported. The latest spec (APB 2.0) is available on<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0024c/index.html"> <strong>ARM website here</strong></a> and is a relatively easy protocol to learn.</p>
+<h3 id="AHB"><a href="#AHB" class="headerlink" title="AHB"></a>AHB</h3><p>The <em>Advanced High-performance Bus (AHB)</em> is used for connecting components that need higher bandwidth on a shared bus. These could be a internal memory or an external memory interface, DMA , DSP etc but the shared bus would limit the number of agents. Similar to APB, this is a shared bus protocol for multiple masters and slaves, but higher bandwidth is possible through burst data transfers. The latest spec can be found on <a href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0033/index.html"><strong>ARM website here</strong></a> and is relatively easy to learn.</p>
+<h3 id="AHB-lite"><a href="#AHB-lite" class="headerlink" title="AHB-lite"></a>AHB-lite</h3><p>AHB-lite protocol is a simplified version of AHB. The simplification comes with support for only a single master design and that removes need for any arbitration, retry, split transactions etc.</p>
+<h3 id="AXI"><a href="#AXI" class="headerlink" title="AXI"></a>AXI</h3><p>The <em>Advanced Extensible interface (AXI)</em> is useful for high bandwidth and low latency interconnects. This is a point to point interconnect and overcomes the limitations of a shared bus protocol in terms of number of agents that can be connected. The protocol also was an enhancement from AHB in terms of supporting multiple outstanding data transfers (pipe-lined), burst data transfers, separate read and write paths and supporting different bus widths.</p>
+<h3 id="AXI-lite"><a href="#AXI-lite" class="headerlink" title="AXI-lite"></a>AXI-lite</h3><p>AXI-lite protocol is a simplified version of AXI and the simplification comes in terms of no support for burst data transfers.</p>
+<h3 id="AXI-stream"><a href="#AXI-stream" class="headerlink" title="AXI-stream"></a>AXI-stream</h3><p>AXI-stream protocol is another flavor of the AXI protocol that supports only streaming of data from a master to a slave. There is no separate read&#x2F;write channels in the stream protocol unlike a full AXI or AXI-lite as the intend is to only stream in one direction. Multiple streams of data can be transferred (even with interleaving) across a master and slave. This becomes useful in designs like video streaming applications.</p>
+<h3 id="ACE-AXI"><a href="#ACE-AXI" class="headerlink" title="ACE - AXI"></a>ACE - AXI</h3><p>Coherence extension protocol is an extension to AXI 4 protocol and evolved in the era of multiple CPU cores with coherent caches getting integrated on a single chip. The ACE protocol extends the AXI read and write data channels by introducing separate snoop address, snoop data and snoop response channels. These extra channels provides mechanisms to implement a snoop based coherency protocol. If you are new to coherency, understanding that will be a pre-requisite before learning ACE protocol. The spec is available for download from <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0022d/index.html"><strong>ARM here as part of AXI4 specification.</strong></a></p>
+<h3 id="ACE-Lite"><a href="#ACE-Lite" class="headerlink" title="ACE-Lite"></a>ACE-Lite</h3><p>The ACE also has a simplified version of protocol for those agents that does not have a cache of its own but still are part of the shareable coherency domain. Typical agents like DMA or network interface agents fall implement this “one-way” coherency using a ACE-lite protocol.</p>
+<h3 id="CHI-Coherent-Hub-Interface"><a href="#CHI-Coherent-Hub-Interface" class="headerlink" title="CHI (Coherent Hub Interface)"></a>CHI (Coherent Hub Interface)</h3><p>The ACE protocol was developed as an extension to AXI to support coherent interconnects. The ACE protocol used a signal level communication between master&#x2F;slave and hence the interconnects needed large number of wires with added channels for snoops and responses. This worked well for small coherent clusters with dual&#x2F;quad core mobile SOC designs. With increasing number of coherent clusters on SOC along with other heterogeneous compute elements and memory controllers — the AMBA 5 revision introduced CHI protocol as a complete re-design of the ACE protocol. The CHI protocol uses a layered packet based communication protocol with protocol, link layer and physical layer implementation and also supports QoS based flow control and retry mechanisms.</p>
+<h3 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h3><p>The full AXI and AXI-lite specification can be downloaded on <a href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0022d/index.html"><strong>ARM website here</strong></a>. The AXI-stream protocol has a different spec and is <a href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0051a/index.html"><strong>available here for download.</strong></a></p>
+<p>Hope this gives an overview and helps getting started to learn more in depth into these protocols. The best way to learn further is to read the specifications to understand details of each protocol. The APB and AHB are relatively easy and can be learned easily. AXI and ACE&#x2F;CHI are relatively complex and will need detailed reading along with understanding of basics of cache coherency and general communication protocols.</p>
+<p>If you are not actively working on any of these on any projects, but do have time, you can also develop a IP&#x2F;VIP for a master or slave for any of these protocols, simulate and understand the details in depth.</p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>arm</tag>
+        <tag>amba</tag>
+        <tag>apb</tag>
+        <tag>axi</tag>
+        <tag>ahb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Update Alternatives</title>
+    <url>/2022/06/02/update-alternatives/</url>
+    <content><![CDATA[<p>If there are several versions of a tool installed in Redhat. Use command <code>update-alternatives</code> for prioritization.</p>
+<p>For instance with Python, saying Python 2.6, 2.7 and 3.6 versions are installed. With root following bundle of commands activates Python3.6 to be the system-wide default version. </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@localhost<span class="comment"># update-alternatives --display python</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/bin/python2.6 1</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/local/bin/python2.7 2</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/local/bin/python3.6 3</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --display python</span></span><br><span class="line">/usr/bin/python2.6 - priority 1</span><br><span class="line">/usr/local/bin/python2.7 - priority 2</span><br><span class="line">/usr/local/bin/python3.6 - priority 3</span><br><span class="line">Current <span class="string">&#x27;best&#x27;</span> version is /usr/local/bin/python3.6.</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Update: Synopsys Computer Platforms</title>
     <url>/2023/02/23/update-synopsys-computer-platforms/</url>
     <content><![CDATA[<table>
@@ -4077,171 +4205,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Umask</title>
-    <url>/2023/03/12/umask/</url>
-    <content><![CDATA[<p>You can use the umask utility to display, set, or change the current or default value of the umask. </p>
-<h3 id="Display-the-current-value-of-the-umask"><a href="#Display-the-current-value-of-the-umask" class="headerlink" title="Display the current value of the umask"></a>Display the current value of the umask</h3><p>To display the current value of the <em>umask</em> in symbolic mode, use:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% umask -S</span><br></pre></td></tr></table></figure>
-
-<p>To display the current value of the <em>umask</em> in octal mode, use:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% umask</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<blockquote>
-<p>When displaying the umask in octal mode, you may notice it displayed as a four digit number (0002 or 0022). The first digit of the umask represents a special bit (sticky bit, SGID bit, or SUID bit). If the first digit is set to 0, the special bit is not set. </p>
-</blockquote>
-<h3 id="Display-the-default-bash-umask"><a href="#Display-the-default-bash-umask" class="headerlink" title="Display the default bash umask"></a>Display the default bash umask</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% grep umask /etc/bashrc #for non-login shell</span><br><span class="line">% grep umask /etc/profile #for login shell</span><br></pre></td></tr></table></figure>
-
-<h3 id="Display-the-default-csh-umask"><a href="#Display-the-default-csh-umask" class="headerlink" title="Display the default csh umask"></a>Display the default csh umask</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% grep umask /etc/csh.cshrc #for non-login shell</span><br><span class="line">% grep umask /etc/csh.login #for login shell</span><br></pre></td></tr></table></figure>
-<p><strong>Usually we change <code>csh.cshrc</code> like this.</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% more /etc/csh.cshrc</span><br><span class="line">if ($uid &gt; 199 &amp;&amp; &quot;`/usr/bin/id -gn`&quot; == &quot;`/usr/bin/id -un`&quot;) then</span><br><span class="line">    umask 027</span><br><span class="line">else</span><br><span class="line">    umask 022</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="Setting-the-umask-using-symbolic-values"><a href="#Setting-the-umask-using-symbolic-values" class="headerlink" title="Setting the umask using symbolic values"></a>Setting the umask using symbolic values</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">umask -S &lt;level&gt;&lt;operation&gt;&lt;permission&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>&lt;level&gt;:</strong> Permissions can be assigned to the following levels of ownership: </p>
-<ul>
-<li><code>u</code> User owner</li>
-<li><code>g</code> Group owner</li>
-<li><code>o</code> Other</li>
-<li><code>a</code> All</li>
-</ul>
-<p><strong>&lt;operation&gt;</strong>: To add or remove permissions you can use the following signs: </p>
-<ul>
-<li><code>+</code> to add the permissions on top of the existing permissions</li>
-<li><code>-</code> to remove the permissions from the existing permission</li>
-<li><code>=</code> to remove the existing permissions and explicitly define the new ones</li>
-</ul>
-<p><strong>&lt;permission&gt;:</strong> You can assign the following permissions:</p>
-<ul>
-<li><code>r</code> Read</li>
-<li><code>w</code> Write</li>
-<li><code>x</code> Execute</li>
-</ul>
-<blockquote>
-<p>Any permission that is not specified after the equals sign (&#x3D;) is automatically prohibited. </p>
-</blockquote>
-<p><strong>Example:</strong> <code>umask -S u=rwx,g=rx,o=rx</code></p>
-<h3 id="Changing-the-default-umask-for-a-specific-user"><a href="#Changing-the-default-umask-for-a-specific-user" class="headerlink" title="Changing the default umask for a specific user"></a>Changing the default umask for a specific user</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.bashrc #for bash</span><br><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.cshrc #for csh</span><br></pre></td></tr></table></figure>
-<h3 id="Setting-default-permissions-for-newly-created-home-directories"><a href="#Setting-default-permissions-for-newly-created-home-directories" class="headerlink" title="Setting default permissions for newly created home directories"></a>Setting default permissions for newly created home directories</h3><p>You can change the permission modes for home directories of newly created users by modifying the <code>/etc/login.defs</code> file. </p>
-<ol>
-<li>As root, open the &#x2F;etc&#x2F;login.defs file in the editor.</li>
-<li>Modify the following section to set a new default HOME_MODE: <blockquote>
-<p># HOME_MODE is used by useradd(8) and newusers(8) to set the mode for new<br># home directories.<br># If HOME_MODE is not set, the value of UMASK is used to create the mode.<br>Replace the default octal value (0700) with another octal value. The selected mode will be used to create the permissions for the home directory. </p>
-</blockquote>
-</li>
-<li>If HOME_MODE is set, save the changes and exit the editor.</li>
-<li>If HOME_MODE is not set, modify the UMASK to set the mode for the newly created home directories: <blockquote>
-<p># Default initial “umask” value used by login(1) on non-PAM enabled systems.<br># Default “umask” value for pam_umask(8) on PAM enabled systems.<br># UMASK is also used by useradd(8) and newusers(8) to set the mode for new<br># home directories if HOME_MODE is not set.<br># 022 is the default value, but 027, or even 077, could be considered<br># for increased privacy. There is no One True Answer here: each sysadmin<br># must make up their mind.</p>
-<p>UMASK           022</p>
-</blockquote>
-</li>
-</ol>
-<p>Replace the default octal value (022) with another octal value. See User file-creation mode mask for more details.<br>5. Save the changes and exit the editor. </p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Understanding AMBA Architechture and Protocols</title>
-    <url>/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/</url>
-    <content><![CDATA[<p>The Advanced Micro controller Bus Architecture (<strong>AMBA</strong>) bus protocols is a set of interconnect specifications from ARM that standardizes on chip communication mechanisms between various functional blocks (or IP) for building high performance SOC designs. These designs typically have one or more micro controllers or microprocessors along with several other components — internal memory or external memory bridge, DSP, DMA, accelerators and various other peripherals like USB, UART, PCIE, I2C etc — all integrated on a single chip. The primary motivation of AMBA protocols is to have a standard and efficient way to interconnecting these blocks with re-use across multiple designs.</p>
-<span id="more"></span>
-
-<p>The first step in learning AMBA protocols is to understand where exactly these different protocols are used , how these evolved and how all of them fit into a SOC design.Following diagram (<em>reference from the AMBA 2.0 spec</em>) illustrates a traditional AMBA based SOC design that uses the AHB (Advanced High performance) or ASB (Advanced System Bus) protocols for high bandwidth interconnect and an APB (Advanced Peripheral Bus) protocol for low bandwidth peripheral interconnects.</p>
-<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/0U-61cb7vuTjzUts5.jpg" class="">
-
-<p>With increasing number of functional blocks (IP) integrating into SOC designs, the shared bus protocols (AHB&#x2F;ASB) started hitting limitations sooner and in 2003 , the new revision of AMBA 3 introduced a point to point connectivity protocol — AXI (<em>Advanced Extensible Interface</em>). Further in 2010, an enhanced version was introduced — A<em>XI 4.</em> Following diagram illustrates this evolution of protocols along with the SOC design trends in industry.</p>
-<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1rAeAWtd2K3bWLw-59IKGbQ.png" class="">
-
-<p>Following diagram illustrates how an AXI interconnect can be used to build an SOC with various functional blocks talking through a master-slave protocol. The interconnect could be a custom crossbar or a switch design or even an off the shelve NOC (Network on Chip) IP that supports multiple AXI masters and slaves. The AXI interconnect helps in scaling up connectivity for number of agents compared to previous AHB&#x2F;ASB bus. An AXI to APB bridge on one of the slave port is normally used to bridge communications to a set of peripherals shared on an APB bus.</p>
-<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1Mmu5nD-cdqBqL0LlI_w-sg.png" class="">
-
-<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1pWCEylvjOZXTQmOhiwitrQ.png" class="">
-
-<p>Further evolution happened in the era of mobile and smartphones with SOCs having dual&#x2F;quad&#x2F;octa core processors with shared caches integrated and the need for hardware managed coherency across the memory subsystem. This lead to the introduction of ACE (AXI Coherency Protocol Extension) in AMBA revision 4.</p>
-<p>Lastly, in the current era of heterogeneous computing for HPC and data center markets, the integration trend continues with increasing number of processor cores along with several heterogeneous computing elements like GPU, DSP, FPGAs, memory controllers and IO sub systems. In 2013, AMBA 5 introduced the CHI (Coherent Hub Interconnect) protocol as a re-design of the AXI&#x2F;ACE protocol. The signal based AXI&#x2F;ACE protocol was replaced with the new packet based CHI layered protocol that can scale very well for near term future.</p>
-<p>Now that hopefully you understand how the protocols evolved and how each of them fit in to an SOC design— here are few basics and references to resources that you can use to learn more in depth about each of the protocol.</p>
-<p>ARM has open sourced all of the protocols and all the specifications can be downloaded from the ARM website free by signing up.</p>
-<h3 id="APB"><a href="#APB" class="headerlink" title="APB"></a>APB</h3><p>The <em>Advanced Peripheral Bus (APB)</em> is used for connecting low bandwidth peripherals. It is a simple non-pipelined protocol that can be used to communicate(read or write) from a bridge&#x2F;master to a number of slaves through the shared bus. The reads and writes shares the same set of signals and no burst data transfers are supported. The latest spec (APB 2.0) is available on<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0024c/index.html"> <strong>ARM website here</strong></a> and is a relatively easy protocol to learn.</p>
-<h3 id="AHB"><a href="#AHB" class="headerlink" title="AHB"></a>AHB</h3><p>The <em>Advanced High-performance Bus (AHB)</em> is used for connecting components that need higher bandwidth on a shared bus. These could be a internal memory or an external memory interface, DMA , DSP etc but the shared bus would limit the number of agents. Similar to APB, this is a shared bus protocol for multiple masters and slaves, but higher bandwidth is possible through burst data transfers. The latest spec can be found on <a href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0033/index.html"><strong>ARM website here</strong></a> and is relatively easy to learn.</p>
-<h3 id="AHB-lite"><a href="#AHB-lite" class="headerlink" title="AHB-lite"></a>AHB-lite</h3><p>AHB-lite protocol is a simplified version of AHB. The simplification comes with support for only a single master design and that removes need for any arbitration, retry, split transactions etc.</p>
-<h3 id="AXI"><a href="#AXI" class="headerlink" title="AXI"></a>AXI</h3><p>The <em>Advanced Extensible interface (AXI)</em> is useful for high bandwidth and low latency interconnects. This is a point to point interconnect and overcomes the limitations of a shared bus protocol in terms of number of agents that can be connected. The protocol also was an enhancement from AHB in terms of supporting multiple outstanding data transfers (pipe-lined), burst data transfers, separate read and write paths and supporting different bus widths.</p>
-<h3 id="AXI-lite"><a href="#AXI-lite" class="headerlink" title="AXI-lite"></a>AXI-lite</h3><p>AXI-lite protocol is a simplified version of AXI and the simplification comes in terms of no support for burst data transfers.</p>
-<h3 id="AXI-stream"><a href="#AXI-stream" class="headerlink" title="AXI-stream"></a>AXI-stream</h3><p>AXI-stream protocol is another flavor of the AXI protocol that supports only streaming of data from a master to a slave. There is no separate read&#x2F;write channels in the stream protocol unlike a full AXI or AXI-lite as the intend is to only stream in one direction. Multiple streams of data can be transferred (even with interleaving) across a master and slave. This becomes useful in designs like video streaming applications.</p>
-<h3 id="ACE-AXI"><a href="#ACE-AXI" class="headerlink" title="ACE - AXI"></a>ACE - AXI</h3><p>Coherence extension protocol is an extension to AXI 4 protocol and evolved in the era of multiple CPU cores with coherent caches getting integrated on a single chip. The ACE protocol extends the AXI read and write data channels by introducing separate snoop address, snoop data and snoop response channels. These extra channels provides mechanisms to implement a snoop based coherency protocol. If you are new to coherency, understanding that will be a pre-requisite before learning ACE protocol. The spec is available for download from <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0022d/index.html"><strong>ARM here as part of AXI4 specification.</strong></a></p>
-<h3 id="ACE-Lite"><a href="#ACE-Lite" class="headerlink" title="ACE-Lite"></a>ACE-Lite</h3><p>The ACE also has a simplified version of protocol for those agents that does not have a cache of its own but still are part of the shareable coherency domain. Typical agents like DMA or network interface agents fall implement this “one-way” coherency using a ACE-lite protocol.</p>
-<h3 id="CHI-Coherent-Hub-Interface"><a href="#CHI-Coherent-Hub-Interface" class="headerlink" title="CHI (Coherent Hub Interface)"></a>CHI (Coherent Hub Interface)</h3><p>The ACE protocol was developed as an extension to AXI to support coherent interconnects. The ACE protocol used a signal level communication between master&#x2F;slave and hence the interconnects needed large number of wires with added channels for snoops and responses. This worked well for small coherent clusters with dual&#x2F;quad core mobile SOC designs. With increasing number of coherent clusters on SOC along with other heterogeneous compute elements and memory controllers — the AMBA 5 revision introduced CHI protocol as a complete re-design of the ACE protocol. The CHI protocol uses a layered packet based communication protocol with protocol, link layer and physical layer implementation and also supports QoS based flow control and retry mechanisms.</p>
-<h3 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h3><p>The full AXI and AXI-lite specification can be downloaded on <a href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0022d/index.html"><strong>ARM website here</strong></a>. The AXI-stream protocol has a different spec and is <a href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0051a/index.html"><strong>available here for download.</strong></a></p>
-<p>Hope this gives an overview and helps getting started to learn more in depth into these protocols. The best way to learn further is to read the specifications to understand details of each protocol. The APB and AHB are relatively easy and can be learned easily. AXI and ACE&#x2F;CHI are relatively complex and will need detailed reading along with understanding of basics of cache coherency and general communication protocols.</p>
-<p>If you are not actively working on any of these on any projects, but do have time, you can also develop a IP&#x2F;VIP for a master or slave for any of these protocols, simulate and understand the details in depth.</p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>arm</tag>
-        <tag>amba</tag>
-        <tag>apb</tag>
-        <tag>axi</tag>
-        <tag>ahb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Update Alternatives</title>
-    <url>/2022/06/02/update-alternatives/</url>
-    <content><![CDATA[<p>If there are several versions of a tool installed in Redhat. Use command <code>update-alternatives</code> for prioritization.</p>
-<p>For instance with Python, saying Python 2.6, 2.7 and 3.6 versions are installed. With root following bundle of commands activates Python3.6 to be the system-wide default version. </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@localhost<span class="comment"># update-alternatives --display python</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/bin/python2.6 1</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/local/bin/python2.7 2</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --install /usr/bin/python python /usr/local/bin/python3.6 3</span></span><br><span class="line">root@localhost<span class="comment"># update-alternatives --display python</span></span><br><span class="line">/usr/bin/python2.6 - priority 1</span><br><span class="line">/usr/local/bin/python2.7 - priority 2</span><br><span class="line">/usr/local/bin/python3.6 - priority 3</span><br><span class="line">Current <span class="string">&#x27;best&#x27;</span> version is /usr/local/bin/python3.6.</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim Cheat Sheet</title>
-    <url>/2022/04/03/vim-cheat-sheet/</url>
-    <content><![CDATA[<h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><p><strong>:h[elp] keyword</strong> - open help for keyword<br><strong>:sav[eas] file</strong> - save file as<br><strong>:clo[se]</strong> - close current pane<br><strong>:ter[minal]</strong> - open a terminal window<br><strong>K</strong> - open man page for word under the cursor</p>
-<span id="more"></span>
-
-<p><code>Tip: Run vimtutor in a terminal to learn the first Vim commands.</code></p>
-<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><p><strong>h</strong> - move cursor left<br><strong>j</strong> - move cursor down<br><strong>k</strong> - move cursor up<br><strong>l</strong> - move cursor right<br><strong>gj</strong> - move cursor down (multi-line text)<br><strong>gk</strong> - move cursor up (multi-line text)<br><strong>H</strong> - move to top of screen<br><strong>M</strong> - move to middle of screen<br><strong>L</strong> - move to bottom of screen<br><strong>w</strong> - jump forwards to the start of a word<br><strong>W</strong> - jump forwards to the start of a word (words can contain punctuation)<br><strong>e</strong> - jump forwards to the end of a word<br><strong>E</strong> - jump forwards to the end of a word (words can contain punctuation)<br><strong>b</strong> - jump backwards to the start of a word<br><strong>B</strong> - jump backwards to the start of a word (words can contain punctuation)<br><strong>ge</strong> - jump backwards to the end of a word<br><strong>gE</strong> - jump backwards to the end of a word (words can contain punctuation)<br><strong>%</strong> - move to matching character (default supported pairs: ‘()’, ‘{}’, ‘[]’ - use <code>:h matchpairs</code> in vim for more info)<br><strong>0</strong> - jump to the start of the line<br><strong>^</strong> - jump to the first non-blank character of the line<br><strong>$</strong> - jump to the end of the line<br><strong>g_</strong> - jump to the last non-blank character of the line<br><strong>gg</strong> - go to the first line of the document<br><strong>G</strong> - go to the last line of the document<br><strong>5gg or 5G</strong> - go to line 5<br><strong>gd</strong> - move to local declaration<br><strong>gD</strong> - move to global declaration<br><strong>fx</strong> - jump to next occurrence of character x<br><strong>tx</strong> - jump to before next occurrence of character x<br><strong>Fx</strong> - jump to the previous occurrence of character x<br><strong>Tx</strong> - jump to after previous occurrence of character x<br><strong>;</strong> - repeat previous f, t, F or T movement<br><strong>,</strong> - repeat previous f, t, F or T movement, backwards<br><strong>}</strong> - jump to next paragraph (or function&#x2F;block, when editing code)<br><strong>{</strong> - jump to previous paragraph (or function&#x2F;block, when editing code)<br><strong>zz</strong> - center cursor on screen<br><strong>Ctrl + e</strong> - move screen down one line (without moving cursor)<br><strong>Ctrl + y</strong> - move screen up one line (without moving cursor)<br><strong>Ctrl + b</strong> - move back one full screen<br><strong>Ctrl + f</strong> - move forward one full screen<br><strong>Ctrl + d</strong> - move forward 1&#x2F;2 a screen<br><strong>Ctrl + u</strong> - move back 1&#x2F;2 a screen</p>
-<p><code>Tip: Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.</code></p>
-<h2 id="Insert-mode-inserting-x2F-appending-text"><a href="#Insert-mode-inserting-x2F-appending-text" class="headerlink" title="Insert mode - inserting&#x2F;appending text"></a>Insert mode - inserting&#x2F;appending text</h2><p><strong>i</strong> - insert before the cursor<br><strong>I</strong> - insert at the beginning of the line<br><strong>a</strong> - insert (append) after the cursor<br><strong>A</strong> - insert (append) at the end of the line<br><strong>o</strong> - append (open) a new line below the current line<br><strong>O</strong> - append (open) a new line above the current line<br><strong>ea</strong> - insert (append) at the end of the word<br><strong>Ctrl + h</strong> - delete the character before the cursor during insert mode<br><strong>Ctrl + w</strong> - delete word before the cursor during insert mode<br><strong>Ctrl + j</strong> - begin new line during insert mode<br><strong>Ctrl + t</strong> - indent (move right) line one shiftwidth during insert mode<br><strong>Ctrl + d</strong> - de-indent (move left) line one shiftwidth during insert mode<br><strong>Ctrl + n</strong> - insert (auto-complete) next match before the cursor during insert mode<br><strong>Ctrl + p</strong> - insert (auto-complete) previous match before the cursor during insert mode<br><strong>Ctrl + rx</strong> - insert the contents of register x<br><strong>Ctrl + ox</strong> - Temporarily enter normal mode to issue one normal-mode command x.<br><strong>Esc</strong> - exit insert mode</p>
-<h2 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h2><p><strong>r</strong> - replace a single character.<br><strong>R</strong> - replace more than one character, until ESC is pressed.<br><strong>J</strong> - join line below to the current one with one space in between<br><strong>gJ</strong> - join line below to the current one without space in between<br><strong>gwip</strong> - reflow paragraph<br><strong>g~</strong> - switch case up to motion<br><strong>gu</strong> - change to lowercase up to motion<br><strong>gU</strong> - change to uppercase up to motion<br><strong>cc</strong> - change (replace) entire line<br><strong>c$ or C</strong> - change (replace) to the end of the line<br><strong>ciw</strong> - change (replace) entire word<br><strong>cw or ce</strong> - change (replace) to the end of the word<br><strong>s</strong> - delete character and substitute text<br><strong>S</strong> - delete line and substitute text (same as cc)<br><strong>xp</strong> - transpose two letters (delete and paste)<br><strong>u</strong> - undo<br><strong>U</strong> - restore (undo) last changed line<br><strong>Ctrl + r</strong> - redo<br><strong>.</strong> - repeat last command</p>
-<h2 id="Marking-text-visual-mode"><a href="#Marking-text-visual-mode" class="headerlink" title="Marking text (visual mode)"></a>Marking text (visual mode)</h2><p><strong>v</strong> - start visual mode, mark lines, then do a command (like y-yank)<br><strong>V</strong> - start linewise visual mode<br><strong>o</strong> - move to other end of marked area<br><strong>Ctrl + v</strong> - start visual block mode<br><strong>O</strong> - move to other corner of block<br><strong>aw</strong> - mark a word<br><strong>ab</strong> - a block with ()<br><strong>aB</strong> - a block with {}<br><strong>at</strong> - a block with &lt;&gt; tags<br><strong>ib</strong> - inner block with ()<br><strong>iB</strong> - inner block with {}<br><strong>it</strong> - inner block with &lt;&gt; tags<br><strong>Esc</strong> - exit visual mode</p>
-<p><code>Tip: Instead of b or B one can also use ( or &#123; respectively.</code></p>
-<h2 id="Visual-commands"><a href="#Visual-commands" class="headerlink" title="Visual commands"></a>Visual commands</h2><p><strong>&gt;</strong> - shift text right<br><strong>&lt;</strong> - shift text left<br><strong>y</strong> - yank (copy) marked text<br><strong>d</strong> - delete marked text<br><strong>~</strong> - switch case<br><strong>u</strong> - change marked text to lowercase<br><strong>U</strong> - change marked text to uppercase</p>
-<h2 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h2><p><strong>:reg[isters]</strong> - show registers content<br><strong>“xy</strong> - yank into register x<br><strong>“xp</strong> - paste contents of register x<br><strong>“+y</strong> - yank into the system clipboard register<br><strong>“+p</strong> - paste from the system clipboard register</p>
-<p><code>Tip: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tip: Special registers:</span><br><span class="line"> 0 - last yank</span><br><span class="line"> &quot; - unnamed register, last delete or yank</span><br><span class="line"> % - current file name</span><br><span class="line"> \# - alternate file name</span><br><span class="line"> * - clipboard contents (X11 primary)</span><br><span class="line"> + - clipboard contents (X11 clipboard)</span><br><span class="line"> / - last search pattern</span><br><span class="line"> : - last command-line</span><br><span class="line"> . - last inserted text</span><br><span class="line"> - - last small (less than a line) delete</span><br><span class="line"> = - expression register</span><br><span class="line"> _ - black hole register</span><br></pre></td></tr></table></figure>
-
-<h2 id="Marks-and-positions"><a href="#Marks-and-positions" class="headerlink" title="Marks and positions"></a>Marks and positions</h2><p><strong>:marks</strong> - list of marks<br><strong>ma</strong> - set current position for mark A<br>`a - jump to position of mark A<br><strong>y`a</strong> - yank text to position of mark A<br>`0 - go to the position where Vim was previously exited<br><strong>`&quot;</strong> - go to the position when last editing this file<br>`. - go to the position of the last change in this file<br><strong>``</strong> - go to the position before the last jump<br><strong>:ju[mps]</strong> - list of jumps<br><strong>Ctrl + i</strong> - go to newer position in jump list<br><strong>Ctrl + o</strong> - go to older position in jump list<br><strong>:changes</strong> - list of changes<br><strong>g,</strong> - go to newer position in change list<br><strong>g;</strong> - go to older position in change list<br><strong>Ctrl + ]</strong> - jump to the tag under cursor</p>
-<p><code>Tip: To jump to a mark you can either use a backtick (`) or an apostrophe (&#39;). Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.</code></p>
-<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><p><strong>qa</strong> - record macro a<br><strong>q</strong> - stop recording macro<br><strong>@a</strong> - run macro a<br><strong>@@</strong> - rerun last run macro</p>
-<h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><p><strong>yy</strong> - yank (copy) a line<br><strong>2yy</strong> - yank (copy) 2 lines<br><strong>yw</strong> - yank (copy) the characters of the word from the cursor position to the start of the next word<br><strong>yiw</strong> - yank (copy) word under the cursor<br><strong>yaw</strong> - yank (copy) word under the cursor and the space after or before it<br><strong>y$ or Y</strong> - yank (copy) to end of line<br><strong>p</strong> - put (paste) the clipboard after cursor<br><strong>P</strong> - put (paste) before cursor<br><strong>gp</strong> - put (paste) the clipboard after cursor and leave cursor after the new text<br><strong>gP</strong> - put (paste) before cursor and leave cursor after the new text<br><strong>dd</strong> - delete (cut) a line<br><strong>2dd</strong> - delete (cut) 2 lines<br><strong>dw</strong> - delete (cut) the characters of the word from the cursor position to the start of the next word<br><strong>diw</strong> - delete (cut) word under the cursor<br><strong>daw</strong> - delete (cut) word under the cursor and the space after or before it<br><strong>d$ or D</strong> - delete (cut) to the end of the line<br><strong>x</strong> - delete (cut) character</p>
-<h2 id="Indent-text"><a href="#Indent-text" class="headerlink" title="Indent text"></a>Indent text</h2><p><strong>&gt;&gt;</strong> - indent (move right) line one shiftwidth<br><strong>&lt;&lt;** - de-indent (move left) line one shiftwidth<br>**&gt;%</strong> - indent a block with () or {} (cursor on brace)<br><strong>&gt;ib</strong> - indent inner block with ()<br><strong>&gt;at</strong> - indent a block with &lt;&gt; tags<br><strong>3&#x3D;&#x3D;</strong> - re-indent 3 lines<br><strong>&#x3D;%</strong> - re-indent a block with () or {} (cursor on brace)<br><strong>&#x3D;iB</strong> - re-indent inner block with {}<br><strong>gg&#x3D;G</strong> - re-indent entire buffer<br><strong>]p</strong> - paste and adjust indent to current line</p>
-<h2 id="Exiting"><a href="#Exiting" class="headerlink" title="Exiting"></a>Exiting</h2><p><strong>:w</strong> - write (save) the file, but don’t exit<br><strong>:w !sudo tee %</strong> - write out the current file using sudo<br><strong>:wq or :x or ZZ</strong> - write (save) and quit<br><strong>:q</strong> - quit (fails if there are unsaved changes)<br><strong>:q! or ZQ</strong> - quit and throw away unsaved changes<br><strong>:wqa</strong> - write (save) and quit on all tabs</p>
-<h2 id="Search-and-replace"><a href="#Search-and-replace" class="headerlink" title="Search and replace"></a>Search and replace</h2><p><strong>&#x2F;pattern</strong> - search for pattern<br><strong>?pattern</strong> - search backward for pattern<br><strong>\vpattern</strong> - ‘very magic’ pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)<br><strong>n</strong> - repeat search in same direction<br><strong>N</strong> - repeat search in opposite direction<br><strong>:%s&#x2F;old&#x2F;new&#x2F;g</strong> - replace all old with new throughout file<br><strong>:%s&#x2F;old&#x2F;new&#x2F;gc</strong> - replace all old with new throughout file with confirmations<br><strong>:noh[lsearch]</strong> - remove highlighting of search matches</p>
-<h2 id="Search-in-multiple-files"><a href="#Search-in-multiple-files" class="headerlink" title="Search in multiple files"></a>Search in multiple files</h2><p><strong>:vim[grep] &#x2F;pattern&#x2F; {<code>&#123;file&#125;</code>}</strong> - search for pattern in multiple files, e.g. :vim[grep] &#x2F;foo&#x2F;\ **&#x2F;*<br><strong>:cn[ext]</strong> - jump to the next match<br><strong>:cp[revious]</strong> - jump to the previous match<br><strong>:cope[n]</strong> - open a window containing the list of matches<br><strong>:ccl[ose]</strong> - close the quickfix window</p>
-<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p><strong>:tabnew or :tabnew {page.words.file}</strong> - open a file in a new tab<br><strong>Ctrl + wT</strong> - move the current split window into its own tab<br><strong>gt or :tabn[ext]</strong> - move to the next tab<br><strong>gT or :tabp[revious]</strong> - move to the previous tab<br><strong>#gt</strong> - move to tab number #<br><strong>:tabm[ove] #</strong> - move current tab to the #th position (indexed from 0)<br><strong>:tabc[lose]</strong> - close the current tab and all its windows<br><strong>:tabo[nly]</strong> - close all tabs except for the current one<br><strong>:tabdo command</strong> - run the <code>command</code> on all tabs (e.g. <code>:tabdo q</code> - closes all opened tabs)</p>
-<h2 id="Working-with-multiple-files"><a href="#Working-with-multiple-files" class="headerlink" title="Working with multiple files"></a>Working with multiple files</h2><p><strong>:e[dit] file</strong> - edit a file in a new buffer<br><strong>:bn[ext]</strong> - go to the next buffer<br><strong>:bp[revious]</strong> - go to the previous buffer<br><strong>:bd[elete]</strong> - delete a buffer (close a file)<br><strong>:b[uffer]#</strong> - go to a buffer by index #<br><strong>:b[uffer] file</strong> - go to a buffer by file<br><strong>:ls or :buffers</strong> - list all open buffers<br><strong>:sp[lit] file</strong> - open a file in a new buffer and split window<br><strong>:vs[plit] file</strong> - open a file in a new buffer and vertically split window<br><strong>:vert[ical] ba[ll]</strong> - edit all buffers as vertical windows<br><strong>:tab ba[ll]</strong> - edit all buffers as tabs<br><strong>Ctrl + ws</strong> - split window<br><strong>Ctrl + wv</strong> - split window vertically<br><strong>Ctrl + ww</strong> - switch windows<br><strong>Ctrl + wq</strong> - quit a window<br><strong>Ctrl + wx</strong> - exchange current window with next one<br><strong>Ctrl + w&#x3D;</strong> - make all windows equal height &amp; width<br><strong>Ctrl + wh</strong> - move cursor to the left window (vertical split)<br><strong>Ctrl + wl</strong> - move cursor to the right window (vertical split)<br><strong>Ctrl + wj</strong> - move cursor to the window below (horizontal split)<br><strong>Ctrl + wk</strong> - move cursor to the window above (horizontal split)<br><strong>Ctrl + wH</strong> - make current window full height at far left (leftmost vertical window)<br><strong>Ctrl + wL</strong> - make current window full height at far right (rightmost vertical window)<br><strong>Ctrl + wJ</strong> - make current window full width at the very bottom (bottommost horizontal window)<br><strong>Ctrl + wK</strong> - make current window full width at the very top (topmost horizontal window)</p>
-]]></content>
-      <categories>
-        <category>Program</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Upgrade GCC to 7.3.0</title>
     <url>/2022/07/28/upgrade-gcc-to-7-3-0/</url>
     <content><![CDATA[<p><strong>Download GCC Source</strong><br><a href="https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz">https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz</a><br>or find a proper release in here: <a href="https://gcc.gnu.org/releases.html">https://gcc.gnu.org/releases.html</a></p>
@@ -4253,18 +4216,6 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>gcc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim: Open Files</title>
-    <url>/2023/01/18/vim-open-files/</url>
-    <content><![CDATA[<p><code>:e filename</code> Opens the file in the vim editor.<br><code>:new filename</code> Opens the file in horizontal split mode.<br><code>:vert new filename</code> Opens the file in vertical split mode.<br><code>:tabnew filename</code> Opens the file in a new tab.</p>
-]]></content>
-      <categories>
-        <category>Program</category>
-      </categories>
-      <tags>
-        <tag>vim</tag>
       </tags>
   </entry>
   <entry>
@@ -4308,6 +4259,18 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Vim: Open Files</title>
+    <url>/2023/01/18/vim-open-files/</url>
+    <content><![CDATA[<p><code>:e filename</code> Opens the file in the vim editor.<br><code>:new filename</code> Opens the file in horizontal split mode.<br><code>:vert new filename</code> Opens the file in vertical split mode.<br><code>:tabnew filename</code> Opens the file in a new tab.</p>
+]]></content>
+      <categories>
+        <category>Program</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Visualization Matters</title>
     <url>/2022/07/20/visualization-matters/</url>
     <content><![CDATA[<p>It truly matters to make it visualized when you try to demostrate these stuffs in project management.</p>
@@ -4338,16 +4301,40 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>We Glow While Grow</title>
-    <url>/2022/04/23/we-glow-while-grow/</url>
-    <content><![CDATA[<p>We grow when we confront challenges and glow when we conquer them.</p>
-<img src="/2022/04/23/we-glow-while-grow/image-20220423105459472.png" class="">
+    <title>Vim Cheat Sheet</title>
+    <url>/2022/04/03/vim-cheat-sheet/</url>
+    <content><![CDATA[<h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><p><strong>:h[elp] keyword</strong> - open help for keyword<br><strong>:sav[eas] file</strong> - save file as<br><strong>:clo[se]</strong> - close current pane<br><strong>:ter[minal]</strong> - open a terminal window<br><strong>K</strong> - open man page for word under the cursor</p>
+<span id="more"></span>
+
+<p><code>Tip: Run vimtutor in a terminal to learn the first Vim commands.</code></p>
+<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><p><strong>h</strong> - move cursor left<br><strong>j</strong> - move cursor down<br><strong>k</strong> - move cursor up<br><strong>l</strong> - move cursor right<br><strong>gj</strong> - move cursor down (multi-line text)<br><strong>gk</strong> - move cursor up (multi-line text)<br><strong>H</strong> - move to top of screen<br><strong>M</strong> - move to middle of screen<br><strong>L</strong> - move to bottom of screen<br><strong>w</strong> - jump forwards to the start of a word<br><strong>W</strong> - jump forwards to the start of a word (words can contain punctuation)<br><strong>e</strong> - jump forwards to the end of a word<br><strong>E</strong> - jump forwards to the end of a word (words can contain punctuation)<br><strong>b</strong> - jump backwards to the start of a word<br><strong>B</strong> - jump backwards to the start of a word (words can contain punctuation)<br><strong>ge</strong> - jump backwards to the end of a word<br><strong>gE</strong> - jump backwards to the end of a word (words can contain punctuation)<br><strong>%</strong> - move to matching character (default supported pairs: ‘()’, ‘{}’, ‘[]’ - use <code>:h matchpairs</code> in vim for more info)<br><strong>0</strong> - jump to the start of the line<br><strong>^</strong> - jump to the first non-blank character of the line<br><strong>$</strong> - jump to the end of the line<br><strong>g_</strong> - jump to the last non-blank character of the line<br><strong>gg</strong> - go to the first line of the document<br><strong>G</strong> - go to the last line of the document<br><strong>5gg or 5G</strong> - go to line 5<br><strong>gd</strong> - move to local declaration<br><strong>gD</strong> - move to global declaration<br><strong>fx</strong> - jump to next occurrence of character x<br><strong>tx</strong> - jump to before next occurrence of character x<br><strong>Fx</strong> - jump to the previous occurrence of character x<br><strong>Tx</strong> - jump to after previous occurrence of character x<br><strong>;</strong> - repeat previous f, t, F or T movement<br><strong>,</strong> - repeat previous f, t, F or T movement, backwards<br><strong>}</strong> - jump to next paragraph (or function&#x2F;block, when editing code)<br><strong>{</strong> - jump to previous paragraph (or function&#x2F;block, when editing code)<br><strong>zz</strong> - center cursor on screen<br><strong>Ctrl + e</strong> - move screen down one line (without moving cursor)<br><strong>Ctrl + y</strong> - move screen up one line (without moving cursor)<br><strong>Ctrl + b</strong> - move back one full screen<br><strong>Ctrl + f</strong> - move forward one full screen<br><strong>Ctrl + d</strong> - move forward 1&#x2F;2 a screen<br><strong>Ctrl + u</strong> - move back 1&#x2F;2 a screen</p>
+<p><code>Tip: Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.</code></p>
+<h2 id="Insert-mode-inserting-x2F-appending-text"><a href="#Insert-mode-inserting-x2F-appending-text" class="headerlink" title="Insert mode - inserting&#x2F;appending text"></a>Insert mode - inserting&#x2F;appending text</h2><p><strong>i</strong> - insert before the cursor<br><strong>I</strong> - insert at the beginning of the line<br><strong>a</strong> - insert (append) after the cursor<br><strong>A</strong> - insert (append) at the end of the line<br><strong>o</strong> - append (open) a new line below the current line<br><strong>O</strong> - append (open) a new line above the current line<br><strong>ea</strong> - insert (append) at the end of the word<br><strong>Ctrl + h</strong> - delete the character before the cursor during insert mode<br><strong>Ctrl + w</strong> - delete word before the cursor during insert mode<br><strong>Ctrl + j</strong> - begin new line during insert mode<br><strong>Ctrl + t</strong> - indent (move right) line one shiftwidth during insert mode<br><strong>Ctrl + d</strong> - de-indent (move left) line one shiftwidth during insert mode<br><strong>Ctrl + n</strong> - insert (auto-complete) next match before the cursor during insert mode<br><strong>Ctrl + p</strong> - insert (auto-complete) previous match before the cursor during insert mode<br><strong>Ctrl + rx</strong> - insert the contents of register x<br><strong>Ctrl + ox</strong> - Temporarily enter normal mode to issue one normal-mode command x.<br><strong>Esc</strong> - exit insert mode</p>
+<h2 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h2><p><strong>r</strong> - replace a single character.<br><strong>R</strong> - replace more than one character, until ESC is pressed.<br><strong>J</strong> - join line below to the current one with one space in between<br><strong>gJ</strong> - join line below to the current one without space in between<br><strong>gwip</strong> - reflow paragraph<br><strong>g~</strong> - switch case up to motion<br><strong>gu</strong> - change to lowercase up to motion<br><strong>gU</strong> - change to uppercase up to motion<br><strong>cc</strong> - change (replace) entire line<br><strong>c$ or C</strong> - change (replace) to the end of the line<br><strong>ciw</strong> - change (replace) entire word<br><strong>cw or ce</strong> - change (replace) to the end of the word<br><strong>s</strong> - delete character and substitute text<br><strong>S</strong> - delete line and substitute text (same as cc)<br><strong>xp</strong> - transpose two letters (delete and paste)<br><strong>u</strong> - undo<br><strong>U</strong> - restore (undo) last changed line<br><strong>Ctrl + r</strong> - redo<br><strong>.</strong> - repeat last command</p>
+<h2 id="Marking-text-visual-mode"><a href="#Marking-text-visual-mode" class="headerlink" title="Marking text (visual mode)"></a>Marking text (visual mode)</h2><p><strong>v</strong> - start visual mode, mark lines, then do a command (like y-yank)<br><strong>V</strong> - start linewise visual mode<br><strong>o</strong> - move to other end of marked area<br><strong>Ctrl + v</strong> - start visual block mode<br><strong>O</strong> - move to other corner of block<br><strong>aw</strong> - mark a word<br><strong>ab</strong> - a block with ()<br><strong>aB</strong> - a block with {}<br><strong>at</strong> - a block with &lt;&gt; tags<br><strong>ib</strong> - inner block with ()<br><strong>iB</strong> - inner block with {}<br><strong>it</strong> - inner block with &lt;&gt; tags<br><strong>Esc</strong> - exit visual mode</p>
+<p><code>Tip: Instead of b or B one can also use ( or &#123; respectively.</code></p>
+<h2 id="Visual-commands"><a href="#Visual-commands" class="headerlink" title="Visual commands"></a>Visual commands</h2><p><strong>&gt;</strong> - shift text right<br><strong>&lt;</strong> - shift text left<br><strong>y</strong> - yank (copy) marked text<br><strong>d</strong> - delete marked text<br><strong>~</strong> - switch case<br><strong>u</strong> - change marked text to lowercase<br><strong>U</strong> - change marked text to uppercase</p>
+<h2 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h2><p><strong>:reg[isters]</strong> - show registers content<br><strong>“xy</strong> - yank into register x<br><strong>“xp</strong> - paste contents of register x<br><strong>“+y</strong> - yank into the system clipboard register<br><strong>“+p</strong> - paste from the system clipboard register</p>
+<p><code>Tip: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tip: Special registers:</span><br><span class="line"> 0 - last yank</span><br><span class="line"> &quot; - unnamed register, last delete or yank</span><br><span class="line"> % - current file name</span><br><span class="line"> \# - alternate file name</span><br><span class="line"> * - clipboard contents (X11 primary)</span><br><span class="line"> + - clipboard contents (X11 clipboard)</span><br><span class="line"> / - last search pattern</span><br><span class="line"> : - last command-line</span><br><span class="line"> . - last inserted text</span><br><span class="line"> - - last small (less than a line) delete</span><br><span class="line"> = - expression register</span><br><span class="line"> _ - black hole register</span><br></pre></td></tr></table></figure>
+
+<h2 id="Marks-and-positions"><a href="#Marks-and-positions" class="headerlink" title="Marks and positions"></a>Marks and positions</h2><p><strong>:marks</strong> - list of marks<br><strong>ma</strong> - set current position for mark A<br>`a - jump to position of mark A<br><strong>y`a</strong> - yank text to position of mark A<br>`0 - go to the position where Vim was previously exited<br><strong>`&quot;</strong> - go to the position when last editing this file<br>`. - go to the position of the last change in this file<br><strong>``</strong> - go to the position before the last jump<br><strong>:ju[mps]</strong> - list of jumps<br><strong>Ctrl + i</strong> - go to newer position in jump list<br><strong>Ctrl + o</strong> - go to older position in jump list<br><strong>:changes</strong> - list of changes<br><strong>g,</strong> - go to newer position in change list<br><strong>g;</strong> - go to older position in change list<br><strong>Ctrl + ]</strong> - jump to the tag under cursor</p>
+<p><code>Tip: To jump to a mark you can either use a backtick (`) or an apostrophe (&#39;). Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.</code></p>
+<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><p><strong>qa</strong> - record macro a<br><strong>q</strong> - stop recording macro<br><strong>@a</strong> - run macro a<br><strong>@@</strong> - rerun last run macro</p>
+<h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><p><strong>yy</strong> - yank (copy) a line<br><strong>2yy</strong> - yank (copy) 2 lines<br><strong>yw</strong> - yank (copy) the characters of the word from the cursor position to the start of the next word<br><strong>yiw</strong> - yank (copy) word under the cursor<br><strong>yaw</strong> - yank (copy) word under the cursor and the space after or before it<br><strong>y$ or Y</strong> - yank (copy) to end of line<br><strong>p</strong> - put (paste) the clipboard after cursor<br><strong>P</strong> - put (paste) before cursor<br><strong>gp</strong> - put (paste) the clipboard after cursor and leave cursor after the new text<br><strong>gP</strong> - put (paste) before cursor and leave cursor after the new text<br><strong>dd</strong> - delete (cut) a line<br><strong>2dd</strong> - delete (cut) 2 lines<br><strong>dw</strong> - delete (cut) the characters of the word from the cursor position to the start of the next word<br><strong>diw</strong> - delete (cut) word under the cursor<br><strong>daw</strong> - delete (cut) word under the cursor and the space after or before it<br><strong>d$ or D</strong> - delete (cut) to the end of the line<br><strong>x</strong> - delete (cut) character</p>
+<h2 id="Indent-text"><a href="#Indent-text" class="headerlink" title="Indent text"></a>Indent text</h2><p><strong>&gt;&gt;</strong> - indent (move right) line one shiftwidth<br><strong>&lt;&lt;** - de-indent (move left) line one shiftwidth<br>**&gt;%</strong> - indent a block with () or {} (cursor on brace)<br><strong>&gt;ib</strong> - indent inner block with ()<br><strong>&gt;at</strong> - indent a block with &lt;&gt; tags<br><strong>3&#x3D;&#x3D;</strong> - re-indent 3 lines<br><strong>&#x3D;%</strong> - re-indent a block with () or {} (cursor on brace)<br><strong>&#x3D;iB</strong> - re-indent inner block with {}<br><strong>gg&#x3D;G</strong> - re-indent entire buffer<br><strong>]p</strong> - paste and adjust indent to current line</p>
+<h2 id="Exiting"><a href="#Exiting" class="headerlink" title="Exiting"></a>Exiting</h2><p><strong>:w</strong> - write (save) the file, but don’t exit<br><strong>:w !sudo tee %</strong> - write out the current file using sudo<br><strong>:wq or :x or ZZ</strong> - write (save) and quit<br><strong>:q</strong> - quit (fails if there are unsaved changes)<br><strong>:q! or ZQ</strong> - quit and throw away unsaved changes<br><strong>:wqa</strong> - write (save) and quit on all tabs</p>
+<h2 id="Search-and-replace"><a href="#Search-and-replace" class="headerlink" title="Search and replace"></a>Search and replace</h2><p><strong>&#x2F;pattern</strong> - search for pattern<br><strong>?pattern</strong> - search backward for pattern<br><strong>\vpattern</strong> - ‘very magic’ pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)<br><strong>n</strong> - repeat search in same direction<br><strong>N</strong> - repeat search in opposite direction<br><strong>:%s&#x2F;old&#x2F;new&#x2F;g</strong> - replace all old with new throughout file<br><strong>:%s&#x2F;old&#x2F;new&#x2F;gc</strong> - replace all old with new throughout file with confirmations<br><strong>:noh[lsearch]</strong> - remove highlighting of search matches</p>
+<h2 id="Search-in-multiple-files"><a href="#Search-in-multiple-files" class="headerlink" title="Search in multiple files"></a>Search in multiple files</h2><p><strong>:vim[grep] &#x2F;pattern&#x2F; {<code>&#123;file&#125;</code>}</strong> - search for pattern in multiple files, e.g. :vim[grep] &#x2F;foo&#x2F;\ **&#x2F;*<br><strong>:cn[ext]</strong> - jump to the next match<br><strong>:cp[revious]</strong> - jump to the previous match<br><strong>:cope[n]</strong> - open a window containing the list of matches<br><strong>:ccl[ose]</strong> - close the quickfix window</p>
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p><strong>:tabnew or :tabnew {page.words.file}</strong> - open a file in a new tab<br><strong>Ctrl + wT</strong> - move the current split window into its own tab<br><strong>gt or :tabn[ext]</strong> - move to the next tab<br><strong>gT or :tabp[revious]</strong> - move to the previous tab<br><strong>#gt</strong> - move to tab number #<br><strong>:tabm[ove] #</strong> - move current tab to the #th position (indexed from 0)<br><strong>:tabc[lose]</strong> - close the current tab and all its windows<br><strong>:tabo[nly]</strong> - close all tabs except for the current one<br><strong>:tabdo command</strong> - run the <code>command</code> on all tabs (e.g. <code>:tabdo q</code> - closes all opened tabs)</p>
+<h2 id="Working-with-multiple-files"><a href="#Working-with-multiple-files" class="headerlink" title="Working with multiple files"></a>Working with multiple files</h2><p><strong>:e[dit] file</strong> - edit a file in a new buffer<br><strong>:bn[ext]</strong> - go to the next buffer<br><strong>:bp[revious]</strong> - go to the previous buffer<br><strong>:bd[elete]</strong> - delete a buffer (close a file)<br><strong>:b[uffer]#</strong> - go to a buffer by index #<br><strong>:b[uffer] file</strong> - go to a buffer by file<br><strong>:ls or :buffers</strong> - list all open buffers<br><strong>:sp[lit] file</strong> - open a file in a new buffer and split window<br><strong>:vs[plit] file</strong> - open a file in a new buffer and vertically split window<br><strong>:vert[ical] ba[ll]</strong> - edit all buffers as vertical windows<br><strong>:tab ba[ll]</strong> - edit all buffers as tabs<br><strong>Ctrl + ws</strong> - split window<br><strong>Ctrl + wv</strong> - split window vertically<br><strong>Ctrl + ww</strong> - switch windows<br><strong>Ctrl + wq</strong> - quit a window<br><strong>Ctrl + wx</strong> - exchange current window with next one<br><strong>Ctrl + w&#x3D;</strong> - make all windows equal height &amp; width<br><strong>Ctrl + wh</strong> - move cursor to the left window (vertical split)<br><strong>Ctrl + wl</strong> - move cursor to the right window (vertical split)<br><strong>Ctrl + wj</strong> - move cursor to the window below (horizontal split)<br><strong>Ctrl + wk</strong> - move cursor to the window above (horizontal split)<br><strong>Ctrl + wH</strong> - make current window full height at far left (leftmost vertical window)<br><strong>Ctrl + wL</strong> - make current window full height at far right (rightmost vertical window)<br><strong>Ctrl + wJ</strong> - make current window full width at the very bottom (bottommost horizontal window)<br><strong>Ctrl + wK</strong> - make current window full width at the very top (topmost horizontal window)</p>
 ]]></content>
       <categories>
-        <category>Diary</category>
+        <category>Program</category>
       </categories>
       <tags>
-        <tag>covid19</tag>
+        <tag>linux</tag>
+        <tag>vim</tag>
       </tags>
   </entry>
   <entry>
@@ -4422,6 +4409,19 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>We Glow While Grow</title>
+    <url>/2022/04/23/we-glow-while-grow/</url>
+    <content><![CDATA[<p>We grow when we confront challenges and glow when we conquer them.</p>
+<img src="/2022/04/23/we-glow-while-grow/image-20220423105459472.png" class="">
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>What Is Entropy?</title>
     <url>/2022/04/03/what-is-entropy/</url>
     <content><![CDATA[<p><strong>Entropy</strong> is a scientific concept as well as a measurable physical property that is most commonly associated with a state of disorder, randomness, or uncertainty. The term and the concept are used in diverse fields, from classical thermodynamics, where it was first recognized, to the microscopic description of nature in statistical physics, and to the principles of information theory. It has found far-ranging applications in chemistry and physics, in biological systems and their relation to life, in cosmology, economics, sociology, weather science, climate change, and information systems including the transmission of information in telecommunication.</p>
@@ -4457,18 +4457,6 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>上海每日疫情走势2022-4-23</title>
-    <url>/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/</url>
-    <content><![CDATA[<img src="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/image-20220424103736004.png" class="">
-]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>covid19</tag>
       </tags>
   </entry>
   <entry>
@@ -4593,6 +4581,18 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>上海每日疫情走势2022-4-25</title>
+    <url>/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/</url>
+    <content><![CDATA[<img src="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/image-20220426102807065.png" class="">
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>上海每日疫情走势2022-4-27</title>
     <url>/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/</url>
     <content><![CDATA[<img src="/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/image-20220428084632964.png" class="">
@@ -4617,9 +4617,21 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-4-25</title>
-    <url>/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/</url>
-    <content><![CDATA[<img src="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/image-20220426102807065.png" class="">
+    <title>上海每日疫情走势2022-4-23</title>
+    <url>/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/</url>
+    <content><![CDATA[<img src="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/image-20220424103736004.png" class="">
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>上海每日疫情走势2022-5-1</title>
+    <url>/2022/05/02/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-1/</url>
+    <content><![CDATA[<img src="/2022/05/02/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-1/image-20220502100739352.png" class="">
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -4649,18 +4661,6 @@ service messagebus restart;
 </tr>
 </tbody></table>
 <img src="/2022/05/12/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-11/image_20220511.jpg" class="">
-]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>covid19</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>上海每日疫情走势2022-5-1</title>
-    <url>/2022/05/02/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-1/</url>
-    <content><![CDATA[<img src="/2022/05/02/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-1/image-20220502100739352.png" class="">
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -4792,6 +4792,18 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>上海每日疫情走势2022-5-3</title>
+    <url>/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/</url>
+    <content><![CDATA[<img src="/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/image-20220504095419109.png" class="">
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>上海每日疫情走势2022-5-28</title>
     <url>/2022/05/29/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-28/</url>
     <content><![CDATA[<table>
@@ -4847,18 +4859,6 @@ service messagebus restart;
 </tr>
 </tbody></table>
 <img src="/2022/05/29/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-28/image_20220528.jpg" class="">]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>covid19</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>上海每日疫情走势2022-5-3</title>
-    <url>/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/</url>
-    <content><![CDATA[<img src="/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/image-20220504095419109.png" class="">
-]]></content>
       <categories>
         <category>Diary</category>
       </categories>
