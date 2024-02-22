@@ -836,6 +836,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </categories>
       <tags>
         <tag>linux</tag>
+        <tag>tmux</tag>
       </tags>
   </entry>
   <entry>
@@ -12843,6 +12844,7 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>linux</tag>
+        <tag>tmux</tag>
       </tags>
   </entry>
 </search>
