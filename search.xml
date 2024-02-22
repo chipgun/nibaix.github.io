@@ -160,19 +160,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Coloring the C-Shell Prompt</title>
-    <url>/2022/07/20/Coloring-the-C-shell-Prompt/</url>
-    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set   black = &quot;%&#123;\033[0;30m%&#125;&quot;</span><br><span class="line">set  Bblack = &quot;%&#123;\033[B;30m%&#125;&quot;</span><br><span class="line">set     red = &quot;%&#123;\033[0;31m%&#125;&quot;</span><br><span class="line">set    Bred = &quot;%&#123;\033[1;31m%&#125;&quot;</span><br><span class="line">set   green = &quot;%&#123;\033[0;32m%&#125;&quot;</span><br><span class="line">set  Bgreen = &quot;%&#123;\033[1;32m%&#125;&quot;</span><br><span class="line">set  yellow = &quot;%&#123;\033[0;33m%&#125;&quot;</span><br><span class="line">set Byellow = &quot;%&#123;\033[1;33m%&#125;&quot;</span><br><span class="line">set    blue = &quot;%&#123;\033[0;34m%&#125;&quot;</span><br><span class="line">set   Bblue = &quot;%&#123;\033[1;34m%&#125;&quot;</span><br><span class="line">set  purple = &quot;%&#123;\033[0;35m%&#125;&quot;</span><br><span class="line">set Bpurple = &quot;%&#123;\033[1;35m%&#125;&quot;</span><br><span class="line">set    cyan = &quot;%&#123;\033[0;36m%&#125;&quot;</span><br><span class="line">set   Bcyan = &quot;%&#123;\033[1;36m%&#125;&quot;</span><br><span class="line">set   white = &quot;%&#123;\033[0;37m%&#125;&quot;</span><br><span class="line">set  Bwhite = &quot;%&#123;\033[1;37m%&#125;&quot;</span><br><span class="line">set     end = &quot;%&#123;\033[0m%&#125;&quot;</span><br><span class="line"></span><br><span class="line">alias setprompt &#x27;set prompt = &quot;\n$&#123;cyan&#125;%~\n$&#123;Bpurple&#125;%n@%m$&#123;Bwhite&#125;[`id -ng`]$&#123;end&#125; &quot;&#x27;</span><br><span class="line">alias cd &#x27;chdir \!* &amp;&amp; setprompt&#x27;</span><br><span class="line">setprompt</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>csh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Disable Clipboard in NoMachine</title>
     <url>/2022/07/17/Disable-Clipboard-in-NoMachine/</url>
     <content><![CDATA[<p>Disabling clipboard (copy and paste) in NoMachine is possible by setting the appropriate key on the NoMachine server installation. It isn’t restricted to the product you are using. I.e you can set it also if you have installed the free version of NoMachine on the computer you are accessing.</p>
@@ -192,6 +179,19 @@
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Coloring the C-Shell Prompt</title>
+    <url>/2022/07/20/Coloring-the-C-shell-Prompt/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set   black = &quot;%&#123;\033[0;30m%&#125;&quot;</span><br><span class="line">set  Bblack = &quot;%&#123;\033[B;30m%&#125;&quot;</span><br><span class="line">set     red = &quot;%&#123;\033[0;31m%&#125;&quot;</span><br><span class="line">set    Bred = &quot;%&#123;\033[1;31m%&#125;&quot;</span><br><span class="line">set   green = &quot;%&#123;\033[0;32m%&#125;&quot;</span><br><span class="line">set  Bgreen = &quot;%&#123;\033[1;32m%&#125;&quot;</span><br><span class="line">set  yellow = &quot;%&#123;\033[0;33m%&#125;&quot;</span><br><span class="line">set Byellow = &quot;%&#123;\033[1;33m%&#125;&quot;</span><br><span class="line">set    blue = &quot;%&#123;\033[0;34m%&#125;&quot;</span><br><span class="line">set   Bblue = &quot;%&#123;\033[1;34m%&#125;&quot;</span><br><span class="line">set  purple = &quot;%&#123;\033[0;35m%&#125;&quot;</span><br><span class="line">set Bpurple = &quot;%&#123;\033[1;35m%&#125;&quot;</span><br><span class="line">set    cyan = &quot;%&#123;\033[0;36m%&#125;&quot;</span><br><span class="line">set   Bcyan = &quot;%&#123;\033[1;36m%&#125;&quot;</span><br><span class="line">set   white = &quot;%&#123;\033[0;37m%&#125;&quot;</span><br><span class="line">set  Bwhite = &quot;%&#123;\033[1;37m%&#125;&quot;</span><br><span class="line">set     end = &quot;%&#123;\033[0m%&#125;&quot;</span><br><span class="line"></span><br><span class="line">alias setprompt &#x27;set prompt = &quot;\n$&#123;cyan&#125;%~\n$&#123;Bpurple&#125;%n@%m$&#123;Bwhite&#125;[`id -ng`]$&#123;end&#125; &quot;&#x27;</span><br><span class="line">alias cd &#x27;chdir \!* &amp;&amp; setprompt&#x27;</span><br><span class="line">setprompt</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>csh</tag>
       </tags>
   </entry>
   <entry>
@@ -217,27 +217,6 @@
       </categories>
       <tags>
         <tag>eda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GTECH Flip-Flop Cell</title>
-    <url>/2023/09/06/GTECH-Flip-flop-Cell/</url>
-    <content><![CDATA[<p>When HDL Compiler reads in a Verilog or VHDL RTL description of the design, it translates<br>the design into a technology-independent representation (GTECH). In GTECH, both<br>registers and latches are represented by a SEQGEN cell, which is a<br>technology-independent model of a sequential element as shown in the figure below. SEQGEN<br>cells have all the possible control and data pins that can be present on a sequential element.</p>
-<img src="/2023/09/06/GTECH-Flip-flop-Cell/gtech_register_interface.jpg" class="">
-
-<img src="/2023/09/06/GTECH-Flip-flop-Cell/gtech_register_signals.jpg" class="">
-
-<p>Knowing this is important and useful when you would set constraint on a register in the synthesis phase of HDL mapping, e.g.,</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set_multicycle_path -from [get_pins A_Example_reg/clocked_on]</span><br><span class="line">set_false_path -to [get_pins B_Example_reg/next_state]</span><br></pre></td></tr></table></figure>
-
-<p>Refer to the document of ‘Design Compiler Optimization Reference Manual’ for details.</p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>synopsys</tag>
-        <tag>starred</tag>
       </tags>
   </entry>
   <entry>
@@ -292,71 +271,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux Command: Ip</title>
-    <url>/2022/09/26/Linux-Command-ip/</url>
-    <content><![CDATA[<p><code>ip</code> 是个命令， <code>ip</code> 命令的功能很多！基本上它整合了 <code>ifconfig</code> 与 <code>route</code> 这两个命令，不过 <code>ip</code> 的功能更强大。</p>
-<h2 id="ip命令用法"><a href="#ip命令用法" class="headerlink" title="ip命令用法"></a>ip命令用法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip</span><br><span class="line">Usage: ip [ OPTIONS ] OBJECT &#123; COMMAND | help &#125;</span><br><span class="line">       ip [ -force ] -batch filename</span><br><span class="line">where  OBJECT := &#123; link | addr | addrlabel | route | rule | neigh | ntable |</span><br><span class="line">                   tunnel | maddr | mroute | mrule | monitor | xfrm | token &#125;</span><br><span class="line">       OPTIONS := &#123; -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |</span><br><span class="line">                    -h[uman-readable] | -iec |</span><br><span class="line">                    -f[amily] &#123; inet | inet6 | ipx | dnet | link &#125; |</span><br><span class="line">                    -o[neline] | -t[imestamp] | -b[atch] [filename] |</span><br><span class="line">                    -rc[vbuf] [size]&#125;</span><br></pre></td></tr></table></figure>
+    <title>GTECH Flip-Flop Cell</title>
+    <url>/2023/09/06/GTECH-Flip-flop-Cell/</url>
+    <content><![CDATA[<p>When HDL Compiler reads in a Verilog or VHDL RTL description of the design, it translates<br>the design into a technology-independent representation (GTECH). In GTECH, both<br>registers and latches are represented by a SEQGEN cell, which is a<br>technology-independent model of a sequential element as shown in the figure below. SEQGEN<br>cells have all the possible control and data pins that can be present on a sequential element.</p>
+<img src="/2023/09/06/GTECH-Flip-flop-Cell/gtech_register_interface.jpg" class="">
 
-<span id="more"></span>
+<img src="/2023/09/06/GTECH-Flip-flop-Cell/gtech_register_signals.jpg" class="">
 
-<h3 id="OPTIONS：选项"><a href="#OPTIONS：选项" class="headerlink" title="OPTIONS：选项"></a>OPTIONS：选项</h3><ul>
-<li>-s：显示出该设备的统计数据(statistics)，例如总接受封包数等；</li>
-</ul>
-<h3 id="OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。"><a href="#OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。" class="headerlink" title="OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。"></a>OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。</h3><ul>
-<li>link：关于设备 (device) 的相关设定，包括 MTU，MAC 地址等。</li>
-<li>addr&#x2F;address：关于额外的 IP 设定，例如多 IP 的实现等。</li>
-<li>route ：与路由有关的相关设定。</li>
-</ul>
-<h2 id="ip命令解释"><a href="#ip命令解释" class="headerlink" title="ip命令解释"></a>ip命令解释</h2><h2 id="ip-link"><a href="#ip-link" class="headerlink" title="ip link"></a>ip link</h2><p><code>ip link</code> 可以设定与设备(device)有关的相关设定，包括MTU以及该网络设备的MAC等，当然也可以启动(up)或关闭(down)某个网络设备。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip link</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">2: em1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000</span><br><span class="line">    link/ether 4c:d9:8f:27:e7:d4 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">3: em2: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc mq state DOWN qlen 1000</span><br><span class="line">    link/ether 20:04:0f:e6:45:9b brd ff:ff:ff:ff:ff:ff</span><br><span class="line">4: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/ether 72:df:05:18:76:51 brd ff:ff:ff:ff:ff:ff</span><br></pre></td></tr></table></figure>
+<p>Knowing this is important and useful when you would set constraint on a register in the synthesis phase of HDL mapping, e.g.,</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set_multicycle_path -from [get_pins A_Example_reg/clocked_on]</span><br><span class="line">set_false_path -to [get_pins B_Example_reg/next_state]</span><br></pre></td></tr></table></figure>
 
-<p>使用<code>ip link show</code>可以显示出整个设备的硬件相关信息，如上所示，包括MAC地址、MTU等。lo是主机内部自行设定的，如果加上<code>-s</code>的参数后，则这个网卡的相关统计信息就会被列出来，包括接收(RX)及传送(TX)的封包数量等，详细的内容与<code>ifconfig</code>所输出的结果相同。</p>
-<h2 id="ip-address"><a href="#ip-address" class="headerlink" title="ip address"></a>ip address</h2><p>如果说<code>ip link</code>是与OSI七层模型的第二层数据链路层有关的话，那么<code>ip address/addr</code>就是与第三层网络层有关的了。主要是在设定与 IP 有关的各项参数，包括 netmask, broadcast 等。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip addr</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: em1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000</span><br><span class="line">    link/ether 4c:d9:8f:27:e7:d4 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.16.10.88/24 brd 172.16.10.255 scope global em1</span><br><span class="line">    inet6 fe80::4ed9:8fff:fe27:e7d4/64 scope link </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">3: em2: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc mq state DOWN qlen 1000</span><br><span class="line">    link/ether 20:04:0f:e6:45:9b brd ff:ff:ff:ff:ff:ff</span><br><span class="line">4: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/ether 72:df:05:18:76:51 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.17.42.1/16 scope global docker0</span><br><span class="line">    inet6 fe80::70df:5ff:fe18:7651/64 scope link </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
-
-<h3 id="ip-address-add-del-IP参数-dev-设备名-相关参数"><a href="#ip-address-add-del-IP参数-dev-设备名-相关参数" class="headerlink" title="ip address [add|del] [IP参数] [dev 设备名] [相关参数]"></a>ip address [add|del] [IP参数] [dev 设备名] [相关参数]</h3><p><strong>[add|del]：</strong></p>
-<ul>
-<li>add|del：进行相关参数的增加(add)或删除(del)设定。</li>
-<li>show：显示详细信息。</li>
-</ul>
-<p><strong>[IP 参数]：</strong></p>
-<p>主要就是网域的设定，例如 192.168.100.100&#x2F;24 之类的设定。</p>
-<p><strong>[dev 设备名]：</strong></p>
-<p>IP 参数所要设定的设备，例如eth0, eth1等。</p>
-<p><strong>[相关参数]：</strong></p>
-<p>broadcast：设定广播位址，如果设定值是 + 表示让系统自动计算；</p>
-<p>label：该设备的别名，例如eth0:0；</p>
-<p>scope：这个设备的领域，默认global，通常是以下几个大类：</p>
-<ul>
-<li>global：允许来自所有来源的连线；</li>
-<li>site：仅支持IPv6 ，仅允许本主机的连接；</li>
-<li>link：仅允许本设备自我连接；</li>
-<li>host：仅允许本主机内部的连接；</li>
-</ul>
-<h2 id="ip-route"><a href="#ip-route" class="headerlink" title="ip route"></a>ip route</h2><p>路由的查看与设定。事实上ip route 的功能几乎与 route 这个命令一样，但是，它还可以进行额外的参数设置，例如MTU的规划等。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip route</span><br><span class="line">172.16.10.0/24 dev em1  proto kernel  scope link  src 172.16.10.88  metric 1 </span><br><span class="line">172.17.0.0/16 dev docker0  proto kernel  scope link  src 172.17.42.1 </span><br><span class="line">default via 172.16.10.1 dev em1  proto static </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>proto：此路由的路由协定，主要有<code>redirect</code>, <code>kernel</code>, <code>boot</code>, <code>static</code>, <code>ra</code>等，其中<code>kernel</code>是直接由核心判断自动设定。</li>
-<li>scope：路由的范围，主要是<code>link</code>，是与本设备有关的直接连接。</li>
-</ul>
-<h3 id="ip-route-add-del-IP或网域-via-gateway-dev-设备"><a href="#ip-route-add-del-IP或网域-via-gateway-dev-设备" class="headerlink" title="ip route [add|del] [IP或网域] [via gateway] [dev 设备]"></a>ip route [add|del] [IP或网域] [via gateway] [dev 设备]</h3><p><strong>[add|del]：</strong></p>
-<ul>
-<li>add|del：增加(add)或删除(del)路由。</li>
-<li>show：显示详细信息。</li>
-</ul>
-<p><strong>[IP或网域]：</strong>可使用192.168.50.0&#x2F;24之类的网域或者是单纯的 IP 。</p>
-<p><strong>[via gateway]：</strong>从哪个gateway出去，不一定需要。</p>
-<p><strong>[dev 设备名]：</strong>所要设定的设备，例如eth0, eth1等。</p>
-<p><em><strong>用例</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip route add 192.168.12.0/24 dev eth1 #添加路由</span><br><span class="line">% sudo ip route add 192.168.10.0/24 via 192.168.12.1 dev eth0 #添加通往外部路由</span><br><span class="line">% sudo ip route del 192.168.10.0/24 dev eth0 #删除路由</span><br></pre></td></tr></table></figure>
-
+<p>Refer to the document of ‘Design Compiler Optimization Reference Manual’ for details.</p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>VLSI</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>synopsys</tag>
+        <tag>starred</tag>
       </tags>
   </entry>
   <entry>
@@ -439,6 +371,74 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux Command: Ip</title>
+    <url>/2022/09/26/Linux-Command-ip/</url>
+    <content><![CDATA[<p><code>ip</code> 是个命令， <code>ip</code> 命令的功能很多！基本上它整合了 <code>ifconfig</code> 与 <code>route</code> 这两个命令，不过 <code>ip</code> 的功能更强大。</p>
+<h2 id="ip命令用法"><a href="#ip命令用法" class="headerlink" title="ip命令用法"></a>ip命令用法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip</span><br><span class="line">Usage: ip [ OPTIONS ] OBJECT &#123; COMMAND | help &#125;</span><br><span class="line">       ip [ -force ] -batch filename</span><br><span class="line">where  OBJECT := &#123; link | addr | addrlabel | route | rule | neigh | ntable |</span><br><span class="line">                   tunnel | maddr | mroute | mrule | monitor | xfrm | token &#125;</span><br><span class="line">       OPTIONS := &#123; -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |</span><br><span class="line">                    -h[uman-readable] | -iec |</span><br><span class="line">                    -f[amily] &#123; inet | inet6 | ipx | dnet | link &#125; |</span><br><span class="line">                    -o[neline] | -t[imestamp] | -b[atch] [filename] |</span><br><span class="line">                    -rc[vbuf] [size]&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h3 id="OPTIONS：选项"><a href="#OPTIONS：选项" class="headerlink" title="OPTIONS：选项"></a>OPTIONS：选项</h3><ul>
+<li>-s：显示出该设备的统计数据(statistics)，例如总接受封包数等；</li>
+</ul>
+<h3 id="OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。"><a href="#OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。" class="headerlink" title="OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。"></a>OBJECT：动作对象，就是是可以针对哪些网络设备对象进行动作。</h3><ul>
+<li>link：关于设备 (device) 的相关设定，包括 MTU，MAC 地址等。</li>
+<li>addr&#x2F;address：关于额外的 IP 设定，例如多 IP 的实现等。</li>
+<li>route ：与路由有关的相关设定。</li>
+</ul>
+<h2 id="ip命令解释"><a href="#ip命令解释" class="headerlink" title="ip命令解释"></a>ip命令解释</h2><h2 id="ip-link"><a href="#ip-link" class="headerlink" title="ip link"></a>ip link</h2><p><code>ip link</code> 可以设定与设备(device)有关的相关设定，包括MTU以及该网络设备的MAC等，当然也可以启动(up)或关闭(down)某个网络设备。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip link</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">2: em1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000</span><br><span class="line">    link/ether 4c:d9:8f:27:e7:d4 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">3: em2: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc mq state DOWN qlen 1000</span><br><span class="line">    link/ether 20:04:0f:e6:45:9b brd ff:ff:ff:ff:ff:ff</span><br><span class="line">4: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/ether 72:df:05:18:76:51 brd ff:ff:ff:ff:ff:ff</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>ip link show</code>可以显示出整个设备的硬件相关信息，如上所示，包括MAC地址、MTU等。lo是主机内部自行设定的，如果加上<code>-s</code>的参数后，则这个网卡的相关统计信息就会被列出来，包括接收(RX)及传送(TX)的封包数量等，详细的内容与<code>ifconfig</code>所输出的结果相同。</p>
+<h2 id="ip-address"><a href="#ip-address" class="headerlink" title="ip address"></a>ip address</h2><p>如果说<code>ip link</code>是与OSI七层模型的第二层数据链路层有关的话，那么<code>ip address/addr</code>就是与第三层网络层有关的了。主要是在设定与 IP 有关的各项参数，包括 netmask, broadcast 等。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip addr</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: em1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000</span><br><span class="line">    link/ether 4c:d9:8f:27:e7:d4 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.16.10.88/24 brd 172.16.10.255 scope global em1</span><br><span class="line">    inet6 fe80::4ed9:8fff:fe27:e7d4/64 scope link </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">3: em2: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc mq state DOWN qlen 1000</span><br><span class="line">    link/ether 20:04:0f:e6:45:9b brd ff:ff:ff:ff:ff:ff</span><br><span class="line">4: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN </span><br><span class="line">    link/ether 72:df:05:18:76:51 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.17.42.1/16 scope global docker0</span><br><span class="line">    inet6 fe80::70df:5ff:fe18:7651/64 scope link </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
+
+<h3 id="ip-address-add-del-IP参数-dev-设备名-相关参数"><a href="#ip-address-add-del-IP参数-dev-设备名-相关参数" class="headerlink" title="ip address [add|del] [IP参数] [dev 设备名] [相关参数]"></a>ip address [add|del] [IP参数] [dev 设备名] [相关参数]</h3><p><strong>[add|del]：</strong></p>
+<ul>
+<li>add|del：进行相关参数的增加(add)或删除(del)设定。</li>
+<li>show：显示详细信息。</li>
+</ul>
+<p><strong>[IP 参数]：</strong></p>
+<p>主要就是网域的设定，例如 192.168.100.100&#x2F;24 之类的设定。</p>
+<p><strong>[dev 设备名]：</strong></p>
+<p>IP 参数所要设定的设备，例如eth0, eth1等。</p>
+<p><strong>[相关参数]：</strong></p>
+<p>broadcast：设定广播位址，如果设定值是 + 表示让系统自动计算；</p>
+<p>label：该设备的别名，例如eth0:0；</p>
+<p>scope：这个设备的领域，默认global，通常是以下几个大类：</p>
+<ul>
+<li>global：允许来自所有来源的连线；</li>
+<li>site：仅支持IPv6 ，仅允许本主机的连接；</li>
+<li>link：仅允许本设备自我连接；</li>
+<li>host：仅允许本主机内部的连接；</li>
+</ul>
+<h2 id="ip-route"><a href="#ip-route" class="headerlink" title="ip route"></a>ip route</h2><p>路由的查看与设定。事实上ip route 的功能几乎与 route 这个命令一样，但是，它还可以进行额外的参数设置，例如MTU的规划等。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip route</span><br><span class="line">172.16.10.0/24 dev em1  proto kernel  scope link  src 172.16.10.88  metric 1 </span><br><span class="line">172.17.0.0/16 dev docker0  proto kernel  scope link  src 172.17.42.1 </span><br><span class="line">default via 172.16.10.1 dev em1  proto static </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>proto：此路由的路由协定，主要有<code>redirect</code>, <code>kernel</code>, <code>boot</code>, <code>static</code>, <code>ra</code>等，其中<code>kernel</code>是直接由核心判断自动设定。</li>
+<li>scope：路由的范围，主要是<code>link</code>，是与本设备有关的直接连接。</li>
+</ul>
+<h3 id="ip-route-add-del-IP或网域-via-gateway-dev-设备"><a href="#ip-route-add-del-IP或网域-via-gateway-dev-设备" class="headerlink" title="ip route [add|del] [IP或网域] [via gateway] [dev 设备]"></a>ip route [add|del] [IP或网域] [via gateway] [dev 设备]</h3><p><strong>[add|del]：</strong></p>
+<ul>
+<li>add|del：增加(add)或删除(del)路由。</li>
+<li>show：显示详细信息。</li>
+</ul>
+<p><strong>[IP或网域]：</strong>可使用192.168.50.0&#x2F;24之类的网域或者是单纯的 IP 。</p>
+<p><strong>[via gateway]：</strong>从哪个gateway出去，不一定需要。</p>
+<p><strong>[dev 设备名]：</strong>所要设定的设备，例如eth0, eth1等。</p>
+<p><em><strong>用例</strong></em></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% sudo ip route add 192.168.12.0/24 dev eth1 #添加路由</span><br><span class="line">% sudo ip route add 192.168.10.0/24 via 192.168.12.1 dev eth0 #添加通往外部路由</span><br><span class="line">% sudo ip route del 192.168.10.0/24 dev eth0 #删除路由</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>NIS Commands</title>
     <url>/2022/07/13/NIS-Commands/</url>
     <content><![CDATA[<p><code>sudo /usr/lib64/yp/ypinit -m</code> # server</p>
@@ -449,24 +449,6 @@
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>No. Is Not the Abbreviation of Number</title>
-    <url>/2022/05/21/No-is-not-the-abbreviation-of-number/</url>
-    <content><![CDATA[<blockquote>
-<p><em>Quotation from <a href="http://www.quora.com/">www.quora.com</a></em><br>The abbreviation “no.” for the word “number” comes from the <strong>numero</strong> symbol, № (also written as “No.” or “no.”), which is in turn derived from Latin <strong>numero</strong>. As you can see, it has an “o” in it.</p>
-</blockquote>
-<p>Then do you know by the way, what the abbreviations of e.g., i.e., etc., are derived from?</p>
-<p><strong>i.e.</strong> is abbreviation of Latin expression of <em><strong>id est</strong></em>, which means “that is” in Latin. It introduces a rewording or a clarification of a statement.</p>
-<p><strong>e.g.</strong> is abbreviation of <em><strong>exempli gratia</strong></em> in Latin, which means “for example” or “for instance”. It introduces one or more examples that illustrate something stated.</p>
-<p><strong>etc.</strong> is abbreviation of <em><strong>et cetera</strong></em> in Latin phrase, which introduces a number of unspecified additional items (persons of things).</p>
-]]></content>
-      <categories>
-        <category>Knowledge</category>
-      </categories>
-      <tags>
-        <tag>english</tag>
       </tags>
   </entry>
   <entry>
@@ -497,6 +479,24 @@
       <tags>
         <tag>synopsys</tag>
         <tag>ocv</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>No. Is Not the Abbreviation of Number</title>
+    <url>/2022/05/21/No-is-not-the-abbreviation-of-number/</url>
+    <content><![CDATA[<blockquote>
+<p><em>Quotation from <a href="http://www.quora.com/">www.quora.com</a></em><br>The abbreviation “no.” for the word “number” comes from the <strong>numero</strong> symbol, № (also written as “No.” or “no.”), which is in turn derived from Latin <strong>numero</strong>. As you can see, it has an “o” in it.</p>
+</blockquote>
+<p>Then do you know by the way, what the abbreviations of e.g., i.e., etc., are derived from?</p>
+<p><strong>i.e.</strong> is abbreviation of Latin expression of <em><strong>id est</strong></em>, which means “that is” in Latin. It introduces a rewording or a clarification of a statement.</p>
+<p><strong>e.g.</strong> is abbreviation of <em><strong>exempli gratia</strong></em> in Latin, which means “for example” or “for instance”. It introduces one or more examples that illustrate something stated.</p>
+<p><strong>etc.</strong> is abbreviation of <em><strong>et cetera</strong></em> in Latin phrase, which introduces a number of unspecified additional items (persons of things).</p>
+]]></content>
+      <categories>
+        <category>Knowledge</category>
+      </categories>
+      <tags>
+        <tag>english</tag>
       </tags>
   </entry>
   <entry>
@@ -591,6 +591,20 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
+    <title>SPI Mode: CPOL and CPHA</title>
+    <url>/2023/07/06/SPI-mode-CPOL-and-CPHA/</url>
+    <content><![CDATA[<img src="/2023/07/06/SPI-mode-CPOL-and-CPHA/400px-SPI_timing_diagram2.png" class="">
+
+<p><a href="https://en.wikipedia.org/wiki/Serial_Peripheral_Interface">https://en.wikipedia.org/wiki/Serial_Peripheral_Interface</a></p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>spi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Schedule Could Be Beautiful</title>
     <url>/2023/09/15/Schedule-could-be-beautiful/</url>
     <content><![CDATA[<img src="/2023/09/15/Schedule-could-be-beautiful/image-20230915222544736.png" class="">
@@ -603,17 +617,14 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
-    <title>SPI Mode: CPOL and CPHA</title>
-    <url>/2023/07/06/SPI-mode-CPOL-and-CPHA/</url>
-    <content><![CDATA[<img src="/2023/07/06/SPI-mode-CPOL-and-CPHA/400px-SPI_timing_diagram2.png" class="">
-
-<p><a href="https://en.wikipedia.org/wiki/Serial_Peripheral_Interface">https://en.wikipedia.org/wiki/Serial_Peripheral_Interface</a></p>
+    <title>Snap2HTML</title>
+    <url>/2022/11/15/Snap2HTML/</url>
+    <content><![CDATA[<p>Recently I happened to get a fantastic MS-Win utility <strong>Snap2HTML</strong>, which takes a snapshot of a specified folder in your disk drive, and generates a HTML file that structurally shows all files&#x2F;directories under this folder.</p>
+<p><a href="https://www.rlvision.com/downloads.php?dl=snap_2_html">Download Snap2HTML</a></p>
+<p>There are a few more useful tools developed by the author here <a href="https://www.rlvision.com/">https://www.rlvision.com/</a>.</p>
 ]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
       <tags>
-        <tag>spi</tag>
+        <tag>windows</tag>
       </tags>
   </entry>
   <entry>
@@ -629,17 +640,6 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       <tags>
         <tag>license</tag>
         <tag>starred</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Snap2HTML</title>
-    <url>/2022/11/15/Snap2HTML/</url>
-    <content><![CDATA[<p>Recently I happened to get a fantastic MS-Win utility <strong>Snap2HTML</strong>, which takes a snapshot of a specified folder in your disk drive, and generates a HTML file that structurally shows all files&#x2F;directories under this folder.</p>
-<p><a href="https://www.rlvision.com/downloads.php?dl=snap_2_html">Download Snap2HTML</a></p>
-<p>There are a few more useful tools developed by the author here <a href="https://www.rlvision.com/">https://www.rlvision.com/</a>.</p>
-]]></content>
-      <tags>
-        <tag>windows</tag>
       </tags>
   </entry>
   <entry>
@@ -764,29 +764,24 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
-    <title>Synopsys Command: Report_timing</title>
-    <url>/2023/08/11/Synopsys-Command-report-timing/</url>
-    <content><![CDATA[<p>There are some useful options of command report_timing, which I haven’t been aware of before.</p>
-<p><strong>-start_end_pair</strong></p>
-<p>This option should be quite useful if you want to report violations from all startpoints to endpoints. By default report_timing only report the most critical startpoint to a certain endpoint even if -nworst is specified. With the option of -start_end_pair all startpoints will be shown up.</p>
-<p><strong>-path_type <em>summary</em></strong></p>
-<p>Reports timing summary only with startpoints and endpoints.</p>
-<p><strong>-start_end_type <em>reg_to_reg</em> | <em>reg_to_out</em> | <em>in_to_reg</em> | <em>in_to_out</em></strong></p>
-<p>Restricts the report to one of four classes.</p>
-<span id="more"></span>
+    <title>Tips: New Installation of RHEL7.9</title>
+    <url>/2023/04/29/Tips-New-Installation-of-RHEL7-9/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Tmux Clipboard To/from System Clipboard</title>
+    <url>/2024/02/21/Tmux-clipboard-to-from-system-clipboard/</url>
+    <content><![CDATA[<p><strong>在~&#x2F;.tmux.conf中开启鼠标支持:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-option -g mouse on</span><br></pre></td></tr></table></figure>
 
-<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811145744487.png" class="">
-
-<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150538668.png" class="">
-
-<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150217212.png" class="">
+<p><strong>复制:</strong> 按住<code>shift</code>键,然后拖动鼠标复制要选择的内容，然后按下<code>shift+ctrl+c</code>,复制到系统剪贴板<br><strong>粘贴:</strong> 按下<code>shift+ctrl+v</code> 粘贴系统剪贴板中的内容到Tmux中</p>
+<p><strong>需要注意的是</strong><br><code>shift+ctrl+v</code>是在终端设置的粘贴快捷键<br><code>shift+ctrl+c</code>是在终端设置的复制快捷键</p>
 ]]></content>
       <categories>
-        <category>VLSI</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>synopsys</tag>
-        <tag>timing</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -818,24 +813,29 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
-    <title>Tips: New Installation of RHEL7.9</title>
-    <url>/2023/04/29/Tips-New-Installation-of-RHEL7-9/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Tmux Clipboard To/from System Clipboard</title>
-    <url>/2024/02/21/Tmux-clipboard-to-from-system-clipboard/</url>
-    <content><![CDATA[<p><strong>在~&#x2F;.tmux.conf中开启鼠标支持:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-option -g mouse on</span><br></pre></td></tr></table></figure>
+    <title>Synopsys Command: Report_timing</title>
+    <url>/2023/08/11/Synopsys-Command-report-timing/</url>
+    <content><![CDATA[<p>There are some useful options of command report_timing, which I haven’t been aware of before.</p>
+<p><strong>-start_end_pair</strong></p>
+<p>This option should be quite useful if you want to report violations from all startpoints to endpoints. By default report_timing only report the most critical startpoint to a certain endpoint even if -nworst is specified. With the option of -start_end_pair all startpoints will be shown up.</p>
+<p><strong>-path_type <em>summary</em></strong></p>
+<p>Reports timing summary only with startpoints and endpoints.</p>
+<p><strong>-start_end_type <em>reg_to_reg</em> | <em>reg_to_out</em> | <em>in_to_reg</em> | <em>in_to_out</em></strong></p>
+<p>Restricts the report to one of four classes.</p>
+<span id="more"></span>
 
-<p><strong>复制:</strong> 按住<code>shift</code>键,然后拖动鼠标复制要选择的内容，然后按下<code>shift+ctrl+c</code>,复制到系统剪贴板<br><strong>粘贴:</strong> 按下<code>shift+ctrl+v</code> 粘贴系统剪贴板中的内容到Tmux中</p>
-<p><strong>需要注意的是</strong><br><code>shift+ctrl+v</code>是在终端设置的粘贴快捷键<br><code>shift+ctrl+c</code>是在终端设置的复制快捷键</p>
+<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811145744487.png" class="">
+
+<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150538668.png" class="">
+
+<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150217212.png" class="">
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>VLSI</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>synopsys</tag>
+        <tag>timing</tag>
       </tags>
   </entry>
   <entry>
@@ -1122,21 +1122,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Cadence Supported Platforms</title>
-    <url>/2022/04/08/cadence-platform-support-plan-2021/</url>
-    <content><![CDATA[<img src="/2022/04/08/cadence-platform-support-plan-2021/cadence-platform-support-plan.jpg" class="">
-
-<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/08/cadence-platform-support-plan-2021/supported-platforms-matrix.pdf" title="Download full matrix of Cadence supported platforms">Download full matrix of Cadence supported platforms</a></p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>cadence</tag>
-        <tag>eda</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Calibre Supported Platforms</title>
     <url>/2022/04/30/calibre-platform-support-overview-and-roadmap/</url>
     <content><![CDATA[<h3 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h3><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
@@ -1269,6 +1254,21 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Cadence Supported Platforms</title>
+    <url>/2022/04/08/cadence-platform-support-plan-2021/</url>
+    <content><![CDATA[<img src="/2022/04/08/cadence-platform-support-plan-2021/cadence-platform-support-plan.jpg" class="">
+
+<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/08/cadence-platform-support-plan-2021/supported-platforms-matrix.pdf" title="Download full matrix of Cadence supported platforms">Download full matrix of Cadence supported platforms</a></p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>cadence</tag>
+        <tag>eda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Chipgun New Logo 2022-06-06</title>
     <url>/2022/06/07/chipgun-new-logo-2022-06-06/</url>
     <content><![CDATA[<p><img src=/2022/06/07/chipgun-new-logo-2022-06-06/ChipgunDark.png width=200> <br/><br><img src=/2022/06/07/chipgun-new-logo-2022-06-06/颀观Dark.png width=200> <br/></p>
@@ -1276,107 +1276,6 @@ service messagebus restart;
 ]]></content>
       <tags>
         <tag>chipgun</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>判决反馈均衡器（中）</title>
-    <url>/2022/04/09/decision-feedback-equalizer-2/</url>
-    <content><![CDATA[<a href="/2022/04/09/decision-feedback-equalizer-1/" title="判决反馈均衡器（上）">判决反馈均衡器（上）</a>&raquo;<br/>
-
-<a href="/2022/04/09/decision-feedback-equalizer-3/" title="判决反馈均衡器（下）">判决反馈均衡器（下）</a>&raquo;
-
-
-
-<p><strong>Part4 瞬态波形和眼图</strong></p>
-<p>判决反馈均衡器DFE(上）章节中提到的不同结构，其瞬态波形会存在差异。其采样前的眼图直观反映了采样器的幅度Margin和CDR采样时刻的裕度。</p>
-<span id="more"></span>
-
-<p>为了对比，这里使用VerilogA理想模型，激励条件尽可能保持了一致。模型数据率为10GT&#x2F;s，输入信号为800mVppd。信道插入损耗约为10dB@5Ghz，无CTLE，仅DFE补偿，2个Tap。通过信道后，采样前数据眼图如图1所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE1.jpg" class="">
-
-<p>全速率直接反馈结构的瞬态相关波形和稳态眼图分别如图2和3。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE2.jpg" class="">
-
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE3.jpg" class="">
-
-<p>收敛过程如动图4所示。可以比较明显观察到dfe补偿作用会导致采样时钟发生前移。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE4.jpg" class="">
-
-<p>半速率直接反馈结构的瞬态相关波形和稳态眼图分别如图5和6。图5可以看到加法器输入和加法器奇偶输出波形，通过interleave方式交替采样。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE5.jpg" class="">
-
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE6.jpg" class="">
-
-<p>图7是奇偶路收敛过程的眼图。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE7.jpg" class="">
-
-<p>图8和图7一样，也是改进型半速率直接反馈结构的眼图，不知道大家能否看出差异?</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE8.jpg" class="">
-
-<p>对于预判式全（半）速率结构其瞬态波形和眼图和上述两种直接反馈结构类似，只是tap1分量没有在summer节点上体现，需要根据判断出的数据选择对数据进行tap1量的加或者减。</p>
-<p><strong>Part5 DFE对边沿的影响</strong></p>
-<p>传统2x过采样CDR，通过edge定位锚定data采样位置，edge位置的抖动和分布实际上会影响到data采样的裕量，特别是在比较大插入损耗的情况下，眼睛裕量本身就比较小。</p>
-<p>前边一系列动图可以明显看到dfe对采样时钟的相位影响，随着各tap补偿量的逐渐增加，采样时钟相位在cdr的调节下，相位逐步前移。cdr相位锁定位置的变化，反应了dfe对边沿的影响。</p>
-<p>图9简单说明了DFE Tap1量的加减对边沿的影响，实际边沿数据变化和数据pattern，Tap阶数，响应时间密切相关。对于1-0的数据转换，pattern类型为110，可以看到Tap1量导致边沿提前；而pattern类型为010，因为存在tap1量符号反向，对边沿的影响和Tap量响应时间相关。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE9.jpg" class="">
-
-<p>实际上，对于多Tap的DFE补偿，边沿包含了历史多位数据的影响。综合影响评估需要结合具体电路实现。</p>
-<p>  其实，最明显的边沿影响，是预判式结构。因为Tap1量加减处理是在summer之后。如果不对edge采样进行处理，锁定后的数据采样位置就会偏后。如图10所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE10.jpg" class="">
-
-<p>那么该如何解决这个问题呢？这里就留给大家做个思考吧。</p>
-<p>图11是对edge补偿处理后的结果，可以看到等效的眼图收敛结果更优。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE11.jpg" class="">
-
-<p>另外对2x过采样CDR时钟相位的影响。也需要考虑data和edge的先后顺序，和具体电路实现结构密切相关，具体哪种顺序更优，需要仔细评估。</p>
-<p>这里总结下几种结构理想情况DFE收敛值情况，仅供参考。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE12.jpg" class="">
-
-<p>最后送上，用Matlab工具SerDes Toolbox计算的结果合成的封面图的近似收敛过程。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE13.jpg" class="">
-
-<p><strong>Part6 自适应算法简介</strong></p>
-<p>目前，自适应滤波器理论已经非常成熟，在通信和消费领域也有着广泛的应用。例如信道均衡，波束成形，噪声消除等。如图14所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE14.jpg" class="">
-
-<p>自适应滤波器如图15，简单来讲，就是通过调整滤波器，使滤波器输出信号和目标信号接近或者相等。主要是(非)线性离散时间系统对离散信号的处理。通常使用<strong>性能函数</strong>(Performance Function)，评估不同滤波器系数的性能。比如用误差信号的均方误差(Mean-Squared Error,MSE)。最小均方误差的滤波器，又称之为<strong>维纳滤波器</strong>(Wiener Filter)。各种自适应算法就是要得到滤波器的维纳解(Wiener Solution)。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE15.jpg" class="">
-
-<p>在通信领域，自适应滤波器主要用作信道均衡(Channel Equalization)，如图16所示。图中信道H(z)是信道传递函数。噪声v(n)可以看做是串扰及噪声等非理想因素的组合。图中均衡器W(z)就是要消除码间干扰，降低串扰和噪声影响的自适应滤波器，均衡器输出y(n)需要满足量化输出的数据在规定的误码率范围内。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE16.jpg" class="">
-
-<p>图17是维纳滤波器的数学推导<a href="%E7%B2%97%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%BE%88%E5%A4%8D%E6%9D%82%EF%BC%8C%E5%A4%A7%E5%AE%B6%E7%BB%86%E7%9C%8B%E8%BF%98%E6%98%AF%E8%83%BD%E7%9C%8B%E7%9A%84%E6%98%8E%E7%99%BD%E7%9A%84">1</a>，滤波器系数满足<strong>维纳-霍普方程</strong>，维纳解形式包含输入数据<strong>自相关矩阵R</strong>，输入数据和目标数据的<strong>互相关向量p</strong>的关系。可以看到维纳解是可以一步到位，但会涉及比较复杂的矩阵运算量。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE17.jpg" class="">
-
-<p>另一种方法通过迭代搜索算法，从任意一个Tap权重向量<strong>w</strong>i，逐步迭代收敛到最优权重向量<strong>w</strong>o。这里就要提到基于梯度的<strong>最速下降法</strong>(<em>method of steepest descent</em>)。图18[2]给出个动画，还是比较形象的说明了梯度下降法，整个性能误差面一定会存在最低点(可能包含多个局部最低点)，这个点也就是维纳解的位置。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE18.jpg" class="">
-
-<p>基于梯度的最速下降示意图及推导过程如图19所示。可以看到基于梯度的最速下降法能够以最快的方式按照负梯度方向，朝着维纳解位置运动。同时，迭代步长<strong>增益</strong><em>μ</em>和自相关矩阵<strong>R</strong>的特征根<strong>λi</strong>需要满足一定的关系从而保证收敛过程的稳定性。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE19.jpg" class="">
-
-<p>图19中基于梯度的最速下降法还是需要知道自相关矩阵<strong>R</strong>和互相关矩阵<strong>p</strong>。计算过程还是比较复杂。我们知道前述梯度是<em>误差平方期望的梯度</em>，如果我们用瞬时误差梯度代替期望误差梯度，则可以简化迭代过程为LMS算法实现，如图20所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE20.jpg" class="">
-
-<p>图20的LMS迭代过程使用了瞬时误差e(n)和历史数据矩阵**x(n)**。还是会涉及到浮点运算（乘法和加法）。运算硬件消耗也是比较大。于是就有了图21所示的简化版本。主要是误差或者历史数据的符号化。可以不同程度简化计算复杂度。不过图中也可以简化计算的代价是收敛时间，还有可能残余更大的均方误差MSE。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE21.jpg" class="">
-
-<p>判决反馈均衡器(Decision Feedback Equalizer,DFE)，正如其名字所示，需要通过历史判决值，构成反馈FIR滤波器，对输入信号进行补偿。如图22所示。需要注意的是，图中Tap反馈到加法器为负，也就是实现减法。同时误差信号的定义和前述基本滤波器定义也是相反的。负负为正。因此权重迭代表达式符号也和前述结果相同。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE22.jpg" class="">
-
-<p>图22中当采样器量化精度为1bits时，就实现图21中sign-sign LMS，实际电路实现时，通过分时复用和模版数据选择，可以进一步降低硬件实现成本。</p>
-<p>当滤波器收敛后，tap系数趋于稳定。滤波器输出值和输入数据及量化误差的传递函数如图23所示。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE23.jpg" class="">
-
-<p>图24是简单的一阶DFE传递函数及零极点分布，可以看到信号传递函数是高通(高阶DFE频响特性不一定具有全频段的高通特性)，衰减低频，提升高频。从而补偿输入数据的拖尾。误差传递函数整体增益是衰减的。</p>
-<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE24.jpg" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>dsp</tag>
-        <tag>algorithm</tag>
-        <tag>serdes</tag>
       </tags>
   </entry>
   <entry>
@@ -1508,23 +1407,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Definition of TSMC Metal Layer Map</title>
-    <url>/2023/03/09/definition-of-TSMC-metal-layer-map/</url>
-    <content><![CDATA[<h1 id="1P10M-5X2Y2Z"><a href="#1P10M-5X2Y2Z" class="headerlink" title="1P10M_5X2Y2Z"></a>1P10M_5X2Y2Z</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221716667.jpg" class="">
-
-<h1 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221837347.jpg" class="">
-
-<h1 id="Via"><a href="#Via" class="headerlink" title="Via"></a>Via</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221910056.jpg" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>apr</tag>
-        <tag>tsmc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>判决反馈均衡器（下）</title>
     <url>/2022/04/09/decision-feedback-equalizer-3/</url>
     <content><![CDATA[<a href="/2022/04/09/decision-feedback-equalizer-1/" title="判决反馈均衡器（上）">判决反馈均衡器（上）</a>&raquo; <br>
@@ -1596,6 +1478,124 @@ service messagebus restart;
 <p>关于DFE的这个系列内容就这么多了，希望大家能够有所收获。</p>
 <p><strong>缩略语</strong>：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">NRZ     Non Return to Zero</span><br><span class="line">PAM4    Pluse Amplitude Modulation 4-Level</span><br><span class="line">TI-ADC  Time Interleaved Analog to Digital Converter</span><br><span class="line">CTLE    Continuous Time Linear Equalizer</span><br><span class="line">DFE     Decision Feedback Equalizer</span><br><span class="line">S/M/LR  Short/Medium/Long Reach</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>dsp</tag>
+        <tag>algorithm</tag>
+        <tag>serdes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Definition of TSMC Metal Layer Map</title>
+    <url>/2023/03/09/definition-of-TSMC-metal-layer-map/</url>
+    <content><![CDATA[<h1 id="1P10M-5X2Y2Z"><a href="#1P10M-5X2Y2Z" class="headerlink" title="1P10M_5X2Y2Z"></a>1P10M_5X2Y2Z</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221716667.jpg" class="">
+
+<h1 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221837347.jpg" class="">
+
+<h1 id="Via"><a href="#Via" class="headerlink" title="Via"></a>Via</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221910056.jpg" class="">
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>apr</tag>
+        <tag>tsmc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>判决反馈均衡器（中）</title>
+    <url>/2022/04/09/decision-feedback-equalizer-2/</url>
+    <content><![CDATA[<a href="/2022/04/09/decision-feedback-equalizer-1/" title="判决反馈均衡器（上）">判决反馈均衡器（上）</a>&raquo;<br/>
+
+<a href="/2022/04/09/decision-feedback-equalizer-3/" title="判决反馈均衡器（下）">判决反馈均衡器（下）</a>&raquo;
+
+
+
+<p><strong>Part4 瞬态波形和眼图</strong></p>
+<p>判决反馈均衡器DFE(上）章节中提到的不同结构，其瞬态波形会存在差异。其采样前的眼图直观反映了采样器的幅度Margin和CDR采样时刻的裕度。</p>
+<span id="more"></span>
+
+<p>为了对比，这里使用VerilogA理想模型，激励条件尽可能保持了一致。模型数据率为10GT&#x2F;s，输入信号为800mVppd。信道插入损耗约为10dB@5Ghz，无CTLE，仅DFE补偿，2个Tap。通过信道后，采样前数据眼图如图1所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE1.jpg" class="">
+
+<p>全速率直接反馈结构的瞬态相关波形和稳态眼图分别如图2和3。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE2.jpg" class="">
+
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE3.jpg" class="">
+
+<p>收敛过程如动图4所示。可以比较明显观察到dfe补偿作用会导致采样时钟发生前移。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE4.jpg" class="">
+
+<p>半速率直接反馈结构的瞬态相关波形和稳态眼图分别如图5和6。图5可以看到加法器输入和加法器奇偶输出波形，通过interleave方式交替采样。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE5.jpg" class="">
+
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE6.jpg" class="">
+
+<p>图7是奇偶路收敛过程的眼图。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE7.jpg" class="">
+
+<p>图8和图7一样，也是改进型半速率直接反馈结构的眼图，不知道大家能否看出差异?</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE8.jpg" class="">
+
+<p>对于预判式全（半）速率结构其瞬态波形和眼图和上述两种直接反馈结构类似，只是tap1分量没有在summer节点上体现，需要根据判断出的数据选择对数据进行tap1量的加或者减。</p>
+<p><strong>Part5 DFE对边沿的影响</strong></p>
+<p>传统2x过采样CDR，通过edge定位锚定data采样位置，edge位置的抖动和分布实际上会影响到data采样的裕量，特别是在比较大插入损耗的情况下，眼睛裕量本身就比较小。</p>
+<p>前边一系列动图可以明显看到dfe对采样时钟的相位影响，随着各tap补偿量的逐渐增加，采样时钟相位在cdr的调节下，相位逐步前移。cdr相位锁定位置的变化，反应了dfe对边沿的影响。</p>
+<p>图9简单说明了DFE Tap1量的加减对边沿的影响，实际边沿数据变化和数据pattern，Tap阶数，响应时间密切相关。对于1-0的数据转换，pattern类型为110，可以看到Tap1量导致边沿提前；而pattern类型为010，因为存在tap1量符号反向，对边沿的影响和Tap量响应时间相关。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE9.jpg" class="">
+
+<p>实际上，对于多Tap的DFE补偿，边沿包含了历史多位数据的影响。综合影响评估需要结合具体电路实现。</p>
+<p>  其实，最明显的边沿影响，是预判式结构。因为Tap1量加减处理是在summer之后。如果不对edge采样进行处理，锁定后的数据采样位置就会偏后。如图10所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE10.jpg" class="">
+
+<p>那么该如何解决这个问题呢？这里就留给大家做个思考吧。</p>
+<p>图11是对edge补偿处理后的结果，可以看到等效的眼图收敛结果更优。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE11.jpg" class="">
+
+<p>另外对2x过采样CDR时钟相位的影响。也需要考虑data和edge的先后顺序，和具体电路实现结构密切相关，具体哪种顺序更优，需要仔细评估。</p>
+<p>这里总结下几种结构理想情况DFE收敛值情况，仅供参考。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE12.jpg" class="">
+
+<p>最后送上，用Matlab工具SerDes Toolbox计算的结果合成的封面图的近似收敛过程。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE13.jpg" class="">
+
+<p><strong>Part6 自适应算法简介</strong></p>
+<p>目前，自适应滤波器理论已经非常成熟，在通信和消费领域也有着广泛的应用。例如信道均衡，波束成形，噪声消除等。如图14所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE14.jpg" class="">
+
+<p>自适应滤波器如图15，简单来讲，就是通过调整滤波器，使滤波器输出信号和目标信号接近或者相等。主要是(非)线性离散时间系统对离散信号的处理。通常使用<strong>性能函数</strong>(Performance Function)，评估不同滤波器系数的性能。比如用误差信号的均方误差(Mean-Squared Error,MSE)。最小均方误差的滤波器，又称之为<strong>维纳滤波器</strong>(Wiener Filter)。各种自适应算法就是要得到滤波器的维纳解(Wiener Solution)。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE15.jpg" class="">
+
+<p>在通信领域，自适应滤波器主要用作信道均衡(Channel Equalization)，如图16所示。图中信道H(z)是信道传递函数。噪声v(n)可以看做是串扰及噪声等非理想因素的组合。图中均衡器W(z)就是要消除码间干扰，降低串扰和噪声影响的自适应滤波器，均衡器输出y(n)需要满足量化输出的数据在规定的误码率范围内。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE16.jpg" class="">
+
+<p>图17是维纳滤波器的数学推导<a href="%E7%B2%97%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%BE%88%E5%A4%8D%E6%9D%82%EF%BC%8C%E5%A4%A7%E5%AE%B6%E7%BB%86%E7%9C%8B%E8%BF%98%E6%98%AF%E8%83%BD%E7%9C%8B%E7%9A%84%E6%98%8E%E7%99%BD%E7%9A%84">1</a>，滤波器系数满足<strong>维纳-霍普方程</strong>，维纳解形式包含输入数据<strong>自相关矩阵R</strong>，输入数据和目标数据的<strong>互相关向量p</strong>的关系。可以看到维纳解是可以一步到位，但会涉及比较复杂的矩阵运算量。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE17.jpg" class="">
+
+<p>另一种方法通过迭代搜索算法，从任意一个Tap权重向量<strong>w</strong>i，逐步迭代收敛到最优权重向量<strong>w</strong>o。这里就要提到基于梯度的<strong>最速下降法</strong>(<em>method of steepest descent</em>)。图18[2]给出个动画，还是比较形象的说明了梯度下降法，整个性能误差面一定会存在最低点(可能包含多个局部最低点)，这个点也就是维纳解的位置。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE18.jpg" class="">
+
+<p>基于梯度的最速下降示意图及推导过程如图19所示。可以看到基于梯度的最速下降法能够以最快的方式按照负梯度方向，朝着维纳解位置运动。同时，迭代步长<strong>增益</strong><em>μ</em>和自相关矩阵<strong>R</strong>的特征根<strong>λi</strong>需要满足一定的关系从而保证收敛过程的稳定性。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE19.jpg" class="">
+
+<p>图19中基于梯度的最速下降法还是需要知道自相关矩阵<strong>R</strong>和互相关矩阵<strong>p</strong>。计算过程还是比较复杂。我们知道前述梯度是<em>误差平方期望的梯度</em>，如果我们用瞬时误差梯度代替期望误差梯度，则可以简化迭代过程为LMS算法实现，如图20所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE20.jpg" class="">
+
+<p>图20的LMS迭代过程使用了瞬时误差e(n)和历史数据矩阵**x(n)**。还是会涉及到浮点运算（乘法和加法）。运算硬件消耗也是比较大。于是就有了图21所示的简化版本。主要是误差或者历史数据的符号化。可以不同程度简化计算复杂度。不过图中也可以简化计算的代价是收敛时间，还有可能残余更大的均方误差MSE。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE21.jpg" class="">
+
+<p>判决反馈均衡器(Decision Feedback Equalizer,DFE)，正如其名字所示，需要通过历史判决值，构成反馈FIR滤波器，对输入信号进行补偿。如图22所示。需要注意的是，图中Tap反馈到加法器为负，也就是实现减法。同时误差信号的定义和前述基本滤波器定义也是相反的。负负为正。因此权重迭代表达式符号也和前述结果相同。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE22.jpg" class="">
+
+<p>图22中当采样器量化精度为1bits时，就实现图21中sign-sign LMS，实际电路实现时，通过分时复用和模版数据选择，可以进一步降低硬件实现成本。</p>
+<p>当滤波器收敛后，tap系数趋于稳定。滤波器输出值和输入数据及量化误差的传递函数如图23所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE23.jpg" class="">
+
+<p>图24是简单的一阶DFE传递函数及零极点分布，可以看到信号传递函数是高通(高阶DFE频响特性不一定具有全频段的高通特性)，衰减低频，提升高频。从而补偿输入数据的拖尾。误差传递函数整体增益是衰减的。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-2/%E5%9B%BE24.jpg" class="">
+]]></content>
       <categories>
         <category>VLSI</category>
       </categories>
@@ -1847,23 +1847,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Expand Tab in Emacs-Verilog Auto Code</title>
-    <url>/2022/04/25/expand-tab-in-emacs-verilog-auto-code/</url>
-    <content><![CDATA[<p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
-<p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below. Yeah, it’s done and enjoy! </p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">(setq-default tab-width 8)</span><br><span class="line">(setq-default indent-tabs-mode nil)</span><br></pre></td></tr></table></figure>
-
-<p>Check out everything about Emacs-verilog at <a href="https://veripool.org/verilog-mode/">https://veripool.org/verilog-mode/</a>.</p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>verilog</tag>
-        <tag>emacs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Failed to Install Redhat 7: Dracut-Initqueue Timeout</title>
     <url>/2023/03/15/failed-to-install-redhat-7-dracut-initqueue-timeout/</url>
     <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dracut:/# cd /dev</span><br><span class="line">dracut:/# ls</span><br></pre></td></tr></table></figure>
@@ -1893,6 +1876,23 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Expand Tab in Emacs-Verilog Auto Code</title>
+    <url>/2022/04/25/expand-tab-in-emacs-verilog-auto-code/</url>
+    <content><![CDATA[<p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
+<p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below. Yeah, it’s done and enjoy! </p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">(setq-default tab-width 8)</span><br><span class="line">(setq-default indent-tabs-mode nil)</span><br></pre></td></tr></table></figure>
+
+<p>Check out everything about Emacs-verilog at <a href="https://veripool.org/verilog-mode/">https://veripool.org/verilog-mode/</a>.</p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>verilog</tag>
+        <tag>emacs</tag>
       </tags>
   </entry>
   <entry>
@@ -1975,6 +1975,22 @@ service messagebus restart;
         <tag>windows</tag>
         <tag>linux</tag>
         <tag>ftp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Get Strings Within Commandline</title>
+    <url>/2022/04/26/get-strings-within-current-commandline/</url>
+    <content><![CDATA[<p>I’ve got two methods to get strings or substrings within current Linux shell command-line. For instance, sometimes we want to get the file full path when source it in shell. Here are my ways to do so.</p>
+<ol>
+<li>Use command of <strong>lsof</strong><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `/usr/sbin/lsof -p &amp;&amp; -w | grep -oE <span class="string">&quot;\s+\/.*\Sourced_Filename&quot;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
+<li>Use command of <strong>history</strong><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `<span class="built_in">history</span> 1 | sed -e <span class="string">&#x27;s/^.*source\ //g&#x27;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2219,19 +2235,27 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Get Strings Within Commandline</title>
-    <url>/2022/04/26/get-strings-within-current-commandline/</url>
-    <content><![CDATA[<p>I’ve got two methods to get strings or substrings within current Linux shell command-line. For instance, sometimes we want to get the file full path when source it in shell. Here are my ways to do so.</p>
-<ol>
-<li>Use command of <strong>lsof</strong><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `/usr/sbin/lsof -p &amp;&amp; -w | grep -oE <span class="string">&quot;\s+\/.*\Sourced_Filename&quot;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
-<li>Use command of <strong>history</strong><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> sourced_file = `<span class="built_in">history</span> 1 | sed -e <span class="string">&#x27;s/^.*source\ //g&#x27;</span>`</span><br><span class="line"><span class="built_in">set</span> relative_path = `<span class="built_in">dirname</span> <span class="variable">$sourced_file</span>`</span><br><span class="line"><span class="built_in">set</span> absolute_path = `<span class="built_in">chdir</span> <span class="variable">$relative_path</span> &amp;&amp; <span class="built_in">pwd</span>`</span><br></pre></td></tr></table></figure></li>
-</ol>
+    <title>Hello World</title>
+    <url>/2022/03/30/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Blog</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -2446,30 +2470,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/03/30/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hide Unused Quick Links in Windows</title>
     <url>/2022/06/14/hide-unused-quick-links-in-windows/</url>
     <content><![CDATA[<p><strong>1. Win+R -&gt; regedit</strong></p>
@@ -2661,6 +2661,31 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Install Perl PAR::Packer</title>
+    <url>/2022/10/22/install-perl-PAR-Packer/</url>
+    <content><![CDATA[<h2 id="Online-Installation"><a href="#Online-Installation" class="headerlink" title="Online Installation"></a>Online Installation</h2><p><strong>Install Necessary RPMs</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root]# yum install perl-ExtUtils-Embed</span><br><span class="line">[root]# yum install perl-Crypt-OpenSSL*</span><br><span class="line">[root]# yum install openssl*</span><br><span class="line">[root]# yum install perl-CPAN</span><br></pre></td></tr></table></figure>
+<p><strong>Install Required Perl Modules</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root]# perl -MCPAN -e &#x27;install Filter::Crypto&#x27;</span><br><span class="line">[root]# perl -MCPAN -e &#x27;install ExtUtils::CBuilder&#x27;</span><br><span class="line">[root]# perl -MCPAN -e &#x27;install PAR::Packer&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>It will might report Errors when installing PAR::Packer. You must install the missing Perl package prior to installation of PAR::Packer.</p>
+<h2 id="Offline-Installation"><a href="#Offline-Installation" class="headerlink" title="Offline Installation"></a>Offline Installation</h2><span id="more"></span>
+
+<p>If your Linux system happens to be unable to connect internet, the Perl packages can not be installed online like above commands. You would have to download the package sources first from <a href="https://metacpan.org/">https://metacpan.org/</a>. And then upload to your Linux system and manually install the package with following commands.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[user]% tar zxvf perl_package_name.tar.gz</span><br><span class="line">[user]% cd perl_package_name</span><br><span class="line">[user]% perl Makefile.PL</span><br><span class="line">[user]% make</span><br><span class="line">[user]% sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>The installed Perl packages can be found in -<br><code>/usr/share/perl5/</code> or<br><code>/usr/local/share/perl5/</code></p>
+<h2 id="Usage-of-pp"><a href="#Usage-of-pp" class="headerlink" title="Usage of pp"></a>Usage of pp</h2><p><code>/usr/local/bin/pp -f Crypto -F Crypto -M Filter::Crypto::Decrypt perl_script_entry -o perl_script_entry.exe</code></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>perl</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Install Perl PAR::Packer in RHEL7</title>
     <url>/2023/03/16/install-perl-PAR-Packer-in-RHEL7/</url>
     <content><![CDATA[<p><strong>Install System RPMs</strong></p>
@@ -2701,31 +2726,6 @@ service messagebus restart;
         <tag>perl</tag>
         <tag>linux</tag>
         <tag>starred</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Install Perl PAR::Packer</title>
-    <url>/2022/10/22/install-perl-PAR-Packer/</url>
-    <content><![CDATA[<h2 id="Online-Installation"><a href="#Online-Installation" class="headerlink" title="Online Installation"></a>Online Installation</h2><p><strong>Install Necessary RPMs</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root]# yum install perl-ExtUtils-Embed</span><br><span class="line">[root]# yum install perl-Crypt-OpenSSL*</span><br><span class="line">[root]# yum install openssl*</span><br><span class="line">[root]# yum install perl-CPAN</span><br></pre></td></tr></table></figure>
-<p><strong>Install Required Perl Modules</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[root]# perl -MCPAN -e &#x27;install Filter::Crypto&#x27;</span><br><span class="line">[root]# perl -MCPAN -e &#x27;install ExtUtils::CBuilder&#x27;</span><br><span class="line">[root]# perl -MCPAN -e &#x27;install PAR::Packer&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>It will might report Errors when installing PAR::Packer. You must install the missing Perl package prior to installation of PAR::Packer.</p>
-<h2 id="Offline-Installation"><a href="#Offline-Installation" class="headerlink" title="Offline Installation"></a>Offline Installation</h2><span id="more"></span>
-
-<p>If your Linux system happens to be unable to connect internet, the Perl packages can not be installed online like above commands. You would have to download the package sources first from <a href="https://metacpan.org/">https://metacpan.org/</a>. And then upload to your Linux system and manually install the package with following commands.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[user]% tar zxvf perl_package_name.tar.gz</span><br><span class="line">[user]% cd perl_package_name</span><br><span class="line">[user]% perl Makefile.PL</span><br><span class="line">[user]% make</span><br><span class="line">[user]% sudo make install</span><br></pre></td></tr></table></figure>
-
-<p>The installed Perl packages can be found in -<br><code>/usr/share/perl5/</code> or<br><code>/usr/local/share/perl5/</code></p>
-<h2 id="Usage-of-pp"><a href="#Usage-of-pp" class="headerlink" title="Usage of pp"></a>Usage of pp</h2><p><code>/usr/local/bin/pp -f Crypto -F Crypto -M Filter::Crypto::Decrypt perl_script_entry -o perl_script_entry.exe</code></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>perl</tag>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2793,28 +2793,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Integrate SOS in Virtuoso</title>
-    <url>/2022/10/06/integrate-SOS-in-virtuoso/</url>
-    <content><![CDATA[<p>To get Cliosoft SOS integrated in Cadence Virtuoso, what you need to do is just to put 3 files in your $HOME (~&#x2F;).</p>
-<p><strong>1) .cdsinit</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/.cdsinit</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cds_sosviadfII.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><strong>2) cdsLibMgr.il</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsLibMgr.il</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cdsLibMgr.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><strong>3) cdsinfo.tag</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsinfo.tag</span><br><span class="line">DMTYPE sos</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>cadence</tag>
-        <tag>eda</tag>
-        <tag>sos</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux Shell System Variables</title>
     <url>/2022/04/26/linux-shell-system-variables/</url>
     <content><![CDATA[<p>These are special shell variables which are set internally by the shell and which are available to the user. Visit <a href="https://www.bogotobogo.com/Linux/linux_shell_programming_tutorial3_special_variables.php"><strong>here</strong></a> for better understanding Linux shell system variables.</p>
@@ -2868,6 +2846,28 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Integrate SOS in Virtuoso</title>
+    <url>/2022/10/06/integrate-SOS-in-virtuoso/</url>
+    <content><![CDATA[<p>To get Cliosoft SOS integrated in Cadence Virtuoso, what you need to do is just to put 3 files in your $HOME (~&#x2F;).</p>
+<p><strong>1) .cdsinit</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/.cdsinit</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cds_sosviadfII.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>2) cdsLibMgr.il</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsLibMgr.il</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cdsLibMgr.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3) cdsinfo.tag</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsinfo.tag</span><br><span class="line">DMTYPE sos</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>cadence</tag>
+        <tag>eda</tag>
+        <tag>sos</tag>
       </tags>
   </entry>
   <entry>
@@ -3119,6 +3119,39 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Modify Linux System Date and Time</title>
+    <url>/2022/04/19/modify-linux-system-date-and-time/</url>
+    <content><![CDATA[<p><strong>Check System Date</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">date</span></span><br><span class="line">Wed Apr 20 06:11:59 CST 2022</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p><strong>Set System Date</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s 10:10:10</span><br><span class="line">Wed Apr 20 10:10:10 CST 2022</span><br></pre></td></tr></table></figure>
+
+<p><strong>Set System Date and Time</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s <span class="string">&quot;2018/8/8 10:00:00&quot;</span></span><br><span class="line">Wed Aug 8 10:10:10 CST 2018</span><br></pre></td></tr></table></figure>
+
+<p><strong>Check BIOS Time</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock</span><br><span class="line">Wed 20 Apr 2022 06:49:34 AM CST  -0.110403 seconds</span><br><span class="line">% sudo clock</span><br><span class="line">Wed 20 Apr 2022 06:49:52 AM CST  -0.641359 seconds</span><br></pre></td></tr></table></figure>
+
+<p><strong>Write BIOS Time into System Time</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock -s</span><br></pre></td></tr></table></figure>
+
+<p><strong>Write System Time into BIOS Time</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock -w</span><br></pre></td></tr></table></figure>
+
+<p><strong>Sync Time Need to Install ntpdate</strong><br>Update system time to Asia clock</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo yum install ntpdate</span><br><span class="line">% sudo ntpdate asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown Cheat Sheet</title>
     <url>/2022/03/30/markdown-cheat-sheet/</url>
     <content><![CDATA[<img src="/2022/03/30/markdown-cheat-sheet/markdown-cheat-sheet.png" class="verilog-mode.el">
@@ -3220,6 +3253,15 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>New Chipgun Logo 8May2022</title>
+    <url>/2022/05/08/new-chipgun-logo-8may2022/</url>
+    <content><![CDATA[<p><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_Logo_Darkblue.png alt=EN width=120> <br/><br><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_LogoCN_Darkblue.png alt=CN width=240> </p>
+]]></content>
+      <tags>
+        <tag>chipgun</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nomachine Server Admin</title>
     <url>/2023/03/19/nomachine-server-admin/</url>
     <content><![CDATA[<p><strong>1. Right click icon of the server connection and select <code>Server admin</code></strong></p>
@@ -3235,48 +3277,6 @@ service messagebus restart;
 
 <p><strong>4. Select <code>Satus</code> and click <code>Restart the server</code>, which makes above operation be effective</strong></p>
 <img src=/2023/03/19/nomachine-server-admin/image-20230319235624677.jpg width=440>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>New Chipgun Logo 8May2022</title>
-    <url>/2022/05/08/new-chipgun-logo-8may2022/</url>
-    <content><![CDATA[<p><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_Logo_Darkblue.png alt=EN width=120> <br/><br><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_LogoCN_Darkblue.png alt=CN width=240> </p>
-]]></content>
-      <tags>
-        <tag>chipgun</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Modify Linux System Date and Time</title>
-    <url>/2022/04/19/modify-linux-system-date-and-time/</url>
-    <content><![CDATA[<p><strong>Check System Date</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">date</span></span><br><span class="line">Wed Apr 20 06:11:59 CST 2022</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p><strong>Set System Date</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s 10:10:10</span><br><span class="line">Wed Apr 20 10:10:10 CST 2022</span><br></pre></td></tr></table></figure>
-
-<p><strong>Set System Date and Time</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo <span class="built_in">date</span> -s <span class="string">&quot;2018/8/8 10:00:00&quot;</span></span><br><span class="line">Wed Aug 8 10:10:10 CST 2018</span><br></pre></td></tr></table></figure>
-
-<p><strong>Check BIOS Time</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock</span><br><span class="line">Wed 20 Apr 2022 06:49:34 AM CST  -0.110403 seconds</span><br><span class="line">% sudo clock</span><br><span class="line">Wed 20 Apr 2022 06:49:52 AM CST  -0.641359 seconds</span><br></pre></td></tr></table></figure>
-
-<p><strong>Write BIOS Time into System Time</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock -s</span><br></pre></td></tr></table></figure>
-
-<p><strong>Write System Time into BIOS Time</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo hwclock -w</span><br></pre></td></tr></table></figure>
-
-<p><strong>Sync Time Need to Install ntpdate</strong><br>Update system time to Asia clock</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% sudo yum install ntpdate</span><br><span class="line">% sudo ntpdate asia.pool.ntp.org</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -3346,6 +3346,18 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Script: Add a Linux User</title>
+    <url>/2022/10/11/script-add-a-linux-user/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Script to add a user to Linux system</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) 2007 nixCraft project &lt;http://bash.cyberciti.biz/&gt;</span></span><br><span class="line"><span class="comment"># This script is licensed under GNU GPL version 2.0 or above</span></span><br><span class="line"><span class="comment"># Comment/suggestion: &lt;vivek at nixCraft DOT com&gt;</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># See url for more info:</span></span><br><span class="line"><span class="comment"># http://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">if</span> [ $(<span class="built_in">id</span> -u) -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">&quot;Enter username : &quot;</span> username</span><br><span class="line">	<span class="built_in">read</span> -s -p <span class="string">&quot;Enter password : &quot;</span> password</span><br><span class="line">	egrep <span class="string">&quot;^<span class="variable">$username</span>&quot;</span> /etc/passwd &gt;/dev/null</span><br><span class="line">	<span class="keyword">if</span> [ $? -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$username</span> exists!&quot;</span></span><br><span class="line">		<span class="built_in">exit</span> 1</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pass=$(perl -e <span class="string">&#x27;print crypt($ARGV[0], &quot;password&quot;)&#x27;</span> <span class="variable">$password</span>)</span><br><span class="line">		useradd -m -p <span class="variable">$pass</span> <span class="variable">$username</span></span><br><span class="line">		[ $? -eq 0 ] &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;User has been added to system!&quot;</span> || <span class="built_in">echo</span> <span class="string">&quot;Failed to add a user!&quot;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;Only root may add a user to the system&quot;</span></span><br><span class="line">	<span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Set_data_check</title>
     <url>/2023/09/22/set-data-check/</url>
     <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold 1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
@@ -3357,18 +3369,6 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>primetime</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Script: Add a Linux User</title>
-    <url>/2022/10/11/script-add-a-linux-user/</url>
-    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Script to add a user to Linux system</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) 2007 nixCraft project &lt;http://bash.cyberciti.biz/&gt;</span></span><br><span class="line"><span class="comment"># This script is licensed under GNU GPL version 2.0 or above</span></span><br><span class="line"><span class="comment"># Comment/suggestion: &lt;vivek at nixCraft DOT com&gt;</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># See url for more info:</span></span><br><span class="line"><span class="comment"># http://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">if</span> [ $(<span class="built_in">id</span> -u) -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">&quot;Enter username : &quot;</span> username</span><br><span class="line">	<span class="built_in">read</span> -s -p <span class="string">&quot;Enter password : &quot;</span> password</span><br><span class="line">	egrep <span class="string">&quot;^<span class="variable">$username</span>&quot;</span> /etc/passwd &gt;/dev/null</span><br><span class="line">	<span class="keyword">if</span> [ $? -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$username</span> exists!&quot;</span></span><br><span class="line">		<span class="built_in">exit</span> 1</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pass=$(perl -e <span class="string">&#x27;print crypt($ARGV[0], &quot;password&quot;)&#x27;</span> <span class="variable">$password</span>)</span><br><span class="line">		useradd -m -p <span class="variable">$pass</span> <span class="variable">$username</span></span><br><span class="line">		[ $? -eq 0 ] &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;User has been added to system!&quot;</span> || <span class="built_in">echo</span> <span class="string">&quot;Failed to add a user!&quot;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;Only root may add a user to the system&quot;</span></span><br><span class="line">	<span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3611,6 +3611,28 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Synopsys Safety-Aware Solution for Automotive</title>
+    <url>/2022/07/08/synopsys-safety-aware-solution-for-automotive/</url>
+    <content><![CDATA[<img src="/2022/07/08/synopsys-safety-aware-solution-for-automotive/image-20220708104331952.jpg" class="">
+
+<ul>
+<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
+<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
+<li>Reduce documentation work with automated work products and supporting evidence</li>
+<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
+<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
+<li>Optimize machine resources with faster native tools that use less memory</li>
+</ul>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>automotive</tag>
+        <tag>synopsys</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Symbolic Links in Windows</title>
     <url>/2022/04/12/symbolic-links-in-windows/</url>
     <content><![CDATA[<p><strong>Create Symbolic Link to File in CMD Prompt</strong></p>
@@ -3624,6 +3646,106 @@ service messagebus restart;
 ]]></content>
       <tags>
         <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Types of Power in a SoC Design</title>
+    <url>/2023/12/07/types-of-power-in-an-SoC-design/</url>
+    <content><![CDATA[<img src="/2023/12/07/types-of-power-in-an-SoC-design/image-20231207202606742.png" class="">
+
+<p><strong>Dynamic Power</strong></p>
+<ul>
+<li><strong>Switching Power:</strong> This is the power spent charging and discharging the capacitance of the output net; it is also called load power or CV2 power. Since switching power is a function of switching activity and load capacitance, it is data dependent.</li>
+<li><strong>Internal Power (Short Circuit Power&#x2F;Crowbar Power):</strong> This is the power dissipated inside the gate when switching. This power is also called short power or crowbar power.</li>
+</ul>
+<p><strong>Static Power</strong></p>
+<ul>
+<li>Static power is the power consumed by a device when no signals are changing values. Since static power consumption is primarily caused by leakage, in CMOS devices, Static Power is also known as Leakage Power. This is the power dissipated whenever the device is powered, regardless of activity; there are several sources of leakage power but they are all lumped together into a single value for modeling purposes. The amount of leakge power dissipated by a gate can depend on the logic state of the inputs. This is called “state-dependent leakage power“; most tools can model this if it is described in the library data.</li>
+</ul>
+<p><strong>Power Components</strong></p>
+<ul>
+<li><strong>Combinational:</strong> Combinational cell and a net driven by the combinational cell</li>
+<li><strong>Sequential:</strong> Registers, Latch, ICG and the output net of the sequential logic</li>
+<li><strong>Clock:</strong> Clock network</li>
+<li><strong>IO:</strong> IO pad cell and the output net of the IO cell</li>
+<li><strong>Memory:</strong> Memory and the output nets of the memory cell</li>
+<li><strong>Macrocell:</strong></li>
+<li><strong>Blackbox:</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>lowpower</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Umask</title>
+    <url>/2023/03/12/umask/</url>
+    <content><![CDATA[<p>You can use the umask utility to display, set, or change the current or default value of the umask. </p>
+<h3 id="Display-the-current-value-of-the-umask"><a href="#Display-the-current-value-of-the-umask" class="headerlink" title="Display the current value of the umask"></a>Display the current value of the umask</h3><p>To display the current value of the <em>umask</em> in symbolic mode, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% umask -S</span><br></pre></td></tr></table></figure>
+
+<p>To display the current value of the <em>umask</em> in octal mode, use:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% umask</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<blockquote>
+<p>When displaying the umask in octal mode, you may notice it displayed as a four digit number (0002 or 0022). The first digit of the umask represents a special bit (sticky bit, SGID bit, or SUID bit). If the first digit is set to 0, the special bit is not set. </p>
+</blockquote>
+<h3 id="Display-the-default-bash-umask"><a href="#Display-the-default-bash-umask" class="headerlink" title="Display the default bash umask"></a>Display the default bash umask</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% grep umask /etc/bashrc #for non-login shell</span><br><span class="line">% grep umask /etc/profile #for login shell</span><br></pre></td></tr></table></figure>
+
+<h3 id="Display-the-default-csh-umask"><a href="#Display-the-default-csh-umask" class="headerlink" title="Display the default csh umask"></a>Display the default csh umask</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% grep umask /etc/csh.cshrc #for non-login shell</span><br><span class="line">% grep umask /etc/csh.login #for login shell</span><br></pre></td></tr></table></figure>
+<p><strong>Usually we change <code>csh.cshrc</code> like this.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% more /etc/csh.cshrc</span><br><span class="line">if ($uid &gt; 199 &amp;&amp; &quot;`/usr/bin/id -gn`&quot; == &quot;`/usr/bin/id -un`&quot;) then</span><br><span class="line">    umask 027</span><br><span class="line">else</span><br><span class="line">    umask 022</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="Setting-the-umask-using-symbolic-values"><a href="#Setting-the-umask-using-symbolic-values" class="headerlink" title="Setting the umask using symbolic values"></a>Setting the umask using symbolic values</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">umask -S &lt;level&gt;&lt;operation&gt;&lt;permission&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>&lt;level&gt;:</strong> Permissions can be assigned to the following levels of ownership: </p>
+<ul>
+<li><code>u</code> User owner</li>
+<li><code>g</code> Group owner</li>
+<li><code>o</code> Other</li>
+<li><code>a</code> All</li>
+</ul>
+<p><strong>&lt;operation&gt;</strong>: To add or remove permissions you can use the following signs: </p>
+<ul>
+<li><code>+</code> to add the permissions on top of the existing permissions</li>
+<li><code>-</code> to remove the permissions from the existing permission</li>
+<li><code>=</code> to remove the existing permissions and explicitly define the new ones</li>
+</ul>
+<p><strong>&lt;permission&gt;:</strong> You can assign the following permissions:</p>
+<ul>
+<li><code>r</code> Read</li>
+<li><code>w</code> Write</li>
+<li><code>x</code> Execute</li>
+</ul>
+<blockquote>
+<p>Any permission that is not specified after the equals sign (&#x3D;) is automatically prohibited. </p>
+</blockquote>
+<p><strong>Example:</strong> <code>umask -S u=rwx,g=rx,o=rx</code></p>
+<h3 id="Changing-the-default-umask-for-a-specific-user"><a href="#Changing-the-default-umask-for-a-specific-user" class="headerlink" title="Changing the default umask for a specific user"></a>Changing the default umask for a specific user</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.bashrc #for bash</span><br><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.cshrc #for csh</span><br></pre></td></tr></table></figure>
+<h3 id="Setting-default-permissions-for-newly-created-home-directories"><a href="#Setting-default-permissions-for-newly-created-home-directories" class="headerlink" title="Setting default permissions for newly created home directories"></a>Setting default permissions for newly created home directories</h3><p>You can change the permission modes for home directories of newly created users by modifying the <code>/etc/login.defs</code> file. </p>
+<ol>
+<li>As root, open the &#x2F;etc&#x2F;login.defs file in the editor.</li>
+<li>Modify the following section to set a new default HOME_MODE: <blockquote>
+<p># HOME_MODE is used by useradd(8) and newusers(8) to set the mode for new<br># home directories.<br># If HOME_MODE is not set, the value of UMASK is used to create the mode.<br>Replace the default octal value (0700) with another octal value. The selected mode will be used to create the permissions for the home directory. </p>
+</blockquote>
+</li>
+<li>If HOME_MODE is set, save the changes and exit the editor.</li>
+<li>If HOME_MODE is not set, modify the UMASK to set the mode for the newly created home directories: <blockquote>
+<p># Default initial “umask” value used by login(1) on non-PAM enabled systems.<br># Default “umask” value for pam_umask(8) on PAM enabled systems.<br># UMASK is also used by useradd(8) and newusers(8) to set the mode for new<br># home directories if HOME_MODE is not set.<br># 022 is the default value, but 027, or even 077, could be considered<br># for increased privacy. There is no One True Answer here: each sysadmin<br># must make up their mind.</p>
+<p>UMASK           022</p>
+</blockquote>
+</li>
+</ol>
+<p>Replace the default octal value (022) with another octal value. See User file-creation mode mask for more details.<br>5. Save the changes and exit the editor. </p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3808,128 +3930,6 @@ service messagebus restart;
       <tags>
         <tag>eda</tag>
         <tag>synopsys</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Types of Power in a SoC Design</title>
-    <url>/2023/12/07/types-of-power-in-an-SoC-design/</url>
-    <content><![CDATA[<img src="/2023/12/07/types-of-power-in-an-SoC-design/image-20231207202606742.png" class="">
-
-<p><strong>Dynamic Power</strong></p>
-<ul>
-<li><strong>Switching Power:</strong> This is the power spent charging and discharging the capacitance of the output net; it is also called load power or CV2 power. Since switching power is a function of switching activity and load capacitance, it is data dependent.</li>
-<li><strong>Internal Power (Short Circuit Power&#x2F;Crowbar Power):</strong> This is the power dissipated inside the gate when switching. This power is also called short power or crowbar power.</li>
-</ul>
-<p><strong>Static Power</strong></p>
-<ul>
-<li>Static power is the power consumed by a device when no signals are changing values. Since static power consumption is primarily caused by leakage, in CMOS devices, Static Power is also known as Leakage Power. This is the power dissipated whenever the device is powered, regardless of activity; there are several sources of leakage power but they are all lumped together into a single value for modeling purposes. The amount of leakge power dissipated by a gate can depend on the logic state of the inputs. This is called “state-dependent leakage power“; most tools can model this if it is described in the library data.</li>
-</ul>
-<p><strong>Power Components</strong></p>
-<ul>
-<li><strong>Combinational:</strong> Combinational cell and a net driven by the combinational cell</li>
-<li><strong>Sequential:</strong> Registers, Latch, ICG and the output net of the sequential logic</li>
-<li><strong>Clock:</strong> Clock network</li>
-<li><strong>IO:</strong> IO pad cell and the output net of the IO cell</li>
-<li><strong>Memory:</strong> Memory and the output nets of the memory cell</li>
-<li><strong>Macrocell:</strong></li>
-<li><strong>Blackbox:</strong></li>
-</ul>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>lowpower</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Umask</title>
-    <url>/2023/03/12/umask/</url>
-    <content><![CDATA[<p>You can use the umask utility to display, set, or change the current or default value of the umask. </p>
-<h3 id="Display-the-current-value-of-the-umask"><a href="#Display-the-current-value-of-the-umask" class="headerlink" title="Display the current value of the umask"></a>Display the current value of the umask</h3><p>To display the current value of the <em>umask</em> in symbolic mode, use:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% umask -S</span><br></pre></td></tr></table></figure>
-
-<p>To display the current value of the <em>umask</em> in octal mode, use:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% umask</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-
-<blockquote>
-<p>When displaying the umask in octal mode, you may notice it displayed as a four digit number (0002 or 0022). The first digit of the umask represents a special bit (sticky bit, SGID bit, or SUID bit). If the first digit is set to 0, the special bit is not set. </p>
-</blockquote>
-<h3 id="Display-the-default-bash-umask"><a href="#Display-the-default-bash-umask" class="headerlink" title="Display the default bash umask"></a>Display the default bash umask</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% grep umask /etc/bashrc #for non-login shell</span><br><span class="line">% grep umask /etc/profile #for login shell</span><br></pre></td></tr></table></figure>
-
-<h3 id="Display-the-default-csh-umask"><a href="#Display-the-default-csh-umask" class="headerlink" title="Display the default csh umask"></a>Display the default csh umask</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% grep umask /etc/csh.cshrc #for non-login shell</span><br><span class="line">% grep umask /etc/csh.login #for login shell</span><br></pre></td></tr></table></figure>
-<p><strong>Usually we change <code>csh.cshrc</code> like this.</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% more /etc/csh.cshrc</span><br><span class="line">if ($uid &gt; 199 &amp;&amp; &quot;`/usr/bin/id -gn`&quot; == &quot;`/usr/bin/id -un`&quot;) then</span><br><span class="line">    umask 027</span><br><span class="line">else</span><br><span class="line">    umask 022</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="Setting-the-umask-using-symbolic-values"><a href="#Setting-the-umask-using-symbolic-values" class="headerlink" title="Setting the umask using symbolic values"></a>Setting the umask using symbolic values</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">umask -S &lt;level&gt;&lt;operation&gt;&lt;permission&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>&lt;level&gt;:</strong> Permissions can be assigned to the following levels of ownership: </p>
-<ul>
-<li><code>u</code> User owner</li>
-<li><code>g</code> Group owner</li>
-<li><code>o</code> Other</li>
-<li><code>a</code> All</li>
-</ul>
-<p><strong>&lt;operation&gt;</strong>: To add or remove permissions you can use the following signs: </p>
-<ul>
-<li><code>+</code> to add the permissions on top of the existing permissions</li>
-<li><code>-</code> to remove the permissions from the existing permission</li>
-<li><code>=</code> to remove the existing permissions and explicitly define the new ones</li>
-</ul>
-<p><strong>&lt;permission&gt;:</strong> You can assign the following permissions:</p>
-<ul>
-<li><code>r</code> Read</li>
-<li><code>w</code> Write</li>
-<li><code>x</code> Execute</li>
-</ul>
-<blockquote>
-<p>Any permission that is not specified after the equals sign (&#x3D;) is automatically prohibited. </p>
-</blockquote>
-<p><strong>Example:</strong> <code>umask -S u=rwx,g=rx,o=rx</code></p>
-<h3 id="Changing-the-default-umask-for-a-specific-user"><a href="#Changing-the-default-umask-for-a-specific-user" class="headerlink" title="Changing the default umask for a specific user"></a>Changing the default umask for a specific user</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.bashrc #for bash</span><br><span class="line"># echo &#x27;umask octal_value &gt;&gt; /home/username/.cshrc #for csh</span><br></pre></td></tr></table></figure>
-<h3 id="Setting-default-permissions-for-newly-created-home-directories"><a href="#Setting-default-permissions-for-newly-created-home-directories" class="headerlink" title="Setting default permissions for newly created home directories"></a>Setting default permissions for newly created home directories</h3><p>You can change the permission modes for home directories of newly created users by modifying the <code>/etc/login.defs</code> file. </p>
-<ol>
-<li>As root, open the &#x2F;etc&#x2F;login.defs file in the editor.</li>
-<li>Modify the following section to set a new default HOME_MODE: <blockquote>
-<p># HOME_MODE is used by useradd(8) and newusers(8) to set the mode for new<br># home directories.<br># If HOME_MODE is not set, the value of UMASK is used to create the mode.<br>Replace the default octal value (0700) with another octal value. The selected mode will be used to create the permissions for the home directory. </p>
-</blockquote>
-</li>
-<li>If HOME_MODE is set, save the changes and exit the editor.</li>
-<li>If HOME_MODE is not set, modify the UMASK to set the mode for the newly created home directories: <blockquote>
-<p># Default initial “umask” value used by login(1) on non-PAM enabled systems.<br># Default “umask” value for pam_umask(8) on PAM enabled systems.<br># UMASK is also used by useradd(8) and newusers(8) to set the mode for new<br># home directories if HOME_MODE is not set.<br># 022 is the default value, but 027, or even 077, could be considered<br># for increased privacy. There is no One True Answer here: each sysadmin<br># must make up their mind.</p>
-<p>UMASK           022</p>
-</blockquote>
-</li>
-</ol>
-<p>Replace the default octal value (022) with another octal value. See User file-creation mode mask for more details.<br>5. Save the changes and exit the editor. </p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Synopsys Safety-Aware Solution for Automotive</title>
-    <url>/2022/07/08/synopsys-safety-aware-solution-for-automotive/</url>
-    <content><![CDATA[<img src="/2022/07/08/synopsys-safety-aware-solution-for-automotive/image-20220708104331952.jpg" class="">
-
-<ul>
-<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
-<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
-<li>Reduce documentation work with automated work products and supporting evidence</li>
-<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
-<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
-<li>Optimize machine resources with faster native tools that use less memory</li>
-</ul>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>synopsys</tag>
-        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -4271,36 +4271,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Visualization Matters</title>
-    <url>/2022/07/20/visualization-matters/</url>
-    <content><![CDATA[<p>It truly matters to make it visualized when you try to demostrate these stuffs in project management.</p>
-<ul>
-<li>Ideas</li>
-<li>Resource&#x2F;money budget</li>
-<li>System architecture</li>
-<li>Project schedule <span id="more"></span></li>
-</ul>
-<img src="/2022/07/20/visualization-matters/image-20220722094207516.jpg" class="">
-
-<ul>
-<li>Resource allocation</li>
-<li>Design flow</li>
-<li>Result statistics</li>
-<li>Task status tracking</li>
-<li>User guide</li>
-<li>Check list</li>
-<li>Brainstorm</li>
-<li>and many more…</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Knowledge</category>
-      </categories>
-      <tags>
-        <tag>management</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vim Cheat Sheet</title>
     <url>/2022/04/03/vim-cheat-sheet/</url>
     <content><![CDATA[<h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><p><strong>:h[elp] keyword</strong> - open help for keyword<br><strong>:sav[eas] file</strong> - save file as<br><strong>:clo[se]</strong> - close current pane<br><strong>:ter[minal]</strong> - open a terminal window<br><strong>K</strong> - open man page for word under the cursor</p>
@@ -4335,6 +4305,49 @@ service messagebus restart;
       <tags>
         <tag>linux</tag>
         <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Visualization Matters</title>
+    <url>/2022/07/20/visualization-matters/</url>
+    <content><![CDATA[<p>It truly matters to make it visualized when you try to demostrate these stuffs in project management.</p>
+<ul>
+<li>Ideas</li>
+<li>Resource&#x2F;money budget</li>
+<li>System architecture</li>
+<li>Project schedule <span id="more"></span></li>
+</ul>
+<img src="/2022/07/20/visualization-matters/image-20220722094207516.jpg" class="">
+
+<ul>
+<li>Resource allocation</li>
+<li>Design flow</li>
+<li>Result statistics</li>
+<li>Task status tracking</li>
+<li>User guide</li>
+<li>Check list</li>
+<li>Brainstorm</li>
+<li>and many more…</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Knowledge</category>
+      </categories>
+      <tags>
+        <tag>management</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>We Glow While Grow</title>
+    <url>/2022/04/23/we-glow-while-grow/</url>
+    <content><![CDATA[<p>We grow when we confront challenges and glow when we conquer them.</p>
+<img src="/2022/04/23/we-glow-while-grow/image-20220423105459472.png" class="">
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
       </tags>
   </entry>
   <entry>
@@ -4406,19 +4419,6 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>ocv</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>We Glow While Grow</title>
-    <url>/2022/04/23/we-glow-while-grow/</url>
-    <content><![CDATA[<p>We grow when we confront challenges and glow when we conquer them.</p>
-<img src="/2022/04/23/we-glow-while-grow/image-20220423105459472.png" class="">
-]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>covid19</tag>
       </tags>
   </entry>
   <entry>
@@ -4593,9 +4593,9 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-4-27</title>
-    <url>/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/</url>
-    <content><![CDATA[<img src="/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/image-20220428084632964.png" class="">
+    <title>上海每日疫情走势2022-4-23</title>
+    <url>/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/</url>
+    <content><![CDATA[<img src="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/image-20220424103736004.png" class="">
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -4617,9 +4617,9 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-4-23</title>
-    <url>/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/</url>
-    <content><![CDATA[<img src="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/image-20220424103736004.png" class="">
+    <title>上海每日疫情走势2022-4-27</title>
+    <url>/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/</url>
+    <content><![CDATA[<img src="/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/image-20220428084632964.png" class="">
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -4699,34 +4699,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-5-18</title>
-    <url>/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/</url>
-    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;18</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">全市新增确诊</th>
-<th align="center">全市新增无症状</th>
-<th align="center">浦东新增确诊</th>
-<th align="center">浦东新增无症状</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">82</td>
-<td align="center">637</td>
-<td align="center">13</td>
-<td align="center">62</td>
-</tr>
-</tbody></table>
-<img src="/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/image_20220518.jpg" class="">]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>covid19</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>上海每日疫情走势2022-5-23</title>
     <url>/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/</url>
     <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;23</strong></p>
@@ -4783,18 +4755,6 @@ service messagebus restart;
 </tr>
 </tbody></table>
 <img src="/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/image_20220523.jpg" class="">
-]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>covid19</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>上海每日疫情走势2022-5-3</title>
-    <url>/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/</url>
-    <content><![CDATA[<img src="/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/image-20220504095419109.png" class="">
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -4867,10 +4827,37 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-5-5</title>
-    <url>/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/</url>
-    <content><![CDATA[<img src="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/image-20220505095419109.jpg" class="">
-
+    <title>上海每日疫情走势2022-5-18</title>
+    <url>/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/</url>
+    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;18</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">全市新增确诊</th>
+<th align="center">全市新增无症状</th>
+<th align="center">浦东新增确诊</th>
+<th align="center">浦东新增无症状</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">82</td>
+<td align="center">637</td>
+<td align="center">13</td>
+<td align="center">62</td>
+</tr>
+</tbody></table>
+<img src="/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/image_20220518.jpg" class="">]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>上海每日疫情走势2022-5-3</title>
+    <url>/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/</url>
+    <content><![CDATA[<img src="/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/image-20220504095419109.png" class="">
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -4883,6 +4870,19 @@ service messagebus restart;
     <title>上海每日疫情走势2022-5-7</title>
     <url>/2022/05/08/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-7/</url>
     <content><![CDATA[<img src="/2022/05/08/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-7/image-20220507095419109.jpg" class="">
+
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>上海每日疫情走势2022-5-5</title>
+    <url>/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/</url>
+    <content><![CDATA[<img src="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/image-20220505095419109.jpg" class="">
 
 ]]></content>
       <categories>
