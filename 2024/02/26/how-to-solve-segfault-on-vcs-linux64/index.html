@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="We grow when we confront challenge and glow when we conquer it."/><link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
-<link rel="canonical" href="http://blog.nibaix.com/"/>
+<meta name="description" content="How to Solve Seqfault on Vcs Linux64"/><link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2024/02/26/how-to-solve-segfault-on-vcs-linux64/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
@@ -23,7 +23,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
 </script>
 
-    <title>nibaix's footprints</title>
+    <title>How to Solve Seqfault on Vcs Linux64 - nibaix's footprints</title>
   <meta name="generator" content="Hexo 6.1.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -90,9 +90,9 @@
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content"><section id="posts" class="posts"><article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/02/26/how-to-solve-segfault-on-vcs-linux64/">How to Solve Seqfault on Vcs Linux64</a>
+      <h1 class="post-title">How to Solve Seqfault on Vcs Linux64
         </h1>
 
       <div class="post-meta">
@@ -101,7 +101,12 @@
         </span></div>
     </header>
 
-    <div class="post-content"><h2 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h2><p><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></p>
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Preamble"><span class="toc-text">Preamble</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Problem"><span class="toc-text">Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#segfault-in-VCS-Q-2020-03-also-applicable-to-2019-2021-2022-and-etc"><span class="toc-text">segfault in VCS Q-2020.03 (also applicable to 2019, 2021, 2022, and etc)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#At-first-use-GDB"><span class="toc-text">At first use GDB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Let%E2%80%99s-get-objdump"><span class="toc-text">Let’s get objdump</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Edit-binary-file-via-hexedit"><span class="toc-text">Edit binary file via hexedit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Test"><span class="toc-text">Test</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Automatization"><span class="toc-text">Automatization</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><h2 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h2><p><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></p>
 <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><h3 id="segfault-in-VCS-Q-2020-03-also-applicable-to-2019-2021-2022-and-etc"><a href="#segfault-in-VCS-Q-2020-03-also-applicable-to-2019-2021-2022-and-etc" class="headerlink" title="segfault in VCS Q-2020.03 (also applicable to 2019, 2021, 2022, and etc)"></a>segfault in VCS Q-2020.03 (also applicable to 2019, 2021, 2022, and etc)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Command line: ./simv</span><br><span class="line"></span><br><span class="line">--- Stack trace follows:</span><br><span class="line"></span><br><span class="line">Dumping VCS Annotated Stack:</span><br><span class="line"><span class="comment">#0  0x00002aaad3587659 in waitpid () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#1  0x00002aaad3504f62 in do_system () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x00002aaad3505311 in system () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#3  0x00002aaacb5883fb in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacb589ed3 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacb582822 in SNPSle_d35ca1ff70d465c2b9b1a72eee90a50630165806651fae96eee2bdb18305df1f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacdd162af in SNPSle_64133461705005bb725549e2e6fa1b3f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaacda6fbef in SNPSle_82244d58c54c18c70d63edc9becab634 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0x00002aaacb911904 in mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#10 0x00002aaacb8ed015 in snpsCheckFreeFunc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#11 0x00002aaacd8428f4 in SNPSle_540905a7b1b27611 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#12 0x00002aaacd84323a in SNPSle_9ff9b2dce8f1fde9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#13 0x00002aaacd841308 in SNPSle_36c2d46996c96605 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0x00002aaacd8417cd in SNPSle_2c2186f0f2f42415 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0x00002aaad2ca3ea5 in start_thread () from /lib64/libpthread.so.0</span></span><br><span class="line"><span class="comment">#17 0x00002aaad35c0b0d in clone () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#0  0x00002aaad35879fd in nanosleep () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#1  0x00002aaad3587894 in sleep () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x00002aaacd5e1b76 in SNPSle_95ae9cc2e78cc668673c60b8d88c4908 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#3  0x00002aaacd5e1d19 in SNPSle_92de4d0d4cf0d6931bc37e8d42a01d93 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacd5e008a in SNPSle_b76ef993ee82b3d58a5cadddbec8b67c () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacd5e032c in SNPSle_f28f24b8c84ac8f6e02e0b03bcd33aa8 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacd5cba31 in SNPSle_5e54eaa1df739f6ed4c1ff24a0986ee6 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaacd5cbc4c in SNPSle_058778405d2a6c04ddd18247ba7f440f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#8  0x00002aaacd5c67d2 in SNPSle_e376be325e61b493d6bd988d8077bacc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0x00002aaacd5c6c0f in SNPSle_a10369bdf7c5916ddd6866ce7e2e861c () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#10 0x00002aaacd5c73e1 in SNPSle_00b1acee80c770570cd75f9efbe24cca () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#11 0x00002aaacd5c7e6d in SNPSle_ba11b1edbd04051f5bb81b1861cdf84a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#12 0x00002aaacd5b6602 in SNPSle_2e65c0794628fc5af60953149776c29b () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#13 0x00002aaacd5b3262 in SNPSle_541f757be362289a7c9e5618c0ff28327846f8d3cc02839f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0x00002aaacd5ad08a in SNPSle_c0de1345d5ab80930e06dd2b68f214c3 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0x00002aaacd5ad242 in SNPSle_25cd5712eacded5ff943afa9a81fcb09 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0x00002aaacdd34da9 in SNPSle_490598bfebcc8e8183ad3550288b1f82 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#17 0x00002aaacdd41962 in SNPSle_490598bfebcc8e81 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#18 0x00000000004171ff in main ()</span></span><br><span class="line"></span><br><span class="line">Process VmPeak: 916968 kb, VmSize: 851436 kb</span><br><span class="line">System Free Memory: 119334916 kb, System Free Swap: 4194300 kb</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="At-first-use-GDB"><a href="#At-first-use-GDB" class="headerlink" title="At first use GDB"></a>At first use GDB</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ gdb ./simv</span><br><span class="line">GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7</span><br><span class="line">Copyright (C) 2013 Free Software Foundation, Inc.</span><br><span class="line">License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;</span><br><span class="line">This is free software: you are free to change and redistribute it.</span><br><span class="line">There is NO WARRANTY, to the extent permitted by law.  Type <span class="string">&quot;show copying&quot;</span></span><br><span class="line">and <span class="string">&quot;show warranty&quot;</span> <span class="keyword">for</span> details.</span><br><span class="line">This GDB was configured as <span class="string">&quot;x86_64-redhat-linux-gnu&quot;</span>.</span><br><span class="line">For bug reporting instructions, please see:</span><br><span class="line">&lt;http://www.gnu.org/software/gdb/bugs/&gt;...</span><br><span class="line">Reading symbols from /test/run/simv...(no debugging symbols found)...<span class="keyword">done</span>.</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
@@ -127,283 +132,17 @@
 <p>As you see we done it! We aren’t facing segmentation fault!</p>
 <h2 id="Automatization"><a href="#Automatization" class="headerlink" title="Automatization"></a>Automatization</h2><p>To patch library without manually operation there is <a target="_blank" rel="noopener" href="https://github.com/mperov/fixSegfaultVCS/blob/main/patcher.py">patcher.py</a><br>Attention, before running <strong>patcher.py</strong> make backup of library which you would like to patch.</p>
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/02/22/Tmux-Cheat-Sheet/">Tmux Cheat Sheet</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2024-02-22
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222202219915.jpg" class="">
-          <div class="read-more">
-            <a href="/2024/02/22/Tmux-Cheat-Sheet/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/02/21/Tmux-clipboard-to-from-system-clipboard/">Tmux Clipboard To/from System Clipboard</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2024-02-21
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p><strong>在~&#x2F;.tmux.conf中开启鼠标支持:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-option -g mouse on</span><br></pre></td></tr></table></figure>
-
-<p><strong>复制:</strong> 按住<code>shift</code>键,然后拖动鼠标复制要选择的内容，然后按下<code>shift+ctrl+c</code>,复制到系统剪贴板<br><strong>粘贴:</strong> 按下<code>shift+ctrl+v</code> 粘贴系统剪贴板中的内容到Tmux中</p>
-<p><strong>需要注意的是</strong><br><code>shift+ctrl+v</code>是在终端设置的粘贴快捷键<br><code>shift+ctrl+c</code>是在终端设置的复制快捷键</p>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/02/17/Perl-function-strftime/">Perl Function Strftime</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2024-02-17
-        </span><span class="post-category">
-            <a href="/categories/Program/">Program</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>在 Perl 中处理时间，很多模块，很方便，但是刚开始玩的人，可能没有发现合适的模块，所以使用起来感觉很麻烦。这里给大家推荐一下一个模块 strftime。</p>
-<p>我们在推荐前，介绍一下 Perl 下取时间的今生前世吧。以前我想大家都是使用的 localtime 来取得当地日期时间和日期。这个函数如果在标量环境时，会以字符串的形式来传回目前的时间和日期 。默认的 localtime 的函数是以 1970 到今天的秒来做整数计算的。默认这个程序会调用 time 的函数来给它提供一个值。使用方法：</p>
-<img src=/2024/02/17/Perl-function-strftime/image-20240217222015826.png width=480>
-          <div class="read-more">
-            <a href="/2024/02/17/Perl-function-strftime/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/01/30/Environment-Modules/">Environment-Modules</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2024-01-30
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><p><a target="_blank" rel="noopener" href="https://nchc.dl.sourceforge.net/project/modules/Modules/modules-5.3.1/modules-5.3.1.tar.gz">https://nchc.dl.sourceforge.net/project/modules/Modules/modules-5.3.1/modules-5.3.1.tar.gz</a></p>
-<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar xvf modules-5.3.1.tar.gz</span><br><span class="line">configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<p>The default installation path is <code>/usr/local/Modules/</code>.</p>
-          <div class="read-more">
-            <a href="/2024/01/30/Environment-Modules/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/12/10/Low-Power-Techniques-in-VLSI/">Low Power Techniques in VLSI</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-12-10
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><table>
-<thead>
-<tr>
-<th>Design Level</th>
-<th>Strategies</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Operating System Level</td>
-<td>Portioning, Power down</td>
-</tr>
-<tr>
-<td>Software Level</td>
-<td>Regularity, locality, concurrency</td>
-</tr>
-<tr>
-<td>Architecture Level</td>
-<td>Pipelining, Redundancy, data encoding</td>
-</tr>
-<tr>
-<td>Circuit&#x2F;Logic Level</td>
-<td>Logic style, transistor sizing, energy recovery</td>
-</tr>
-<tr>
-<td>Technology Level</td>
-<td>Threshold reduction, multiple threshold devices</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>Traditional Techniques</th>
-<th>Dynamic power reduction</th>
-<th>Leakage power reduction</th>
-<th>Other power reduction techniques</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Clock gating</td>
-<td>Clock gating</td>
-<td>Minimize usage of LVt</td>
-<td>Multiple oxide devices</td>
-</tr>
-<tr>
-<td>Power gating</td>
-<td>Power efficient circuits</td>
-<td>Power gating</td>
-<td>Power efficient circuits</td>
-</tr>
-<tr>
-<td>Variable frequency</td>
-<td>Variable frequency</td>
-<td>Back biasing</td>
-<td>Minimize capacitance by custom design</td>
-</tr>
-<tr>
-<td>Variable voltage supply</td>
-<td>Variable voltage supply</td>
-<td>Reduce oxide thickness</td>
-<td></td>
-</tr>
-<tr>
-<td>Variable device threshold</td>
-<td>Voltage Islands</td>
-<td>Use FinFET</td>
-<td></td>
-</tr>
-</tbody></table>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/12/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Excel%E5%9C%A8Timing-Closure%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">记录一次Excel在Timing Closure中的应用</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-12-09
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>本文旨在记录一次STA timing closure过程中如何利用Excel表格工具<strong>可视化</strong>的优化inter-clock skew，从而大大降低DMSA timing ECO的代价。</p>
-<p><strong>【Background】</strong></p>
-<hr>
-<p>这次timing closure的难点在于design有5个同步异频的clock。所谓同步异频是指这5个clock的source  clock相同，但是经过了不同的clock divider, clock gating, 以及clock mux。clock  structure简化为如下图所示：</p>
-<ul>
-<li>Generated clock从PLL出来就分叉：OCV严重</li>
-<li>PLL clock频率巨高：&gt;1000MHz</li>
-<li>三个clock group两两之间都有talk：CLK0, CLK1_0&#x2F;CLK1_1&#x2F;CLK1_2, CLK2。</li>
-</ul>
-          <div class="read-more">
-            <a href="/2023/12/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Excel%E5%9C%A8Timing-Closure%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/12/07/types-of-power-in-an-SoC-design/">Types of Power in a SoC Design</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-12-07
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><img src="/2023/12/07/types-of-power-in-an-SoC-design/image-20231207202606742.png" class="">
-
-<p><strong>Dynamic Power</strong></p>
-<ul>
-<li><strong>Switching Power:</strong> This is the power spent charging and discharging the capacitance of the output net; it is also called load power or CV2 power. Since switching power is a function of switching activity and load capacitance, it is data dependent.</li>
-<li><strong>Internal Power (Short Circuit Power&#x2F;Crowbar Power):</strong> This is the power dissipated inside the gate when switching. This power is also called short power or crowbar power.</li>
-</ul>
-<p><strong>Static Power</strong></p>
-<ul>
-<li>Static power is the power consumed by a device when no signals are changing values. Since static power consumption is primarily caused by leakage, in CMOS devices, Static Power is also known as Leakage Power. This is the power dissipated whenever the device is powered, regardless of activity; there are several sources of leakage power but they are all lumped together into a single value for modeling purposes. The amount of leakge power dissipated by a gate can depend on the logic state of the inputs. This is called “state-dependent leakage power“; most tools can model this if it is described in the library data.</li>
-</ul>
-<p><strong>Power Components</strong></p>
-<ul>
-<li><strong>Combinational:</strong> Combinational cell and a net driven by the combinational cell</li>
-<li><strong>Sequential:</strong> Registers, Latch, ICG and the output net of the sequential logic</li>
-<li><strong>Clock:</strong> Clock network</li>
-<li><strong>IO:</strong> IO pad cell and the output net of the IO cell</li>
-<li><strong>Memory:</strong> Memory and the output nets of the memory cell</li>
-<li><strong>Macrocell:</strong></li>
-<li><strong>Blackbox:</strong></li>
-</ul>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/09/22/set-data-check/">Set_data_check</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-09-22
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold 1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
-<p>Above script constrains the skew between <strong>$related_pin</strong> and <strong>$constrained_pin</strong> no more than 0.1ns, where <strong>$related_pin</strong> is like a clock pin whereas <strong>$constrained_pin</strong> is like a data pin.</p>
-<p>As neither -setup nor -hold specified, it implies that both setup and hold checks are set as -0.05ns. </p>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/09/16/PrimeTime-Multicycle-Path/">PrimeTime Multicycle Path</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-09-16
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>set_multicycle_path path_multiplier [-setup|-hold] [-start|-end] -from <Start-
-Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 1, Hold 0.<br><strong>Setup:</strong> Regarding to EndClock by Default. (-end is the default)<br><strong>Hold:</strong> Regarding to StartClock by Default. (-start is the default)<br>In <strong>single clock domain</strong> design there is no meaning to the <strong>-start</strong> and <strong>-end</strong> flags. !!!<br>Note: In case your setup path_multiplier is X, use the path_multiplier of X-1 for<br>hold. In any case check out the report of your multicycles and the report exceptions<br>(Plus the report_exceptions -ignore) results.</p>
-<img src="/2023/09/16/PrimeTime-Multicycle-Path/clock-edges.png" class="">
-
-<p>Table 1 describes how the check points for setup and hold timing are moved back-<br>ward of forward depend on the -start&#x2F;-end flags and the path_multiplier.</p>
-<p><img src="/pdf/pdf-icon.png" width="24"><a href="/2023/09/16/PrimeTime-Multicycle-Path/PrimeTime%20Multicycles.pdf" title="PrimeTime Multicycle Path Quick UG">PrimeTime Multicycle Path Quick UG</a></p>
-
-        </div></article>
-      <nav class="pagination"><a class="next" href="/page/2/">
-        <span class="next-text">Next</span>
+      </div>
+      
+      <footer class="post-footer">
+        
+        <nav class="post-nav"><a class="next" href="/2024/02/22/Tmux-Cheat-Sheet/">
+        <span class="next-text nav-default">Tmux Cheat Sheet</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    </nav></section></div></div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
