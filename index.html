@@ -92,6 +92,25 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2024/02/27/Input-special-characters-in-VIM/">Input Special Characters in VIM</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2024-02-27
+        </span><span class="post-category">
+            <a href="/categories/Program/">Program</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>Special characters or symbols are called digraphs in VIM. But how can we input digraphs in VIM? Here it is. </p>
+<p>In <insert> mode, press C-k and followed by <char1><char2>, which is the digraph coded-key that you are going to input. For examples,<br>C-K oo • (Bullet)<br>C-k Db ◆ (Diamond)<br>C-k Co © (Copyright)<br>C-k Rg ® (Registered)<br>C-k Pd £ (Pound)<br>C-k Pd € (Euro)<br>C-k Ye ¥ (Yuan)<br>C-k +- ± (Plus-Minus)<br>C-k &gt;&gt; » (Right quo)<br>C-k &lt;&lt; « (Left quo)</p>
+<p>The complete coded-keys can be found by type command <code>:dig</code>, or <code>:help dig</code> for more details about digraphs.</p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2024/02/26/how-to-solve-segfault-on-VCS-linux/">How to Solve Segfault on VCS Linux</a>
         </h1>
 
@@ -358,25 +377,6 @@
 <li><strong>Macrocell:</strong></li>
 <li><strong>Blackbox:</strong></li>
 </ul>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/09/22/set-data-check/">Set_data_check</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-09-22
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold 1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
-<p>Above script constrains the skew between <strong>$related_pin</strong> and <strong>$constrained_pin</strong> no more than 0.1ns, where <strong>$related_pin</strong> is like a clock pin whereas <strong>$constrained_pin</strong> is like a data pin.</p>
-<p>As neither -setup nor -hold specified, it implies that both setup and hold checks are set as -0.05ns. </p>
 
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">

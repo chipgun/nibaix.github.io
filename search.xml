@@ -12917,4 +12917,18 @@ service messagebus restart;
         <tag>html</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Input Special Characters in VIM</title>
+    <url>/2024/02/27/Input-special-characters-in-VIM/</url>
+    <content><![CDATA[<p>Special characters or symbols are called digraphs in VIM. But how can we input digraphs in VIM? Here it is. </p>
+<p>In <insert> mode, press C-k and followed by <char1><char2>, which is the digraph coded-key that you are going to input. For examples,<br>C-K oo • (Bullet)<br>C-k Db ◆ (Diamond)<br>C-k Co © (Copyright)<br>C-k Rg ® (Registered)<br>C-k Pd £ (Pound)<br>C-k Pd € (Euro)<br>C-k Ye ¥ (Yuan)<br>C-k +- ± (Plus-Minus)<br>C-k &gt;&gt; » (Right quo)<br>C-k &lt;&lt; « (Left quo)</p>
+<p>The complete coded-keys can be found by type command <code>:dig</code>, or <code>:help dig</code> for more details about digraphs.</p>
+]]></content>
+      <categories>
+        <category>Program</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
 </search>
