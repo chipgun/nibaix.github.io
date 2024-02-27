@@ -108,54 +108,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Challenge: Spot a Snow Leopard in 15 Sec</title>
-    <url>/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/</url>
-    <content><![CDATA[<img src=/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/snow_leopard.jpg width=320>
-]]></content>
-      <categories>
-        <category>Uncategorized</category>
-      </categories>
-      <tags>
-        <tag>fun</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chop and Chomp</title>
-    <url>/2023/02/22/Chop-and-Chomp/</url>
-    <content><![CDATA[<p><strong>Perl Functions of chop() and chomp()</strong></p>
-<p><code>chop($abc);</code> deletes the last character of $abc.<br><code>chomp($xyz);</code> deletes the “new line” character at the end of $xyz if it has.</p>
-<p><strong>Often the usage of chomp is like this:</strong><br><code>chomp($input = &lt;STDIN&gt;);</code> which equals to <code>$input = &lt;STDIN&gt;; chomp($input);</code></p>
-]]></content>
-      <categories>
-        <category>Program</category>
-      </categories>
-      <tags>
-        <tag>perl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Disable Clipboard in NoMachine</title>
-    <url>/2022/07/17/Disable-Clipboard-in-NoMachine/</url>
-    <content><![CDATA[<p>Disabling clipboard (copy and paste) in NoMachine is possible by setting the appropriate key on the NoMachine server installation. It isn’t restricted to the product you are using. I.e you can set it also if you have installed the free version of NoMachine on the computer you are accessing.</p>
-<p>By default users can copy and paste from locale to the session and vice-versa.</p>
-<p>You can configure the server to limit such operations by setting proper values in the server configuration file (&#x2F;usr&#x2F;NX&#x2F;etc&#x2F;server.cfg on Linux) as explained below.</p>
-<p><strong>Forbid copy &amp; paste operations</strong></p>
-<p>To forbid copy &amp; paste partially or totally, uncomment and set a proper value for the EnableClipboard key. Possible settings are:</p>
-<ol>
-<li><code>EnableClipboard client</code> Content copied on the user’s side can be pasted inside the session</li>
-<li><code>EnableClipboard server</code> Content copied inside the session can be pasted on the user’s side</li>
-<li><code>EnableClipboard none</code> No copy and paste operations are allowed</li>
-<li><code>EnableClipboard both</code> Two-way copy and paste operations are allowed</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Beginning of SLS Usage</title>
     <url>/2023/08/07/Beginning-of-SLS-Usage/</url>
     <content><![CDATA[<p>Starting from 2023, Siemens changes their EDA license managing utility.</p>
@@ -182,6 +134,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Challenge: Spot a Snow Leopard in 15 Sec</title>
+    <url>/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/</url>
+    <content><![CDATA[<img src=/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/snow_leopard.jpg width=320>
+]]></content>
+      <categories>
+        <category>Uncategorized</category>
+      </categories>
+      <tags>
+        <tag>fun</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chop and Chomp</title>
+    <url>/2023/02/22/Chop-and-Chomp/</url>
+    <content><![CDATA[<p><strong>Perl Functions of chop() and chomp()</strong></p>
+<p><code>chop($abc);</code> deletes the last character of $abc.<br><code>chomp($xyz);</code> deletes the “new line” character at the end of $xyz if it has.</p>
+<p><strong>Often the usage of chomp is like this:</strong><br><code>chomp($input = &lt;STDIN&gt;);</code> which equals to <code>$input = &lt;STDIN&gt;; chomp($input);</code></p>
+]]></content>
+      <categories>
+        <category>Program</category>
+      </categories>
+      <tags>
+        <tag>perl</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Coloring the C-Shell Prompt</title>
     <url>/2022/07/20/Coloring-the-C-shell-Prompt/</url>
     <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set   black = &quot;%&#123;\033[0;30m%&#125;&quot;</span><br><span class="line">set  Bblack = &quot;%&#123;\033[B;30m%&#125;&quot;</span><br><span class="line">set     red = &quot;%&#123;\033[0;31m%&#125;&quot;</span><br><span class="line">set    Bred = &quot;%&#123;\033[1;31m%&#125;&quot;</span><br><span class="line">set   green = &quot;%&#123;\033[0;32m%&#125;&quot;</span><br><span class="line">set  Bgreen = &quot;%&#123;\033[1;32m%&#125;&quot;</span><br><span class="line">set  yellow = &quot;%&#123;\033[0;33m%&#125;&quot;</span><br><span class="line">set Byellow = &quot;%&#123;\033[1;33m%&#125;&quot;</span><br><span class="line">set    blue = &quot;%&#123;\033[0;34m%&#125;&quot;</span><br><span class="line">set   Bblue = &quot;%&#123;\033[1;34m%&#125;&quot;</span><br><span class="line">set  purple = &quot;%&#123;\033[0;35m%&#125;&quot;</span><br><span class="line">set Bpurple = &quot;%&#123;\033[1;35m%&#125;&quot;</span><br><span class="line">set    cyan = &quot;%&#123;\033[0;36m%&#125;&quot;</span><br><span class="line">set   Bcyan = &quot;%&#123;\033[1;36m%&#125;&quot;</span><br><span class="line">set   white = &quot;%&#123;\033[0;37m%&#125;&quot;</span><br><span class="line">set  Bwhite = &quot;%&#123;\033[1;37m%&#125;&quot;</span><br><span class="line">set     end = &quot;%&#123;\033[0m%&#125;&quot;</span><br><span class="line"></span><br><span class="line">alias setprompt &#x27;set prompt = &quot;\n$&#123;cyan&#125;%~\n$&#123;Bpurple&#125;%n@%m$&#123;Bwhite&#125;[`id -ng`]$&#123;end&#125; &quot;&#x27;</span><br><span class="line">alias cd &#x27;chdir \!* &amp;&amp; setprompt&#x27;</span><br><span class="line">setprompt</span><br></pre></td></tr></table></figure>
@@ -192,6 +170,28 @@
       <tags>
         <tag>linux</tag>
         <tag>csh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Disable Clipboard in NoMachine</title>
+    <url>/2022/07/17/Disable-Clipboard-in-NoMachine/</url>
+    <content><![CDATA[<p>Disabling clipboard (copy and paste) in NoMachine is possible by setting the appropriate key on the NoMachine server installation. It isn’t restricted to the product you are using. I.e you can set it also if you have installed the free version of NoMachine on the computer you are accessing.</p>
+<p>By default users can copy and paste from locale to the session and vice-versa.</p>
+<p>You can configure the server to limit such operations by setting proper values in the server configuration file (&#x2F;usr&#x2F;NX&#x2F;etc&#x2F;server.cfg on Linux) as explained below.</p>
+<p><strong>Forbid copy &amp; paste operations</strong></p>
+<p>To forbid copy &amp; paste partially or totally, uncomment and set a proper value for the EnableClipboard key. Possible settings are:</p>
+<ol>
+<li><code>EnableClipboard client</code> Content copied on the user’s side can be pasted inside the session</li>
+<li><code>EnableClipboard server</code> Content copied inside the session can be pasted on the user’s side</li>
+<li><code>EnableClipboard none</code> No copy and paste operations are allowed</li>
+<li><code>EnableClipboard both</code> Two-way copy and paste operations are allowed</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -238,57 +238,6 @@
       <tags>
         <tag>synopsys</tag>
         <tag>starred</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ISO 26262 Hardware Dev Requirement</title>
-    <url>/2022/06/29/ISO-26262-hardware-dev-requirement/</url>
-    <content><![CDATA[<h2 id="Functional-Safety"><a href="#Functional-Safety" class="headerlink" title="Functional Safety"></a>Functional Safety</h2><table>
-<thead>
-<tr>
-<th>Design Integrity</th>
-<th>Device Quality</th>
-<th>Functional Safety</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Function correct? Performance &amp; power</td>
-<td>Silicon Design &amp; Manufactory</td>
-<td>Device Failure Detection and Response Mechanisms</td>
-</tr>
-<tr>
-<td>Function verification: Prevent&#x2F;Eliminate Bugs</td>
-<td>Reduced DPPM</td>
-<td>Detect&#x2F;Control Failures</td>
-</tr>
-<tr>
-<td>Use best-in-class Functionla verification methodolody and tools</td>
-<td>DFT&#x2F;Function patterns</td>
-<td>Assessed by Functional Safety Verification methodology and tools</td>
-</tr>
-<tr>
-<td>SYSTEMATIC FAULTS - Design Bugs</td>
-<td>RANDOM FAULTS</td>
-<td>RANDOM FAULTS - HW FAILURES</td>
-</tr>
-<tr>
-<td>Always permanent</td>
-<td>Permanent</td>
-<td>Permanent&#x2F;Transient</td>
-</tr>
-<tr>
-<td>Development</td>
-<td>Manufacturing</td>
-<td>In Operation</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>iso26262</tag>
-        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -360,16 +309,54 @@
       </tags>
   </entry>
   <entry>
-    <title>NIS Commands</title>
-    <url>/2022/07/13/NIS-Commands/</url>
-    <content><![CDATA[<p><code>sudo /usr/lib64/yp/ypinit -m</code> # server</p>
-<p><code>sudo service ypbind status</code> # node<br><code>sudo service ypbind start</code> # node<br><code>sudo service ypbind stop</code> # node<br><code>sudo service ypbind restart</code> # node<br><code>sudo service ypbind reload</code> # node</p>
+    <title>ISO 26262 Hardware Dev Requirement</title>
+    <url>/2022/06/29/ISO-26262-hardware-dev-requirement/</url>
+    <content><![CDATA[<h2 id="Functional-Safety"><a href="#Functional-Safety" class="headerlink" title="Functional Safety"></a>Functional Safety</h2><table>
+<thead>
+<tr>
+<th>Design Integrity</th>
+<th>Device Quality</th>
+<th>Functional Safety</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Function correct? Performance &amp; power</td>
+<td>Silicon Design &amp; Manufactory</td>
+<td>Device Failure Detection and Response Mechanisms</td>
+</tr>
+<tr>
+<td>Function verification: Prevent&#x2F;Eliminate Bugs</td>
+<td>Reduced DPPM</td>
+<td>Detect&#x2F;Control Failures</td>
+</tr>
+<tr>
+<td>Use best-in-class Functionla verification methodolody and tools</td>
+<td>DFT&#x2F;Function patterns</td>
+<td>Assessed by Functional Safety Verification methodology and tools</td>
+</tr>
+<tr>
+<td>SYSTEMATIC FAULTS - Design Bugs</td>
+<td>RANDOM FAULTS</td>
+<td>RANDOM FAULTS - HW FAILURES</td>
+</tr>
+<tr>
+<td>Always permanent</td>
+<td>Permanent</td>
+<td>Permanent&#x2F;Transient</td>
+</tr>
+<tr>
+<td>Development</td>
+<td>Manufacturing</td>
+<td>In Operation</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>VLSI</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>iso26262</tag>
+        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -470,6 +457,19 @@
       </tags>
   </entry>
   <entry>
+    <title>NIS Commands</title>
+    <url>/2022/07/13/NIS-Commands/</url>
+    <content><![CDATA[<p><code>sudo /usr/lib64/yp/ypinit -m</code> # server</p>
+<p><code>sudo service ypbind status</code> # node<br><code>sudo service ypbind start</code> # node<br><code>sudo service ypbind stop</code> # node<br><code>sudo service ypbind restart</code> # node<br><code>sudo service ypbind reload</code> # node</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OCV Evolution</title>
     <url>/2022/05/04/OCV-evolution/</url>
     <content><![CDATA[<p>EDA (Electronic Design Automation) cell characterization tools have been used extensively to generate models for timing, power and noise at a rapidly growing number of process corners. Today, model variation has become a critical component of cell characterization. Variation can impact circuit timing due to process, voltage, and temperature changes and can lead to timing violations, resulting in a costly re-spin of the design. While global variation is captured by analyzing the design at different process corners, local variation cannot be handled effectively with just the traditional corner-based static timing analysis (STA). As designers try to squeeze every ounce of power-performance-area (PPA), packing millions of transistors into the chip, local variation effects have become more and more prominent. In today’s most advanced nodes at 7nm and below, there is a strong need for innovative methods to reduce pessimism and to provide a better design margining methodology to accurately account for the impact of variation.</p>
@@ -523,6 +523,25 @@
       </tags>
   </entry>
   <entry>
+    <title>PrimeTime Multicycle Path</title>
+    <url>/2023/09/16/PrimeTime-Multicycle-Path/</url>
+    <content><![CDATA[<p>set_multicycle_path path_multiplier [-setup|-hold] [-start|-end] -from <Start-
+Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 1, Hold 0.<br><strong>Setup:</strong> Regarding to EndClock by Default. (-end is the default)<br><strong>Hold:</strong> Regarding to StartClock by Default. (-start is the default)<br>In <strong>single clock domain</strong> design there is no meaning to the <strong>-start</strong> and <strong>-end</strong> flags. !!!<br>Note: In case your setup path_multiplier is X, use the path_multiplier of X-1 for<br>hold. In any case check out the report of your multicycles and the report exceptions<br>(Plus the report_exceptions -ignore) results.</p>
+<img src="/2023/09/16/PrimeTime-Multicycle-Path/clock-edges.png" class="">
+
+<p>Table 1 describes how the check points for setup and hold timing are moved back-<br>ward of forward depend on the -start&#x2F;-end flags and the path_multiplier.</p>
+<p><img src="/pdf/pdf-icon.png" width="24"><a href="/2023/09/16/PrimeTime-Multicycle-Path/PrimeTime%20Multicycles.pdf" title="PrimeTime Multicycle Path Quick UG">PrimeTime Multicycle Path Quick UG</a></p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>starred</tag>
+        <tag>primetime</tag>
+        <tag>sta</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PrimeTime-PX Flow</title>
     <url>/2022/05/07/PrimeTime-PX-flow/</url>
     <content><![CDATA[<p><strong>PT-PX</strong> is PrimeTime with power analysis. It’s a tool within PT (requires separate license of PT-PX). PT-PX combines simulation time window to report power within a window.</p>
@@ -547,27 +566,8 @@
       <tags>
         <tag>synopsys</tag>
         <tag>lowpower</tag>
-        <tag>sta</tag>
         <tag>primetime</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PrimeTime Multicycle Path</title>
-    <url>/2023/09/16/PrimeTime-Multicycle-Path/</url>
-    <content><![CDATA[<p>set_multicycle_path path_multiplier [-setup|-hold] [-start|-end] -from <Start-
-Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 1, Hold 0.<br><strong>Setup:</strong> Regarding to EndClock by Default. (-end is the default)<br><strong>Hold:</strong> Regarding to StartClock by Default. (-start is the default)<br>In <strong>single clock domain</strong> design there is no meaning to the <strong>-start</strong> and <strong>-end</strong> flags. !!!<br>Note: In case your setup path_multiplier is X, use the path_multiplier of X-1 for<br>hold. In any case check out the report of your multicycles and the report exceptions<br>(Plus the report_exceptions -ignore) results.</p>
-<img src="/2023/09/16/PrimeTime-Multicycle-Path/clock-edges.png" class="">
-
-<p>Table 1 describes how the check points for setup and hold timing are moved back-<br>ward of forward depend on the -start&#x2F;-end flags and the path_multiplier.</p>
-<p><img src="/pdf/pdf-icon.png" width="24"><a href="/2023/09/16/PrimeTime-Multicycle-Path/PrimeTime%20Multicycles.pdf" title="PrimeTime Multicycle Path Quick UG">PrimeTime Multicycle Path Quick UG</a></p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>starred</tag>
         <tag>sta</tag>
-        <tag>primetime</tag>
       </tags>
   </entry>
   <entry>
@@ -614,6 +614,21 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </categories>
       <tags>
         <tag>spi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Setup License Server With Systemctl in Redhat7</title>
+    <url>/2023/08/07/Setup-License-Server-with-Systemctl-in-Redhat7/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#</span><br><span class="line"># Create a shell script which starts the license server</span><br><span class="line">#</span><br><span class="line">% cat /path/to/eda/script/snpslmd.sh</span><br><span class="line">admin=eda</span><br><span class="line">su $admin -c &quot;/path/to/lmgrd -l $logfile -c $licfile&quot;</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Create systemd service file</span><br><span class="line">#</span><br><span class="line">% cat /etc/systemd/system/snpslmd.service</span><br><span class="line">[Unit]</span><br><span class="line">Description=Synopsys License Server Daemon</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">RemainAfterExit=yes</span><br><span class="line">KillMode=process</span><br><span class="line">ExecStart=/bin/sh -c &quot;/path/to/eda/script/snpslmd.sh&quot;</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Startup license server</span><br><span class="line">#</span><br><span class="line">% sudo systemctl daemon-reload</span><br><span class="line">% sudo systemctl start snpslmd.service</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Enable license server onboot</span><br><span class="line">#</span><br><span class="line">% sudo systemctl enable snpslmd.service</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Check the status of the license server</span><br><span class="line">#</span><br><span class="line">% sudo systemctl status snpslmd.service</span><br><span class="line">% ps aux | grep lmgrd | grep snpslmd</span><br><span class="line">% lmstat</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>Unresolved issue:</strong></em><br/>Unable to stop license server by <code>systemctl stop snpslmd.service</code></p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>license</tag>
+        <tag>starred</tag>
       </tags>
   </entry>
   <entry>
@@ -749,6 +764,32 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
+    <title>Synopsys Command: Report_timing</title>
+    <url>/2023/08/11/Synopsys-Command-report-timing/</url>
+    <content><![CDATA[<p>There are some useful options of command report_timing, which I haven’t been aware of before.</p>
+<p><strong>-start_end_pair</strong></p>
+<p>This option should be quite useful if you want to report violations from all startpoints to endpoints. By default report_timing only report the most critical startpoint to a certain endpoint even if -nworst is specified. With the option of -start_end_pair all startpoints will be shown up.</p>
+<p><strong>-path_type <em>summary</em></strong></p>
+<p>Reports timing summary only with startpoints and endpoints.</p>
+<p><strong>-start_end_type <em>reg_to_reg</em> | <em>reg_to_out</em> | <em>in_to_reg</em> | <em>in_to_out</em></strong></p>
+<p>Restricts the report to one of four classes.</p>
+<span id="more"></span>
+
+<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811145744487.png" class="">
+
+<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150538668.png" class="">
+
+<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150217212.png" class="">
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>synopsys</tag>
+        <tag>timing</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>This Beta Version of Tyora Is Expired</title>
     <url>/2022/06/17/This-beta-version-of-Tyora-is-expired/</url>
     <content><![CDATA[<img src=/2022/06/17/This-beta-version-of-Tyora-is-expired/image-20220709204746200.jpg width=400>
@@ -777,18 +818,31 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
-    <title>Setup License Server With Systemctl in Redhat7</title>
-    <url>/2023/08/07/Setup-License-Server-with-Systemctl-in-Redhat7/</url>
-    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#</span><br><span class="line"># Create a shell script which starts the license server</span><br><span class="line">#</span><br><span class="line">% cat /path/to/eda/script/snpslmd.sh</span><br><span class="line">admin=eda</span><br><span class="line">su $admin -c &quot;/path/to/lmgrd -l $logfile -c $licfile&quot;</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Create systemd service file</span><br><span class="line">#</span><br><span class="line">% cat /etc/systemd/system/snpslmd.service</span><br><span class="line">[Unit]</span><br><span class="line">Description=Synopsys License Server Daemon</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">RemainAfterExit=yes</span><br><span class="line">KillMode=process</span><br><span class="line">ExecStart=/bin/sh -c &quot;/path/to/eda/script/snpslmd.sh&quot;</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Startup license server</span><br><span class="line">#</span><br><span class="line">% sudo systemctl daemon-reload</span><br><span class="line">% sudo systemctl start snpslmd.service</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Enable license server onboot</span><br><span class="line">#</span><br><span class="line">% sudo systemctl enable snpslmd.service</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Check the status of the license server</span><br><span class="line">#</span><br><span class="line">% sudo systemctl status snpslmd.service</span><br><span class="line">% ps aux | grep lmgrd | grep snpslmd</span><br><span class="line">% lmstat</span><br></pre></td></tr></table></figure>
+    <title>Tips: New Installation of RHEL7.9</title>
+    <url>/2023/04/29/Tips-New-Installation-of-RHEL7-9/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Tmux Cheat Sheet</title>
+    <url>/2024/02/22/Tmux-Cheat-Sheet/</url>
+    <content><![CDATA[<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222202219915.jpg" class="">
 
-<p><em><strong>Unresolved issue:</strong></em><br/>Unable to stop license server by <code>systemctl stop snpslmd.service</code></p>
+<span id="more"></span>
+
+<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222202426558.jpg" class="">
+
+<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222203109310.jpg" class="">
+
+<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222203804823.jpg" class="">
+
+<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222203915923.jpg" class="">
 ]]></content>
       <categories>
-        <category>VLSI</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>license</tag>
-        <tag>starred</tag>
+        <tag>linux</tag>
+        <tag>tmux</tag>
       </tags>
   </entry>
   <entry>
@@ -809,35 +863,18 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       </tags>
   </entry>
   <entry>
-    <title>Synopsys Command: Report_timing</title>
-    <url>/2023/08/11/Synopsys-Command-report-timing/</url>
-    <content><![CDATA[<p>There are some useful options of command report_timing, which I haven’t been aware of before.</p>
-<p><strong>-start_end_pair</strong></p>
-<p>This option should be quite useful if you want to report violations from all startpoints to endpoints. By default report_timing only report the most critical startpoint to a certain endpoint even if -nworst is specified. With the option of -start_end_pair all startpoints will be shown up.</p>
-<p><strong>-path_type <em>summary</em></strong></p>
-<p>Reports timing summary only with startpoints and endpoints.</p>
-<p><strong>-start_end_type <em>reg_to_reg</em> | <em>reg_to_out</em> | <em>in_to_reg</em> | <em>in_to_out</em></strong></p>
-<p>Restricts the report to one of four classes.</p>
-<span id="more"></span>
-
-<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811145744487.png" class="">
-
-<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150538668.png" class="">
-
-<img src="/2023/08/11/Synopsys-Command-report-timing/image-20230811150217212.png" class="">
+    <title>UVM Online Documentation</title>
+    <url>/2022/05/03/UVM-online-documentation/</url>
+    <content><![CDATA[<p><a href="https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/">https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/</a></p>
+<img src="/2022/05/03/UVM-online-documentation/image-20220503111434904.png" class="">
 ]]></content>
       <categories>
         <category>VLSI</category>
       </categories>
       <tags>
-        <tag>synopsys</tag>
-        <tag>timing</tag>
+        <tag>uvm</tag>
+        <tag>verification</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Tips: New Installation of RHEL7.9</title>
-    <url>/2023/04/29/Tips-New-Installation-of-RHEL7-9/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Too Many Open Files错误导致VNC灰屏问题</title>
@@ -875,40 +912,59 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>UVM Online Documentation</title>
-    <url>/2022/05/03/UVM-online-documentation/</url>
-    <content><![CDATA[<p><a href="https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/">https://verificationacademy.com/verification-methodology-reference/uvm/docs_1.2/html/</a></p>
-<img src="/2022/05/03/UVM-online-documentation/image-20220503111434904.png" class="">
+    <title>Calibre Platform Support Overview and Roadmap - Updated 2022.1</title>
+    <url>/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/</url>
+    <content><![CDATA[<p><em><strong>Updated: 24 Jan 2022</strong></em></p>
+<h2 id="Linux-Operating-System-Support"><a href="#Linux-Operating-System-Support" class="headerlink" title="Linux Operating System Support"></a>Linux Operating System Support</h2><p>The Calibre toolset is supported for use with the Linux® operating system systems supplied by Red Hat, CentOS, and SUSE. In general, any “Tier 1” 64-bit x86 hardware supported by those providers is supported for use with the Calibre toolset. There are two x86-64 processor products supplied by different vendors, AMD and Intel, and the Calibre toolset is supported on computers based on either of these processors. The correct software must be loaded on a particular hardware platform to use Calibre, and the supported OS versions, service packs or updates are listed below. Linux IBM Power and ARM distributions are not supported by Calibre.</p>
+ <span id="more"></span>
+
+<p>CentOS Linux is a community-driven free software effort that is derived from the sources of Red Hat Enterprise Linux (RHEL). The Calibre product line is tested and qualified with RHEL 6 and 7 as well as CentOS 6 and 7, and any references to a specific version of RHEL 6 or 7 in the Roadmap applies equally to CentOS.</p>
+<p>Calibre is not supported with CentOS 8 due to changes in how CentOS will deliver future versions of Red Hat software. See <a href="https://blog.centos.org/2020/12/future-is-centos-stream/">https://blog.centos.org/2020/12/future-is-centos-stream/</a> for more information.</p>
+<p>Please note that Calibre does not provide operating system support.</p>
+<p>Calibre supports SUSE Linux Enterprise Server (SLES), CentOS Linux, and Red Hat Enterprise Linux (RHEL). Support for RHEL is determined by the operating system version, for example, RHEL 6.10. Red Hat has different options for marketing RHEL, such as “Server” or “Workstation.” All the marketing options are supported as long as a supported operating system version is loaded. </p>
+<p>Note that Red Hat Fedora Linux and CentOS Stream are maintained, distributed, and supported differently than RHEL and CentOS Linux, and are not supported for use with the Calibre product line. Any use of the Red Hat Fedora or CentOS Stream operating systems is governed by <em>the Linux Distribution Compatibility Statement</em>. </p>
+<p>There are practical limitations for fully qualifying Calibre on each &amp; every Linux distribution customers may use, therefore Calibre selects a subset to focus testing on. The subset of OS versions which are qualified is typically chosen based on 2 factors: whether the version&#x2F;update provides support for additional hardware, or has bug fixes for significant problems that affect the execution or development of Calibre. Although we may not go through the full qualification process on all minor versions of a particular major release version, we will support those minor versions under the terms of the <em>Linux Distribution Compatibility Statement</em>.</p>
+<h2 id="Linux-Distribution-Compatibility-Statement"><a href="#Linux-Distribution-Compatibility-Statement" class="headerlink" title="Linux Distribution Compatibility Statement"></a>Linux Distribution Compatibility Statement</h2><p>If customers encounter problems using Calibre tools on an unsupported Linux distribution or OS version, and the problem can be duplicated on a supported production Linux distribution or OS version, it will be addressed through normal Calibre support policies. If a problem only exists on the unsupported Linux distribution or OS version, the fix lies in a change to the Linux environment, not the Calibre tools. In this case, customers should contact their Linux supplier. Calibre Customer Support can assist a customer by attempting to reproduce an issue on one of the fully qualified production Linux versions.</p>
+<h2 id="Calibre-Support-of-Virtual-Machines"><a href="#Calibre-Support-of-Virtual-Machines" class="headerlink" title="Calibre Support of Virtual Machines"></a>Calibre Support of Virtual Machines</h2><p>Some customers (for example, foundries) are required to run older versions of Calibre to support production lines. Many of these same customers also want to upgrade to newer hardware to take advantage of performance improvements and power savings. However, newer x86-64 servers have processors that require more recent versions of Linux.</p>
+<p>In addition, customers may not wish to spend the time nor incur the risk of re-qualifying an existing production environment on a new operating system version or a new Calibre version. Therefore, a legacy support strategy based on virtual machines (VMs) is recommended for customers who are required to run old versions of Calibre on new servers. While it is nearly always better to move forward with newer hardware and associated newer software, when that is not an option, a VM can be a suitable solution. In-house Calibre VM testing is done using the VMware ESX and Red Hat KVM servers.</p>
+<p>There is a difference in licensing behavior between VMware and Red Hat KVM virtualization solutions when running a Calibre job using both physical and virtual CPUs. With VMware hypervisor, Calibre is prevented from distinguishing between physical and virtual CPUs and, as a result, Calibre consumes licenses based on the number of connected physical and virtual CPUs. Red Hat KVM hypervisor allows Calibre to distinguish between physical and virtual CPUs, so Calibre consumes licenses based only on the number of connected physical CPUs.</p>
+<p>The Calibre product division will make a reasonable effort to support Linux VM usage (for example, VMware or KVM) on x86-64 hardware and will perform due diligence to assist our customers when problems arise. If no solution or workaround is found and the problem does not occur when using physical hardware, you should follow up with your virtualization software vendor.</p>
+<p>Using a VM of the older OS version on new, fast hardware provides the benefit of improved performance while still retaining the exact supported environment needed by the older software. Therefore, there is no risk of OS-introduced issues and no time needed for requalification. For more information, contact Calibre Customer Support.</p>
+<h2 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h2><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
+<p>Table 1. Calibre Platform Identifiers</p>
+<img src="/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/image-20230131135044258.png" class="">
+
+<ul>
+<li>AOJ, AOK, and SOA MGC_HOME trees as  well as all MGC_HOME trees starting with Calibre  2024.3 require the AVX2 minimum CPU instruction set. </li>
+<li>Important Note: The RSH utility is not provided with RHEL  8. Customers currently using the RSH utility for Calibre  distributed processing will need to switch to a different utility, such as  SSH, before they can use the Calibre AOK MGC_HOME  software on RHEL 8.</li>
+</ul>
+<h2 id="Calibre-Support-Overview"><a href="#Calibre-Support-Overview" class="headerlink" title="Calibre Support Overview"></a>Calibre Support Overview</h2><p>Table 2, Calibre Support Overview, provides an overview of the various combinations of hardware architectures and operating systems that Calibre currently supports and intends to support in the near future. The Calibre product organization regularly reviews platform and operating systems in order to develop platform support plans. The support roadmap is a forecast and may be adjusted to better mesh with customer needs and with the availability of specific hardware and operating systems. Note that if an older OS version is not listed, support for it was discontinued. Please refer to the <em>Calibre</em> <em>System Configurations</em> section below for support details on minor versions of Linux.</p>
+<p>Table 2. Calibre Support Overview Forecast, 2023-2025</p>
+<img src="/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/image-20230131135339489.png" class="">
+
+<ul>
+<li>Calibre releases running on RHEL 8 require an AOK MGC_HOME tree and support for the AVX2 CPU instruction set.</li>
+<li>Calibre releases running on SLES 15 require support for the AVX2 CPU instruction set.</li>
+<li>Calibre releases 2020.1 through 2024.2 running on RHEL&#x2F;CentOS 6, RHEL&#x2F;CentOS 7, SLES 11, and SLES 12 are supported with AOI and AOJ MGC_HOME trees.</li>
+<li>Calibre releases 2024.3 and later running on RHEL&#x2F;CentOS 7 or SLES 12 require an AOJ MGC_HOME tree and support for the AVX2 CPU instruction set. </li>
+<li>Please see Table 1, Calibre Platform Identifiers, for full details on which platform identifiers that can be used with each OS version.</li>
+<li>RHEL&#x2F;CentOS 6.10 is last minor release for RHEL&#x2F;CentOS 6. RHEL&#x2F;CentOS 7.9 is the last minor release for RHEL&#x2F;CentOS 7.</li>
+</ul>
+<h2 id="Calibre-System-Configurations"><a href="#Calibre-System-Configurations" class="headerlink" title="Calibre System Configurations"></a>Calibre System Configurations</h2><p> The Calibre tools may require a minimum OS patch level for each supported OS. Please see the <em>Calibre Administrator’s Guide</em> provided with the particular Calibre release you are interested in. The <em>Calibre Administrator’s Guide</em> provides release-specific information on required patch levels and other information on supported environments. </p>
+<p><em><strong>Notice of Intention to Discontinue Calibre Support on RHEL&#x2F;CentOS 6</strong></em></p>
+<p>Only very limited support will be provided for 2022-2024 versions of Calibre on RHEL&#x2F;CentOS 6. Calibre will require a special setting to enable execution for these versions. The 2024.2 Calibre Release (Jun 2024) will be the last release to support RHEL&#x2F;CentOS 6 and SLES 11 SP4. For further information please see the <a href="http://calibre.mentorcloudservices.com/docs/Calibre_RHEL6_Roadmap.htm">Calibre RHEL&#x2F;CentOS 6 Roadmap</a> page.</p>
+<h2 id="Calibre-Support-Summary-for-Linux-x86-64"><a href="#Calibre-Support-Summary-for-Linux-x86-64" class="headerlink" title="Calibre Support Summary for Linux x86-64"></a>Calibre Support Summary for Linux x86-64</h2><p>Table 3. Calibre Support Summary for Linux x86-64, 2020-2023</p>
+ <img src="/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/image-20230131135549003.png" class="">
+
+<p>All 2020 Calibre releases are supported with AOI and AOJ MGC_HOME trees.<br>All 2021-2023 Calibre releases are supported with AOI, AOJ, and AOK MGC_HOME trees.<br>Please see Table 1, Calibre Platform Identifiers, for full details on each platform identifier.</p>
+<p>Updated 24 Jan 2022<br>Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.<br>©2022 Siemens</p>
 ]]></content>
       <categories>
         <category>VLSI</category>
       </categories>
       <tags>
-        <tag>uvm</tag>
-        <tag>verification</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tmux Cheat Sheet</title>
-    <url>/2024/02/22/Tmux-Cheat-Sheet/</url>
-    <content><![CDATA[<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222202219915.jpg" class="">
-
-<span id="more"></span>
-
-<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222202426558.jpg" class="">
-
-<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222203109310.jpg" class="">
-
-<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222203804823.jpg" class="">
-
-<img src="/2024/02/22/Tmux-Cheat-Sheet/image-20240222203915923.jpg" class="">
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>tmux</tag>
+        <tag>mentor</tag>
+        <tag>eda</tag>
       </tags>
   </entry>
   <entry>
@@ -984,60 +1040,16 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Calibre Platform Support Overview and Roadmap - Updated 2022.1</title>
-    <url>/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/</url>
-    <content><![CDATA[<p><em><strong>Updated: 24 Jan 2022</strong></em></p>
-<h2 id="Linux-Operating-System-Support"><a href="#Linux-Operating-System-Support" class="headerlink" title="Linux Operating System Support"></a>Linux Operating System Support</h2><p>The Calibre toolset is supported for use with the Linux® operating system systems supplied by Red Hat, CentOS, and SUSE. In general, any “Tier 1” 64-bit x86 hardware supported by those providers is supported for use with the Calibre toolset. There are two x86-64 processor products supplied by different vendors, AMD and Intel, and the Calibre toolset is supported on computers based on either of these processors. The correct software must be loaded on a particular hardware platform to use Calibre, and the supported OS versions, service packs or updates are listed below. Linux IBM Power and ARM distributions are not supported by Calibre.</p>
- <span id="more"></span>
-
-<p>CentOS Linux is a community-driven free software effort that is derived from the sources of Red Hat Enterprise Linux (RHEL). The Calibre product line is tested and qualified with RHEL 6 and 7 as well as CentOS 6 and 7, and any references to a specific version of RHEL 6 or 7 in the Roadmap applies equally to CentOS.</p>
-<p>Calibre is not supported with CentOS 8 due to changes in how CentOS will deliver future versions of Red Hat software. See <a href="https://blog.centos.org/2020/12/future-is-centos-stream/">https://blog.centos.org/2020/12/future-is-centos-stream/</a> for more information.</p>
-<p>Please note that Calibre does not provide operating system support.</p>
-<p>Calibre supports SUSE Linux Enterprise Server (SLES), CentOS Linux, and Red Hat Enterprise Linux (RHEL). Support for RHEL is determined by the operating system version, for example, RHEL 6.10. Red Hat has different options for marketing RHEL, such as “Server” or “Workstation.” All the marketing options are supported as long as a supported operating system version is loaded. </p>
-<p>Note that Red Hat Fedora Linux and CentOS Stream are maintained, distributed, and supported differently than RHEL and CentOS Linux, and are not supported for use with the Calibre product line. Any use of the Red Hat Fedora or CentOS Stream operating systems is governed by <em>the Linux Distribution Compatibility Statement</em>. </p>
-<p>There are practical limitations for fully qualifying Calibre on each &amp; every Linux distribution customers may use, therefore Calibre selects a subset to focus testing on. The subset of OS versions which are qualified is typically chosen based on 2 factors: whether the version&#x2F;update provides support for additional hardware, or has bug fixes for significant problems that affect the execution or development of Calibre. Although we may not go through the full qualification process on all minor versions of a particular major release version, we will support those minor versions under the terms of the <em>Linux Distribution Compatibility Statement</em>.</p>
-<h2 id="Linux-Distribution-Compatibility-Statement"><a href="#Linux-Distribution-Compatibility-Statement" class="headerlink" title="Linux Distribution Compatibility Statement"></a>Linux Distribution Compatibility Statement</h2><p>If customers encounter problems using Calibre tools on an unsupported Linux distribution or OS version, and the problem can be duplicated on a supported production Linux distribution or OS version, it will be addressed through normal Calibre support policies. If a problem only exists on the unsupported Linux distribution or OS version, the fix lies in a change to the Linux environment, not the Calibre tools. In this case, customers should contact their Linux supplier. Calibre Customer Support can assist a customer by attempting to reproduce an issue on one of the fully qualified production Linux versions.</p>
-<h2 id="Calibre-Support-of-Virtual-Machines"><a href="#Calibre-Support-of-Virtual-Machines" class="headerlink" title="Calibre Support of Virtual Machines"></a>Calibre Support of Virtual Machines</h2><p>Some customers (for example, foundries) are required to run older versions of Calibre to support production lines. Many of these same customers also want to upgrade to newer hardware to take advantage of performance improvements and power savings. However, newer x86-64 servers have processors that require more recent versions of Linux.</p>
-<p>In addition, customers may not wish to spend the time nor incur the risk of re-qualifying an existing production environment on a new operating system version or a new Calibre version. Therefore, a legacy support strategy based on virtual machines (VMs) is recommended for customers who are required to run old versions of Calibre on new servers. While it is nearly always better to move forward with newer hardware and associated newer software, when that is not an option, a VM can be a suitable solution. In-house Calibre VM testing is done using the VMware ESX and Red Hat KVM servers.</p>
-<p>There is a difference in licensing behavior between VMware and Red Hat KVM virtualization solutions when running a Calibre job using both physical and virtual CPUs. With VMware hypervisor, Calibre is prevented from distinguishing between physical and virtual CPUs and, as a result, Calibre consumes licenses based on the number of connected physical and virtual CPUs. Red Hat KVM hypervisor allows Calibre to distinguish between physical and virtual CPUs, so Calibre consumes licenses based only on the number of connected physical CPUs.</p>
-<p>The Calibre product division will make a reasonable effort to support Linux VM usage (for example, VMware or KVM) on x86-64 hardware and will perform due diligence to assist our customers when problems arise. If no solution or workaround is found and the problem does not occur when using physical hardware, you should follow up with your virtualization software vendor.</p>
-<p>Using a VM of the older OS version on new, fast hardware provides the benefit of improved performance while still retaining the exact supported environment needed by the older software. Therefore, there is no risk of OS-introduced issues and no time needed for requalification. For more information, contact Calibre Customer Support.</p>
-<h2 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h2><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
-<p>Table 1. Calibre Platform Identifiers</p>
-<img src="/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/image-20230131135044258.png" class="">
-
+    <title>A Man&#39;s Most Powerful Capacity</title>
+    <url>/2022/07/22/a-man-s-most-powerful-capacity/</url>
+    <content><![CDATA[<p>A man’s most powerful capacity does not lie in how intelligent he is. It resides in -</p>
 <ul>
-<li>AOJ, AOK, and SOA MGC_HOME trees as  well as all MGC_HOME trees starting with Calibre  2024.3 require the AVX2 minimum CPU instruction set. </li>
-<li>Important Note: The RSH utility is not provided with RHEL  8. Customers currently using the RSH utility for Calibre  distributed processing will need to switch to a different utility, such as  SSH, before they can use the Calibre AOK MGC_HOME  software on RHEL 8.</li>
+<li>His&#x2F;her persistency in a tedious job until it perfectly gets done;</li>
+<li>His&#x2F;her relentless exploration for unknown things; </li>
+<li>His&#x2F;her passion for the skills he&#x2F;she loves;</li>
+<li>His&#x2F;her curiosity for every single trivial matter.</li>
 </ul>
-<h2 id="Calibre-Support-Overview"><a href="#Calibre-Support-Overview" class="headerlink" title="Calibre Support Overview"></a>Calibre Support Overview</h2><p>Table 2, Calibre Support Overview, provides an overview of the various combinations of hardware architectures and operating systems that Calibre currently supports and intends to support in the near future. The Calibre product organization regularly reviews platform and operating systems in order to develop platform support plans. The support roadmap is a forecast and may be adjusted to better mesh with customer needs and with the availability of specific hardware and operating systems. Note that if an older OS version is not listed, support for it was discontinued. Please refer to the <em>Calibre</em> <em>System Configurations</em> section below for support details on minor versions of Linux.</p>
-<p>Table 2. Calibre Support Overview Forecast, 2023-2025</p>
-<img src="/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/image-20230131135339489.png" class="">
-
-<ul>
-<li>Calibre releases running on RHEL 8 require an AOK MGC_HOME tree and support for the AVX2 CPU instruction set.</li>
-<li>Calibre releases running on SLES 15 require support for the AVX2 CPU instruction set.</li>
-<li>Calibre releases 2020.1 through 2024.2 running on RHEL&#x2F;CentOS 6, RHEL&#x2F;CentOS 7, SLES 11, and SLES 12 are supported with AOI and AOJ MGC_HOME trees.</li>
-<li>Calibre releases 2024.3 and later running on RHEL&#x2F;CentOS 7 or SLES 12 require an AOJ MGC_HOME tree and support for the AVX2 CPU instruction set. </li>
-<li>Please see Table 1, Calibre Platform Identifiers, for full details on which platform identifiers that can be used with each OS version.</li>
-<li>RHEL&#x2F;CentOS 6.10 is last minor release for RHEL&#x2F;CentOS 6. RHEL&#x2F;CentOS 7.9 is the last minor release for RHEL&#x2F;CentOS 7.</li>
-</ul>
-<h2 id="Calibre-System-Configurations"><a href="#Calibre-System-Configurations" class="headerlink" title="Calibre System Configurations"></a>Calibre System Configurations</h2><p> The Calibre tools may require a minimum OS patch level for each supported OS. Please see the <em>Calibre Administrator’s Guide</em> provided with the particular Calibre release you are interested in. The <em>Calibre Administrator’s Guide</em> provides release-specific information on required patch levels and other information on supported environments. </p>
-<p><em><strong>Notice of Intention to Discontinue Calibre Support on RHEL&#x2F;CentOS 6</strong></em></p>
-<p>Only very limited support will be provided for 2022-2024 versions of Calibre on RHEL&#x2F;CentOS 6. Calibre will require a special setting to enable execution for these versions. The 2024.2 Calibre Release (Jun 2024) will be the last release to support RHEL&#x2F;CentOS 6 and SLES 11 SP4. For further information please see the <a href="http://calibre.mentorcloudservices.com/docs/Calibre_RHEL6_Roadmap.htm">Calibre RHEL&#x2F;CentOS 6 Roadmap</a> page.</p>
-<h2 id="Calibre-Support-Summary-for-Linux-x86-64"><a href="#Calibre-Support-Summary-for-Linux-x86-64" class="headerlink" title="Calibre Support Summary for Linux x86-64"></a>Calibre Support Summary for Linux x86-64</h2><p>Table 3. Calibre Support Summary for Linux x86-64, 2020-2023</p>
- <img src="/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/image-20230131135549003.png" class="">
-
-<p>All 2020 Calibre releases are supported with AOI and AOJ MGC_HOME trees.<br>All 2021-2023 Calibre releases are supported with AOI, AOJ, and AOK MGC_HOME trees.<br>Please see Table 1, Calibre Platform Identifiers, for full details on each platform identifier.</p>
-<p>Updated 24 Jan 2022<br>Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.<br>©2022 Siemens</p>
 ]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>mentor</tag>
-        <tag>eda</tag>
-      </tags>
   </entry>
   <entry>
     <title>Add a New Disk in Linux With Fdisk</title>
@@ -1051,18 +1063,6 @@ service messagebus restart;
       <tags>
         <tag>linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>A Man&#39;s Most Powerful Capacity</title>
-    <url>/2022/07/22/a-man-s-most-powerful-capacity/</url>
-    <content><![CDATA[<p>A man’s most powerful capacity does not lie in how intelligent he is. It resides in -</p>
-<ul>
-<li>His&#x2F;her persistency in a tedious job until it perfectly gets done;</li>
-<li>His&#x2F;her relentless exploration for unknown things; </li>
-<li>His&#x2F;her passion for the skills he&#x2F;she loves;</li>
-<li>His&#x2F;her curiosity for every single trivial matter.</li>
-</ul>
-]]></content>
   </entry>
   <entry>
     <title>Add a New Disk in Linux With Parted</title>
@@ -1116,6 +1116,21 @@ service messagebus restart;
       <tags>
         <tag>linux</tag>
         <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cadence Supported Platforms</title>
+    <url>/2022/04/08/cadence-platform-support-plan-2021/</url>
+    <content><![CDATA[<img src="/2022/04/08/cadence-platform-support-plan-2021/cadence-platform-support-plan.jpg" class="">
+
+<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/08/cadence-platform-support-plan-2021/supported-platforms-matrix.pdf" title="Download full matrix of Cadence supported platforms">Download full matrix of Cadence supported platforms</a></p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>cadence</tag>
+        <tag>eda</tag>
       </tags>
   </entry>
   <entry>
@@ -1274,21 +1289,6 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>mentor</tag>
-        <tag>eda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cadence Supported Platforms</title>
-    <url>/2022/04/08/cadence-platform-support-plan-2021/</url>
-    <content><![CDATA[<img src="/2022/04/08/cadence-platform-support-plan-2021/cadence-platform-support-plan.jpg" class="">
-
-<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/08/cadence-platform-support-plan-2021/supported-platforms-matrix.pdf" title="Download full matrix of Cadence supported platforms">Download full matrix of Cadence supported platforms</a></p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>cadence</tag>
         <tag>eda</tag>
       </tags>
   </entry>
@@ -1512,43 +1512,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Definition of TSMC Metal Layer Map</title>
-    <url>/2023/03/09/definition-of-TSMC-metal-layer-map/</url>
-    <content><![CDATA[<h1 id="1P10M-5X2Y2Z"><a href="#1P10M-5X2Y2Z" class="headerlink" title="1P10M_5X2Y2Z"></a>1P10M_5X2Y2Z</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221716667.jpg" class="">
-
-<h1 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221837347.jpg" class="">
-
-<h1 id="Via"><a href="#Via" class="headerlink" title="Via"></a>Via</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221910056.jpg" class="">
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>apr</tag>
-        <tag>tsmc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Deploy Github Pages at Vercel</title>
-    <url>/2022/04/26/deploy-github-pages-at-vercel/</url>
-    <content><![CDATA[<p>Accessing GitHub pages from China is pretty slow. Vercel has much better user experience although Vercel’s servers are located in oversea countries, same as GitHub servers. So many of bloggers in China migrate their static Blog site onto Vercel. To do the migration it’s quite simple. All you have to do are merely 3 steps.</p>
-<ol>
-<li><strong>With your GitHub account create an account at <a href="https://vercel.com/">https://vercel.com</a>.</strong> It seems like you just sign-in Vercel with your GitHub account. By doing this your GitHub pages will be able to accessed from Vercel.</li>
-<li><strong>Create a new project on your Vercel dashboard.</strong> The guide will take you to import your GitHub existing projects. Just select one and click “Import” button.</li>
-<li><strong>Set your project name and click “Deploy” button.</strong>  Keep all default settings. Now simply wait to see magical things happen.</li>
-</ol>
-<p>By now the deployment process is done. If it succeeds colorful flowers will be scattered on your screen. If it fails you need to check the deployment status and building logs.</p>
-<p>If your have your own domain name, you can also add your domain to point your site address.</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>判决反馈均衡器（中）</title>
     <url>/2022/04/09/decision-feedback-equalizer-2/</url>
     <content><![CDATA[<a href="/2022/04/09/decision-feedback-equalizer-1/" title="判决反馈均衡器（上）">判决反馈均衡器（上）</a>&raquo;<br/>
@@ -1650,6 +1613,43 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Definition of TSMC Metal Layer Map</title>
+    <url>/2023/03/09/definition-of-TSMC-metal-layer-map/</url>
+    <content><![CDATA[<h1 id="1P10M-5X2Y2Z"><a href="#1P10M-5X2Y2Z" class="headerlink" title="1P10M_5X2Y2Z"></a>1P10M_5X2Y2Z</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221716667.jpg" class="">
+
+<h1 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221837347.jpg" class="">
+
+<h1 id="Via"><a href="#Via" class="headerlink" title="Via"></a>Via</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221910056.jpg" class="">
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>apr</tag>
+        <tag>tsmc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Deploy Github Pages at Vercel</title>
+    <url>/2022/04/26/deploy-github-pages-at-vercel/</url>
+    <content><![CDATA[<p>Accessing GitHub pages from China is pretty slow. Vercel has much better user experience although Vercel’s servers are located in oversea countries, same as GitHub servers. So many of bloggers in China migrate their static Blog site onto Vercel. To do the migration it’s quite simple. All you have to do are merely 3 steps.</p>
+<ol>
+<li><strong>With your GitHub account create an account at <a href="https://vercel.com/">https://vercel.com</a>.</strong> It seems like you just sign-in Vercel with your GitHub account. By doing this your GitHub pages will be able to accessed from Vercel.</li>
+<li><strong>Create a new project on your Vercel dashboard.</strong> The guide will take you to import your GitHub existing projects. Just select one and click “Import” button.</li>
+<li><strong>Set your project name and click “Deploy” button.</strong>  Keep all default settings. Now simply wait to see magical things happen.</li>
+</ol>
+<p>By now the deployment process is done. If it succeeds colorful flowers will be scattered on your screen. If it fails you need to check the deployment status and building logs.</p>
+<p>If your have your own domain name, you can also add your domain to point your site address.</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Disable VNC Copy&amp;paste</title>
     <url>/2023/03/16/disable-VNC-copy-paste/</url>
     <content><![CDATA[<p><strong>Disable <code>Send clipboard to views</code></strong></p>
@@ -1667,6 +1667,32 @@ service messagebus restart;
       <tags>
         <tag>linux</tag>
         <tag>vnc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Emacs Verilog-Mode</title>
+    <url>/2022/03/31/emacs-verilog-mode/</url>
+    <content><![CDATA[<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>Verilog-mode.el is the extremely popular free Verilog mode for Emacs which provides context-sensitive highlighting, auto indenting, and provides macro expansion capabilities to greatly reduce Verilog coding time. It supports AUTOs and indentation in Emacs for traditional Verilog (1394-2005), the Open Verification Methodology (OVM) and SystemVerilog (1800-2005&#x2F;1800-2009).</p>
+<span id="more"></span>
+
+<p>Verilog-mode also allows you to insert AUTOS in non-AUTO designs, so IP interconnect can be easily modified. You can also expand SystemVerilog “.*” port instantiations, to see what ports will be connected by the simulators.</p>
+<h3 id="Popularity"><a href="#Popularity" class="headerlink" title="Popularity"></a>Popularity</h3><p>Verilog-mode.el is being used by thousands of engineers world wide. The Verilog AUTOS are in use by many of the leading IP providers, including IP processor cores sold by Arm.</p>
+<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/03/31/emacs-verilog-mode/tutorial_emacs_verilog_mode.pdf" title="Download Emacs Verilog-mode Tutorial">Download Emacs Verilog-mode Tutorial</a></p>
+<a href="/2022/03/31/emacs-verilog-mode/verilog-mode.el" title="Download verilog-mode.el">Download verilog-mode.el</a>
+
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>See the <a href="https://www.veripool.org/verilog-mode/faq">Verilog-Mode FAQ</a> for many examples of expanding Verilog AUTOs, and the presentations under the <a href="https://www.veripool.org/verilog-mode/documentation">Verilog-Mode Documentation</a>.</p>
+<p>Start with a simple Verilog module in Emacs:</p>
+<p><img src="https://www.veripool.org/img/verilogmode_pre.gif" alt="img"></p>
+<p>And just by installing Verilog-Mode we get syntax highlighting and automatic indentation. Hit two keys and AUTO keywords expand.</p>
+<p><img src="https://www.veripool.org/img/verilogmode_post.gif" alt="img"></p>
+<h3 id="See-also"><a href="#See-also" class="headerlink" title="See also"></a>See also</h3><p>See the menu at the top of this page, which include: * <a href="https://www.veripool.org/verilog-mode/installing">Verilog-Mode Installing&#x2F;Download</a> * <a href="https://www.veripool.org/verilog-mode/documentation">Verilog-Mode Documentation</a> * <a href="https://www.veripool.org/verilog-mode/faq">Verilog-Mode FAQ</a></p>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>verilog</tag>
+        <tag>emacs</tag>
       </tags>
   </entry>
   <entry>
@@ -1704,32 +1730,6 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Emacs Verilog-Mode</title>
-    <url>/2022/03/31/emacs-verilog-mode/</url>
-    <content><![CDATA[<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>Verilog-mode.el is the extremely popular free Verilog mode for Emacs which provides context-sensitive highlighting, auto indenting, and provides macro expansion capabilities to greatly reduce Verilog coding time. It supports AUTOs and indentation in Emacs for traditional Verilog (1394-2005), the Open Verification Methodology (OVM) and SystemVerilog (1800-2005&#x2F;1800-2009).</p>
-<span id="more"></span>
-
-<p>Verilog-mode also allows you to insert AUTOS in non-AUTO designs, so IP interconnect can be easily modified. You can also expand SystemVerilog “.*” port instantiations, to see what ports will be connected by the simulators.</p>
-<h3 id="Popularity"><a href="#Popularity" class="headerlink" title="Popularity"></a>Popularity</h3><p>Verilog-mode.el is being used by thousands of engineers world wide. The Verilog AUTOS are in use by many of the leading IP providers, including IP processor cores sold by Arm.</p>
-<p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/03/31/emacs-verilog-mode/tutorial_emacs_verilog_mode.pdf" title="Download Emacs Verilog-mode Tutorial">Download Emacs Verilog-mode Tutorial</a></p>
-<a href="/2022/03/31/emacs-verilog-mode/verilog-mode.el" title="Download verilog-mode.el">Download verilog-mode.el</a>
-
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>See the <a href="https://www.veripool.org/verilog-mode/faq">Verilog-Mode FAQ</a> for many examples of expanding Verilog AUTOs, and the presentations under the <a href="https://www.veripool.org/verilog-mode/documentation">Verilog-Mode Documentation</a>.</p>
-<p>Start with a simple Verilog module in Emacs:</p>
-<p><img src="https://www.veripool.org/img/verilogmode_pre.gif" alt="img"></p>
-<p>And just by installing Verilog-Mode we get syntax highlighting and automatic indentation. Hit two keys and AUTO keywords expand.</p>
-<p><img src="https://www.veripool.org/img/verilogmode_post.gif" alt="img"></p>
-<h3 id="See-also"><a href="#See-also" class="headerlink" title="See also"></a>See also</h3><p>See the menu at the top of this page, which include: * <a href="https://www.veripool.org/verilog-mode/installing">Verilog-Mode Installing&#x2F;Download</a> * <a href="https://www.veripool.org/verilog-mode/documentation">Verilog-Mode Documentation</a> * <a href="https://www.veripool.org/verilog-mode/faq">Verilog-Mode FAQ</a></p>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>verilog</tag>
-        <tag>emacs</tag>
       </tags>
   </entry>
   <entry>
@@ -2259,30 +2259,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/03/30/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Group_path</title>
     <url>/2023/01/18/group-path/</url>
     <content><![CDATA[<p>NAME<br>       <strong>group_path</strong><br>              Groups a set of paths for cost function calculations.</p>
@@ -2494,6 +2470,30 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/03/30/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hide Unused Quick Links in Windows</title>
     <url>/2022/06/14/hide-unused-quick-links-in-windows/</url>
     <content><![CDATA[<p><strong>1. Win+R -&gt; regedit</strong></p>
@@ -2588,6 +2588,24 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>How to Enable Sudo for a User</title>
+    <url>/2022/04/20/how-to-enable-sudo-for-a-user/</url>
+    <content><![CDATA[<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
+
+<p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
+<span id="more"></span>
+<p>Uncomment line of <code>%wheel ALL=(ALL) ALL</code> will ask for password when sudo.<br>Uncomment line of <code>%wheel ALL=(ALL) NOPASSWD: ALL</code> won’t ask for password when sudo.</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">## Allow root <span class="keyword">to</span> run any commands anywhere</span><br><span class="line">root    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the <span class="string">&#x27;sys&#x27;</span> group <span class="keyword">to</span> run networking, software,</span><br><span class="line">## service management apps <span class="built_in">and</span> more.</span><br><span class="line"># %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</span><br><span class="line"></span><br><span class="line">## Allows people in group wheel <span class="keyword">to</span> run <span class="keyword">all</span> commands</span><br><span class="line"># %wheel    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Same thing without <span class="keyword">a</span> password</span><br><span class="line">%wheel  ALL=(ALL)   NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> mount <span class="built_in">and</span> unmount the</span><br><span class="line">## cdrom <span class="keyword">as</span> root</span><br><span class="line"># %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> shutdown this <span class="built_in">system</span></span><br><span class="line"># %users  localhost=/sbin/shutdown -h now</span><br><span class="line"></span><br><span class="line">## Read <span class="keyword">drop</span>-in <span class="keyword">files</span> from /etc/sudoers.d (the # here does not mean <span class="keyword">a</span> comment)</span><br><span class="line">#includedir /etc/sudoers.d</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>How to Solve Segfault on VCS Linux</title>
     <url>/2024/02/26/how-to-solve-segfault-on-VCS-linux/</url>
     <content><![CDATA[<h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p><em><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></em></p>
@@ -2614,21 +2632,48 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>How to Enable Sudo for a User</title>
-    <url>/2022/04/20/how-to-enable-sudo-for-a-user/</url>
-    <content><![CDATA[<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[root]<span class="comment"># usermod -aG wheel UserName</span></span><br><span class="line">[root]<span class="comment"># visudo </span></span><br></pre></td></tr></table></figure>
-
-<p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
+    <title>How to Solve Segfault on VCS Linux64</title>
+    <url>/2024/02/26/how-to-solve-segfault-on-VCS-linux64/</url>
+    <content><![CDATA[<h3 id="Patching-command-set"><a href="#Patching-command-set" class="headerlink" title="Patching command set"></a>Patching command set</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VCS_HOME</span>/linux64/lib</span><br><span class="line">$ <span class="built_in">cp</span> -p libvcsnew.so libvcsnew.so.bak</span><br><span class="line">$ patcher.py libvcsnew.so</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br></pre></td></tr></table></figure>
+<h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p><em><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></em></p>
 <span id="more"></span>
-<p>Uncomment line of <code>%wheel ALL=(ALL) ALL</code> will ask for password when sudo.<br>Uncomment line of <code>%wheel ALL=(ALL) NOPASSWD: ALL</code> won’t ask for password when sudo.</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">## Allow root <span class="keyword">to</span> run any commands anywhere</span><br><span class="line">root    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the <span class="string">&#x27;sys&#x27;</span> group <span class="keyword">to</span> run networking, software,</span><br><span class="line">## service management apps <span class="built_in">and</span> more.</span><br><span class="line"># %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS</span><br><span class="line"></span><br><span class="line">## Allows people in group wheel <span class="keyword">to</span> run <span class="keyword">all</span> commands</span><br><span class="line"># %wheel    ALL=(ALL)   ALL</span><br><span class="line"></span><br><span class="line">## Same thing without <span class="keyword">a</span> password</span><br><span class="line">%wheel  ALL=(ALL)   NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> mount <span class="built_in">and</span> unmount the</span><br><span class="line">## cdrom <span class="keyword">as</span> root</span><br><span class="line"># %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom</span><br><span class="line"></span><br><span class="line">## Allows members of the users group <span class="keyword">to</span> shutdown this <span class="built_in">system</span></span><br><span class="line"># %users  localhost=/sbin/shutdown -h now</span><br><span class="line"></span><br><span class="line">## Read <span class="keyword">drop</span>-in <span class="keyword">files</span> from /etc/sudoers.d (the # here does not mean <span class="keyword">a</span> comment)</span><br><span class="line">#includedir /etc/sudoers.d</span><br></pre></td></tr></table></figure>
 
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><h4 id="segfault-in-VCS-Q-2020-03-also-applicable-to-2019-2021-2022-and-etc"><a href="#segfault-in-VCS-Q-2020-03-also-applicable-to-2019-2021-2022-and-etc" class="headerlink" title="segfault in VCS Q-2020.03 (also applicable to 2019, 2021, 2022, and etc)"></a>segfault in VCS Q-2020.03 (also applicable to 2019, 2021, 2022, and etc)</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Command line: ./simv</span><br><span class="line"></span><br><span class="line">--- Stack trace follows:</span><br><span class="line"></span><br><span class="line">Dumping VCS Annotated Stack:</span><br><span class="line"><span class="comment">#0  0x00002aaad3587659 in waitpid () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#1  0x00002aaad3504f62 in do_system () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x00002aaad3505311 in system () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#3  0x00002aaacb5883fb in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacb589ed3 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacb582822 in SNPSle_d35ca1ff70d465c2b9b1a72eee90a50630165806651fae96eee2bdb18305df1f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacdd162af in SNPSle_64133461705005bb725549e2e6fa1b3f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaacda6fbef in SNPSle_82244d58c54c18c70d63edc9becab634 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0x00002aaacb911904 in mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#10 0x00002aaacb8ed015 in snpsCheckFreeFunc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#11 0x00002aaacd8428f4 in SNPSle_540905a7b1b27611 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#12 0x00002aaacd84323a in SNPSle_9ff9b2dce8f1fde9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#13 0x00002aaacd841308 in SNPSle_36c2d46996c96605 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0x00002aaacd8417cd in SNPSle_2c2186f0f2f42415 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0x00002aaad2ca3ea5 in start_thread () from /lib64/libpthread.so.0</span></span><br><span class="line"><span class="comment">#17 0x00002aaad35c0b0d in clone () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#0  0x00002aaad35879fd in nanosleep () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#1  0x00002aaad3587894 in sleep () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x00002aaacd5e1b76 in SNPSle_95ae9cc2e78cc668673c60b8d88c4908 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#3  0x00002aaacd5e1d19 in SNPSle_92de4d0d4cf0d6931bc37e8d42a01d93 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacd5e008a in SNPSle_b76ef993ee82b3d58a5cadddbec8b67c () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacd5e032c in SNPSle_f28f24b8c84ac8f6e02e0b03bcd33aa8 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacd5cba31 in SNPSle_5e54eaa1df739f6ed4c1ff24a0986ee6 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaacd5cbc4c in SNPSle_058778405d2a6c04ddd18247ba7f440f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#8  0x00002aaacd5c67d2 in SNPSle_e376be325e61b493d6bd988d8077bacc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0x00002aaacd5c6c0f in SNPSle_a10369bdf7c5916ddd6866ce7e2e861c () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#10 0x00002aaacd5c73e1 in SNPSle_00b1acee80c770570cd75f9efbe24cca () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#11 0x00002aaacd5c7e6d in SNPSle_ba11b1edbd04051f5bb81b1861cdf84a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#12 0x00002aaacd5b6602 in SNPSle_2e65c0794628fc5af60953149776c29b () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#13 0x00002aaacd5b3262 in SNPSle_541f757be362289a7c9e5618c0ff28327846f8d3cc02839f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0x00002aaacd5ad08a in SNPSle_c0de1345d5ab80930e06dd2b68f214c3 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0x00002aaacd5ad242 in SNPSle_25cd5712eacded5ff943afa9a81fcb09 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0x00002aaacdd34da9 in SNPSle_490598bfebcc8e8183ad3550288b1f82 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#17 0x00002aaacdd41962 in SNPSle_490598bfebcc8e81 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#18 0x00000000004171ff in main ()</span></span><br><span class="line"></span><br><span class="line">Process VmPeak: 916968 kb, VmSize: 851436 kb</span><br><span class="line">System Free Memory: 119334916 kb, System Free Swap: 4194300 kb</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="At-first-use-GDB"><a href="#At-first-use-GDB" class="headerlink" title="At first use GDB"></a>At first use GDB</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gdb ./simv</span><br><span class="line">GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7</span><br><span class="line">Copyright (C) 2013 Free Software Foundation, Inc.</span><br><span class="line">License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;</span><br><span class="line">This is free software: you are free to change and redistribute it.</span><br><span class="line">There is NO WARRANTY, to the extent permitted by law.  Type <span class="string">&quot;show copying&quot;</span></span><br><span class="line">and <span class="string">&quot;show warranty&quot;</span> <span class="keyword">for</span> details.</span><br><span class="line">This GDB was configured as <span class="string">&quot;x86_64-redhat-linux-gnu&quot;</span>.</span><br><span class="line">For bug reporting instructions, please see:</span><br><span class="line">&lt;http://www.gnu.org/software/gdb/bugs/&gt;...</span><br><span class="line">Reading symbols from /test/run/simv...(no debugging symbols found)...<span class="keyword">done</span>.</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
+<p>Running of Debugging:  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(gdb) run</span><br><span class="line">Starting program: /test/run/./simv </span><br><span class="line">[Thread debugging using libthread_db enabled]</span><br><span class="line">Using host libthread_db library <span class="string">&quot;/lib64/libthread_db.so.1&quot;</span>.</span><br><span class="line">process 8968 is executing new program: /test/run/simv</span><br><span class="line">Missing separate debuginfos, use: debuginfo-install glibc-2.17-325.el7_9.x86_64 libgcc-4.8.5-44.el7.x86_64 libstdc++-4.8.5-44.el7.x86_64 libxml2-2.9.1-6.el7.5.x86_64 numactl-libs-2.0.12-5.el7.x86_64 xz-libs-5.2.2-1.el7.x86_64 zlib-1.2.7-19.el7_9.x86_64</span><br><span class="line">[Thread debugging using libthread_db enabled]</span><br><span class="line">Using host libthread_db library <span class="string">&quot;/lib64/libthread_db.so.1&quot;</span>.</span><br><span class="line">Notice: timing checks disabled with +notimingcheck at compile-time</span><br><span class="line">[New Thread 0x2aaada311700 (LWP 9007)]</span><br><span class="line">[Thread 0x2aaada311700 (LWP 9007) exited]</span><br><span class="line">[New Thread 0x2aaada311700 (LWP 9014)]</span><br><span class="line"></span><br><span class="line">Program received signal SIGSEGV, Segmentation fault.</span><br><span class="line">[Switching to Thread 0x2aaada311700 (LWP 9014)]</span><br><span class="line">0x00002aaacb911904 <span class="keyword">in</span> mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span><br><span class="line">Missing separate debuginfos, use: debuginfo-install bzip2-libs-1.0.6-13.el7.x86_64 dbus-glib-0.100-7.el7.x86_64 dbus-libs-1.10.24-15.el7.x86_64 elfutils-libelf-0.176-5.el7.x86_64 elfutils-libs-0.176-5.el7.x86_64 glib2-2.56.1-8.el7.x86_64 glibc-2.17-325.el7_9.x86_64 libattr-2.4.46-13.el7.x86_64 libblkid-2.23.2-65.el7_9.1.x86_64 libcap-2.22-11.el7.x86_64 libffi-3.0.13-19.el7.x86_64 libgcc-4.8.5-44.el7.x86_64 libgcrypt-1.5.3-14.el7.x86_64 libgpg-error-1.12-3.el7.x86_64 libmount-2.23.2-65.el7_9.1.x86_64 libselinux-2.5-15.el7.x86_64 libstdc++-4.8.5-44.el7.x86_64 libuuid-2.23.2-65.el7_9.1.x86_64 libxml2-2.9.1-6.el7.5.x86_64 lz4-1.8.3-1.el7.x86_64 numactl-libs-2.0.12-5.el7.x86_64 pcre-8.32-17.el7.x86_64 systemd-libs-219-78.el7_9.3.x86_64 xz-libs-5.2.2-1.el7.x86_64 zlib-1.2.7-19.el7_9.x86_64</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
+<p>So we get segfault which should be fixed. To do it we need to get backtrace:  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(gdb) backtrace </span><br><span class="line"><span class="comment">#0  0x00002aaacb911904 in mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#1  0x00002aaacb8ed015 in snpsCheckFreeFunc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#2  0x00002aaacd8428f4 in SNPSle_540905a7b1b27611 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#3  0x00002aaacd84323a in SNPSle_9ff9b2dce8f1fde9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacd841308 in SNPSle_36c2d46996c96605 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacd8417cd in SNPSle_2c2186f0f2f42415 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaad2ca3ea5 in start_thread () from /lib64/libpthread.so.0</span></span><br><span class="line"><span class="comment">#8  0x00002aaad35c0b0d in clone () from /lib64/libc.so.6</span></span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
+<p>Attention on GDB frame 6  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(gdb) frame 6</span><br><span class="line"><span class="comment">#6  0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line">(gdb) disas</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> SNPSle_126d17af453e054a:</span><br><span class="line">   0x00002aaacd8418c0 &lt;+0&gt;:	push   %rbx</span><br><span class="line">   0x00002aaacd8418c1 &lt;+1&gt;:	mov    %rdi,%rbx</span><br><span class="line">   0x00002aaacd8418c4 &lt;+4&gt;:	xor    %edi,%edi</span><br><span class="line">   0x00002aaacd8418c6 &lt;+6&gt;:	<span class="built_in">test</span>   %rbx,%rbx</span><br><span class="line">   0x00002aaacd8418c9 &lt;+9&gt;:	je     0x2aaacd8418de &lt;SNPSle_126d17af453e054a+30&gt;</span><br><span class="line">   0x00002aaacd8418cb &lt;+11&gt;:	mov    (%rbx),%eax</span><br><span class="line">   0x00002aaacd8418cd &lt;+13&gt;:	<span class="built_in">test</span>   %eax,%eax</span><br><span class="line">   0x00002aaacd8418cf &lt;+15&gt;:	je     0x2aaacd841930 &lt;SNPSle_126d17af453e054a+112&gt;</span><br><span class="line">   0x00002aaacd8418d1 &lt;+17&gt;:	imul   <span class="variable">$0xf4240</span>,%eax,%edi</span><br><span class="line">   0x00002aaacd8418d7 &lt;+23&gt;:	callq  0x2aaacce069c0 &lt;usleep@plt&gt;</span><br><span class="line">   0x00002aaacd8418dc &lt;+28&gt;:	jmp    0x2aaacd841930 &lt;SNPSle_126d17af453e054a+112&gt;</span><br><span class="line">   0x00002aaacd8418de &lt;+30&gt;:	callq  0x2aaacd8416d6 &lt;SNPSle_2c2186f0f2f42415&gt;</span><br><span class="line">=&gt; 0x00002aaacd8418e3 &lt;+35&gt;:	dec    %eax</span><br><span class="line">   0x00002aaacd8418e5 &lt;+37&gt;:	lea    0x3b55614(%rip),%rax        <span class="comment"># 0x2aaad1396f00</span></span><br><span class="line">   0x00002aaacd8418ec &lt;+44&gt;:	jne    0x2aaacd8418fa &lt;SNPSle_126d17af453e054a+58&gt;</span><br><span class="line">   0x00002aaacd8418ee &lt;+46&gt;:	movl   <span class="variable">$0x2</span>,0x88(%rax)</span><br></pre></td></tr></table></figure>
+<p>As you can see <strong>SNPSle_2c2186f0f2f42415</strong> doesn’t have return data. So I suppose we can ignore calling of this function.</p>
+<h4 id="Let’s-get-objdump"><a href="#Let’s-get-objdump" class="headerlink" title="Let’s get objdump"></a>Let’s get objdump</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ objdump -D /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so &amp;&gt; dump</span><br></pre></td></tr></table></figure>
+<p>VIM allows to open big dump file. After opening find - <strong>SNPSle_126d17af453e054a</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">0000000001aaf8c0 &lt;SNPSle_126d17af453e054a&gt;:</span><br><span class="line"> 1aaf8c0:   53                      push   %rbx</span><br><span class="line"> 1aaf8c1:   48 89 fb                mov    %rdi,%rbx</span><br><span class="line"> 1aaf8c4:   31 ff                   xor    %edi,%edi</span><br><span class="line"> 1aaf8c6:   48 85 db                <span class="built_in">test</span>   %rbx,%rbx</span><br><span class="line"> 1aaf8c9:   74 13                   je     1aaf8de &lt;SNPSle_126d17af453e054a+0x1e&gt;</span><br><span class="line"> 1aaf8cb:   8b 03                   mov    (%rbx),%eax</span><br><span class="line"> 1aaf8cd:   85 c0                   <span class="built_in">test</span>   %eax,%eax</span><br><span class="line"> 1aaf8cf:   74 5f                   je     1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8d1:   69 f8 40 42 0f 00       imul   <span class="variable">$0xf4240</span>,%eax,%edi</span><br><span class="line"> 1aaf8d7:   e8 e4 50 5c ff          callq  10749c0 &lt;usleep@plt&gt;</span><br><span class="line"> 1aaf8dc:   eb 52                   jmp    1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8de:   e8 f3 fd ff ff          callq  1aaf6d6 &lt;SNPSle_2c2186f0f2f42415&gt;</span><br><span class="line"> 1aaf8e3:   ff c8                   dec    %eax</span><br><span class="line"> 1aaf8e5:   48 8d 05 14 56 b5 03    lea    0x3b55614(%rip),%rax        <span class="comment"># 5604f00 &lt;.got+0x15808&gt;</span></span><br></pre></td></tr></table></figure>
+<p>We are interested in line - 1aaf8de:   <strong>e8 f3 fd ff ff</strong>          callq  1aaf6d6 <SNPSle_2c2186f0f2f42415><br>It’s callq instruction which we can replace by some nop instructions.<br>Nop instruction is <strong>0x90</strong> in hex code.</p>
+<p><strong>First of all you must make backup of VCS tool!</strong></p>
+<h4 id="Edit-binary-file-via-hexedit"><a href="#Edit-binary-file-via-hexedit" class="headerlink" title="Edit binary file via hexedit"></a>Edit binary file via hexedit</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexedit /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span><br></pre></td></tr></table></figure>
+<p>Find <strong>e8 f3 fd ff ff</strong> which is at <strong>1aaf8de</strong> address. And replace this bytes by 0x90! Save changes and close library.<br>So let’s check result via objdump:  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ objdump -D /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so &amp;&gt; new_dump</span><br></pre></td></tr></table></figure>
+<p>go to <strong>1aaf8de</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">0000000001aaf8c0 &lt;SNPSle_126d17af453e054a&gt;:</span><br><span class="line"> 1aaf8c0:   53                      push   %rbx</span><br><span class="line"> 1aaf8c1:   48 89 fb                mov    %rdi,%rbx</span><br><span class="line"> 1aaf8c4:   31 ff                   xor    %edi,%edi</span><br><span class="line"> 1aaf8c6:   48 85 db                <span class="built_in">test</span>   %rbx,%rbx</span><br><span class="line"> 1aaf8c9:   74 13                   je     1aaf8de &lt;SNPSle_126d17af453e054a+0x1e&gt;</span><br><span class="line"> 1aaf8cb:   8b 03                   mov    (%rbx),%eax</span><br><span class="line"> 1aaf8cd:   85 c0                   <span class="built_in">test</span>   %eax,%eax</span><br><span class="line"> 1aaf8cf:   74 5f                   je     1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8d1:   69 f8 40 42 0f 00       imul   <span class="variable">$0xf4240</span>,%eax,%edi</span><br><span class="line"> 1aaf8d7:   e8 e4 50 5c ff          callq  10749c0 &lt;usleep@plt&gt;</span><br><span class="line"> 1aaf8dc:   eb 52                   jmp    1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8de:   90                      nop</span><br><span class="line"> 1aaf8df:   90                      nop</span><br><span class="line"> 1aaf8e0:   90                      nop</span><br><span class="line"> 1aaf8e1:   90                      nop</span><br><span class="line"> 1aaf8e2:   90                      nop</span><br><span class="line"> 1aaf8e3:   ff c8                   dec    %eax</span><br><span class="line"> 1aaf8e5:   48 8d 05 14 56 b5 03    lea    0x3b55614(%rip),%rax        <span class="comment"># 5604f00 &lt;.got+0x15808&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./simv</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="variable">$finish</span> called from file <span class="string">&quot;/eda/synopsys/vcs/Q-2020.03//etc/uvm-1.2/base/uvm_root.svh&quot;</span>, line 613.</span><br><span class="line"><span class="variable">$finish</span> at simulation time 0.000ns</span><br><span class="line">           V C S   S i m u l a t i o n   R e p o r t </span><br><span class="line">Time: 0 ps</span><br><span class="line">CPU Time:      2.420 seconds;       Data structure size:  11.7Mb</span><br><span class="line">Sun Mar 20 09:31:25 2022</span><br></pre></td></tr></table></figure>
+<p>As you see we done it! We aren’t facing segmentation fault!</p>
+<h3 id="Automatization"><a href="#Automatization" class="headerlink" title="Automatization"></a>Automatization</h3><p>To patch library without manually operation there is <a href="https://github.com/mperov/fixSegfaultVCS/blob/main/patcher.py">patcher.py</a><br>Attention, before running <strong>patcher.py</strong> make backup of library which you would like to patch.</p>
+<p>The patcher.py is applicable to the VCS vS-2019 and higher version. Besides <code>libvcsnew.so</code>, another libfile needs to be patched is <code>libucapi.so</code> which is called by VCS urg. </p>
+<p>The patcher.py is also applicable to the Verdi vS2019 and higher versions. The Verdi libfile <code>libucapi.so</code> needs to be patched otherwise the software crashes when viewing coverage by <code>verdi -cov</code>.</p>
+<p>The complete patching command set is as following.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VCS_HOME</span>/linux64/lib</span><br><span class="line">$ <span class="built_in">cp</span> -p libvcsnew.so libvcsnew.so.bak</span><br><span class="line">$ patcher.py libvcsnew.so</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VERDI_HOME</span>/platform/linux64/bin</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>VLSI</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>synopsys</tag>
+        <tag>vcs</tag>
+        <tag>verdi</tag>
       </tags>
   </entry>
   <entry>
@@ -2779,23 +2824,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Install Specific Version of Python</title>
-    <url>/2022/06/02/install-specific-version-of-python/</url>
-    <content><![CDATA[<h3 id="1-Download-Python-source-tarball-for-your-specific-version"><a href="#1-Download-Python-source-tarball-for-your-specific-version" class="headerlink" title="1. Download Python source tarball for your specific version"></a>1. Download Python source tarball for your specific version</h3><p><a href="https://www.python.org/downloads/source/">https://www.python.org/downloads/source/</a></p>
-<h3 id="2-Unpack-the-tarball-and-install"><a href="#2-Unpack-the-tarball-and-install" class="headerlink" title="2. Unpack the tarball and install"></a>2. Unpack the tarball and install</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@localhost<span class="comment"># tar xvf Python-3.10.4.tgz</span></span><br><span class="line">root@localhost<span class="comment"># cd Python-3.10.4</span></span><br><span class="line">root@localhost<span class="comment"># ./configure --enable-optimizations</span></span><br><span class="line">root@localhost<span class="comment"># make altinstall</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-Set-the-new-version-by-default"><a href="#3-Set-the-new-version-by-default" class="headerlink" title="3. Set the new version by default"></a>3. Set the new version by default</h3><p>For individual user: <code>alias python &#39;/usr/local/bin/python3.10&#39;</code><br>For system-wide activation: <a href="/2022/06/02/update-alternatives/">update-alternatives</a></p>
-<h3 id="4-Check-the-new-installation"><a href="#4-Check-the-new-installation" class="headerlink" title="4. Check the new installation"></a>4. Check the new installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jim@localhost% python --version</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Install Perl Module</title>
     <url>/2022/10/07/install-perl-module/</url>
     <content><![CDATA[<p><strong>List all installed Perl modules</strong><br><code>perldoc perllocal</code> or <code>instmodsh</code></p>
@@ -2812,6 +2840,23 @@ service messagebus restart;
       <tags>
         <tag>perl</tag>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Install Specific Version of Python</title>
+    <url>/2022/06/02/install-specific-version-of-python/</url>
+    <content><![CDATA[<h3 id="1-Download-Python-source-tarball-for-your-specific-version"><a href="#1-Download-Python-source-tarball-for-your-specific-version" class="headerlink" title="1. Download Python source tarball for your specific version"></a>1. Download Python source tarball for your specific version</h3><p><a href="https://www.python.org/downloads/source/">https://www.python.org/downloads/source/</a></p>
+<h3 id="2-Unpack-the-tarball-and-install"><a href="#2-Unpack-the-tarball-and-install" class="headerlink" title="2. Unpack the tarball and install"></a>2. Unpack the tarball and install</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">root@localhost<span class="comment"># tar xvf Python-3.10.4.tgz</span></span><br><span class="line">root@localhost<span class="comment"># cd Python-3.10.4</span></span><br><span class="line">root@localhost<span class="comment"># ./configure --enable-optimizations</span></span><br><span class="line">root@localhost<span class="comment"># make altinstall</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Set-the-new-version-by-default"><a href="#3-Set-the-new-version-by-default" class="headerlink" title="3. Set the new version by default"></a>3. Set the new version by default</h3><p>For individual user: <code>alias python &#39;/usr/local/bin/python3.10&#39;</code><br>For system-wide activation: <a href="/2022/06/02/update-alternatives/">update-alternatives</a></p>
+<h3 id="4-Check-the-new-installation"><a href="#4-Check-the-new-installation" class="headerlink" title="4. Check the new installation"></a>4. Check the new installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jim@localhost% python --version</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -3270,39 +3315,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>New Chipgun Logo 8May2022</title>
-    <url>/2022/05/08/new-chipgun-logo-8may2022/</url>
-    <content><![CDATA[<p><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_Logo_Darkblue.png alt=EN width=120> <br/><br><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_LogoCN_Darkblue.png alt=CN width=240> </p>
-]]></content>
-      <tags>
-        <tag>chipgun</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nomachine Server Admin</title>
-    <url>/2023/03/19/nomachine-server-admin/</url>
-    <content><![CDATA[<p><strong>1. Right click icon of the server connection and select <code>Server admin</code></strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319234139451.jpg width=300>
-
-<span id="more"></span>
-
-<p><strong>2. Select <code>Security</code> and enable the clipboard functionality with <code>Client</code> only, which makes it allowed of copying at client and paste at server and unallowed for opposite direction</strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319234629895.jpg width=440>
-
-<p><strong>3. Select <code>Devices</code> and uncheck all boxes, which disables sharing any resourse between server and client</strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319234346433.jpg width=440>
-
-<p><strong>4. Select <code>Satus</code> and click <code>Restart the server</code>, which makes above operation be effective</strong></p>
-<img src=/2023/03/19/nomachine-server-admin/image-20230319235624677.jpg width=440>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Modify Linux System Date and Time</title>
     <url>/2022/04/19/modify-linux-system-date-and-time/</url>
     <content><![CDATA[<p><strong>Check System Date</strong></p>
@@ -3333,6 +3345,39 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nomachine Server Admin</title>
+    <url>/2023/03/19/nomachine-server-admin/</url>
+    <content><![CDATA[<p><strong>1. Right click icon of the server connection and select <code>Server admin</code></strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319234139451.jpg width=300>
+
+<span id="more"></span>
+
+<p><strong>2. Select <code>Security</code> and enable the clipboard functionality with <code>Client</code> only, which makes it allowed of copying at client and paste at server and unallowed for opposite direction</strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319234629895.jpg width=440>
+
+<p><strong>3. Select <code>Devices</code> and uncheck all boxes, which disables sharing any resourse between server and client</strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319234346433.jpg width=440>
+
+<p><strong>4. Select <code>Satus</code> and click <code>Restart the server</code>, which makes above operation be effective</strong></p>
+<img src=/2023/03/19/nomachine-server-admin/image-20230319235624677.jpg width=440>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>New Chipgun Logo 8May2022</title>
+    <url>/2022/05/08/new-chipgun-logo-8may2022/</url>
+    <content><![CDATA[<p><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_Logo_Darkblue.png alt=EN width=120> <br/><br><img src=/2022/05/08/new-chipgun-logo-8may2022/Chipgun_LogoCN_Darkblue.png alt=CN width=240> </p>
+]]></content>
+      <tags>
+        <tag>chipgun</tag>
       </tags>
   </entry>
   <entry>
@@ -3396,18 +3441,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Script: Add a Linux User</title>
-    <url>/2022/10/11/script-add-a-linux-user/</url>
-    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Script to add a user to Linux system</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) 2007 nixCraft project &lt;http://bash.cyberciti.biz/&gt;</span></span><br><span class="line"><span class="comment"># This script is licensed under GNU GPL version 2.0 or above</span></span><br><span class="line"><span class="comment"># Comment/suggestion: &lt;vivek at nixCraft DOT com&gt;</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># See url for more info:</span></span><br><span class="line"><span class="comment"># http://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">if</span> [ $(<span class="built_in">id</span> -u) -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">&quot;Enter username : &quot;</span> username</span><br><span class="line">	<span class="built_in">read</span> -s -p <span class="string">&quot;Enter password : &quot;</span> password</span><br><span class="line">	egrep <span class="string">&quot;^<span class="variable">$username</span>&quot;</span> /etc/passwd &gt;/dev/null</span><br><span class="line">	<span class="keyword">if</span> [ $? -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$username</span> exists!&quot;</span></span><br><span class="line">		<span class="built_in">exit</span> 1</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pass=$(perl -e <span class="string">&#x27;print crypt($ARGV[0], &quot;password&quot;)&#x27;</span> <span class="variable">$password</span>)</span><br><span class="line">		useradd -m -p <span class="variable">$pass</span> <span class="variable">$username</span></span><br><span class="line">		[ $? -eq 0 ] &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;User has been added to system!&quot;</span> || <span class="built_in">echo</span> <span class="string">&quot;Failed to add a user!&quot;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;Only root may add a user to the system&quot;</span></span><br><span class="line">	<span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Set_data_check</title>
     <url>/2023/09/22/set-data-check/</url>
     <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold 1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
@@ -3419,6 +3452,18 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>primetime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Script: Add a Linux User</title>
+    <url>/2022/10/11/script-add-a-linux-user/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Script to add a user to Linux system</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) 2007 nixCraft project &lt;http://bash.cyberciti.biz/&gt;</span></span><br><span class="line"><span class="comment"># This script is licensed under GNU GPL version 2.0 or above</span></span><br><span class="line"><span class="comment"># Comment/suggestion: &lt;vivek at nixCraft DOT com&gt;</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># See url for more info:</span></span><br><span class="line"><span class="comment"># http://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">if</span> [ $(<span class="built_in">id</span> -u) -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">&quot;Enter username : &quot;</span> username</span><br><span class="line">	<span class="built_in">read</span> -s -p <span class="string">&quot;Enter password : &quot;</span> password</span><br><span class="line">	egrep <span class="string">&quot;^<span class="variable">$username</span>&quot;</span> /etc/passwd &gt;/dev/null</span><br><span class="line">	<span class="keyword">if</span> [ $? -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$username</span> exists!&quot;</span></span><br><span class="line">		<span class="built_in">exit</span> 1</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pass=$(perl -e <span class="string">&#x27;print crypt($ARGV[0], &quot;password&quot;)&#x27;</span> <span class="variable">$password</span>)</span><br><span class="line">		useradd -m -p <span class="variable">$pass</span> <span class="variable">$username</span></span><br><span class="line">		[ $? -eq 0 ] &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;User has been added to system!&quot;</span> || <span class="built_in">echo</span> <span class="string">&quot;Failed to add a user!&quot;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;Only root may add a user to the system&quot;</span></span><br><span class="line">	<span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3595,35 +3640,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Start FlexLM on RHEL7 Bootup</title>
-    <url>/2022/04/18/start-flexLM-on-RHEL7-bootup/</url>
-    <content><![CDATA[<p><strong>方法一</strong></p>
-<p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
-<p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p>mgcld脚本内容：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> /t/m/license/mgcld</span><br><span class="line"><span class="comment">#! /bin/bash</span></span><br><span class="line"><span class="comment">#chkconfig: 2345 70 30</span></span><br><span class="line"></span><br><span class="line">/t/m/mgls_v9-21_3-2-0.aol/bin/lmgrd \</span><br><span class="line">  -c /t/m/license/license.dat \</span><br><span class="line">  -l /t/m/license/license.log</span><br></pre></td></tr></table></figure>
-
-<p>mgcld首行chkconfig说明：</p>
-<p><strong>2345</strong>是指脚本的运行级别，linux有0~6种状态，即在2345这4种模式下都可以运行，234都是文本界面，5就是图形界面X<br><strong>70</strong>是指脚本将来的启动顺序号，如果别的程序的启动顺序号比70小，则脚本需要等这些程序都启动以后才启动。<br><strong>30</strong>是指系统关闭时，脚本的停止顺序号</p>
-<p><strong>方法二</strong></p>
-<p>直接将脚本内容添加到&#x2F;etc&#x2F;rc.local</p>
-<p>在RHEL7中rc.local权限被降低了，需要将其赋予可执行权限。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /etc/rc.local</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>license</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Spyglass Constraint Convert From SDC to SGDC</title>
     <url>/2022/04/13/spyglass-constraint-convert-from-SDC-to-SGDC/</url>
     <content><![CDATA[<ol start="0">
@@ -3661,6 +3677,35 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>Start FlexLM on RHEL7 Bootup</title>
+    <url>/2022/04/18/start-flexLM-on-RHEL7-bootup/</url>
+    <content><![CDATA[<p><strong>方法一</strong></p>
+<p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
+<p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>mgcld脚本内容：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">% <span class="built_in">cat</span> /t/m/license/mgcld</span><br><span class="line"><span class="comment">#! /bin/bash</span></span><br><span class="line"><span class="comment">#chkconfig: 2345 70 30</span></span><br><span class="line"></span><br><span class="line">/t/m/mgls_v9-21_3-2-0.aol/bin/lmgrd \</span><br><span class="line">  -c /t/m/license/license.dat \</span><br><span class="line">  -l /t/m/license/license.log</span><br></pre></td></tr></table></figure>
+
+<p>mgcld首行chkconfig说明：</p>
+<p><strong>2345</strong>是指脚本的运行级别，linux有0~6种状态，即在2345这4种模式下都可以运行，234都是文本界面，5就是图形界面X<br><strong>70</strong>是指脚本将来的启动顺序号，如果别的程序的启动顺序号比70小，则脚本需要等这些程序都启动以后才启动。<br><strong>30</strong>是指系统关闭时，脚本的停止顺序号</p>
+<p><strong>方法二</strong></p>
+<p>直接将脚本内容添加到&#x2F;etc&#x2F;rc.local</p>
+<p>在RHEL7中rc.local权限被降低了，需要将其赋予可执行权限。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /etc/rc.local</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>license</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Symbolic Links in Windows</title>
     <url>/2022/04/12/symbolic-links-in-windows/</url>
     <content><![CDATA[<p><strong>Create Symbolic Link to File in CMD Prompt</strong></p>
@@ -3674,28 +3719,6 @@ service messagebus restart;
 ]]></content>
       <tags>
         <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Synopsys Safety-Aware Solution for Automotive</title>
-    <url>/2022/07/08/synopsys-safety-aware-solution-for-automotive/</url>
-    <content><![CDATA[<img src="/2022/07/08/synopsys-safety-aware-solution-for-automotive/image-20220708104331952.jpg" class="">
-
-<ul>
-<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
-<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
-<li>Reduce documentation work with automated work products and supporting evidence</li>
-<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
-<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
-<li>Optimize machine resources with faster native tools that use less memory</li>
-</ul>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>synopsys</tag>
-        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -3880,6 +3903,28 @@ service messagebus restart;
       <tags>
         <tag>eda</tag>
         <tag>synopsys</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Synopsys Safety-Aware Solution for Automotive</title>
+    <url>/2022/07/08/synopsys-safety-aware-solution-for-automotive/</url>
+    <content><![CDATA[<img src="/2022/07/08/synopsys-safety-aware-solution-for-automotive/image-20220708104331952.jpg" class="">
+
+<ul>
+<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
+<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
+<li>Reduce documentation work with automated work products and supporting evidence</li>
+<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
+<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
+<li>Optimize machine resources with faster native tools that use less memory</li>
+</ul>
+]]></content>
+      <categories>
+        <category>VLSI</category>
+      </categories>
+      <tags>
+        <tag>synopsys</tag>
+        <tag>automotive</tag>
       </tags>
   </entry>
   <entry>
@@ -4326,18 +4371,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Vim: Open Files</title>
-    <url>/2023/01/18/vim-open-files/</url>
-    <content><![CDATA[<p><code>:e filename</code> Opens the file in the vim editor.<br><code>:new filename</code> Opens the file in horizontal split mode.<br><code>:vert new filename</code> Opens the file in vertical split mode.<br><code>:tabnew filename</code> Opens the file in a new tab.</p>
-]]></content>
-      <categories>
-        <category>Program</category>
-      </categories>
-      <tags>
-        <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vim: Generate and Increment Numbers</title>
     <url>/2022/07/08/vim-generate-and-increment-numbers/</url>
     <content><![CDATA[<h3 id="Increment-Numbers"><a href="#Increment-Numbers" class="headerlink" title="Increment Numbers"></a>Increment Numbers</h3><ol>
@@ -4354,6 +4387,18 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>editor</tag>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim: Open Files</title>
+    <url>/2023/01/18/vim-open-files/</url>
+    <content><![CDATA[<p><code>:e filename</code> Opens the file in the vim editor.<br><code>:new filename</code> Opens the file in horizontal split mode.<br><code>:vert new filename</code> Opens the file in vertical split mode.<br><code>:tabnew filename</code> Opens the file in a new tab.</p>
+]]></content>
+      <categories>
+        <category>Program</category>
+      </categories>
+      <tags>
         <tag>vim</tag>
       </tags>
   </entry>
@@ -4643,6 +4688,18 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
+    <title>上海每日疫情走势2022-4-25</title>
+    <url>/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/</url>
+    <content><![CDATA[<img src="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/image-20220426102807065.png" class="">
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>上海每日疫情走势2022-4-27</title>
     <url>/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/</url>
     <content><![CDATA[<img src="/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/image-20220428084632964.png" class="">
@@ -4708,18 +4765,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-4-25</title>
-    <url>/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/</url>
-    <content><![CDATA[<img src="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/image-20220426102807065.png" class="">
-]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>covid19</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>上海每日疫情走势2022-5-15</title>
     <url>/2022/05/16/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-15/</url>
     <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;15</strong></p>
@@ -4749,26 +4794,63 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-5-18</title>
-    <url>/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/</url>
-    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;18</strong></p>
+    <title>上海每日疫情走势2022-5-23</title>
+    <url>/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/</url>
+    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;23</strong></p>
 <table>
 <thead>
 <tr>
-<th align="center">全市新增确诊</th>
-<th align="center">全市新增无症状</th>
-<th align="center">浦东新增确诊</th>
-<th align="center">浦东新增无症状</th>
+<th align="right">区县</th>
+<th align="center">浦东</th>
+<th align="center">黄浦</th>
+<th align="center">徐汇</th>
+<th align="center">长宁</th>
+<th align="center">静安</th>
+<th align="center">普陀</th>
+<th align="center">虹口</th>
+<th align="center">杨浦</th>
+<th align="center">闵行</th>
+<th align="center">宝山</th>
+<th align="center">嘉定</th>
+<th align="center">松江</th>
+<th align="center">青浦</th>
 </tr>
 </thead>
 <tbody><tr>
+<td align="right">新增确诊</td>
+<td align="center">5</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">6</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="right">新增无症状</td>
+<td align="center">53</td>
+<td align="center">29</td>
+<td align="center">26</td>
+<td align="center">14</td>
+<td align="center">50</td>
+<td align="center">11</td>
 <td align="center">82</td>
-<td align="center">637</td>
+<td align="center">108</td>
 <td align="center">13</td>
-<td align="center">62</td>
+<td align="center">35</td>
+<td align="center">1</td>
+<td align="center">7</td>
+<td align="center">3</td>
 </tr>
 </tbody></table>
-<img src="/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/image_20220518.jpg" class="">]]></content>
+<img src="/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/image_20220523.jpg" class="">
+]]></content>
       <categories>
         <category>Diary</category>
       </categories>
@@ -4852,62 +4934,38 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>上海每日疫情走势2022-5-23</title>
-    <url>/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/</url>
-    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;23</strong></p>
+    <title>上海每日疫情走势2022-5-18</title>
+    <url>/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/</url>
+    <content><![CDATA[<p><strong>2022&#x2F;5&#x2F;18</strong></p>
 <table>
 <thead>
 <tr>
-<th align="right">区县</th>
-<th align="center">浦东</th>
-<th align="center">黄浦</th>
-<th align="center">徐汇</th>
-<th align="center">长宁</th>
-<th align="center">静安</th>
-<th align="center">普陀</th>
-<th align="center">虹口</th>
-<th align="center">杨浦</th>
-<th align="center">闵行</th>
-<th align="center">宝山</th>
-<th align="center">嘉定</th>
-<th align="center">松江</th>
-<th align="center">青浦</th>
+<th align="center">全市新增确诊</th>
+<th align="center">全市新增无症状</th>
+<th align="center">浦东新增确诊</th>
+<th align="center">浦东新增无症状</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="right">新增确诊</td>
-<td align="center">5</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">2</td>
-<td align="center">1</td>
-<td align="center">6</td>
-<td align="center">2</td>
-<td align="center">0</td>
-<td align="center">3</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="right">新增无症状</td>
-<td align="center">53</td>
-<td align="center">29</td>
-<td align="center">26</td>
-<td align="center">14</td>
-<td align="center">50</td>
-<td align="center">11</td>
 <td align="center">82</td>
-<td align="center">108</td>
+<td align="center">637</td>
 <td align="center">13</td>
-<td align="center">35</td>
-<td align="center">1</td>
-<td align="center">7</td>
-<td align="center">3</td>
+<td align="center">62</td>
 </tr>
 </tbody></table>
-<img src="/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/image_20220523.jpg" class="">
+<img src="/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/image_20220518.jpg" class="">]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>covid19</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>上海每日疫情走势2022-5-5</title>
+    <url>/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/</url>
+    <content><![CDATA[<img src="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/image-20220505095419109.jpg" class="">
+
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -4934,19 +4992,6 @@ service messagebus restart;
     <url>/2022/05/10/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-9/</url>
     <content><![CDATA[<p><strong>5&#x2F;9</strong> - 新增确诊<strong>234</strong>，新增无症状<strong>2780</strong></p>
 <img src="/2022/05/10/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-9/image-20220509.jpg" class="">
-]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>covid19</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>上海每日疫情走势2022-5-5</title>
-    <url>/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/</url>
-    <content><![CDATA[<img src="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/image-20220505095419109.jpg" class="">
-
 ]]></content>
       <categories>
         <category>Diary</category>
@@ -12870,49 +12915,6 @@ service messagebus restart;
       </categories>
       <tags>
         <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>How to Solve Segfault on VCS Linux64</title>
-    <url>/2024/02/26/abc/</url>
-    <content><![CDATA[<h3 id="Patching-command-set"><a href="#Patching-command-set" class="headerlink" title="Patching command set"></a>Patching command set</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VCS_HOME</span>/linux64/lib</span><br><span class="line">$ <span class="built_in">cp</span> -p libvcsnew.so libvcsnew.so.bak</span><br><span class="line">$ patcher.py libvcsnew.so</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br></pre></td></tr></table></figure>
-<h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p><em><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></em></p>
-<span id="more"></span>
-
-<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><h4 id="segfault-in-VCS-Q-2020-03-also-applicable-to-2019-2021-2022-and-etc"><a href="#segfault-in-VCS-Q-2020-03-also-applicable-to-2019-2021-2022-and-etc" class="headerlink" title="segfault in VCS Q-2020.03 (also applicable to 2019, 2021, 2022, and etc)"></a>segfault in VCS Q-2020.03 (also applicable to 2019, 2021, 2022, and etc)</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Command line: ./simv</span><br><span class="line"></span><br><span class="line">--- Stack trace follows:</span><br><span class="line"></span><br><span class="line">Dumping VCS Annotated Stack:</span><br><span class="line"><span class="comment">#0  0x00002aaad3587659 in waitpid () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#1  0x00002aaad3504f62 in do_system () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x00002aaad3505311 in system () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#3  0x00002aaacb5883fb in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacb589ed3 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacb582822 in SNPSle_d35ca1ff70d465c2b9b1a72eee90a50630165806651fae96eee2bdb18305df1f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacdd162af in SNPSle_64133461705005bb725549e2e6fa1b3f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaacda6fbef in SNPSle_82244d58c54c18c70d63edc9becab634 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0x00002aaacb911904 in mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#10 0x00002aaacb8ed015 in snpsCheckFreeFunc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#11 0x00002aaacd8428f4 in SNPSle_540905a7b1b27611 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#12 0x00002aaacd84323a in SNPSle_9ff9b2dce8f1fde9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#13 0x00002aaacd841308 in SNPSle_36c2d46996c96605 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0x00002aaacd8417cd in SNPSle_2c2186f0f2f42415 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0x00002aaad2ca3ea5 in start_thread () from /lib64/libpthread.so.0</span></span><br><span class="line"><span class="comment">#17 0x00002aaad35c0b0d in clone () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#0  0x00002aaad35879fd in nanosleep () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#1  0x00002aaad3587894 in sleep () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x00002aaacd5e1b76 in SNPSle_95ae9cc2e78cc668673c60b8d88c4908 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#3  0x00002aaacd5e1d19 in SNPSle_92de4d0d4cf0d6931bc37e8d42a01d93 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacd5e008a in SNPSle_b76ef993ee82b3d58a5cadddbec8b67c () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacd5e032c in SNPSle_f28f24b8c84ac8f6e02e0b03bcd33aa8 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacd5cba31 in SNPSle_5e54eaa1df739f6ed4c1ff24a0986ee6 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaacd5cbc4c in SNPSle_058778405d2a6c04ddd18247ba7f440f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#8  0x00002aaacd5c67d2 in SNPSle_e376be325e61b493d6bd988d8077bacc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0x00002aaacd5c6c0f in SNPSle_a10369bdf7c5916ddd6866ce7e2e861c () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#10 0x00002aaacd5c73e1 in SNPSle_00b1acee80c770570cd75f9efbe24cca () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#11 0x00002aaacd5c7e6d in SNPSle_ba11b1edbd04051f5bb81b1861cdf84a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#12 0x00002aaacd5b6602 in SNPSle_2e65c0794628fc5af60953149776c29b () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#13 0x00002aaacd5b3262 in SNPSle_541f757be362289a7c9e5618c0ff28327846f8d3cc02839f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0x00002aaacd5ad08a in SNPSle_c0de1345d5ab80930e06dd2b68f214c3 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0x00002aaacd5ad242 in SNPSle_25cd5712eacded5ff943afa9a81fcb09 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0x00002aaacdd34da9 in SNPSle_490598bfebcc8e8183ad3550288b1f82 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#17 0x00002aaacdd41962 in SNPSle_490598bfebcc8e81 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#18 0x00000000004171ff in main ()</span></span><br><span class="line"></span><br><span class="line">Process VmPeak: 916968 kb, VmSize: 851436 kb</span><br><span class="line">System Free Memory: 119334916 kb, System Free Swap: 4194300 kb</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="At-first-use-GDB"><a href="#At-first-use-GDB" class="headerlink" title="At first use GDB"></a>At first use GDB</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gdb ./simv</span><br><span class="line">GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7</span><br><span class="line">Copyright (C) 2013 Free Software Foundation, Inc.</span><br><span class="line">License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;</span><br><span class="line">This is free software: you are free to change and redistribute it.</span><br><span class="line">There is NO WARRANTY, to the extent permitted by law.  Type <span class="string">&quot;show copying&quot;</span></span><br><span class="line">and <span class="string">&quot;show warranty&quot;</span> <span class="keyword">for</span> details.</span><br><span class="line">This GDB was configured as <span class="string">&quot;x86_64-redhat-linux-gnu&quot;</span>.</span><br><span class="line">For bug reporting instructions, please see:</span><br><span class="line">&lt;http://www.gnu.org/software/gdb/bugs/&gt;...</span><br><span class="line">Reading symbols from /test/run/simv...(no debugging symbols found)...<span class="keyword">done</span>.</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>Running of Debugging:  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(gdb) run</span><br><span class="line">Starting program: /test/run/./simv </span><br><span class="line">[Thread debugging using libthread_db enabled]</span><br><span class="line">Using host libthread_db library <span class="string">&quot;/lib64/libthread_db.so.1&quot;</span>.</span><br><span class="line">process 8968 is executing new program: /test/run/simv</span><br><span class="line">Missing separate debuginfos, use: debuginfo-install glibc-2.17-325.el7_9.x86_64 libgcc-4.8.5-44.el7.x86_64 libstdc++-4.8.5-44.el7.x86_64 libxml2-2.9.1-6.el7.5.x86_64 numactl-libs-2.0.12-5.el7.x86_64 xz-libs-5.2.2-1.el7.x86_64 zlib-1.2.7-19.el7_9.x86_64</span><br><span class="line">[Thread debugging using libthread_db enabled]</span><br><span class="line">Using host libthread_db library <span class="string">&quot;/lib64/libthread_db.so.1&quot;</span>.</span><br><span class="line">Notice: timing checks disabled with +notimingcheck at compile-time</span><br><span class="line">[New Thread 0x2aaada311700 (LWP 9007)]</span><br><span class="line">[Thread 0x2aaada311700 (LWP 9007) exited]</span><br><span class="line">[New Thread 0x2aaada311700 (LWP 9014)]</span><br><span class="line"></span><br><span class="line">Program received signal SIGSEGV, Segmentation fault.</span><br><span class="line">[Switching to Thread 0x2aaada311700 (LWP 9014)]</span><br><span class="line">0x00002aaacb911904 <span class="keyword">in</span> mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span><br><span class="line">Missing separate debuginfos, use: debuginfo-install bzip2-libs-1.0.6-13.el7.x86_64 dbus-glib-0.100-7.el7.x86_64 dbus-libs-1.10.24-15.el7.x86_64 elfutils-libelf-0.176-5.el7.x86_64 elfutils-libs-0.176-5.el7.x86_64 glib2-2.56.1-8.el7.x86_64 glibc-2.17-325.el7_9.x86_64 libattr-2.4.46-13.el7.x86_64 libblkid-2.23.2-65.el7_9.1.x86_64 libcap-2.22-11.el7.x86_64 libffi-3.0.13-19.el7.x86_64 libgcc-4.8.5-44.el7.x86_64 libgcrypt-1.5.3-14.el7.x86_64 libgpg-error-1.12-3.el7.x86_64 libmount-2.23.2-65.el7_9.1.x86_64 libselinux-2.5-15.el7.x86_64 libstdc++-4.8.5-44.el7.x86_64 libuuid-2.23.2-65.el7_9.1.x86_64 libxml2-2.9.1-6.el7.5.x86_64 lz4-1.8.3-1.el7.x86_64 numactl-libs-2.0.12-5.el7.x86_64 pcre-8.32-17.el7.x86_64 systemd-libs-219-78.el7_9.3.x86_64 xz-libs-5.2.2-1.el7.x86_64 zlib-1.2.7-19.el7_9.x86_64</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>So we get segfault which should be fixed. To do it we need to get backtrace:  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(gdb) backtrace </span><br><span class="line"><span class="comment">#0  0x00002aaacb911904 in mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#1  0x00002aaacb8ed015 in snpsCheckFreeFunc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#2  0x00002aaacd8428f4 in SNPSle_540905a7b1b27611 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#3  0x00002aaacd84323a in SNPSle_9ff9b2dce8f1fde9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacd841308 in SNPSle_36c2d46996c96605 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacd8417cd in SNPSle_2c2186f0f2f42415 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaad2ca3ea5 in start_thread () from /lib64/libpthread.so.0</span></span><br><span class="line"><span class="comment">#8  0x00002aaad35c0b0d in clone () from /lib64/libc.so.6</span></span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>Attention on GDB frame 6  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">(gdb) frame 6</span><br><span class="line"><span class="comment">#6  0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line">(gdb) disas</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> SNPSle_126d17af453e054a:</span><br><span class="line">   0x00002aaacd8418c0 &lt;+0&gt;:	push   %rbx</span><br><span class="line">   0x00002aaacd8418c1 &lt;+1&gt;:	mov    %rdi,%rbx</span><br><span class="line">   0x00002aaacd8418c4 &lt;+4&gt;:	xor    %edi,%edi</span><br><span class="line">   0x00002aaacd8418c6 &lt;+6&gt;:	<span class="built_in">test</span>   %rbx,%rbx</span><br><span class="line">   0x00002aaacd8418c9 &lt;+9&gt;:	je     0x2aaacd8418de &lt;SNPSle_126d17af453e054a+30&gt;</span><br><span class="line">   0x00002aaacd8418cb &lt;+11&gt;:	mov    (%rbx),%eax</span><br><span class="line">   0x00002aaacd8418cd &lt;+13&gt;:	<span class="built_in">test</span>   %eax,%eax</span><br><span class="line">   0x00002aaacd8418cf &lt;+15&gt;:	je     0x2aaacd841930 &lt;SNPSle_126d17af453e054a+112&gt;</span><br><span class="line">   0x00002aaacd8418d1 &lt;+17&gt;:	imul   <span class="variable">$0xf4240</span>,%eax,%edi</span><br><span class="line">   0x00002aaacd8418d7 &lt;+23&gt;:	callq  0x2aaacce069c0 &lt;usleep@plt&gt;</span><br><span class="line">   0x00002aaacd8418dc &lt;+28&gt;:	jmp    0x2aaacd841930 &lt;SNPSle_126d17af453e054a+112&gt;</span><br><span class="line">   0x00002aaacd8418de &lt;+30&gt;:	callq  0x2aaacd8416d6 &lt;SNPSle_2c2186f0f2f42415&gt;</span><br><span class="line">=&gt; 0x00002aaacd8418e3 &lt;+35&gt;:	dec    %eax</span><br><span class="line">   0x00002aaacd8418e5 &lt;+37&gt;:	lea    0x3b55614(%rip),%rax        <span class="comment"># 0x2aaad1396f00</span></span><br><span class="line">   0x00002aaacd8418ec &lt;+44&gt;:	jne    0x2aaacd8418fa &lt;SNPSle_126d17af453e054a+58&gt;</span><br><span class="line">   0x00002aaacd8418ee &lt;+46&gt;:	movl   <span class="variable">$0x2</span>,0x88(%rax)</span><br></pre></td></tr></table></figure>
-<p>As you can see <strong>SNPSle_2c2186f0f2f42415</strong> doesn’t have return data. So I suppose we can ignore calling of this function.</p>
-<h4 id="Let’s-get-objdump"><a href="#Let’s-get-objdump" class="headerlink" title="Let’s get objdump"></a>Let’s get objdump</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ objdump -D /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so &amp;&gt; dump</span><br></pre></td></tr></table></figure>
-<p>VIM allows to open big dump file. After opening find - <strong>SNPSle_126d17af453e054a</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">0000000001aaf8c0 &lt;SNPSle_126d17af453e054a&gt;:</span><br><span class="line"> 1aaf8c0:   53                      push   %rbx</span><br><span class="line"> 1aaf8c1:   48 89 fb                mov    %rdi,%rbx</span><br><span class="line"> 1aaf8c4:   31 ff                   xor    %edi,%edi</span><br><span class="line"> 1aaf8c6:   48 85 db                <span class="built_in">test</span>   %rbx,%rbx</span><br><span class="line"> 1aaf8c9:   74 13                   je     1aaf8de &lt;SNPSle_126d17af453e054a+0x1e&gt;</span><br><span class="line"> 1aaf8cb:   8b 03                   mov    (%rbx),%eax</span><br><span class="line"> 1aaf8cd:   85 c0                   <span class="built_in">test</span>   %eax,%eax</span><br><span class="line"> 1aaf8cf:   74 5f                   je     1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8d1:   69 f8 40 42 0f 00       imul   <span class="variable">$0xf4240</span>,%eax,%edi</span><br><span class="line"> 1aaf8d7:   e8 e4 50 5c ff          callq  10749c0 &lt;usleep@plt&gt;</span><br><span class="line"> 1aaf8dc:   eb 52                   jmp    1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8de:   e8 f3 fd ff ff          callq  1aaf6d6 &lt;SNPSle_2c2186f0f2f42415&gt;</span><br><span class="line"> 1aaf8e3:   ff c8                   dec    %eax</span><br><span class="line"> 1aaf8e5:   48 8d 05 14 56 b5 03    lea    0x3b55614(%rip),%rax        <span class="comment"># 5604f00 &lt;.got+0x15808&gt;</span></span><br></pre></td></tr></table></figure>
-<p>We are interested in line - 1aaf8de:   <strong>e8 f3 fd ff ff</strong>          callq  1aaf6d6 <SNPSle_2c2186f0f2f42415><br>It’s callq instruction which we can replace by some nop instructions.<br>Nop instruction is <strong>0x90</strong> in hex code.</p>
-<p><strong>First of all you must make backup of VCS tool!</strong></p>
-<h4 id="Edit-binary-file-via-hexedit"><a href="#Edit-binary-file-via-hexedit" class="headerlink" title="Edit binary file via hexedit"></a>Edit binary file via hexedit</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexedit /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span><br></pre></td></tr></table></figure>
-<p>Find <strong>e8 f3 fd ff ff</strong> which is at <strong>1aaf8de</strong> address. And replace this bytes by 0x90! Save changes and close library.<br>So let’s check result via objdump:  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ objdump -D /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so &amp;&gt; new_dump</span><br></pre></td></tr></table></figure>
-<p>go to <strong>1aaf8de</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">0000000001aaf8c0 &lt;SNPSle_126d17af453e054a&gt;:</span><br><span class="line"> 1aaf8c0:   53                      push   %rbx</span><br><span class="line"> 1aaf8c1:   48 89 fb                mov    %rdi,%rbx</span><br><span class="line"> 1aaf8c4:   31 ff                   xor    %edi,%edi</span><br><span class="line"> 1aaf8c6:   48 85 db                <span class="built_in">test</span>   %rbx,%rbx</span><br><span class="line"> 1aaf8c9:   74 13                   je     1aaf8de &lt;SNPSle_126d17af453e054a+0x1e&gt;</span><br><span class="line"> 1aaf8cb:   8b 03                   mov    (%rbx),%eax</span><br><span class="line"> 1aaf8cd:   85 c0                   <span class="built_in">test</span>   %eax,%eax</span><br><span class="line"> 1aaf8cf:   74 5f                   je     1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8d1:   69 f8 40 42 0f 00       imul   <span class="variable">$0xf4240</span>,%eax,%edi</span><br><span class="line"> 1aaf8d7:   e8 e4 50 5c ff          callq  10749c0 &lt;usleep@plt&gt;</span><br><span class="line"> 1aaf8dc:   eb 52                   jmp    1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8de:   90                      nop</span><br><span class="line"> 1aaf8df:   90                      nop</span><br><span class="line"> 1aaf8e0:   90                      nop</span><br><span class="line"> 1aaf8e1:   90                      nop</span><br><span class="line"> 1aaf8e2:   90                      nop</span><br><span class="line"> 1aaf8e3:   ff c8                   dec    %eax</span><br><span class="line"> 1aaf8e5:   48 8d 05 14 56 b5 03    lea    0x3b55614(%rip),%rax        <span class="comment"># 5604f00 &lt;.got+0x15808&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./simv</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="variable">$finish</span> called from file <span class="string">&quot;/eda/synopsys/vcs/Q-2020.03//etc/uvm-1.2/base/uvm_root.svh&quot;</span>, line 613.</span><br><span class="line"><span class="variable">$finish</span> at simulation time 0.000ns</span><br><span class="line">           V C S   S i m u l a t i o n   R e p o r t </span><br><span class="line">Time: 0 ps</span><br><span class="line">CPU Time:      2.420 seconds;       Data structure size:  11.7Mb</span><br><span class="line">Sun Mar 20 09:31:25 2022</span><br></pre></td></tr></table></figure>
-<p>As you see we done it! We aren’t facing segmentation fault!</p>
-<h3 id="Automatization"><a href="#Automatization" class="headerlink" title="Automatization"></a>Automatization</h3><p>To patch library without manually operation there is <a href="https://github.com/mperov/fixSegfaultVCS/blob/main/patcher.py">patcher.py</a><br>Attention, before running <strong>patcher.py</strong> make backup of library which you would like to patch.</p>
-<p>The patcher.py is applicable to the VCS vS-2019 and higher version. Besides <code>libvcsnew.so</code>, another libfile needs to be patched is <code>libucapi.so</code> which is called by VCS urg.<br>The patcher.py is also applicable to the Verdi vS2019 and higher versions. The Verdi libfile <code>libucapi.so</code> needs to be patched otherwise the software crashes when viewing coverage.<br>The complete patching command set is as following.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VCS_HOME</span>/linux64/lib</span><br><span class="line">$ <span class="built_in">cp</span> -p libvcsnew.so libvcsnew.so.bak</span><br><span class="line">$ patcher.py libvcsnew.so</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VERDI_HOME</span>/platform/linux64/bin</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>VLSI</category>
-      </categories>
-      <tags>
-        <tag>synopsys</tag>
-        <tag>vcs</tag>
-        <tag>verdi</tag>
       </tags>
   </entry>
 </search>
