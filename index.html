@@ -92,79 +92,6 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/03/22/TSMC-Naming-for-Different-Metal-Thicknesses/">TSMC Naming for Different Metal Thicknesses</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2024-03-22
-        </span></div>
-    </header>
-
-    <div class="post-content"><table>
-<thead>
-<tr>
-<th align="center">Metal type</th>
-<th align="center">Code</th>
-<th align="center">W&#x2F;S (um)</th>
-<th align="center">Thickness (A)</th>
-<th align="left">Mask layers</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">M1</td>
-<td align="center">M1</td>
-<td align="center">0.05&#x2F;0.05</td>
-<td align="center">825</td>
-<td align="left">M1 (360) only</td>
-</tr>
-<tr>
-<td align="center">1X Metal</td>
-<td align="center">Mx</td>
-<td align="center">0.05&#x2F;0.05</td>
-<td align="center">825</td>
-<td align="left">M2~M8 (380,381,384,385,386,387,388), max: seven layers</td>
-</tr>
-<tr>
-<td align="center">2X Metal</td>
-<td align="center">My</td>
-<td align="center">0.1&#x2F;0.1</td>
-<td align="center">1900</td>
-<td align="left">M5-M9 (385,386,387.388,389), max: two layers</td>
-</tr>
-<tr>
-<td align="center">8X Metal</td>
-<td align="center">Mz</td>
-<td align="center">0.4&#x2F;0.4</td>
-<td align="center">8500</td>
-<td align="left">M5~M10(385,386,387,388,389,38A), max: three layers</td>
-</tr>
-<tr>
-<td align="center">10X Metal</td>
-<td align="center">Mr</td>
-<td align="center">0.5&#x2F;0.5</td>
-<td align="center">11500</td>
-<td align="left">M5-M10(385,386,387.388,389.38A), max: two layers</td>
-</tr>
-<tr>
-<td align="center">Ultra Thick Metal</td>
-<td align="center">Mu</td>
-<td align="center">2.0&#x2F;1.0</td>
-<td align="center">35000</td>
-<td align="left">M5~M9 (385,386,387,388,389), max: one layer</td>
-</tr>
-<tr>
-<td align="center">AL RDL</td>
-<td align="center">AP</td>
-<td align="center">2.0&#x2F;2.0</td>
-<td align="center">28000</td>
-<td align="left">AP (309)</td>
-</tr>
-</tbody></table>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2024/02/27/Input-special-characters-in-VIM/">Input Special Characters in VIM</a>
         </h1>
 
@@ -413,6 +340,43 @@
           <div class="read-more">
             <a href="/2023/12/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Excel%E5%9C%A8Timing-Closure%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="read-more-link">Read more &raquo;</a>
           </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/12/07/types-of-power-in-an-SoC-design/">Types of Power in a SoC Design</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-12-07
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><img src="/2023/12/07/types-of-power-in-an-SoC-design/image-20231207202606742.png" class="">
+
+<p><strong>Dynamic Power</strong></p>
+<ul>
+<li><strong>Switching Power:</strong> This is the power spent charging and discharging the capacitance of the output net; it is also called load power or CV2 power. Since switching power is a function of switching activity and load capacitance, it is data dependent.</li>
+<li><strong>Internal Power (Short Circuit Power&#x2F;Crowbar Power):</strong> This is the power dissipated inside the gate when switching. This power is also called short power or crowbar power.</li>
+</ul>
+<p><strong>Static Power</strong></p>
+<ul>
+<li>Static power is the power consumed by a device when no signals are changing values. Since static power consumption is primarily caused by leakage, in CMOS devices, Static Power is also known as Leakage Power. This is the power dissipated whenever the device is powered, regardless of activity; there are several sources of leakage power but they are all lumped together into a single value for modeling purposes. The amount of leakge power dissipated by a gate can depend on the logic state of the inputs. This is called “state-dependent leakage power“; most tools can model this if it is described in the library data.</li>
+</ul>
+<p><strong>Power Components</strong></p>
+<ul>
+<li><strong>Combinational:</strong> Combinational cell and a net driven by the combinational cell</li>
+<li><strong>Sequential:</strong> Registers, Latch, ICG and the output net of the sequential logic</li>
+<li><strong>Clock:</strong> Clock network</li>
+<li><strong>IO:</strong> IO pad cell and the output net of the IO cell</li>
+<li><strong>Memory:</strong> Memory and the output nets of the memory cell</li>
+<li><strong>Macrocell:</strong></li>
+<li><strong>Blackbox:</strong></li>
+</ul>
+
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
         <span class="next-text">Next</span>
