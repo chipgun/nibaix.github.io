@@ -12930,4 +12930,72 @@ service messagebus restart;
         <tag>vim</tag>
       </tags>
   </entry>
+  <entry>
+    <title>TSMC Naming for Different Metal Thicknesses</title>
+    <url>/2024/03/22/TSMC-Naming-for-Different-Metal-Thicknesses/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="center">Metal type</th>
+<th align="center">Code</th>
+<th align="center">W&#x2F;S (um)</th>
+<th align="center">Thickness (A)</th>
+<th align="left">Mask layers</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">M1</td>
+<td align="center">M1</td>
+<td align="center">0.05&#x2F;0.05</td>
+<td align="center">825</td>
+<td align="left">M1 (360) only</td>
+</tr>
+<tr>
+<td align="center">1X Metal</td>
+<td align="center">Mx</td>
+<td align="center">0.05&#x2F;0.05</td>
+<td align="center">825</td>
+<td align="left">M2~M8 (380,381,384,385,386,387,388), max: seven layers</td>
+</tr>
+<tr>
+<td align="center">2X Metal</td>
+<td align="center">My</td>
+<td align="center">0.1&#x2F;0.1</td>
+<td align="center">1900</td>
+<td align="left">M5-M9 (385,386,387.388,389), max: twolayers</td>
+</tr>
+<tr>
+<td align="center">8X Metal</td>
+<td align="center">Mz</td>
+<td align="center">0.4&#x2F;0.4</td>
+<td align="center">8500</td>
+<td align="left">M5~M10(385,386,387,388,389,38A), max: three layers</td>
+</tr>
+<tr>
+<td align="center">10X Metal</td>
+<td align="center">Mr</td>
+<td align="center">0.5&#x2F;0.5</td>
+<td align="center">11500</td>
+<td align="left">M5-M10(385,386,387.388,389.38A), max:two layers</td>
+</tr>
+<tr>
+<td align="center">Ultra Thick Metal</td>
+<td align="center">Mu</td>
+<td align="center">2.0&#x2F;1.0</td>
+<td align="center">35000</td>
+<td align="left">M5~M9 (385,386,387,388,389), max: onelayer</td>
+</tr>
+<tr>
+<td align="center">AL RDL</td>
+<td align="center">AP</td>
+<td align="center">2.0&#x2F;2.0</td>
+<td align="center">28000</td>
+<td align="left">AP (309)</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>tsmc</tag>
+      </tags>
+  </entry>
 </search>
