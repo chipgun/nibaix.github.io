@@ -12962,7 +12962,7 @@ service messagebus restart;
 </ul>
 </blockquote>
 <h2 id="Basic-Linux-Commands-with-Examples"><a href="#Basic-Linux-Commands-with-Examples" class="headerlink" title="Basic Linux Commands with Examples"></a>Basic Linux Commands with Examples</h2><p>In this Linux cheat sheet, we will cover all the most important Linux commands, from the basics to the advanced. We will also provide some tips on how to practice and learn Linux commands. This  cheat sheet is useful for Beginners and Experience professionals.</p>
-<h2 id="1-File-and-Directory-Operations-Commands"><a href="#1-File-and-Directory-Operations-Commands" class="headerlink" title="1. File and Directory Operations Commands"></a>1. File and Directory Operations Commands</h2><p>File and directory operations are fundamental in  working with the Linux operating system. Here are some commonly used  File and Directory Operations commands:</p>
+<h3 id="1-File-and-Directory-Operations-Commands"><a href="#1-File-and-Directory-Operations-Commands" class="headerlink" title="1. File and Directory Operations Commands"></a>1. File and Directory Operations Commands</h3><p>File and directory operations are fundamental in  working with the Linux operating system. Here are some commonly used  File and Directory Operations commands:</p>
 <table>
 <thead>
 <tr>
@@ -13051,7 +13051,7 @@ service messagebus restart;
 <td><strong>find &#x2F;path&#x2F;to&#x2F;search -name “*.txt”</strong>  searches for all files with the extension “.txt” in the specified directory.</td>
 </tr>
 </tbody></table>
-<h2 id="2-File-Permission-Commands"><a href="#2-File-Permission-Commands" class="headerlink" title="2. File Permission Commands"></a>2. File Permission Commands</h2><p>File permissions on Linux and Unix systems control  access to files and directories. There are three basic permissions:  read, write, and execute. Each permission can be granted or denied to  three different categories of users: the owner of the file, the members  of the file’s group, and everyone else.</p>
+<h3 id="2-File-Permission-Commands"><a href="#2-File-Permission-Commands" class="headerlink" title="2. File Permission Commands"></a>2. File Permission Commands</h3><p>File permissions on Linux and Unix systems control  access to files and directories. There are three basic permissions:  read, write, and execute. Each permission can be granted or denied to  three different categories of users: the owner of the file, the members  of the file’s group, and everyone else.</p>
 <p>Here are some file permission commands:</p>
 <table>
 <thead>
@@ -13087,7 +13087,7 @@ service messagebus restart;
 <td><strong>umask 022</strong>  sets the default file permissions to read and write for the owner, and read-only for group and others.</td>
 </tr>
 </tbody></table>
-<h2 id="3-File-Compression-and-Archiving-Commands"><a href="#3-File-Compression-and-Archiving-Commands" class="headerlink" title="3. File Compression and Archiving Commands"></a>3. File Compression and Archiving Commands</h2><p>Here are some file compression and archiving commands in Linux:</p>
+<h3 id="3-File-Compression-and-Archiving-Commands"><a href="#3-File-Compression-and-Archiving-Commands" class="headerlink" title="3. File Compression and Archiving Commands"></a>3. File Compression and Archiving Commands</h3><p>Here are some file compression and archiving commands in Linux:</p>
 <table>
 <thead>
 <tr>
@@ -13116,7 +13116,7 @@ service messagebus restart;
 <td><strong>zip archive.zip file1.txt file2.txt</strong>  creates a zip archive named “archive.zip” containing “file1.txt” and “file2.txt”.</td>
 </tr>
 </tbody></table>
-<h2 id="4-Process-Management-Commands"><a href="#4-Process-Management-Commands" class="headerlink" title="4. Process Management Commands"></a>4. Process Management Commands</h2><p>In Linux, process management commands allow you to  monitor and control running processes on the system. Here are some  commonly used process management commands:</p>
+<h3 id="4-Process-Management-Commands"><a href="#4-Process-Management-Commands" class="headerlink" title="4. Process Management Commands"></a>4. Process Management Commands</h3><p>In Linux, process management commands allow you to  monitor and control running processes on the system. Here are some  commonly used process management commands:</p>
 <table>
 <thead>
 <tr>
@@ -13163,7 +13163,7 @@ service messagebus restart;
 <td><strong>grep -i “hello” file.txt</strong> <br><strong>grep -v “error” file.txt</strong> <br><strong>grep -r “pattern” directory&#x2F;</strong> <br><strong>grep -l “keyword” file.txt</strong> <br><strong>grep -n “pattern” file.txt</strong> <br>In these examples we are extracting our desirec output from filename (file.txt)</td>
 </tr>
 </tbody></table>
-<h2 id="5-System-Information-Commands"><a href="#5-System-Information-Commands" class="headerlink" title="5. System Information Commands"></a>5. System Information Commands</h2><p>In Linux, there are several commands available to  gather system information. Here are some commonly used system  information commands:</p>
+<h3 id="5-System-Information-Commands"><a href="#5-System-Information-Commands" class="headerlink" title="5. System Information Commands"></a>5. System Information Commands</h3><p>In Linux, there are several commands available to  gather system information. Here are some commonly used system  information commands:</p>
 <table>
 <thead>
 <tr>
@@ -13228,7 +13228,7 @@ service messagebus restart;
 <td><strong>lsusb</strong>  lists all connected USB devices.</td>
 </tr>
 </tbody></table>
-<h2 id="6-Networking-Commands"><a href="#6-Networking-Commands" class="headerlink" title="6. Networking Commands"></a>6. Networking Commands</h2><p>In Linux, there are several networking commands  available to manage and troubleshoot network connections. Here are some  commonly used networking commands:</p>
+<h3 id="6-Networking-Commands"><a href="#6-Networking-Commands" class="headerlink" title="6. Networking Commands"></a>6. Networking Commands</h3><p>In Linux, there are several networking commands  available to manage and troubleshoot network connections. Here are some  commonly used networking commands:</p>
 <table>
 <thead>
 <tr>
@@ -13278,7 +13278,7 @@ service messagebus restart;
 <td><strong>curl <a href="http://example.com/">http://example.com</a></strong>  retrieves the content of a webpage from the specified URL.</td>
 </tr>
 </tbody></table>
-<h2 id="7-IO-Redirection-Commands"><a href="#7-IO-Redirection-Commands" class="headerlink" title="7. IO Redirection Commands"></a>7. IO Redirection Commands</h2><p>In Linux, IO (Input&#x2F;Output) redirection commands are  used to redirect the standard input, output, and error streams of  commands and processes. Here are some commonly used IO redirection  commands:</p>
+<h3 id="7-IO-Redirection-Commands"><a href="#7-IO-Redirection-Commands" class="headerlink" title="7. IO Redirection Commands"></a>7. IO Redirection Commands</h3><p>In Linux, IO (Input&#x2F;Output) redirection commands are  used to redirect the standard input, output, and error streams of  commands and processes. Here are some commonly used IO redirection  commands:</p>
 <table>
 <thead>
 <tr>
@@ -13323,7 +13323,7 @@ service messagebus restart;
 <td>Appends the stdout of cmd to file.</td>
 </tr>
 </tbody></table>
-<h2 id="8-Environment-Variable-Commands"><a href="#8-Environment-Variable-Commands" class="headerlink" title="8. Environment Variable Commands"></a>8. Environment Variable Commands</h2><p>In Linux, environment variables are used to store  configuration settings, system information, and other variables that can be accessed by processes and shell scripts. Here are some commonly used environment variable commands:</p>
+<h3 id="8-Environment-Variable-Commands"><a href="#8-Environment-Variable-Commands" class="headerlink" title="8. Environment Variable Commands"></a>8. Environment Variable Commands</h3><p>In Linux, environment variables are used to store  configuration settings, system information, and other variables that can be accessed by processes and shell scripts. Here are some commonly used environment variable commands:</p>
 <table>
 <thead>
 <tr>
@@ -13360,7 +13360,7 @@ service messagebus restart;
 <td>Displays the values of all environment variables.</td>
 </tr>
 </tbody></table>
-<h2 id="9-User-Management-Commands"><a href="#9-User-Management-Commands" class="headerlink" title="9. User Management Commands"></a>9. User Management Commands</h2><p>In Linux, user management commands allow you to  create, modify, and manage user accounts on the system. Here are some  commonly used user management commands:</p>
+<h3 id="9-User-Management-Commands"><a href="#9-User-Management-Commands" class="headerlink" title="9. User Management Commands"></a>9. User Management Commands</h3><p>In Linux, user management commands allow you to  create, modify, and manage user accounts on the system. Here are some  commonly used user management commands:</p>
 <table>
 <thead>
 <tr>
@@ -13409,8 +13409,8 @@ service messagebus restart;
 <td>Add an existing user to the specified group. The user is added to the group without removing them from their current groups.</td>
 </tr>
 </tbody></table>
-<h2 id="10-Shortcuts-Commands"><a href="#10-Shortcuts-Commands" class="headerlink" title="10. Shortcuts Commands"></a>10. Shortcuts Commands</h2><p>There are many shortcuts commands in Linux that can help you be more productive. Here are a few of the most common ones:</p>
-<h3 id="10-1-Bash-Shortcuts-Commands"><a href="#10-1-Bash-Shortcuts-Commands" class="headerlink" title="10.1: Bash Shortcuts Commands:"></a>10.1: Bash Shortcuts Commands:</h3><table>
+<h3 id="10-Shortcuts-Commands"><a href="#10-Shortcuts-Commands" class="headerlink" title="10. Shortcuts Commands"></a>10. Shortcuts Commands</h3><p>There are many shortcuts commands in Linux that can help you be more productive. Here are a few of the most common ones:</p>
+<h4 id="10-1-Bash-Shortcuts-Commands"><a href="#10-1-Bash-Shortcuts-Commands" class="headerlink" title="10.1: Bash Shortcuts Commands:"></a>10.1: Bash Shortcuts Commands:</h4><table>
 <thead>
 <tr>
 <th>Navigation</th>
@@ -13470,7 +13470,7 @@ service messagebus restart;
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="10-2-Nano-Shortcuts-Commands"><a href="#10-2-Nano-Shortcuts-Commands" class="headerlink" title="10.2: Nano Shortcuts Commands:"></a>10.2: Nano Shortcuts Commands:</h3><table>
+<h4 id="10-2-Nano-Shortcuts-Commands"><a href="#10-2-Nano-Shortcuts-Commands" class="headerlink" title="10.2: Nano Shortcuts Commands:"></a>10.2: Nano Shortcuts Commands:</h4><table>
 <thead>
 <tr>
 <th>File Operations</th>
@@ -13534,7 +13534,7 @@ service messagebus restart;
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="10-3-VI-Shortcuts-Commands"><a href="#10-3-VI-Shortcuts-Commands" class="headerlink" title="10.3: VI Shortcuts Commands:"></a>10.3: VI Shortcuts Commands:</h3><table>
+<h4 id="10-3-VI-Shortcuts-Commands"><a href="#10-3-VI-Shortcuts-Commands" class="headerlink" title="10.3: VI Shortcuts Commands:"></a>10.3: VI Shortcuts Commands:</h4><table>
 <thead>
 <tr>
 <th><strong>Command</strong></th>
@@ -13622,7 +13622,7 @@ service messagebus restart;
 <td>Delete from the cursor position to the end of the line and switch to insert mode.</td>
 </tr>
 </tbody></table>
-<h3 id="10-4-Vim-Shortcuts-Commands"><a href="#10-4-Vim-Shortcuts-Commands" class="headerlink" title="10.4: Vim Shortcuts Commands:"></a>10.4: Vim Shortcuts Commands:</h3><table>
+<h4 id="10-4-Vim-Shortcuts-Commands"><a href="#10-4-Vim-Shortcuts-Commands" class="headerlink" title="10.4: Vim Shortcuts Commands:"></a>10.4: Vim Shortcuts Commands:</h4><table>
 <thead>
 <tr>
 <th>Normal Mode</th>
