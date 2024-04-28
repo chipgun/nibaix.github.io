@@ -92,6 +92,29 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/07/07/approaches-to-disable-SSH/">Approaches to Disable SSH</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-07-07
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>一、禁止用户登录</p>
+<p>1、修改用户配置文件&#x2F;etc&#x2F;shadow<br>将第二栏设置为“*”，如下。那么该用户就无法登录。但是使用这种方式会导致该用户的密码丢失，也就是当你再次允许他登录的时候，你还得让他重新设置密码。（再次启用这个帐号的方法是把“*”去掉就可以了）<br>    如：<code>tom:*:14245:0:99999:7:::</code></p>
+<p>为了使原密码不丢失，可以在原密码前面加一个特殊字符，比如”!”。需要再次启用这个用户的方法是删除此感叹号”!”。</p>
+<p>2、使用命令usermod<br>这个方式简单又实用，而且没有（1）中的副作用。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">usermod -L tom##Lock 帐号tom</span><br><span class="line">usermod -U tom##Unlock 帐号tom</span><br></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2022/07/07/approaches-to-disable-SSH/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/06/29/ISO-26262-hardware-dev-requirement/">ISO 26262 Hardware Dev Requirement</a>
         </h1>
 
@@ -381,25 +404,6 @@
 
 <img src=/2022/06/01/SH-re-open-after-70-days-lockdown/image_20220601233637.jpg width=300>
 
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/">Special File Permissions of SUID GUID and Sticky Bit</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-31
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172749073.jpg" class="">
-          <div class="read-more">
-            <a href="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/" class="read-more-link">Read more &raquo;</a>
-          </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/6/">
         <i class="iconfont icon-left"></i>
