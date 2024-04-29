@@ -13713,4 +13713,39 @@ service messagebus restart;
         <tag>ray</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Redhat根目录/root扩容</title>
+    <url>/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/</url>
+    <content><![CDATA[<h3 id="1-查看分区及文件系统"><a href="#1-查看分区及文件系统" class="headerlink" title="1. 查看分区及文件系统"></a>1. 查看分区及文件系统</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk</span><br><span class="line">df -hT</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-备份-x2F-home分区内所有文件"><a href="#2-备份-x2F-home分区内所有文件" class="headerlink" title="2. 备份&#x2F;home分区内所有文件"></a>2. 备份&#x2F;home分区内所有文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar cfv /path/to/backup/home/home.tar /home/*</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-卸载-x2F-home"><a href="#3-卸载-x2F-home" class="headerlink" title="3. 卸载&#x2F;home"></a>3. 卸载&#x2F;home</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">umount /home</span><br></pre></td></tr></table></figure>
+
+<p>如果出现“… target is busy.”，可用下列命令强制终止后再卸载</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fuser -km /home</span><br><span class="line">umount /home</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-删除-x2F-home所在lv"><a href="#4-删除-x2F-home所在lv" class="headerlink" title="4. 删除&#x2F;home所在lv"></a>4. 删除&#x2F;home所在lv</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lvremove /dev/mapper/rhel_hostname-home</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-扩展-x2F-root所在lv"><a href="#5-扩展-x2F-root所在lv" class="headerlink" title="5. 扩展&#x2F;root所在lv"></a>5. 扩展&#x2F;root所在lv</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lvextend -L +450G /dev/mapper/rhel_hostname-root</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-扩展-x2F-root文件系统"><a href="#6-扩展-x2F-root文件系统" class="headerlink" title="6. 扩展&#x2F;root文件系统"></a>6. 扩展&#x2F;root文件系统</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">xfs_growfs /dev/mapper/rhel_hostname-root</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-重新创建-x2F-home逻辑卷（创建size比磁盘剩余容量小一丢丢，建议小1GB）"><a href="#7-重新创建-x2F-home逻辑卷（创建size比磁盘剩余容量小一丢丢，建议小1GB）" class="headerlink" title="7. 重新创建&#x2F;home逻辑卷（创建size比磁盘剩余容量小一丢丢，建议小1GB）"></a>7. 重新创建&#x2F;home逻辑卷（创建size比磁盘剩余容量小一丢丢，建议小1GB）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lvcreate -L 300G -n /dev/mapper/rhel_hostname-home</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-创建-x2F-home文件系统"><a href="#8-创建-x2F-home文件系统" class="headerlink" title="8. 创建&#x2F;home文件系统"></a>8. 创建&#x2F;home文件系统</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkfs.xfs /dev/mapper/rhel_hostname-home</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-挂载-x2F-home-挂载前查看-x2F-home目录以及-x2F-etc-x2F-fstab"><a href="#9-挂载-x2F-home-挂载前查看-x2F-home目录以及-x2F-etc-x2F-fstab" class="headerlink" title="9. 挂载&#x2F;home (挂载前查看&#x2F;home目录以及&#x2F;etc&#x2F;fstab)"></a>9. 挂载&#x2F;home (挂载前查看&#x2F;home目录以及&#x2F;etc&#x2F;fstab)</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mount -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-恢复-x2F-home备份"><a href="#10-恢复-x2F-home备份" class="headerlink" title="10. 恢复&#x2F;home备份"></a>10. 恢复&#x2F;home备份</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar xvf /path/to/backup/home/home.tar -C /home</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-再次查看分区及文件系统，确认扩容成功！"><a href="#11-再次查看分区及文件系统，确认扩容成功！" class="headerlink" title="11. 再次查看分区及文件系统，确认扩容成功！"></a>11. 再次查看分区及文件系统，确认扩容成功！</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk</span><br><span class="line">df -hT</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
 </search>
