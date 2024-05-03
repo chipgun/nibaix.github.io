@@ -98,11 +98,13 @@
       <div class="post-meta">
         <span class="post-time">
           2024-05-03
-        </span></div>
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
     </header>
 
-    <div class="post-content"><p>** 1. Configure NFS on Server **</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># mkdir -p /share/common</span><br><span class="line"># echo &quot;/share/common 192.168.10.0/24(sync)&quot; &gt;&gt; /etc/exports</span><br><span class="line"># systemctl enble nfs-server.service</span><br><span class="line"># systemctl start nfs-server.serivce</span><br><span class="line"># showmount -e</span><br></pre></td></tr></table></figure>
+    <div class="post-content"><h3 id="1-Configure-NFS-on-Server"><a href="#1-Configure-NFS-on-Server" class="headerlink" title="1. Configure NFS on Server"></a>1. Configure NFS on Server</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># mkdir -p /share/common</span><br><span class="line"># echo &quot;/share/common 192.168.10.0/24(sync)&quot; &gt;&gt; /etc/exports</span><br><span class="line"># systemctl enble nfs-server.service</span><br><span class="line"># systemctl start nfs-server.serivce</span><br><span class="line"># firewall-cmd --permanent --zone=pubic --add-service=nfs</span><br><span class="line"># firewall-cmd --reload</span><br><span class="line"># showmount -e</span><br></pre></td></tr></table></figure>
           <div class="read-more">
             <a href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/" class="read-more-link">Read more &raquo;</a>
           </div>

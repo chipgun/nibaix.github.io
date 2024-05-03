@@ -98,20 +98,24 @@
       <div class="post-meta">
         <span class="post-time">
           2024-05-03
-        </span></div>
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
     </header>
 
-    <div class="post-content"><p>** 1. Configure NFS on Server **</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># mkdir -p /share/common</span><br><span class="line"># echo &quot;/share/common 192.168.10.0/24(sync)&quot; &gt;&gt; /etc/exports</span><br><span class="line"># systemctl enble nfs-server.service</span><br><span class="line"># systemctl start nfs-server.serivce</span><br><span class="line"># showmount -e</span><br></pre></td></tr></table></figure>
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Configure-NFS-on-Server"><span class="toc-text">1. Configure NFS on Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Configure-AutoFS-on-Client"><span class="toc-text">2. Configure AutoFS on Client</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Configure-NIS-on-Server"><span class="toc-text">3. Configure NIS on Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Configure-NIS-on-Client"><span class="toc-text">4. Configure NIS on Client</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><h3 id="1-Configure-NFS-on-Server"><a href="#1-Configure-NFS-on-Server" class="headerlink" title="1. Configure NFS on Server"></a>1. Configure NFS on Server</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># mkdir -p /share/common</span><br><span class="line"># echo &quot;/share/common 192.168.10.0/24(sync)&quot; &gt;&gt; /etc/exports</span><br><span class="line"># systemctl enble nfs-server.service</span><br><span class="line"># systemctl start nfs-server.serivce</span><br><span class="line"># firewall-cmd --permanent --zone=pubic --add-service=nfs</span><br><span class="line"># firewall-cmd --reload</span><br><span class="line"># showmount -e</span><br></pre></td></tr></table></figure>
 
 <span id="more"></span>
 
-<p>** 2. Configure AutoFS on Client **</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># </span><br></pre></td></tr></table></figure>
+<h3 id="2-Configure-AutoFS-on-Client"><a href="#2-Configure-AutoFS-on-Client" class="headerlink" title="2. Configure AutoFS on Client"></a>2. Configure AutoFS on Client</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># </span><br></pre></td></tr></table></figure>
 
-<p>** 3. Configure NIS on Server **</p>
-<p>** 3. Configure NIS on Client **</p>
-
+<h3 id="3-Configure-NIS-on-Server"><a href="#3-Configure-NIS-on-Server" class="headerlink" title="3. Configure NIS on Server"></a>3. Configure NIS on Server</h3><h3 id="4-Configure-NIS-on-Client"><a href="#4-Configure-NIS-on-Client" class="headerlink" title="4. Configure NIS on Client"></a>4. Configure NIS on Client</h3>
       </div>
       
       <footer class="post-footer">
