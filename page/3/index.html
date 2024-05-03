@@ -92,6 +92,25 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/08/07/Setup-License-Server-with-Systemctl-in-Redhat7/">Setup License Server With Systemctl in Redhat7</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-08-07
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line"># Create a shell script which starts the license server</span><br><span class="line">#</span><br><span class="line">% cat /path/to/eda/script/snpslmd.sh</span><br><span class="line">admin=eda</span><br><span class="line">su $admin -c &quot;/path/to/lmgrd -l $logfile -c $licfile&quot;</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Create systemd service file</span><br><span class="line">#</span><br><span class="line">% cat /etc/systemd/system/snpslmd.service</span><br><span class="line">[Unit]</span><br><span class="line">Description=Synopsys License Server Daemon</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">RemainAfterExit=yes</span><br><span class="line">KillMode=process</span><br><span class="line">ExecStart=/bin/sh -c &quot;/path/to/eda/script/snpslmd.sh&quot;</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Startup license server</span><br><span class="line">#</span><br><span class="line">% sudo systemctl daemon-reload</span><br><span class="line">% sudo systemctl start snpslmd.service</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Enable license server onboot</span><br><span class="line">#</span><br><span class="line">% sudo systemctl enable snpslmd.service</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Check the status of the license server</span><br><span class="line">#</span><br><span class="line">% sudo systemctl status snpslmd.service</span><br><span class="line">% ps aux | grep lmgrd | grep snpslmd</span><br><span class="line">% lmstat</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>Unresolved issue:</strong></em><br/>Unable to stop license server by <code>systemctl stop snpslmd.service</code></p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2023/08/07/Beginning-of-SLS-Usage/">Beginning of SLS Usage</a>
         </h1>
 
@@ -276,23 +295,6 @@
 <p><strong>Download &amp; Install Perl Modules</strong></p>
           <div class="read-more">
             <a href="/2023/03/16/install-perl-PAR-Packer-in-RHEL7/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/03/16/%E9%85%8D%E7%BD%AERedhat7%E9%81%87%E5%88%B0%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/">配置Redhat7遇到的若干问题</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-03-16
-        </span></div>
-    </header>
-
-    <div class="post-content"><h1 id="vsftpd-533-could-not-create-file"><a href="#vsftpd-533-could-not-create-file" class="headerlink" title="vsftpd: 533 could not create file"></a>vsftpd: 533 could not create file</h1><p><strong>问题：</strong>成功启动vsftpd服务<code>system start vsftpd.service</code>后，FTP客户端传输文件到服务器失败，返回<code>533 could not create file</code></p>
-<p><strong>解决：</strong><code>setsebool -P ftpd_full_access=true</code> <em>&#x2F;&#x2F;-P (persistent) 表示reboot后设置永久有效</em></p>
-          <div class="read-more">
-            <a href="/2023/03/16/%E9%85%8D%E7%BD%AERedhat7%E9%81%87%E5%88%B0%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/2/">

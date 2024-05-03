@@ -92,6 +92,56 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/01/18/group-path/">Group_path</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-01-18
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>NAME<br>       <strong>group_path</strong><br>              Groups a set of paths for cost function calculations.</p>
+<p>ARGUMENTS</p>
+<pre><code>   -weight weight_value
+          Specifies   a   cost   function  weight  for  this  group.   The
+          weight_value must be  a  number  between  0.0  and  100.0.   The
+          default  is  1.0.   A weight of 0.0 eliminates the paths in this
+          group from cost function calculations.  Do not  use  very  small
+          values (for example, 0.0001); smaller values can prevent compile
+          from implementing small improvements  to  the  design.   If  you
+          specify  -weight  when you add members to an existing group, the
+          new weight for the group is used.
+
+   -critical_range range_value
+          Specifies a margin of delay for group_name during  optimization.
+          The  range_value must be positive or 0.0.  If you do not specify
+          a range_value for a group, the default is the value set with the
+          set_critical_range  command  (the  default  setting  is 0.0).  A
+          range_value of 0.0 means that only the most critical paths  (the
+          ones  with the worst violation) are optimized.  If you specify a
+          nonzero range_value, other near-critical  violating  paths  (one
+          per  endpoint)  within  that  amount  of the worst path are also
+          optimized if possible.  If more than one  critical  path  to  an
+          endpoint  must  be  optimized, use a separate group_path command
+          for each distinct critical path to that endpoint.  To force com-
+          pile   to  optimize  all  violating  paths,  use  a  very  large
+          range_value (larger than any expected path violations).
+
+   -default
+          Specifies that endpoints or paths be moved to the default  group
+          and  removed  from the current group.  You must specify -default
+          unless you use -name; -name and -default are mutually exclusive.
+</code></pre>
+          <div class="read-more">
+            <a href="/2023/01/18/group-path/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2023/01/14/verdi-configuration-file-novas-rc/">Verdi Configuration File novas.rc</a>
         </h1>
 
@@ -280,25 +330,6 @@
           <div class="read-more">
             <a href="/2022/09/26/Linux-Command-ip/" class="read-more-link">Read more &raquo;</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/07/28/upgrade-gcc-to-7-3-0/">Upgrade GCC to 7.3.0</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-07-28
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p><strong>Download GCC Source</strong><br><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz">https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz</a><br>or find a proper release in here: <a target="_blank" rel="noopener" href="https://gcc.gnu.org/releases.html">https://gcc.gnu.org/releases.html</a></p>
-<p><strong>Install GCC</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">% tar xvf gcc-7.3.0.tar.gz</span><br><span class="line">% <span class="built_in">cd</span> gcc-7.3.0</span><br><span class="line">% <span class="built_in">mkdir</span> build &amp;&amp; <span class="built_in">cd</span> build</span><br><span class="line">% ../configure --prefix=/usr --enable-languages=c,c++ --disable-multilib</span><br><span class="line">% make</span><br><span class="line">% sudo make install</span><br><span class="line">% gcc --version</span><br></pre></td></tr></table></figure>
-
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/4/">
         <i class="iconfont icon-left"></i>

@@ -13748,4 +13748,22 @@ service messagebus restart;
         <tag>linux</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Redhat7 NFS+NIS Configuration and Setup</title>
+    <url>/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/</url>
+    <content><![CDATA[<p>** 1. Configure NFS on Server **</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># mkdir -p /share/common</span><br><span class="line"># echo &quot;/share/common 192.168.10.0/24(sync)&quot; &gt;&gt; /etc/exports</span><br><span class="line"># systemctl enble nfs-server.service</span><br><span class="line"># systemctl start nfs-server.serivce</span><br><span class="line"># showmount -e</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>** 2. Configure AutoFS on Client **</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># </span><br></pre></td></tr></table></figure>
+
+<p>** 3. Configure NIS on Server **</p>
+<p>** 3. Configure NIS on Client **</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
 </search>

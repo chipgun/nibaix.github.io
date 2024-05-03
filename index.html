@@ -92,6 +92,23 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/">Redhat7 NFS+NIS Configuration and Setup</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2024-05-03
+        </span></div>
+    </header>
+
+    <div class="post-content"><p>** 1. Configure NFS on Server **</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># mkdir -p /share/common</span><br><span class="line"># echo &quot;/share/common 192.168.10.0/24(sync)&quot; &gt;&gt; /etc/exports</span><br><span class="line"># systemctl enble nfs-server.service</span><br><span class="line"># systemctl start nfs-server.serivce</span><br><span class="line"># showmount -e</span><br></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/">Redhat根目录/root扩容</a>
         </h1>
 
@@ -285,27 +302,6 @@
 <img src=/2024/02/17/Perl-function-strftime/image-20240217222015826.png width=480>
           <div class="read-more">
             <a href="/2024/02/17/Perl-function-strftime/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/01/30/Environment-Modules/">Environment-Modules</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2024-01-30
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><p><a target="_blank" rel="noopener" href="https://nchc.dl.sourceforge.net/project/modules/Modules/modules-5.3.1/modules-5.3.1.tar.gz">https://nchc.dl.sourceforge.net/project/modules/Modules/modules-5.3.1/modules-5.3.1.tar.gz</a></p>
-<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar xvf modules-5.3.1.tar.gz</span><br><span class="line">configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<p>The default installation path is <code>/usr/local/Modules/</code>.</p>
-          <div class="read-more">
-            <a href="/2024/01/30/Environment-Modules/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
