@@ -13751,7 +13751,19 @@ service messagebus restart;
   <entry>
     <title>Redhat7 NFS+NIS Configuration and Setup</title>
     <url>/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/</url>
-    <content><![CDATA[<h3 id="1-Configure-NFS-on-Server"><a href="#1-Configure-NFS-on-Server" class="headerlink" title="1. Configure NFS on Server"></a>1. Configure NFS on Server</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># mkdir -p /share/common</span><br><span class="line"># echo &quot;/share/common 192.168.10.0/24(sync)&quot; &gt;&gt; /etc/exports</span><br><span class="line"># systemctl enble nfs-server.service</span><br><span class="line"># systemctl start nfs-server.serivce</span><br><span class="line"># firewall-cmd --permanent --zone=pubic --add-service=nfs</span><br><span class="line"># firewall-cmd --reload</span><br><span class="line"># showmount -e</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h3 id="Setup-NFS-Server"><a href="#Setup-NFS-Server" class="headerlink" title="Setup NFS Server"></a>Setup NFS Server</h3><p>** 1. Install NFS packages **</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># yum install -y nfs-utils rpcbind</span><br></pre></td></tr></table></figure>
+<p>** 2. Configure NFS</p>
+<p>&#x2F;&#x2F;共享目录    共享主机(权限)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># mkdir -p /share/common</span><br><span class="line"># echo &quot;/share/common    192.168.10.0/24(sync)&quot; &gt;&gt; /etc/exports</span><br></pre></td></tr></table></figure>
+<p>&#x2F;&#x2F;共享主机生效，查看共享主机</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># exportfs -r</span><br><span class="line"># exportfs -v</span><br></pre></td></tr></table></figure>
+<p>&#x2F;&#x2F;防火墙放行服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># firewall-cmd --permanent --zone=pubic --add-service=rpc-bind</span><br><span class="line"># firewall-cmd --permanent --zone=pubic --add-service=mountd</span><br><span class="line"># firewall-cmd --permanent --zone=pubic --add-service=nfs</span><br><span class="line"># firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<p>&#x2F;&#x2F;开启nfs-server服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># systemctl enble nfs-server.service</span><br><span class="line"># systemctl start nfs-server.serivce</span><br></pre></td></tr></table></figure>
+<p>&#x2F;&#x2F;查看NFS共享信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># showmount -e</span><br></pre></td></tr></table></figure>
 
 <span id="more"></span>
 
