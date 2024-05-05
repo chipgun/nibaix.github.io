@@ -104,9 +104,9 @@
         </div>
     </header>
 
-    <div class="post-content"><h3 id="Setup-NFS-Server"><a href="#Setup-NFS-Server" class="headerlink" title="Setup NFS Server"></a>Setup NFS Server</h3><p>** 1. Install NFS packages **</p>
+    <div class="post-content"><h3 id="Setup-NFS-Server"><a href="#Setup-NFS-Server" class="headerlink" title="Setup NFS Server"></a>Setup NFS Server</h3><p><strong>1. Install NFS packages</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils rpcbind</span><br></pre></td></tr></table></figure>
-<p>** 2. Configure NFS</p>
+<p><strong>2. Configure NFS</strong></p>
 <p>&#x2F;&#x2F;共享目录    共享主机(权限)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p /share/common</span><br><span class="line"># echo &quot;/share/common    192.168.10.0/24(sync)&quot; &gt;&gt; /etc/exports</span><br></pre></td></tr></table></figure>
 <p>&#x2F;&#x2F;共享主机生效，查看共享主机</p>
