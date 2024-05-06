@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="Redhat7 NFS+NIS Configuration and Setup"/><meta name="keywords" content="linux, nibaix's footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<meta name="description" content="Setup Redhat7 NFS & NIS"/><meta name="keywords" content="linux, nibaix's footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
 <link rel="canonical" href="http://blog.nibaix.com/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/"/>
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
@@ -23,7 +23,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
 </script>
 
-    <title>Redhat7 NFS+NIS Configuration and Setup - nibaix's footprints</title>
+    <title>Setup Redhat7 NFS & NIS - nibaix's footprints</title>
   <meta name="generator" content="Hexo 6.1.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -92,7 +92,7 @@
         <div class="content-wrapper">
           <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">Redhat7 NFS+NIS Configuration and Setup
+      <h1 class="post-title">Setup Redhat7 NFS & NIS
         </h1>
 
       <div class="post-meta">
@@ -107,12 +107,12 @@
     <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Setup-NFS-Server"><span class="toc-text">Setup NFS Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Configure-Client-AutoFS-%EF%BC%88%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BDNFS%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89"><span class="toc-text">2. Configure Client AutoFS （自动挂载NFS共享文件夹）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Configure-NIS-on-Server"><span class="toc-text">3. Configure NIS on Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Configure-NIS-on-Client"><span class="toc-text">4. Configure NIS on Client</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Setup-NFS-Server"><span class="toc-text">Setup NFS Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Setup-Client-AutoFS-%EF%BC%88%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BDNFS%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89"><span class="toc-text">2. Setup Client AutoFS （自动挂载NFS共享文件夹）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Setup-NIS-Server"><span class="toc-text">Setup NIS Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Setup-NIS-Client"><span class="toc-text">Setup NIS Client</span></a></li></ol>
     </div>
   </div><div class="post-content"><h3 id="Setup-NFS-Server"><a href="#Setup-NFS-Server" class="headerlink" title="Setup NFS Server"></a>Setup NFS Server</h3><p><strong>1. 安装NFS软件</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils rpcbind</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># yum install -y rpcbind</span><br></pre></td></tr></table></figure>
 <p><strong>2. 共享目录 共享主机(权限)</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p /share/common</span><br><span class="line"># mkdir -p /share/proj</span><br><span class="line"># cat /etc/exports</span><br><span class="line">/share/common     10.10.1.0/24(rw,sync,no_root_squash)</span><br><span class="line">/share/proj       10.10.1.0/24(rw,sync,no_root_squash)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p /share/common</span><br><span class="line"># mkdir -p /share/proj</span><br><span class="line"># mkdir -p /share/docs</span><br><span class="line"># cat /etc/exports</span><br><span class="line">/share/common     10.10.1.0/24(rw,sync,no_root_squash) #一个网段</span><br><span class="line">/share/proj       10.10.1.99(rw,sync,no_root_squash) #单个主机</span><br><span class="line">/share/docs       *(ro,sync) #所有主机</span><br></pre></td></tr></table></figure>
 <p><strong>3. 共享主机生效 查看共享主机</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># exportfs -r</span><br><span class="line"># exportfs -v</span><br></pre></td></tr></table></figure>
 <p><strong>4. 防火墙放行服务</strong></p>
@@ -124,11 +124,21 @@
 
 <span id="more"></span>
 
-<h3 id="2-Configure-Client-AutoFS-（自动挂载NFS共享文件夹）"><a href="#2-Configure-Client-AutoFS-（自动挂载NFS共享文件夹）" class="headerlink" title="2. Configure Client AutoFS （自动挂载NFS共享文件夹）"></a>2. Configure Client AutoFS （自动挂载NFS共享文件夹）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># echo </span><br><span class="line"># cat /etc/auto.master.d/nfs.autofs</span><br><span class="line">/-    /etc/auto.master.d/autofs.map</span><br></pre></td></tr></table></figure>
+<h3 id="2-Setup-Client-AutoFS-（自动挂载NFS共享文件夹）"><a href="#2-Setup-Client-AutoFS-（自动挂载NFS共享文件夹）" class="headerlink" title="2. Setup Client AutoFS （自动挂载NFS共享文件夹）"></a>2. Setup Client AutoFS （自动挂载NFS共享文件夹）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/auto.master.d/nfs.autofs</span><br><span class="line">/-    /etc/auto.master.d/autofs.map</span><br></pre></td></tr></table></figure>
 <p><strong>nfs配置文件可以是&#x2F;etc&#x2F;auto.master，也可以新建&#x2F;etc&#x2F;auto.master.d&#x2F;*.autofs</strong><br><strong>&#x2F;-表示共享文件采用绝对路径</strong><br><strong>共享文件夹map由auto.master指定</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/auto.master.d/autofs.map</span><br><span class="line">/share/common -fstype=nfs,rw,soft,intr nfssvr100:/home/common</span><br><span class="line">/share/proj   -fstype=nfs,rw,soft,intr nfssvr100:/home/proj</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/auto.master.d/autofs.map</span><br><span class="line">/share/common -fstype=nfs,rw,soft,intr nfssvr100:/home/common</span><br><span class="line">/share/proj   -fstype=nfs,rw,soft,intr nfssvr100:/home/proj</span><br><span class="line">/share/docs   -fstype=nfs,rw,soft,intr nfssvr100:/home/docs</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-Configure-NIS-on-Server"><a href="#3-Configure-NIS-on-Server" class="headerlink" title="3. Configure NIS on Server"></a>3. Configure NIS on Server</h3><h3 id="4-Configure-NIS-on-Client"><a href="#4-Configure-NIS-on-Client" class="headerlink" title="4. Configure NIS on Client"></a>4. Configure NIS on Client</h3>
+<h3 id="Setup-NIS-Server"><a href="#Setup-NIS-Server" class="headerlink" title="Setup NIS Server"></a>Setup NIS Server</h3><p><strong>1. 安装NIS软件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y yp-tools ypbind ypserv rpcbind xinetd</span><br></pre></td></tr></table></figure>
+<p><strong>2. 配置&#x2F;etc&#x2F;hosts</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/hosts</span><br><span class="line">10.10.1.10  nissrv0</span><br><span class="line">10.10.1.11  shanghai</span><br><span class="line">10.10.1.12  hangzhou</span><br></pre></td></tr></table></figure>
+<p><strong>3. 配置&#x2F;etc&#x2F;sysconfig&#x2F;network</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/sysconfig/network</span><br><span class="line">HOSTNAME=nissrv0</span><br><span class="line">NISDOMAIN=nisdomain0</span><br><span class="line"># nisdomainname nissrv0</span><br></pre></td></tr></table></figure>
+<p><strong>4. 开启NIS相关服务</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable ypserv yppasswdd ypbind rpcbind xinetd ypxfrd</span><br><span class="line"># systemctl start  ypserv yppasswdd ypbind rpcbind xinetd ypxfrd</span><br></pre></td></tr></table></figure>
+<p><strong>5. 建立NIS数据库</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># /usr/lib64/yp/ypinit -m</span><br><span class="line">At this point, we have to construct a list of the hosts which will run NIS</span><br><span class="line">servers.  entry0 is in the list of NIS server hosts.  Please continue to add</span><br><span class="line">the names for the other hosts, one per line.  When you are done with the</span><br><span class="line">list, type a &lt;control D&gt;.</span><br><span class="line">        next host to add:  entry0</span><br><span class="line">        next host to add:  #press Ctrl+D</span><br></pre></td></tr></table></figure>
+<h3 id="Setup-NIS-Client"><a href="#Setup-NIS-Client" class="headerlink" title="Setup NIS Client"></a>Setup NIS Client</h3>
       </div>
       
       <footer class="post-footer">

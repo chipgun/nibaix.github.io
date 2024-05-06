@@ -92,7 +92,7 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/">Redhat7 NFS+NIS Configuration and Setup</a>
+      <h1 class="post-title"><a class="post-link" href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/">Setup Redhat7 NFS & NIS</a>
         </h1>
 
       <div class="post-meta">
@@ -105,9 +105,9 @@
     </header>
 
     <div class="post-content"><h3 id="Setup-NFS-Server"><a href="#Setup-NFS-Server" class="headerlink" title="Setup NFS Server"></a>Setup NFS Server</h3><p><strong>1. 安装NFS软件</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils rpcbind</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># yum install -y rpcbind</span><br></pre></td></tr></table></figure>
 <p><strong>2. 共享目录 共享主机(权限)</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p /share/common</span><br><span class="line"># mkdir -p /share/proj</span><br><span class="line"># cat /etc/exports</span><br><span class="line">/share/common     10.10.1.0/24(rw,sync,no_root_squash)</span><br><span class="line">/share/proj       10.10.1.0/24(rw,sync,no_root_squash)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p /share/common</span><br><span class="line"># mkdir -p /share/proj</span><br><span class="line"># mkdir -p /share/docs</span><br><span class="line"># cat /etc/exports</span><br><span class="line">/share/common     10.10.1.0/24(rw,sync,no_root_squash) #一个网段</span><br><span class="line">/share/proj       10.10.1.99(rw,sync,no_root_squash) #单个主机</span><br><span class="line">/share/docs       *(ro,sync) #所有主机</span><br></pre></td></tr></table></figure>
 <p><strong>3. 共享主机生效 查看共享主机</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># exportfs -r</span><br><span class="line"># exportfs -v</span><br></pre></td></tr></table></figure>
 <p><strong>4. 防火墙放行服务</strong></p>
