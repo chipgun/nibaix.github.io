@@ -110,12 +110,6 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p /share/common</span><br><span class="line"># mkdir -p /share/proj</span><br><span class="line"># mkdir -p /share/docs</span><br><span class="line"># cat /etc/exports</span><br><span class="line">/share/common     10.10.1.0/24(rw,sync,no_root_squash) #一个网段</span><br><span class="line">/share/proj       10.10.1.99(rw,sync,no_root_squash) #单个主机</span><br><span class="line">/share/docs       *(ro,sync) #所有主机</span><br></pre></td></tr></table></figure>
 <p><strong>3. 共享主机生效 查看共享主机</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># exportfs -r</span><br><span class="line"># exportfs -v</span><br></pre></td></tr></table></figure>
-<p><strong>4. 防火墙放行服务</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># firewall-cmd --permanent --zone=pubic --add-service=rpc-bind</span><br><span class="line"># firewall-cmd --permanent --zone=pubic --add-service=mountd</span><br><span class="line"># firewall-cmd --permanent --zone=pubic --add-service=nfs</span><br><span class="line"># firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<p><strong>5. 开启nfs-server服务</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enble nfs-server.service</span><br><span class="line"># systemctl start nfs-server.serivce</span><br></pre></td></tr></table></figure>
-<p><strong>6. 查看NFS共享信息</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># showmount -e</span><br></pre></td></tr></table></figure>
           <div class="read-more">
             <a href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/" class="read-more-link">Read more &raquo;</a>
           </div>
