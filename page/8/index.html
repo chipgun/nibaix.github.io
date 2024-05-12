@@ -92,6 +92,27 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/06/02/install-specific-version-of-python/">Install Specific Version of Python</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-06-02
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><h3 id="1-Download-Python-source-tarball-for-your-specific-version"><a href="#1-Download-Python-source-tarball-for-your-specific-version" class="headerlink" title="1. Download Python source tarball for your specific version"></a>1. Download Python source tarball for your specific version</h3><p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/source/">https://www.python.org/downloads/source/</a></p>
+<h3 id="2-Unpack-the-tarball-and-install"><a href="#2-Unpack-the-tarball-and-install" class="headerlink" title="2. Unpack the tarball and install"></a>2. Unpack the tarball and install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@localhost<span class="comment"># tar xvf Python-3.10.4.tgz</span></span><br><span class="line">root@localhost<span class="comment"># cd Python-3.10.4</span></span><br><span class="line">root@localhost<span class="comment"># ./configure --enable-optimizations</span></span><br><span class="line">root@localhost<span class="comment"># make altinstall</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Set-the-new-version-by-default"><a href="#3-Set-the-new-version-by-default" class="headerlink" title="3. Set the new version by default"></a>3. Set the new version by default</h3><p>For individual user: <code>alias python &#39;/usr/local/bin/python3.10&#39;</code><br>For system-wide activation: <a href="/2022/06/02/update-alternatives/">update-alternatives</a></p>
+<h3 id="4-Check-the-new-installation"><a href="#4-Check-the-new-installation" class="headerlink" title="4. Check the new installation"></a>4. Check the new installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jim@localhost% python --version</span><br></pre></td></tr></table></figure>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/06/02/update-alternatives/">Update Alternatives</a>
         </h1>
 
@@ -392,40 +413,6 @@
 </tr>
 </tbody></table>
 <img src="/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/image_20220518.jpg" class="">
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/05/16/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-15/">上海每日疫情走势2022-5-15</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-05-16
-        </span><span class="post-category">
-            <a href="/categories/Diary/">Diary</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p><strong>2022&#x2F;5&#x2F;15</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">全市新增确诊</th>
-<th align="center">全市新增无症状</th>
-<th align="center">浦东新增确诊</th>
-<th align="center">浦东新增无症状</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">69</td>
-<td align="center">869</td>
-<td align="center">3</td>
-<td align="center">95</td>
-</tr>
-</tbody></table>
-<img src="/2022/05/16/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-15/image_20220515.jpg" class="">
-
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/7/">
         <i class="iconfont icon-left"></i>

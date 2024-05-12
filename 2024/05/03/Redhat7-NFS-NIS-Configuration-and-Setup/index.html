@@ -140,7 +140,8 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># showmount -e nfssvr100</span><br></pre></td></tr></table></figure>
 <p><strong>4. 启动autofs服务</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable autofs</span><br><span class="line"># systemctl start autofs</span><br></pre></td></tr></table></figure>
-<p><em>注意：完成上述自动挂载步骤后，可能在&#x2F;mnt目录下看不到挂载成功，但是只要<code>cd /mnt/common</code>就可以看到了，即未被访问前挂载目录是隐藏的。</em><br><strong>5. 查看挂载文件夹状态</strong></p>
+<p><em>注意：完成上述自动挂载步骤后，可能在&#x2F;mnt目录下看不到挂载成功，但是只要<code>cd /mnt/common</code>就可以看到了，即未被访问前挂载目录是隐藏的。</em></p>
+<p><strong>5. 查看挂载文件夹状态</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># df -hT</span><br></pre></td></tr></table></figure>
 <h3 id="Setup-NIS-Server"><a href="#Setup-NIS-Server" class="headerlink" title="Setup NIS Server"></a>Setup NIS Server</h3><p><strong>1. 安装NIS软件</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y yp-tools ypserv rpcbind xinetd ypxfrd</span><br></pre></td></tr></table></figure>
@@ -182,7 +183,12 @@
             <a href="/tags/linux/">linux</a>
             </div>
         
-        <nav class="post-nav"><a class="next" href="/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/">
+        <nav class="post-nav"><a class="prev" href="/2024/05/12/iStoreOS-Configurations/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">iStoreOS Configurations</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/">
         <span class="next-text nav-default">Redhat根目录/root扩容</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>

@@ -92,6 +92,26 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/09/26/Linux-Command-ip/">Linux Command: Ip</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-09-26
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p><code>ip</code> 是个命令， <code>ip</code> 命令的功能很多！基本上它整合了 <code>ifconfig</code> 与 <code>route</code> 这两个命令，不过 <code>ip</code> 的功能更强大。</p>
+<h2 id="ip命令用法"><a href="#ip命令用法" class="headerlink" title="ip命令用法"></a>ip命令用法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">% sudo ip</span><br><span class="line">Usage: ip [ OPTIONS ] OBJECT &#123; COMMAND | help &#125;</span><br><span class="line">       ip [ -force ] -batch filename</span><br><span class="line">where  OBJECT := &#123; link | addr | addrlabel | route | rule | neigh | ntable |</span><br><span class="line">                   tunnel | maddr | mroute | mrule | monitor | xfrm | token &#125;</span><br><span class="line">       OPTIONS := &#123; -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |</span><br><span class="line">                    -h[uman-readable] | -iec |</span><br><span class="line">                    -f[amily] &#123; inet | inet6 | ipx | dnet | link &#125; |</span><br><span class="line">                    -o[neline] | -t[imestamp] | -b[atch] [filename] |</span><br><span class="line">                    -rc[vbuf] [size]&#125;</span><br></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2022/09/26/Linux-Command-ip/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/07/28/upgrade-gcc-to-7-3-0/">Upgrade GCC to 7.3.0</a>
         </h1>
 
@@ -270,30 +290,6 @@
 
     <div class="post-content"><p><code>sudo /usr/lib64/yp/ypinit -m</code> # server</p>
 <p><code>sudo service ypbind status</code> # node<br><code>sudo service ypbind start</code> # node<br><code>sudo service ypbind stop</code> # node<br><code>sudo service ypbind restart</code> # node<br><code>sudo service ypbind reload</code> # node</p>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/07/08/vim-generate-and-increment-numbers/">Vim: Generate and Increment Numbers</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-07-08
-        </span><span class="post-category">
-            <a href="/categories/Program/">Program</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h3 id="Increment-Numbers"><a href="#Increment-Numbers" class="headerlink" title="Increment Numbers"></a>Increment Numbers</h3><ol>
-<li>C-v to enter visual mode</li>
-<li>Move the cursor up&#x2F;down to select columns</li>
-<li>g + C-a</li>
-</ol>
-<h3 id="Generate-Numbers"><a href="#Generate-Numbers" class="headerlink" title="Generate Numbers"></a>Generate Numbers</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="keyword">put</span>=<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5</span>) # Generate <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span> by column</span><br><span class="line">:<span class="keyword">put</span>=<span class="built_in">range</span>(<span class="number">10</span>,<span class="number">2</span>,-<span class="number">2</span>) # Generate <span class="number">10</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">2</span> by column</span><br><span class="line">:<span class="keyword">put</span>=<span class="built_in">range</span>(<span class="built_in">line</span>(<span class="string">&#x27;.&#x27;</span>),<span class="number">100</span>) # Generate numbers from current <span class="built_in">line</span> <span class="keyword">number</span> <span class="keyword">to</span> <span class="number">100</span></span><br></pre></td></tr></table></figure>
-
-<p><em><strong>This feature is supported only in Vim 8.0 or higher versions.</strong></em></p>
 
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/5/">
