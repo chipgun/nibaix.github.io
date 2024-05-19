@@ -104,15 +104,13 @@
         </div>
     </header>
 
-    <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Installation"><span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Non-RAID-disks"><span class="toc-text">Non-RAID disks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RAID-disks"><span class="toc-text">RAID disks</span></a></li></ol>
-    </div>
-  </div><div class="post-content"><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y smartmontools</span><br></pre></td></tr></table></figure>
+    <div class="post-content"><p>** Installation ** </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y smartmontools</span><br></pre></td></tr></table></figure>
 
-<h3 id="Non-RAID-disks"><a href="#Non-RAID-disks" class="headerlink" title="Non-RAID disks"></a>Non-RAID disks</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># smartctl --all /dev/sdc</span><br></pre></td></tr></table></figure>
-<h3 id="RAID-disks"><a href="#RAID-disks" class="headerlink" title="RAID disks"></a>RAID disks</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># smartctl --all /dev/sdc -d megaraid,0</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,1</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,2</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,3</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,4</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,5</span><br></pre></td></tr></table></figure>
+<p>** Non-RAID disks **</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># smartctl --all /dev/sdc</span><br></pre></td></tr></table></figure>
+<p><strong>RAID disks</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># smartctl --all /dev/sdc -d megaraid,0</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,1</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,2</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,3</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,4</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,5</span><br></pre></td></tr></table></figure>
 
 
       </div>
