@@ -92,6 +92,31 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/10/06/integrate-SOS-in-virtuoso/">Integrate SOS in Virtuoso</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-10-06
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>To get Cliosoft SOS integrated in Cadence Virtuoso, what you need to do is just to put 3 files in your $HOME (~&#x2F;).</p>
+<p><strong>1) .cdsinit</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/.cdsinit</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cds_sosviadfII.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>2) cdsLibMgr.il</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsLibMgr.il</span><br><span class="line"><span class="built_in">let</span>( (clioDir)</span><br><span class="line">  clioDir = getShellEnvVar(<span class="string">&quot;CLIOSOFT_DIR&quot;</span>)</span><br><span class="line">  load((strcat clioDir <span class="string">&quot;/scripts/cdsLibMgr.il&quot;</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3) cdsinfo.tag</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cat</span> ~/cdsinfo.tag</span><br><span class="line">DMTYPE sos</span><br></pre></td></tr></table></figure>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/09/26/Linux-Command-ip/">Linux Command: Ip</a>
         </h1>
 
@@ -273,24 +298,6 @@
           <div class="read-more">
             <a href="/2022/07/16/Update-GLIBC-2-17-in-RHEL6/" class="read-more-link">Read more &raquo;</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/07/13/NIS-Commands/">NIS Commands</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-07-13
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p><code>sudo /usr/lib64/yp/ypinit -m</code> # server</p>
-<p><code>sudo service ypbind status</code> # node<br><code>sudo service ypbind start</code> # node<br><code>sudo service ypbind stop</code> # node<br><code>sudo service ypbind restart</code> # node<br><code>sudo service ypbind reload</code> # node</p>
-
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/5/">
         <i class="iconfont icon-left"></i>

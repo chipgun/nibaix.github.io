@@ -13841,4 +13841,20 @@ service messagebus restart;
         <tag>软路由</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Smartctl: Disk Checking Command in Linux</title>
+    <url>/2024/05/19/Smartctl-Disk-Checking-Command-in-Linux/</url>
+    <content><![CDATA[<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># yum install -y smartmontools</span><br></pre></td></tr></table></figure>
+
+<h3 id="Non-RAID-disks"><a href="#Non-RAID-disks" class="headerlink" title="Non-RAID disks"></a>Non-RAID disks</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># smartctl --all /dev/sdc</span><br></pre></td></tr></table></figure>
+<h3 id="RAID-disks"><a href="#RAID-disks" class="headerlink" title="RAID disks"></a>RAID disks</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># smartctl --all /dev/sdc -d megaraid,0</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,1</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,2</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,3</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,4</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,5</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
 </search>
