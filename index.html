@@ -104,10 +104,10 @@
         </div>
     </header>
 
-    <div class="post-content"><p>** Installation ** </p>
+    <div class="post-content"><p><strong>Installation</strong> </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y smartmontools</span><br></pre></td></tr></table></figure>
 
-<p>** Non-RAID disks **</p>
+<p><strong>Non-RAID disks</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># smartctl --all /dev/sdc</span><br></pre></td></tr></table></figure>
 <p><strong>RAID disks</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># smartctl --all /dev/sdc -d megaraid,0</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,1</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,2</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,3</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,4</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,5</span><br></pre></td></tr></table></figure>
