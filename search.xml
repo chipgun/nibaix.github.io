@@ -13844,12 +13844,12 @@ service messagebus restart;
   <entry>
     <title>Smartctl: Disk Checking Command in Linux</title>
     <url>/2024/05/19/Smartctl-Disk-Checking-Command-in-Linux/</url>
-    <content><![CDATA[<p><strong>Installation</strong> </p>
+    <content><![CDATA[<p><strong>Install tools</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># yum install -y smartmontools</span><br></pre></td></tr></table></figure>
 
-<p><strong>Non-RAID disks</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># smartctl --all /dev/sdb</span><br></pre></td></tr></table></figure>
-<p><strong>RAID disks</strong></p>
+<p><strong>Check non-RAID disks</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># smartctl --all /dev/sda</span><br><span class="line"># smartctl --all /dev/sdb</span><br></pre></td></tr></table></figure>
+<p><strong>Check RAID disks</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># smartctl --all /dev/sdc -d megaraid,0</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,1</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,2</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,3</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,4</span><br><span class="line"># smartctl --all /dev/sdc -d megaraid,5</span><br></pre></td></tr></table></figure>
 
 ]]></content>
