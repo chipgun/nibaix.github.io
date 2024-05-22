@@ -13867,7 +13867,21 @@ service messagebus restart;
 <img src="/2024/05/22/Win11%E6%8C%82%E8%BD%BDNAS%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8%E5%99%A8/image-20240522202026752.jpg" class="">
 
 <p>在某次Win11系统更新后，RaiDrive软件无法启动，没有找到原因，遂放弃此方法。</p>
-<h2 id="方法二：FTP-x2F-WebDAV"><a href="#方法二：FTP-x2F-WebDAV" class="headerlink" title="方法二：FTP&#x2F;WebDAV"></a>方法二：FTP&#x2F;WebDAV</h2>]]></content>
+<h2 id="方法二：FTP"><a href="#方法二：FTP" class="headerlink" title="方法二：FTP"></a>方法二：FTP</h2><p><strong>打开[我的电脑] &gt; 右键空白处 &gt; Add a network location</strong></p>
+<img src="/2024/05/22/Win11%E6%8C%82%E8%BD%BDNAS%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8%E5%99%A8/image-20240522215325937.jpg" class="">
+
+<h2 id="方法二：WebDAV-推荐"><a href="#方法二：WebDAV-推荐" class="headerlink" title="方法二：WebDAV (推荐)"></a>方法二：WebDAV (推荐)</h2><p><strong>1. 右键_我的电脑_ &gt; <em>计算机管理</em> &gt; <em>Services and Application</em> &gt; <em>Services</em> &gt; 双击_WebClient_</strong></p>
+<img src="/2024/05/22/Win11%E6%8C%82%E8%BD%BDNAS%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8%E5%99%A8/image-20240522215659332.jpg" class="">
+
+<p>按上图修改后，暂且不关闭此窗口。</p>
+<p><strong>2. WIN+R &gt; regedit</strong></p>
+<p><em>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters</em></p>
+<p>修改_BasicAuthLevel_ &#x3D; 2</p>
+<img src="/2024/05/22/Win11%E6%8C%82%E8%BD%BDNAS%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8%E5%99%A8/image-20240522220144501.jpg" class="">
+
+<p><strong>3. 回到步骤1的_计算机管理_窗口 &gt; 右键_WebClient_ &gt; Restart</strong></p>
+<p><strong>4. 打开[我的电脑] &gt; 右键空白处 &gt; Add a network location</strong></p>
+<img src="/2024/05/22/Win11%E6%8C%82%E8%BD%BDNAS%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8%E5%99%A8/image-20240522220842119.jpg" class="">]]></content>
       <categories>
         <category>Uncategorized</category>
       </categories>
