@@ -92,6 +92,26 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/">Calibre Platform Support Overview and Roadmap - Updated 2022.1</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-01-31
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p><em><strong>Updated: 24 Jan 2022</strong></em></p>
+<h2 id="Linux-Operating-System-Support"><a href="#Linux-Operating-System-Support" class="headerlink" title="Linux Operating System Support"></a>Linux Operating System Support</h2><p>The Calibre toolset is supported for use with the Linux® operating system systems supplied by Red Hat, CentOS, and SUSE. In general, any “Tier 1” 64-bit x86 hardware supported by those providers is supported for use with the Calibre toolset. There are two x86-64 processor products supplied by different vendors, AMD and Intel, and the Calibre toolset is supported on computers based on either of these processors. The correct software must be loaded on a particular hardware platform to use Calibre, and the supported OS versions, service packs or updates are listed below. Linux IBM Power and ARM distributions are not supported by Calibre.</p>
+          <div class="read-more">
+            <a href="/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2023/01/30/2021-2024-cadence-compute-platform-roadmap/">2021-2024 Cadence Compute Platform Roadmap</a>
         </h1>
 
@@ -295,29 +315,6 @@
     </header>
 
     <div class="post-content"><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Script to add a user to Linux system</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Copyright (c) 2007 nixCraft project &lt;http://bash.cyberciti.biz/&gt;</span></span><br><span class="line"><span class="comment"># This script is licensed under GNU GPL version 2.0 or above</span></span><br><span class="line"><span class="comment"># Comment/suggestion: &lt;vivek at nixCraft DOT com&gt;</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># See url for more info:</span></span><br><span class="line"><span class="comment"># http://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">if</span> [ $(<span class="built_in">id</span> -u) -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">read</span> -p <span class="string">&quot;Enter username : &quot;</span> username</span><br><span class="line">	<span class="built_in">read</span> -s -p <span class="string">&quot;Enter password : &quot;</span> password</span><br><span class="line">	egrep <span class="string">&quot;^<span class="variable">$username</span>&quot;</span> /etc/passwd &gt;/dev/null</span><br><span class="line">	<span class="keyword">if</span> [ $? -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$username</span> exists!&quot;</span></span><br><span class="line">		<span class="built_in">exit</span> 1</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pass=$(perl -e <span class="string">&#x27;print crypt($ARGV[0], &quot;password&quot;)&#x27;</span> <span class="variable">$password</span>)</span><br><span class="line">		useradd -m -p <span class="variable">$pass</span> <span class="variable">$username</span></span><br><span class="line">		[ $? -eq 0 ] &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;User has been added to system!&quot;</span> || <span class="built_in">echo</span> <span class="string">&quot;Failed to add a user!&quot;</span></span><br><span class="line">	<span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;Only root may add a user to the system&quot;</span></span><br><span class="line">	<span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/10/07/install-perl-module/">Install Perl Module</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-10-07
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p><strong>List all installed Perl modules</strong><br><code>perldoc perllocal</code> or <code>instmodsh</code></p>
-<p><strong>Check if a specified module is installed</strong><br><code>perldoc -li math::round</code> # -l &#x3D; list; -i &#x3D; ignore case</p>
-<p><strong>Install Perl modules</strong><br><em>Given an example of Math::Round to be installed</em></p>
-<ol>
-<li>Search &amp; download the module (Math-Round-0.07.tar.gz) at <a target="_blank" rel="noopener" href="https://metacpan.org/">https://metacpan.org/</a>.</li>
-<li>Install the module<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">% tar xvf Math-Round-0.07.tar.gz`</span><br><span class="line">% perl Makefile.PL</span><br><span class="line">% make</span><br><span class="line">% make test</span><br><span class="line">% sudo make install</span><br></pre></td></tr></table></figure></li>
-</ol>
 
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/4/">
