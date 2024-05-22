@@ -13867,22 +13867,22 @@ service messagebus restart;
 <img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522202026752.jpg width=240>
 
 <p>在某次Win11系统更新后，RaiDrive软件无法启动，没有找到原因，遂放弃此方法。</p>
-<h2 id="方法二：FTP"><a href="#方法二：FTP" class="headerlink" title="方法二：FTP"></a>方法二：FTP</h2><p><strong>1. 打开[我的电脑] &gt; 右键空白处 &gt; Add a network location</strong></p>
+<h2 id="方法二：FTP"><a href="#方法二：FTP" class="headerlink" title="方法二：FTP"></a>方法二：FTP</h2><p><strong>1. 打开[我的电脑] &gt; 右键空白处 &gt; [Add a network location]</strong></p>
 <span id="more"></span>
 
-<img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522215325937.jpg width=240>
+<img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522215325937.jpg width=400>
 
-<h2 id="方法三：WebDAV-推荐"><a href="#方法三：WebDAV-推荐" class="headerlink" title="方法三：WebDAV (推荐)"></a>方法三：WebDAV (推荐)</h2><p><strong>1. 右键_我的电脑_ &gt; <em>计算机管理</em> &gt; <em>Services and Application</em> &gt; <em>Services</em> &gt; 双击_WebClient_</strong></p>
-<img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522215659332.jpg width=24>
+<h2 id="方法三：WebDAV-推荐"><a href="#方法三：WebDAV-推荐" class="headerlink" title="方法三：WebDAV (推荐)"></a>方法三：WebDAV (推荐)</h2><p><strong>1. 右键[我的电脑] &gt; [计算机管理] &gt; [Services and Application] &gt; [Services] &gt; 双击[WebClient]</strong></p>
+<img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522215659332.jpg width=400>
 
 <p><strong>2. WIN+R &gt; regedit</strong></p>
 <p><em>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters</em></p>
-<p>修改_BasicAuthLevel_ &#x3D; 2</p>
-<img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522220144501.jpg width=240>
+<p>修改：<em>BasicAuthLevel</em> &#x3D; 2</p>
+<img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522220144501.jpg width=400>
 
-<p><strong>3. 回到步骤1的窗口_计算机管理_ &gt; 右键_WebClient_ &gt; Restart</strong></p>
-<p><strong>4. 打开[我的电脑] &gt; 右键空白处 &gt; Add a network location</strong></p>
-<img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522220842119.jpg width=240>
+<p><strong>3. 回到步骤1的窗口 [计算机管理] &gt; 右键[WebClient] &gt; Restart</strong></p>
+<p><strong>4. 打开[我的电脑] &gt; 右键空白处 &gt; [Add a network location]</strong></p>
+<img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522220842119.jpg width=400>
 
 <p>注意：Windows不支持https</p>
 ]]></content>
