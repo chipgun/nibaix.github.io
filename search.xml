@@ -13884,7 +13884,7 @@ service messagebus restart;
 <p><strong>4. 打开[我的电脑] &gt; 右键空白处 &gt; [Add a network location]</strong></p>
 <img src=/2024/05/22/Win11挂载NAS网络驱动器/image-20240522220842119.jpg width=480>
 
-<p>注意：Windows不支持https</p>
+<p><strong>*注意：此处不支持https*</strong></p>
 ]]></content>
       <categories>
         <category>Uncategorized</category>
