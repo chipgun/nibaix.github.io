@@ -92,6 +92,26 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2024/02/26/how-to-solve-segfault-on-VCS-linux64/">How to Solve Segfault on VCS Linux64</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2024-02-26
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><h3 id="Patching-command-set"><a href="#Patching-command-set" class="headerlink" title="Patching command set"></a>Patching command set</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VCS_HOME</span>/linux64/lib</span><br><span class="line">$ <span class="built_in">cp</span> -p libvcsnew.so libvcsnew.so.bak</span><br><span class="line">$ patcher.py libvcsnew.so</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br></pre></td></tr></table></figure>
+<h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p><em><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></em></p>
+          <div class="read-more">
+            <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux64/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2024/02/22/Tmux-Cheat-Sheet/">Tmux Cheat Sheet</a>
         </h1>
 
@@ -359,23 +379,6 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
 
 <p>Table 1 describes how the check points for setup and hold timing are moved back-<br>ward of forward depend on the -start&#x2F;-end flags and the path_multiplier.</p>
 <p><img src="/pdf/pdf-icon.png" width="24"><a href="/2023/09/16/PrimeTime-Multicycle-Path/PrimeTime%20Multicycles.pdf" title="PrimeTime Multicycle Path Quick UG">PrimeTime Multicycle Path Quick UG</a></p>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/09/15/Schedule-could-be-beautiful/">Schedule Could Be Beautiful</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-09-15
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><img src="/2023/09/15/Schedule-could-be-beautiful/image-20230915222544736.png" class="">
 
         </div></article>
       <nav class="pagination"><a class="prev" href="/">

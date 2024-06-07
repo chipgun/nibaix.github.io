@@ -13895,4 +13895,17 @@ service messagebus restart;
         <tag>nas</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Tmux Customization: .tmux.conf</title>
+    <url>/2024/06/07/Tmux-customization-tmux-conf/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% cat ~/.tmux.conf</span><br><span class="line"># Setting the sencond prefix: C-space</span><br><span class="line">set -g prefix2 C-space</span><br><span class="line"></span><br><span class="line"># Enable mouse support</span><br><span class="line">set -g mouse on</span><br><span class="line"></span><br><span class="line"># splitting panes with | and -</span><br><span class="line">bind | split-window -h</span><br><span class="line">bind - split-window -v</span><br><span class="line"></span><br><span class="line"># Set vi as the default editor</span><br><span class="line">set -g status-keys vi</span><br><span class="line"></span><br><span class="line"># Set bind key to reload configuration file</span><br><span class="line">bind r source-file ~/.tmux.conf \; display &quot;Reloaded!&quot;</span><br><span class="line"></span><br><span class="line"># Set foreground/background style for active window</span><br><span class="line">setw -g window-status-current-style &quot;fg=white bg=black bold&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>tmux</tag>
+      </tags>
+  </entry>
 </search>

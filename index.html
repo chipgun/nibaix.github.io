@@ -92,6 +92,23 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2024/06/07/Tmux-customization-tmux-conf/">Tmux Customization: .tmux.conf</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2024-06-07
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">% cat ~/.tmux.conf</span><br><span class="line"># Setting the sencond prefix: C-space</span><br><span class="line">set -g prefix2 C-space</span><br><span class="line"></span><br><span class="line"># Enable mouse support</span><br><span class="line">set -g mouse on</span><br><span class="line"></span><br><span class="line"># splitting panes with | and -</span><br><span class="line">bind | split-window -h</span><br><span class="line">bind - split-window -v</span><br><span class="line"></span><br><span class="line"># Set vi as the default editor</span><br><span class="line">set -g status-keys vi</span><br><span class="line"></span><br><span class="line"># Set bind key to reload configuration file</span><br><span class="line">bind r source-file ~/.tmux.conf \; display &quot;Reloaded!&quot;</span><br><span class="line"></span><br><span class="line"># Set foreground/background style for active window</span><br><span class="line">setw -g window-status-current-style &quot;fg=white bg=black bold&quot;</span><br></pre></td></tr></table></figure>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2024/05/22/Win11%E6%8C%82%E8%BD%BDNAS%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8%E5%99%A8/">Win11挂载NAS网络驱动器</a>
         </h1>
 
@@ -296,26 +313,6 @@
 <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><h4 id="segfault-in-VCS-R-2020-12-SP1"><a href="#segfault-in-VCS-R-2020-12-SP1" class="headerlink" title="segfault in VCS R-2020.12-SP1"></a>segfault in VCS R-2020.12-SP1</h4>
           <div class="read-more">
             <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/02/26/how-to-solve-segfault-on-VCS-linux64/">How to Solve Segfault on VCS Linux64</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2024-02-26
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h3 id="Patching-command-set"><a href="#Patching-command-set" class="headerlink" title="Patching command set"></a>Patching command set</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VCS_HOME</span>/linux64/lib</span><br><span class="line">$ <span class="built_in">cp</span> -p libvcsnew.so libvcsnew.so.bak</span><br><span class="line">$ patcher.py libvcsnew.so</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br></pre></td></tr></table></figure>
-<h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p><em><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></em></p>
-          <div class="read-more">
-            <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux64/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
