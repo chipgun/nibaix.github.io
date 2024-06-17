@@ -92,6 +92,28 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/09/16/PrimeTime-Multicycle-Path/">PrimeTime Multicycle Path</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-09-16
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>set_multicycle_path path_multiplier [-setup|-hold] [-start|-end] -from <Start-
+Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 1, Hold 0.<br><strong>Setup:</strong> Regarding to EndClock by Default. (-end is the default)<br><strong>Hold:</strong> Regarding to StartClock by Default. (-start is the default)<br>In <strong>single clock domain</strong> design there is no meaning to the <strong>-start</strong> and <strong>-end</strong> flags. !!!<br>Note: In case your setup path_multiplier is X, use the path_multiplier of X-1 for<br>hold. In any case check out the report of your multicycles and the report exceptions<br>(Plus the report_exceptions -ignore) results.</p>
+<img src="/2023/09/16/PrimeTime-Multicycle-Path/clock-edges.png" class="">
+
+<p>Table 1 describes how the check points for setup and hold timing are moved back-<br>ward of forward depend on the -start&#x2F;-end flags and the path_multiplier.</p>
+<p><img src="/pdf/pdf-icon.png" width="24"><a href="/2023/09/16/PrimeTime-Multicycle-Path/PrimeTime%20Multicycles.pdf" title="PrimeTime Multicycle Path Quick UG">PrimeTime Multicycle Path Quick UG</a></p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2023/09/15/Schedule-could-be-beautiful/">Schedule Could Be Beautiful</a>
         </h1>
 
@@ -272,27 +294,6 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># df -hT |grep rhel</span><br><span class="line">/dev/mapper/rhel-root xfs  50G  49G  1G  99%</span><br><span class="line">/dev/mapper/rhel-home xfs  ...  ...  ... ...</span><br><span class="line"># lsblk</span><br><span class="line"># lvs -v</span><br><span class="line"># vgs -v</span><br><span class="line"># pvs -v</span><br></pre></td></tr></table></figure>
           <div class="read-more">
             <a href="/2023/04/09/redhat-adjust-lvm-partition-size/" class="read-more-link">Read more &raquo;</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/03/23/how-to-enable-XDMCP-service-GDM/">How to Enable XDMCP Service (GDM)</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-03-23
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>GDM can be configured to allow remote access via XDMCP (X Display Manager Control Protocol). We can use Cygwin-X or Exceed, to connect remotely to a server and get a complete desktop GUI.</p>
-<p><strong>1. Edit the file &#x2F;etc&#x2F;gdm&#x2F;custom.conf and make sure below parameters are added&#x2F;set.</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">% cat /etc/gdm/custom.conf</span><br><span class="line"># GDM configuration storage</span><br><span class="line">[daemon]</span><br><span class="line">[security]</span><br><span class="line">DisallowTCP=false</span><br><span class="line">AllowRemoteRoot=true</span><br><span class="line">[xdmcp]</span><br><span class="line">Enable=true</span><br><span class="line">[greeter]</span><br><span class="line">[chooser]</span><br><span class="line">[debug]</span><br></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2023/03/23/how-to-enable-XDMCP-service-GDM/" class="read-more-link">Read more &raquo;</a>
           </div>
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/2/">

@@ -92,6 +92,33 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2022/07/17/Disable-Clipboard-in-NoMachine/">Disable Clipboard in NoMachine</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-07-17
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>Disabling clipboard (copy and paste) in NoMachine is possible by setting the appropriate key on the NoMachine server installation. It isn’t restricted to the product you are using. I.e you can set it also if you have installed the free version of NoMachine on the computer you are accessing.</p>
+<p>By default users can copy and paste from locale to the session and vice-versa.</p>
+<p>You can configure the server to limit such operations by setting proper values in the server configuration file (&#x2F;usr&#x2F;NX&#x2F;etc&#x2F;server.cfg on Linux) as explained below.</p>
+<p><strong>Forbid copy &amp; paste operations</strong></p>
+<p>To forbid copy &amp; paste partially or totally, uncomment and set a proper value for the EnableClipboard key. Possible settings are:</p>
+<ol>
+<li><code>EnableClipboard client</code> Content copied on the user’s side can be pasted inside the session</li>
+<li><code>EnableClipboard server</code> Content copied inside the session can be pasted on the user’s side</li>
+<li><code>EnableClipboard none</code> No copy and paste operations are allowed</li>
+<li><code>EnableClipboard both</code> Two-way copy and paste operations are allowed</li>
+</ol>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/07/17/Activate%20the%20Feature%20of%20Tabbed%20File%20Explorer/">Activate the Feature of Tabbed File Explorer</a>
         </h1>
 
@@ -326,91 +353,6 @@
 <li>Deny all check boxes</li>
 </ul>
 <img src=/2022/06/17/This-beta-version-of-Tyora-is-expired/image-20220716130411225.jpg width=400>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/06/14/ftp-commands/">FTP Commands</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-06-14
-        </span></div>
-    </header>
-
-    <div class="post-content"><table>
-<thead>
-<tr>
-<th align="right">Commands</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right"><strong>open</strong></td>
-<td align="left">Connect</td>
-</tr>
-<tr>
-<td align="right"><strong>user</strong></td>
-<td align="left">Login user</td>
-</tr>
-<tr>
-<td align="right"><strong>bin</strong></td>
-<td align="left">Binary transfer mode</td>
-</tr>
-<tr>
-<td align="right"><strong>prompt on</strong></td>
-<td align="left">Switch on prompt (interactive)</td>
-</tr>
-<tr>
-<td align="right"><strong>prompt off</strong></td>
-<td align="left">Switch on prompt (non-interactive)</td>
-</tr>
-<tr>
-<td align="right"><strong>cd</strong></td>
-<td align="left">Change dir</td>
-</tr>
-<tr>
-<td align="right"><strong>lcd</strong></td>
-<td align="left">Change local dir</td>
-</tr>
-<tr>
-<td align="right"><strong>dir &#x2F; ls</strong></td>
-<td align="left">List remote files or dirs</td>
-</tr>
-<tr>
-<td align="right"><strong>!dir &#x2F; !ls</strong></td>
-<td align="left">List local files or dirs</td>
-</tr>
-<tr>
-<td align="right"><strong>put</strong></td>
-<td align="left">Upload a file</td>
-</tr>
-<tr>
-<td align="right"><strong>mput</strong></td>
-<td align="left">Upload multiple files</td>
-</tr>
-<tr>
-<td align="right"><strong>get</strong></td>
-<td align="left">Download a file</td>
-</tr>
-<tr>
-<td align="right"><strong>mget</strong></td>
-<td align="left">Download multiple files</td>
-</tr>
-<tr>
-<td align="right"><strong>mkdir</strong></td>
-<td align="left">Make remote dir</td>
-</tr>
-<tr>
-<td align="right"><strong>!mkdir</strong></td>
-<td align="left">Make local dir</td>
-</tr>
-<tr>
-<td align="right"><strong>bye</strong></td>
-<td align="left">Exit</td>
-</tr>
-</tbody></table>
 
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/6/">

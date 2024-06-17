@@ -92,6 +92,26 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2024/02/26/how-to-solve-segfault-on-VCS-linux/">How to Solve Segfault on VCS Linux</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2024-02-26
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p><em><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></em></p>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><h4 id="segfault-in-VCS-R-2020-12-SP1"><a href="#segfault-in-VCS-R-2020-12-SP1" class="headerlink" title="segfault in VCS R-2020.12-SP1"></a>segfault in VCS R-2020.12-SP1</h4>
+          <div class="read-more">
+            <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2024/02/26/how-to-solve-segfault-on-VCS-linux64/">How to Solve Segfault on VCS Linux64</a>
         </h1>
 
@@ -358,28 +378,6 @@
     <div class="post-content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold 1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
 <p>Above script constrains the skew between <strong>$related_pin</strong> and <strong>$constrained_pin</strong> no more than 0.1ns, where <strong>$related_pin</strong> is like a clock pin whereas <strong>$constrained_pin</strong> is like a data pin.</p>
 <p>As neither -setup nor -hold specified, it implies that both setup and hold checks are set as -0.05ns. </p>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/09/16/PrimeTime-Multicycle-Path/">PrimeTime Multicycle Path</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-09-16
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>set_multicycle_path path_multiplier [-setup|-hold] [-start|-end] -from <Start-
-Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 1, Hold 0.<br><strong>Setup:</strong> Regarding to EndClock by Default. (-end is the default)<br><strong>Hold:</strong> Regarding to StartClock by Default. (-start is the default)<br>In <strong>single clock domain</strong> design there is no meaning to the <strong>-start</strong> and <strong>-end</strong> flags. !!!<br>Note: In case your setup path_multiplier is X, use the path_multiplier of X-1 for<br>hold. In any case check out the report of your multicycles and the report exceptions<br>(Plus the report_exceptions -ignore) results.</p>
-<img src="/2023/09/16/PrimeTime-Multicycle-Path/clock-edges.png" class="">
-
-<p>Table 1 describes how the check points for setup and hold timing are moved back-<br>ward of forward depend on the -start&#x2F;-end flags and the path_multiplier.</p>
-<p><img src="/pdf/pdf-icon.png" width="24"><a href="/2023/09/16/PrimeTime-Multicycle-Path/PrimeTime%20Multicycles.pdf" title="PrimeTime Multicycle Path Quick UG">PrimeTime Multicycle Path Quick UG</a></p>
 
         </div></article>
       <nav class="pagination"><a class="prev" href="/">
