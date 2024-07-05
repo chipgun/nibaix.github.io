@@ -13934,6 +13934,9 @@ service messagebus restart;
 
 <p><strong>Note</strong>: If you have a current subscription to MathWorks Software  Maintenance Service: 1) MathWorks will respond to technical questions  and provide workarounds when possible for a period of two years from the date when MathWorks discontinued support for an operating system and  2), you can continue to download earlier MathWorks product releases.</p>
 ]]></content>
+      <categories>
+        <category>Uncategorized</category>
+      </categories>
       <tags>
         <tag>matlab</tag>
       </tags>
