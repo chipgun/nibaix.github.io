@@ -13703,18 +13703,6 @@ service messagebus restart;
       </tags>
   </entry>
   <entry>
-    <title>Ray&#39;s Test Ranking</title>
-    <url>/2024/04/28/Ray&#39;s-Test-Ranking/</url>
-    <content><![CDATA[<img src="/2024/04/28/Ray's-Test-Ranking/image-20240428162446753.png" class="">
-]]></content>
-      <categories>
-        <category>Uncategorized</category>
-      </categories>
-      <tags>
-        <tag>ray</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Redhat根目录/root扩容</title>
     <url>/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/</url>
     <content><![CDATA[<h3 id="1-查看分区及文件系统"><a href="#1-查看分区及文件系统" class="headerlink" title="1. 查看分区及文件系统"></a>1. 查看分区及文件系统</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk</span><br><span class="line">df -hT</span><br></pre></td></tr></table></figure>
