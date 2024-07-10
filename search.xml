@@ -588,9 +588,9 @@
             
             <tag> starred </tag>
             
-            <tag> primetime </tag>
-            
             <tag> sta </tag>
+            
+            <tag> primetime </tag>
             
         </tags>
       
@@ -1684,9 +1684,9 @@
       
         <tags>
             
-            <tag> editor </tag>
-            
             <tag> vim </tag>
+            
+            <tag> editor </tag>
             
         </tags>
       
@@ -1740,11 +1740,11 @@
             
             <tag> linux </tag>
             
+            <tag> vim </tag>
+            
             <tag> editor </tag>
             
             <tag> python </tag>
-            
-            <tag> vim </tag>
             
         </tags>
       
@@ -2340,9 +2340,9 @@
             
             <tag> lowpower </tag>
             
-            <tag> primetime </tag>
-            
             <tag> sta </tag>
+            
+            <tag> primetime </tag>
             
         </tags>
       
