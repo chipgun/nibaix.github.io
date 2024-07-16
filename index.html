@@ -92,6 +92,36 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2024/07/16/Install-Xfce-Lightdm/">Install-Xfce-Lightdm</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2024-07-16
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>Instead of GNOME desktop with GDM which is configured by default in Redhat, I’m told that <strong>xfce</strong>+<strong>lightdm</strong> is much more lighted and efficient. So I tried that out today. Let’s see how to deply <strong>xfce</strong>+<strong>lightdm</strong> in CentOS7.9.</p>
+<h3 id="Install-EPEL-Extra-Package-for-Enterprise-Linux"><a href="#Install-EPEL-Extra-Package-for-Enterprise-Linux" class="headerlink" title="Install EPEL (Extra Package for Enterprise Linux)"></a>Install EPEL (Extra Package for Enterprise Linux)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum install epel-release</span><br><span class="line">//if above command doesn&#x27;t work, try this</span><br><span class="line"># yum install http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Install-xfce-amp-lightdm"><a href="#Install-xfce-amp-lightdm" class="headerlink" title="Install xfce &amp; lightdm"></a>Install xfce &amp; lightdm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum groupinstall xfce</span><br><span class="line"># yum install lightdm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Configure-lightdm-conf"><a href="#Configure-lightdm-conf" class="headerlink" title="Configure lightdm.conf"></a>Configure lightdm.conf</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/lightdm/lightdm.conf</span><br><span class="line">...</span><br><span class="line">[XDMCPServer]</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="Stop-amp-disable-GDM"><a href="#Stop-amp-disable-GDM" class="headerlink" title="Stop &amp; disable GDM"></a>Stop &amp; disable GDM</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl disable gdm</span><br><span class="line"># systemctl stop gdm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Start-amp-enable-lightdm"><a href="#Start-amp-enable-lightdm" class="headerlink" title="Start &amp; enable lightdm"></a>Start &amp; enable lightdm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable lightdm</span><br><span class="line"># systemctl start lightdm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Reboot-and-it’s-done"><a href="#Reboot-and-it’s-done" class="headerlink" title="Reboot and it’s done"></a>Reboot and it’s done</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># reboot</span><br></pre></td></tr></table></figure>
+
+<p>If successfully, you’ll see there is an option of <em><strong>Xfce Session</strong></em> on login screen.</p>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2024/07/10/EDA-Collections/">EDA Collections</a>
         </h1>
 
@@ -272,46 +302,6 @@
           <div class="read-more">
             <a href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/" class="read-more-link">Read more &raquo;</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/">Redhat根目录/root扩容</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2024-04-29
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h3 id="1-查看分区及文件系统"><a href="#1-查看分区及文件系统" class="headerlink" title="1. 查看分区及文件系统"></a>1. 查看分区及文件系统</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br><span class="line">df -hT</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-备份-x2F-home分区内所有文件"><a href="#2-备份-x2F-home分区内所有文件" class="headerlink" title="2. 备份&#x2F;home分区内所有文件"></a>2. 备份&#x2F;home分区内所有文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar cfv /path/to/backup/home/home.tar /home/*</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-卸载-x2F-home"><a href="#3-卸载-x2F-home" class="headerlink" title="3. 卸载&#x2F;home"></a>3. 卸载&#x2F;home</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umount /home</span><br></pre></td></tr></table></figure>
-
-<p>如果出现“… target is busy.”，可用下列命令强制终止后再卸载</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fuser -km /home</span><br><span class="line">umount /home</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-删除-x2F-home所在lv"><a href="#4-删除-x2F-home所在lv" class="headerlink" title="4. 删除&#x2F;home所在lv"></a>4. 删除&#x2F;home所在lv</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvremove /dev/mapper/rhel_hostname-home</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-扩展-x2F-root所在lv"><a href="#5-扩展-x2F-root所在lv" class="headerlink" title="5. 扩展&#x2F;root所在lv"></a>5. 扩展&#x2F;root所在lv</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvextend -L +450G /dev/mapper/rhel_hostname-root</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-扩展-x2F-root文件系统"><a href="#6-扩展-x2F-root文件系统" class="headerlink" title="6. 扩展&#x2F;root文件系统"></a>6. 扩展&#x2F;root文件系统</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xfs_growfs /dev/mapper/rhel_hostname-root</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-重新创建-x2F-home逻辑卷（创建size比磁盘剩余容量小一丢丢，建议小1GB）"><a href="#7-重新创建-x2F-home逻辑卷（创建size比磁盘剩余容量小一丢丢，建议小1GB）" class="headerlink" title="7. 重新创建&#x2F;home逻辑卷（创建size比磁盘剩余容量小一丢丢，建议小1GB）"></a>7. 重新创建&#x2F;home逻辑卷（创建size比磁盘剩余容量小一丢丢，建议小1GB）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvcreate -L 300G -n /dev/mapper/rhel_hostname-home</span><br></pre></td></tr></table></figure>
-
-<h3 id="8-创建-x2F-home文件系统"><a href="#8-创建-x2F-home文件系统" class="headerlink" title="8. 创建&#x2F;home文件系统"></a>8. 创建&#x2F;home文件系统</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.xfs /dev/mapper/rhel_hostname-home</span><br></pre></td></tr></table></figure>
-
-<h3 id="9-挂载-x2F-home-挂载前查看-x2F-home目录以及-x2F-etc-x2F-fstab"><a href="#9-挂载-x2F-home-挂载前查看-x2F-home目录以及-x2F-etc-x2F-fstab" class="headerlink" title="9. 挂载&#x2F;home (挂载前查看&#x2F;home目录以及&#x2F;etc&#x2F;fstab)"></a>9. 挂载&#x2F;home (挂载前查看&#x2F;home目录以及&#x2F;etc&#x2F;fstab)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -a</span><br></pre></td></tr></table></figure>
-
-<h3 id="10-恢复-x2F-home备份"><a href="#10-恢复-x2F-home备份" class="headerlink" title="10. 恢复&#x2F;home备份"></a>10. 恢复&#x2F;home备份</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf /path/to/backup/home/home.tar -C /home</span><br></pre></td></tr></table></figure>
-
-<h3 id="11-再次查看分区及文件系统，确认扩容成功！"><a href="#11-再次查看分区及文件系统，确认扩容成功！" class="headerlink" title="11. 再次查看分区及文件系统，确认扩容成功！"></a>11. 再次查看分区及文件系统，确认扩容成功！</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br><span class="line">df -hT</span><br></pre></td></tr></table></figure>
-
         </div></article>
       <nav class="pagination"><a class="next" href="/page/2/">
         <span class="next-text">Next</span>

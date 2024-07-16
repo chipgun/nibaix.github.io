@@ -13953,4 +13953,29 @@ service messagebus restart;
         <tag>html</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Install-Xfce-Lightdm</title>
+    <url>/2024/07/16/Install-Xfce-Lightdm/</url>
+    <content><![CDATA[<p>Instead of GNOME desktop with GDM which is configured by default in Redhat, I’m told that <strong>xfce</strong>+<strong>lightdm</strong> is much more lighted and efficient. So I tried that out today. Let’s see how to deply <strong>xfce</strong>+<strong>lightdm</strong> in CentOS7.9.</p>
+<h3 id="Install-EPEL-Extra-Package-for-Enterprise-Linux"><a href="#Install-EPEL-Extra-Package-for-Enterprise-Linux" class="headerlink" title="Install EPEL (Extra Package for Enterprise Linux)"></a>Install EPEL (Extra Package for Enterprise Linux)</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># yum install epel-release</span><br><span class="line">//if above command doesn&#x27;t work, try this</span><br><span class="line"># yum install http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Install-xfce-amp-lightdm"><a href="#Install-xfce-amp-lightdm" class="headerlink" title="Install xfce &amp; lightdm"></a>Install xfce &amp; lightdm</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># yum groupinstall xfce</span><br><span class="line"># yum install lightdm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Configure-lightdm-conf"><a href="#Configure-lightdm-conf" class="headerlink" title="Configure lightdm.conf"></a>Configure lightdm.conf</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># cat /etc/lightdm/lightdm.conf</span><br><span class="line">...</span><br><span class="line">[XDMCPServer]</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="Stop-amp-disable-GDM"><a href="#Stop-amp-disable-GDM" class="headerlink" title="Stop &amp; disable GDM"></a>Stop &amp; disable GDM</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># systemctl disable gdm</span><br><span class="line"># systemctl stop gdm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Start-amp-enable-lightdm"><a href="#Start-amp-enable-lightdm" class="headerlink" title="Start &amp; enable lightdm"></a>Start &amp; enable lightdm</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># systemctl enable lightdm</span><br><span class="line"># systemctl start lightdm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Reboot-and-it’s-done"><a href="#Reboot-and-it’s-done" class="headerlink" title="Reboot and it’s done"></a>Reboot and it’s done</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># reboot</span><br></pre></td></tr></table></figure>
+
+<p>If successfully, you’ll see there is an option of <em><strong>Xfce Session</strong></em> on login screen.</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
 </search>

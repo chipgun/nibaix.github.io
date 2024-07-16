@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Install-Xfce-Lightdm"/><meta name="keywords" content="linux, nibaix's footprints" /><link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=2.11.1" />
+<link rel="canonical" href="http://blog.nibaix.com/2024/07/16/Install-Xfce-Lightdm/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>Install-Xfce-Lightdm - nibaix's footprints</title>
+  <meta name="generator" content="Hexo 6.1.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">nibaix's footprints</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">nibaix's footprints</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            Categories
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Install-Xfce-Lightdm
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2024-07-16
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-EPEL-Extra-Package-for-Enterprise-Linux"><span class="toc-text">Install EPEL (Extra Package for Enterprise Linux)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-xfce-amp-lightdm"><span class="toc-text">Install xfce &amp; lightdm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Configure-lightdm-conf"><span class="toc-text">Configure lightdm.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stop-amp-disable-GDM"><span class="toc-text">Stop &amp; disable GDM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Start-amp-enable-lightdm"><span class="toc-text">Start &amp; enable lightdm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reboot-and-it%E2%80%99s-done"><span class="toc-text">Reboot and it’s done</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><p>Instead of GNOME desktop with GDM which is configured by default in Redhat, I’m told that <strong>xfce</strong>+<strong>lightdm</strong> is much more lighted and efficient. So I tried that out today. Let’s see how to deply <strong>xfce</strong>+<strong>lightdm</strong> in CentOS7.9.</p>
+<h3 id="Install-EPEL-Extra-Package-for-Enterprise-Linux"><a href="#Install-EPEL-Extra-Package-for-Enterprise-Linux" class="headerlink" title="Install EPEL (Extra Package for Enterprise Linux)"></a>Install EPEL (Extra Package for Enterprise Linux)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum install epel-release</span><br><span class="line">//if above command doesn&#x27;t work, try this</span><br><span class="line"># yum install http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Install-xfce-amp-lightdm"><a href="#Install-xfce-amp-lightdm" class="headerlink" title="Install xfce &amp; lightdm"></a>Install xfce &amp; lightdm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum groupinstall xfce</span><br><span class="line"># yum install lightdm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Configure-lightdm-conf"><a href="#Configure-lightdm-conf" class="headerlink" title="Configure lightdm.conf"></a>Configure lightdm.conf</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/lightdm/lightdm.conf</span><br><span class="line">...</span><br><span class="line">[XDMCPServer]</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="Stop-amp-disable-GDM"><a href="#Stop-amp-disable-GDM" class="headerlink" title="Stop &amp; disable GDM"></a>Stop &amp; disable GDM</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl disable gdm</span><br><span class="line"># systemctl stop gdm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Start-amp-enable-lightdm"><a href="#Start-amp-enable-lightdm" class="headerlink" title="Start &amp; enable lightdm"></a>Start &amp; enable lightdm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl enable lightdm</span><br><span class="line"># systemctl start lightdm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Reboot-and-it’s-done"><a href="#Reboot-and-it’s-done" class="headerlink" title="Reboot and it’s done"></a>Reboot and it’s done</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># reboot</span><br></pre></td></tr></table></figure>
+
+<p>If successfully, you’ll see there is an option of <em><strong>Xfce Session</strong></em> on login screen.</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/linux/">linux</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2024/07/10/EDA-Collections/">
+        <span class="next-text nav-default">EDA Collections</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a target="_blank" rel="noopener" href="https://twitter.com/nibaix" class="iconfont icon-twitter" title="twitter"></a>
+        <a target="_blank" rel="noopener" href="https://linkedin.com/in/xiabin" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/nibaix" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/nibaix" class="iconfont icon-instagram" title="instagram"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2022 - 2024<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">nibaix</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+</html>
