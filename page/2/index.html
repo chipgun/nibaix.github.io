@@ -92,6 +92,30 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/">Setup Redhat7 NFS & NIS</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2024-05-03
+        </span><span class="post-category">
+            <a href="/categories/Linux/">Linux</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><h3 id="Setup-NFS-Server"><a href="#Setup-NFS-Server" class="headerlink" title="Setup NFS Server"></a>Setup NFS Server</h3><p><strong>1. 安装NFS软件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum install -y nfs-utils</span><br><span class="line"># yum install -y rpcbind</span><br></pre></td></tr></table></figure>
+<p><strong>2. 共享目录 共享主机(权限)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p /share/common</span><br><span class="line"># mkdir -p /share/proj</span><br><span class="line"># mkdir -p /share/docs</span><br><span class="line"># cat /etc/exports</span><br><span class="line">/share/common     10.10.1.0/24(rw,sync,no_root_squash) #一个网段</span><br><span class="line">/share/proj       10.10.1.99(rw,sync,no_root_squash) #单个主机</span><br><span class="line">/share/docs       *(ro,sync) #所有主机</span><br></pre></td></tr></table></figure>
+<p><strong>3. 共享主机生效 查看共享主机</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># exportfs -r</span><br><span class="line"># exportfs -v</span><br></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/" class="read-more-link">Read more &raquo;</a>
+          </div>
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/">Redhat根目录/root扩容</a>
         </h1>
 
@@ -291,90 +315,6 @@
           <div class="read-more">
             <a href="/2024/01/30/Environment-Modules/" class="read-more-link">Read more &raquo;</a>
           </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/12/10/Low-Power-Techniques-in-VLSI/">Low Power Techniques in VLSI</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-12-10
-        </span><span class="post-category">
-            <a href="/categories/VLSI/">VLSI</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><table>
-<thead>
-<tr>
-<th>Design Level</th>
-<th>Strategies</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Operating System Level</td>
-<td>Portioning, Power down</td>
-</tr>
-<tr>
-<td>Software Level</td>
-<td>Regularity, locality, concurrency</td>
-</tr>
-<tr>
-<td>Architecture Level</td>
-<td>Pipelining, Redundancy, data encoding</td>
-</tr>
-<tr>
-<td>Circuit&#x2F;Logic Level</td>
-<td>Logic style, transistor sizing, energy recovery</td>
-</tr>
-<tr>
-<td>Technology Level</td>
-<td>Threshold reduction, multiple threshold devices</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>Traditional Techniques</th>
-<th>Dynamic power reduction</th>
-<th>Leakage power reduction</th>
-<th>Other power reduction techniques</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Clock gating</td>
-<td>Clock gating</td>
-<td>Minimize usage of LVt</td>
-<td>Multiple oxide devices</td>
-</tr>
-<tr>
-<td>Power gating</td>
-<td>Power efficient circuits</td>
-<td>Power gating</td>
-<td>Power efficient circuits</td>
-</tr>
-<tr>
-<td>Variable frequency</td>
-<td>Variable frequency</td>
-<td>Back biasing</td>
-<td>Minimize capacitance by custom design</td>
-</tr>
-<tr>
-<td>Variable voltage supply</td>
-<td>Variable voltage supply</td>
-<td>Reduce oxide thickness</td>
-<td></td>
-</tr>
-<tr>
-<td>Variable device threshold</td>
-<td>Voltage Islands</td>
-<td>Use FinFET</td>
-<td></td>
-</tr>
-</tbody></table>
-
         </div></article>
       <nav class="pagination"><a class="prev" href="/">
         <i class="iconfont icon-left"></i>

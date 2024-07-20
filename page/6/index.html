@@ -92,6 +92,31 @@
         <div class="content-wrapper">
           <div id="content" class="content"><section id="posts" class="posts"><article class="post">
     <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2023/01/14/verdi-configuration-file-novas-rc/">Verdi Configuration File novas.rc</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2023-01-14
+        </span><span class="post-category">
+            <a href="/categories/VLSI/">VLSI</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>When Novas Verdi is invoked, the Rule Configuration file <code>novas.rc</code> is automatically loaded which sets the appearance and preference of Verdi application.</p>
+<p>You may optionally place <code>novas.rc</code> at several locations, and the searching order of them are -</p>
+<ol>
+<li>Command-line: <strong>-rcFile &lt;novas.rc&gt;</strong></li>
+<li>System variable: <strong>$NOVAS_RC</strong></li>
+<li><strong>.&#x2F;novas.rc</strong></li>
+<li><strong>~&#x2F;novas.rc</strong></li>
+<li><strong>$VERDI_HOME&#x2F;etc&#x2F;novas.rc</strong></li>
+</ol>
+
+        </div></article>
+      <article class="post">
+    <header class="post-header">
       <h1 class="post-title"><a class="post-link" href="/2022/12/27/automount-NFS-share-in-linux-using-autofs/">Automount NFS Share in Linux Using Autofs</a>
         </h1>
 
@@ -273,24 +298,6 @@
     <div class="post-content"><p><strong>Download GCC Source</strong><br><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz">https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz</a><br>or find a proper release in here: <a target="_blank" rel="noopener" href="https://gcc.gnu.org/releases.html">https://gcc.gnu.org/releases.html</a></p>
 <p><strong>Install GCC</strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">% tar xvf gcc-7.3.0.tar.gz</span><br><span class="line">% <span class="built_in">cd</span> gcc-7.3.0</span><br><span class="line">% <span class="built_in">mkdir</span> build &amp;&amp; <span class="built_in">cd</span> build</span><br><span class="line">% ../configure --prefix=/usr --enable-languages=c,c++ --disable-multilib</span><br><span class="line">% make</span><br><span class="line">% sudo make install</span><br><span class="line">% gcc --version</span><br></pre></td></tr></table></figure>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/07/24/how-to-enable-sudo-for-a-user-1/">How to Enable Sudo for a User</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-07-24
-        </span><span class="post-category">
-            <a href="/categories/Linux/">Linux</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% su -</span><br><span class="line"><span class="comment"># usermod -aG wheel username</span></span><br><span class="line"><span class="comment"># visudo</span></span><br></pre></td></tr></table></figure>
-<p>Uncomment the line of <code>%wheel ALL=(ALL) ALL</code> to enable password mode.<br>Uncomment the line of <code>%wheel ALL=(ALL) NOPASSWD:ALL</code> to enable no password mode.</p>
 
         </div></article>
       <nav class="pagination"><a class="prev" href="/page/5/">
