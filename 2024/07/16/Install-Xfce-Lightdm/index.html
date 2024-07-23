@@ -114,6 +114,8 @@
 
 <h3 id="Install-xfce-amp-lightdm"><a href="#Install-xfce-amp-lightdm" class="headerlink" title="Install xfce &amp; lightdm"></a>Install xfce &amp; lightdm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum groupinstall xfce</span><br><span class="line"># yum install lightdm</span><br></pre></td></tr></table></figure>
 
+<span id="more"></span>
+
 <h3 id="Configure-lightdm-conf"><a href="#Configure-lightdm-conf" class="headerlink" title="Configure lightdm.conf"></a>Configure lightdm.conf</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/lightdm/lightdm.conf</span><br><span class="line">...</span><br><span class="line">[XDMCPServer]</span><br><span class="line">enabled=true</span><br><span class="line">port=177</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <h3 id="Stop-amp-disable-GDM"><a href="#Stop-amp-disable-GDM" class="headerlink" title="Stop &amp; disable GDM"></a>Stop &amp; disable GDM</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># systemctl disable gdm</span><br><span class="line"># systemctl stop gdm</span><br></pre></td></tr></table></figure>
