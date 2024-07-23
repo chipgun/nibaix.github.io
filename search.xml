@@ -740,6 +740,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
     <content><![CDATA[<h3 id="1-查看分区及文件系统"><a href="#1-查看分区及文件系统" class="headerlink" title="1. 查看分区及文件系统"></a>1. 查看分区及文件系统</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsblk</span><br><span class="line">df -hT</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-备份-x2F-home分区内所有文件"><a href="#2-备份-x2F-home分区内所有文件" class="headerlink" title="2. 备份&#x2F;home分区内所有文件"></a>2. 备份&#x2F;home分区内所有文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar cfv /path/to/backup/home/home.tar /home/*</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 
 <h3 id="3-卸载-x2F-home"><a href="#3-卸载-x2F-home" class="headerlink" title="3. 卸载&#x2F;home"></a>3. 卸载&#x2F;home</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">umount /home</span><br></pre></td></tr></table></figure>
 
