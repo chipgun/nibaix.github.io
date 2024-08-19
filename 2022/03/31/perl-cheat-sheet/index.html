@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Perl Cheat Sheet | nibaix&#39;s footprints</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Perl stands for “Practical Extraction and Reporting Language” and is a high-level, general-purpose, interpreted, dynamic programming language developed by Larry Wall in 1987. It was originally designe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Perl Cheat Sheet">
+<meta property="og:url" content="http://blog.nibaix.com/2022/03/31/perl-cheat-sheet/index.html">
+<meta property="og:site_name" content="nibaix&#39;s footprints">
+<meta property="og:description" content="Perl stands for “Practical Extraction and Reporting Language” and is a high-level, general-purpose, interpreted, dynamic programming language developed by Larry Wall in 1987. It was originally designe">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-31T10:28:04.000Z">
+<meta property="article:modified_time" content="2022-07-09T12:55:28.000Z">
+<meta property="article:author" content="nibaix">
+<meta property="article:tag" content="perl">
+<meta property="article:tag" content="script">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nibaix&#39;s footprints</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What&#39;s the story?</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-perl-cheat-sheet" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/31/perl-cheat-sheet/" class="article-date">
+  <time class="dt-published" datetime="2022-03-31T10:28:04.000Z" itemprop="datePublished">2022-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Program/">Program</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Perl Cheat Sheet
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>Perl stands for “Practical Extraction and Reporting Language”</strong> and is a high-level, general-purpose, interpreted, dynamic programming language developed by Larry Wall in 1987.</p>
+<p>It was originally designed for text manipulation. But now, it is used for a wide range of tasks, including system administration, web development, network programming, GUI development, and more.</p>
+<p><a target="_blank" rel="noopener" href="https://www.pcwdld.com/perl-cheat-sheet"><strong>[REF]</strong> https://www.pcwdld.com/perl-cheat-sheet</a></p>
+<span id="more"></span>
+
+<p>It supports HTML, XML, and other mark-up languages and supports third-party databases including Oracle, Postgres, MySQL, Sybase, etc. In addition, it is extensible, and there are 20,000+ third-party modules available from the Comprehensive Perl Archive Network.</p>
+<p>A cheat sheet is a set of commands and notes that will be helpful for both beginners and professionals as a quick reference. This Perl cheat sheet will provide basic and advanced management and syntax of the Perl programming language.</p>
+<h2 id="Perl-Functions"><a href="#Perl-Functions" class="headerlink" title="Perl Functions"></a>Perl Functions</h2><p>A Perl function is a group of statements used to perform a specific task. It allows users to divide their code into separate parts to reuse the code defined in the function.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Functions for Strings</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Function</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>chop</strong></td>
+<td>Remove the last character of a string and returns the character chopped.</td>
+</tr>
+<tr>
+<td><strong>chomp</strong></td>
+<td>Removes any trailing string that corresponds to the current value of $&#x2F;.</td>
+</tr>
+<tr>
+<td><strong>crypt</strong></td>
+<td>It is a one-way hash function.</td>
+</tr>
+<tr>
+<td><strong>chr</strong></td>
+<td>Returns the character represented by that NUMBER in the character set.</td>
+</tr>
+<tr>
+<td><strong>fc</strong></td>
+<td>Returns the case folded version of EXPR. This is the internal function implementing the \F escape in double-quoted strings.</td>
+</tr>
+<tr>
+<td><strong>hex</strong></td>
+<td>Interprets EXPR as a hex string and returns the corresponding numeric value.</td>
+</tr>
+<tr>
+<td><strong>index</strong></td>
+<td>It searches for one string within another, but without the wildcard-like behavior of a full regular-expression pattern match.</td>
+</tr>
+<tr>
+<td><strong>lc</strong></td>
+<td>Returns a lowercased version of EXPR.</td>
+</tr>
+<tr>
+<td><strong>lcfirst</strong></td>
+<td>Returns the value of EXPR with the first character lowercased.</td>
+</tr>
+<tr>
+<td><strong>length</strong></td>
+<td>Returns the length in characters of the value of EXPR.</td>
+</tr>
+<tr>
+<td><strong>oct</strong></td>
+<td>Interprets EXPR as an octal string and returns the corresponding value.</td>
+</tr>
+<tr>
+<td><strong>ord</strong></td>
+<td>Returns the numeric value of the first character of EXPR. If EXPR is an empty string, it returns 0.</td>
+</tr>
+<tr>
+<td><strong>pack</strong></td>
+<td>Takes a LIST of values and converts it into a string using the rules given by the TEMPLATE.</td>
+</tr>
+<tr>
+<td><strong>reverse</strong></td>
+<td>Returns a list value consisting of the elements of LIST in the opposite order.</td>
+</tr>
+<tr>
+<td><strong>rindex</strong></td>
+<td>Works just like index except that it returns the position of the last occurrence of SUBSTR in STR. If POSITION is specified, returns the last occurrence beginning at or before that position.</td>
+</tr>
+<tr>
+<td><strong>sprintf</strong></td>
+<td>Returns a string formatted by the usual printf conventions of the C library function sprintf.</td>
+</tr>
+<tr>
+<td><strong>substr</strong></td>
+<td>Extracts a substring out of EXPR and returns it.</td>
+</tr>
+<tr>
+<td><strong>uc</strong></td>
+<td>Returns an uppercased version of EXPR.</td>
+</tr>
+<tr>
+<td><strong>ucfirst</strong></td>
+<td>Returns the value of EXPR with the first character in uppercase.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Numeric Functions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Function</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>abs</strong></td>
+<td>Returns the absolute value of its argument.</td>
+</tr>
+<tr>
+<td><strong>atan2</strong></td>
+<td>Returns the arctangent of Y&#x2F;X in the range -PI to PI.</td>
+</tr>
+<tr>
+<td><strong>cos</strong></td>
+<td>Returns the cosine of EXPR.</td>
+</tr>
+<tr>
+<td><strong>exp</strong></td>
+<td>Returns the (natural logarithm base) to the power of EXPR.</td>
+</tr>
+<tr>
+<td><strong>hex</strong></td>
+<td>Interprets EXPR as a hex string and returns the corresponding numeric value.</td>
+</tr>
+<tr>
+<td><strong>int</strong></td>
+<td>Returns the integer portion of EXPR.</td>
+</tr>
+<tr>
+<td><strong>log</strong></td>
+<td>Returns the natural logarithm (base e) of EXPR.</td>
+</tr>
+<tr>
+<td><strong>oct</strong></td>
+<td>Interprets EXPR as an octal string and returns the corresponding value.</td>
+</tr>
+<tr>
+<td><strong>rand</strong></td>
+<td>Returns a random fractional number greater than or equal to 0 and less than the value of EXPR.</td>
+</tr>
+<tr>
+<td><strong>sin</strong></td>
+<td>Returns the sine of EXPR (expressed in radians).</td>
+</tr>
+<tr>
+<td><strong>sqrt</strong></td>
+<td>Return the positive square root of EXPR.</td>
+</tr>
+<tr>
+<td><strong>srand</strong></td>
+<td>Sets and returns the random number seed for the rand operator.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Functions for real @ARRAYs</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Function</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>shift</strong></td>
+<td>Shifts the first value of the array off and returns it.</td>
+</tr>
+<tr>
+<td><strong>each</strong></td>
+<td>When called on a hash in list context, returns a 2-element list consisting of the key and value for the next hash element.</td>
+</tr>
+<tr>
+<td><strong>keys</strong></td>
+<td>Called in list context, returns a list consisting of all the keys of the named hash.</td>
+</tr>
+<tr>
+<td><strong>pop</strong></td>
+<td>Pops and returns the last value of the array, shortening the array by one element.</td>
+</tr>
+<tr>
+<td><strong>push</strong></td>
+<td>Treats ARRAY as a stack by appending the values of LIST to the end of ARRAY.</td>
+</tr>
+<tr>
+<td><strong>splice</strong></td>
+<td>Removes the elements designated by OFFSET and LENGTH from an array, and replaces them with LIST elements, if any. In the list context, returns the elements removed from the array.</td>
+</tr>
+<tr>
+<td><strong>unshift</strong></td>
+<td>Does the opposite of a shift. Or the opposite of a push, depending on how you look at it.</td>
+</tr>
+<tr>
+<td><strong>values</strong></td>
+<td>Returns a list consisting of all the values of the named hash.</td>
+</tr>
+<tr>
+<td><strong>delete</strong></td>
+<td>Deletes the specified elements from that hash, so that exists on that element no longer returns true.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Functions for list data</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Function</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>join</strong></td>
+<td>Joins the separate strings of LIST into a single string with fields separated by the value of EXPR, and returns that new string.</td>
+</tr>
+<tr>
+<td><strong>map</strong></td>
+<td>Evaluates the BLOCK or EXPR for each LIST element and composes a list of the results of each such evaluation.</td>
+</tr>
+<tr>
+<td><strong>reverse</strong></td>
+<td>Returns a list value consisting of the elements of LIST in the opposite order.</td>
+</tr>
+<tr>
+<td><strong>sort</strong></td>
+<td>Sorts the LIST and returns the sorted list value.</td>
+</tr>
+<tr>
+<td><strong>unpack</strong></td>
+<td>Takes a string and expands it out into a list of values.</td>
+</tr>
+<tr>
+<td><strong>pack</strong></td>
+<td>Takes a LIST of values and converts it into a string using the rules given by the TEMPLATE.</td>
+</tr>
+<tr>
+<td><strong>read</strong></td>
+<td>Read LENGTH characters of data into variable SCALAR from the specified FILEHANDLE.</td>
+</tr>
+<tr>
+<td><strong>syscall</strong></td>
+<td>Execute an arbitrary system call.</td>
+</tr>
+<tr>
+<td><strong>sysread</strong></td>
+<td>Read LENGTH bytes of data into variable SCALAR from the specified FILEHANDLE.</td>
+</tr>
+<tr>
+<td><strong>sysseek</strong></td>
+<td>Bypasses normal buffered IO, so mixing it with reads other than sysread.</td>
+</tr>
+<tr>
+<td><strong>syswrite</strong></td>
+<td>Attempts to write LENGTH bytes from SCALAR to the file associated with FILEHANDLE.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Input and output functions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Function</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>binmode</strong></td>
+<td>Arranges for FILEHANDLE to be read or written in “binary” or “text” mode on systems where the run-time libraries distinguish between binary and text files.</td>
+</tr>
+<tr>
+<td><strong>close</strong></td>
+<td>Closes the file or pipe associated with the filehandle.</td>
+</tr>
+<tr>
+<td><strong>closedir</strong></td>
+<td>Closes a directory opened by opendir and returns the success of that system call.</td>
+</tr>
+<tr>
+<td><strong>die</strong></td>
+<td>Raise an exception.</td>
+</tr>
+<tr>
+<td><strong>fileno</strong></td>
+<td>Returns the file descriptor for a filehandle or directory handle, or undefined if the filehandle is not open.</td>
+</tr>
+<tr>
+<td><strong>eof</strong></td>
+<td>End of file.</td>
+</tr>
+<tr>
+<td><strong>format</strong></td>
+<td>Declare a picture format for use by the write function.</td>
+</tr>
+<tr>
+<td><strong>getc</strong></td>
+<td>Returns the next character from the input file attached to FILEHANDLE.</td>
+</tr>
+<tr>
+<td><strong>print</strong></td>
+<td>Prints a string or a list of strings. Returns true if successful.</td>
+</tr>
+<tr>
+<td><strong>printf</strong></td>
+<td>Output redirect to a filehandle.</td>
+</tr>
+<tr>
+<td><strong>read</strong></td>
+<td>Attempts to read LENGTH characters of data into variable SCALAR from the specified FILEHANDLE.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Functions for filehandles, files, or directories</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Function</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>chdir</strong></td>
+<td>Change current working directory.</td>
+</tr>
+<tr>
+<td><strong>chmod</strong></td>
+<td>Changes the permissions on a file&#x2F;list of files.</td>
+</tr>
+<tr>
+<td><strong>chown</strong></td>
+<td>Changes the owner (and group) of a list of files.</td>
+</tr>
+<tr>
+<td><strong>chroot</strong></td>
+<td>Changes the root directory for the current process to dirname.</td>
+</tr>
+<tr>
+<td><strong>link</strong></td>
+<td>Creates a new filename linked to the old filename.</td>
+</tr>
+<tr>
+<td><strong>lstat</strong></td>
+<td>Stats a symbolic link instead of the file the symbolic link points to.</td>
+</tr>
+<tr>
+<td><strong>mkdir</strong></td>
+<td>Create a directory</td>
+</tr>
+<tr>
+<td><strong>opendir</strong></td>
+<td>Opens the directory EXPR, associating it with DIRHANDLE for processing, using the readdir function.</td>
+</tr>
+<tr>
+<td><strong>readlink</strong></td>
+<td>Returns the value of a symbolic link, if symbolic links are implemented.</td>
+</tr>
+<tr>
+<td><strong>rename</strong></td>
+<td>Changes the name of a file.</td>
+</tr>
+<tr>
+<td><strong>rmdir</strong></td>
+<td>Remove a directory</td>
+</tr>
+<tr>
+<td><strong>select</strong></td>
+<td>Returns the currently selected filehandle.</td>
+</tr>
+<tr>
+<td><strong>symlink</strong></td>
+<td>Creates a new filename symbolically linked to the old filename.</td>
+</tr>
+<tr>
+<td><strong>umask</strong></td>
+<td>Sets the umask for the process to EXPR and returns the previous value.</td>
+</tr>
+<tr>
+<td><strong>unlink</strong></td>
+<td>Deletes a list of files.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Functions for fetching user and group info</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Function</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>getlogin</strong></td>
+<td>Return who is logged in at this TTY.</td>
+</tr>
+<tr>
+<td><strong>getpwent</strong></td>
+<td>Get the next passwd record.</td>
+</tr>
+<tr>
+<td><strong>getpwnam</strong></td>
+<td>Get passwd record given user login name.</td>
+</tr>
+<tr>
+<td><strong>getpwuid</strong></td>
+<td>Get passwd record delivered user ID.</td>
+</tr>
+<tr>
+<td><strong>getgrgid GID</strong></td>
+<td>Gets information by group ID.</td>
+</tr>
+<tr>
+<td><strong>getgrnam NAME</strong></td>
+<td>Gets information by name.</td>
+</tr>
+<tr>
+<td><strong>getgrent</strong></td>
+<td>Gets following group information.</td>
+</tr>
+<tr>
+<td><strong>gethostent</strong></td>
+<td>Gets next host information.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Functions for fetching network info</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Function</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>getnetbyname</strong></td>
+<td>Get networks record given name.</td>
+</tr>
+<tr>
+<td><strong>getnetent</strong></td>
+<td>Get the next network’s record.</td>
+</tr>
+<tr>
+<td><strong>getpeername</strong></td>
+<td>Find the other end of a socket connection.</td>
+</tr>
+<tr>
+<td><strong>getprotobyname</strong></td>
+<td>Get protocol record given name.</td>
+</tr>
+<tr>
+<td><strong>getprotobynumber</strong></td>
+<td>Get protocol record numeric protocol.</td>
+</tr>
+<tr>
+<td><strong>gethostbyaddr</strong></td>
+<td>Gets information by IP address.</td>
+</tr>
+<tr>
+<td><strong>getprotoent</strong></td>
+<td>Get the next protocols record.</td>
+</tr>
+<tr>
+<td><strong>gethostbyname</strong></td>
+<td>Get host record given name.</td>
+</tr>
+<tr>
+<td><strong>accept</strong></td>
+<td>Accepts a new socket.</td>
+</tr>
+<tr>
+<td><strong>bind</strong></td>
+<td>Binds the NAME to the SOCKET.</td>
+</tr>
+<tr>
+<td><strong>connect</strong></td>
+<td>Connects the NAME to the SOCKET.</td>
+</tr>
+<tr>
+<td><strong>getsockname</strong></td>
+<td>Returns the name of the socket.</td>
+</tr>
+<tr>
+<td><strong>listen</strong></td>
+<td>Starts listening on the specified SOCKET.</td>
+</tr>
+<tr>
+<td><strong>send</strong></td>
+<td>Sends a message on the SOCKET.</td>
+</tr>
+<tr>
+<td><strong>shutdown</strong></td>
+<td>Shuts down a SOCKET.</td>
+</tr>
+</tbody></table>
+<h2 id="Comparison-Operators"><a href="#Comparison-Operators" class="headerlink" title="Comparison Operators"></a>Comparison Operators</h2><p>Comparison operators are used for comparing operands and return a Boolean value based upon whether the comparison is true or not. Perl has two types of comparison operator sets, numeric scalar values and string scalar values.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Boolean Operators</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operator</strong></td>
+<td><strong>Example</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Logical AND operator</td>
+<td>&amp;&amp; or and</td>
+<td>($a &amp;&amp; $b) is false</td>
+</tr>
+<tr>
+<td>Logical OR operator</td>
+<td>|| or or</td>
+<td>($a or $b) is true</td>
+</tr>
+<tr>
+<td>Logical NOT operator</td>
+<td>! or not</td>
+<td>not($a) is false or !($a) is false</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Arithmetic Operators</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Numeric</strong></td>
+<td><strong>String</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>Less than</td>
+<td>&lt;</td>
+<td>lt</td>
+</tr>
+<tr>
+<td>Greater than</td>
+<td>&gt;</td>
+<td>gt</td>
+</tr>
+<tr>
+<td>Less than or equal</td>
+<td>&lt;&#x3D;</td>
+<td>le</td>
+</tr>
+<tr>
+<td>Greater than or equal</td>
+<td>&gt;&#x3D;</td>
+<td>ge</td>
+</tr>
+<tr>
+<td>Equality</td>
+<td>&#x3D;&#x3D;</td>
+<td>eq</td>
+</tr>
+<tr>
+<td>Inequality</td>
+<td>!&#x3D;</td>
+<td>ne</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Assoc Operators</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Operator</strong>** **</td>
+<td><strong>Explanation</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>-&gt;</strong></td>
+<td>Infix dereference operator</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>&#x3D;++</strong></td>
+<td>Auto-increment</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>—</strong></td>
+<td>Auto-decrement</td>
+</tr>
+<tr>
+<td><strong>right</strong></td>
+<td>*<strong>*</strong></td>
+<td>Exponentiation</td>
+</tr>
+<tr>
+<td><strong>right</strong></td>
+<td>*<em>*</em></td>
+<td>Reference to an object (unary)</td>
+</tr>
+<tr>
+<td><strong>right</strong></td>
+<td><strong>! ˜</strong></td>
+<td>Unary negation, bitwise complement</td>
+</tr>
+<tr>
+<td><strong>right</strong></td>
+<td><strong>+ –</strong></td>
+<td>Unary plus, minus</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>&#x3D;˜</strong></td>
+<td>Binds a scalar expression to a pattern match.</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>!˜</strong></td>
+<td>Same, but negates the result.</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td>*** &#x2F; % x**</td>
+<td>Multiplication, division, modulo, repetition.</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>+ – .</strong></td>
+<td>Addition, subtraction, concatenation.</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>&gt;&gt; &lt;&lt;</strong></td>
+<td>Bitwise shift right, bitwise shift left.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>&lt; &gt; &lt;&#x3D; &gt;&#x3D;</strong></td>
+<td>Numerical relational operators.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>lt gt le ge</strong></td>
+<td>String relational operators.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>&#x3D;&#x3D; !&#x3D; &lt;&#x3D;&gt;</strong></td>
+<td>Numerical equal, not equal, compare.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>eq ne cmp</strong></td>
+<td>Stringwise equal, not equal, compare.</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>&amp;</strong></td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>| ^</strong></td>
+<td>Bitwise OR, exclusive OR.</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>&amp;&amp;</strong></td>
+<td>Logical AND</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>||</strong></td>
+<td>Logical OR</td>
+</tr>
+<tr>
+<td><strong>right</strong></td>
+<td><strong>&#x3D; +&#x3D; -&#x3D; *&#x3D;</strong></td>
+<td>Assignment operators</td>
+</tr>
+<tr>
+<td><strong>left</strong></td>
+<td><strong>,</strong></td>
+<td>Comma operator</td>
+</tr>
+</tbody></table>
+<h2 id="Regular-Expressions"><a href="#Regular-Expressions" class="headerlink" title="Regular Expressions"></a>Regular Expressions</h2><p>Regular Expressions are an essential part of Perl Programming used for searching the specified text pattern. The following cheat sheet contains the different classes, Characters, and modifiers used in the regular expression.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Character Classes</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Classes</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>[abc.]</strong></td>
+<td>Includes only one of specified characters i.e. ‘a’, ‘b’, ‘c’, or ‘.’</td>
+</tr>
+<tr>
+<td><strong>[a-j]</strong></td>
+<td>Includes all the characters from a to j.</td>
+</tr>
+<tr>
+<td><strong>[a-z]</strong></td>
+<td>Includes all lowercase characters from a to z.</td>
+</tr>
+<tr>
+<td><strong>[^az]</strong></td>
+<td>Includes all characters except a and z.</td>
+</tr>
+<tr>
+<td><strong>\w</strong></td>
+<td>Includes all characters like [a-z, A-Z, 0-9]</td>
+</tr>
+<tr>
+<td><strong>\d</strong></td>
+<td>Matches for the digits like [0-9]</td>
+</tr>
+<tr>
+<td><strong>[ab][^cde]</strong></td>
+<td>Matches that the characters a and b should not be followed by c, d, and e.</td>
+</tr>
+<tr>
+<td><strong>\s</strong></td>
+<td>Matches for [\f\t\n\r] i.e form feed, tab, newline and carriage return.</td>
+</tr>
+<tr>
+<td><strong>\W</strong></td>
+<td>Complement of \w</td>
+</tr>
+<tr>
+<td><strong>\D</strong></td>
+<td>Complement of \d</td>
+</tr>
+<tr>
+<td><strong>\S</strong></td>
+<td>Complement of \s</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Anchors</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Anchors</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>^</strong></td>
+<td>Matches at the beginning of the string.</td>
+</tr>
+<tr>
+<td><strong>$</strong></td>
+<td>Matches at the end of the string.</td>
+</tr>
+<tr>
+<td><strong>\b</strong></td>
+<td>Matches at the word boundary of the string from \w to \W.</td>
+</tr>
+<tr>
+<td><strong>\A</strong></td>
+<td>Matches at the beginning of the string.</td>
+</tr>
+<tr>
+<td><strong>\Z</strong></td>
+<td>Matches at the ending of the string or before the newline.</td>
+</tr>
+<tr>
+<td><strong>\z</strong></td>
+<td>Matches only at the end of the string.</td>
+</tr>
+<tr>
+<td><strong>\G</strong></td>
+<td>Matches at the specified position pos().</td>
+</tr>
+<tr>
+<td><strong>\p{….}</strong></td>
+<td>Unicode character class like IsLower, IsAlpha, etc.</td>
+</tr>
+<tr>
+<td><strong>\P{….}</strong></td>
+<td>Complement of Unicode character class.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Meta Characters</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Characters</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>.</strong></td>
+<td>Any character except newline.</td>
+</tr>
+<tr>
+<td><strong>*</strong></td>
+<td>Matches 0 or more times.</td>
+</tr>
+<tr>
+<td><strong>+</strong></td>
+<td>Matches 1 or more times.</td>
+</tr>
+<tr>
+<td><strong>?</strong></td>
+<td>Matches 0 or more times.</td>
+</tr>
+<tr>
+<td><strong>()</strong></td>
+<td>Used for grouping.</td>
+</tr>
+<tr>
+<td><strong>\</strong></td>
+<td>Use for quotes or special characters.</td>
+</tr>
+<tr>
+<td><strong>[]</strong></td>
+<td>Used for a set of characters.</td>
+</tr>
+<tr>
+<td><strong>{}</strong></td>
+<td>Used as repetition modifier.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Quantifiers</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Quantifiers</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>a?</strong></td>
+<td>Checks if ‘a’ occurs 0 or 1 time.</td>
+</tr>
+<tr>
+<td><strong>a+</strong></td>
+<td>Checks if ‘a’ occurs 1 or more times.</td>
+</tr>
+<tr>
+<td><strong>a*</strong></td>
+<td>Checks if ‘a’ occurs 0 or more times.</td>
+</tr>
+<tr>
+<td><strong>a{2, 6}</strong></td>
+<td>Checks if ‘a’ occurs 2 to 6 times.</td>
+</tr>
+<tr>
+<td><strong>a{2, }</strong></td>
+<td>Checks if ‘a’ occurs 2 to infinite times.</td>
+</tr>
+<tr>
+<td><strong>a{2}</strong></td>
+<td>Checks if ‘a’ occurs 2 times.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Modifiers</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Modifiers</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>\g</strong></td>
+<td>Used to replace all the occurrences of the string.</td>
+</tr>
+<tr>
+<td><strong>\gc</strong></td>
+<td>Allows continued search after \g match fails.</td>
+</tr>
+<tr>
+<td><strong>\s</strong></td>
+<td>Treats string as a single line.</td>
+</tr>
+<tr>
+<td><strong>i</strong></td>
+<td>Turns off the case sensitivity.</td>
+</tr>
+<tr>
+<td><strong>\x</strong></td>
+<td>Disregard all the white spaces.</td>
+</tr>
+<tr>
+<td><strong>(?#text)</strong></td>
+<td>Used to add comments in the code.</td>
+</tr>
+<tr>
+<td><strong>(?:pattern)</strong></td>
+<td>Used to match the pattern of the non-capturing group.</td>
+</tr>
+<tr>
+<td><strong>(?|pattern)</strong></td>
+<td>Used to match the pattern of the branch test.</td>
+</tr>
+<tr>
+<td><strong>(?&#x3D;pattern)</strong></td>
+<td>Used for positive lookahead assertion.</td>
+</tr>
+<tr>
+<td><strong>(?!pattern)</strong></td>
+<td>Used for negative lookahead assertion.</td>
+</tr>
+<tr>
+<td><strong>(&lt;&#x3D;pattern)</strong></td>
+<td>Used for a positive look-behind assertion.</td>
+</tr>
+<tr>
+<td><strong>(&lt;!pattern)</strong></td>
+<td>Used for a negative look-behind assertion.</td>
+</tr>
+<tr>
+<td><strong>\t</strong></td>
+<td>Used for inserting tab space.</td>
+</tr>
+<tr>
+<td><strong>\r</strong></td>
+<td>Carriage return character.</td>
+</tr>
+<tr>
+<td><strong>\n</strong></td>
+<td>Used for inserting a new line.</td>
+</tr>
+<tr>
+<td><strong>\h</strong></td>
+<td>Used for inserting horizontal white space.</td>
+</tr>
+<tr>
+<td><strong>\v</strong></td>
+<td>Used for inserting vertical white space.</td>
+</tr>
+<tr>
+<td><strong>\L</strong></td>
+<td>Used for lowercase characters.</td>
+</tr>
+<tr>
+<td><strong>\U</strong></td>
+<td>Used for upper case characters.</td>
+</tr>
+</tbody></table>
+<h2 id="Variable-and-Special-Variables"><a href="#Variable-and-Special-Variables" class="headerlink" title="Variable and Special Variables"></a>Variable and Special Variables</h2><p>Variables are the reserved memory locations used to store and manipulate data throughout the program. When a variable is created, it occupies memory space. Perl provides three types of variables, scalars, lists, and hashes. They are used to manipulate the corresponding data types, including scalars, lists, and hashes.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Variables</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Variables</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>$var</strong></td>
+<td>Default variable</td>
+</tr>
+<tr>
+<td><strong>$var[10]</strong></td>
+<td>11st element of array @var</td>
+</tr>
+<tr>
+<td><strong>$p &#x3D; @var</strong></td>
+<td>Now $p is a reference to @var</td>
+</tr>
+<tr>
+<td><strong>$$p[10]</strong></td>
+<td>11st element of array referenced by $p</td>
+</tr>
+<tr>
+<td><strong>$var[-1]</strong></td>
+<td>Last element of array @var</td>
+</tr>
+<tr>
+<td><strong>$var[$x][$y]</strong></td>
+<td>$y-th element of $x-th element of array @var</td>
+</tr>
+<tr>
+<td><strong>$var{’JAN’}</strong></td>
+<td>A value from ‘hash’ %var</td>
+</tr>
+<tr>
+<td><strong>$p &#x3D; %var</strong></td>
+<td>Now $p is a reference to hash %var</td>
+</tr>
+<tr>
+<td><strong>$$p{’JAN’}</strong></td>
+<td>A value from hash referenced by $p</td>
+</tr>
+<tr>
+<td><strong>$#var</strong></td>
+<td>Last index of array @var</td>
+</tr>
+<tr>
+<td><strong>@var</strong></td>
+<td>The entire array</td>
+</tr>
+<tr>
+<td><strong>%var</strong></td>
+<td>The entire hash</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Special Variables</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Variable</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>$</strong></td>
+<td>Default variable</td>
+</tr>
+<tr>
+<td><strong>$&#x2F;</strong></td>
+<td>The input record separator, newline by default.</td>
+</tr>
+<tr>
+<td><strong>$\</strong></td>
+<td>The output record separator for the print operator.</td>
+</tr>
+<tr>
+<td><strong>$(</strong></td>
+<td>The real GID (Group ID) of this process.</td>
+</tr>
+<tr>
+<td><strong>$)</strong></td>
+<td>The effective GID (Group ID) of this process.</td>
+</tr>
+<tr>
+<td><strong>$&amp;</strong></td>
+<td>The last successful pattern match matches the string.</td>
+</tr>
+<tr>
+<td><strong>$&lt;</strong></td>
+<td>The real user ID of this process.</td>
+</tr>
+<tr>
+<td><strong>$&gt;</strong></td>
+<td>The effective user ID of this process.</td>
+</tr>
+<tr>
+<td><strong>$(</strong></td>
+<td>The actual group ID of this process.</td>
+</tr>
+<tr>
+<td><strong>$)</strong></td>
+<td>The influential group ID and groups of this process.</td>
+</tr>
+<tr>
+<td><strong>$~</strong></td>
+<td>The name of the current report format for the currently selected output channel.</td>
+</tr>
+<tr>
+<td><strong>$^</strong></td>
+<td>The name of the current top-of-page format for the currently selected output channel.</td>
+</tr>
+<tr>
+<td><strong>$^A</strong></td>
+<td>The current value of the write() accumulator for format() lines.</td>
+</tr>
+<tr>
+<td><strong>$^L</strong></td>
+<td>What formats output as a form feed. The default is \f.</td>
+</tr>
+<tr>
+<td><strong>$^T</strong></td>
+<td>The time at which the program began running, in seconds since the epoch (beginning of 1970).</td>
+</tr>
+<tr>
+<td><strong>$^X</strong></td>
+<td>The name used to execute the current copy of Perl.</td>
+</tr>
+<tr>
+<td><strong>$!</strong></td>
+<td>Each element of %! has a true value only if $! is set to that value – %ERRNO.</td>
+</tr>
+<tr>
+<td><strong>$@</strong></td>
+<td>The Perl error from the last eval operator, i.e. the last exception that was caught.</td>
+</tr>
+<tr>
+<td><strong>$?</strong></td>
+<td>The status returned by the last pipe close, backtick (“ ) command, successful call to wait() or waitpid(), or from the system() operator.</td>
+</tr>
+<tr>
+<td><strong>$.</strong></td>
+<td>The current line number for the last filehandle accessed.</td>
+</tr>
+<tr>
+<td><strong>$%</strong></td>
+<td>The current page number of the currently selected output channel.</td>
+</tr>
+<tr>
+<td><strong>$&#x3D;</strong></td>
+<td>The current page length (printable lines) of the currently selected output channel. The default is 60.</td>
+</tr>
+<tr>
+<td><strong>$-</strong></td>
+<td>The number of lines left on the page of the currently selected output channel.</td>
+</tr>
+<tr>
+<td><strong>$|</strong></td>
+<td>If set to nonzero, forces a flush right away and after every write or print on the currently selected output channel.</td>
+</tr>
+<tr>
+<td><strong>$0</strong></td>
+<td>Contains the name of the program being executed.</td>
+</tr>
+<tr>
+<td><strong>$+</strong></td>
+<td>The text matched by the highest used capture group of the last successful search pattern.</td>
+</tr>
+</tbody></table>
+<h2 id="Command-line-options"><a href="#Command-line-options" class="headerlink" title="Command-line options"></a>Command-line options</h2><p>Perl comes with a wide range of command-line options that can be used to turn on or turn off different behaviors. You can create one-off command-line scripts to make your programs more concise.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>-a</strong></td>
+<td>Turns on autosplit mode.</td>
+</tr>
+<tr>
+<td><strong>-c</strong></td>
+<td>Checks syntax but does not execute.</td>
+</tr>
+<tr>
+<td><strong>-d</strong></td>
+<td>Runs the script under the debugger.</td>
+</tr>
+<tr>
+<td><strong>-h</strong></td>
+<td>Prints the Perl usage summary.</td>
+</tr>
+<tr>
+<td><strong>-m</strong></td>
+<td>Imports the MODULE before executing the script.</td>
+</tr>
+<tr>
+<td><strong>-n</strong></td>
+<td>Assumes an input loop around the script.</td>
+</tr>
+<tr>
+<td><strong>-P</strong></td>
+<td>Runs the C preprocessor on the script before compilation by Perl.</td>
+</tr>
+<tr>
+<td><strong>-S</strong></td>
+<td>Uses the PATH environment variable to search for the script.</td>
+</tr>
+<tr>
+<td><strong>-T</strong></td>
+<td>Turns on taint checking.</td>
+</tr>
+<tr>
+<td><strong>-u</strong></td>
+<td>Dumps core after compiling the script.</td>
+</tr>
+<tr>
+<td><strong>-U</strong></td>
+<td>Allows Perl to perform unsafe operations.</td>
+</tr>
+<tr>
+<td><strong>-v</strong></td>
+<td>Prints the version and patchlevel of your Perl executable.</td>
+</tr>
+<tr>
+<td><strong>-V</strong></td>
+<td>Prints Perl configuration information.</td>
+</tr>
+<tr>
+<td><strong>-w</strong></td>
+<td>Prints warnings about possible spelling errors.</td>
+</tr>
+<tr>
+<td><strong>-x</strong></td>
+<td>Extracts the Perl program from the input stream.</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2022/03/31/perl-cheat-sheet/" data-id="cm00hbt2e008wyqi4gsuaeslz" data-title="Perl Cheat Sheet" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/script/" rel="tag">script</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/03/31/emacs-verilog-mode/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Emacs Verilog-Mode
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/31/ascii-table/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ASCII Table</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Semiconductor/">Semiconductor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/" rel="tag">[object Object]</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ahb/" rel="tag">ahb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apb/" rel="tag">apb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axi/" rel="tag">axi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 13px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 12px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 10px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 10px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 12px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/20/%E9%85%8D%E7%BD%AEssh-%E9%99%90%E5%88%B6-%E5%85%81%E8%AE%B8IP/">RHEL7配置ssh - 限制/允许IP</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/16/Install-Xfce-Lightdm/">Install Xfce &amp; Lightdm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/10/EDA-Collections/">EDA Collections</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/09/Road-To-Fudan-University/">Road to Fudan University Through GaoKao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 nibaix<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

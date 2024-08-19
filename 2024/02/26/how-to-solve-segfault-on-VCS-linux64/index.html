@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>How to Solve Segfault on VCS Linux64 | nibaix&#39;s footprints</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Patching command set12345$ cd $VCS_HOME&#x2F;linux64&#x2F;lib$ cp -p libvcsnew.so libvcsnew.so.bak$ patcher.py libvcsnew.so$ cp -p libucapi.so libucapi.so.bak$ patcher.py libucapi.so PreambleThis is education p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Solve Segfault on VCS Linux64">
+<meta property="og:url" content="http://blog.nibaix.com/2024/02/26/how-to-solve-segfault-on-VCS-linux64/index.html">
+<meta property="og:site_name" content="nibaix&#39;s footprints">
+<meta property="og:description" content="Patching command set12345$ cd $VCS_HOME&#x2F;linux64&#x2F;lib$ cp -p libvcsnew.so libvcsnew.so.bak$ patcher.py libvcsnew.so$ cp -p libucapi.so libucapi.so.bak$ patcher.py libucapi.so PreambleThis is education p">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-02-26T11:40:05.000Z">
+<meta property="article:modified_time" content="2024-02-27T05:58:48.000Z">
+<meta property="article:author" content="nibaix">
+<meta property="article:tag" content="synopsys">
+<meta property="article:tag" content="vcs">
+<meta property="article:tag" content="verdi">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nibaix&#39;s footprints</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What&#39;s the story?</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-how-to-solve-segfault-on-VCS-linux64" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux64/" class="article-date">
+  <time class="dt-published" datetime="2024-02-26T11:40:05.000Z" itemprop="datePublished">2024-02-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      How to Solve Segfault on VCS Linux64
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Patching-command-set"><a href="#Patching-command-set" class="headerlink" title="Patching command set"></a>Patching command set</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VCS_HOME</span>/linux64/lib</span><br><span class="line">$ <span class="built_in">cp</span> -p libvcsnew.so libvcsnew.so.bak</span><br><span class="line">$ patcher.py libvcsnew.so</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br></pre></td></tr></table></figure>
+<h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p><em><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></em></p>
+<span id="more"></span>
+
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><h4 id="segfault-in-VCS-Q-2020-03-also-applicable-to-2019-2021-2022-and-etc"><a href="#segfault-in-VCS-Q-2020-03-also-applicable-to-2019-2021-2022-and-etc" class="headerlink" title="segfault in VCS Q-2020.03 (also applicable to 2019, 2021, 2022, and etc)"></a>segfault in VCS Q-2020.03 (also applicable to 2019, 2021, 2022, and etc)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Command line: ./simv</span><br><span class="line"></span><br><span class="line">--- Stack trace follows:</span><br><span class="line"></span><br><span class="line">Dumping VCS Annotated Stack:</span><br><span class="line"><span class="comment">#0  0x00002aaad3587659 in waitpid () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#1  0x00002aaad3504f62 in do_system () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x00002aaad3505311 in system () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#3  0x00002aaacb5883fb in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacb589ed3 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacb582822 in SNPSle_d35ca1ff70d465c2b9b1a72eee90a50630165806651fae96eee2bdb18305df1f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacdd162af in SNPSle_64133461705005bb725549e2e6fa1b3f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaacda6fbef in SNPSle_82244d58c54c18c70d63edc9becab634 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0x00002aaacb911904 in mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#10 0x00002aaacb8ed015 in snpsCheckFreeFunc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#11 0x00002aaacd8428f4 in SNPSle_540905a7b1b27611 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#12 0x00002aaacd84323a in SNPSle_9ff9b2dce8f1fde9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#13 0x00002aaacd841308 in SNPSle_36c2d46996c96605 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0x00002aaacd8417cd in SNPSle_2c2186f0f2f42415 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0x00002aaad2ca3ea5 in start_thread () from /lib64/libpthread.so.0</span></span><br><span class="line"><span class="comment">#17 0x00002aaad35c0b0d in clone () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#0  0x00002aaad35879fd in nanosleep () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#1  0x00002aaad3587894 in sleep () from /lib64/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x00002aaacd5e1b76 in SNPSle_95ae9cc2e78cc668673c60b8d88c4908 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#3  0x00002aaacd5e1d19 in SNPSle_92de4d0d4cf0d6931bc37e8d42a01d93 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacd5e008a in SNPSle_b76ef993ee82b3d58a5cadddbec8b67c () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacd5e032c in SNPSle_f28f24b8c84ac8f6e02e0b03bcd33aa8 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacd5cba31 in SNPSle_5e54eaa1df739f6ed4c1ff24a0986ee6 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaacd5cbc4c in SNPSle_058778405d2a6c04ddd18247ba7f440f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#8  0x00002aaacd5c67d2 in SNPSle_e376be325e61b493d6bd988d8077bacc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0x00002aaacd5c6c0f in SNPSle_a10369bdf7c5916ddd6866ce7e2e861c () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#10 0x00002aaacd5c73e1 in SNPSle_00b1acee80c770570cd75f9efbe24cca () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#11 0x00002aaacd5c7e6d in SNPSle_ba11b1edbd04051f5bb81b1861cdf84a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#12 0x00002aaacd5b6602 in SNPSle_2e65c0794628fc5af60953149776c29b () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#13 0x00002aaacd5b3262 in SNPSle_541f757be362289a7c9e5618c0ff28327846f8d3cc02839f () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0x00002aaacd5ad08a in SNPSle_c0de1345d5ab80930e06dd2b68f214c3 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0x00002aaacd5ad242 in SNPSle_25cd5712eacded5ff943afa9a81fcb09 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0x00002aaacdd34da9 in SNPSle_490598bfebcc8e8183ad3550288b1f82 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#17 0x00002aaacdd41962 in SNPSle_490598bfebcc8e81 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#18 0x00000000004171ff in main ()</span></span><br><span class="line"></span><br><span class="line">Process VmPeak: 916968 kb, VmSize: 851436 kb</span><br><span class="line">System Free Memory: 119334916 kb, System Free Swap: 4194300 kb</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="At-first-use-GDB"><a href="#At-first-use-GDB" class="headerlink" title="At first use GDB"></a>At first use GDB</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ gdb ./simv</span><br><span class="line">GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-120.el7</span><br><span class="line">Copyright (C) 2013 Free Software Foundation, Inc.</span><br><span class="line">License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;</span><br><span class="line">This is free software: you are free to change and redistribute it.</span><br><span class="line">There is NO WARRANTY, to the extent permitted by law.  Type <span class="string">&quot;show copying&quot;</span></span><br><span class="line">and <span class="string">&quot;show warranty&quot;</span> <span class="keyword">for</span> details.</span><br><span class="line">This GDB was configured as <span class="string">&quot;x86_64-redhat-linux-gnu&quot;</span>.</span><br><span class="line">For bug reporting instructions, please see:</span><br><span class="line">&lt;http://www.gnu.org/software/gdb/bugs/&gt;...</span><br><span class="line">Reading symbols from /test/run/simv...(no debugging symbols found)...<span class="keyword">done</span>.</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
+<p>Running of Debugging:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(gdb) run</span><br><span class="line">Starting program: /test/run/./simv </span><br><span class="line">[Thread debugging using libthread_db enabled]</span><br><span class="line">Using host libthread_db library <span class="string">&quot;/lib64/libthread_db.so.1&quot;</span>.</span><br><span class="line">process 8968 is executing new program: /test/run/simv</span><br><span class="line">Missing separate debuginfos, use: debuginfo-install glibc-2.17-325.el7_9.x86_64 libgcc-4.8.5-44.el7.x86_64 libstdc++-4.8.5-44.el7.x86_64 libxml2-2.9.1-6.el7.5.x86_64 numactl-libs-2.0.12-5.el7.x86_64 xz-libs-5.2.2-1.el7.x86_64 zlib-1.2.7-19.el7_9.x86_64</span><br><span class="line">[Thread debugging using libthread_db enabled]</span><br><span class="line">Using host libthread_db library <span class="string">&quot;/lib64/libthread_db.so.1&quot;</span>.</span><br><span class="line">Notice: timing checks disabled with +notimingcheck at compile-time</span><br><span class="line">[New Thread 0x2aaada311700 (LWP 9007)]</span><br><span class="line">[Thread 0x2aaada311700 (LWP 9007) exited]</span><br><span class="line">[New Thread 0x2aaada311700 (LWP 9014)]</span><br><span class="line"></span><br><span class="line">Program received signal SIGSEGV, Segmentation fault.</span><br><span class="line">[Switching to Thread 0x2aaada311700 (LWP 9014)]</span><br><span class="line">0x00002aaacb911904 <span class="keyword">in</span> mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span><br><span class="line">Missing separate debuginfos, use: debuginfo-install bzip2-libs-1.0.6-13.el7.x86_64 dbus-glib-0.100-7.el7.x86_64 dbus-libs-1.10.24-15.el7.x86_64 elfutils-libelf-0.176-5.el7.x86_64 elfutils-libs-0.176-5.el7.x86_64 glib2-2.56.1-8.el7.x86_64 glibc-2.17-325.el7_9.x86_64 libattr-2.4.46-13.el7.x86_64 libblkid-2.23.2-65.el7_9.1.x86_64 libcap-2.22-11.el7.x86_64 libffi-3.0.13-19.el7.x86_64 libgcc-4.8.5-44.el7.x86_64 libgcrypt-1.5.3-14.el7.x86_64 libgpg-error-1.12-3.el7.x86_64 libmount-2.23.2-65.el7_9.1.x86_64 libselinux-2.5-15.el7.x86_64 libstdc++-4.8.5-44.el7.x86_64 libuuid-2.23.2-65.el7_9.1.x86_64 libxml2-2.9.1-6.el7.5.x86_64 lz4-1.8.3-1.el7.x86_64 numactl-libs-2.0.12-5.el7.x86_64 pcre-8.32-17.el7.x86_64 systemd-libs-219-78.el7_9.3.x86_64 xz-libs-5.2.2-1.el7.x86_64 zlib-1.2.7-19.el7_9.x86_64</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
+<p>So we get segfault which should be fixed. To do it we need to get backtrace:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(gdb) backtrace </span><br><span class="line"><span class="comment">#0  0x00002aaacb911904 in mem_free () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#1  0x00002aaacb8ed015 in snpsCheckFreeFunc () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#2  0x00002aaacd8428f4 in SNPSle_540905a7b1b27611 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#3  0x00002aaacd84323a in SNPSle_9ff9b2dce8f1fde9 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#4  0x00002aaacd841308 in SNPSle_36c2d46996c96605 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#5  0x00002aaacd8417cd in SNPSle_2c2186f0f2f42415 () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#6  0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0x00002aaad2ca3ea5 in start_thread () from /lib64/libpthread.so.0</span></span><br><span class="line"><span class="comment">#8  0x00002aaad35c0b0d in clone () from /lib64/libc.so.6</span></span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
+<p>Attention on GDB frame 6  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(gdb) frame 6</span><br><span class="line"><span class="comment">#6  0x00002aaacd8418e3 in SNPSle_126d17af453e054a () from /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span></span><br><span class="line">(gdb) disas</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> SNPSle_126d17af453e054a:</span><br><span class="line">   0x00002aaacd8418c0 &lt;+0&gt;:	push   %rbx</span><br><span class="line">   0x00002aaacd8418c1 &lt;+1&gt;:	mov    %rdi,%rbx</span><br><span class="line">   0x00002aaacd8418c4 &lt;+4&gt;:	xor    %edi,%edi</span><br><span class="line">   0x00002aaacd8418c6 &lt;+6&gt;:	<span class="built_in">test</span>   %rbx,%rbx</span><br><span class="line">   0x00002aaacd8418c9 &lt;+9&gt;:	je     0x2aaacd8418de &lt;SNPSle_126d17af453e054a+30&gt;</span><br><span class="line">   0x00002aaacd8418cb &lt;+11&gt;:	mov    (%rbx),%eax</span><br><span class="line">   0x00002aaacd8418cd &lt;+13&gt;:	<span class="built_in">test</span>   %eax,%eax</span><br><span class="line">   0x00002aaacd8418cf &lt;+15&gt;:	je     0x2aaacd841930 &lt;SNPSle_126d17af453e054a+112&gt;</span><br><span class="line">   0x00002aaacd8418d1 &lt;+17&gt;:	imul   <span class="variable">$0xf4240</span>,%eax,%edi</span><br><span class="line">   0x00002aaacd8418d7 &lt;+23&gt;:	callq  0x2aaacce069c0 &lt;usleep@plt&gt;</span><br><span class="line">   0x00002aaacd8418dc &lt;+28&gt;:	jmp    0x2aaacd841930 &lt;SNPSle_126d17af453e054a+112&gt;</span><br><span class="line">   0x00002aaacd8418de &lt;+30&gt;:	callq  0x2aaacd8416d6 &lt;SNPSle_2c2186f0f2f42415&gt;</span><br><span class="line">=&gt; 0x00002aaacd8418e3 &lt;+35&gt;:	dec    %eax</span><br><span class="line">   0x00002aaacd8418e5 &lt;+37&gt;:	lea    0x3b55614(%rip),%rax        <span class="comment"># 0x2aaad1396f00</span></span><br><span class="line">   0x00002aaacd8418ec &lt;+44&gt;:	jne    0x2aaacd8418fa &lt;SNPSle_126d17af453e054a+58&gt;</span><br><span class="line">   0x00002aaacd8418ee &lt;+46&gt;:	movl   <span class="variable">$0x2</span>,0x88(%rax)</span><br></pre></td></tr></table></figure>
+<p>As you can see <strong>SNPSle_2c2186f0f2f42415</strong> doesn’t have return data. So I suppose we can ignore calling of this function.</p>
+<h4 id="Let’s-get-objdump"><a href="#Let’s-get-objdump" class="headerlink" title="Let’s get objdump"></a>Let’s get objdump</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ objdump -D /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so &amp;&gt; dump</span><br></pre></td></tr></table></figure>
+<p>VIM allows to open big dump file. After opening find - <strong>SNPSle_126d17af453e054a</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">0000000001aaf8c0 &lt;SNPSle_126d17af453e054a&gt;:</span><br><span class="line"> 1aaf8c0:   53                      push   %rbx</span><br><span class="line"> 1aaf8c1:   48 89 fb                mov    %rdi,%rbx</span><br><span class="line"> 1aaf8c4:   31 ff                   xor    %edi,%edi</span><br><span class="line"> 1aaf8c6:   48 85 db                <span class="built_in">test</span>   %rbx,%rbx</span><br><span class="line"> 1aaf8c9:   74 13                   je     1aaf8de &lt;SNPSle_126d17af453e054a+0x1e&gt;</span><br><span class="line"> 1aaf8cb:   8b 03                   mov    (%rbx),%eax</span><br><span class="line"> 1aaf8cd:   85 c0                   <span class="built_in">test</span>   %eax,%eax</span><br><span class="line"> 1aaf8cf:   74 5f                   je     1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8d1:   69 f8 40 42 0f 00       imul   <span class="variable">$0xf4240</span>,%eax,%edi</span><br><span class="line"> 1aaf8d7:   e8 e4 50 5c ff          callq  10749c0 &lt;usleep@plt&gt;</span><br><span class="line"> 1aaf8dc:   eb 52                   jmp    1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8de:   e8 f3 fd ff ff          callq  1aaf6d6 &lt;SNPSle_2c2186f0f2f42415&gt;</span><br><span class="line"> 1aaf8e3:   ff c8                   dec    %eax</span><br><span class="line"> 1aaf8e5:   48 8d 05 14 56 b5 03    lea    0x3b55614(%rip),%rax        <span class="comment"># 5604f00 &lt;.got+0x15808&gt;</span></span><br></pre></td></tr></table></figure>
+<p>We are interested in line - 1aaf8de:   <strong>e8 f3 fd ff ff</strong>          callq  1aaf6d6 <SNPSle_2c2186f0f2f42415><br>It’s callq instruction which we can replace by some nop instructions.<br>Nop instruction is <strong>0x90</strong> in hex code.</p>
+<p><strong>First of all you must make backup of VCS tool!</strong></p>
+<h4 id="Edit-binary-file-via-hexedit"><a href="#Edit-binary-file-via-hexedit" class="headerlink" title="Edit binary file via hexedit"></a>Edit binary file via hexedit</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexedit /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so</span><br></pre></td></tr></table></figure>
+<p>Find <strong>e8 f3 fd ff ff</strong> which is at <strong>1aaf8de</strong> address. And replace this bytes by 0x90! Save changes and close library.<br>So let’s check result via objdump:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ objdump -D /eda/synopsys/vcs/Q-2020.03/linux64/lib/libvcsnew.so &amp;&gt; new_dump</span><br></pre></td></tr></table></figure>
+<p>go to <strong>1aaf8de</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">0000000001aaf8c0 &lt;SNPSle_126d17af453e054a&gt;:</span><br><span class="line"> 1aaf8c0:   53                      push   %rbx</span><br><span class="line"> 1aaf8c1:   48 89 fb                mov    %rdi,%rbx</span><br><span class="line"> 1aaf8c4:   31 ff                   xor    %edi,%edi</span><br><span class="line"> 1aaf8c6:   48 85 db                <span class="built_in">test</span>   %rbx,%rbx</span><br><span class="line"> 1aaf8c9:   74 13                   je     1aaf8de &lt;SNPSle_126d17af453e054a+0x1e&gt;</span><br><span class="line"> 1aaf8cb:   8b 03                   mov    (%rbx),%eax</span><br><span class="line"> 1aaf8cd:   85 c0                   <span class="built_in">test</span>   %eax,%eax</span><br><span class="line"> 1aaf8cf:   74 5f                   je     1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8d1:   69 f8 40 42 0f 00       imul   <span class="variable">$0xf4240</span>,%eax,%edi</span><br><span class="line"> 1aaf8d7:   e8 e4 50 5c ff          callq  10749c0 &lt;usleep@plt&gt;</span><br><span class="line"> 1aaf8dc:   eb 52                   jmp    1aaf930 &lt;SNPSle_126d17af453e054a+0x70&gt;</span><br><span class="line"> 1aaf8de:   90                      nop</span><br><span class="line"> 1aaf8df:   90                      nop</span><br><span class="line"> 1aaf8e0:   90                      nop</span><br><span class="line"> 1aaf8e1:   90                      nop</span><br><span class="line"> 1aaf8e2:   90                      nop</span><br><span class="line"> 1aaf8e3:   ff c8                   dec    %eax</span><br><span class="line"> 1aaf8e5:   48 8d 05 14 56 b5 03    lea    0x3b55614(%rip),%rax        <span class="comment"># 5604f00 &lt;.got+0x15808&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ ./simv</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="variable">$finish</span> called from file <span class="string">&quot;/eda/synopsys/vcs/Q-2020.03//etc/uvm-1.2/base/uvm_root.svh&quot;</span>, line 613.</span><br><span class="line"><span class="variable">$finish</span> at simulation time 0.000ns</span><br><span class="line">           V C S   S i m u l a t i o n   R e p o r t </span><br><span class="line">Time: 0 ps</span><br><span class="line">CPU Time:      2.420 seconds;       Data structure size:  11.7Mb</span><br><span class="line">Sun Mar 20 09:31:25 2022</span><br></pre></td></tr></table></figure>
+<p>As you see we done it! We aren’t facing segmentation fault!</p>
+<h3 id="Automatization"><a href="#Automatization" class="headerlink" title="Automatization"></a>Automatization</h3><p>To patch library without manually operation there is <a target="_blank" rel="noopener" href="https://github.com/mperov/fixSegfaultVCS/blob/main/patcher.py">patcher.py</a><br>Attention, before running <strong>patcher.py</strong> make backup of library which you would like to patch.</p>
+<p>The patcher.py is applicable to the VCS vS-2019 and higher version. Besides <code>libvcsnew.so</code>, another libfile needs to be patched is <code>libucapi.so</code> which is called by VCS urg. </p>
+<p>The patcher.py is also applicable to the Verdi vS2019 and higher versions. The Verdi libfile <code>libucapi.so</code> needs to be patched otherwise the software crashes when viewing coverage by <code>verdi -cov</code>.</p>
+<p>The complete patching command set is as following.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VCS_HOME</span>/linux64/lib</span><br><span class="line">$ <span class="built_in">cp</span> -p libvcsnew.so libvcsnew.so.bak</span><br><span class="line">$ patcher.py libvcsnew.so</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br><span class="line">$ <span class="built_in">cd</span> <span class="variable">$VERDI_HOME</span>/platform/linux64/bin</span><br><span class="line">$ <span class="built_in">cp</span> -p libucapi.so libucapi.so.bak</span><br><span class="line">$ patcher.py libucapi.so</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2024/02/26/how-to-solve-segfault-on-VCS-linux64/" data-id="cm00hbt1x0079yqi4efqp1vzm" data-title="How to Solve Segfault on VCS Linux64" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          How to Solve Segfault on VCS Linux
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/02/22/Tmux-Cheat-Sheet/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Tmux Cheat Sheet</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Semiconductor/">Semiconductor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/" rel="tag">[object Object]</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ahb/" rel="tag">ahb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apb/" rel="tag">apb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axi/" rel="tag">axi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 13px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 12px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 10px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 10px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 12px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/20/%E9%85%8D%E7%BD%AEssh-%E9%99%90%E5%88%B6-%E5%85%81%E8%AE%B8IP/">RHEL7配置ssh - 限制/允许IP</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/16/Install-Xfce-Lightdm/">Install Xfce &amp; Lightdm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/10/EDA-Collections/">EDA Collections</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/09/Road-To-Fudan-University/">Road to Fudan University Through GaoKao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 nibaix<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

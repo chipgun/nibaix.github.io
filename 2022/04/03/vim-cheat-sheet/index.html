@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Vim Cheat Sheet | nibaix&#39;s footprints</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Global:h[elp] keyword - open help for keyword:sav[eas] file - save file as:clo[se] - close current pane:ter[minal] - open a terminal windowK - open man page for word under the cursor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim Cheat Sheet">
+<meta property="og:url" content="http://blog.nibaix.com/2022/04/03/vim-cheat-sheet/index.html">
+<meta property="og:site_name" content="nibaix&#39;s footprints">
+<meta property="og:description" content="Global:h[elp] keyword - open help for keyword:sav[eas] file - save file as:clo[se] - close current pane:ter[minal] - open a terminal windowK - open man page for word under the cursor">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-03T04:09:49.000Z">
+<meta property="article:modified_time" content="2022-07-09T12:50:10.000Z">
+<meta property="article:author" content="nibaix">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nibaix&#39;s footprints</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What&#39;s the story?</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-vim-cheat-sheet" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/03/vim-cheat-sheet/" class="article-date">
+  <time class="dt-published" datetime="2022-04-03T04:09:49.000Z" itemprop="datePublished">2022-04-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Program/">Program</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Vim Cheat Sheet
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><p><strong>:h[elp] keyword</strong> - open help for keyword<br><strong>:sav[eas] file</strong> - save file as<br><strong>:clo[se]</strong> - close current pane<br><strong>:ter[minal]</strong> - open a terminal window<br><strong>K</strong> - open man page for word under the cursor</p>
+<span id="more"></span>
+
+<p><code>Tip: Run vimtutor in a terminal to learn the first Vim commands.</code></p>
+<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><p><strong>h</strong> - move cursor left<br><strong>j</strong> - move cursor down<br><strong>k</strong> - move cursor up<br><strong>l</strong> - move cursor right<br><strong>gj</strong> - move cursor down (multi-line text)<br><strong>gk</strong> - move cursor up (multi-line text)<br><strong>H</strong> - move to top of screen<br><strong>M</strong> - move to middle of screen<br><strong>L</strong> - move to bottom of screen<br><strong>w</strong> - jump forwards to the start of a word<br><strong>W</strong> - jump forwards to the start of a word (words can contain punctuation)<br><strong>e</strong> - jump forwards to the end of a word<br><strong>E</strong> - jump forwards to the end of a word (words can contain punctuation)<br><strong>b</strong> - jump backwards to the start of a word<br><strong>B</strong> - jump backwards to the start of a word (words can contain punctuation)<br><strong>ge</strong> - jump backwards to the end of a word<br><strong>gE</strong> - jump backwards to the end of a word (words can contain punctuation)<br><strong>%</strong> - move to matching character (default supported pairs: ‘()’, ‘{}’, ‘[]’ - use <code>:h matchpairs</code> in vim for more info)<br><strong>0</strong> - jump to the start of the line<br><strong>^</strong> - jump to the first non-blank character of the line<br><strong>$</strong> - jump to the end of the line<br><strong>g_</strong> - jump to the last non-blank character of the line<br><strong>gg</strong> - go to the first line of the document<br><strong>G</strong> - go to the last line of the document<br><strong>5gg or 5G</strong> - go to line 5<br><strong>gd</strong> - move to local declaration<br><strong>gD</strong> - move to global declaration<br><strong>fx</strong> - jump to next occurrence of character x<br><strong>tx</strong> - jump to before next occurrence of character x<br><strong>Fx</strong> - jump to the previous occurrence of character x<br><strong>Tx</strong> - jump to after previous occurrence of character x<br><strong>;</strong> - repeat previous f, t, F or T movement<br><strong>,</strong> - repeat previous f, t, F or T movement, backwards<br><strong>}</strong> - jump to next paragraph (or function&#x2F;block, when editing code)<br><strong>{</strong> - jump to previous paragraph (or function&#x2F;block, when editing code)<br><strong>zz</strong> - center cursor on screen<br><strong>Ctrl + e</strong> - move screen down one line (without moving cursor)<br><strong>Ctrl + y</strong> - move screen up one line (without moving cursor)<br><strong>Ctrl + b</strong> - move back one full screen<br><strong>Ctrl + f</strong> - move forward one full screen<br><strong>Ctrl + d</strong> - move forward 1&#x2F;2 a screen<br><strong>Ctrl + u</strong> - move back 1&#x2F;2 a screen</p>
+<p><code>Tip: Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.</code></p>
+<h2 id="Insert-mode-inserting-appending-text"><a href="#Insert-mode-inserting-appending-text" class="headerlink" title="Insert mode - inserting&#x2F;appending text"></a>Insert mode - inserting&#x2F;appending text</h2><p><strong>i</strong> - insert before the cursor<br><strong>I</strong> - insert at the beginning of the line<br><strong>a</strong> - insert (append) after the cursor<br><strong>A</strong> - insert (append) at the end of the line<br><strong>o</strong> - append (open) a new line below the current line<br><strong>O</strong> - append (open) a new line above the current line<br><strong>ea</strong> - insert (append) at the end of the word<br><strong>Ctrl + h</strong> - delete the character before the cursor during insert mode<br><strong>Ctrl + w</strong> - delete word before the cursor during insert mode<br><strong>Ctrl + j</strong> - begin new line during insert mode<br><strong>Ctrl + t</strong> - indent (move right) line one shiftwidth during insert mode<br><strong>Ctrl + d</strong> - de-indent (move left) line one shiftwidth during insert mode<br><strong>Ctrl + n</strong> - insert (auto-complete) next match before the cursor during insert mode<br><strong>Ctrl + p</strong> - insert (auto-complete) previous match before the cursor during insert mode<br><strong>Ctrl + rx</strong> - insert the contents of register x<br><strong>Ctrl + ox</strong> - Temporarily enter normal mode to issue one normal-mode command x.<br><strong>Esc</strong> - exit insert mode</p>
+<h2 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h2><p><strong>r</strong> - replace a single character.<br><strong>R</strong> - replace more than one character, until ESC is pressed.<br><strong>J</strong> - join line below to the current one with one space in between<br><strong>gJ</strong> - join line below to the current one without space in between<br><strong>gwip</strong> - reflow paragraph<br><strong>g~</strong> - switch case up to motion<br><strong>gu</strong> - change to lowercase up to motion<br><strong>gU</strong> - change to uppercase up to motion<br><strong>cc</strong> - change (replace) entire line<br><strong>c$ or C</strong> - change (replace) to the end of the line<br><strong>ciw</strong> - change (replace) entire word<br><strong>cw or ce</strong> - change (replace) to the end of the word<br><strong>s</strong> - delete character and substitute text<br><strong>S</strong> - delete line and substitute text (same as cc)<br><strong>xp</strong> - transpose two letters (delete and paste)<br><strong>u</strong> - undo<br><strong>U</strong> - restore (undo) last changed line<br><strong>Ctrl + r</strong> - redo<br><strong>.</strong> - repeat last command</p>
+<h2 id="Marking-text-visual-mode"><a href="#Marking-text-visual-mode" class="headerlink" title="Marking text (visual mode)"></a>Marking text (visual mode)</h2><p><strong>v</strong> - start visual mode, mark lines, then do a command (like y-yank)<br><strong>V</strong> - start linewise visual mode<br><strong>o</strong> - move to other end of marked area<br><strong>Ctrl + v</strong> - start visual block mode<br><strong>O</strong> - move to other corner of block<br><strong>aw</strong> - mark a word<br><strong>ab</strong> - a block with ()<br><strong>aB</strong> - a block with {}<br><strong>at</strong> - a block with &lt;&gt; tags<br><strong>ib</strong> - inner block with ()<br><strong>iB</strong> - inner block with {}<br><strong>it</strong> - inner block with &lt;&gt; tags<br><strong>Esc</strong> - exit visual mode</p>
+<p><code>Tip: Instead of b or B one can also use ( or &#123; respectively.</code></p>
+<h2 id="Visual-commands"><a href="#Visual-commands" class="headerlink" title="Visual commands"></a>Visual commands</h2><p><strong>&gt;</strong> - shift text right<br><strong>&lt;</strong> - shift text left<br><strong>y</strong> - yank (copy) marked text<br><strong>d</strong> - delete marked text<br><strong>~</strong> - switch case<br><strong>u</strong> - change marked text to lowercase<br><strong>U</strong> - change marked text to uppercase</p>
+<h2 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h2><p><strong>:reg[isters]</strong> - show registers content<br><strong>“xy</strong> - yank into register x<br><strong>“xp</strong> - paste contents of register x<br><strong>“+y</strong> - yank into the system clipboard register<br><strong>“+p</strong> - paste from the system clipboard register</p>
+<p><code>Tip: Registers are being stored in ~/.viminfo, and will be loaded again on next restart of vim.</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Tip: Special registers:</span><br><span class="line"> 0 - last yank</span><br><span class="line"> &quot; - unnamed register, last delete or yank</span><br><span class="line"> % - current file name</span><br><span class="line"> \# - alternate file name</span><br><span class="line"> * - clipboard contents (X11 primary)</span><br><span class="line"> + - clipboard contents (X11 clipboard)</span><br><span class="line"> / - last search pattern</span><br><span class="line"> : - last command-line</span><br><span class="line"> . - last inserted text</span><br><span class="line"> - - last small (less than a line) delete</span><br><span class="line"> = - expression register</span><br><span class="line"> _ - black hole register</span><br></pre></td></tr></table></figure>
+
+<h2 id="Marks-and-positions"><a href="#Marks-and-positions" class="headerlink" title="Marks and positions"></a>Marks and positions</h2><p><strong>:marks</strong> - list of marks<br><strong>ma</strong> - set current position for mark A<br>`a - jump to position of mark A<br><strong>y`a</strong> - yank text to position of mark A<br>`0 - go to the position where Vim was previously exited<br><strong>`&quot;</strong> - go to the position when last editing this file<br>`. - go to the position of the last change in this file<br><strong>``</strong> - go to the position before the last jump<br><strong>:ju[mps]</strong> - list of jumps<br><strong>Ctrl + i</strong> - go to newer position in jump list<br><strong>Ctrl + o</strong> - go to older position in jump list<br><strong>:changes</strong> - list of changes<br><strong>g,</strong> - go to newer position in change list<br><strong>g;</strong> - go to older position in change list<br><strong>Ctrl + ]</strong> - jump to the tag under cursor</p>
+<p><code>Tip: To jump to a mark you can either use a backtick (`) or an apostrophe (&#39;). Using an apostrophe jumps to the beginning (first non-blank) of the line holding the mark.</code></p>
+<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><p><strong>qa</strong> - record macro a<br><strong>q</strong> - stop recording macro<br><strong>@a</strong> - run macro a<br><strong>@@</strong> - rerun last run macro</p>
+<h2 id="Cut-and-paste"><a href="#Cut-and-paste" class="headerlink" title="Cut and paste"></a>Cut and paste</h2><p><strong>yy</strong> - yank (copy) a line<br><strong>2yy</strong> - yank (copy) 2 lines<br><strong>yw</strong> - yank (copy) the characters of the word from the cursor position to the start of the next word<br><strong>yiw</strong> - yank (copy) word under the cursor<br><strong>yaw</strong> - yank (copy) word under the cursor and the space after or before it<br><strong>y$ or Y</strong> - yank (copy) to end of line<br><strong>p</strong> - put (paste) the clipboard after cursor<br><strong>P</strong> - put (paste) before cursor<br><strong>gp</strong> - put (paste) the clipboard after cursor and leave cursor after the new text<br><strong>gP</strong> - put (paste) before cursor and leave cursor after the new text<br><strong>dd</strong> - delete (cut) a line<br><strong>2dd</strong> - delete (cut) 2 lines<br><strong>dw</strong> - delete (cut) the characters of the word from the cursor position to the start of the next word<br><strong>diw</strong> - delete (cut) word under the cursor<br><strong>daw</strong> - delete (cut) word under the cursor and the space after or before it<br><strong>d$ or D</strong> - delete (cut) to the end of the line<br><strong>x</strong> - delete (cut) character</p>
+<h2 id="Indent-text"><a href="#Indent-text" class="headerlink" title="Indent text"></a>Indent text</h2><p><strong>&gt;&gt;</strong> - indent (move right) line one shiftwidth<br><strong>&lt;&lt;** - de-indent (move left) line one shiftwidth<br>**&gt;%</strong> - indent a block with () or {} (cursor on brace)<br><strong>&gt;ib</strong> - indent inner block with ()<br><strong>&gt;at</strong> - indent a block with &lt;&gt; tags<br><strong>3&#x3D;&#x3D;</strong> - re-indent 3 lines<br><strong>&#x3D;%</strong> - re-indent a block with () or {} (cursor on brace)<br><strong>&#x3D;iB</strong> - re-indent inner block with {}<br><strong>gg&#x3D;G</strong> - re-indent entire buffer<br><strong>]p</strong> - paste and adjust indent to current line</p>
+<h2 id="Exiting"><a href="#Exiting" class="headerlink" title="Exiting"></a>Exiting</h2><p><strong>:w</strong> - write (save) the file, but don’t exit<br><strong>:w !sudo tee %</strong> - write out the current file using sudo<br><strong>:wq or :x or ZZ</strong> - write (save) and quit<br><strong>:q</strong> - quit (fails if there are unsaved changes)<br><strong>:q! or ZQ</strong> - quit and throw away unsaved changes<br><strong>:wqa</strong> - write (save) and quit on all tabs</p>
+<h2 id="Search-and-replace"><a href="#Search-and-replace" class="headerlink" title="Search and replace"></a>Search and replace</h2><p><strong>&#x2F;pattern</strong> - search for pattern<br><strong>?pattern</strong> - search backward for pattern<br><strong>\vpattern</strong> - ‘very magic’ pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)<br><strong>n</strong> - repeat search in same direction<br><strong>N</strong> - repeat search in opposite direction<br><strong>:%s&#x2F;old&#x2F;new&#x2F;g</strong> - replace all old with new throughout file<br><strong>:%s&#x2F;old&#x2F;new&#x2F;gc</strong> - replace all old with new throughout file with confirmations<br><strong>:noh[lsearch]</strong> - remove highlighting of search matches</p>
+<h2 id="Search-in-multiple-files"><a href="#Search-in-multiple-files" class="headerlink" title="Search in multiple files"></a>Search in multiple files</h2><p><strong>:vim[grep] &#x2F;pattern&#x2F; {<code>&#123;file&#125;</code>}</strong> - search for pattern in multiple files, e.g. :vim[grep] &#x2F;foo&#x2F;\ **&#x2F;*<br><strong>:cn[ext]</strong> - jump to the next match<br><strong>:cp[revious]</strong> - jump to the previous match<br><strong>:cope[n]</strong> - open a window containing the list of matches<br><strong>:ccl[ose]</strong> - close the quickfix window</p>
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p><strong>:tabnew or :tabnew {page.words.file}</strong> - open a file in a new tab<br><strong>Ctrl + wT</strong> - move the current split window into its own tab<br><strong>gt or :tabn[ext]</strong> - move to the next tab<br><strong>gT or :tabp[revious]</strong> - move to the previous tab<br><strong>#gt</strong> - move to tab number #<br><strong>:tabm[ove] #</strong> - move current tab to the #th position (indexed from 0)<br><strong>:tabc[lose]</strong> - close the current tab and all its windows<br><strong>:tabo[nly]</strong> - close all tabs except for the current one<br><strong>:tabdo command</strong> - run the <code>command</code> on all tabs (e.g. <code>:tabdo q</code> - closes all opened tabs)</p>
+<h2 id="Working-with-multiple-files"><a href="#Working-with-multiple-files" class="headerlink" title="Working with multiple files"></a>Working with multiple files</h2><p><strong>:e[dit] file</strong> - edit a file in a new buffer<br><strong>:bn[ext]</strong> - go to the next buffer<br><strong>:bp[revious]</strong> - go to the previous buffer<br><strong>:bd[elete]</strong> - delete a buffer (close a file)<br><strong>:b[uffer]#</strong> - go to a buffer by index #<br><strong>:b[uffer] file</strong> - go to a buffer by file<br><strong>:ls or :buffers</strong> - list all open buffers<br><strong>:sp[lit] file</strong> - open a file in a new buffer and split window<br><strong>:vs[plit] file</strong> - open a file in a new buffer and vertically split window<br><strong>:vert[ical] ba[ll]</strong> - edit all buffers as vertical windows<br><strong>:tab ba[ll]</strong> - edit all buffers as tabs<br><strong>Ctrl + ws</strong> - split window<br><strong>Ctrl + wv</strong> - split window vertically<br><strong>Ctrl + ww</strong> - switch windows<br><strong>Ctrl + wq</strong> - quit a window<br><strong>Ctrl + wx</strong> - exchange current window with next one<br><strong>Ctrl + w&#x3D;</strong> - make all windows equal height &amp; width<br><strong>Ctrl + wh</strong> - move cursor to the left window (vertical split)<br><strong>Ctrl + wl</strong> - move cursor to the right window (vertical split)<br><strong>Ctrl + wj</strong> - move cursor to the window below (horizontal split)<br><strong>Ctrl + wk</strong> - move cursor to the window above (horizontal split)<br><strong>Ctrl + wH</strong> - make current window full height at far left (leftmost vertical window)<br><strong>Ctrl + wL</strong> - make current window full height at far right (rightmost vertical window)<br><strong>Ctrl + wJ</strong> - make current window full width at the very bottom (bottommost horizontal window)<br><strong>Ctrl + wK</strong> - make current window full width at the very top (topmost horizontal window)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2022/04/03/vim-cheat-sheet/" data-id="cm00hbt2w00ajyqi40k979yb7" data-title="Vim Cheat Sheet" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/" rel="tag">vim</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/03/write-formatting-characters-in-markdown/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Write Formatting Characters in Markdown
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/03/what-is-entropy/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">What Is Entropy?</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Semiconductor/">Semiconductor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/" rel="tag">[object Object]</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ahb/" rel="tag">ahb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apb/" rel="tag">apb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axi/" rel="tag">axi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 13px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 12px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 10px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 10px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 12px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/20/%E9%85%8D%E7%BD%AEssh-%E9%99%90%E5%88%B6-%E5%85%81%E8%AE%B8IP/">RHEL7配置ssh - 限制/允许IP</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/16/Install-Xfce-Lightdm/">Install Xfce &amp; Lightdm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/10/EDA-Collections/">EDA Collections</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/09/Road-To-Fudan-University/">Road to Fudan University Through GaoKao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 nibaix<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

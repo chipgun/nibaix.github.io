@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Set Up a Cron Job in Linux | nibaix&#39;s footprints</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="IntroductionThe Cron daemon is a built-in Linux utility that runs processes on your system at a scheduled time. Cron reads the crontab (cron tables) for predefined commands and scripts. By using a spe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Set Up a Cron Job in Linux">
+<meta property="og:url" content="http://blog.nibaix.com/2022/05/28/set-up-a-cron-job-in-linux/index.html">
+<meta property="og:site_name" content="nibaix&#39;s footprints">
+<meta property="og:description" content="IntroductionThe Cron daemon is a built-in Linux utility that runs processes on your system at a scheduled time. Cron reads the crontab (cron tables) for predefined commands and scripts. By using a spe">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-28T08:11:18.000Z">
+<meta property="article:modified_time" content="2023-08-07T10:15:52.000Z">
+<meta property="article:author" content="nibaix">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="starred">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nibaix&#39;s footprints</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What&#39;s the story?</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-set-up-a-cron-job-in-linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/28/set-up-a-cron-job-in-linux/" class="article-date">
+  <time class="dt-published" datetime="2022-05-28T08:11:18.000Z" itemprop="datePublished">2022-05-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Set Up a Cron Job in Linux
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The Cron daemon is a built-in Linux utility that runs processes on your system at a scheduled time. Cron reads the <strong>crontab</strong> (cron tables) for predefined commands and scripts.</p>
+<p>By using a specific syntax, you can configure a <em><strong>cron job</strong></em> to schedule scripts or other commands to run automatically.</p>
+<p><strong>This guide shows you how to set up a cron job in Linux, with examples.</strong></p>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>A system running Linux</li>
+<li>Access to a command line&#x2F;terminal window (<strong>Ctrl</strong>–<strong>Alt</strong>–<strong>T</strong> or <strong>Ctrl</strong>–<strong>Alt</strong>–<strong>F2</strong>)</li>
+<li>A user account with root or <strong>sudo</strong> privileges</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="Basic-Crontab-Syntax"><a href="#Basic-Crontab-Syntax" class="headerlink" title="Basic Crontab Syntax"></a>Basic Crontab Syntax</h2><p><em><strong>Cron</strong></em> reads the configuration files for a list of commands to execute. The daemon uses a specific syntax to interpret the lines in the <em><strong>crontab</strong></em> configuration tables.</p>
+<p>To be able to set up a cron job, we need to understand the basic elements that make up this syntax. The standard form for a crontab line is as follows:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b c d e /directory/command output</span><br></pre></td></tr></table></figure>
+
+<p>So, <strong>the parts of a <code>cron</code> command</strong> are:</p>
+<ol>
+<li><p>The first five fields <strong><code>a b c d e</code></strong> specify the time&#x2F;date and recurrence of the job.</p>
+</li>
+<li><p>In the second section, the <strong><code>/directory/command</code></strong> specifies the location and script you want to run.</p>
+</li>
+<li><p>The final segment <strong><code>output</code></strong> is optional. It defines how the system notifies the user of the job completion.</p>
+</li>
+</ol>
+<h3 id="1-Cron-Job-Time-Format"><a href="#1-Cron-Job-Time-Format" class="headerlink" title="1. Cron Job Time Format"></a>1. Cron Job Time Format</h3><p>The first five fields in the command represent numbers that define when and how often the command runs. A space separates each position, which represents a specific value.</p>
+<p>The table below summarizes possible values for the fields and the example syntax:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Possible Values</th>
+<th>S.y.n.t.a.x</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[a] – Minute</td>
+<td>0 – 59</td>
+<td><strong>7 * * * *</strong></td>
+<td>The cron job is initiated every time the system clock shows 7 in the minute’s position.</td>
+</tr>
+<tr>
+<td>[b] – Hour</td>
+<td>0 – 23</td>
+<td><strong>0 7 * * *</strong></td>
+<td>The cron job runs any time the system clock shows 7am (7pm would be coded as 19).</td>
+</tr>
+<tr>
+<td>[c] – Day</td>
+<td>0 – 31</td>
+<td><strong>0 0 7 * *</strong></td>
+<td>The day of the month is 7 which means that the job runs every 7th day of the month.</td>
+</tr>
+<tr>
+<td>[d] – Month</td>
+<td>0 &#x3D; none and 12 &#x3D; December</td>
+<td><strong>0 0 0 7 *</strong></td>
+<td>The numerical month is 7 which determines that the job runs only in July.</td>
+</tr>
+<tr>
+<td>[e] – Day of the Week</td>
+<td>0 &#x3D; Sunday and 7 &#x3D; Sunday</td>
+<td><strong>0 0 * * 7</strong></td>
+<td>7 in the current position means that the job would only run on Sundays.</td>
+</tr>
+</tbody></table>
+<h3 id="2-Command-to-Execute"><a href="#2-Command-to-Execute" class="headerlink" title="2. Command to Execute"></a>2. Command to Execute</h3><p>The next section specifies the command to execute. It represents the exact directory and filename of the script or commands you want cron to complete. For example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/root/backup.sh</span><br></pre></td></tr></table></figure>
+
+<p>In our example, the command looks at the root directory of the system and runs the *<strong>backup.sh*</strong> script. You may specify any script or command you wish.</p>
+<h3 id="3-Output-Optional"><a href="#3-Output-Optional" class="headerlink" title="3. Output (Optional)"></a>3. Output (Optional)</h3><p>By default, <strong><code>cron</code></strong> sends an email to the owner of the crontab file when it runs. This is a convenient way to keep track of tasks. Keep in mind that regular or minor tasks can fill up your inbox quickly.</p>
+<p>As this is an optional feature, you can prevent that scenario by disabling the output email. To turn off email output, add the following string, <strong><code>&gt;/dev/null 2&gt;&amp;1</code>,</strong> after the timing and command fields.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * * * * directory/command &gt;/dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Using-Operators-Optional"><a href="#4-Using-Operators-Optional" class="headerlink" title="4. Using Operators (Optional)"></a>4. Using Operators (Optional)</h3><p>For efficiency, cron syntax also uses operators. Operators are special characters that perform operations on the provided values in the cron field.</p>
+<ul>
+<li><strong>An asterisk (*)</strong> stands for all values. Use this operator to keep tasks running during all months, or all days of the week.</li>
+<li><strong>A comma (,)</strong> specifies separate individual values.</li>
+<li><strong>A dash (–)</strong> indicates a range of values.</li>
+<li><strong>A forward-slash (&#x2F;)</strong> is used to divide a value into steps. (*&#x2F;2 would be every other value, *&#x2F;3 would be every third, *&#x2F;10 would be every tenth, etc.)</li>
+</ul>
+<h2 id="Setting-Up-a-Cron-Job"><a href="#Setting-Up-a-Cron-Job" class="headerlink" title="Setting Up a Cron Job"></a>Setting Up a Cron Job</h2><p>To configure a cron job, open the crontab with a preferred text editor and input the syntax for the command you want to run.</p>
+<h3 id="1-How-to-Edit-the-crontab-File"><a href="#1-How-to-Edit-the-crontab-File" class="headerlink" title="1. How to Edit the crontab File?"></a>1. How to Edit the crontab File?</h3><p>To open the crontab configuration file for the current user, enter the following command in your terminal window:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab –e</span><br></pre></td></tr></table></figure>
+
+<p>You can add any number of scheduled tasks, one per line.</p>
+<p>Once you have finished adding tasks, <strong>save the file</strong> and exit. The cron daemon will read and execute the instructions provided.</p>
+<p>Remember, Cron does not need to be restarted to apply changes.</p>
+<h3 id="2-Edit-crontab-for-a-Different-User"><a href="#2-Edit-crontab-for-a-Different-User" class="headerlink" title="2. Edit crontab for a Different User"></a>2. Edit crontab for a Different User</h3><p>To edit the crontab for a another user, enter the following command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab –u other_username –e</span><br></pre></td></tr></table></figure>
+
+<h2 id="Cron-Job-Examples"><a href="#Cron-Job-Examples" class="headerlink" title="Cron Job Examples"></a>Cron Job Examples</h2><p>When specifying jobs, use the asterisk to specify all values. Putting a value in one of the fields only runs the command on that value. For example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 2 0 * 4 /root/backup.sh</span><br></pre></td></tr></table></figure>
+
+<p>Even though it’s set to run at 2 am, it only runs when the first of the month (0) falls on a Wednesday (4). If you change to the following:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 2 0 * * /root/backup.sh</span><br></pre></td></tr></table></figure>
+
+<p>The command runs the first of every month at 2 am. The following table provides a few basic commands using the <strong>&#x2F;root&#x2F;backup.sh</strong> file from our previous examples.</p>
+<table>
+<thead>
+<tr>
+<th>Cron Job</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Run Cron Job Every Minute</td>
+<td>* * * * * &#x2F;root&#x2F;backup.sh</td>
+</tr>
+<tr>
+<td>Run Cron Job Every 30 Minutes</td>
+<td>30 * * * * &#x2F;root&#x2F;backup.sh</td>
+</tr>
+<tr>
+<td>Run Cron Job Every Hour</td>
+<td>0 * * * *&#x2F;root&#x2F;backup.sh</td>
+</tr>
+<tr>
+<td>Run Cron Job Every Day at Midnight</td>
+<td>0 0 * * * &#x2F;root&#x2F;backup.sh</td>
+</tr>
+<tr>
+<td>Run Cron Job at 2 am Every Day</td>
+<td>0 2 * * * &#x2F;root&#x2F;backup.sh</td>
+</tr>
+<tr>
+<td>Run Cron Job Every 1st of the Month</td>
+<td>0 0 1 * * &#x2F;root&#x2F;backup.sh</td>
+</tr>
+<tr>
+<td>Run Cron Job Every 15th of the Month</td>
+<td>0 0 15 * * &#x2F;root&#x2F;backup.sh</td>
+</tr>
+<tr>
+<td>Run Cron Job on December 1st – Midnight</td>
+<td>0 0 0 12 * &#x2F;root&#x2F;backup.sh</td>
+</tr>
+<tr>
+<td>Run Cron Job on Saturday at Midnight</td>
+<td>0 0 * * 6 &#x2F;root&#x2F;backup.sh</td>
+</tr>
+</tbody></table>
+<h2 id="Using-Special-Characters"><a href="#Using-Special-Characters" class="headerlink" title="Using Special Characters"></a>Using Special Characters</h2><p>You can use the slash to divide a time string into steps. To run a backup every 15 minutes:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/15 * * * *</span><br></pre></td></tr></table></figure>
+
+<p>The <strong><code>*</code></strong> means all values, and the <strong><code>/15</code></strong> counts and repeats every 15th minute.</p>
+<p>Use the dash character to specify a range. To run the code every weekday at 4 am:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 4 * * 1-5 /root/backup.sh</span><br></pre></td></tr></table></figure>
+
+<p>In this case, <strong><code>1-5</code></strong> specifies Monday – Friday.</p>
+<p>Use a comma to specify individual instances when the code should run:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 4 * * 2,4 /root/backup.sh</span><br></pre></td></tr></table></figure>
+
+<p>This would run the code at 4 am on Tuesday and Thursday.</p>
+<p>Some wildcards can be combined. Make the command run every other day at 37 minutes past the hour:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">37 1-23/2 * * * /root/backup.sh</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>1-23</code></strong> specifies the range of hours, <strong><code>/2</code></strong> sets the interval to every other hour.</p>
+<h2 id="List-Existing-Cron-Jobs"><a href="#List-Existing-Cron-Jobs" class="headerlink" title="List Existing Cron Jobs"></a>List Existing Cron Jobs</h2><p>You can <a target="_blank" rel="noopener" href="https://phoenixnap.com/kb/how-to-list-display-view-all-cron-jobs-linux">list all cron jobs on your system</a> without opening the crontab configuration file. Type in the following command in a terminal window:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab –l</span><br></pre></td></tr></table></figure>
+
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>You now have a good understanding of how to use <strong><code>cron</code></strong> to schedule tasks in Linux. Use the examples presented in this tutorial to <strong>create and schedule cron jobs</strong> on your system. Over time, expand the tasks by using special characters to automate most of your mundane tasks.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2022/05/28/set-up-a-cron-job-in-linux/" data-id="cm00hbt2i009byqi40axrchnl" data-title="Set Up a Cron Job in Linux" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/starred/" rel="tag">starred</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/29/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-28/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          上海每日疫情走势2022-5-28
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">上海每日疫情走势2022-5-23</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Semiconductor/">Semiconductor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/" rel="tag">[object Object]</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ahb/" rel="tag">ahb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apb/" rel="tag">apb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axi/" rel="tag">axi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 13px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 12px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 10px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 10px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 12px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/20/%E9%85%8D%E7%BD%AEssh-%E9%99%90%E5%88%B6-%E5%85%81%E8%AE%B8IP/">RHEL7配置ssh - 限制/允许IP</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/16/Install-Xfce-Lightdm/">Install Xfce &amp; Lightdm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/10/EDA-Collections/">EDA Collections</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/09/Road-To-Fudan-University/">Road to Fudan University Through GaoKao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 nibaix<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

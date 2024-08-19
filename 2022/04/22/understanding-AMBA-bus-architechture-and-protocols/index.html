@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Understanding AMBA Architechture and Protocols | nibaix&#39;s footprints</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The Advanced Micro controller Bus Architecture (AMBA) bus protocols is a set of interconnect specifications from ARM that standardizes on chip communication mechanisms between various functional block">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Understanding AMBA Architechture and Protocols">
+<meta property="og:url" content="http://blog.nibaix.com/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/index.html">
+<meta property="og:site_name" content="nibaix&#39;s footprints">
+<meta property="og:description" content="The Advanced Micro controller Bus Architecture (AMBA) bus protocols is a set of interconnect specifications from ARM that standardizes on chip communication mechanisms between various functional block">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/0U-61cb7vuTjzUts5.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1rAeAWtd2K3bWLw-59IKGbQ.png">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1Mmu5nD-cdqBqL0LlI_w-sg.png">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1pWCEylvjOZXTQmOhiwitrQ.png">
+<meta property="article:published_time" content="2022-04-22T05:45:23.000Z">
+<meta property="article:modified_time" content="2023-12-07T13:55:24.000Z">
+<meta property="article:author" content="nibaix">
+<meta property="article:tag" content="arm">
+<meta property="article:tag" content="amba">
+<meta property="article:tag" content="apb">
+<meta property="article:tag" content="axi">
+<meta property="article:tag" content="ahb">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.nibaix.com/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/0U-61cb7vuTjzUts5.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nibaix&#39;s footprints</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What&#39;s the story?</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-understanding-AMBA-bus-architechture-and-protocols" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/" class="article-date">
+  <time class="dt-published" datetime="2022-04-22T05:45:23.000Z" itemprop="datePublished">2022-04-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Understanding AMBA Architechture and Protocols
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>The Advanced Micro controller Bus Architecture (<strong>AMBA</strong>) bus protocols is a set of interconnect specifications from ARM that standardizes on chip communication mechanisms between various functional blocks (or IP) for building high performance SOC designs. These designs typically have one or more micro controllers or microprocessors along with several other components — internal memory or external memory bridge, DSP, DMA, accelerators and various other peripherals like USB, UART, PCIE, I2C etc — all integrated on a single chip. The primary motivation of AMBA protocols is to have a standard and efficient way to interconnecting these blocks with re-use across multiple designs.</p>
+<span id="more"></span>
+
+<p>The first step in learning AMBA protocols is to understand where exactly these different protocols are used , how these evolved and how all of them fit into a SOC design.Following diagram (<em>reference from the AMBA 2.0 spec</em>) illustrates a traditional AMBA based SOC design that uses the AHB (Advanced High performance) or ASB (Advanced System Bus) protocols for high bandwidth interconnect and an APB (Advanced Peripheral Bus) protocol for low bandwidth peripheral interconnects.</p>
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/0U-61cb7vuTjzUts5.jpg" class="">
+
+<p>With increasing number of functional blocks (IP) integrating into SOC designs, the shared bus protocols (AHB&#x2F;ASB) started hitting limitations sooner and in 2003 , the new revision of AMBA 3 introduced a point to point connectivity protocol — AXI (<em>Advanced Extensible Interface</em>). Further in 2010, an enhanced version was introduced — A<em>XI 4.</em> Following diagram illustrates this evolution of protocols along with the SOC design trends in industry.</p>
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1rAeAWtd2K3bWLw-59IKGbQ.png" class="">
+
+<p>Following diagram illustrates how an AXI interconnect can be used to build an SOC with various functional blocks talking through a master-slave protocol. The interconnect could be a custom crossbar or a switch design or even an off the shelve NOC (Network on Chip) IP that supports multiple AXI masters and slaves. The AXI interconnect helps in scaling up connectivity for number of agents compared to previous AHB&#x2F;ASB bus. An AXI to APB bridge on one of the slave port is normally used to bridge communications to a set of peripherals shared on an APB bus.</p>
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1Mmu5nD-cdqBqL0LlI_w-sg.png" class="">
+
+<img src="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/1pWCEylvjOZXTQmOhiwitrQ.png" class="">
+
+<p>Further evolution happened in the era of mobile and smartphones with SOCs having dual&#x2F;quad&#x2F;octa core processors with shared caches integrated and the need for hardware managed coherency across the memory subsystem. This lead to the introduction of ACE (AXI Coherency Protocol Extension) in AMBA revision 4.</p>
+<p>Lastly, in the current era of heterogeneous computing for HPC and data center markets, the integration trend continues with increasing number of processor cores along with several heterogeneous computing elements like GPU, DSP, FPGAs, memory controllers and IO sub systems. In 2013, AMBA 5 introduced the CHI (Coherent Hub Interconnect) protocol as a re-design of the AXI&#x2F;ACE protocol. The signal based AXI&#x2F;ACE protocol was replaced with the new packet based CHI layered protocol that can scale very well for near term future.</p>
+<p>Now that hopefully you understand how the protocols evolved and how each of them fit in to an SOC design— here are few basics and references to resources that you can use to learn more in depth about each of the protocol.</p>
+<p>ARM has open sourced all of the protocols and all the specifications can be downloaded from the ARM website free by signing up.</p>
+<h3 id="APB"><a href="#APB" class="headerlink" title="APB"></a>APB</h3><p>The <em>Advanced Peripheral Bus (APB)</em> is used for connecting low bandwidth peripherals. It is a simple non-pipelined protocol that can be used to communicate(read or write) from a bridge&#x2F;master to a number of slaves through the shared bus. The reads and writes shares the same set of signals and no burst data transfers are supported. The latest spec (APB 2.0) is available on<a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0024c/index.html"> <strong>ARM website here</strong></a> and is a relatively easy protocol to learn.</p>
+<h3 id="AHB"><a href="#AHB" class="headerlink" title="AHB"></a>AHB</h3><p>The <em>Advanced High-performance Bus (AHB)</em> is used for connecting components that need higher bandwidth on a shared bus. These could be a internal memory or an external memory interface, DMA , DSP etc but the shared bus would limit the number of agents. Similar to APB, this is a shared bus protocol for multiple masters and slaves, but higher bandwidth is possible through burst data transfers. The latest spec can be found on <a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0033/index.html"><strong>ARM website here</strong></a> and is relatively easy to learn.</p>
+<h3 id="AHB-lite"><a href="#AHB-lite" class="headerlink" title="AHB-lite"></a>AHB-lite</h3><p>AHB-lite protocol is a simplified version of AHB. The simplification comes with support for only a single master design and that removes need for any arbitration, retry, split transactions etc.</p>
+<h3 id="AXI"><a href="#AXI" class="headerlink" title="AXI"></a>AXI</h3><p>The <em>Advanced Extensible interface (AXI)</em> is useful for high bandwidth and low latency interconnects. This is a point to point interconnect and overcomes the limitations of a shared bus protocol in terms of number of agents that can be connected. The protocol also was an enhancement from AHB in terms of supporting multiple outstanding data transfers (pipe-lined), burst data transfers, separate read and write paths and supporting different bus widths.</p>
+<h3 id="AXI-lite"><a href="#AXI-lite" class="headerlink" title="AXI-lite"></a>AXI-lite</h3><p>AXI-lite protocol is a simplified version of AXI and the simplification comes in terms of no support for burst data transfers.</p>
+<h3 id="AXI-stream"><a href="#AXI-stream" class="headerlink" title="AXI-stream"></a>AXI-stream</h3><p>AXI-stream protocol is another flavor of the AXI protocol that supports only streaming of data from a master to a slave. There is no separate read&#x2F;write channels in the stream protocol unlike a full AXI or AXI-lite as the intend is to only stream in one direction. Multiple streams of data can be transferred (even with interleaving) across a master and slave. This becomes useful in designs like video streaming applications.</p>
+<h3 id="ACE-AXI"><a href="#ACE-AXI" class="headerlink" title="ACE - AXI"></a>ACE - AXI</h3><p>Coherence extension protocol is an extension to AXI 4 protocol and evolved in the era of multiple CPU cores with coherent caches getting integrated on a single chip. The ACE protocol extends the AXI read and write data channels by introducing separate snoop address, snoop data and snoop response channels. These extra channels provides mechanisms to implement a snoop based coherency protocol. If you are new to coherency, understanding that will be a pre-requisite before learning ACE protocol. The spec is available for download from <a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0022d/index.html"><strong>ARM here as part of AXI4 specification.</strong></a></p>
+<h3 id="ACE-Lite"><a href="#ACE-Lite" class="headerlink" title="ACE-Lite"></a>ACE-Lite</h3><p>The ACE also has a simplified version of protocol for those agents that does not have a cache of its own but still are part of the shareable coherency domain. Typical agents like DMA or network interface agents fall implement this “one-way” coherency using a ACE-lite protocol.</p>
+<h3 id="CHI-Coherent-Hub-Interface"><a href="#CHI-Coherent-Hub-Interface" class="headerlink" title="CHI (Coherent Hub Interface)"></a>CHI (Coherent Hub Interface)</h3><p>The ACE protocol was developed as an extension to AXI to support coherent interconnects. The ACE protocol used a signal level communication between master&#x2F;slave and hence the interconnects needed large number of wires with added channels for snoops and responses. This worked well for small coherent clusters with dual&#x2F;quad core mobile SOC designs. With increasing number of coherent clusters on SOC along with other heterogeneous compute elements and memory controllers — the AMBA 5 revision introduced CHI protocol as a complete re-design of the ACE protocol. The CHI protocol uses a layered packet based communication protocol with protocol, link layer and physical layer implementation and also supports QoS based flow control and retry mechanisms.</p>
+<h3 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h3><p>The full AXI and AXI-lite specification can be downloaded on <a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0022d/index.html"><strong>ARM website here</strong></a>. The AXI-stream protocol has a different spec and is <a target="_blank" rel="noopener" href="http://infocenter.arm.com/help/topic/com.arm.doc.ihi0051a/index.html"><strong>available here for download.</strong></a></p>
+<p>Hope this gives an overview and helps getting started to learn more in depth into these protocols. The best way to learn further is to read the specifications to understand details of each protocol. The APB and AHB are relatively easy and can be learned easily. AXI and ACE&#x2F;CHI are relatively complex and will need detailed reading along with understanding of basics of cache coherency and general communication protocols.</p>
+<p>If you are not actively working on any of these on any projects, but do have time, you can also develop a IP&#x2F;VIP for a master or slave for any of these protocols, simulate and understand the details in depth.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/" data-id="cm00hbt2r00a2yqi48kjc4lmb" data-title="Understanding AMBA Architechture and Protocols" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ahb/" rel="tag">ahb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apb/" rel="tag">apb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axi/" rel="tag">axi</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/23/we-glow-while-grow/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          We Glow While Grow
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/22/AMBA-APB-revisions/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">AMBA APB Revisions</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Semiconductor/">Semiconductor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/" rel="tag">[object Object]</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ahb/" rel="tag">ahb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apb/" rel="tag">apb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axi/" rel="tag">axi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 13px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 12px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 10px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 10px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 12px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/20/%E9%85%8D%E7%BD%AEssh-%E9%99%90%E5%88%B6-%E5%85%81%E8%AE%B8IP/">RHEL7配置ssh - 限制/允许IP</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/16/Install-Xfce-Lightdm/">Install Xfce &amp; Lightdm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/10/EDA-Collections/">EDA Collections</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/09/Road-To-Fudan-University/">Road to Fudan University Through GaoKao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 nibaix<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

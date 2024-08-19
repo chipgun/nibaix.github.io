@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Group_path | nibaix&#39;s footprints</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="NAME       group_path              Groups a set of paths for cost function calculations. ARGUMENTS    -weight weight_value           Specifies   a   cost   function  weight  for  this  group.   The">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Group_path">
+<meta property="og:url" content="http://blog.nibaix.com/2023/01/18/group-path/index.html">
+<meta property="og:site_name" content="nibaix&#39;s footprints">
+<meta property="og:description" content="NAME       group_path              Groups a set of paths for cost function calculations. ARGUMENTS    -weight weight_value           Specifies   a   cost   function  weight  for  this  group.   The">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-18T12:42:46.000Z">
+<meta property="article:modified_time" content="2023-12-07T13:54:18.000Z">
+<meta property="article:author" content="nibaix">
+<meta property="article:tag" content="eda">
+<meta property="article:tag" content="synopsys">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nibaix&#39;s footprints</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What&#39;s the story?</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-group-path" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/18/group-path/" class="article-date">
+  <time class="dt-published" datetime="2023-01-18T12:42:46.000Z" itemprop="datePublished">2023-01-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Group_path
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>NAME<br>       <strong>group_path</strong><br>              Groups a set of paths for cost function calculations.</p>
+<p>ARGUMENTS</p>
+<pre><code>   -weight weight_value
+          Specifies   a   cost   function  weight  for  this  group.   The
+          weight_value must be  a  number  between  0.0  and  100.0.   The
+          default  is  1.0.   A weight of 0.0 eliminates the paths in this
+          group from cost function calculations.  Do not  use  very  small
+          values (for example, 0.0001); smaller values can prevent compile
+          from implementing small improvements  to  the  design.   If  you
+          specify  -weight  when you add members to an existing group, the
+          new weight for the group is used.
+
+   -critical_range range_value
+          Specifies a margin of delay for group_name during  optimization.
+          The  range_value must be positive or 0.0.  If you do not specify
+          a range_value for a group, the default is the value set with the
+          set_critical_range  command  (the  default  setting  is 0.0).  A
+          range_value of 0.0 means that only the most critical paths  (the
+          ones  with the worst violation) are optimized.  If you specify a
+          nonzero range_value, other near-critical  violating  paths  (one
+          per  endpoint)  within  that  amount  of the worst path are also
+          optimized if possible.  If more than one  critical  path  to  an
+          endpoint  must  be  optimized, use a separate group_path command
+          for each distinct critical path to that endpoint.  To force com-
+          pile   to  optimize  all  violating  paths,  use  a  very  large
+          range_value (larger than any expected path violations).
+
+   -default
+          Specifies that endpoints or paths be moved to the default  group
+          and  removed  from the current group.  You must specify -default
+          unless you use -name; -name and -default are mutually exclusive.
+</code></pre>
+<span id="more"></span>
+
+<pre><code>   -name group_name
+          Specifies  a  name  for  the  group.   If a group with this name
+          already exists, the paths or endpoints are added to that  group.
+          Otherwise,  a  new  group  is created and named group_name.  You
+          must specify -name unless you use -default; -name  and  -default
+          are mutually exclusive.
+
+   -from from_list
+          Specifies a list of names of clocks, ports, or pins that specify
+          path startpoints.  If a clock is  given,  all  path  startpoints
+          related  to  that  clock are implicitly included.  This includes
+          flip-flops in the transitive fanout of the clocks source pin  or
+          port, and ports that have input delay related to the clock.
+
+   -rise_from rise_from_list
+          Specifies  a  list the same as the -from option, except that the
+          path must rise from the objects specified.  If a clock object is
+          specified,  this option selects startpoints clocked by the named
+          clock, but only the paths launched by rising edge of  the  clock
+          at  the clock source, taking into account any logical inversions
+          along  the  clock  path.   You  can  use  only  one  of   -from,
+          -rise_from, and -fall_from.
+
+   -fall_from fall_from_list
+          Specifies  a  list the as the -from option, except that the path
+          must fall from the objects specified.   If  a  clock  object  is
+          specified,  this option selects startpoints clocked by the named
+          clock, but only the paths launched by falling edge of the  clock
+          at  the clock source, taking into account any logical inversions
+          along  the  clock  path.   You  can  use  only  one  of   -from,
+          -rise_from, and -fall_from.
+
+   -through through_list
+          Specifies  a list of path throughpoints (port, pin, or leaf cell
+          names) of the current design.  The path grouping applies only to
+          paths  that  pass through one of the points in the through_list.
+          If more than  one  object  is  included,  the  objects  must  be
+          enclosed  either  in quotation marks (&quot;&quot;) or in braces (&#123;&#125;).  If
+          the -through option is specified multiple times, the group  path
+          setting  applies  to  paths  that  pass through a member of each
+          through_list in the order the lists were given.  In other words,
+          the  path  must  first  pass  through  a  member  of  the  first
+          through_list, then through a member of the second list,  and  so
+          on  for every specified through_list.  If the -through option is
+          used in combination with the -from or  -to  options,  the  group
+          path  applies  only if the -from or -to conditions are satisfied
+          and the -through conditions are satisfied.
+
+   -rise_through rise_through_list
+          Specifies a list the same as the -through  option,  but  applies
+          only to paths with a rising transition at the specified objects.
+          You can specify -rise_through more than one  time  in  a  single
+          command invocation, as with the -through option.
+
+   -fall_through fall_through_list
+          Specifies  a  list  the same as the -through option, but applies
+          only to  paths  with  a  falling  transition  at  the  specified
+          objects.   You can specify -fall_through more than one time in a
+          single command invocation as with the -through option.
+
+   -to to_list
+          Specifies a list of names of clocks, ports, or pins that specify
+          path endpoints.  If a clock is given, all path endpoints related
+          to that clock are implicitly included.  This includes flip-flops
+          in  the  transitive fanout of the clocks source pin or port, and
+          ports that have output delay related to the clock.
+
+   -rise_to rise_to_list
+          Specifies a list the same as the -to option, but applies only to
+          paths  rising  at the endpoint.  If a clock object is specified,
+          this option selects endpoints clocked by the  named  clock,  but
+          only  the  paths  captured  by rising edge of the clock at clock
+          source, taking into account any  logical  inversions  along  the
+          clock  path.   You  can  use  only  one  of  -to,  -rise_to, and
+          -fall_to.
+
+   -fall_to fall_to_list
+          Specifies a list the same as the -to option, but applies only to
+          paths  falling at the endpoint.  If a clock object is specified,
+          this option selects endpoints clocked by the  named  clock,  but
+          only  the  paths  launched  by  falling edge of the clock at the
+          clock source, taking into account any logical  inversions  along
+          the  clock  path.   You  can  use only one of -to, -rise_to, and
+          -fall_to.
+
+   -comment comment_string
+          Allows the command to accept a comment string. The  tool  honors
+          the  annotation and preserves it with the SDC object so that the
+          exact string is written out when the constraint is  written  out
+          when you use the write_sdc or write_script command.  The comment
+          remains intact through the synthesis, place-and-route, and  tim-
+          ing-analysis flows.
+
+   -priority priority_level
+          Assigns  a  priority  to the command to resolve conflicting path
+          selections between different group_path  commands.  By  default,
+          different  group_path commands follow ordinary rules of priority
+          to resolve conflicting path selections. For example,  a  command
+          using  -from  and  -to  to select paths has priority over a con-
+          flicting command that selects a  subset  of  those  paths  using
+          -through,  so  the  latter command is ignored for the paths that
+          could be in either. By setting a higher priority in the  command
+          using  the -through option, its path selection is honored, over-
+          riding the usual order of priority on paths in the  intersection
+          of  the  two  groups. If unspecified, the priority is 0. You can
+          set the priority for a group_path command to any  integer  0  or
+          greater.
+</code></pre>
+<p>DESCRIPTION<br>       Groups a set of paths or endpoints for cost function calculations.  The<br>       delay cost function is the sum of  all  groups  (weight  *  violation),<br>       where  violation  is  the  amount  for which setup was violated for all<br>       paths within the group.  If there is no violation within a  group,  its<br>       cost  is zero.  Groups enable you to specify a set of paths to optimize<br>       even though there might be larger violations in  another  group.   When<br>       endpoints  are  specified,  all  paths  leading  to those endpoints are<br>       grouped.</p>
+<pre><code>   If a clock is specified in the  from_list  or  to_list,  all  endpoints
+   related to that clock are included in the group.  The create_clock com-
+   mand automatically creates a group for a new clock with a weight of 1.0
+   and named the same as the clock name.
+
+   The  weight of the default group is 1.0.  If weight_value is not speci-
+   fied for a new group, the default is 1.0.
+
+   To undo group_path, use reset_design or group_path -default.
+
+   To list the path groups that are defined,  use  report_path_group.   To
+   show the maximum delay cost for each path group, use report_constraint.
+</code></pre>
+<p>   Multicorner-Multimode Support<br>       This command uses information from the current scenario only.</p>
+<p>EXAMPLES<br>       The following example groups all endpoints clocked by  CLK1A  or  CLK1B<br>       into a new group called group1 that has a weight &#x3D; 2.0:</p>
+<pre><code>     prompt&gt; group_path -name &quot;group1&quot; -weight 2.0 -to &#123;CLK1A CLK1B&#125;
+
+   The  following  example adds OUT1 and ff34/D to the existing path group
+   named ADDR:
+
+     prompt&gt; group_path -name &quot;ADDR&quot; -to &#123;OUT1 ff34/D&#125;
+
+   The following example removes OUT1 and CLK2 from  existing  groups  and
+   places them in the default group:
+
+     prompt&gt; group_path -default -to &#123;OUT1 CLK2&#125;
+
+   This command adds all paths that first pass through either u1/Z or u2/Z
+   and then pass through u5/Z or u6/Z into the group named blue:
+
+     prompt&gt; group_path -name blue \
+        -through &#123;u1/Z u2/Z&#125; -through &#123;u5/Z u6/Z&#125;
+
+       The following example groups all paths from inputs  I1  and  I2  to
+       outputs  O5  and O7 into a group named serious that has a weight of
+       10.0:
+
+         prompt&gt; group_path -name serious -weight 10.0 \
+            -from &#123;I1 I2&#125; -to &#123;O5 O7&#125;
+
+       The following example groups all endpoints clocked by  CLK  into  a
+       group with a critical range of 0.5:
+
+         prompt&gt; group_path -name CLK -critical_range 0.5 -to CLK
+
+       The following example uses a large critical range value to optimize
+       all paths. For example, assume that the worst violation is expected
+       to  be  100  units.  Setting a critical range value larger than the
+       worst violation causes optimization to speed up all  paths  if  the
+       transformations  do not increase the worst violation (that is, make
+       the worse path slower) for that group.  In this example, the criti-
+       cal  range value is set higher than the worst expected violation to
+       ensure that all violating paths are considered during optimization:
+
+         prompt&gt; group_path -name CLK -critical_range 1000.0 -to CLK
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2023/01/18/group-path/" data-id="cm00hbt1q006iyqi40w1wh3ow" data-title="Group_path" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/18/vim-open-files/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vim: Open Files
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/14/verdi-configuration-file-novas-rc/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Verdi Configuration File novas.rc</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Semiconductor/">Semiconductor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/" rel="tag">[object Object]</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ahb/" rel="tag">ahb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apb/" rel="tag">apb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axi/" rel="tag">axi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 13px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 12px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 10px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 10px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 12px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/20/%E9%85%8D%E7%BD%AEssh-%E9%99%90%E5%88%B6-%E5%85%81%E8%AE%B8IP/">RHEL7配置ssh - 限制/允许IP</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/16/Install-Xfce-Lightdm/">Install Xfce &amp; Lightdm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/10/EDA-Collections/">EDA Collections</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/09/Road-To-Fudan-University/">Road to Fudan University Through GaoKao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 nibaix<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

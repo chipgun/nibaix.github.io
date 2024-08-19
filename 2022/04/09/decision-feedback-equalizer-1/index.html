@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>判决反馈均衡器（上） | nibaix&#39;s footprints</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="判决反馈均衡器（中）&raquo;   判决反馈均衡器（下）&raquo;  Part1 DFE基本概念 判决反馈均衡器（Decision Feedback Equalizer, DFE)，是目前SerDes中常见于于RX部分的一种均衡方式，能够有效提升RX的接收性能。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="判决反馈均衡器（上）">
+<meta property="og:url" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/index.html">
+<meta property="og:site_name" content="nibaix&#39;s footprints">
+<meta property="og:description" content="判决反馈均衡器（中）&raquo;   判决反馈均衡器（下）&raquo;  Part1 DFE基本概念 判决反馈均衡器（Decision Feedback Equalizer, DFE)，是目前SerDes中常见于于RX部分的一种均衡方式，能够有效提升RX的接收性能。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE1.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE2.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE3.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE4.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE5.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE6.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE7.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE8.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE9.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE10.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE11.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE12.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE13.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE14.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE15.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE16.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE17.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE18.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE19.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE20.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE21.jpg">
+<meta property="article:published_time" content="2022-04-09T09:43:37.000Z">
+<meta property="article:modified_time" content="2023-12-07T12:53:12.000Z">
+<meta property="article:author" content="nibaix">
+<meta property="article:tag" content="dsp">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="serdes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="nibaix's footprints" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nibaix&#39;s footprints</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What&#39;s the story?</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-decision-feedback-equalizer-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/09/decision-feedback-equalizer-1/" class="article-date">
+  <time class="dt-published" datetime="2022-04-09T09:43:37.000Z" itemprop="datePublished">2022-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      判决反馈均衡器（上）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <a href="/2022/04/09/decision-feedback-equalizer-2/" title="判决反馈均衡器（中）">判决反馈均衡器（中）</a>&raquo; <br/>
+
+<a href="/2022/04/09/decision-feedback-equalizer-3/" title="判决反馈均衡器（下）">判决反馈均衡器（下）</a>&raquo;
+
+<p><strong>Part1 DFE基本概念</strong></p>
+<p>判决反馈均衡器（Decision Feedback Equalizer, DFE)，是目前SerDes中常见于于RX部分的一种均衡方式，能够有效提升RX的接收性能。</p>
+<span id="more"></span>
+
+<p>先前我们在讲均衡之FFE中提到了信道的时域响应存在拖尾现象，拖尾会影响到下一个码元，也就是常说的码间干扰(ISI)，当然信道的非理想还包含串扰，反射等现象。对于比较高的信道插损，线性均衡CTLE的效果存在上限，需要进一步的均衡机制。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE1.jpg" class="">
+
+<p>如图1，时域上，一种最直接原始的想法是，如果能够根据当前码元的判决结果，将该码元的后续影响依次全部消减，就可以把当前码元ISI的影响降到最低，甚至消除。这也是DFE作用最直观的描述。</p>
+<p>基于上述思路，那么重点就是该如何实施和实现，如何做到对信道的自适应，系统的鲁棒性如何提高，算法如何设计的高效等一些列问题？本系列将试着研究回答这些问题。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE2.jpg" class="">
+
+<p>图2单脉冲冲激响应包含了3个后标（postcursor）量，1011的数据经过信道后的波形是对应脉冲移位叠加的结果。其中第二个数据0很容易出现误判。如果能够准确的判断第一个码元的话，将结果延迟反馈到输入信号处，并适当减掉部分量，则第二个码元0就更容易判断准确。这也是判决反馈均衡器(Decision Feedback Equalizer)的字面含义。</p>
+<p>实现时，对于连续输入数据Din，通过时钟Clk控制的采样器Sampler，得到采样数据Dout，经过Td的延迟，通过权重h1和h2与输入数据相加。合适的延迟时间td和权重h1，h2就能保证将输入数据的码间干扰降低或完全消除，如图3。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE3.jpg" class="">
+
+<p>图3结构，需要考虑如下两个问题：</p>
+<p>第一，Dout如果仅仅是采样输入数据Din，会存在量化精度的问题，比如用多少位表示。量化后的信号，需要决定反馈的权重h1和h2的大小及符号，对于NRZ编码的信号，采样后可用1bit的量化器量化为逻辑信号0和1。对于PAM4编码的信号，采用后通常会采用多bit的量化器(比如用ADC实现)。方便后续的数据处理。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE4.jpg" class="">
+
+<p>第二，延迟时间Td。如图4所示，全速率的RX结构，假如用上升沿采样数据，需要在一个采样时钟周期，也就是需要1个UI的时间内，将前一个UI的影响体现到后续的采样数据上。这里可以简单的理解Td&lt;1UI。如果不满足，则无法体现消除效果。</p>
+<p>注意NRZ编码的采样器量化后，转化为1bit逻辑，是非线性的转化过程。</p>
+<p>实际电路实现时，采样器也叫Slicer，Slicer和延迟单元合并起来可以用DFF来表示。如图4所示，其中时序关键路径是图中黄色反馈路径，需要满足DFF的建立时间<em>T**setup</em>，响应时间<em>T**ck-q</em>，加法器响应时间<em>T**sum</em>三者之和小于1UI时间。</p>
+<p><em>T*<em>setup</em></em>+T<strong>ck-q</strong>+T<strong>sum</strong>&lt;1UI*</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE5.jpg" class="">
+
+<p>图5是最基本的DFE结构。其中Clk时钟频率和数据率相等(NRZ编码)。称之为全速率(Full-Rate)直接反馈(Direct Feedback)架构DFE。</p>
+<p>图6给出了全速DFE对信号的均衡效果，Din经过1个Tap补偿后，输出波形Dout。可以看到对于高频数据，其判决幅度明显增大，更大概率判断处正确数据。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE6.jpg" class="">
+
+<p><strong>Part2 DFE架构介绍</strong></p>
+<p>采样DFF的延迟时间<em>T**ck-q</em>并没有明显减小，DFE反馈关键路径时序变得越来越难以满足。因此需要从结构上改进和优化这些问题。</p>
+<p>随着数据速率的提高，图5的DFE有很多改进和优化结构。主要从这两方面分类。</p>
+<p>首先是采样工作速率，分为全速率(Full-Rate)，半速率(Half-Rate)，1&#x2F;4速率(Quarter-Rate)等等。</p>
+<p>其次从时序关键路径，分为直接反馈(Direct Feedback)和开环(Loop Unrolled)结构。开环结构也称之为预判(Speculation)结构。预判式(Speculative)结构的Slicer个数会增加一倍。常见的是将h1这条关键路径进行开环，保证时序。在一些文献中，也见到过将前2个Tap全部使用预判结构，缺点是会使用比较多数量的Slicer。</p>
+<p>图7是相对于图5结构对应的半速率实现形式，图中包含了h1和h2的时序路径中包含的各时间参数，以及需要满足的时序约束。注意半速率结构的采样时钟是数据率的一半，也就是使用的奈奎斯特频率时钟频率，奇(Odd)偶(Even)分别使用反相时钟clk和clkb进行交替采样。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE7.jpg" class="">
+
+<p>这里就要思考下采用半速率的得与失了。采用半速率，DFE部分的面积和功耗都会增加，那么优势是什么？其实从系统上看，功耗还是会减低的，主要是时钟产生电路PLL和时钟路径的功耗会有明显的减低。同时更低速时钟频率也能适当降低电路设计难度。</p>
+<p>图8为全速率预判式DFE结构图，Tap1采用了预判结构，Tap2直接反馈。可以看到通过提前将h1和输入进行加减，并通过前一码元的结果对当前码元的结果进行选择。可以看到，这里边有3个加法器(Summer)，在实际电路实现时，通常将h1的summer和DFF合并，即为包含阈值的Slicer。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE8.jpg" class="">
+
+<p>图9和图10为半速率预判式DFE结构，通过将h1提前进行加减，可以节约Tap1路径的时间，增大时序裕量。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE9.jpg" class="">
+
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE10.jpg" class="">
+
+<p>图11给了个典型的例子说明了不同结构的tap1和tap2的时间裕量。以及改进的半速率结构的优势。可以将缩减h2的时间，将h1的时间适当延长，拓展到2UI的时间。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE11.jpg" class="">
+
+<p>此外，还可以将Tap1和Tap2都提前与信号做加减，也就是2tap-Speculative结构的DFE，如图12。当该结构采用半速率，Data采样共需要8个Slicer。Tap1和Tap2系数C1和C2会提前按照符号和输入信号叠加，采样后利用前边2个码元进行Mux4to1的选择。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE12.jpg" class="">
+
+<p>实际实现的时候还有一些结构，会把其中的时间进行压缩，进一步提高速度，比如讲Summer和Slicer合并等，降低Summer的延时Tsum。</p>
+<p>对于半速率预判式DFE，如果只有一个Tap，可以对奇偶数据进行多拍延迟，然后再做Mux选择。</p>
+<p>在SerDes中，DFE通常还包含了其他采样器，用于实现DFE的自适应均衡，CDR锁定，LEQ的自适应，通路增益调节，数字眼图测量，Figure of Metric评估等功能，如图13所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE13.jpg" class="">
+
+<p><strong>Part3 关键功能模块</strong></p>
+<p>在前两部分内容中，提到DFE结构中最常用的子模块包括采样器Slicer，加法器Summer，选择器Mux，延迟单元DFF&amp;Latch等等，下边我们简单做下介绍。</p>
+<ul>
+<li>Slicer</li>
+</ul>
+<p>采样器Slicer主要是用于对输入信号的量化，相当于1bit的ADC。量化后的逻辑可以看做恢复后的数据。其结构就是常规的灵敏放大器(Sense Amplifer,SA),或者称之为动态比较器(Dynamic Comparator)。</p>
+<p>图14是一些常见的Slicer实现形式。其中(a)是基本类型，(b)是双尾电流(Double-Tail)动态比较器，(c)是改进型的双尾电流动态比较器。设计的重点是提升响应速度，提高输入灵敏度，降低功耗，减小回踢噪声，减小输入失调等。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE14.jpg" class="">
+
+<p>随着数据率的提高，如何降低动态比较器的输出响应时间，可能是优先级最高的考虑因素，只有保证数据正确，一切才有意义。输出响应时间和工艺制程，输入差分信号幅度，共模电平，电源电压都密切相关。其中先进工艺制程提供的更小的器件尺寸，为高速接口设计提供了最直接帮助。</p>
+<p>需要注意到，图14中结构电路，在一个CLK周期的高低电平内，动态比较器需要完成预充电(Precharge)和放大(Amplification)的功能。因为时钟周期的一半是复位状态，因此需要剩余的半个时钟周期内完成采样量化，这里就解释了为什么半速率会比全速率结构能够留给动态比较器有更多的输出响应时间。也就更大概率分辨较小的输入信号，并得到正确数据。</p>
+<p>动态比较器的输出只能保持少半个采样周期的输出数据，通常我们还需要另外的保持电路，”接棒”动态比较器输出，从而将采样结果保持一整个采样周期。</p>
+<p>这也就是我们在图5到中提到的，用DFF的概念表示对数据采样和保持的功能。实际上我们用经常使用的概念Slicer，也可以泛指动态比较器和”接棒”的延迟单元。</p>
+<ul>
+<li>DFF &amp; Latch</li>
+</ul>
+<p>前边提到的Slicer中需要的延迟单元，可以是Latch，也可以是DFF。当然DFF可以看做是两个Latch结构的级联。</p>
+<p>提到Latch，我们最先想到SR锁存器。可以由NAND2组成，也可以是NOR2组成的。基本的SR Latch不需要时钟，仅根据输入信号的变化，有不同的输出状态。如图15所示，两种结构的保持(Hold)状态的输入时不同的，可结合动态比较器的结构选择使用。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE15.jpg" class="">
+
+<p>图15</p>
+<p>基于选择器的锁存器(Multiplexer-Based Latch)由传输门选择器和反相器构成的，通过时钟进行控制。如图16所示，(a)和(b)分别是高电平锁存器和低电平锁存器。图中(c)是选择器和反相器的实现细节。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE16.jpg" class="">
+
+<p>将图16中的高低电平锁存器进行先后级联，可得到主从边沿触发触发器(Master-Slave Edge-Triggered Flip-Flop)。触发方式可以是上升沿，也可以是下降沿。其时序和结构如图17中(a)和(b)所示。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE17.jpg" class="">
+
+<p>除了上述的CMOS电平锁存器外，文献中常见的还有半电平的CML锁存器。</p>
+<ul>
+<li>Summer</li>
+</ul>
+<p>加法器目的是完成输入Din和Tap量hn的加减操作。</p>
+<p>图18所示CML结构电阻负载(Resistor Load)加法器，各Tap量通过电流相加，并通过电阻转化为电压信号供Slicer采样比较。电阻负载的结构存在输出摆幅，功耗，建立时间的考虑，其建立时间由输出节点的时间常数tau决定。例如3tau可以建立约95%的精度。主要影响了时序参数Tsum</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE18.jpg" class="">
+
+<p>图19是电流积分(Current Integrating)型加法器，通过时钟对负载电容CL进行复位和积分的分阶段重复操作。输出为归零(Return to Zero,RZ)信号。该结构比电阻负载加法器有着更高的能效，但文献中提到，该结构会存在3.9dB的直接积分损耗。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE19.jpg" class="">
+
+<p>图20是电荷舵(Charge Steering)型加法器。Razavi提到过该结构具有零静态功耗，同时动态功耗显著下降的新型加法器实现。复位阶段X和Y点被复位到电源，因此查分输出Vx-Vy实际上也可以看做RZ信号。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE20.jpg" class="">
+
+<p>需要注意，DFE补偿为了实现一定的精度，Tap量hn通常使用IDAC来实现，速度会比较快。不同tap的精度和范围会有差异。</p>
+<ul>
+<li>Mux</li>
+</ul>
+<p>Mux本身的功能比较简单，目的就是将多路数(更多的是将2个路径数据)选择输出。可以直接用传输门结构，或者用具有3态控制的反相器实现即可，这里就不举例说明了。</p>
+<ul>
+<li>Merged Structure</li>
+</ul>
+<p>除了以上基本的结构，在一些文献中还提到了混合型结构，从而可以进一步缩减tap反馈路径的时间。</p>
+<p>图8中提到的带阈值的Slicer，就算作是混合结构。tap1权重h1的加法Summer和Sampler融合。结构如图21。通过DAC属猪的tap电压或者直接用逻辑控制输入对管M11和M21，实现对输入信号的Tap补偿。其中用逻辑直接控制的结构尤其适合低功耗场景下的1个Tap的预判式DFE设计，毕竟是牺牲了一定的速度和精度，才实现了低功耗的目的。</p>
+<img src="/2022/04/09/decision-feedback-equalizer-1/%E5%9B%BE21.jpg" class="">
+
+<p>前文提到的Slicer概念，其实也可以看做是Sampler和延迟单元Latch的合并的混合结构。 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2022/04/09/decision-feedback-equalizer-1/" data-id="cm00hbt1c004xyqi4hdvs7y3w" data-title="判决反馈均衡器（上）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/09/decision-feedback-equalizer-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          判决反馈均衡器（中）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/08/install-ic618/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Install Cadence IC6.1.8</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Semiconductor/">Semiconductor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorized/">Uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/" rel="tag">[object Object]</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ahb/" rel="tag">ahb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apb/" rel="tag">apb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axi/" rel="tag">axi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 13px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 12px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 10px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 10px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 12px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 14px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/20/%E9%85%8D%E7%BD%AEssh-%E9%99%90%E5%88%B6-%E5%85%81%E8%AE%B8IP/">RHEL7配置ssh - 限制/允许IP</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/16/Install-Xfce-Lightdm/">Install Xfce &amp; Lightdm</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/10/EDA-Collections/">EDA Collections</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/09/Road-To-Fudan-University/">Road to Fudan University Through GaoKao</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 nibaix<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
