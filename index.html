@@ -102,8 +102,30 @@
         <h2 id="1-Tmux-Configuration"><a href="#1-Tmux-Configuration" class="headerlink" title="1. Tmux Configuration"></a>1. Tmux Configuration</h2><h3 id="1-1-tmux-conf"><a href="#1-1-tmux-conf" class="headerlink" title="1.1 ~&#x2F;.tmux.conf"></a>1.1 ~&#x2F;.tmux.conf</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># set prefix2 to Ctrl+Space</span><br><span class="line">set -g prefix2 C-Space</span><br><span class="line"># use | and - to split the windows</span><br><span class="line">unbind &#x27;&quot;&#x27;</span><br><span class="line">unbind &#x27;%&#x27;</span><br><span class="line">bind - split-window -v</span><br><span class="line">bind | split-window -h</span><br><span class="line"># use vi keys in buffer</span><br><span class="line">setw -g mode-keys vi</span><br><span class="line">set -g mouse on</span><br><span class="line">set -g history-limit 20000</span><br><span class="line">set -g default-terminal &quot;screen-256color&quot;</span><br><span class="line"># start windows and panes at 0</span><br><span class="line">set -g base-index 0</span><br><span class="line">setw -g pane-base-index 0</span><br><span class="line"># set re-number windows</span><br><span class="line">set -g renumber-windows on</span><br><span class="line"># set foreground/background style for active window</span><br><span class="line">setw -g window-status-current-style &quot;fg=white bg=black bold&quot;</span><br><span class="line"># set bind key &quot;r&quot; to reload configuration file</span><br><span class="line">bind r source-file ~/.tmux.conf \; display &quot;Reloaded!&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="1-2-tmux-conf-local"><a href="#1-2-tmux-conf-local" class="headerlink" title="1.2 ~&#x2F;.tmux.conf.local"></a>1.2 ~&#x2F;.tmux.conf.local</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux_conf_copy_to_os_clipboard=true</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-Tmux-Shell-Commands"><a href="#2-Tmux-Shell-Commands" class="headerlink" title="2. Tmux Shell Commands"></a>2. Tmux Shell Commands</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">% tmux // new session</span><br><span class="line">% tmux ls // list sessions</span><br><span class="line">% tmux a // attach last session</span><br><span class="line">% tmux a -s [session] // attach specified session</span><br></pre></td></tr></table></figure>
-
+<h2 id="2-Tmux-Shell-Commands"><a href="#2-Tmux-Shell-Commands" class="headerlink" title="2. Tmux Shell Commands"></a>2. Tmux Shell Commands</h2><table>
+<thead>
+<tr>
+<th align="right">Action</th>
+<th align="left">Command (prefix + …)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">New session</td>
+<td align="left">% tmux</td>
+</tr>
+<tr>
+<td align="right">List sessions</td>
+<td align="left">% tmux ls</td>
+</tr>
+<tr>
+<td align="right">Attach last session</td>
+<td align="left">% tmux a</td>
+</tr>
+<tr>
+<td align="right">Attach specified session</td>
+<td align="left">% tmux a -s [session]</td>
+</tr>
+</tbody></table>
 <h2 id="3-Daily-Commands"><a href="#3-Daily-Commands" class="headerlink" title="3. Daily Commands"></a>3. Daily Commands</h2><table>
 <thead>
 <tr>
