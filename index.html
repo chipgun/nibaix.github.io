@@ -215,16 +215,20 @@
 <td align="left">% tmux</td>
 </tr>
 <tr>
+<td align="right">New session with a name</td>
+<td align="left">% tmux -s [name]</td>
+</tr>
+<tr>
 <td align="right">List sessions</td>
 <td align="left">% tmux ls</td>
 </tr>
 <tr>
-<td align="right">Attach last session</td>
+<td align="right">Attach to last session</td>
 <td align="left">% tmux a</td>
 </tr>
 <tr>
-<td align="right">Attach specified session</td>
-<td align="left">% tmux a -s [session]</td>
+<td align="right">Attach to session with a name</td>
+<td align="left">% tmux a -t [name]</td>
 </tr>
 </tbody></table>
 <h2 id="3-Daily-Commands"><a href="#3-Daily-Commands" class="headerlink" title="3. Daily Commands"></a>3. Daily Commands</h2><table>
@@ -252,7 +256,7 @@
 </tr>
 <tr>
 <td align="right">Rename session</td>
-<td align="left">:rename -T name</td>
+<td align="left">:rename -T [name]</td>
 </tr>
 <tr>
 <td align="right">Rename window</td>
@@ -260,7 +264,7 @@
 </tr>
 <tr>
 <td align="right">Rename pane</td>
-<td align="left">:selectp -T name</td>
+<td align="left">:selectp -T [name]</td>
 </tr>
 <tr>
 <td align="right">Show all sessions</td>
