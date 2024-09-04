@@ -73,6 +73,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-set-data-check" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/22/set-data-check/" class="article-date">
+  <time class="dt-published" datetime="2023-09-22T12:19:39.000Z" itemprop="datePublished">2023-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/22/set-data-check/">Set_data_check</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold 1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
+<p>Above script constrains the skew between <strong>$related_pin</strong> and <strong>$constrained_pin</strong> no more than 0.1ns, where <strong>$related_pin</strong> is like a clock pin whereas <strong>$constrained_pin</strong> is like a data pin.</p>
+<p>As neither -setup nor -hold specified, it implies that both setup and hold checks are set as -0.05ns. </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2023/09/22/set-data-check/" data-id="cm0no83rr009h2vi41esgh1cc" data-title="Set_data_check" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-PrimeTime-Multicycle-Path" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/09/16/PrimeTime-Multicycle-Path/" class="article-date">
@@ -109,7 +156,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/09/16/PrimeTime-Multicycle-Path/" data-id="cm0nnea690021rni4fynk5vmy" data-title="PrimeTime Multicycle Path" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/09/16/PrimeTime-Multicycle-Path/" data-id="cm0no83pm00242vi4hobdhrms" data-title="PrimeTime Multicycle Path" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -154,7 +201,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/09/15/Schedule-could-be-beautiful/" data-id="cm0nnea6g002qrni46vwecm9u" data-title="Schedule Could Be Beautiful" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/09/15/Schedule-could-be-beautiful/" data-id="cm0no83pu002t2vi4chu3fgzi" data-title="Schedule Could Be Beautiful" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -207,7 +254,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/09/06/GTECH-Flip-flop-Cell/" data-id="cm0nnea5w000vrni4dk6dc0hk" data-title="GTECH Flip-Flop Cell" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/09/06/GTECH-Flip-flop-Cell/" data-id="cm0no83pb00102vi4ajqs8q93" data-title="GTECH Flip-Flop Cell" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -252,7 +299,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/" data-id="cm0nnea5q000erni41w4g1grz" data-title="Challenge: Spot a Snow Leopard in 15 Sec" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/" data-id="cm0no83p3000e2vi4b2mnflvk" data-title="Challenge: Spot a Snow Leopard in 15 Sec" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -307,7 +354,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/08/11/Synopsys-Command-report-timing/" data-id="cm0nnea6k0036rni41bnz8d78" data-title="Synopsys Command: Report_timing" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/08/11/Synopsys-Command-report-timing/" data-id="cm0no83pz003d2vi418awgjcq" data-title="Synopsys Command: Report_timing" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -354,7 +401,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/08/07/Setup-License-Server-with-Systemctl-in-Redhat7/" data-id="cm0nnea6g002trni44wwqe5z3" data-title="Setup License Server With Systemctl in Redhat7" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/08/07/Setup-License-Server-with-Systemctl-in-Redhat7/" data-id="cm0no83pu002x2vi4he4kflzg" data-title="Setup License Server With Systemctl in Redhat7" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -411,7 +458,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/08/07/Beginning-of-SLS-Usage/" data-id="cm0nnea5l0008rni4dv5g4yr5" data-title="Beginning of SLS Usage" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/08/07/Beginning-of-SLS-Usage/" data-id="cm0no83ov00032vi4d0zmbc8j" data-title="Beginning of SLS Usage" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -458,7 +505,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/07/06/SPI-mode-CPOL-and-CPHA/" data-id="cm0nnea6f002lrni43vhu2ggy" data-title="SPI Mode: CPOL and CPHA" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/07/06/SPI-mode-CPOL-and-CPHA/" data-id="cm0no83pt002p2vi4076qho4b" data-title="SPI Mode: CPOL and CPHA" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -498,60 +545,10 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/04/29/Tips-New-Installation-of-RHEL7-9/" data-id="cm0nnea6m003drni4cs5yhwqm" data-title="Tips: New Installation of RHEL7.9" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/04/29/Tips-New-Installation-of-RHEL7-9/" data-id="cm0no83q0003g2vi4bsz83s2e" data-title="Tips: New Installation of RHEL7.9" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-redhat-adjust-lvm-partition-size" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/09/redhat-adjust-lvm-partition-size/" class="article-date">
-  <time class="dt-published" datetime="2023-04-09T14:03:18.000Z" itemprop="datePublished">2023-04-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/04/09/redhat-adjust-lvm-partition-size/">Redhat: Adjust LVM Partition Size</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>Check file system and LVM info</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># df -hT |grep rhel</span><br><span class="line">/dev/mapper/rhel-root xfs  50G  49G  1G  99%</span><br><span class="line">/dev/mapper/rhel-home xfs  ...  ...  ... ...</span><br><span class="line"># lsblk</span><br><span class="line"># lvs -v</span><br><span class="line"># vgs -v</span><br><span class="line"># pvs -v</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2023/04/09/redhat-adjust-lvm-partition-size/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/04/09/redhat-adjust-lvm-partition-size/" data-id="cm0nnea880090rni4asljefpo" data-title="Redhat: Adjust LVM Partition Size" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
     </footer>
   </div>
   
@@ -595,7 +592,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 12px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 13px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 11px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+      <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 12px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 14px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 11px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
     </div>
   </div>
 
@@ -617,6 +614,10 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       <ul>
         
           <li>
+            <a href="/2024/09/04/Calibre-Platform-Support-Overview-and-Roadmap/">Calibre Platform Support - 2024</a>
+          </li>
+        
+          <li>
             <a href="/2024/09/04/Calibre-Platform-Support-2024/">Calibre Platform Support - 2024</a>
           </li>
         
@@ -630,10 +631,6 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
         
           <li>
             <a href="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/">中国简史图谱</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/25/%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD/">开学寄语</a>
           </li>
         
       </ul>
