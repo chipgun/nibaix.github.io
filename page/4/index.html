@@ -73,53 +73,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-set-data-check" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/22/set-data-check/" class="article-date">
-  <time class="dt-published" datetime="2023-09-22T12:19:39.000Z" itemprop="datePublished">2023-09-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/22/set-data-check/">Set_data_check</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold 1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
-<p>Above script constrains the skew between <strong>$related_pin</strong> and <strong>$constrained_pin</strong> no more than 0.1ns, where <strong>$related_pin</strong> is like a clock pin whereas <strong>$constrained_pin</strong> is like a data pin.</p>
-<p>As neither -setup nor -hold specified, it implies that both setup and hold checks are set as -0.05ns. </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/09/22/set-data-check/" data-id="cm0nobp33009fdsi48xg90da5" data-title="Set_data_check" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-PrimeTime-Multicycle-Path" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/09/16/PrimeTime-Multicycle-Path/" class="article-date">
@@ -156,7 +109,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/09/16/PrimeTime-Multicycle-Path/" data-id="cm0nobp100023dsi4e85sb1o9" data-title="PrimeTime Multicycle Path" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/09/16/PrimeTime-Multicycle-Path/" data-id="cm0nog66r0022nui405xl6q9p" data-title="PrimeTime Multicycle Path" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -201,7 +154,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/09/15/Schedule-could-be-beautiful/" data-id="cm0nobp17002sdsi44hwo87pn" data-title="Schedule Could Be Beautiful" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/09/15/Schedule-could-be-beautiful/" data-id="cm0nog66z002qnui4c39sehv9" data-title="Schedule Could Be Beautiful" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -254,7 +207,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/09/06/GTECH-Flip-flop-Cell/" data-id="cm0nobp0o000zdsi422hc2t60" data-title="GTECH Flip-Flop Cell" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/09/06/GTECH-Flip-flop-Cell/" data-id="cm0nog66f000wnui4ayoaeqyp" data-title="GTECH Flip-Flop Cell" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -299,7 +252,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/" data-id="cm0nobp0h000edsi474rbd7y2" data-title="Challenge: Spot a Snow Leopard in 15 Sec" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/" data-id="cm0nog669000enui4e754hpms" data-title="Challenge: Spot a Snow Leopard in 15 Sec" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -354,7 +307,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/08/11/Synopsys-Command-report-timing/" data-id="cm0nobp1b0037dsi4ad8j4yby" data-title="Synopsys Command: Report_timing" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/08/11/Synopsys-Command-report-timing/" data-id="cm0nog6730037nui41tws0nbw" data-title="Synopsys Command: Report_timing" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -401,7 +354,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/08/07/Setup-License-Server-with-Systemctl-in-Redhat7/" data-id="cm0nobp18002vdsi436pxhpff" data-title="Setup License Server With Systemctl in Redhat7" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/08/07/Setup-License-Server-with-Systemctl-in-Redhat7/" data-id="cm0nog670002unui4ec6ce704" data-title="Setup License Server With Systemctl in Redhat7" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -458,7 +411,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/08/07/Beginning-of-SLS-Usage/" data-id="cm0nobp0d0008dsi4d33960ef" data-title="Beginning of SLS Usage" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/08/07/Beginning-of-SLS-Usage/" data-id="cm0nog6600003nui47tt76yhr" data-title="Beginning of SLS Usage" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -505,7 +458,7 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/07/06/SPI-mode-CPOL-and-CPHA/" data-id="cm0nobp16002odsi4bnq784pd" data-title="SPI Mode: CPOL and CPHA" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/07/06/SPI-mode-CPOL-and-CPHA/" data-id="cm0nog66x002jnui48o0n9it8" data-title="SPI Mode: CPOL and CPHA" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -545,10 +498,60 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/04/29/Tips-New-Installation-of-RHEL7-9/" data-id="cm0nobp1d003edsi4ew0sa2qu" data-title="Tips: New Installation of RHEL7.9" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://blog.nibaix.com/2023/04/29/Tips-New-Installation-of-RHEL7-9/" data-id="cm0nog675003enui43eb5cv3h" data-title="Tips: New Installation of RHEL7.9" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-redhat-adjust-lvm-partition-size" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/09/redhat-adjust-lvm-partition-size/" class="article-date">
+  <time class="dt-published" datetime="2023-04-09T14:03:18.000Z" itemprop="datePublished">2023-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/04/09/redhat-adjust-lvm-partition-size/">Redhat: Adjust LVM Partition Size</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>Check file system and LVM info</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># df -hT |grep rhel</span><br><span class="line">/dev/mapper/rhel-root xfs  50G  49G  1G  99%</span><br><span class="line">/dev/mapper/rhel-home xfs  ...  ...  ... ...</span><br><span class="line"># lsblk</span><br><span class="line"># lvs -v</span><br><span class="line"># vgs -v</span><br><span class="line"># pvs -v</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2023/04/09/redhat-adjust-lvm-partition-size/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2023/04/09/redhat-adjust-lvm-partition-size/" data-id="cm0nog68t0096nui40mmi81zy" data-title="Redhat: Adjust LVM Partition Size" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
     </footer>
   </div>
   
@@ -618,10 +621,6 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
           </li>
         
           <li>
-            <a href="/2024/09/04/Calibre-Platform-Support-Overview-and-Roadmap/">Calibre Platform Support - 2024</a>
-          </li>
-        
-          <li>
             <a href="/2024/09/03/install-linux-editor-atom/">Install Linux Editor Atom</a>
           </li>
         
@@ -631,6 +630,10 @@ Point> -through <ThroughPoint> -to <EndPoint><br>Default path_multiplier: Setup 
         
           <li>
             <a href="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/">中国简史图谱</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/25/%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD/">开学寄语</a>
           </li>
         
       </ul>
