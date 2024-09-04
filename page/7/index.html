@@ -73,56 +73,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Too-Many-Open-Files错误导致VNC灰屏问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/11/09/Too-Many-Open-Files%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4VNC%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/" class="article-date">
-  <time class="dt-published" datetime="2022-11-09T13:59:25.000Z" itemprop="datePublished">2022-11-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/09/Too-Many-Open-Files%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4VNC%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/">Too Many Open Files错误导致VNC灰屏问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>VNCserver启动数量过大，约53个时；vncviewer会出现灰屏现象；新起vncserver起不来；提示无法启动dbus-daemon，版本过低。</p>
-<h2 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h2><p>vncviewer灰屏大概率是vncserver没得到视频数据；dbus负责进程间的消息传递；问题原因可能出在dbus上；</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/11/09/Too-Many-Open-Files%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4VNC%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/11/09/Too-Many-Open-Files%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4VNC%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/" data-id="cm0dy1puj003ni2i4286ac597" data-title="Too Many Open Files错误导致VNC灰屏问题" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-install-perl-PAR-Packer" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/22/install-perl-PAR-Packer/" class="article-date">
@@ -569,6 +519,51 @@
 
 
   
+    <article id="post-Coloring-the-C-shell-Prompt" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/20/Coloring-the-C-shell-Prompt/" class="article-date">
+  <time class="dt-published" datetime="2022-07-20T10:22:32.000Z" itemprop="datePublished">2022-07-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/20/Coloring-the-C-shell-Prompt/">Coloring the C-Shell Prompt</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">set   black = &quot;%&#123;\033[0;30m%&#125;&quot;</span><br><span class="line">set  Bblack = &quot;%&#123;\033[B;30m%&#125;&quot;</span><br><span class="line">set     red = &quot;%&#123;\033[0;31m%&#125;&quot;</span><br><span class="line">set    Bred = &quot;%&#123;\033[1;31m%&#125;&quot;</span><br><span class="line">set   green = &quot;%&#123;\033[0;32m%&#125;&quot;</span><br><span class="line">set  Bgreen = &quot;%&#123;\033[1;32m%&#125;&quot;</span><br><span class="line">set  yellow = &quot;%&#123;\033[0;33m%&#125;&quot;</span><br><span class="line">set Byellow = &quot;%&#123;\033[1;33m%&#125;&quot;</span><br><span class="line">set    blue = &quot;%&#123;\033[0;34m%&#125;&quot;</span><br><span class="line">set   Bblue = &quot;%&#123;\033[1;34m%&#125;&quot;</span><br><span class="line">set  purple = &quot;%&#123;\033[0;35m%&#125;&quot;</span><br><span class="line">set Bpurple = &quot;%&#123;\033[1;35m%&#125;&quot;</span><br><span class="line">set    cyan = &quot;%&#123;\033[0;36m%&#125;&quot;</span><br><span class="line">set   Bcyan = &quot;%&#123;\033[1;36m%&#125;&quot;</span><br><span class="line">set   white = &quot;%&#123;\033[0;37m%&#125;&quot;</span><br><span class="line">set  Bwhite = &quot;%&#123;\033[1;37m%&#125;&quot;</span><br><span class="line">set     end = &quot;%&#123;\033[0m%&#125;&quot;</span><br><span class="line"></span><br><span class="line">alias setprompt &#x27;set prompt = &quot;\n$&#123;cyan&#125;%~\n$&#123;Bpurple&#125;%n@%m$&#123;Bwhite&#125;[`id -ng`]$&#123;end&#125; &quot;&#x27;</span><br><span class="line">alias cd &#x27;chdir \!* &amp;&amp; setprompt&#x27;</span><br><span class="line">setprompt</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2022/07/20/Coloring-the-C-shell-Prompt/" data-id="cm0dy1ptl000ei2i4e0fw9a38" data-title="Coloring the C-Shell Prompt" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
 
 
   <nav id="page-nav">
@@ -626,10 +621,6 @@
       <ul>
         
           <li>
-            <a href="/2024/09/04/Calibre/">(no title)</a>
-          </li>
-        
-          <li>
             <a href="/2024/09/04/Calibre-Platform-Support-2024/">Calibre Platform Support - 2024</a>
           </li>
         
@@ -643,6 +634,10 @@
         
           <li>
             <a href="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/">中国简史图谱</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/25/%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD/">开学寄语</a>
           </li>
         
       </ul>
