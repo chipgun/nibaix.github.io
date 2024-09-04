@@ -73,6 +73,107 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-redhat-adjust-lvm-partition-size" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/09/redhat-adjust-lvm-partition-size/" class="article-date">
+  <time class="dt-published" datetime="2023-04-09T14:03:18.000Z" itemprop="datePublished">2023-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/04/09/redhat-adjust-lvm-partition-size/">Redhat: Adjust LVM Partition Size</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>Check file system and LVM info</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># df -hT |grep rhel</span><br><span class="line">/dev/mapper/rhel-root xfs  50G  49G  1G  99%</span><br><span class="line">/dev/mapper/rhel-home xfs  ...  ...  ... ...</span><br><span class="line"># lsblk</span><br><span class="line"># lvs -v</span><br><span class="line"># vgs -v</span><br><span class="line"># pvs -v</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2023/04/09/redhat-adjust-lvm-partition-size/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2023/04/09/redhat-adjust-lvm-partition-size/" data-id="cm0dy1pw20091i2i40iff0lka" data-title="Redhat: Adjust LVM Partition Size" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-how-to-enable-XDMCP-service-GDM" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/23/how-to-enable-XDMCP-service-GDM/" class="article-date">
+  <time class="dt-published" datetime="2023-03-23T04:51:32.000Z" itemprop="datePublished">2023-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/23/how-to-enable-XDMCP-service-GDM/">How to Enable XDMCP Service (GDM)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>GDM can be configured to allow remote access via XDMCP (X Display Manager Control Protocol). We can use Cygwin-X or Exceed, to connect remotely to a server and get a complete desktop GUI.</p>
+<p><strong>1. Edit the file &#x2F;etc&#x2F;gdm&#x2F;custom.conf and make sure below parameters are added&#x2F;set.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">% cat /etc/gdm/custom.conf</span><br><span class="line"># GDM configuration storage</span><br><span class="line">[daemon]</span><br><span class="line">[security]</span><br><span class="line">DisallowTCP=false</span><br><span class="line">AllowRemoteRoot=true</span><br><span class="line">[xdmcp]</span><br><span class="line">Enable=true</span><br><span class="line">[greeter]</span><br><span class="line">[chooser]</span><br><span class="line">[debug]</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2023/03/23/how-to-enable-XDMCP-service-GDM/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2023/03/23/how-to-enable-XDMCP-service-GDM/" data-id="cm0dy1pvg006wi2i4h7s5flre" data-title="How to Enable XDMCP Service (GDM)" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/remote/" rel="tag">remote</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-nomachine-server-admin" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/03/19/nomachine-server-admin/" class="article-date">
@@ -473,299 +574,6 @@
 
 
   
-    <article id="post-definition-of-TSMC-metal-layer-map" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/09/definition-of-TSMC-metal-layer-map/" class="article-date">
-  <time class="dt-published" datetime="2023-03-09T14:15:25.000Z" itemprop="datePublished">2023-03-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/09/definition-of-TSMC-metal-layer-map/">Definition of TSMC Metal Layer Map</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="1P10M-5X2Y2Z"><a href="#1P10M-5X2Y2Z" class="headerlink" title="1P10M_5X2Y2Z"></a>1P10M_5X2Y2Z</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221716667.jpg" class="">
-
-<h1 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221837347.jpg" class="">
-
-<h1 id="Via"><a href="#Via" class="headerlink" title="Via"></a>Via</h1><img src="/2023/03/09/definition-of-TSMC-metal-layer-map/image-20230309221910056.jpg" class="">
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/03/09/definition-of-TSMC-metal-layer-map/" data-id="cm0dy1pv0005bi2i44wdobphz" data-title="Definition of TSMC Metal Layer Map" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-update-synopsys-computer-platforms" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/02/23/update-synopsys-computer-platforms/" class="article-date">
-  <time class="dt-published" datetime="2023-02-23T03:43:00.000Z" itemprop="datePublished">2023-02-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/02/23/update-synopsys-computer-platforms/">Update: Synopsys Computer Platforms</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <table>
-<thead>
-<tr>
-<th><strong>Foundation</strong></th>
-<th><strong>ROs</strong></th>
-<th><strong>Linux O&#x2F;S Versions</strong></th>
-<th align="left"><strong>Windows Platform</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>V</strong></td>
-<td>2024.03</td>
-<td>CentOS: 7.3+  RHEL: 7.3+; 8+  SLES: 12-SP5+; 15-SP2+      Rocky Linux: 8.4+        AlmaLinux: 8.4+</td>
-<td align="left">Windows:  10; 11  Windows Server:   2016;    2019;    2022</td>
-</tr>
-<tr>
-<td></td>
-<td>2023.12</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2023.09</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><strong>U</strong></td>
-<td>2023.06</td>
-<td>CentOS: 7.3+  RHEL: 7.3+; 8+  SLES: 12-SP4+; 15+          Rocky Linux: 8.4+        AlmaLinux: 8.4+</td>
-<td align="left">Windows:  10; 11  Windows Server:  2016;   2019;    2022</td>
-</tr>
-<tr>
-<td></td>
-<td>2023.03</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2022.12</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><strong>T</strong></td>
-<td>2022.09</td>
-<td>CentOS: 7.3+  RHEL: 7.3+; 8+  SLES: 12-SP4+; 15+</td>
-<td align="left">Windows 10  Windows Server 2016  Windows Server 2019</td>
-</tr>
-<tr>
-<td></td>
-<td>2022.06</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2022.03</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><strong>S</strong></td>
-<td>2021.12</td>
-<td>CentOS: 7.3+; 8+  RHEL: 7.3+; 8+  SLES: 12-SP4+; 15+</td>
-<td align="left">Windows 10  Windows Server 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2021.09</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2021.06</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><strong>R</strong></td>
-<td>2021.03</td>
-<td>RHEL 6.6+, 7.x, 8+  CentOS 6.6+, 7.1.1503+, 8+  SLES 12+, 15+</td>
-<td align="left">Windows 7, 10 Windows Server 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2020.12</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2020.09</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><strong>Q</strong></td>
-<td>2020.06</td>
-<td>RHEL 6.6+, 7.x, 8+  CentOS 6.6+, 7.1.1503+, 8+  SLES 12+, 15+</td>
-<td align="left">Windows 7, 10 Windows Server 2008 R2, 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2020.03</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2019.12</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><strong>P</strong></td>
-<td>2019.09</td>
-<td>RHEL 6.6+, 7.x  CentOS 6.6+, 7.x  SLES 11.4+ and 12.x</td>
-<td align="left">Windows 7, 10 Windows Server 2008 R2, 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2019.06</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2019.03</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><strong>O</strong></td>
-<td>2018.12</td>
-<td>RHEL 6.6+, 7.x  CentOS 6.6+, 7.x  SLES 11.4 and 12.x</td>
-<td align="left">Windows 7, 10 Windows Server 2008 R2, 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2018.09</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2018.06</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><strong>N</strong></td>
-<td>2018.03</td>
-<td>RHEL 6.6+, 7.x  SLES 11.x and 12.x</td>
-<td align="left">Windows 7, 8, 10</td>
-</tr>
-<tr>
-<td></td>
-<td>2017.12</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2017.09</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><strong>M</strong></td>
-<td>2017.06</td>
-<td>RHEL 6.6+, 7.x  SLES 11.x and 12.x</td>
-<td align="left">Windows 7, 8, 10</td>
-</tr>
-<tr>
-<td></td>
-<td>2017.03</td>
-<td></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td></td>
-<td>2016.12</td>
-<td></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<p><strong>Synopsys Synchronized Release Model (SRM)</strong></p>
-<p>The Synopsys Synchronized Release Model is a schedule-driven release model.</p>
-<ul>
-<li>Releases are at fixed-dates known as Release Opportunities (RO)</li>
-<li>There are four ROs&#x2F;year for Feature Releases</li>
-<li>There are eight ROs&#x2F;year for Service Pack Releases</li>
-<li>Individual products define their release frequency</li>
-<li>All product releases are developed and tested on a defined set of  common platform configuration and common code baseline – referred to as  Foundation.</li>
-</ul>
-<p>A Foundation can change every 9  months. Operating System changes are typically scheduled every 36 months to keep up with market demand and vendor releases. Synopsys typically  builds on a single operating system baseline version for each SRM  Foundation.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2023/02/23/update-synopsys-computer-platforms/" data-id="cm0dy1pwe00a8i2i4fgm5apus" data-title="Update: Synopsys Computer Platforms" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -801,7 +609,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 13px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 12px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 10px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+      <a href="/tags/ahb/" style="font-size: 10px;">ahb</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apb/" style="font-size: 11px;">apb</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/axi/" style="font-size: 10px;">axi</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 12px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 13px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 11px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
     </div>
   </div>
 
@@ -823,6 +631,14 @@
       <ul>
         
           <li>
+            <a href="/2024/09/04/Calibre/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/04/Calibre-Platform-Support-2024/">Calibre Platform Support - 2024</a>
+          </li>
+        
+          <li>
             <a href="/2024/09/03/install-linux-editor-atom/">Install Linux Editor Atom</a>
           </li>
         
@@ -832,14 +648,6 @@
         
           <li>
             <a href="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/">中国简史图谱</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/25/%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD/">开学寄语</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/20/Tmux-Quick-Guidance/">Tmux Quick Guidance</a>
           </li>
         
       </ul>
