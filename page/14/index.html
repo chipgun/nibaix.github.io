@@ -73,6 +73,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-start-flexLM-on-RHEL7-bootup" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/18/start-flexLM-on-RHEL7-bootup/" class="article-date">
+  <time class="dt-published" datetime="2022-04-18T03:35:18.000Z" itemprop="datePublished">2022-04-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/18/start-flexLM-on-RHEL7-bootup/">Start FlexLM on RHEL7 Bootup</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>方法一</strong></p>
+<p>自启动脚本放置于&#x2F;etc&#x2F;init.d（在RHEL7里面，&#x2F;etc&#x2F;init.d是指向&#x2F;etc&#x2F;rc.d&#x2F;init.d符号链接）</p>
+<p>推荐使用symbolic link，例如：<code>/etc/init.d/mgcld -&gt; /t/m/license/mgcld*</code>，这里mgcld需要有可执行权限。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /t/m/license/mgcld</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2022/04/18/start-flexLM-on-RHEL7-bootup/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2022/04/18/start-flexLM-on-RHEL7-bootup/" data-id="cm0ssz3ko009mksi45my4d1mx" data-title="Start FlexLM on RHEL7 Bootup" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-expand-redhat-root-dir-partition" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/18/expand-redhat-root-dir-partition/" class="article-date">
@@ -540,61 +592,6 @@
 
 
   
-    <article id="post-write-formatting-characters-in-markdown" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/03/write-formatting-characters-in-markdown/" class="article-date">
-  <time class="dt-published" datetime="2022-04-03T10:29:30.000Z" itemprop="datePublished">2022-04-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Program/">Program</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/03/write-formatting-characters-in-markdown/">Write Formatting Characters in Markdown</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Markdown treats these characters as ordinary text if there is backslash escape character in front of them.</p>
-<ol>
-<li>\\ <strong>backslash itself</strong></li>
-<li>\` <strong>backtick</strong></li>
-<li>\* <strong>asterisk</strong></li>
-<li>\_ <strong>underscore</strong></li>
-<li>\{\ } <strong>curly braces</strong></li>
-<li>\[ \] <strong>square brackets</strong></li>
-<li>\(\ ) <strong>parentheses</strong></li>
-<li>\# <strong>hash mark</strong></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/03/write-formatting-characters-in-markdown/" data-id="cm0ssz3l200bfksi4bwta77oa" data-title="Write Formatting Characters in Markdown" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -652,6 +649,10 @@
       <ul>
         
           <li>
+            <a href="/2024/09/11/Useful-Business-Dialogs/">Useful Business Dialogs</a>
+          </li>
+        
+          <li>
             <a href="/2024/09/08/vitamin-cheat-sheet/">Vitamin Cheat Sheet</a>
           </li>
         
@@ -665,10 +666,6 @@
         
           <li>
             <a href="/2024/08/29/Vim-move-cursor-with-command-f-F-t-T/">Vim: Move Cursor With Command &#34;f|F|t|T&#34;</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/">中国简史图谱</a>
           </li>
         
       </ul>
