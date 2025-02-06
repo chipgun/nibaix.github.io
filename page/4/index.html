@@ -164,7 +164,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold 1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">set_data_check -0.05 \</span><br><span class="line">  -fr [get_pins $related_pin] \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br><span class="line"></span><br><span class="line">set_multicycle_path -hold -1 \</span><br><span class="line">  -to [get_pins $constrained_pin]</span><br></pre></td></tr></table></figure>
 <p>Above script constrains the skew between <strong>$related_pin</strong> and <strong>$constrained_pin</strong> no more than 0.1ns, where <strong>$related_pin</strong> is like a clock pin whereas <strong>$constrained_pin</strong> is like a data pin.</p>
 <p>As neither -setup nor -hold specified, it implies that both setup and hold checks are set as -0.05ns. </p>
 
