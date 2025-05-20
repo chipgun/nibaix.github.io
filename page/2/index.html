@@ -73,6 +73,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Install-Xfce-Lightdm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/16/Install-Xfce-Lightdm/" class="article-date">
+  <time class="dt-published" datetime="2024-07-16T13:27:23.000Z" itemprop="datePublished">2024-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/07/16/Install-Xfce-Lightdm/">Install Xfce &amp; Lightdm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Instead of GNOME desktop with GDM which is configured by default in Redhat, I’m told that <strong>xfce</strong>+<strong>lightdm</strong> is much more lighted and efficient. So I tried that out today. Let’s see how to deply <strong>xfce</strong>+<strong>lightdm</strong> in CentOS7.9.</p>
+<h3 id="Install-EPEL-Extra-Package-for-Enterprise-Linux"><a href="#Install-EPEL-Extra-Package-for-Enterprise-Linux" class="headerlink" title="Install EPEL (Extra Package for Enterprise Linux)"></a>Install EPEL (Extra Package for Enterprise Linux)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum install epel-release</span><br><span class="line">//if above command doesn&#x27;t work, try this</span><br><span class="line"># yum install http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<h3 id="Install-xfce-lightdm"><a href="#Install-xfce-lightdm" class="headerlink" title="Install xfce &amp; lightdm"></a>Install xfce &amp; lightdm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum groupinstall xfce</span><br><span class="line"># yum install lightdm</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2024/07/16/Install-Xfce-Lightdm/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2024/07/16/Install-Xfce-Lightdm/" data-id="cm0xswux100161hi42ogd8gtm" data-title="Install Xfce &amp; Lightdm" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-EDA-Collections" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/07/10/EDA-Collections/" class="article-date">
@@ -511,62 +563,11 @@
 
 
   
-    <article id="post-Redhat根目录扩容" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/" class="article-date">
-  <time class="dt-published" datetime="2024-04-29T10:47:18.000Z" itemprop="datePublished">2024-04-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/">Redhat根目录/root扩容</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="1-查看分区及文件系统"><a href="#1-查看分区及文件系统" class="headerlink" title="1. 查看分区及文件系统"></a>1. 查看分区及文件系统</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br><span class="line">df -hT</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-备份-home分区内所有文件"><a href="#2-备份-home分区内所有文件" class="headerlink" title="2. 备份&#x2F;home分区内所有文件"></a>2. 备份&#x2F;home分区内所有文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar cfv /path/to/backup/home/home.tar /home/*</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/" data-id="cm0xswuxe002c1hi429wzbc6b" data-title="Redhat根目录/root扩容" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -606,7 +607,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -617,6 +618,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/">Synopsys Computing Platforms Roadmap 2025</a>
+          </li>
         
           <li>
             <a href="/2024/09/11/Useful-Business-Dialogs/">Useful Business Dialogs</a>
@@ -632,10 +637,6 @@
         
           <li>
             <a href="/2024/09/03/install-linux-editor-atom/">Install Linux Editor Atom</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/29/Vim-move-cursor-with-command-f-F-t-T/">Vim: Move Cursor With Command &#34;f|F|t|T&#34;</a>
           </li>
         
       </ul>
