@@ -79,6 +79,10 @@
   <time class="dt-published" datetime="2025-07-22T00:57:13.000Z" itemprop="datePublished">2025-07-22</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -95,7 +99,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Software-Package"><a href="#Software-Package" class="headerlink" title="Software Package"></a>Software Package</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@masterhost# tar xvf lsf10.1_lsfinstall_linux_x86_64.tar</span><br><span class="line">root@masterhost# cd lsf10.1_lsfinstall</span><br></pre></td></tr></table></figure>
+
+<h1 id="Edit-install-config"><a href="#Edit-install-config" class="headerlink" title="Edit install.config"></a>Edit install.config</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@masterhost# cat install.config</span><br><span class="line">LSF_TOP=&quot;/nfs/share/folder/lsftop&quot;</span><br><span class="line">LSF_ADMINS=&quot;lsfadmin&quot;</span><br><span class="line">LSF_CLUSTER_NAME=&quot;cluster1&quot;</span><br><span class="line">LSF_MASTER_LIST=&quot;masterhost&quot;</span><br><span class="line">LSF_ENTITLEMENT_FILE=&quot;/root/lsf10.1/install/dir/lsf_std_entitlement.dat&quot;</span><br><span class="line">LSF_TARDIR=&quot;/root/lsf10.1/install/dir&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Start-Installing"><a href="#Start-Installing" class="headerlink" title="Start Installing"></a>Start Installing</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@masterhost# ./lsfinstall -f install.config</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
