@@ -14,7 +14,7 @@
 <meta property="og:description" content="Software Package12root@masterhost# tar xvf lsf10.1_lsfinstall_linux_x86_64.tarroot@masterhost# cd lsf10.1_lsfinstall  Edit install.config1234567root@masterhost# cat install.configLSF_TOP&#x3D;&quot;&#x2F;nfs&#x2F;sh">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-07-22T00:57:13.000Z">
-<meta property="article:modified_time" content="2025-07-22T05:00:16.103Z">
+<meta property="article:modified_time" content="2025-07-22T05:17:55.058Z">
 <meta property="article:author" content="nibaix">
 <meta name="twitter:card" content="summary">
   
@@ -110,12 +110,18 @@
 <h1 id="LSF-Env-setup"><a href="#LSF-Env-setup" class="headerlink" title="LSF Env setup"></a>LSF Env setup</h1><p>To apply LSF environment settinges to all users, do followings.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@masterhost# cd /etc/profile.d</span><br><span class="line">root@masterhost# ln -s /nfs/share/dir/lsftop/conf/cshrc.lsf lsf.csh</span><br><span class="line">root@masterhost# ln -s /nfs/share/dir/lsftop/conf/profile.lsf lsf.sh</span><br><span class="line">root@masterhost# . lsf.sh</span><br></pre></td></tr></table></figure>
 
-<h1 id="Startup-LSF"><a href="#Startup-LSF" class="headerlink" title="Startup LSF"></a>Startup LSF</h1><p>lsfstartup uses RSH to connect to all nodes in the cluster and start LSF. If RSH is not configured in your environment, you can configure lsfstartup to use SSH by adding the following line to your lsf.conf file:  LSF_RSH&#x3D;ssh</p>
+<h1 id="Startup-LSF-as-root"><a href="#Startup-LSF-as-root" class="headerlink" title="Startup LSF as root"></a>Startup LSF as root</h1><p>lsfstartup uses RSH to connect to all nodes in the cluster and start LSF. If RSH is not configured in your environment, you can configure lsfstartup to use SSH by adding the following line to your lsf.conf file:  LSF_RSH&#x3D;ssh</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@masterhost# lsfstartup</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h1 id="Run-hostsetup-to-setup-LSF-hosts"><a href="#Run-hostsetup-to-setup-LSF-hosts" class="headerlink" title="Run hostsetup to setup LSF hosts"></a>Run hostsetup to setup LSF hosts</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@anyhost# cd /nfs/share/dir/lsftop/10.1/install </span><br><span class="line">root@anyhost# ./hostsetup --top=&quot;/usr/share/dir/lsftop&quot; --boot=&quot;y&quot; --startup=&quot;y&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="Run-hostsetup-on-each-LSF-host-as-root"><a href="#Run-hostsetup-on-each-LSF-host-as-root" class="headerlink" title="Run hostsetup on each LSF host as root"></a>Run hostsetup on each LSF host as root</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@anyhost# cd /nfs/share/dir/lsftop/10.1/install </span><br><span class="line">root@anyhost# ./hostsetup --top=&quot;/usr/share/dir/lsftop&quot; --boot=&quot;y&quot; --startup=&quot;y&quot;</span><br></pre></td></tr></table></figure>
 
 <h1 id="Test-LSF"><a href="#Test-LSF" class="headerlink" title="Test LSF"></a>Test LSF</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@anyhost# lsid</span><br><span class="line">root@anyhost# lshosts</span><br><span class="line">root@anyhost# bhosts</span><br><span class="line">usr007@masterhost% bsub -n 4 &quot;sleep 3600&quot;</span><br><span class="line">usr007@masterhost% bjobs</span><br></pre></td></tr></table></figure>
+
+<p>Users and lsfadmin user running LSF must be:</p>
+<ul>
+<li>NIS (or NIS-like) user on all hosts.</li>
+<li>existing on all hosts with same UID.</li>
+</ul>
 
       
     </div>
