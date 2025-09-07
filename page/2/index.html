@@ -73,6 +73,153 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Tmux-Quick-Guidance" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/08/20/Tmux-Quick-Guidance/" class="article-date">
+  <time class="dt-published" datetime="2024-08-20T06:14:40.000Z" itemprop="datePublished">2024-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/08/20/Tmux-Quick-Guidance/">Tmux Quick Guidance</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1-Tmux-Configuration"><a href="#1-Tmux-Configuration" class="headerlink" title="1. Tmux Configuration"></a>1. Tmux Configuration</h2><h3 id="1-1-tmux-conf"><a href="#1-1-tmux-conf" class="headerlink" title="1.1 ~&#x2F;.tmux.conf"></a>1.1 ~&#x2F;.tmux.conf</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># set prefix2 to Ctrl+Space</span><br><span class="line">set -g prefix2 C-Space</span><br><span class="line"># use | and - to split the windows</span><br><span class="line">unbind &#x27;&quot;&#x27;</span><br><span class="line">unbind &#x27;%&#x27;</span><br><span class="line">bind - split-window -v</span><br><span class="line">bind | split-window -h</span><br><span class="line"># use vi keys in buffer</span><br><span class="line">setw -g mode-keys vi</span><br><span class="line">set -g mouse on</span><br><span class="line">set -g history-limit 20000</span><br><span class="line">set -g default-terminal &quot;screen-256color&quot;</span><br><span class="line"># start windows and panes at 0</span><br><span class="line">set -g base-index 0</span><br><span class="line">setw -g pane-base-index 0</span><br><span class="line"># set re-number windows</span><br><span class="line">set -g renumber-windows on</span><br><span class="line"># set foreground/background style for active window</span><br><span class="line">setw -g window-status-current-style &quot;fg=white bg=black bold&quot;</span><br><span class="line"># set bind key &quot;r&quot; to reload configuration file</span><br><span class="line">bind r source-file ~/.tmux.conf \; display &quot;Reloaded!&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-tmux-conf-local"><a href="#1-2-tmux-conf-local" class="headerlink" title="1.2 ~&#x2F;.tmux.conf.local"></a>1.2 ~&#x2F;.tmux.conf.local</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux_conf_copy_to_os_clipboard=true</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Tmux-Shell-Commands"><a href="#2-Tmux-Shell-Commands" class="headerlink" title="2. Tmux Shell Commands"></a>2. Tmux Shell Commands</h2><table>
+<thead>
+<tr>
+<th align="right">Action</th>
+<th align="left">Shell Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">New session</td>
+<td align="left">% tmux</td>
+</tr>
+<tr>
+<td align="right">New session with a name</td>
+<td align="left">% tmux -s [name]</td>
+</tr>
+<tr>
+<td align="right">List sessions</td>
+<td align="left">% tmux ls</td>
+</tr>
+<tr>
+<td align="right">Attach to last session</td>
+<td align="left">% tmux a</td>
+</tr>
+<tr>
+<td align="right">Attach to session with a name</td>
+<td align="left">% tmux a -t [name]</td>
+</tr>
+</tbody></table>
+<h2 id="3-Daily-Commands"><a href="#3-Daily-Commands" class="headerlink" title="3. Daily Commands"></a>3. Daily Commands</h2><table>
+<thead>
+<tr>
+<th align="right">Action</th>
+<th align="left">Command (prefix + …)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">New session</td>
+<td align="left">:new</td>
+</tr>
+<tr>
+<td align="right">New window</td>
+<td align="left">c</td>
+</tr>
+<tr>
+<td align="right">New pane (horizontal)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="right">New pane (vertical)</td>
+<td align="left">|</td>
+</tr>
+<tr>
+<td align="right">Rename session</td>
+<td align="left">:rename -T [name]</td>
+</tr>
+<tr>
+<td align="right">Rename window</td>
+<td align="left">,</td>
+</tr>
+<tr>
+<td align="right">Rename pane</td>
+<td align="left">:selectp -T [name]</td>
+</tr>
+<tr>
+<td align="right">Show all sessions</td>
+<td align="left">s</td>
+</tr>
+<tr>
+<td align="right">List&#x2F;preview windows</td>
+<td align="left">w</td>
+</tr>
+<tr>
+<td align="right">Select window by number</td>
+<td align="left">0-9</td>
+</tr>
+<tr>
+<td align="right">Select previous window</td>
+<td align="left">p</td>
+</tr>
+<tr>
+<td align="right">Select next window</td>
+<td align="left">n</td>
+</tr>
+<tr>
+<td align="right">Toggle last active window</td>
+<td align="left">l</td>
+</tr>
+<tr>
+<td align="right">Move to previous session</td>
+<td align="left">(</td>
+</tr>
+<tr>
+<td align="right">Move to next session</td>
+<td align="left">)</td>
+</tr>
+<tr>
+<td align="right">Detatch from session</td>
+<td align="left">d</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2024/08/20/Tmux-Quick-Guidance/" data-id="cm0xswuxo003k1hi4debzf7pe" data-title="Tmux Quick Guidance" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-配置ssh-限制-允许IP" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/07/20/%E9%85%8D%E7%BD%AEssh-%E9%99%90%E5%88%B6-%E5%85%81%E8%AE%B8IP/" class="article-date">
@@ -507,55 +654,6 @@
 
 
   
-    <article id="post-iStoreOS-Configurations" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/12/iStoreOS-Configurations/" class="article-date">
-  <time class="dt-published" datetime="2024-05-12T13:14:26.000Z" itemprop="datePublished">2024-05-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/12/iStoreOS-Configurations/">iStoreOS Configurations</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="网络拓扑图"><a href="#网络拓扑图" class="headerlink" title="网络拓扑图"></a>网络拓扑图</h1><img src=/2024/05/12/iStoreOS-Configurations/image-20240515192508127.jpg width=480>
-
-<h1 id="阻止某台主机上外网"><a href="#阻止某台主机上外网" class="headerlink" title="阻止某台主机上外网"></a>阻止某台主机上外网</h1><p>网络 - 防火墙 - NAT规则 - 添加</p>
-<img src=/2024/05/12/iStoreOS-Configurations/image-20240512212017335.png width=480>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/05/12/iStoreOS-Configurations/" data-id="cm0xswuyt007i1hi425uo6y6l" data-title="iStoreOS Configurations" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -600,7 +698,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -611,6 +709,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/09/07/How-to-partition-a-new-disk-drive/">How to Partition a New Disk Drive</a>
+          </li>
         
           <li>
             <a href="/2025/07/22/LSF10-1-Installation/">LSF10.1 Installation</a>
@@ -626,10 +728,6 @@
         
           <li>
             <a href="/2024/09/08/vitamin-cheat-sheet/">Vitamin Cheat Sheet</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/04/Calibre-Platform-Support-2024/">Calibre Platform Support - 2024</a>
           </li>
         
       </ul>
