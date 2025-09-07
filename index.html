@@ -99,7 +99,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="1-Check-existing-partitions"><a href="#1-Check-existing-partitions" class="headerlink" title="1. Check existing partitions"></a>1. Check existing partitions</h3><p>And identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb</p>
+        <h3 id="0-Create-virtual-disk-in-machine-BIOS"><a href="#0-Create-virtual-disk-in-machine-BIOS" class="headerlink" title="0. Create virtual disk in machine BIOS."></a>0. Create virtual disk in machine BIOS.</h3><p>Choose the RAID type (RAID0&#x2F;RAID1&#x2F;&#x2F;RAID10&#x2F;RAID5) you want it to be.</p>
+<h3 id="1-Check-existing-partitions"><a href="#1-Check-existing-partitions" class="headerlink" title="1. Check existing partitions"></a>1. Check existing partitions</h3><p>And identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> fdisk -l</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-Create-or-modify-partitions"><a href="#2-Create-or-modify-partitions" class="headerlink" title="2. Create or modify partitions"></a>2. Create or modify partitions</h3><p>Run fdisk to manage disk partition</p>
