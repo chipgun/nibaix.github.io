@@ -99,10 +99,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><strong>1. Check existing partitions</strong><br><em>And identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb</em></p>
+        <p>##1. Check existing partitions<br>And identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> fdisk -l</span><br></pre></td></tr></table></figure>
 
-<p><strong>2. Create or modify partitions</strong><br><em>Run fdisk to manage disk partition</em></p>
+<p>##2. Create or modify partitions<br>Run fdisk to manage disk partition</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> fdisk /dev/sdb</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Press m to view available commands.</li>
@@ -110,17 +110,14 @@
 <li>Follow prompts to set partition size.</li>
 <li>Press w to save the change.</li>
 </ul>
-<p><strong>3. Format the partition</strong><br><em>Choose a filesystem type (e.g. xfs, ext4) and format the partition:</em><br><em>Use xfs for high-performance needs or ext4 for general use.</em></p>
+<p>##3. Format the partition<br>Choose a filesystem type (e.g. xfs, ext4) and format the partition:<br>Use xfs for high-performance needs or ext4 for general use.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> mkfs.xfs /dev/sdb1</span><br></pre></td></tr></table></figure>
 
-<p><strong>4. Mount the partition</strong></p>
+<p>##4. Mount the partition</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> <span class="built_in">mkdir</span> /opt/work</span><br><span class="line">% <span class="built_in">sudo</span> mount /dev/sdb1 /opt/work</span><br></pre></td></tr></table></figure>
 
-<p><strong>5. Configure auto-mount</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> <span class="built_in">echo</span> <span class="string">&quot;/dev/sdb1 /mnt/mydisk ext4 defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure>
-
-<p><strong>6. Check the filesystem</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% lsblk</span><br><span class="line">% <span class="built_in">df</span> -hT</span><br></pre></td></tr></table></figure>
+<p>##5. Configure auto-mount and check filesystem</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> <span class="built_in">echo</span> <span class="string">&quot;/dev/sdb1 /mnt/mydisk ext4 defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br><span class="line">% lsblk</span><br><span class="line">% <span class="built_in">df</span> -hT</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -129,6 +126,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
     </footer>
   </div>
   
