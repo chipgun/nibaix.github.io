@@ -6,15 +6,15 @@
   
   <title>How to Partition a New Disk Drive | 芝士盒</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="##1. Check existing partitionsAnd identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb 1% sudo fdisk -l  ##2. Create or modify partitionsRun fdisk to manage disk partition 1% sudo fdisk &#x2F;">
+  <meta name="description" content="1. Check existing partitionsAnd identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb 1% sudo fdisk -l  2. Create or modify partitionsRun fdisk to manage disk partition 1% sudo fdisk &#x2F;dev&#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Partition a New Disk Drive">
 <meta property="og:url" content="http://blog.nibaix.com/2025/09/07/How-to-partition-a-new-disk-drive/index.html">
 <meta property="og:site_name" content="芝士盒">
-<meta property="og:description" content="##1. Check existing partitionsAnd identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb 1% sudo fdisk -l  ##2. Create or modify partitionsRun fdisk to manage disk partition 1% sudo fdisk &#x2F;">
+<meta property="og:description" content="1. Check existing partitionsAnd identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb 1% sudo fdisk -l  2. Create or modify partitionsRun fdisk to manage disk partition 1% sudo fdisk &#x2F;dev&#x2F;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-09-07T03:45:25.000Z">
-<meta property="article:modified_time" content="2025-09-07T03:56:51.713Z">
+<meta property="article:modified_time" content="2025-09-07T03:58:20.495Z">
 <meta property="article:author" content="nibaix">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -102,10 +102,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>##1. Check existing partitions<br>And identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb</p>
+        <h2 id="1-Check-existing-partitions"><a href="#1-Check-existing-partitions" class="headerlink" title="1. Check existing partitions"></a>1. Check existing partitions</h2><p>And identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> fdisk -l</span><br></pre></td></tr></table></figure>
 
-<p>##2. Create or modify partitions<br>Run fdisk to manage disk partition</p>
+<h2 id="2-Create-or-modify-partitions"><a href="#2-Create-or-modify-partitions" class="headerlink" title="2. Create or modify partitions"></a>2. Create or modify partitions</h2><p>Run fdisk to manage disk partition</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> fdisk /dev/sdb</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Press m to view available commands.</li>
@@ -113,14 +113,12 @@
 <li>Follow prompts to set partition size.</li>
 <li>Press w to save the change.</li>
 </ul>
-<p>##3. Format the partition<br>Choose a filesystem type (e.g. xfs, ext4) and format the partition:<br>Use xfs for high-performance needs or ext4 for general use.</p>
+<h2 id="3-Format-the-partition"><a href="#3-Format-the-partition" class="headerlink" title="3. Format the partition"></a>3. Format the partition</h2><p>Choose a filesystem type (e.g. xfs, ext4) and format the partition:<br>Use xfs for high-performance needs or ext4 for general use.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> mkfs.xfs /dev/sdb1</span><br></pre></td></tr></table></figure>
 
-<p>##4. Mount the partition</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> <span class="built_in">mkdir</span> /opt/work</span><br><span class="line">% <span class="built_in">sudo</span> mount /dev/sdb1 /opt/work</span><br></pre></td></tr></table></figure>
+<h2 id="4-Mount-the-partition"><a href="#4-Mount-the-partition" class="headerlink" title="4. Mount the partition"></a>4. Mount the partition</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> <span class="built_in">mkdir</span> /opt/work</span><br><span class="line">% <span class="built_in">sudo</span> mount /dev/sdb1 /opt/work</span><br></pre></td></tr></table></figure>
 
-<p>##5. Configure auto-mount and check filesystem</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> <span class="built_in">echo</span> <span class="string">&quot;/dev/sdb1 /mnt/mydisk ext4 defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br><span class="line">% lsblk</span><br><span class="line">% <span class="built_in">df</span> -hT</span><br></pre></td></tr></table></figure>
+<h2 id="5-Configure-auto-mount-and-check-filesystem"><a href="#5-Configure-auto-mount-and-check-filesystem" class="headerlink" title="5. Configure auto-mount and check filesystem"></a>5. Configure auto-mount and check filesystem</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> <span class="built_in">echo</span> <span class="string">&quot;/dev/sdb1 /mnt/mydisk ext4 defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br><span class="line">% lsblk</span><br><span class="line">% <span class="built_in">df</span> -hT</span><br></pre></td></tr></table></figure>
 
       
     </div>
