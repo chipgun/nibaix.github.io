@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Special File Permissions of SUID GUID and Sticky Bit | 芝士盒</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Overview">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Special File Permissions of SUID GUID and Sticky Bit">
+<meta property="og:url" content="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/index.html">
+<meta property="og:site_name" content="芝士盒">
+<meta property="og:description" content="Overview">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172749073.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531171129953.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531171306909.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531171446561.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172317903.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172546528.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172749073.jpg">
+<meta property="article:published_time" content="2022-05-31T09:05:45.000Z">
+<meta property="article:modified_time" content="2022-05-31T09:48:12.000Z">
+<meta property="article:author" content="nibaix">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172749073.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="芝士盒" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">芝士盒</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What&#39;s the story?</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T09:05:45.000Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Special File Permissions of SUID GUID and Sticky Bit
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172749073.jpg" class="">
+
+<span id="more"></span>
+
+<p>You see an s instead of x in the file permissions? Linux has some special file permissions called SUID, GUID and Sticky Bit. Know more about them.</p>
+<p><em>File permissions and ownership are the basic and yet essential security concept in Linux. You probably are already familiar with these terms already. It typically looks like this:</em></p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531171129953.jpg" class="">
+
+<p>Apart from these regular permissions, there are a few special file permissions and not many Linux users are aware of it.</p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531171306909.jpg" class="">
+
+<p>To start talking about of special permissions, I am going to presume that you have some knowledge of the basic file permissions. If not, please <a target="_blank" rel="noopener" href="https://linuxhandbook.com/linux-file-permissions/">read our excellent guide explaining Linux file permission</a>.</p>
+<p>Now I’m gonna show you some special permissions with new letters on Linux file system.</p>
+<p>In this example, the <code>passwd</code> command, responsible to change the password of a user, has the letter <code>s</code> on the same place we expect to see <code>x</code> or <code>-</code>, for user permissions. It’s important to notice that this file belongs to root user and root group.</p>
+<p>With this permission you don’t need to give <code>sudo</code> access to a specific user when you want him to run some root script.</p>
+<h2 id="What-is-SUID"><a href="#What-is-SUID" class="headerlink" title="What is SUID?"></a>What is SUID?</h2><p><em><strong>When the SUID bit is set on an executable file, this means that the file will be executed with the same permissions as the owner of the executable file.</strong></em></p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531171446561.jpg" class="">
+
+<p>Let’s take a practical example. If you look at the binary executable file of the <code>passwd</code> command, it has the SUID bit set.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ <span class="built_in">ls</span> -l /usr/bin/passwd</span><br><span class="line">-rwsr-xr-x 1 root root 59640 Mar 22  2019 /usr/bin/passwd</span><br></pre></td></tr></table></figure>
+
+<p>This means that any user running the <code>passwd</code> command will be running it with the same permission as root.</p>
+<p>What’s the benefit? The <code>passwd</code> command needs to edit files like &#x2F;etc&#x2F;passwd, &#x2F;etc&#x2F;shadow to change the password. These files are owned by root and can only be modified by root. But thanks to the setuid flag (SUID bit), a regular user will also be able to modify these files (that are owned by root) and change his&#x2F;her password.</p>
+<p>This is the reason why you can use the <code>passwd</code> command to change your own password despite of the fact that the files this command modifies are owned by root.</p>
+<h3 id="Why-can-a-normal-user-not-change-the-password-of-other-users"><a href="#Why-can-a-normal-user-not-change-the-password-of-other-users" class="headerlink" title="Why can a normal user not change the password of other users?"></a>Why can a normal user not change the password of other users?</h3><p>Note that a normal user can’t change passwords for other users, only for himself&#x2F;herself. But why? If you can run the <code>passwd</code> command as a regular user with the same permissions as root and modify the files like &#x2F;etc&#x2F;passwd, why can you not change the password of other users?</p>
+<p>If you check the code for the <code>passwd</code> command, you’ll find that it checks the UID of the user whose password is being modified with the UID of the user that ran the command. If it doesn’t match and if the command wasn’t run by root, it throws an error.</p>
+<p>The setuid&#x2F;SUID concept is tricky and should be used with utmost cautious otherwise you’ll leave security gaps in your system. It’s an essential security concept and many commands (like <code>ping</code> command) and programs (like <code>sudo</code>) utilize it.</p>
+<p>Now that you understand the concept SUID, let’s see how to set the SUID bit.</p>
+<h3 id="How-to-set-SUID-bit"><a href="#How-to-set-SUID-bit" class="headerlink" title="How to set SUID bit?"></a>How to set SUID bit?</h3><p>I find the symbolic way easier while setting SUID bit. You can use the <code>chmod</code> command in this way:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> u+s file_name</span><br></pre></td></tr></table></figure>
+<p>Here’s an example:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ <span class="built_in">ls</span> -l test.txt</span><br><span class="line">-rwxrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:51 test.txt</span><br><span class="line">linuxhandbook:~$ <span class="built_in">chmod</span> u+s test.txt</span><br><span class="line">linuxhandbook:~$ <span class="built_in">ls</span> -l test.txt</span><br><span class="line">-rwsrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:52 test.txt</span><br></pre></td></tr></table></figure>
+
+<p>You can also use the numeric way. You just need to add a fourth digit to the normal permissions. <strong>The octal number used to set SUID is always 4.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -l test2.txt</span><br><span class="line">-rwxrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:53 test2.txt</span><br><span class="line">linuxhandbook:~$ chmod 4766 test2.txt</span><br><span class="line">linuxhandbook:~$ ls -l test2.txt</span><br><span class="line">-rwsrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:54 test2.txt</span><br></pre></td></tr></table></figure>
+<h3 id="How-to-remove-SUID"><a href="#How-to-remove-SUID" class="headerlink" title="How to remove SUID?"></a>How to remove SUID?</h3><p>You can use either the symbolic mode in <code>chmod</code> command like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u-s test.txt</span><br></pre></td></tr></table></figure>
+
+<p>Or, use the numeric way with 0 instead of 4 with the permissions you want to set:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 0766 test2.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="Difference-between-small-s-and-capital-S-as-SUID-bit"><a href="#Difference-between-small-s-and-capital-S-as-SUID-bit" class="headerlink" title="Difference between small s and capital S as SUID bit"></a>Difference between small s and capital S as SUID bit</h3><p>Remember the definition of SUID? It allows a file to be <em><strong>executed</strong></em> with the same permissions as the owner of the file.</p>
+<p>But what if the file doesn’t have execute bit set in the first place? Like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -l test.txt</span><br><span class="line">-rw-rw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:51 test.txt</span><br></pre></td></tr></table></figure>
+
+<p>If you set the SUID bit, it will show a capital S, not small s:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ chmod u+s test.txt</span><br><span class="line">linuxhandbook:~$ ls -l test.txt</span><br><span class="line">-rwSrw-rw- 1 linuxhandbook linuxhandbook 0 Apr 12 17:52 test.txt</span><br></pre></td></tr></table></figure>
+
+<p>The S as SUID flag means there is an error that you should look into. You want the file to be executed with the same permission as the owner but there is no executable permission on the file. Which means that not even the owner is allowed to execute the file and if file cannot be executed, you won’t get the permission as the owner. This fails the entire point of setting the SUID bit.</p>
+<h3 id="How-to-find-all-files-with-SUID-set"><a href="#How-to-find-all-files-with-SUID-set" class="headerlink" title="How to find all files with SUID set?"></a>How to find all files with SUID set?</h3><p>If you want to search files with this permission, use <code>find</code> command in the terminal with option -perm.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -perm /4000</span><br></pre></td></tr></table></figure>
+
+<h2 id="What-is-SGID"><a href="#What-is-SGID" class="headerlink" title="What is SGID?"></a>What is SGID?</h2><p><em><strong>SGID is similar to SUID. With the SGID bit set, any user executing the file will have same permissions as the group owner of the file.</strong></em></p>
+<p>It’s benefit is in handling the directory. When SGID permission is applied to a directory, all sub directories and files created inside this directory will get the same group ownership as main directory (not the group ownership of the user that created the files and directories).</p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172317903.jpg" class="">
+
+<p>Open your terminal and check the permission on the file &#x2F;var&#x2F;local:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld /var/local</span><br><span class="line">drwxrwsr-x 1 root staff 512 Apr 24  2018 /var/local</span><br></pre></td></tr></table></figure>
+
+<p>This folder &#x2F;var&#x2F;local has the letter ‘s’ on the same place you expect to see ‘x’ or ‘-‘ for group permissions.</p>
+<p>A practical example of SGID is with Samba server for sharing files on your local network. It’s guaranteed that all new files will not lose the permissions desired, no matter who created it.</p>
+<h3 id="How-to-set-SGID"><a href="#How-to-set-SGID" class="headerlink" title="How to set SGID?"></a>How to set SGID?</h3><p>You can set the SGID bit in symbolic mode like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod g+s directory_name</span><br></pre></td></tr></table></figure>
+
+<p>Here’s an example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld folder/</span><br><span class="line">drwxrwxr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:32 folder/</span><br><span class="line">linuxhandbook:~$ chmod g+s folder</span><br><span class="line">linuxhandbook:~$ ls -ld folder/</span><br><span class="line">drwxrwsr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:32 folder/</span><br></pre></td></tr></table></figure>
+
+<p>You may also use the numeric way. You just need to add a fourth digit to the normal permissions. <strong>The octal number used to SGID is always 2.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld folder2/</span><br><span class="line">drwxrwxr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:33 folder2/</span><br><span class="line">linuxhandbook:~$ chmod 2775 folder2</span><br><span class="line">linuxhandbook:~$ ls -ld folder2/</span><br><span class="line">drwxrwsr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:33 folder2/</span><br></pre></td></tr></table></figure>
+
+<h3 id="How-to-remove-SGID-bit"><a href="#How-to-remove-SGID-bit" class="headerlink" title="How to remove SGID bit?"></a>How to remove SGID bit?</h3><p>Just use the -s instead of +s like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod g-s folder</span><br></pre></td></tr></table></figure>
+
+<p>Removing SGID is the same as removing SGID. Use the additional 0 before the permissions you want to set:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 0755 folder</span><br></pre></td></tr></table></figure>
+
+<h3 id="How-to-find-files-with-SGID-set-in-Linux"><a href="#How-to-find-files-with-SGID-set-in-Linux" class="headerlink" title="How to find files with SGID set in Linux"></a>How to find files with SGID set in Linux</h3><p>To find all the files with SGID bit set, use this command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -perm /2000</span><br></pre></td></tr></table></figure>
+
+<h2 id="What-is-a-Sticky-Bit"><a href="#What-is-a-Sticky-Bit" class="headerlink" title="What is a Sticky Bit?"></a>What is a Sticky Bit?</h2><p><em><strong>The sticky bit works on the directory. With sticky bit set on a directory, all the files in the directory can only be deleted or renamed by the file owners only or the root.</strong></em></p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172546528.jpg" class="">
+
+<p>This is typically used in the &#x2F;tmp directory that works as the trash can of temporary files.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld /tmp</span><br><span class="line">drwxrwxrwt 1 root root 512 Apr 12 13:24 /tmp</span><br></pre></td></tr></table></figure>
+
+<p>As you can see, the folder &#x2F;tmp, has the letter <em><strong>*t*</strong></em> on the same place we expect to see <strong>x</strong> or <strong>–</strong> for others permissions. This means that a user (except root) cannot delete the temporary files created by other users in the &#x2F;tmp directory.</p>
+<h3 id="How-to-set-the-sticky-bit"><a href="#How-to-set-the-sticky-bit" class="headerlink" title="How to set the sticky bit?"></a>How to set the sticky bit?</h3><p>As always, you can use both symbolic and numeric mode to set the sticky bit in Linux.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +t my_dir</span><br></pre></td></tr></table></figure>
+
+<p>Here’s an example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld my_dir/</span><br><span class="line">drwxrwxr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:54 my_dir/</span><br><span class="line">linuxhandbook:~$ chmod +t my_dir/</span><br><span class="line">linuxhandbook:~$ ls -ld my_dir/</span><br><span class="line">drwxrwxr-t 2 linuxhandbook linuxhandbook 4096 Apr 12 19:54 my_dir/</span><br></pre></td></tr></table></figure>
+
+<p>The numeric way is to add a fourth digit to the normal permissions. The octal number used for sticky bit is always 1.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ ls -ld my_dir/</span><br><span class="line">drwxrwxr-x 2 linuxhandbook linuxhandbook 4096 Apr 12 19:55 my_dir/</span><br><span class="line">linuxhandbook:~$ chmod 1775 tmp2/</span><br><span class="line">linuxhandbook:~$ ls -ld tmp2/</span><br><span class="line">drwxrwxr-t 2 linuxhandbook linuxhandbook 4096 Apr 12 19:55 my_dir/</span><br></pre></td></tr></table></figure>
+
+<h3 id="How-to-remove-the-sticky-bit"><a href="#How-to-remove-the-sticky-bit" class="headerlink" title="How to remove the sticky bit:"></a>How to remove the sticky bit:</h3><p>You can use the symbolic mode:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -t my_dir</span><br></pre></td></tr></table></figure>
+
+<p>Or the numeric mode with 0 before the regular permissions:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 0775 tmp2</span><br></pre></td></tr></table></figure>
+
+<h3 id="How-to-find-files-with-sticky-bit-set-in-Linux"><a href="#How-to-find-files-with-sticky-bit-set-in-Linux" class="headerlink" title="How to find files with sticky bit set in Linux"></a>How to find files with sticky bit set in Linux</h3><p>This command will return all files&#x2F;directories in with sticky bit set:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">linuxhandbook:~$ find . -perm /1000</span><br></pre></td></tr></table></figure>
+
+<p>If the directory doesn’t have the execute permission set for all, setting a sticky bit will result in showing T instead of t. An indication that things are not entirely correct with the sticky bit.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>I’ll put this picture here to recall what you have just learned:</p>
+<img src="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/image-20220531172749073.jpg" class="">
+
+<p>This flexibility to manage folders, files and all their permissions are so important in the daily work of a sysadmin. You could see that all those special permissions are not so difficult to understand but it must be used with utmost caution.</p>
+<p>I hope this article gave you a good understanding of the SUID, GUID and Sticky Bit in Linux. If you have questions or suggestions, please drop a comment below.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/" data-id="cmfe2gski003853i4fi3pdbwp" data-title="Special File Permissions of SUID GUID and Sticky Bit" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/01/SH-re-open-after-70-days-lockdown/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SH Re-Open After 70 Days Lockdown
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/29/first-day-of-workout-after-2-months-lockdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">First Day of Workout After 2 Months Lockdown</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Default/">Default</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/health/" rel="tag">health</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/history/" rel="tag">history</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IT/" style="font-size: 11px;">IT</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 12px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 11px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/health/" style="font-size: 10px;">health</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 14px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 12px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/09/07/How-to-partition-a-new-disk-drive/">How to Partition a New Disk Drive</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/22/LSF10-1-Installation/">LSF10.1 Installation</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/">Synopsys Computing Platforms Roadmap 2025</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/11/Useful-Business-Dialogs/">Useful Business Dialogs</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/08/vitamin-cheat-sheet/">Vitamin Cheat Sheet</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 nibaix<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

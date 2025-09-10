@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>What Is OCV/AOCV/POCV/SOCV/LVF? | 芝士盒</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="芯片在实际生产中，同一片晶圆上的不同区域的芯片，因为各种外部条件和生产条件的变化（variation），比如：工艺（Process），电压（Voltage），温度（Temperature）等，可能会产生不同的误差从而导致同一块晶圆上某些区域上的芯片里的晶体管整体速度变快或变慢，因此有了corner的概念。而与此同时，在同一块芯片上的不同区域，也会因为上述因素而有进一步的差异（variation），">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is OCV&#x2F;AOCV&#x2F;POCV&#x2F;SOCV&#x2F;LVF?">
+<meta property="og:url" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/index.html">
+<meta property="og:site_name" content="芝士盒">
+<meta property="og:description" content="芯片在实际生产中，同一片晶圆上的不同区域的芯片，因为各种外部条件和生产条件的变化（variation），比如：工艺（Process），电压（Voltage），温度（Temperature）等，可能会产生不同的误差从而导致同一块晶圆上某些区域上的芯片里的晶体管整体速度变快或变慢，因此有了corner的概念。而与此同时，在同一块芯片上的不同区域，也会因为上述因素而有进一步的差异（variation），">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-0.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-1.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-2.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-3.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-4.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-5.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-6.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-7.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-1.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cmu">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csigma">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cpm3%5Csigma">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-2.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-3.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-4.jpg">
+<meta property="og:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-5.jpg">
+<meta property="article:published_time" content="2022-05-06T15:17:46.000Z">
+<meta property="article:modified_time" content="2023-12-07T12:57:44.000Z">
+<meta property="article:author" content="nibaix">
+<meta property="article:tag" content="ocv">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-0.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="芝士盒" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">芝士盒</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What&#39;s the story?</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-what-is-OCV-AOCV-POCV-SOCV-LVF" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/" class="article-date">
+  <time class="dt-published" datetime="2022-05-06T15:17:46.000Z" itemprop="datePublished">2022-05-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      What Is OCV/AOCV/POCV/SOCV/LVF?
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>芯片在实际生产中，同一片晶圆上的不同区域的芯片，因为各种外部条件和生产条件的变化（variation），比如：工艺（Process），电压（Voltage），温度（Temperature）等，可能会产生不同的误差从而导致同一块晶圆上某些区域上的芯片里的晶体管整体速度变快或变慢，因此有了corner的概念。而与此同时，在同一块芯片上的不同区域，也会因为上述因素而有进一步的差异（variation），因此产生了OCV（On Chip Variation）的概念。</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-0.jpg" class="">
+
+<p><em><strong>Corner vs. OCV</strong></em></p>
+<span id="more"></span>
+
+<p>在设计中引入OCV的目的在于从设计角度考虑芯片在实际生产中可能出现的各种差异（variation），从而适度增加设计余量（margin），减少不必要的设计悲观量（pessimism）。那么在实际中是如何将OCV带入design的呢？</p>
+<p>从OCV的概念出现至今，随着工艺的发展，OCV也经历了如下的一系列进化：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-1.jpg" class="">
+
+<p><em><strong>OCV的发展</strong></em></p>
+<p>那么它们都是什么意思呢？在设计中又有什么不同呢？在详细解说之前我们先考虑以下一条timing path的setup分析：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-2.jpg" class="">
+
+<p>在理想情况下，我们假设所有cell和net在实际生产后其delay都和我们设计中通过库和rc寄生参数计算出来的数值完全一样，那么setup应满足如下条件（如此处有疑问请复习一下setup hold的概念）：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-3.jpg" class="">
+
+<p>然而，在实际生产中，由于各种variation可能会出现如下情况：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-4.jpg" class="">
+
+<p>此时的setup分析变成了下面的样子：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-5.jpg" class="">
+
+<p>在x, y, z都是正数的时候，只满足理想状况下setup的电路是不一定能够满足上述条件的。这样就会导致实际生产出来的芯片有一定的概率不能满足需要的频率等条件，严重的甚至会导致芯片失效而降低良率。那么对此我们有什么解决办法呢？</p>
+<h2 id="OCV-On-Chip-Variation"><a href="#OCV-On-Chip-Variation" class="headerlink" title="OCV (On Chip Variation)"></a>OCV (On Chip Variation)</h2><p>这是针对上述问题提出的第一个方法。它的基本理念是，对launch, capture和data line上的cell或者net加一个固定的derate数值，使得setup和hold等时序约束比理想状况更加悲观从而能够覆盖部分实际生产中所产生的variation。实际设计中的效果如下：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-6.jpg" class="">
+
+<p>可以看到，对于launch clock，加上一个统一的大于1的derate值，就会在timing report中反映出来，相应的delay也会在原始值的基础上乘以这个derate值。</p>
+<p>对于capture clock line，相应地就会加上一个小于1的derate来计算delay。通过这样的方法来让时序约束更加悲观，以此来覆盖生产中和实际应用中的各种variation，提高良率。</p>
+<h2 id="AOCV-Advanced-On-Chip-Variation"><a href="#AOCV-Advanced-On-Chip-Variation" class="headerlink" title="AOCV (Advanced On Chip Variation)"></a>AOCV (Advanced On Chip Variation)</h2><p>AOCV的概念之所以被提出来，是由于OCV存在以下缺点：在实际中的variation，绝少是一个统一的数值，而大概率是服从正态分布的。以一条timing path的data line为例，可能并不是所有的cell都因为variation而变慢或变快，而是大部分variation较小，少量variation较大。如果我们采用OCV的方式，就会引入不必要的悲观量使得设计更难收敛，同时可能增加不必要的面积和功耗。</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig1-7.jpg" class="">
+
+<p>针对这个问题，AOCV提出：对于一条path上，级数越多其variation分布越接近正态分布，因而这条path整体的variation也越小。在实际设计中，会根据一条line上cell的级数不同而设置不同的dereate值。实现这中设置的方法，是通过一种AOCV table来查表决定。这种table文件的内容格式大致如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">object_type: lib_cell</span><br><span class="line">delay_type:  cell</span><br><span class="line">object_spec: -quiet  libName/cellName</span><br><span class="line">rf_type:     rise</span><br><span class="line">derate_type: early</span><br><span class="line">depth: 1  2  3  4  5  6  8  10  20  30  40  50  60  80  100</span><br><span class="line">distance: 0  5000000  10000000  20000000  30000000  40000000</span><br><span class="line">table:    0.7232  0.8043  0.8402  0.8616  0.8762  0.8870  0.9021  0.9125  0.9381  0.9495  0.9562  0.9609  0.9643  0.9691  0.9723  \</span><br><span class="line">    0.7166  0.7970  0.8326  0.8538  0.8682  0.8789  0.8939  0.9042  0.9296  0.9408  0.9475  0.9521  0.9555  0.9602  0.9635  \</span><br><span class="line">    0.7139  0.7939  0.8294  0.8505  0.8649  0.8756  0.8905  0.9007  0.9260  0.9372  0.9439  0.9485  0.9518  0.9566  0.9598  \</span><br><span class="line">    0.7101  0.7897  0.8249  0.8459  0.8603  0.8709  0.8857  0.8959  0.9210  0.9322  0.9388  0.9434  0.9467  0.9514  0.9546  \</span><br><span class="line">    0.7071  0.7864  0.8215  0.8424  0.8567  0.8672  0.8820  0.8921  0.9172  0.9283  0.9349  0.9394  0.9428  0.9474  0.9506  \</span><br><span class="line">    0.7046  0.7836  0.8186  0.8395  0.8537  0.8642  0.8790  0.8890  0.9140  0.9251  0.9317  0.9362  0.9395  0.9442  0.9473 </span><br></pre></td></tr></table></figure>
+
+<p>有些AOCV表是depth和distance而对应derate数值的二维查表，有些只是depth对应derate的一维查表，上述例子属于前者。我们可以看出，级数(depth)越深，对应的derate越小。通过这种方式来剔除部分不必要的悲观量，使得设计在尽量覆盖实际情况的前提下更加容易收敛。</p>
+<p>接下来我们继续谈谈它们的升级版：POCV和LVF。上次我们说过，实际中由于PVT (Process, Voltage, Temperature) 导致的variation并不是一个或几个固定的值，而是服从类似高斯分布的形态。因此，反映在cell的delay上亦如此：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-1.jpg" class="">
+
+<p><em><strong>Normal Derating vs. POCV</strong></em></p>
+<h2 id="POCV-Parametric-On-Chip-Variation"><a href="#POCV-Parametric-On-Chip-Variation" class="headerlink" title="POCV (Parametric On Chip Variation)"></a>POCV (Parametric On Chip Variation)</h2><p>如上图所示，所谓POCV，也称SOCV(Statistical On Chip Variation)，就是将cell的delay模拟成一个数学期望为 <img src="https://www.zhihu.com/equation?tex=%5Cmu" alt="[公式]"> ，标准差为 <img src="https://www.zhihu.com/equation?tex=%5Csigma" alt="[公式]"> 的高斯分布。简单地讲，每个cell的delay都有最高的概率出现在期望值上，有一定的概率出现在大于或者小于期望值一定范围内的区间上。整体上落在期望值 <img src="https://www.zhihu.com/equation?tex=%5Cpm3%5Csigma" alt="[公式]"> 区间内的概率为99.7%，即所谓的3 sigma。那么实际中工具是如何算得cell的delay呢？基本公式如下：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-2.jpg" class="">
+
+<p>如果在.lib中提供了sigma的数值，则可以通过公式(1)算出，如果通过read_aocvm读取的POCV的参数文件(包含参数C)，则可以通过公式(2)算出，这种通过给定的参数计算cell的OCV delay的方式就是’Parametric’的含义。</p>
+<p>那么这和LVF和上面这些东西有什么关系呢？下面我们详细说说。</p>
+<h2 id="LVF-Liberty-Variation-Format"><a href="#LVF-Liberty-Variation-Format" class="headerlink" title="LVF (Liberty Variation Format)"></a>LVF (Liberty Variation Format)</h2><p>从它的名字Liberty Variation Format我们可以看出LVF是一种和liberty库文件(.lib)有关的数据格式。我们知道一般情况下无论是AOCV或者POCV，都会有一个专门的文本文件通过特定的命令读取到工具中。以PrimeTime为例，读取AOCV和POCV的命令如下：</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">read_aocvm <span class="variable">$file_name</span></span><br></pre></td></tr></table></figure>
+
+<p>而除了这种方式之外，我们还有另外一种选择：将POCV的内容集成到类似于liberty文件中，如下图所示：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-3.jpg" class="">
+
+<p><em><strong>Slew-Load Based LVF</strong></em></p>
+<p>我们可以看出来，这种形式很像liberty文件中的delay查表。在这里，POCV的coefficient同样是一个基于slew-load的表格。同时，LVF中也可以是基于distance的查表：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-4.jpg" class="">
+
+<p><em><strong>Distance Based LVF</strong></em></p>
+<p>需要注意的是，在使用LVF的时候就不能通过<code>read_aocvm</code>读取专用的POCV文本。在PrimeTime中我们也可以通过如下方式report POCV的结果：</p>
+<img src="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/fig2-5.jpg" class="">
+
+<p><em><strong>Report POCV Analysis</strong></em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nibaix.com/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/" data-id="cmfe2gsmt00bm53i4hak77hgk" data-title="What Is OCV/AOCV/POCV/SOCV/LVF?" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/07/PrimeTime-and-OCV/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          PrimeTime and Timing Derate
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">上海每日疫情走势2022-5-5</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Default/">Default</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/health/" rel="tag">health</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/history/" rel="tag">history</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IT/" style="font-size: 11px;">IT</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 12px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 11px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/health/" style="font-size: 10px;">health</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 14px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 12px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/09/07/How-to-partition-a-new-disk-drive/">How to Partition a New Disk Drive</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/22/LSF10-1-Installation/">LSF10.1 Installation</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/">Synopsys Computing Platforms Roadmap 2025</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/11/Useful-Business-Dialogs/">Useful Business Dialogs</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/08/vitamin-cheat-sheet/">Vitamin Cheat Sheet</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 nibaix<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
