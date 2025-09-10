@@ -1,744 +1,916 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>芝士盒</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="芝士盒">
-<meta property="og:url" content="http://blog.nibaix.com/page/13/index.html">
-<meta property="og:site_name" content="芝士盒">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="nibaix">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="芝士盒" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.30/dist/vuetify.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="/css/main.css">
 
-  
-  
+    
+    
+
+
+
+
+
+
+
+    
+    
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+    
+    
+    
+    
+    <title>
+          
+            芝士盒
+        
+    </title>
+    
+    
 <meta name="generator" content="Hexo 7.3.0"></head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">芝士盒</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">What&#39;s the story?</a>
-        </h2>
-      
+    <div id="app">
+        <v-app>
+            <v-content id="page">
+                <v-container fluid>
+                    <v-row>
+                        <v-col cols="2" class="d-none d-md-block">
+                            <div id="sidebar" class="float-right">
+    <a href="/" rel="home">
+        <v-avatar size=96>
+            <img id="logo" src="/images/avatar.webp">     
+        </v-avatar> 
+    </a>
+    <v-divider></v-divider>
+    <div class="mini-menu">
+        <v-btn icon href="/">
+            <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn icon href="/categories/">
+            <v-icon>folder</v-icon>
+        </v-btn>
+        <v-btn icon href="/tags/">
+            <v-icon>bookmark</v-icon>
+        </v-btn>
+        <v-btn icon @click="SetNightMode">
+            <v-icon>{{ nightMode }}</v-icon>
+        </v-btn>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+    <v-list id="main-menu" class="font-weight-bold" flat>
         
-          <a class="main-nav-link" href="/">Home</a>
+            
+            <v-list-item href="/archives/" link>
+            <v-list-item-icon><v-icon>archive</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Archives
+            </v-list-item-content>
+            </v-list-item>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+            
+            <v-list-item href="/about/" link>
+            <v-list-item-icon><v-icon>account_circle</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                About
+            </v-list-item-content>
+            </v-list-item>
         
-      </nav>
-      <nav id="sub-nav">
+            
+            <v-list-item href="https://garybear.cn/" link>
+            <v-list-item-icon><v-icon>rss_feed</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                我的博客
+            </v-list-item-content>
+            </v-list-item>
         
+            
+            <v-list-item href="https://garybear.cn/hexo-theme-insulin/doc/#/" link>
+            <v-list-item-icon><v-icon>insert_drive_file</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                说明文档
+            </v-list-item-content>
+            </v-list-item>
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+    </v-list>
+    <v-divider></v-divider>
+    
+        <v-list id="sub-menu" class="font-weight-medium" dense>
+            
+                
+                    <v-list-item href="/categories/VLSI/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="45" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>VLSI</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Default/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="6" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Default</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Program/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="14" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Program</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Linux/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="51" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Linux</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Knowledge/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="6" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Knowledge</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Diary/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="18" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Diary</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+        </v-list>    
+    
+
+    <div id="footer">
+        <div class="footer-social">
+            
+                
+                <v-btn icon href="mailto:kb1000fx@gmail.com" target="_blank">
+                    <v-icon>fas fa-envelope</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://github.com/kb1000fx" target="_blank">
+                    <v-icon>fab fa-github</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://steamcommunity.com/profiles/76561198346798163" target="_blank">
+                    <v-icon>fab fa-steam</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://weibo.com/kb1000fx" target="_blank">
+                    <v-icon>fab fa-weibo</v-icon>
+                </v-btn>
+            
+        </div>
+        <v-divider></v-divider>
+        <div class="footer-content">
+            
+                <span id="busuanzi_container_site_uv" style="display: none;"> 
+                    Total Visitors <span id="busuanzi_value_site_uv"></span>
+                </span>
+                <br>
+            
+            <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a></span><br>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+            <span>
+                &copy; 2015 - 2025 
+                nibaix
+            </span>
+        </div>
+    </div>
+</div>
+
+                        </v-col>
+                        <v-col cols="12" md="10">
+                            <v-row>
+  <v-col cols="12" md="8" align-self="end">
+    <div id="site-header">
+      <div id="site-title">
+        <a href="/" rel="home">芝士盒</a>
       </div>
+      <div id="site-description"></div>
+      <div id="mobile-menu" class="d-block d-md-none">
+        <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+        <div class="mobile-mini-menu">
+          <v-btn icon href="/">
+              <v-icon>home</v-icon>
+          </v-btn>
+          <v-btn icon href="/categories/">
+              <v-icon>folder</v-icon>
+          </v-btn>
+          <v-btn icon href="/tags/">
+              <v-icon>bookmark</v-icon>
+          </v-btn>
+          <v-btn icon @click="SetNightMode">
+              <v-icon>{{ nightMode }}</v-icon>
+          </v-btn>
+          
+            
+            <v-btn icon href="/archives/">
+              <v-icon>archive</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="/about/">
+              <v-icon>account_circle</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/">
+              <v-icon>rss_feed</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/hexo-theme-insulin/doc/#/">
+              <v-icon>insert_drive_file</v-icon>
+            </v-btn>
+          
+        </div>
+      </div>    
     </div>
-  </div>
-</header>
+  </v-col>  
+  <v-col cols="4" align-self="end" class="d-none d-md-block">
+    <v-col align-self="end">
+      <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+    </v-col> 
+  </v-col>
+</v-row>
 
-      <div class="outer">
-        <section id="main">
+                            <v-card class="elevation-2 index-card">
   
-    <article id="post-deploy-github-pages-at-vercel" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/26/deploy-github-pages-at-vercel/" class="article-date">
-  <time class="dt-published" datetime="2022-04-26T02:42:01.000Z" itemprop="datePublished">2022-04-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Default/">Default</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-26
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/blog/ >blog</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/github/ >github</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Default/">Default></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/26/deploy-github-pages-at-vercel/">Deploy Github Pages at Vercel</a>
+      </div>
+      
+      <div class="index-article-content">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/26/deploy-github-pages-at-vercel/">Deploy Github Pages at Vercel</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Accessing GitHub pages from China is pretty slow. Vercel has much better user experience although Vercel’s servers are located in oversea countries, same as GitHub servers. So many of bloggers in China migrate their static Blog site onto Vercel. To do the migration it’s quite simple. All you have to do are merely 3 steps.</p>
-<ol>
-<li><strong>With your GitHub account create an account at <a target="_blank" rel="noopener" href="https://vercel.com/">https://vercel.com</a>.</strong> It seems like you just sign-in Vercel with your GitHub account. By doing this your GitHub pages will be able to accessed from Vercel.</li>
-<li><strong>Create a new project on your Vercel dashboard.</strong> The guide will take you to import your GitHub existing projects. Just select one and click “Import” button.</li>
-<li><strong>Set your project name and click “Deploy” button.</strong>  Keep all default settings. Now simply wait to see magical things happen.</li>
-</ol>
-<p>By now the deployment process is done. If it succeeds colorful flowers will be scattered on your screen. If it fails you need to check the deployment status and building logs.</p>
-<p>If your have your own domain name, you can also add your domain to point your site address.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/26/deploy-github-pages-at-vercel/" data-id="cm0xswuya005m1hi49pqcgh4q" data-title="Deploy Github Pages at Vercel" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/" rel="tag">github</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-上海每日疫情走势2022-4-25" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/" class="article-date">
-  <time class="dt-published" datetime="2022-04-26T02:27:35.000Z" itemprop="datePublished">2022-04-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Diary/">Diary</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/">上海每日疫情走势2022-4-25</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <img src="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/image-20220426102807065.png" class="">
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/" data-id="cm0xswuzw00bu1hi45jy12oth" data-title="上海每日疫情走势2022-4-25" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-expand-tab-in-emacs-verilog-auto-code" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/" class="article-date">
-  <time class="dt-published" datetime="2022-04-25T11:29:48.000Z" itemprop="datePublished">2022-04-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/">Expand Tab in Emacs-Verilog Auto Code</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?</p>
-<p>Simply add two lines in your <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/verilog-mode.el" title="verilog-mode.el">verilog-mode.el</a> as below. Yeah, it’s done and enjoy! </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(setq-default tab-width 8)</span><br><span class="line">(setq-default indent-tabs-mode nil)</span><br></pre></td></tr></table></figure>
-
-<p>Check out everything about Emacs-verilog at <a target="_blank" rel="noopener" href="https://veripool.org/verilog-mode/">https://veripool.org/verilog-mode/</a>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/25/expand-tab-in-emacs-verilog-auto-code/" data-id="cm0xswuyg00621hi4359t02hk" data-title="Expand Tab in Emacs-Verilog Auto Code" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-上海每日疫情走势2022-4-23" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/" class="article-date">
-  <time class="dt-published" datetime="2022-04-24T02:34:20.000Z" itemprop="datePublished">2022-04-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Diary/">Diary</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/">上海每日疫情走势2022-4-23</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <img src="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/image-20220424103736004.png" class="">
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/" data-id="cm0xswuzw00bq1hi4gc8pecob" data-title="上海每日疫情走势2022-4-23" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-we-glow-while-grow" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/23/we-glow-while-grow/" class="article-date">
-  <time class="dt-published" datetime="2022-04-23T02:50:19.000Z" itemprop="datePublished">2022-04-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Diary/">Diary</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/23/we-glow-while-grow/">We Glow While Grow</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>We grow when we confront challenges and glow when we conquer them.</p>
-<img src="/2022/04/23/we-glow-while-grow/image-20220423105459472.png" class="">
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/23/we-glow-while-grow/" data-id="cm0xswuzr00b91hi4gro0d9jw" data-title="We Glow While Grow" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-understanding-AMBA-bus-architechture-and-protocols" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/" class="article-date">
-  <time class="dt-published" datetime="2022-04-22T05:45:23.000Z" itemprop="datePublished">2022-04-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/">Understanding AMBA Architechture and Protocols</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>The Advanced Micro controller Bus Architecture (<strong>AMBA</strong>) bus protocols is a set of interconnect specifications from ARM that standardizes on chip communication mechanisms between various functional blocks (or IP) for building high performance SOC designs. These designs typically have one or more micro controllers or microprocessors along with several other components — internal memory or external memory bridge, DSP, DMA, accelerators and various other peripherals like USB, UART, PCIE, I2C etc — all integrated on a single chip. The primary motivation of AMBA protocols is to have a standard and efficient way to interconnecting these blocks with re-use across multiple designs.</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/" data-id="cm0xswuzk00aa1hi44xmrhra4" data-title="Understanding AMBA Architechture and Protocols" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/" rel="tag">arm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-AMBA-APB-revisions" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/22/AMBA-APB-revisions/" class="article-date">
-  <time class="dt-published" datetime="2022-04-22T00:24:06.000Z" itemprop="datePublished">2022-04-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/22/AMBA-APB-revisions/">AMBA APB Revisions</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <table>
-<thead>
-<tr>
-<th>APB2</th>
-<th>APB3</th>
-<th>APB4</th>
-<th>Signal Direction</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>PADDR[31:0]</td>
-<td>PADDR[31:0]</td>
-<td>PADDR[31:0]</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><em><strong>PRPOT[2:0]</strong></em></td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td>PSEL</td>
-<td>PSEL</td>
-<td>PSEL</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td>PENABLE</td>
-<td>PENABLE</td>
-<td>PENABLE</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td>PWRITE</td>
-<td>PWRITE</td>
-<td>PWRITE</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td>PWDATA[31:0]</td>
-<td>PWDATA[31:0]</td>
-<td>PWDATA[31:0]</td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><em><strong>PSTRB[3:0]</strong></em></td>
-<td>MoSi</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>PREADY</strong></td>
-<td><strong>PREADY</strong></td>
-<td>SoMi</td>
-</tr>
-<tr>
-<td>PRDATA[31:0]</td>
-<td>PRDATA[31:0]</td>
-<td>PRDATA[31:0]</td>
-<td>SoMi</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>PSLVERR</strong></td>
-<td><strong>PSLVERR</strong></td>
-<td>SoMi</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/22/AMBA-APB-revisions/" data-id="cm0xswuwk00031hi4fbkghn9d" data-title="AMBA APB Revisions" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/" rel="tag">arm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-add-a-new-disk-in-linux-with-parted" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/20/add-a-new-disk-in-linux-with-parted/" class="article-date">
-  <time class="dt-published" datetime="2022-04-20T11:37:03.000Z" itemprop="datePublished">2022-04-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/20/add-a-new-disk-in-linux-with-parted/">Add a New Disk in Linux With Parted</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><em>The <strong>parted</strong> disk utility can be used for disk partition larger than 2TB.</em></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> lsblk</span><br><span class="line">% <span class="built_in">sudo</span> parted /dev/sdb mklabel gpt</span><br><span class="line">% <span class="built_in">sudo</span> parted /dev/sdb mkpart primary 0 100%</span><br><span class="line">% <span class="built_in">sudo</span> mkfs.xfs /dev/sdb1</span><br><span class="line">% <span class="built_in">sudo</span> <span class="built_in">mkdir</span> /tools</span><br><span class="line">% <span class="built_in">sudo</span> mount /dev/sdb1 /tools</span><br><span class="line">% <span class="built_in">sudo</span> lsblk</span><br><span class="line">% <span class="built_in">sudo</span> <span class="built_in">df</span> -hT</span><br><span class="line">% <span class="built_in">sudo</span> blkid</span><br><span class="line">% <span class="built_in">sudo</span> <span class="built_in">echo</span> <span class="string">&quot;UUID=0f559a31-08b5-47aa-9a60-d9a6594941ad /tools xfs defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br><span class="line">% <span class="built_in">sudo</span> reboot</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/20/add-a-new-disk-in-linux-with-parted/" data-id="cm0xswuxz004m1hi4by2o7szq" data-title="Add a New Disk in Linux With Parted" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-add-a-new-disk-in-linux-with-fdisk" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/20/add-a-new-disk-in-linux-with-fdisk/" class="article-date">
-  <time class="dt-published" datetime="2022-04-20T10:42:48.000Z" itemprop="datePublished">2022-04-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/20/add-a-new-disk-in-linux-with-fdisk/">Add a New Disk in Linux With Fdisk</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><em>The <strong>fdisk</strong> disk utility can only be used for disk partition no larger than 2TB.</em></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> lsblk</span><br><span class="line">% <span class="built_in">sudo</span> fdisk -l</span><br><span class="line">% <span class="built_in">sudo</span> fdisk /dev/sdb</span><br><span class="line">% <span class="built_in">sudo</span> lsblk</span><br><span class="line">% <span class="built_in">sudo</span> partprobe</span><br><span class="line">% <span class="built_in">sudo</span> mkfs.xfs /dev/sdb1</span><br><span class="line">% <span class="built_in">sudo</span> <span class="built_in">mkdir</span> /tools</span><br><span class="line">% <span class="built_in">sudo</span> mount /dev/sdb1 /tools</span><br><span class="line">% <span class="built_in">sudo</span> <span class="built_in">df</span> -hT</span><br><span class="line">% <span class="built_in">sudo</span> blkid</span><br><span class="line">% <span class="built_in">sudo</span> <span class="built_in">echo</span> <span class="string">&quot;UUID=0f559a31-08b5-47aa-9a60-d9a6594941ad /tools xfs defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br><span class="line">% <span class="built_in">sudo</span> reboot</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/20/add-a-new-disk-in-linux-with-fdisk/" data-id="cm0xswuxx004i1hi48qyzf5kr" data-title="Add a New Disk in Linux With Fdisk" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-how-to-enable-sudo-for-a-user" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/20/how-to-enable-sudo-for-a-user/" class="article-date">
-  <time class="dt-published" datetime="2022-04-19T23:51:37.000Z" itemprop="datePublished">2022-04-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/20/how-to-enable-sudo-for-a-user/">How to Enable Sudo for a User</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root]# usermod -aG wheel UserName</span><br><span class="line">[root]# visudo </span><br></pre></td></tr></table></figure>
-
-<p><code>visudo</code> command actually opens <code>/etc/sudoers</code> to edit.</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/04/20/how-to-enable-sudo-for-a-user/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/04/20/how-to-enable-sudo-for-a-user/" data-id="cm0xswuyq00771hi49b2ceoeq" data-title="How to Enable Sudo for a User" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Default/">Default</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/health/" rel="tag">health</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/history/" rel="tag">history</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/IT/" style="font-size: 11px;">IT</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 12px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 11px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/health/" style="font-size: 10px;">health</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 14px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 12px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/09/07/How-to-partition-a-new-disk-drive/">How to Partition a New Disk Drive</a>
-          </li>
-        
-          <li>
-            <a href="/2025/07/22/LSF10-1-Installation/">LSF10.1 Installation</a>
-          </li>
-        
-          <li>
-            <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/">Synopsys Computing Platforms Roadmap 2025</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/11/Useful-Business-Dialogs/">Useful Business Dialogs</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/08/vitamin-cheat-sheet/">Vitamin Cheat Sheet</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
+          Accessing GitHub pages from China is pretty slow. Vercel has much better user experience although Vercel’s servers are located in oversea countries, same as GitHub servers. So many of bloggers in China migrate their static Blog site onto Vercel. To do the migration it’s quite simple. All you have...
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
       
-      &copy; 2025 nibaix<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/26/deploy-github-pages-at-vercel/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-26
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/covid19/ >covid19</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Diary/">Diary></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/">上海每日疫情走势2022-4-25</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          
 
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-25
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/verilog/ >verilog</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/emacs/ >emacs</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/VLSI/">VLSI></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/">Expand Tab in Emacs-Verilog Auto Code</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          When you use Emacs-verilog to generate code automatically, tabs are inserted instead of whitespace by default. For myself I prefer not to have tabs in my Verilog code at all, even for line indent or signal alignment. Then how to achieve this in Emacs auto code?
+Simply add two lines in your verilo...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-24
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/covid19/ >covid19</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Diary/">Diary></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/">上海每日疫情走势2022-4-23</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          
+
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-23
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/covid19/ >covid19</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Diary/">Diary></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/23/we-glow-while-grow/">We Glow While Grow</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          We grow when we confront challenges and glow when we conquer them.
+
+
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/23/we-glow-while-grow/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-22
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/arm/ >arm</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/amba/ >amba</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/VLSI/">VLSI></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/">Understanding AMBA Architechture and Protocols</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          The Advanced Micro controller Bus Architecture (AMBA) bus protocols is a set of interconnect specifications from ARM that standardizes on chip communication mechanisms between various functional blocks (or IP) for building high performance SOC designs. These designs typically have one or more micro controllers or microprocessors along with several other components — internal memory or external memory bridge, DSP, DMA, accelerators and various other peripherals like USB, UART, PCIE, I2C etc — all integrated on a single chip. The primary motivation of AMBA protocols is to have a standard and efficient way to interconnecting these blocks with re-use across multiple designs.
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-22
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/arm/ >arm</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/amba/ >amba</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/VLSI/">VLSI></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/22/AMBA-APB-revisions/">AMBA APB Revisions</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          
+
+
+APB2
+APB3
+APB4
+Signal Direction
+
+
+
+PADDR[31:0]
+PADDR[31:0]
+PADDR[31:0]
+MoSi
+
+
+
+
+PRPOT[2:0]
+MoSi
+
+
+PSEL
+PSEL
+PSEL
+MoSi
+
+
+PENABLE
+PENABLE
+PENABLE
+MoSi
+
+
+PWRITE
+PWRITE
+PWRITE
+MoSi
+
+
+PWDATA[31:0]
+PWDATA[31:0]
+PWDATA[31:0]
+MoSi
+
+
+
+
+PSTRB[3:0]
+MoSi
+
+
+
+PREADY
+PREADY
+SoMi
+
+
+PRDATA[31:0]
+PRDATA[31:0]
+P...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/22/AMBA-APB-revisions/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-20
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/linux/ >linux</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Linux/">Linux></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/20/add-a-new-disk-in-linux-with-parted/">Add a New Disk in Linux With Parted</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          The parted disk utility can be used for disk partition larger than 2TB.
+1234567891011% sudo lsblk% sudo parted /dev/sdb mklabel gpt% sudo parted /dev/sdb mkpart primary 0 100%% sudo mkfs.xfs /dev/sdb1% sudo mkdir /tools% sudo mount /dev/sdb1 /tools% sudo lsblk% sudo df -hT% sudo blkid% sudo echo ...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/20/add-a-new-disk-in-linux-with-parted/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-20
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/linux/ >linux</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Linux/">Linux></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/20/add-a-new-disk-in-linux-with-fdisk/">Add a New Disk in Linux With Fdisk</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          The fdisk disk utility can only be used for disk partition no larger than 2TB.
+123456789101112% sudo lsblk% sudo fdisk -l% sudo fdisk /dev/sdb% sudo lsblk% sudo partprobe% sudo mkfs.xfs /dev/sdb1% sudo mkdir /tools% sudo mount /dev/sdb1 /tools% sudo df -hT% sudo blkid% sudo echo &quot;UUID=0f559a...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/20/add-a-new-disk-in-linux-with-fdisk/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-04-20
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/linux/ >linux</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Linux/">Linux></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/20/how-to-enable-sudo-for-a-user/">How to Enable Sudo for a User</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          12[root]# usermod -aG wheel UserName[root]# visudo 
+
+visudo command actually opens /etc/sudoers to edit.
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/20/how-to-enable-sudo-for-a-user/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+   
+</v-card>  
+
+
+  <div id="pagination" class="text-center">
+    <v-pagination 
+      v-model="currentPage" 
+      :length=16 
+      @input="PageChange" 
+      prev-icon="chevron_left"
+      next-icon="chevron_right"
+      color="secondary"
+    ></v-pagination>
+  </div>
+         
+                            <div id="mobile-footer" class="d-block d-md-none">
+                                <v-divider></v-divider>
+                                <div id="mobile-footer-content">
+                                    <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a> &nbsp; Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+                                    <span> &copy; 2015 - 2025 nibaix</span>
+                                </div>
+                            </div>                   
+                        </v-col>                                            
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.30"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-base64@3.5.2/base64.min.js"></script>
 
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
+<script src="/js/main.js"></script>
 
 
 
 
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  </div>
+
+
+
+
+
+
+
 </body>
 </html>

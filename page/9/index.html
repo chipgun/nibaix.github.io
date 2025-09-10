@@ -1,801 +1,968 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>芝士盒</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="芝士盒">
-<meta property="og:url" content="http://blog.nibaix.com/page/9/index.html">
-<meta property="og:site_name" content="芝士盒">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="nibaix">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="芝士盒" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.30/dist/vuetify.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="/css/main.css">
 
-  
-  
+    
+    
+
+
+
+
+
+
+
+    
+    
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+    
+    
+    
+    
+    <title>
+          
+            芝士盒
+        
+    </title>
+    
+    
 <meta name="generator" content="Hexo 7.3.0"></head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">芝士盒</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">What&#39;s the story?</a>
-        </h2>
-      
+    <div id="app">
+        <v-app>
+            <v-content id="page">
+                <v-container fluid>
+                    <v-row>
+                        <v-col cols="2" class="d-none d-md-block">
+                            <div id="sidebar" class="float-right">
+    <a href="/" rel="home">
+        <v-avatar size=96>
+            <img id="logo" src="/images/avatar.webp">     
+        </v-avatar> 
+    </a>
+    <v-divider></v-divider>
+    <div class="mini-menu">
+        <v-btn icon href="/">
+            <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn icon href="/categories/">
+            <v-icon>folder</v-icon>
+        </v-btn>
+        <v-btn icon href="/tags/">
+            <v-icon>bookmark</v-icon>
+        </v-btn>
+        <v-btn icon @click="SetNightMode">
+            <v-icon>{{ nightMode }}</v-icon>
+        </v-btn>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+    <v-list id="main-menu" class="font-weight-bold" flat>
         
-          <a class="main-nav-link" href="/">Home</a>
+            
+            <v-list-item href="/archives/" link>
+            <v-list-item-icon><v-icon>archive</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Archives
+            </v-list-item-content>
+            </v-list-item>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+            
+            <v-list-item href="/about/" link>
+            <v-list-item-icon><v-icon>account_circle</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                About
+            </v-list-item-content>
+            </v-list-item>
         
-      </nav>
-      <nav id="sub-nav">
+            
+            <v-list-item href="https://garybear.cn/" link>
+            <v-list-item-icon><v-icon>rss_feed</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                我的博客
+            </v-list-item-content>
+            </v-list-item>
         
+            
+            <v-list-item href="https://garybear.cn/hexo-theme-insulin/doc/#/" link>
+            <v-list-item-icon><v-icon>insert_drive_file</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                说明文档
+            </v-list-item-content>
+            </v-list-item>
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
+    </v-list>
+    <v-divider></v-divider>
+    
+        <v-list id="sub-menu" class="font-weight-medium" dense>
+            
+                
+                    <v-list-item href="/categories/VLSI/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="45" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>VLSI</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Default/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="6" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Default</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Program/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="14" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Program</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Linux/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="51" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Linux</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Knowledge/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="6" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Knowledge</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/Diary/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="18" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Diary</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+        </v-list>    
+    
+
+    <div id="footer">
+        <div class="footer-social">
+            
+                
+                <v-btn icon href="mailto:kb1000fx@gmail.com" target="_blank">
+                    <v-icon>fas fa-envelope</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://github.com/kb1000fx" target="_blank">
+                    <v-icon>fab fa-github</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://steamcommunity.com/profiles/76561198346798163" target="_blank">
+                    <v-icon>fab fa-steam</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://weibo.com/kb1000fx" target="_blank">
+                    <v-icon>fab fa-weibo</v-icon>
+                </v-btn>
+            
+        </div>
+        <v-divider></v-divider>
+        <div class="footer-content">
+            
+                <span id="busuanzi_container_site_uv" style="display: none;"> 
+                    Total Visitors <span id="busuanzi_value_site_uv"></span>
+                </span>
+                <br>
+            
+            <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a></span><br>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+            <span>
+                &copy; 2015 - 2025 
+                nibaix
+            </span>
+        </div>
+    </div>
+</div>
+
+                        </v-col>
+                        <v-col cols="12" md="10">
+                            <v-row>
+  <v-col cols="12" md="8" align-self="end">
+    <div id="site-header">
+      <div id="site-title">
+        <a href="/" rel="home">芝士盒</a>
       </div>
+      <div id="site-description"></div>
+      <div id="mobile-menu" class="d-block d-md-none">
+        <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+        <div class="mobile-mini-menu">
+          <v-btn icon href="/">
+              <v-icon>home</v-icon>
+          </v-btn>
+          <v-btn icon href="/categories/">
+              <v-icon>folder</v-icon>
+          </v-btn>
+          <v-btn icon href="/tags/">
+              <v-icon>bookmark</v-icon>
+          </v-btn>
+          <v-btn icon @click="SetNightMode">
+              <v-icon>{{ nightMode }}</v-icon>
+          </v-btn>
+          
+            
+            <v-btn icon href="/archives/">
+              <v-icon>archive</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="/about/">
+              <v-icon>account_circle</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/">
+              <v-icon>rss_feed</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/hexo-theme-insulin/doc/#/">
+              <v-icon>insert_drive_file</v-icon>
+            </v-btn>
+          
+        </div>
+      </div>    
     </div>
-  </div>
-</header>
+  </v-col>  
+  <v-col cols="4" align-self="end" class="d-none d-md-block">
+    <v-col align-self="end">
+      <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+    </v-col> 
+  </v-col>
+</v-row>
 
-      <div class="outer">
-        <section id="main">
+                            <v-card class="elevation-2 index-card">
   
-    <article id="post-synopsys-safety-aware-solution-for-automotive" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/08/synopsys-safety-aware-solution-for-automotive/" class="article-date">
-  <time class="dt-published" datetime="2022-07-08T02:40:09.000Z" itemprop="datePublished">2022-07-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-07-08
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/synopsys/ >synopsys</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/automotive/ >automotive</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/VLSI/">VLSI></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/07/08/synopsys-safety-aware-solution-for-automotive/">Synopsys Safety-Aware Solution for Automotive</a>
+      </div>
+      
+      <div class="index-article-content">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/08/synopsys-safety-aware-solution-for-automotive/">Synopsys Safety-Aware Solution for Automotive</a>
-    </h1>
-  
+          
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <img src="/2022/07/08/synopsys-safety-aware-solution-for-automotive/image-20220708104331952.jpg" class="">
 
-<ul>
-<li>Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms</li>
-<li>Minimize human error with native FuSa design intent to describe safety mechanisms</li>
-<li>Reduce documentation work with automated work products and supporting evidence</li>
-<li>Reduce design time with automotive compliant IP, fast FuSa analysis, and earlier RTL</li>
-<li>Improve QoR with native tools to reduce congestion and area impact due to hardware safety mechanisms</li>
-<li>Optimize machine resources with faster native tools that use less memory</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/07/08/synopsys-safety-aware-solution-for-automotive/" data-id="cm0xswuzh009x1hi49zzp2jyk" data-title="Synopsys Safety-Aware Solution for Automotive" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-install-vim9-supporting-python3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/07/install-vim9-supporting-python3/" class="article-date">
-  <time class="dt-published" datetime="2022-07-07T09:28:42.000Z" itemprop="datePublished">2022-07-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/07/install-vim9-supporting-python3/">Install Vim9 Supporting Python3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>In June 28th, 2022 the major version of Vim 9.0 was officially released. You can download Vim 9.0 for appropriate platform at <a target="_blank" rel="noopener" href="https://www.vim.org/download.php">https://www.vim.org/download.php</a>.</p>
-<p>Download latest source code from GitHub by <code>git clone https://github.com/vim/vim.git</code>. </p>
-<p><strong>The installation procedure from source code:</strong> (You should have <a href="/2022/06/02/install-specific-version-of-python/">Python3</a> already installed in your Linux system.)</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/07/07/install-vim9-supporting-python3/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/07/07/install-vim9-supporting-python3/" data-id="cm0xswuz1008c1hi488zofdb7" data-title="Install Vim9 Supporting Python3" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/" rel="tag">vim</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-approaches-to-disable-SSH" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/07/approaches-to-disable-SSH/" class="article-date">
-  <time class="dt-published" datetime="2022-07-07T06:15:02.000Z" itemprop="datePublished">2022-07-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/07/approaches-to-disable-SSH/">Approaches to Disable SSH</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>一、禁止用户登录</p>
-<p>1、修改用户配置文件&#x2F;etc&#x2F;shadow<br>将第二栏设置为“*”，如下。那么该用户就无法登录。但是使用这种方式会导致该用户的密码丢失，也就是当你再次允许他登录的时候，你还得让他重新设置密码。（再次启用这个帐号的方法是把“*”去掉就可以了）<br>    如：<code>tom:*:14245:0:99999:7:::</code></p>
-<p>为了使原密码不丢失，可以在原密码前面加一个特殊字符，比如”!”。需要再次启用这个用户的方法是删除此感叹号”!”。</p>
-<p>2、使用命令usermod<br>这个方式简单又实用，而且没有（1）中的副作用。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">usermod -L tom##Lock 帐号tom</span><br><span class="line">usermod -U tom##Unlock 帐号tom</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2022/07/07/approaches-to-disable-SSH/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/07/07/approaches-to-disable-SSH/" data-id="cm0xswuxz004p1hi4awjw9uov" data-title="Approaches to Disable SSH" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ISO-26262-hardware-dev-requirement" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/29/ISO-26262-hardware-dev-requirement/" class="article-date">
-  <time class="dt-published" datetime="2022-06-29T10:33:43.000Z" itemprop="datePublished">2022-06-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/29/ISO-26262-hardware-dev-requirement/">ISO 26262 Hardware Dev Requirement</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Functional-Safety"><a href="#Functional-Safety" class="headerlink" title="Functional Safety"></a>Functional Safety</h2><table>
-<thead>
-<tr>
-<th>Design Integrity</th>
-<th>Device Quality</th>
-<th>Functional Safety</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Function correct? Performance &amp; power</td>
-<td>Silicon Design &amp; Manufactory</td>
-<td>Device Failure Detection and Response Mechanisms</td>
-</tr>
-<tr>
-<td>Function verification: Prevent&#x2F;Eliminate Bugs</td>
-<td>Reduced DPPM</td>
-<td>Detect&#x2F;Control Failures</td>
-</tr>
-<tr>
-<td>Use best-in-class Functionla verification methodolody and tools</td>
-<td>DFT&#x2F;Function patterns</td>
-<td>Assessed by Functional Safety Verification methodology and tools</td>
-</tr>
-<tr>
-<td>SYSTEMATIC FAULTS - Design Bugs</td>
-<td>RANDOM FAULTS</td>
-<td>RANDOM FAULTS - HW FAILURES</td>
-</tr>
-<tr>
-<td>Always permanent</td>
-<td>Permanent</td>
-<td>Permanent&#x2F;Transient</td>
-</tr>
-<tr>
-<td>Development</td>
-<td>Manufacturing</td>
-<td>In Operation</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/06/29/ISO-26262-hardware-dev-requirement/" data-id="cm0xswux000131hi4bnl9e293" data-title="ISO 26262 Hardware Dev Requirement" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-This-beta-version-of-Tyora-is-expired" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/17/This-beta-version-of-Tyora-is-expired/" class="article-date">
-  <time class="dt-published" datetime="2022-06-17T14:27:37.000Z" itemprop="datePublished">2022-06-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Program/">Program</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/17/This-beta-version-of-Tyora-is-expired/">This Beta Version of Tyora Is Expired</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <img src=/2022/06/17/This-beta-version-of-Tyora-is-expired/image-20220709204746200.jpg width=400>
-
-<p><strong>Solution</strong></p>
-<ul>
-<li>Open in Explorer: <code>C:\Users\xxx\AppData\Roaming\Typora</code></li>
-<li>Sort by date</li>
-<li>Delete latest two files: <code>profile.data</code> and <code>typora.log</code></li>
-</ul>
-<p><strong>Updated on 7&#x2F;16&#x2F;2022</strong><br>The above solution doesn’t work any longer. Luckily we have a “patch” by doing follows.<br>Win+R - regedit - Computer\HKEY_CURRENT_USER\Software\Typora</p>
-<ul>
-<li>Right click on the folder of “Typora”</li>
-<li>Select “Permissions…”</li>
-<li>Select “Administrators”</li>
-<li>Deny all check boxes</li>
-</ul>
-<img src=/2022/06/17/This-beta-version-of-Tyora-is-expired/image-20220716130411225.jpg width=400>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/06/17/This-beta-version-of-Tyora-is-expired/" data-id="cm0xswuxm003a1hi40mrmc52s" data-title="This Beta Version of Tyora Is Expired" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ftp-commands" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/14/ftp-commands/" class="article-date">
-  <time class="dt-published" datetime="2022-06-14T15:52:06.000Z" itemprop="datePublished">2022-06-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/14/ftp-commands/">FTP Commands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <table>
-<thead>
-<tr>
-<th align="right">Commands</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right"><strong>open</strong></td>
-<td align="left">Connect</td>
-</tr>
-<tr>
-<td align="right"><strong>user</strong></td>
-<td align="left">Login user</td>
-</tr>
-<tr>
-<td align="right"><strong>bin</strong></td>
-<td align="left">Binary transfer mode</td>
-</tr>
-<tr>
-<td align="right"><strong>prompt on</strong></td>
-<td align="left">Switch on prompt (interactive)</td>
-</tr>
-<tr>
-<td align="right"><strong>prompt off</strong></td>
-<td align="left">Switch on prompt (non-interactive)</td>
-</tr>
-<tr>
-<td align="right"><strong>cd</strong></td>
-<td align="left">Change dir</td>
-</tr>
-<tr>
-<td align="right"><strong>lcd</strong></td>
-<td align="left">Change local dir</td>
-</tr>
-<tr>
-<td align="right"><strong>dir &#x2F; ls</strong></td>
-<td align="left">List remote files or dirs</td>
-</tr>
-<tr>
-<td align="right"><strong>!dir &#x2F; !ls</strong></td>
-<td align="left">List local files or dirs</td>
-</tr>
-<tr>
-<td align="right"><strong>put</strong></td>
-<td align="left">Upload a file</td>
-</tr>
-<tr>
-<td align="right"><strong>mput</strong></td>
-<td align="left">Upload multiple files</td>
-</tr>
-<tr>
-<td align="right"><strong>get</strong></td>
-<td align="left">Download a file</td>
-</tr>
-<tr>
-<td align="right"><strong>mget</strong></td>
-<td align="left">Download multiple files</td>
-</tr>
-<tr>
-<td align="right"><strong>mkdir</strong></td>
-<td align="left">Make remote dir</td>
-</tr>
-<tr>
-<td align="right"><strong>!mkdir</strong></td>
-<td align="left">Make local dir</td>
-</tr>
-<tr>
-<td align="right"><strong>bye</strong></td>
-<td align="left">Exit</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/06/14/ftp-commands/" data-id="cm0xswuyi006d1hi49o36630k" data-title="FTP Commands" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/" rel="tag">windows</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hide-unused-quick-links-in-windows" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/14/hide-unused-quick-links-in-windows/" class="article-date">
-  <time class="dt-published" datetime="2022-06-14T10:48:34.000Z" itemprop="datePublished">2022-06-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/14/hide-unused-quick-links-in-windows/">Hide Unused Quick Links in Windows</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>1. Win+R -&gt; regedit</strong></p>
-<p><strong>2. Goto</strong><br>Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions</p>
-<p><strong>3. Change the string value of “ThisPCPolicy” from “Show” to “Hide” in following domains</strong><br><em><strong>Pictures:</strong></em> {0ddd015d-b06c-45d5-8c4c-f59713854639}\PropertyBag<br><em><strong>Videos:</strong></em> {35286a68-3c57-41a1-bbb1-0eae73d76c95}\PropertyBag<br><em><strong>Downloads:</strong></em> {7d83ee9b-2244-4e70-b1f5-5393042af1e4}\PropertyBag<br><em><strong>Music:</strong></em> {a0c69a99-21c8-4671-8703-7934162fcf1d}\PropertyBag<br><em><strong>Documents:</strong></em> {f42ee2d3-909f-4907-8871-4c22fc0bf756}\PropertyBag</p>
-<p><strong>4. New a string value of ThisPCPolicy &#x3D; “Hide” in following domain</strong><br><em><strong>Desktop:</strong></em> {B4BFCC3A-DB2C-424C-B029-7FE99A87C641}\PropertyBag</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/06/14/hide-unused-quick-links-in-windows/" data-id="cm0xswuyn006u1hi4a3y40nbe" data-title="Hide Unused Quick Links in Windows" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/" rel="tag">windows</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-how-many-birds-do-cats-kill-every-year" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/10/how-many-birds-do-cats-kill-every-year/" class="article-date">
-  <time class="dt-published" datetime="2022-06-10T04:04:56.000Z" itemprop="datePublished">2022-06-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Knowledge/">Knowledge</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/10/how-many-birds-do-cats-kill-every-year/">How Many Birds Do Cats Kill Every Year</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="1-Cats-Kill-Between-1-3-and-4-Billion-Birds-Annually"><a href="#1-Cats-Kill-Between-1-3-and-4-Billion-Birds-Annually" class="headerlink" title="1. Cats Kill Between 1.3 and 4 Billion Birds Annually"></a>1. Cats Kill Between 1.3 and 4 Billion Birds Annually</h3><img src="/2022/06/10/how-many-birds-do-cats-kill-every-year/cat-hunting-birds_Piqsels.jpg" class="">
-
-<p>Estimating exactly how many birds are killed by cats is difficult. Many studies have tried, and not all of them are based on rigorous scientific estimation.</p>
-<p>Particular cats kill more birds than others, so it doesn’t make sense to multiply the number of cats by an average “bird kill rate” and call it a day.</p>
-<p>One of the newest studies to be published estimates the kill rate to be around 1.3 to 4 billion birds. They used a systematic method for calculating this rate, taking different feline predatory rates into account.</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/06/10/how-many-birds-do-cats-kill-every-year/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/06/10/how-many-birds-do-cats-kill-every-year/" data-id="cm0xswuyo006y1hi45fcm9fu3" data-title="How Many Birds Do Cats Kill Every Year" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nature/" rel="tag">nature</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-chipgun-new-logo-2022-06-06" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/07/chipgun-new-logo-2022-06-06/" class="article-date">
-  <time class="dt-published" datetime="2022-06-07T14:13:12.000Z" itemprop="datePublished">2022-06-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/07/chipgun-new-logo-2022-06-06/">Chipgun New Logo 2022-06-06</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><img src=/2022/06/07/chipgun-new-logo-2022-06-06/ChipgunDark.png width=200> <br/><br><img src=/2022/06/07/chipgun-new-logo-2022-06-06/颀观Dark.png width=200> <br/></p>
-<p>» <a href="/2022/05/08/new-chipgun-logo-8may2022">Previous one</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/06/07/chipgun-new-logo-2022-06-06/" data-id="cm0xswuy400521hi4hasahmi8" data-title="Chipgun New Logo 2022-06-06" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-install-specific-version-of-python" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/02/install-specific-version-of-python/" class="article-date">
-  <time class="dt-published" datetime="2022-06-02T05:23:02.000Z" itemprop="datePublished">2022-06-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/02/install-specific-version-of-python/">Install Specific Version of Python</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="1-Download-Python-source-tarball-for-your-specific-version"><a href="#1-Download-Python-source-tarball-for-your-specific-version" class="headerlink" title="1. Download Python source tarball for your specific version"></a>1. Download Python source tarball for your specific version</h3><p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/source/">https://www.python.org/downloads/source/</a></p>
-<h3 id="2-Unpack-the-tarball-and-install"><a href="#2-Unpack-the-tarball-and-install" class="headerlink" title="2. Unpack the tarball and install"></a>2. Unpack the tarball and install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@localhost# tar xvf Python-3.10.4.tgz</span><br><span class="line">root@localhost# <span class="built_in">cd</span> Python-3.10.4</span><br><span class="line">root@localhost# ./configure --enable-optimizations</span><br><span class="line">root@localhost# make altinstall</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-Set-the-new-version-by-default"><a href="#3-Set-the-new-version-by-default" class="headerlink" title="3. Set the new version by default"></a>3. Set the new version by default</h3><p>For individual user: <code>alias python &#39;/usr/local/bin/python3.10&#39;</code><br>For system-wide activation: <a href="/2022/06/02/update-alternatives/">update-alternatives</a></p>
-<h3 id="4-Check-the-new-installation"><a href="#4-Check-the-new-installation" class="headerlink" title="4. Check the new installation"></a>4. Check the new installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jim@localhost% python --version</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2022/06/02/install-specific-version-of-python/" data-id="cm0xswuz000891hi4c6en5wlz" data-title="Install Specific Version of Python" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Default/">Default</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/health/" rel="tag">health</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/history/" rel="tag">history</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/IT/" style="font-size: 11px;">IT</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 12px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 11px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/health/" style="font-size: 10px;">health</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 14px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 12px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/09/07/How-to-partition-a-new-disk-drive/">How to Partition a New Disk Drive</a>
-          </li>
-        
-          <li>
-            <a href="/2025/07/22/LSF10-1-Installation/">LSF10.1 Installation</a>
-          </li>
-        
-          <li>
-            <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/">Synopsys Computing Platforms Roadmap 2025</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/11/Useful-Business-Dialogs/">Useful Business Dialogs</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/08/vitamin-cheat-sheet/">Vitamin Cheat Sheet</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
+Save effort with automated FMEA&#x2F;FMEDA and native RTL-to-GDSII implementation of hardware safety mechanisms
+Minimize human error with native FuSa design intent to describe safety mechanisms
+Reduce documentation work with automated work products and supporting evidence
+Reduce design time wi...
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
       
-      &copy; 2025 nibaix<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/07/08/synopsys-safety-aware-solution-for-automotive/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-07-07
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/linux/ >linux</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/vim/ >vim</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/editor/ >editor</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/python/ >python</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Linux/">Linux></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/07/07/install-vim9-supporting-python3/">Install Vim9 Supporting Python3</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          In June 28th, 2022 the major version of Vim 9.0 was officially released. You can download Vim 9.0 for appropriate platform at https://www.vim.org/download.php.
+Download latest source code from GitHub by git clone https://github.com/vim/vim.git. 
+The installation procedure from source code: (You should have Python3 already installed in your Linux system.)
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/07/07/install-vim9-supporting-python3/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-07-07
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/linux/ >linux</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/ssh/ >ssh</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Linux/">Linux></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/07/07/approaches-to-disable-SSH/">Approaches to Disable SSH</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          一、禁止用户登录
+1、修改用户配置文件&#x2F;etc&#x2F;shadow将第二栏设置为“*”，如下。那么该用户就无法登录。但是使用这种方式会导致该用户的密码丢失，也就是当你再次允许他登录的时候，你还得让他重新设置密码。（再次启用这个帐号的方法是把“*”去掉就可以了）    如：tom:*:14245:0:99999:7:::
+为了使原密码不丢失，可以在原密码前面加一个特殊字符，比如”!”。需要再次启用这个用户的方法是删除此感叹号”!”。
+2、使用命令usermod这个方式简单又实用，而且没有（1）中的副作用。
+12usermod -L tom##Lock 帐号tomusermod -U tom##Unlock 帐号tom
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/07/07/approaches-to-disable-SSH/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-06-29
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/iso26262/ >iso26262</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/automotive/ >automotive</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/VLSI/">VLSI></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/06/29/ISO-26262-hardware-dev-requirement/">ISO 26262 Hardware Dev Requirement</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          Functional Safety
 
+
+Design Integrity
+Device Quality
+Functional Safety
+
+
+
+Function correct? Performance &amp; power
+Silicon Design &amp; Manufactory
+Device Failure Detection and Response Mechanisms
+
+
+Function verification: Prevent&#x2F;Eliminate Bugs
+Reduced DPPM
+Detect&#x2F;Control Failures
+
+
+Use...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/06/29/ISO-26262-hardware-dev-requirement/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-06-17
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/markdown/ >markdown</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/editor/ >editor</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Program/">Program></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/06/17/This-beta-version-of-Tyora-is-expired/">This Beta Version of Tyora Is Expired</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          
+
+Solution
+
+Open in Explorer: C:\Users\xxx\AppData\Roaming\Typora
+Sort by date
+Delete latest two files: profile.data and typora.log
+
+Updated on 7&#x2F;16&#x2F;2022The above solution doesn’t work any longer. Luckily we have a “patch” by doing follows.Win+R - regedit - Computer\HKEY_CURRENT_USER\So...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/06/17/This-beta-version-of-Tyora-is-expired/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-06-14
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/windows/ >windows</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/linux/ >linux</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/ftp/ >ftp</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/2022/06/14/ftp-commands/">Uncategorized></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/06/14/ftp-commands/">FTP Commands</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          
+
+
+Commands
+Description
+
+
+
+open
+Connect
+
+
+user
+Login user
+
+
+bin
+Binary transfer mode
+
+
+prompt on
+Switch on prompt (interactive)
+
+
+prompt off
+Switch on prompt (non-interactive)
+
+
+cd
+Change dir
+
+
+lcd
+Change local dir
+
+
+dir &#x2F; ls
+List remote files or dirs
+
+
+!dir &#x2F; !ls
+List local files or di...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/06/14/ftp-commands/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-06-14
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/windows/ >windows</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/2022/06/14/hide-unused-quick-links-in-windows/">Uncategorized></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/06/14/hide-unused-quick-links-in-windows/">Hide Unused Quick Links in Windows</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          1. Win+R -&gt; regedit
+2. GotoComputer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions
+3. Change the string value of “ThisPCPolicy” from “Show” to “Hide” in following domainsPictures: {0ddd015d-b06c-45d5-8c4c-f59713854639}\PropertyBagVideos: {35286a68-3c57...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/06/14/hide-unused-quick-links-in-windows/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-06-10
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/nature/ >nature</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Knowledge/">Knowledge></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/06/10/how-many-birds-do-cats-kill-every-year/">How Many Birds Do Cats Kill Every Year</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          1. Cats Kill Between 1.3 and 4 Billion Birds Annually
+
+Estimating exactly how many birds are killed by cats is difficult. Many studies have tried, and not all of them are based on rigorous scientific estimation.
+Particular cats kill more birds than others, so it doesn’t make sense to multiply the number of cats by an average “bird kill rate” and call it a day.
+One of the newest studies to be published estimates the kill rate to be around 1.3 to 4 billion birds. They used a systematic method for calculating this rate, taking different feline predatory rates into account.
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/06/10/how-many-birds-do-cats-kill-every-year/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-06-07
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/chipgun/ >chipgun</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/2022/06/07/chipgun-new-logo-2022-06-06/">Uncategorized></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/06/07/chipgun-new-logo-2022-06-06/">Chipgun New Logo 2022-06-06</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+            
+» Previous one
+
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/06/07/chipgun-new-logo-2022-06-06/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2022-06-02
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/linux/ >linux</a>
+                  </span>
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/python/ >python</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/Linux/">Linux></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/06/02/install-specific-version-of-python/">Install Specific Version of Python</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          1. Download Python source tarball for your specific versionhttps://www.python.org/downloads/source/
+2. Unpack the tarball and install1234root@localhost# tar xvf Python-3.10.4.tgzroot@localhost# cd Python-3.10.4root@localhost# ./configure --enable-optimizationsroot@localhost# make altinstall
+
+3. S...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/06/02/install-specific-version-of-python/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+   
+</v-card>  
+
+
+  <div id="pagination" class="text-center">
+    <v-pagination 
+      v-model="currentPage" 
+      :length=16 
+      @input="PageChange" 
+      prev-icon="chevron_left"
+      next-icon="chevron_right"
+      color="secondary"
+    ></v-pagination>
+  </div>
+         
+                            <div id="mobile-footer" class="d-block d-md-none">
+                                <v-divider></v-divider>
+                                <div id="mobile-footer-content">
+                                    <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a> &nbsp; Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+                                    <span> &copy; 2015 - 2025 nibaix</span>
+                                </div>
+                            </div>                   
+                        </v-col>                                            
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.30"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-base64@3.5.2/base64.min.js"></script>
 
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
+<script src="/js/main.js"></script>
 
 
 
 
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  </div>
+
+
+
+
+
+
+
 </body>
 </html>
