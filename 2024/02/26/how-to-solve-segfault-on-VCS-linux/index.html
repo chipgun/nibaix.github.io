@@ -1,109 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- Head tag -->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/img/favicon.png">
+
   
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
   
-  <title>How to Solve Segfault on VCS Linux | 芝士盒</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="PreambleThis is education project. It is made to allow studying computer science, computer architectures and debugging binary codes. Problemsegfault in VCS R-2020.12-SP1">
-<meta property="og:type" content="article">
-<meta property="og:title" content="How to Solve Segfault on VCS Linux">
-<meta property="og:url" content="http://blog.nibaix.com/2024/02/26/how-to-solve-segfault-on-VCS-linux/index.html">
-<meta property="og:site_name" content="芝士盒">
-<meta property="og:description" content="PreambleThis is education project. It is made to allow studying computer science, computer architectures and debugging binary codes. Problemsegfault in VCS R-2020.12-SP1">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-02-26T12:02:54.000Z">
-<meta property="article:modified_time" content="2024-02-26T12:07:48.000Z">
-<meta property="article:author" content="nibaix">
-<meta property="article:tag" content="synopsys">
-<meta property="article:tag" content="vcs">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="芝士盒" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+
+
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
-  
+  <title>How to Solve Segfault on VCS Linux - 芝士盒</title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">芝士盒</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">What&#39;s the story?</a>
-        </h2>
-      
+  <header>
+    <nav id="navbar" class="navbar fixed-nav scrolling-navbar">
+  <div class="container">
+    <div class="mark-wrapper">
+       
+      <div class="title-mark">Peomas</div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  
+    <button id="menu-btn" class="btn menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+      <div class="menu-icon"><span></span><span></span><span></span></div>
+    </button>
+  
+    <div id="nav-menu" class="collapse menu-wrapper">
+      <ul>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <li>
+            <a href="/">Home </a>
+          </li>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <li>
+            <a href="/archives">Archives </a>
+          </li>
         
-      </nav>
-      <nav id="sub-nav">
+          <li>
+            <a href="/categories">Category </a>
+          </li>
         
+          <li>
+            <a href="/tags">Tag </a>
+          </li>
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <li>
+            <a href="/about">About </a>
+          </li>
         
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
-      </div>
+        <li class="search-icon">
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </li>
+      </ul>
     </div>
   </div>
-</header>
+</nav>
 
-      <div class="outer">
-        <section id="main"><article id="post-how-to-solve-segfault-on-VCS-linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux/" class="article-date">
-  <time class="dt-published" datetime="2024-02-26T12:02:54.000Z" itemprop="datePublished">2024-02-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
+  </header>
 
-  </div>
-  <div class="article-inner">
+  <main>
+    <div class="container">
+      <div id="main">
+        <div class="row py-5">
+          <div class="col">
+            <div class="row">
+  <div class="left-content">
+    <article class="post-wrapper markdown-body">
+  <h2 class="post-title">
+    How to Solve Segfault on VCS Linux
+  </h2>
+  <div class="post-meta">
+    <time datetime="Invalid date Invalid date ">2024-02-26</time>
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      How to Solve Segfault on VCS Linux
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p><em><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></em></p>
+        <a class="tag" href="/categories/VLSI/">VLSI</a> 
+       
+    
+    
+      
+        <a class="tag" href="/tags/synopsys/">synopsys</a> 
+      
+        <a class="tag" href="/tags/vcs/">vcs</a> 
+       
+    
+    
+  </div>
+  
+  <div id="content">
+    <h3 id="Preamble"><a href="#Preamble" class="headerlink" title="Preamble"></a>Preamble</h3><p><em><strong>This is education project. It is made to allow studying computer science, computer architectures and debugging binary codes.</strong></em></p>
 <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><h4 id="segfault-in-VCS-R-2020-12-SP1"><a href="#segfault-in-VCS-R-2020-12-SP1" class="headerlink" title="segfault in VCS R-2020.12-SP1"></a>segfault in VCS R-2020.12-SP1</h4><span id="more"></span>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">Command line: ./simv</span><br><span class="line"></span><br><span class="line">--- Stack trace follows:</span><br><span class="line"></span><br><span class="line">Dumping VCS Annotated Stack:</span><br><span class="line"><span class="comment">#0  0xf7ffd430 in __kernel_vsyscall ()</span></span><br><span class="line"><span class="comment">#1  0x006d569b in waitpid () from /lib/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x0066ebe3 in do_system () from /lib/libc.so.6</span></span><br><span class="line"><span class="comment">#3  0x0066ef72 in system () from /lib/libc.so.6</span></span><br><span class="line"><span class="comment">#4  0x007db9ed in system () from /lib/libpthread.so.0</span></span><br><span class="line"><span class="comment">#5  0xee4a66ec in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#6  0xee4a795b in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#7  0xee49fd5b in SNPSle_d35ca1ff70d465c2b9b1a72eee90a50630165806651fae9621672f4baea6f56e () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/liberrorinf.so</span></span><br><span class="line"><span class="comment">#8  0xea2beb40 in SNPSle_64133461705005bb725549e2e6fa1b3f () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0xe9f6c74c in SNPSle_82244d58c54c18c70d63edc9becab634 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#11 0xee448195 in mem_free () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#12 0xee420bc4 in snpsFreeFunc () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libsnpsmalloc.so</span></span><br><span class="line"><span class="comment">#13 0xe9ce58ee in SNPSle_edfd0437dc1f3ca1 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0xe9ce631d in SNPSle_e2e2cbb6d2283a4d () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0xe9ce40ad in SNPSle_382d0af7df412362 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0xe9ce4636 in SNPSle_59279f7c9b103b1e () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#17 0xe9ce4776 in SNPSle_207fb97ffa75eca3 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#18 0x007d3bc9 in start_thread () from /lib/libpthread.so.0</span></span><br><span class="line"><span class="comment">#19 0x0071711e in clone () from /lib/libc.so.6</span></span><br><span class="line"><span class="comment">#0  0xf7ffd430 in __kernel_vsyscall ()</span></span><br><span class="line"><span class="comment">#1  0x006d5b86 in nanosleep () from /lib/libc.so.6</span></span><br><span class="line"><span class="comment">#2  0x006d59b0 in sleep () from /lib/libc.so.6</span></span><br><span class="line"><span class="comment">#3  0xe9a93da9 in SNPSle_95ae9cc2e78cc668673c60b8d88c4908 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#4  0xe9a93f17 in SNPSle_92de4d0d4cf0d6931bc37e8d42a01d93 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#5  0xe9a921b7 in SNPSle_b76ef993ee82b3d58a5cadddbec8b67c () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#6  0xe9a92528 in SNPSle_f28f24b8c84ac8f6e02e0b03bcd33aa8 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#7  0xe9a7be98 in SNPSle_5e54eaa1df739f6ed4c1ff24a0986ee6 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#8  0xe9a7c0c3 in SNPSle_058778405d2a6c04ddd18247ba7f440f () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#9  0xe9a7dabd in SNPSle_e376be325e61b493d6bd988d8077bacc () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#10 0xe9a7e742 in SNPSle_a10369bdf7c5916ddd6866ce7e2e861c () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#11 0xe9a81cad in SNPSle_00b1acee80c770570cd75f9efbe24cca () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#12 0xe9a77e9d in SNPSle_ba11b1edbd04051f5bb81b1861cdf84a () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#13 0xe9a67573 in SNPSle_2e65c0794628fc5af60953149776c29b () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#14 0xe9a63b74 in SNPSle_541f757be362289a7c9e5618c0ff28327846f8d3cc02839f () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#15 0xe9a647e9 in SNPSle_541f757be362289a7c9e5618c0ff283244765933a2ab0071 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#16 0xe9a5dc62 in SNPSle_c0de1345d5ab80930e06dd2b68f214c3 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#17 0xe9a5de3e in SNPSle_25cd5712eacded5ff943afa9a81fcb09 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#18 0xe9a5e1bc in SNPSle_25cd5712eacded5feaee03dc3430943e () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#19 0xe9a5e8e9 in SNPSle_541f757be362289a7c9e5618c0ff28323e4fa62265ee8f28 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#20 0xea2e0042 in SNPSle_490598bfebcc8e8183ad3550288b1f82 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#21 0xea2ebac4 in SNPSle_490598bfebcc8e81 () from /eda/SYNOPSYS/vcs/R-2020.12-SP1/linux/lib/libvcsnew.so</span></span><br><span class="line"><span class="comment">#22 0x0805cdd7 in main ()</span></span><br><span class="line"></span><br><span class="line">Process VmPeak: 553656 kb, VmSize: 421564 kb</span><br><span class="line">System Free Memory: 2006344 kb, System Free Swap: 16657512 kb</span><br></pre></td></tr></table></figure>
 
@@ -118,157 +120,98 @@
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">019e273a &lt;SNPSle_207fb97ffa75eca3&gt;:</span><br><span class="line"> 19e273a:   55                      push   %ebp</span><br><span class="line"> 19e273b:   31 c0                   xor    %eax,%eax</span><br><span class="line"> 19e273d:   89 e5                   mov    %esp,%ebp</span><br><span class="line"> 19e273f:   56                      push   %esi</span><br><span class="line"> 19e2740:   8b 75 08                mov    0x8(%ebp),%esi</span><br><span class="line"> 19e2743:   53                      push   %ebx</span><br><span class="line"> 19e2744:   e8 c6 14 5c 02          call   3fa3c0f &lt;SNPSle_715314d83d0f61da9168d7348e45a64b3af050ec97b0cd6b&gt;</span><br><span class="line"> 19e2749:   81 c3 b7 58 28 04       add    <span class="variable">$0x42858b7</span>,%ebx</span><br><span class="line"> 19e274f:   85 f6                   <span class="built_in">test</span>   %esi,%esi</span><br><span class="line"> 19e2751:   74 1a                   je     19e276d &lt;SNPSle_207fb97ffa75eca3+0x33&gt;</span><br><span class="line"> 19e2753:   8b 06                   mov    (%esi),%eax</span><br><span class="line"> 19e2755:   85 c0                   <span class="built_in">test</span>   %eax,%eax</span><br><span class="line"> 19e2757:   74 63                   je     19e27bc &lt;SNPSle_207fb97ffa75eca3+0x82&gt;</span><br><span class="line"> 19e2759:   69 c0 40 42 0f 00       imul   <span class="variable">$0xf4240</span>,%eax,%eax</span><br><span class="line"> 19e275f:   83 ec 0c                sub    <span class="variable">$0xc</span>,%esp</span><br><span class="line"> 19e2762:   50                      push   %eax</span><br><span class="line"> 19e2763:   e8 28 03 55 ff          call   f32a90 &lt;usleep@plt&gt;</span><br><span class="line"> 19e2768:   83 c4 10                add    <span class="variable">$0x10</span>,%esp</span><br><span class="line"> 19e276b:   eb 4f                   jmp    19e27bc &lt;SNPSle_207fb97ffa75eca3+0x82&gt;</span><br><span class="line"> 19e276d:   83 ec 0c                sub    <span class="variable">$0xc</span>,%esp</span><br><span class="line"> 19e2770:   50                      push   %eax</span><br><span class="line"> 19e2771:   90                      nop</span><br><span class="line"> 19e2772:   90                      nop</span><br><span class="line"> 19e2773:   90                      nop</span><br><span class="line"> 19e2774:   90                      nop</span><br><span class="line"> 19e2775:   90                      nop</span><br><span class="line"> 19e2776:   83 c4 10                add    <span class="variable">$0x10</span>,%esp</span><br><span class="line"> 19e2779:   48                      dec    %eax</span><br><span class="line"> 19e277a:   8b 83 70 f6 ff ff       mov    -0x990(%ebx),%eax</span><br><span class="line"> 19e2780:   75 09                   jne    19e278b &lt;SNPSle_207fb97ffa75eca3+0x51&gt;</span><br><span class="line"> 19e2782:   c7 40 64 02 00 00 00    movl   <span class="variable">$0x2</span>,0x64(%eax)</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/02/26/how-to-solve-segfault-on-VCS-linux/" data-id="cmfe2gslp007h53i489wceunl" data-title="How to Solve Segfault on VCS Linux" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li></ul>
-
-    </footer>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2024/02/27/Input-special-characters-in-VIM/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Input Special Characters in VIM
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux64/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">How to Solve Segfault on VCS Linux64</div>
-    </a>
-  
-</nav>
 
-  
 </article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Default/">Default</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
-    </div>
   </div>
+  <div class="right-content">
+    <div id="toc" class="toc-wrapper"></div>
+  <div>
+</div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/health/" rel="tag">health</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/history/" rel="tag">history</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/IT/" style="font-size: 11px;">IT</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 12px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 11px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/health/" style="font-size: 10px;">health</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 14px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 12px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/09/07/How-to-partition-a-new-disk-drive/">How to Partition a New Disk Drive</a>
-          </li>
-        
-          <li>
-            <a href="/2025/07/22/LSF10-1-Installation/">LSF10.1 Installation</a>
-          </li>
-        
-          <li>
-            <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/">Synopsys Computing Platforms Roadmap 2025</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/11/Useful-Business-Dialogs/">Useful Business Dialogs</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/08/vitamin-cheat-sheet/">Vitamin Cheat Sheet</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+          </div>
+        </div>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 nibaix<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+
+     
+  <button id="scroll-to-top" class="btn btn-top" aria-label="Scroll To Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+ 
+
+  </main>
+
+  <div class="footer-wrapper">
+  <div class="left-content"></div>
+  <div class="right-content">
+    <div>Copyright &copy;2025</div>
+    <div>Powered By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> - Theme <a target="_blank" rel="noopener" href="https://github.com/thomasyu929/hexo-theme-peomas">Peomas</a></div>
+  </div>
+</div>
+
+  <div id="searchModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Search</h5>
+        <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-wrapper">
+          <i class="fas fa-search"></i>
+          <input id="search" class="search-input" type="text" placeholder="Input content to search..." />
+        </div>
+        <ul id="result" class="list-group result-wrapper">
+        </ul>
+      </div>
     </div>
   </div>
-</footer>
+</div>
 
-    </div>
-    <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.min.js"></script>
+
+
+<script src="/js/prism.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
+
+  
+<script src="/js/nprogress.js"></script>
 
 
 
+ 
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 
-<script src="/js/script.js"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+
+ 
+
+
+<script src="/js/event.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/plugin.js"></script>
 
 
 
-
-
-  </div>
 </body>
+
 </html>

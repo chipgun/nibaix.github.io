@@ -1,969 +1,560 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- Head tag -->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/img/favicon.png">
+
   
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
   
-  <title>芝士盒</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="芝士盒">
-<meta property="og:url" content="http://blog.nibaix.com/index.html">
-<meta property="og:site_name" content="芝士盒">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="nibaix">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="芝士盒" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+
+
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
-  
+  <title>芝士盒</title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">芝士盒</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">What&#39;s the story?</a>
-        </h2>
-      
+  <header>
+    <nav id="navbar" class="navbar fixed-nav scrolling-navbar">
+  <div class="container">
+    <div class="mark-wrapper">
+       
+      <div class="title-mark">Peomas</div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.nibaix.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
   
-    <article id="post-How-to-partition-a-new-disk-drive" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/09/07/How-to-partition-a-new-disk-drive/" class="article-date">
-  <time class="dt-published" datetime="2025-09-07T03:45:25.000Z" itemprop="datePublished">2025-09-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+    <button id="menu-btn" class="btn menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+      <div class="menu-icon"><span></span><span></span><span></span></div>
+    </button>
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/09/07/How-to-partition-a-new-disk-drive/">How to Partition a New Disk Drive</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="0-Create-virtual-disk-in-machine-BIOS"><a href="#0-Create-virtual-disk-in-machine-BIOS" class="headerlink" title="0. Create virtual disk in machine BIOS."></a>0. Create virtual disk in machine BIOS.</h3><p>Choose the RAID type you want it to be, e.g. RAID0, RAID1, RAID10, RAID5.</p>
-<h3 id="1-Check-existing-partitions"><a href="#1-Check-existing-partitions" class="headerlink" title="1. Check existing partitions"></a>1. Check existing partitions</h3><p>And identify the new disk you want to format, e.g. &#x2F;dev&#x2F;sdb</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> fdisk -l</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-Create-or-modify-partitions"><a href="#2-Create-or-modify-partitions" class="headerlink" title="2. Create or modify partitions"></a>2. Create or modify partitions</h3><p>Run fdisk to manage disk partition</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> fdisk /dev/sdb</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Press m to view available commands.</li>
-<li>Press n to create a new partition.</li>
-<li>Follow prompts to set partition size.</li>
-<li>Press w to save the change.</li>
-</ul>
-<h3 id="3-Format-the-partition"><a href="#3-Format-the-partition" class="headerlink" title="3. Format the partition"></a>3. Format the partition</h3><p>Choose a filesystem type (e.g. xfs, ext4) and format the partition:<br>Use xfs for high-performance needs or ext4 for general use.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> mkfs.xfs /dev/sdb1</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-Mount-the-partition"><a href="#4-Mount-the-partition" class="headerlink" title="4. Mount the partition"></a>4. Mount the partition</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> <span class="built_in">mkdir</span> /opt/work</span><br><span class="line">% <span class="built_in">sudo</span> mount /dev/sdb1 /opt/work</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-Configure-auto-mount-and-check-filesystem"><a href="#5-Configure-auto-mount-and-check-filesystem" class="headerlink" title="5. Configure auto-mount and check filesystem"></a>5. Configure auto-mount and check filesystem</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">sudo</span> <span class="built_in">echo</span> <span class="string">&quot;/dev/sdb1 /mnt/mydisk ext4 defaults 0 0&quot;</span> &gt;&gt; /etc/fstab</span><br><span class="line">% lsblk</span><br><span class="line">% <span class="built_in">df</span> -hT</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2025/09/07/How-to-partition-a-new-disk-drive/" data-id="cmfe2gsjw001053i40y1wgxmm" data-title="How to Partition a New Disk Drive" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LSF10-1-Installation" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/07/22/LSF10-1-Installation/" class="article-date">
-  <time class="dt-published" datetime="2025-07-22T00:57:13.000Z" itemprop="datePublished">2025-07-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/07/22/LSF10-1-Installation/">LSF10.1 Installation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="1-Software-package"><a href="#1-Software-package" class="headerlink" title="1. Software package"></a>1. Software package</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@masterhost# tar xvf lsf10.1_lsfinstall_linux_x86_64.tar</span><br><span class="line">root@masterhost# cd lsf10.1_lsfinstall</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-Edit-install-config"><a href="#2-Edit-install-config" class="headerlink" title="2. Edit install.config"></a>2. Edit install.config</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@masterhost# cat install.config</span><br><span class="line">LSF_TOP=&quot;/nfs/share/dir/lsftop&quot;</span><br><span class="line">LSF_ADMINS=&quot;lsfadmin&quot;</span><br><span class="line">LSF_CLUSTER_NAME=&quot;cluster1&quot;</span><br><span class="line">LSF_MASTER_LIST=&quot;masterhost&quot;</span><br><span class="line">LSF_ENTITLEMENT_FILE=&quot;/root/lsf10.1/install/dir/lsf_std_entitlement.dat&quot;</span><br><span class="line">LSF_TARDIR=&quot;/root/lsf10.1/install/dir&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-Install-LSF"><a href="#3-Install-LSF" class="headerlink" title="3. Install LSF"></a>3. Install LSF</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@masterhost# ./lsfinstall -f install.config</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2025/07/22/LSF10-1-Installation/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2025/07/22/LSF10-1-Installation/" data-id="cmfe2gsk0001b53i4g3x9h253" data-title="LSF10.1 Installation" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Synopsys-Computing-Platforms-Roadmap-2025" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/" class="article-date">
-  <time class="dt-published" datetime="2025-05-20T13:51:55.000Z" itemprop="datePublished">2025-05-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/">Synopsys Computing Platforms Roadmap 2025</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <table>
-<thead>
-<tr>
-<th><strong>Foundation</strong></th>
-<th><strong>Release  Opportunity</strong></th>
-<th><strong>Linux O&#x2F;S Versions</strong></th>
-<th><strong>Windows Platform</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Y</strong></td>
-<td>2026.09</td>
-<td>RHEL: 8.4+,9.1+   SLES: 15-SP3;  Rocky Linux: 8.4+; 9.1+  AlmaLinux: 8.4+,9.1+</td>
-<td>Windows: 11  Windows Server: 2022, 2025</td>
-</tr>
-<tr>
-<td></td>
-<td>2026.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2026.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>X</strong></td>
-<td>2025.12</td>
-<td>CentOS: 7.3+  RHEL: 7.3+; 8+  SLES: 12-SP5+; 15-SP2+  Rocky Linux: 8.4+  AlmaLinux: 8.4+</td>
-<td>Windows: 10; 11  Windows Server:  2019; 2022</td>
-</tr>
-<tr>
-<td></td>
-<td>2025.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2025.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>W</strong></td>
-<td>2025.03</td>
-<td>CentOS: 7.3+  RHEL: 7.3+; 8+  SLES: 12-SP5+; 15-SP2+  Rocky Linux: 8.4+  AlmaLinux: 8.4+</td>
-<td>Windows: 10; 11  Windows Server:  2019; 2022</td>
-</tr>
-<tr>
-<td></td>
-<td>2024.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2024.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>V</strong></td>
-<td>2024.06</td>
-<td>CentOS: 7.3+  RHEL: 7.3+; 8+  SLES: 12-SP5+; 15-SP2+      Rocky Linux: 8.4+       AlmaLinux: 8.4+</td>
-<td>Windows: 10;11  Windows Server: 2016; 2019; 2022</td>
-</tr>
-<tr>
-<td></td>
-<td>2024.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2023.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2023.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>U</strong></td>
-<td>2023.06</td>
-<td>CentOS: 7.3+  RHEL: 7.3+; 8+  SLES: 12-SP4+; 15+          Rocky Linux: 8.4+       AlmaLinux: 8.4+</td>
-<td>Windows: 10;11  Windows Server: 2016; 2019; 2022</td>
-</tr>
-<tr>
-<td></td>
-<td>2023.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2022.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>T</strong></td>
-<td>2022.09</td>
-<td>CentOS: 7.3+  RHEL: 7.3+; 8+  SLES: 12-SP4+; 15+</td>
-<td>Windows 10  Windows Server 2016  Windows Server 2019</td>
-</tr>
-<tr>
-<td></td>
-<td>2022.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2022.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>S</strong></td>
-<td>2021.12</td>
-<td>CentOS: 7.3+; 8+  RHEL: 7.3+; 8+  SLES: 12-SP4+; 15+</td>
-<td>Windows 10  Windows Server 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2021.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2021.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>R</strong></td>
-<td>2021.03</td>
-<td>RHEL 6.6+, 7.x, 8+  CentOS 6.6+, 7.1.1503+, 8+  SLES 12+, 15+</td>
-<td>Windows 7, 10  Windows Server 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2020.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2020.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Q</strong></td>
-<td>2020.06</td>
-<td>RHEL 6.6+, 7.x, 8+  CentOS 6.6+, 7.1.1503+, 8+  SLES 12+, 15+</td>
-<td>Windows 7, 10  Windows Server 2008 R2, 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2020.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2019.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>P</strong></td>
-<td>2019.09</td>
-<td>RHEL 6.6+, 7.x  CentOS 6.6+, 7.x  SLES 11.4+ and 12.x</td>
-<td>Windows 7, 10  Windows Server 2008 R2, 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2019.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2019.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>O</strong></td>
-<td>2018.12</td>
-<td>RHEL 6.6+, 7.x  CentOS 6.6+, 7.x  SLES 11.4 and 12.x</td>
-<td>Windows 7, 10  Windows Server 2008 R2, 2016</td>
-</tr>
-<tr>
-<td></td>
-<td>2018.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2018.06</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>N</strong></td>
-<td>2018.03</td>
-<td>RHEL 6.6+, 7.x  SLES 11.x and 12.x</td>
-<td>Windows 7, 8, 10</td>
-</tr>
-<tr>
-<td></td>
-<td>2017.12</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2017.09</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>M</strong></td>
-<td>2017.06</td>
-<td>RHEL 6.6+, 7.x  SLES 11.x and 12.x</td>
-<td>Windows 7, 8, 10</td>
-</tr>
-<tr>
-<td></td>
-<td>2017.03</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>2016.12</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/" data-id="cmfe2gskk003f53i4g7v71suw" data-title="Synopsys Computing Platforms Roadmap 2025" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Useful-Business-Dialogs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/11/Useful-Business-Dialogs/" class="article-date">
-  <time class="dt-published" datetime="2024-09-11T11:43:51.000Z" itemprop="datePublished">2024-09-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Knowledge/">Knowledge</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/11/Useful-Business-Dialogs/">Useful Business Dialogs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <img src=2024/09/11/Useful-Business-Dialogs/image-20240911194624840.jpg width=480>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/09/11/Useful-Business-Dialogs/" data-id="cmfe2gsks004e53i4eq7i2i6y" data-title="Useful Business Dialogs" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/english/" rel="tag">english</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-vitamin-cheat-sheet" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/08/vitamin-cheat-sheet/" class="article-date">
-  <time class="dt-published" datetime="2024-09-07T23:36:02.000Z" itemprop="datePublished">2024-09-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Knowledge/">Knowledge</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/08/vitamin-cheat-sheet/">Vitamin Cheat Sheet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>Vitamin A: Vision &amp; Immunity | Carrots, Spinach</li>
-<li>Vitamin B1: Energy &amp; Nerves | Whole Grains, Pork</li>
-<li>Vitamin B2: Metabolism | Milk, Eggs</li>
-<li>Vitamin B3: Skin Health | Poultry, Fish</li>
-<li>Vitamin B5: Hormone Synthesis | Avocado, Eggs</li>
-<li>Vitamin B6: Brain Health | Bananas, Chicken</li>
-<li>Vitamin B7: Hair &amp; Nails | Eggs, Almonds</li>
-<li>Vitamin B9: Fetal Development | Leafy Greens, Legumes</li>
-<li>Vitamin B12: Blood &amp; Brain | Meat, Dairy</li>
-<li>Vitamin C: Antioxidant | Citrus, Broccoli</li>
-<li>Vitamin D: Bone Health | Sunlight, Salmon</li>
-<li>Vitamin E: Cell Protection | Nuts, Seeds</li>
-<li>Vitamin K: Blood Clotting | Kale, Broccoli</li>
-</ul>
-<p><strong>Key Nutrients Beyond Vitamins:</strong></p>
-<ul>
-<li>Omega-3: Heart &amp; Brain | Salmon, Walnuts</li>
-<li>Magnesium: Over 300 Reactions | Spinach, Nuts</li>
-<li>Probiotics: Gut Health | Yogurt, Sauerkraut</li>
-<li>Zinc: Immune Function | Meat, Seeds</li>
-<li>Fiber: Digestion &amp; Heart | Beans, Whole Grains</li>
-<li>Iron: Oxygen Transport | Red Meat, Lentils</li>
-<li>Calcium: Bone Strength | Milk, Kale</li>
-</ul>
-<p><em><strong>Final Tip: Combine nutrients wisely and maintain a balanced lifestyle with exercise and hydration for optimal health.</strong></em></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/09/08/vitamin-cheat-sheet/" data-id="cmfe2gsms00bf53i4bjsrh7tt" data-title="Vitamin Cheat Sheet" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/health/" rel="tag">health</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Calibre-Platform-Support-2024" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/04/Calibre-Platform-Support-2024/" class="article-date">
-  <time class="dt-published" datetime="2024-09-04T08:45:03.000Z" itemprop="datePublished">2024-09-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/VLSI/">VLSI</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/04/Calibre-Platform-Support-2024/">Calibre Platform Support - 2024</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories"><a href="#Platform-Identifiers-for-Calibre-Install-Files-and-Runtime-Directories" class="headerlink" title="Platform Identifiers for Calibre Install Files and Runtime Directories"></a>Platform Identifiers for Calibre Install Files and Runtime Directories</h2><p>Calibre provides different executables that are optimized for different Linux distributions, and each has its own platform identifier. The platform identifier is sometimes referred to as a VCO, which refers to a Vendor-CPU-OS combination. The platform identifier is first used to identify which install files should be downloaded. After installation the platform identifier and release version number are used to identify the Calibre runtime directory, generally referred to as a MGC_HOME tree. Each Calibre MGC_HOME tree can only be used with specific OS versions and must run on hardware that supports the minimum CPU instruction set identified for that MGC_HOME tree. Note that when using Calibre with distributed processing, the MGC_HOME trees on the master host and all remote hosts must all have the same platform identifier.</p>
-<img src="/2024/09/04/Calibre-Platform-Support-2024/img-identifiers.jpg" class="">
-        
-          <p class="article-more-link">
-            <a href="/2024/09/04/Calibre-Platform-Support-2024/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/09/04/Calibre-Platform-Support-2024/" data-id="cmfe2gsjo000d53i41hnrd83b" data-title="Calibre Platform Support - 2024" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-install-linux-editor-atom" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/03/install-linux-editor-atom/" class="article-date">
-  <time class="dt-published" datetime="2024-09-02T22:32:24.000Z" itemprop="datePublished">2024-09-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/03/install-linux-editor-atom/">Install Linux Editor Atom</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="How-to-install"><a href="#How-to-install" class="headerlink" title="How to install"></a>How to install</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rpm -ivh  https://github.com/atom/atom/releases/download/v1.27.0/atom.x86_64.rpm</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Official-website"><a href="#Official-website" class="headerlink" title="Official website"></a>Official website</h2><p><a target="_blank" rel="noopener" href="https://atom-editor.cc/">ATOM - A hackable text editor for the 21st Century</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/09/03/install-linux-editor-atom/" data-id="cmfe2gslw008253i4bpg0gsme" data-title="Install Linux Editor Atom" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Vim-move-cursor-with-command-f-F-t-T" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/08/29/Vim-move-cursor-with-command-f-F-t-T/" class="article-date">
-  <time class="dt-published" datetime="2024-08-29T04:36:47.000Z" itemprop="datePublished">2024-08-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Program/">Program</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/08/29/Vim-move-cursor-with-command-f-F-t-T/">Vim: Move Cursor With Command &#34;f|F|t|T&#34;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><code>f</code>命令移动到光标右边的指定字符上，例如，<code>fx</code>，会把移动到光标右边的第一个x字符上。<code>F</code>命令则反方向查找，也就是移动到光标左边的指定字符上。</li>
-<li><code>t</code>命令和<code>f</code>命令的区别在于，它移动到光标右边的指定字符之前。例如，<code>tx</code>会移动到光标右边第一个x字符的前面。<code>T</code>命令是<code>t</code>命令的反向版本，它移动到光标左边的指定字符之后。</li>
-<li>这四个命令只在当前行中移动光标，光标不会跨越回车换行符。</li>
-<li>可以在命令前面使用数字，表示倍数。例如，<code>3fx</code>表示移动到光标右边的第3个x字符上。</li>
-<li><code>;</code>命令重复前一次输入的f, t, F, T命令，而<code>,</code>命令会反方向重复前一次输入的f, t, F, T命令。这两个命令前也可以使用数字来表示倍数。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/08/29/Vim-move-cursor-with-command-f-F-t-T/" data-id="cmfe2gskv004l53i47qq894ij" data-title="Vim: Move Cursor With Command &#34;f|F|t|T&#34;" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/" rel="tag">vim</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-中国简史图谱" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/" class="article-date">
-  <time class="dt-published" datetime="2024-08-28T14:13:42.000Z" itemprop="datePublished">2024-08-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Default/">Default</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/">中国简史图谱</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <img src="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/chinaHistoryMap.jpg" class="">
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/" data-id="cmfe2gsn800dc53i4f265cdy5" data-title="中国简史图谱" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/history/" rel="tag">history</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-开学寄语" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/08/25/%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD/" class="article-date">
-  <time class="dt-published" datetime="2024-08-25T09:27:58.000Z" itemprop="datePublished">2024-08-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Diary/">Diary</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/08/25/%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD/">开学寄语</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>Hold enthusiasm for dreams from inside. You are never anybody’s copy.</li>
-<li>Stay curious, stay thirsty.</li>
-<li>Be exploring throughout life journey.</li>
-<li>Different life phases, different companies.</li>
-<li>History has the story.</li>
-<li>Simply believe yourself, but not anyone else.</li>
-<li>Make bridges from heart to heart by empathy.</li>
-<li>Failure is the ladder to success.</li>
-<li>Erase the past. Be faithful to the future.</li>
-<li>Home is your unconditional recharge station.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.nibaix.com/2024/08/25/%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD/" data-id="cmfe2gsn900dg53i47ffpbqc2" data-title="开学寄语" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ray/" rel="tag">ray</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Default/">Default</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Knowledge/">Knowledge</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Program/">Program</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/VLSI/">VLSI</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT/" rel="tag">IT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/amba/" rel="tag">amba</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apr/" rel="tag">apr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/" rel="tag">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/automotive/" rel="tag">automotive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cadence/" rel="tag">cadence</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdc/" rel="tag">cdc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chipgun/" rel="tag">chipgun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/covid19/" rel="tag">covid19</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csh/" rel="tag">csh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dsp/" rel="tag">dsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eda/" rel="tag">eda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/" rel="tag">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/" rel="tag">english</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fun/" rel="tag">fun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/" rel="tag">gcc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/health/" rel="tag">health</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/history/" rel="tag">history</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso26262/" rel="tag">iso26262</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/" rel="tag">license</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lowpower/" rel="tag">lowpower</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/management/" rel="tag">management</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab/" rel="tag">matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mentor/" rel="tag">mentor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nas/" rel="tag">nas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nature/" rel="tag">nature</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocv/" rel="tag">ocv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/primetime/" rel="tag">primetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ray/" rel="tag">ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote/" rel="tag">remote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rhel7/" rel="tag">rhel7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/science/" rel="tag">science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/" rel="tag">script</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/serdes/" rel="tag">serdes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/siemens/" rel="tag">siemens</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sos/" rel="tag">sos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spi/" rel="tag">spi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spyglass/" rel="tag">spyglass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sta/" rel="tag">sta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/starred/" rel="tag">starred</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/synopsys/" rel="tag">synopsys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timing/" rel="tag">timing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tsmc/" rel="tag">tsmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uvm/" rel="tag">uvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vcs/" rel="tag">vcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verdi/" rel="tag">verdi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verification/" rel="tag">verification</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/verilog/" rel="tag">verilog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/" rel="tag">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/IT/" style="font-size: 11px;">IT</a> <a href="/tags/algorithm/" style="font-size: 12px;">algorithm</a> <a href="/tags/amba/" style="font-size: 11px;">amba</a> <a href="/tags/apr/" style="font-size: 10px;">apr</a> <a href="/tags/arm/" style="font-size: 11px;">arm</a> <a href="/tags/automotive/" style="font-size: 11px;">automotive</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/cadence/" style="font-size: 12px;">cadence</a> <a href="/tags/cdc/" style="font-size: 10px;">cdc</a> <a href="/tags/chipgun/" style="font-size: 11px;">chipgun</a> <a href="/tags/covid19/" style="font-size: 19px;">covid19</a> <a href="/tags/csh/" style="font-size: 10px;">csh</a> <a href="/tags/dsp/" style="font-size: 12px;">dsp</a> <a href="/tags/eda/" style="font-size: 17px;">eda</a> <a href="/tags/editor/" style="font-size: 14px;">editor</a> <a href="/tags/emacs/" style="font-size: 11px;">emacs</a> <a href="/tags/english/" style="font-size: 11px;">english</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/fun/" style="font-size: 10px;">fun</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/health/" style="font-size: 10px;">health</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/iso26262/" style="font-size: 10px;">iso26262</a> <a href="/tags/license/" style="font-size: 12px;">license</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lowpower/" style="font-size: 12px;">lowpower</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/markdown/" style="font-size: 12px;">markdown</a> <a href="/tags/matlab/" style="font-size: 10px;">matlab</a> <a href="/tags/mentor/" style="font-size: 14px;">mentor</a> <a href="/tags/nas/" style="font-size: 10px;">nas</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/ocv/" style="font-size: 12px;">ocv</a> <a href="/tags/perl/" style="font-size: 15px;">perl</a> <a href="/tags/primetime/" style="font-size: 12px;">primetime</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/ray/" style="font-size: 11px;">ray</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/rhel7/" style="font-size: 11px;">rhel7</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/script/" style="font-size: 12px;">script</a> <a href="/tags/serdes/" style="font-size: 12px;">serdes</a> <a href="/tags/siemens/" style="font-size: 12px;">siemens</a> <a href="/tags/sos/" style="font-size: 10px;">sos</a> <a href="/tags/spi/" style="font-size: 10px;">spi</a> <a href="/tags/spyglass/" style="font-size: 10px;">spyglass</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sta/" style="font-size: 13px;">sta</a> <a href="/tags/starred/" style="font-size: 16px;">starred</a> <a href="/tags/synopsys/" style="font-size: 18px;">synopsys</a> <a href="/tags/timing/" style="font-size: 11px;">timing</a> <a href="/tags/tmux/" style="font-size: 13px;">tmux</a> <a href="/tags/troubleshoot/" style="font-size: 11px;">troubleshoot</a> <a href="/tags/tsmc/" style="font-size: 10px;">tsmc</a> <a href="/tags/uvm/" style="font-size: 10px;">uvm</a> <a href="/tags/vcs/" style="font-size: 11px;">vcs</a> <a href="/tags/verdi/" style="font-size: 11px;">verdi</a> <a href="/tags/verification/" style="font-size: 10px;">verification</a> <a href="/tags/verilog/" style="font-size: 11px;">verilog</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vnc/" style="font-size: 12px;">vnc</a> <a href="/tags/windows/" style="font-size: 16px;">windows</a> <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">软路由</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+    <div id="nav-menu" class="collapse menu-wrapper">
       <ul>
         
           <li>
-            <a href="/2025/09/07/How-to-partition-a-new-disk-drive/">How to Partition a New Disk Drive</a>
+            <a href="/">Home </a>
           </li>
         
           <li>
-            <a href="/2025/07/22/LSF10-1-Installation/">LSF10.1 Installation</a>
+            <a href="/archives">Archives </a>
           </li>
         
           <li>
-            <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/">Synopsys Computing Platforms Roadmap 2025</a>
+            <a href="/categories">Category </a>
           </li>
         
           <li>
-            <a href="/2024/09/11/Useful-Business-Dialogs/">Useful Business Dialogs</a>
+            <a href="/tags">Tag </a>
           </li>
         
           <li>
-            <a href="/2024/09/08/vitamin-cheat-sheet/">Vitamin Cheat Sheet</a>
+            <a href="/about">About </a>
           </li>
         
+        <li class="search-icon">
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </li>
       </ul>
     </div>
   </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 nibaix<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
 </nav>
-    
+
+  </header>
+
+  <main>
+    <div class="container">
+      <div id="main">
+        <div class="row py-5">
+          <div class="col">
+            <div class="index-wrapper">
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2025/09/07/How-to-partition-a-new-disk-drive/" target="_self">
+            <h3>How to Partition a New Disk Drive</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            0. Create virtual disk in machine BIOS.Choose the RAID type you want it to be, e.g. RAID0, RAID1, RAID10, RAID5.
+1. Check existing partitionsAnd identify the new disk you want to format, e.g. &#x2F;de...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2025-09-07 11:45" pubdate>
+            2025-09-07
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/Linux/">Linux</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/linux/">linux</a>
+               
+                <a class="tag" href="/tags/IT/">IT</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2025/07/22/LSF10-1-Installation/" target="_self">
+            <h3>LSF10.1 Installation</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            1. Software package12root@masterhost# tar xvf lsf10.1_lsfinstall_linux_x86_64.tarroot@masterhost# cd lsf10.1_lsfinstall
+
+2. Edit install.config1234567root@masterhost# cat install.configLSF_TOP=&quot;/...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2025-07-22 08:57" pubdate>
+            2025-07-22
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/VLSI/">VLSI</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/linux/">linux</a>
+               
+                <a class="tag" href="/tags/IT/">IT</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/" target="_self">
+            <h3>Synopsys Computing Platforms Roadmap 2025</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+Foundation
+Release  Opportunity
+Linux O&#x2F;S Versions
+Windows Platform
+
+
+
+Y
+2026.09
+RHEL: 8.4+,9.1+   SLES: 15-SP3;  Rocky Linux: 8.4+; 9.1+  AlmaLinux: 8.4+,9.1+
+Windows: 11  Windows Server: 202...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2025-05-20 21:51" pubdate>
+            2025-05-20
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/VLSI/">VLSI</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/eda/">eda</a>
+               
+                <a class="tag" href="/tags/synopsys/">synopsys</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2024/09/11/Useful-Business-Dialogs/" target="_self">
+            <h3>Useful Business Dialogs</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            
+...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2024-09-11 19:43" pubdate>
+            2024-09-11
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/Knowledge/">Knowledge</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/english/">english</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2024/09/08/vitamin-cheat-sheet/" target="_self">
+            <h3>Vitamin Cheat Sheet</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            
+Vitamin A: Vision &amp; Immunity | Carrots, Spinach
+Vitamin B1: Energy &amp; Nerves | Whole Grains, Pork
+Vitamin B2: Metabolism | Milk, Eggs
+Vitamin B3: Skin Health | Poultry, Fish
+Vitamin B5: Hormon...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2024-09-08 07:36" pubdate>
+            2024-09-08
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/Knowledge/">Knowledge</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/health/">health</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2024/09/04/Calibre-Platform-Support-2024/" target="_self">
+            <h3>Calibre Platform Support - 2024</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            Platform Identifiers for Calibre Install Files and Runtime DirectoriesCalibre provides different executables that are optimized for different Linux distributions, and each has its own platform identif...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2024-09-04 16:45" pubdate>
+            2024-09-04
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/VLSI/">VLSI</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/mentor/">mentor</a>
+               
+                <a class="tag" href="/tags/siemens/">siemens</a>
+               
+                <a class="tag" href="/tags/eda/">eda</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2024/09/03/install-linux-editor-atom/" target="_self">
+            <h3>Install Linux Editor Atom</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            How to install1# rpm -ivh  https://github.com/atom/atom/releases/download/v1.27.0/atom.x86_64.rpm
+
+Official websiteATOM - A hackable text editor for the 21st Century
+...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2024-09-03 06:32" pubdate>
+            2024-09-03
+          </time>
+          <div>
+             
+            
+               
+                <a class="tag" href="/tags/linux/">linux</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2024/08/29/Vim-move-cursor-with-command-f-F-t-T/" target="_self">
+            <h3>Vim: Move Cursor With Command &#34;f|F|t|T&#34;</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            
+f命令移动到光标右边的指定字符上，例如，fx，会把移动到光标右边的第一个x字符上。F命令则反方向查找，也就是移动到光标左边的指定字符上。
+t命令和f命令的区别在于，它移动到光标右边的指定字符之前。例如，tx会移动到光标右边第一个x字符的前面。T命令是t命令的反向版本，它移动到光标左边的指定字符之后。
+这四个命令只在当前行中移动光标，光标不会跨越回车换行符。
+可以在命令前面使用数字，表示倍数。例如...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2024-08-29 12:36" pubdate>
+            2024-08-29
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/Program/">Program</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/vim/">vim</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/" target="_self">
+            <h3>中国简史图谱</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            
+...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2024-08-28 22:13" pubdate>
+            2024-08-28
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/Default/">Default</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/history/">history</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
+          <a href="/2024/08/25/%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD/" target="_self">
+            <h3>开学寄语</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            
+Hold enthusiasm for dreams from inside. You are never anybody’s copy.
+Stay curious, stay thirsty.
+Be exploring throughout life journey.
+Different life phases, different companies.
+History has the sto...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2024-08-25 17:27" pubdate>
+            2024-08-25
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/Diary/">Diary</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/ray/">ray</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+   
+</div>
+
+
+  <div class="py-5 pagination-wrapper" aria-label="pagination">
+    <div>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+     
+  <button id="scroll-to-top" class="btn btn-top" aria-label="Scroll To Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+ 
+
+  </main>
+
+  <div class="footer-wrapper">
+  <div class="left-content"></div>
+  <div class="right-content">
+    <div>Copyright &copy;2025</div>
+    <div>Powered By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> - Theme <a target="_blank" rel="noopener" href="https://github.com/thomasyu929/hexo-theme-peomas">Peomas</a></div>
+  </div>
+</div>
+
+  <div id="searchModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Search</h5>
+        <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-wrapper">
+          <i class="fas fa-search"></i>
+          <input id="search" class="search-input" type="text" placeholder="Input content to search..." />
+        </div>
+        <ul id="result" class="list-group result-wrapper">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.min.js"></script>
+
+
+<script src="/js/prism.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
+
+  
+<script src="/js/nprogress.js"></script>
 
 
 
+ 
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 
-<script src="/js/script.js"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+
+ 
+
+
+<script src="/js/event.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/plugin.js"></script>
 
 
 
-
-
-  </div>
 </body>
+
 </html>
