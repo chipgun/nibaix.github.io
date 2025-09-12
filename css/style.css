@@ -1403,7 +1403,7 @@ template {
   color: #202020;
 }
 .list-group .list-group-item a:hover {
-  color: #0d6efd;
+  color: #00a0c0;
 }
 .list-group .list-group-item .post-date {
   float: right;
@@ -1684,7 +1684,7 @@ nav .container .menu-wrapper ul li:last-child {
   font-weight: 500;
   font-size: 0.85rem;
   margin-right: 2px;
-  border-left: 3px solid #0d6efd;
+  border-left: 3px solid #00a0c0;
   padding: 0 5px;
   line-height: 100%;
   cursor: default;
