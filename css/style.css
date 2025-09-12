@@ -51,7 +51,7 @@
 // Make the article's theme always be light even when the system color scheme is dark.
 @media (prefers-color-scheme: dark) {
   .markdown-body {
-    color-scheme: light;
+    color-scheme: dark;
     --color-prettylights-syntax-comment: #6e7781;
     --color-prettylights-syntax-constant: #0550ae;
     --color-prettylights-syntax-entity: #8250df;
