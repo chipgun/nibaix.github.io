@@ -1879,14 +1879,14 @@ a {
   color: #00a0c0 !important;
 }
 #nprogress .bar {
-  background: #0d6efd !important;
+  background: #131313 !important;
 }
 .row {
   margin-left: 0;
   margin-right: 0;
 }
 code {
-  color: #fff;
+  color: inherit;
   font-size: 0.85rem !important;
 }
 pre {
