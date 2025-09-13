@@ -93,7 +93,7 @@
     
     
       
-        <a class="tag" href="/categories/Linux/">Linux</a> 
+        <a class="tag" href="/categories/Default/">Default</a> 
        
     
     
@@ -126,7 +126,7 @@
 <p><strong>解决：</strong>在为用户建立VNC session之前，必须要先为用户设置密码。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># sudo passwd &lt;USER&gt;</span><br><span class="line"># sudo vncpasswd &lt;USER&gt;</span><br></pre></td></tr></table></figure>
 
-<p>完整设置vncserver的流程：<a href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/" title="Install and Configure VNC Server in RHEL7">Install and Configure VNC Server in RHEL7</a></p>
+<p>完整设置vncserver的流程：<a href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/" title="install and configure VNC Server in RHEL7">install and configure VNC Server in RHEL7</a></p>
 <h1 id="eda-license-daemon"><a href="#eda-license-daemon" class="headerlink" title="eda license daemon"></a>eda license daemon</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/init.d/snpslmd</span><br><span class="line">lmgrd -c $licfile -l $logfile</span><br><span class="line"># systemctl start snpslmd</span><br><span class="line"># systemctl enable snpslmd</span><br><span class="line">cg-snpslmd.service is not a native service, redirecting to /sbin/chkconfig.</span><br><span class="line">Executing /sbin/chkconfig snpslmd on</span><br></pre></td></tr></table></figure>
 
 

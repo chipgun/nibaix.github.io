@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -173,7 +173,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -273,7 +273,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -300,7 +300,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -325,7 +325,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -425,7 +425,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -450,7 +450,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -504,7 +504,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -529,7 +529,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -554,7 +554,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -579,7 +579,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -604,7 +604,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -710,7 +710,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -737,7 +737,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1145,7 +1145,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1170,7 +1170,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1197,7 +1197,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1222,7 +1222,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1247,7 +1247,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1274,7 +1274,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1298,12 +1298,12 @@
       <link href="/2023/03/16/%E9%85%8D%E7%BD%AERedhat7%E9%81%87%E5%88%B0%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/"/>
       <url>/2023/03/16/%E9%85%8D%E7%BD%AERedhat7%E9%81%87%E5%88%B0%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<h1 id="vsftpd-533-could-not-create-file"><a href="#vsftpd-533-could-not-create-file" class="headerlink" title="vsftpd: 533 could not create file"></a>vsftpd: 533 could not create file</h1><p><strong>问题：</strong>成功启动vsftpd服务<code>system start vsftpd.service</code>后，FTP客户端传输文件到服务器失败，返回<code>533 could not create file</code></p><p><strong>解决：</strong><code>setsebool -P ftpd_full_access=true</code> <em>&#x2F;&#x2F;-P (persistent) 表示reboot后设置永久有效</em></p><span id="more"></span><h1 id="svnserve-启动失败"><a href="#svnserve-启动失败" class="headerlink" title="svnserve: 启动失败"></a>svnserve: 启动失败</h1><p><strong>问题：</strong>修改配置文件<code>/etc/sysconfig/svnserve</code>，如果用–config-file指定所有repo共享config，启动SVN服务失败；而且如果不指定–config-file，则启动SVN成功。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/sysconfig/svnserve</span><br><span class="line">OPTIONS=&quot;-r /p/SVN --config-file=/p/SVN/conf/svnserve.conf&quot;</span><br><span class="line"># systemctl start svnserve.service</span><br><span class="line"># systemctl enable svnserve.service</span><br><span class="line"># systemctl status svnserve.service</span><br></pre></td></tr></table></figure><p><strong>临时解决：</strong><code>setenforce 0</code></p><p>其它有用的SELinux相关命令：</p><p><code>getenforce</code> 查看当前SELinux状态</p><p><code>semanage boolean -l</code> 查看当前SELinux所有布尔变量的值，类似与<code>getsebool -a</code></p><p><code>cat /etc/selinux/config</code> 查看SELinux配置文件</p><p><code>cat /var/log/audit/audit.log</code> 查看SELinux日志文件</p><h1 id="vncserver-启动失败"><a href="#vncserver-启动失败" class="headerlink" title="vncserver: 启动失败"></a>vncserver: 启动失败</h1><p><strong>问题：</strong>按下面的流程建立端口7的VNC session，失败！</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/lib/systemd/system</span><br><span class="line"># cp vncserver@.service vncserver@:7.service</span><br><span class="line"># vi vncserver@:7.service // Change &lt;USER&gt;</span><br><span class="line"># systemctl start vncserver@:7.service</span><br><span class="line"># systemctl enable vncserver@:7.service</span><br><span class="line"># systemctl status vncserver@:7.service</span><br></pre></td></tr></table></figure><p><strong>解决：</strong>在为用户建立VNC session之前，必须要先为用户设置密码。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># sudo passwd &lt;USER&gt;</span><br><span class="line"># sudo vncpasswd &lt;USER&gt;</span><br></pre></td></tr></table></figure><p>完整设置vncserver的流程：<a href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/" title="Install and Configure VNC Server in RHEL7">Install and Configure VNC Server in RHEL7</a></p><h1 id="eda-license-daemon"><a href="#eda-license-daemon" class="headerlink" title="eda license daemon"></a>eda license daemon</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/init.d/snpslmd</span><br><span class="line">lmgrd -c $licfile -l $logfile</span><br><span class="line"># systemctl start snpslmd</span><br><span class="line"># systemctl enable snpslmd</span><br><span class="line">cg-snpslmd.service is not a native service, redirecting to /sbin/chkconfig.</span><br><span class="line">Executing /sbin/chkconfig snpslmd on</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="vsftpd-533-could-not-create-file"><a href="#vsftpd-533-could-not-create-file" class="headerlink" title="vsftpd: 533 could not create file"></a>vsftpd: 533 could not create file</h1><p><strong>问题：</strong>成功启动vsftpd服务<code>system start vsftpd.service</code>后，FTP客户端传输文件到服务器失败，返回<code>533 could not create file</code></p><p><strong>解决：</strong><code>setsebool -P ftpd_full_access=true</code> <em>&#x2F;&#x2F;-P (persistent) 表示reboot后设置永久有效</em></p><span id="more"></span><h1 id="svnserve-启动失败"><a href="#svnserve-启动失败" class="headerlink" title="svnserve: 启动失败"></a>svnserve: 启动失败</h1><p><strong>问题：</strong>修改配置文件<code>/etc/sysconfig/svnserve</code>，如果用–config-file指定所有repo共享config，启动SVN服务失败；而且如果不指定–config-file，则启动SVN成功。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/sysconfig/svnserve</span><br><span class="line">OPTIONS=&quot;-r /p/SVN --config-file=/p/SVN/conf/svnserve.conf&quot;</span><br><span class="line"># systemctl start svnserve.service</span><br><span class="line"># systemctl enable svnserve.service</span><br><span class="line"># systemctl status svnserve.service</span><br></pre></td></tr></table></figure><p><strong>临时解决：</strong><code>setenforce 0</code></p><p>其它有用的SELinux相关命令：</p><p><code>getenforce</code> 查看当前SELinux状态</p><p><code>semanage boolean -l</code> 查看当前SELinux所有布尔变量的值，类似与<code>getsebool -a</code></p><p><code>cat /etc/selinux/config</code> 查看SELinux配置文件</p><p><code>cat /var/log/audit/audit.log</code> 查看SELinux日志文件</p><h1 id="vncserver-启动失败"><a href="#vncserver-启动失败" class="headerlink" title="vncserver: 启动失败"></a>vncserver: 启动失败</h1><p><strong>问题：</strong>按下面的流程建立端口7的VNC session，失败！</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/lib/systemd/system</span><br><span class="line"># cp vncserver@.service vncserver@:7.service</span><br><span class="line"># vi vncserver@:7.service // Change &lt;USER&gt;</span><br><span class="line"># systemctl start vncserver@:7.service</span><br><span class="line"># systemctl enable vncserver@:7.service</span><br><span class="line"># systemctl status vncserver@:7.service</span><br></pre></td></tr></table></figure><p><strong>解决：</strong>在为用户建立VNC session之前，必须要先为用户设置密码。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># sudo passwd &lt;USER&gt;</span><br><span class="line"># sudo vncpasswd &lt;USER&gt;</span><br></pre></td></tr></table></figure><p>完整设置vncserver的流程：<a href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/" title="install and configure VNC Server in RHEL7">install and configure VNC Server in RHEL7</a></p><h1 id="eda-license-daemon"><a href="#eda-license-daemon" class="headerlink" title="eda license daemon"></a>eda license daemon</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/init.d/snpslmd</span><br><span class="line">lmgrd -c $licfile -l $logfile</span><br><span class="line"># systemctl start snpslmd</span><br><span class="line"># systemctl enable snpslmd</span><br><span class="line">cg-snpslmd.service is not a native service, redirecting to /sbin/chkconfig.</span><br><span class="line">Executing /sbin/chkconfig snpslmd on</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1330,7 +1330,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1376,7 +1376,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1609,7 +1609,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1653,7 +1653,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1680,7 +1680,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1732,7 +1732,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1788,7 +1788,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1813,7 +1813,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1838,7 +1838,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1901,7 +1901,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1928,7 +1928,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1972,7 +1972,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -1997,7 +1997,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -2076,7 +2076,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -2107,7 +2107,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -2274,7 +2274,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -2301,7 +2301,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -2353,7 +2353,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -2428,7 +2428,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -2555,7 +2555,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3021,7 +3021,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3046,7 +3046,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3254,7 +3254,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3279,7 +3279,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3304,7 +3304,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3329,7 +3329,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3354,7 +3354,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3383,7 +3383,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3439,7 +3439,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3537,7 +3537,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
@@ -3649,7 +3649,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Default </category>
           
       </categories>
       
