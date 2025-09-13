@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Cadence_compute_platform_2023-2026</title>
+      <title>2023-2026 Cadence Compute Platform</title>
       <link href="/2025/09/13/cadence-compute-platform-2023-2026/"/>
       <url>/2025/09/13/cadence-compute-platform-2023-2026/</url>
       
-        <content type="html"><![CDATA[<h3 id="2023-x-2026-x-Cadence-Compute-Platform-Roadmap"><a href="#2023-x-2026-x-Cadence-Compute-Platform-Roadmap" class="headerlink" title="2023.x-2026.x Cadence Compute Platform Roadmap"></a>2023.x-2026.x Cadence Compute Platform Roadmap</h3><h3 id="2025-x-releases"><a href="#2025-x-releases" class="headerlink" title="2025.x releases"></a>2025.x releases</h3><pre><code>x86_64    added Rocky 8.4+, Rocky 9, Alma 8.4+, Alma 9IBM POWER    added RHEL 9ARM v8    added RHEL 9</code></pre><h3 id="2026-x-releases"><a href="#2026-x-releases" class="headerlink" title="2026.x releases"></a>2026.x releases</h3><pre><code>same as 2025.xx86_64    Drop Windows 10</code></pre>]]></content>
+        <content type="html"><![CDATA[<h3 id="2023-x-2026-x-Cadence-Compute-Platform-Roadmap"><a href="#2023-x-2026-x-Cadence-Compute-Platform-Roadmap" class="headerlink" title="2023.x-2026.x Cadence Compute Platform Roadmap"></a>2023.x-2026.x Cadence Compute Platform Roadmap</h3><img src="/2025/09/13/cadence-compute-platform-2023-2026/2023-2026_cds_roadmap.jpg" class=""><h3 id="2025-x-releases"><a href="#2025-x-releases" class="headerlink" title="2025.x releases"></a>2025.x releases</h3><pre><code>x86_64    added Rocky 8.4+, Rocky 9, Alma 8.4+, Alma 9IBM POWER    added RHEL 9ARM v8    added RHEL 9</code></pre><h3 id="2026-x-releases"><a href="#2026-x-releases" class="headerlink" title="2026.x releases"></a>2026.x releases</h3><pre><code>same as 2025.xx86_64    Drop Windows 10</code></pre>]]></content>
       
       
       <categories>
