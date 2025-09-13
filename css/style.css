@@ -1493,7 +1493,7 @@ template {
 .footer-wrapper .left-content {
   background-color: #2e2e2e;
   height: 100%;
-  width: 70%;
+  width: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
