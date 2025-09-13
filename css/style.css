@@ -1553,10 +1553,10 @@ nav .container {
 }
 nav .container .mark-wrapper {
   font-family: 'Fuzzy Bubbles', cursive;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 nav .container .mark-wrapper .logo {
-  width: 58px;
+  width: 50px;
 }
 nav .container .menu-wrapper {
   flex-basis: 100%;
