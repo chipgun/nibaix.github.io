@@ -1507,7 +1507,7 @@ template {
   align-items: center;
   flex-wrap: wrap;
   height: 100%;
-  width: 30%;
+  width: 100%;
   font-size: 12px;
   font-weight: 500;
   color: #707070;
