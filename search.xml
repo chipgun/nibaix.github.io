@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Cadence_compute_platform_2023-2026</title>
+      <link href="/2025/09/13/cadence-compute-platform-2023-2026/"/>
+      <url>/2025/09/13/cadence-compute-platform-2023-2026/</url>
+      
+        <content type="html"><![CDATA[<h3 id="2023-x-2026-x-Cadence-Compute-Platform-Roadmap"><a href="#2023-x-2026-x-Cadence-Compute-Platform-Roadmap" class="headerlink" title="2023.x-2026.x Cadence Compute Platform Roadmap"></a>2023.x-2026.x Cadence Compute Platform Roadmap</h3><h3 id="2025-x-releases"><a href="#2025-x-releases" class="headerlink" title="2025.x releases"></a>2025.x releases</h3><pre><code>x86_64    added Rocky 8.4+, Rocky 9, Alma 8.4+, Alma 9IBM POWER    added RHEL 9ARM v8    added RHEL 9</code></pre><h3 id="2026-x-releases"><a href="#2026-x-releases" class="headerlink" title="2026.x releases"></a>2026.x releases</h3><pre><code>same as 2025.xx86_64    Drop Windows 10</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> VLSI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cadence </tag>
+            
+            <tag> eda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>How to Partition a New Disk Drive</title>
       <link href="/2025/09/07/How-to-partition-a-new-disk-drive/"/>
       <url>/2025/09/07/How-to-partition-a-new-disk-drive/</url>
