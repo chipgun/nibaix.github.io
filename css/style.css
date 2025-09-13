@@ -1842,7 +1842,7 @@ nav .container .menu-wrapper ul li:last-child {
   font-weight: 500;
   font-size: 0.85rem;
   margin-right: 2px;
-  border-left: 3px solid #00a0c0;
+  border-left: 3px solid #0d6efd;
   padding-left: 5px;
   line-height: 100%;
 }
@@ -1921,7 +1921,7 @@ a {
   color: #00a0c0 !important;
 }
 #nprogress .bar {
-  background: #131313 !important;
+  background: #00A0C0 !important;
 }
 .row {
   margin-left: 0;
