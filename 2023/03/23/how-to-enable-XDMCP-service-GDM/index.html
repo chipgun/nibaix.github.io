@@ -100,7 +100,7 @@
       
         <a class="tag" href="/tags/linux/">linux</a> 
       
-        <a class="tag" href="/tags/remote/">remote</a> 
+        <a class="tag" href="/tags/IT/">IT</a> 
        
     
     
@@ -117,6 +117,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% sudo firewall-cmd --permanent --zone=public --add-port=6000-6010/tcp</span><br><span class="line">% sudo firewall-cmd --permanent --zone=public --add-port=177/udp</span><br><span class="line">% sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <p><strong>4. Confirm gdm is listening on UDP port 177</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% sudo netstat -anu|grep 177</span><br><span class="line">udp        0      0 0.0.0.0:177                 0.0.0.0:*</span><br></pre></td></tr></table></figure>
+
   </div>
 
 </article>

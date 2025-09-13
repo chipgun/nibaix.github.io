@@ -336,6 +336,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -360,6 +362,8 @@
         <tags>
             
             <tag> linux </tag>
+            
+            <tag> IT </tag>
             
         </tags>
       
@@ -540,6 +544,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -590,6 +596,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -615,6 +623,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -639,6 +649,8 @@
         <tags>
             
             <tag> linux </tag>
+            
+            <tag> IT </tag>
             
         </tags>
       
@@ -827,6 +839,8 @@
             
             <tag> eda </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -928,6 +942,8 @@
         <tags>
             
             <tag> primetime </tag>
+            
+            <tag> sta </tag>
             
         </tags>
       
@@ -1089,6 +1105,8 @@
             
             <tag> starred </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -1181,6 +1199,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -1206,7 +1226,7 @@
             
             <tag> linux </tag>
             
-            <tag> remote </tag>
+            <tag> IT </tag>
             
         </tags>
       
@@ -1232,6 +1252,8 @@
         <tags>
             
             <tag> linux </tag>
+            
+            <tag> IT </tag>
             
         </tags>
       
@@ -1366,6 +1388,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
             <tag> troubleshoot </tag>
             
         </tags>
@@ -1382,10 +1406,20 @@
         <content type="html"><![CDATA[<h3 id="使用diskpart命令格式化U盘"><a href="#使用diskpart命令格式化U盘" class="headerlink" title="使用diskpart命令格式化U盘"></a>使用diskpart命令格式化U盘</h3><ol><li>使用 Windows + X 快捷键打开Terminal (Admin)「命令提示符(管理员)」工具： <img src="/2023/03/13/U%E7%9B%98%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96/image-20230313003225969.jpg" class=""></li></ol><span id="more"></span><ol start="2"><li><p>执行 diskpart 命令进行交互环境：</p> <img src="/2023/03/13/U%E7%9B%98%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96/image-20230313003315540.jpg" class=""></li><li><p>执行 list disk 命令查看当前 PC 连接的磁盘：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DISKPART&gt; list disk</span><br></pre></td></tr></table></figure> <img src="/2023/03/13/U%E7%9B%98%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96/image-20230313003402208.jpg" class=""></li><li><p>使用 select 命令选中你的 U 盘，在我们的演示环境中 U 盘是磁盘 1，所以使用 select disk 1 命令将它选中：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DISKPART&gt; select disk 1</span><br></pre></td></tr></table></figure> <img src="/2023/03/13/U%E7%9B%98%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96/image-20230313003432156.jpg" class=""><blockquote><p><strong>注意：</strong>不论 Linux 还是 Windows 系统，硬件都是从 0 开始标识的，所以千万别选错了，要是格式化错了就等着哭吧。 </p></blockquote></li><li><p>执行 clean 命令清空 U 盘：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DISKPART&gt; clean</span><br></pre></td></tr></table></figure> <img src="/2023/03/13/U%E7%9B%98%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96/image-20230313003530810.jpg" class=""></li><li><p>使用如下命令创建一个新的主分区并标记不活动分区：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DISKPART&gt; create partition primary</span><br><span class="line">DISKPART&gt; active</span><br></pre></td></tr></table></figure> <img src="/2023/03/13/U%E7%9B%98%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96/image-20230313003618148.jpg" class=""><blockquote><p>之所以标记为活动分区，是为了方便将 Windows 系统 ISO 映像放上去当启用 U 盘来用。 </p></blockquote></li><li><p>使用如下命令对 U 盘进行快速格式化：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DISKPART&gt; format fs=ntfs label=&quot;Sysgeek&quot; quick</span><br></pre></td></tr></table></figure> <img src="/2023/03/13/U%E7%9B%98%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96/image-20230313003855424.jpg" class=""><blockquote><p>如果你要将 U 盘格式化为 FAT 或 exFAT 格式，只需替换 fs&#x3D; 后面的 ntfs 即可，最后的 quick 表示执行快速格式化。 </p></blockquote></li><li><p>格式化完成之后，使用 assign 命令自动为 U 盘分配一个盘符即可使用了。</p></li><li><p>总结：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DISKPART&gt; list disk</span><br><span class="line">DISKPART&gt; select disk 1</span><br><span class="line">DISKPART&gt; clean</span><br><span class="line">DISKPART&gt; create partition primary</span><br><span class="line">DISKPART&gt; active</span><br><span class="line">DISKPART&gt; format fs=ntfs label=&quot;Sysgeek&quot; quick</span><br></pre></td></tr></table></figure></li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> Default </category>
+          
+      </categories>
+      
       
         <tags>
             
             <tag> windows </tag>
+            
+            <tag> IT </tag>
+            
+            <tag> troubleshoot </tag>
             
         </tags>
       
@@ -1543,6 +1577,8 @@
             
             <tag> cadence </tag>
             
+            <tag> eda </tag>
+            
         </tags>
       
     </entry>
@@ -1645,6 +1681,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -1688,6 +1726,8 @@
         <tags>
             
             <tag> linux </tag>
+            
+            <tag> IT </tag>
             
             <tag> vnc </tag>
             
@@ -1743,6 +1783,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -1769,6 +1811,8 @@
             <tag> perl </tag>
             
             <tag> linux </tag>
+            
+            <tag> IT </tag>
             
         </tags>
       
@@ -1824,6 +1868,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -1848,31 +1894,6 @@
         <tags>
             
             <tag> gcc </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>How to Enable Sudo for a User</title>
-      <link href="/2022/07/24/how-to-enable-sudo-for-a-user-1/"/>
-      <url>/2022/07/24/how-to-enable-sudo-for-a-user-1/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% su -</span><br><span class="line"><span class="comment"># usermod -aG wheel username</span></span><br><span class="line"><span class="comment"># visudo</span></span><br></pre></td></tr></table></figure><p>Uncomment the line of <code>%wheel ALL=(ALL) ALL</code> to enable password mode.<br>Uncomment the line of <code>%wheel ALL=(ALL) NOPASSWD:ALL</code> to enable no password mode.</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Default </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> linux </tag>
             
         </tags>
       
@@ -1964,6 +1985,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -2008,6 +2031,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -2033,6 +2058,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -2057,8 +2084,6 @@
         <tags>
             
             <tag> vim </tag>
-            
-            <tag> editor </tag>
             
         </tags>
       
@@ -2112,9 +2137,9 @@
             
             <tag> linux </tag>
             
-            <tag> vim </tag>
+            <tag> IT </tag>
             
-            <tag> editor </tag>
+            <tag> vim </tag>
             
             <tag> python </tag>
             
@@ -2142,6 +2167,8 @@
         <tags>
             
             <tag> linux </tag>
+            
+            <tag> IT </tag>
             
             <tag> ssh </tag>
             
@@ -2196,8 +2223,6 @@
         <tags>
             
             <tag> markdown </tag>
-            
-            <tag> editor </tag>
             
         </tags>
       
@@ -2310,6 +2335,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
             <tag> python </tag>
             
         </tags>
@@ -2389,6 +2416,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -2465,6 +2494,8 @@
             <tag> linux </tag>
             
             <tag> starred </tag>
+            
+            <tag> IT </tag>
             
         </tags>
       
@@ -2590,6 +2621,8 @@
         <tags>
             
             <tag> linux </tag>
+            
+            <tag> IT </tag>
             
         </tags>
       
@@ -2770,6 +2803,8 @@
             
             <tag> ocv </tag>
             
+            <tag> sta </tag>
+            
         </tags>
       
     </entry>
@@ -2844,8 +2879,6 @@
       
       
         <tags>
-            
-            <tag> synopsys </tag>
             
             <tag> ocv </tag>
             
@@ -3290,6 +3323,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -3314,6 +3349,8 @@
         <tags>
             
             <tag> linux </tag>
+            
+            <tag> IT </tag>
             
         </tags>
       
@@ -3392,7 +3429,7 @@
             
             <tag> starred </tag>
             
-            <tag> rhel7 </tag>
+            <tag> IT </tag>
             
         </tags>
       
@@ -3419,9 +3456,9 @@
             
             <tag> linux </tag>
             
-            <tag> vnc </tag>
+            <tag> IT </tag>
             
-            <tag> rhel7 </tag>
+            <tag> vnc </tag>
             
         </tags>
       
@@ -3450,6 +3487,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -3475,6 +3514,8 @@
             
             <tag> linux </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -3495,12 +3536,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> editor </tag>
-            
-        </tags>
       
     </entry>
     
@@ -3543,6 +3578,12 @@
         <content type="html"><![CDATA[<p><strong>Create Symbolic Link to File in CMD Prompt</strong></p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink <span class="string">&quot;Link&quot;</span> <span class="string">&quot;Source_Target&quot;</span></span><br></pre></td></tr></table></figure><p><strong>Create Symbolic Link to Directory in CMD Prompt</strong></p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /d <span class="string">&quot;Link&quot;</span> <span class="string">&quot;Source_Target&quot;</span></span><br></pre></td></tr></table></figure><span id="more"></span><p><strong>Create Symbolic Link to File&#x2F;Directory in PowerShell</strong></p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">New-Item -ItemType SymbolicLink -Path <span class="string">&quot;Link&quot;</span> -Target <span class="string">&quot;Source Target&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> Default </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -3572,6 +3613,8 @@
         <tags>
             
             <tag> linux </tag>
+            
+            <tag> IT </tag>
             
         </tags>
       
@@ -3687,6 +3730,8 @@
             
             <tag> eda </tag>
             
+            <tag> IT </tag>
+            
         </tags>
       
     </entry>
@@ -3785,12 +3830,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> editor </tag>
-            
-        </tags>
-      
     </entry>
     
     
@@ -3802,6 +3841,12 @@
       
         <content type="html"><![CDATA[<p>Python 3 is a truly versatile programming language, loved both by <a href="https://websitesetup.org/become-web-developer/">web developers</a>, data scientists, and software engineers. And there are several good reasons for that!</p><span id="more"></span><ul><li>Python is open-source and has a great support community,</li><li>Plus, extensive support libraries.</li><li>Its data structures are user-friendly.</li></ul><p>Best of all:</p><p>Once you get a hang of it, your development speed and productivity will soar!</p><p>If you want to master two lucrative codings skills at once — server-side website development and machine learning — Python is your best bet.</p><p>In case you’re interested, we also have complete cheat sheets for <a href="https://websitesetup.org/bootstrap-cheat-sheet/">Bootstrap</a>, <a href="https://websitesetup.org/html5-cheat-sheet/">HTML</a>, <a href="https://websitesetup.org/css3-cheat-sheet/">CSS</a>, <a href="https://websitesetup.org/mysql-cheat-sheet/">MySQL</a>, and <a href="https://websitesetup.org/javascript-cheat-sheet/">JavaScript</a>.</p><p>So download a copy of our Python cheat sheet and get that first .py program up and running!</p><p><img src="/pdf/pdf-icon.png" width="24"> <a href="/2022/04/02/python-cheat-sheet/Python-cheat-sheet-April-2021.pdf" title="Python Cheat Sheet (Download PDF version)">Python Cheat Sheet (Download PDF version)</a></p><a href="/2022/04/02/python-cheat-sheet/Python-Cheat-Sheet.png" title="Python Cheat Sheet (Download PNG version)">Python Cheat Sheet (Download PNG version)</a>]]></content>
       
+      
+      <categories>
+          
+          <category> Program </category>
+          
+      </categories>
       
       
         <tags>
