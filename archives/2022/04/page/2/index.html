@@ -1,2293 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Head tag -->
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Hexo Theme Redefine">
-    
-    <meta name="author" content="n i b a i x">
-    
-    <!-- Completely eliminate flash of wrong theme -->
-    <script>
-        (function() {
-            const THEME_KEY = "REDEFINE-THEME-STATUS";
-            const DARK = "dark", LIGHT = "light";
-            
-            // Get preferred theme
-            function getTheme() {
-                try {
-                    const saved = localStorage.getItem(THEME_KEY);
-                    if (saved) {
-                        const { isDark } = JSON.parse(saved);
-                        return isDark ? DARK : LIGHT;
-                    }
-                } catch (e) {}
-                
-                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
-            }
-            
-            // Apply theme to document
-            function applyTheme(theme) {
-                const isDark = theme === DARK;
-                const root = document.documentElement;
-                
-                // Set data attribute for CSS variables
-                root.setAttribute("data-theme", theme);
-                
-                // Set classes for compatibility
-                root.classList.add(theme);
-                root.classList.remove(isDark ? LIGHT : DARK);
-                root.style.colorScheme = theme;
-            }
-            
-            // Initial application
-            const theme = getTheme();
-            applyTheme(theme);
-            
-            // Listen for system preference changes
-            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
-                // Only update if using system preference (no localStorage entry)
-                if (!localStorage.getItem(THEME_KEY)) {
-                    applyTheme(matches ? DARK : LIGHT);
-                }
-            });
-            
-            // Set body classes once DOM is ready
-            if (document.readyState !== "loading") {
-                document.body.classList.add(theme + "-mode");
-            } else {
-                document.addEventListener("DOMContentLoaded", () => {
-                    document.body.classList.add(theme + "-mode");
-                    document.body.classList.remove((theme === DARK ? LIGHT : DARK) + "-mode");
-                });
-            }
-        })();
-    </script>
-    
-    <!-- Critical CSS to prevent flash -->
-    <style>
-        :root[data-theme="dark"] {
-            --background-color: #202124;
-            --background-color-transparent: rgba(32, 33, 36, 0.6);
-            --second-background-color: #2d2e32;
-            --third-background-color: #34353a;
-            --third-background-color-transparent: rgba(32, 33, 36, 0.6);
-            --primary-color: #0066CC;
-            --first-text-color: #ffffff;
-            --second-text-color: #eeeeee;
-            --third-text-color: #bebec6;
-            --fourth-text-color: #999999;
-            --default-text-color: #bebec6;
-            --invert-text-color: #373D3F;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --selection-color: #0066CC;
-            --shadow-color-1: rgba(255, 255, 255, 0.08);
-            --shadow-color-2: rgba(255, 255, 255, 0.05);
-        }
-        
-        :root[data-theme="light"] {
-            --background-color: #fff;
-            --background-color-transparent: rgba(255, 255, 255, 0.6);
-            --second-background-color: #f8f8f8;
-            --third-background-color: #f2f2f2;
-            --third-background-color-transparent: rgba(241, 241, 241, 0.6);
-            --primary-color: #0066CC;
-            --first-text-color: #16171a;
-            --second-text-color: #2f3037;
-            --third-text-color: #5e5e5e;
-            --fourth-text-color: #eeeeee;
-            --default-text-color: #373D3F;
-            --invert-text-color: #bebec6;
-            --border-color: rgba(0, 0, 0, 0.08);
-            --selection-color: #0066CC;
-            --shadow-color-1: rgba(0, 0, 0, 0.08);
-            --shadow-color-2: rgba(0, 0, 0, 0.05);
-        }
-        
-        body {
-            background-color: var(--background-color);
-            color: var(--default-text-color);
-        }
-        
-        /* Apply body classes as soon as DOM is ready */
-        :root[data-theme="dark"] body {
-            background-color: var(--background-color);
-            color: var(--default-text-color);
-        }
-    </style>
-    
-    <!-- preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
-    <!--- Seo Part-->
-    
-    <link rel="canonical" href="http://blog.nibaix.com/archives/2022/04/page/2/"/>
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow">
-    <meta name="revisit-after" content="1 days">
-    
-    
-    
-        
-        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="芝士盒">
-<meta property="og:url" content="http://blog.nibaix.com/archives/2022/04/page/2/index.html">
-<meta property="og:site_name" content="芝士盒">
-<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://blog.nibaix.com/images/redefine-og.webp">
-<meta property="article:author" content="nibaix">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog.nibaix.com/images/redefine-og.webp">
-    
-    
-    <!--- Icon Part-->
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="192x192">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
-    <meta name="theme-color" content="#A31F34">
-    <link rel="shortcut icon" href="/images/favicon.png">
-    <!--- Page Info-->
-    
-    <title>
-        
-            Archive: 2022/4 | 芝士盒
-        
-    </title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/img/favicon.png">
 
-    
-<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
 
 
-    <!--- Inject Part-->
-    
-
-    
+  
 <link rel="stylesheet" href="/css/style.css">
 
 
-    
-        
-<link rel="stylesheet" href="/css/build/tailwind.css">
-
-    
-
-    
-<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
-
-    
-<link rel="stylesheet" href="/fonts/Geist/geist.css">
-
-    <!--- Font Part-->
-    
-    
-    
-    
-    
-    
-
-    <script id="hexo-configurations">
-    window.config = {"hostname":"blog.nibaix.com","root":"/","language":"en","path":"search.xml"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"What's the story?","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.5","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
-    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
-    window.data = {"masonry":false};
-  </script>
-    
-    <!--- Fontawesome Part-->
-    
-<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
-
-    
-<link rel="stylesheet" href="/fontawesome/brands.min.css">
-
-    
-<link rel="stylesheet" href="/fontawesome/solid.min.css">
-
-    
-<link rel="stylesheet" href="/fontawesome/regular.min.css">
-
-    
-    
-    
-    
+  
+  <title>Archive - 芝士盒</title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
-
 <body>
-	<div class="progress-bar-container">
-	
+  <header>
+    <nav id="navbar" class="navbar fixed-nav scrolling-navbar">
+  <div class="container">
+    <div class="mark-wrapper">
+      
+        <a href="https://blog.nibaix.com/"><img class="logo" src="/img/avatar.png "/> </a>
+       
+      <div class="title-mark">What's the story?</div>
+    </div>
+  
+    <button id="menu-btn" class="btn menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+      <div class="menu-icon"><span></span><span></span><span></span></div>
+    </button>
+  
+    <div id="nav-menu" class="collapse menu-wrapper">
+      <ul>
+        
+          <li>
+            <a href="/">Home </a>
+          </li>
+        
+          <li>
+            <a href="/archives">Archives </a>
+          </li>
+        
+          <li>
+            <a href="/categories">Category </a>
+          </li>
+        
+          <li>
+            <a href="/tags">Tag </a>
+          </li>
+        
+          <li>
+            <a href="/about">About </a>
+          </li>
+        
+        <li class="search-icon">
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-	
-	<span class="pjax-progress-bar"></span>
-	<!--        <span class="swup-progress-icon">-->
-	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
-	<!--        </span>-->
-	
-</div>
+  </header>
 
-<main class="page-container" id="swup">
-
-	
-
-	<div class="main-content-container flex flex-col justify-between min-h-dvh">
-		<div class="main-content-header">
-			<header class="navbar-container px-6 md:px-12">
-    <div class="navbar-content transition-navbar ">
-        <div class="left">
+  <main>
+    <div class="container">
+      <div id="main">
+        <div class="row py-5">
+          <div class="col">
             
-            <a class="logo-title" href="/">
-                
-                芝士盒
-                
-            </a>
+
+<ul class="list-group">
+  <h2 class="list-header">153 Posts</h2>
+   
+  
+    
+       
+      <h3>2022</h3>
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/23/we-glow-while-grow/" target="_self">
+          We Glow While Grow
+        </a>
+      </div>
+      <div class="post-date">04/23  
+      </div>
+    </li>
+  
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/" target="_self">
+          Understanding AMBA Architechture and Protocols
+        </a>
+      </div>
+      <div class="post-date">04/22  
+      </div>
+    </li>
+  
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/22/AMBA-APB-revisions/" target="_self">
+          AMBA APB Revisions
+        </a>
+      </div>
+      <div class="post-date">04/22  
+      </div>
+    </li>
+  
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/20/add-a-new-disk-in-linux-with-parted/" target="_self">
+          Add a New Disk in Linux With Parted
+        </a>
+      </div>
+      <div class="post-date">04/20  
+      </div>
+    </li>
+  
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/20/add-a-new-disk-in-linux-with-fdisk/" target="_self">
+          Add a New Disk in Linux With Fdisk
+        </a>
+      </div>
+      <div class="post-date">04/20  
+      </div>
+    </li>
+  
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/20/how-to-enable-sudo-for-a-user/" target="_self">
+          How to Enable Sudo for a User
+        </a>
+      </div>
+      <div class="post-date">04/20  
+      </div>
+    </li>
+  
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/19/modify-linux-system-date-and-time/" target="_self">
+          Modify Linux System Date and Time
+        </a>
+      </div>
+      <div class="post-date">04/19  
+      </div>
+    </li>
+  
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/19/install-and-configure-vsftpd-server-in-RHEL7/" target="_self">
+          Install and Configure VSFTPD Server in RHEL7
+        </a>
+      </div>
+      <div class="post-date">04/19  
+      </div>
+    </li>
+  
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/" target="_self">
+          Install and Configure VNC Server in RHEL7
+        </a>
+      </div>
+      <div class="post-date">04/19  
+      </div>
+    </li>
+  
+    
+    <li class="list-group-item">
+      <div class="d-inline">
+        <a href="/2022/04/18/start-flexLM-on-RHEL7-bootup/" target="_self">
+          Start FlexLM on RHEL7 Bootup
+        </a>
+      </div>
+      <div class="post-date">04/18  
+      </div>
+    </li>
+   
+</ul>
+
+
+
+  <div class="py-5 pagination-wrapper" aria-label="pagination">
+    <div>
+      <a class="extend prev" rel="prev" href="/archives/2022/04/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2022/04/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2022/04/page/3/">3</a><a class="page-number" href="/archives/2022/04/page/4/">4</a><a class="extend next" rel="next" href="/archives/2022/04/page/3/"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+ 
+          </div>
         </div>
-
-        <div class="right">
-            <!-- PC -->
-            <div class="desktop">
-                <ul class="navbar-list">
-                    
-                        
-                            
-
-                            <li class="navbar-item">
-                                <!-- Menu -->
-                                <a class=""
-                                   href="/"
-                                        >
-                                    <i class="fa-regular fa-house fa-fw"></i>
-                                    HOME
-                                    
-                                </a>
-
-                                <!-- Submenu -->
-                                
-                            </li>
-                    
-                    
-                </ul>
-            </div>
-            <!-- Mobile -->
-            <div class="mobile">
-                
-                <div class="icon-item navbar-bar">
-                    <div class="navbar-bar-middle"></div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <!-- Mobile sheet -->
-    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
-        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
-            
-                
-                    
+     
+  <button id="scroll-to-top" class="btn btn-top" aria-label="Scroll To Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+ 
 
-                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
-                        
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
-                           href="/"
-                        >
-                            <span>
-                                HOME
-                            </span>
-                            
-                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
-                            
-                        </a>
-                        
+  </main>
 
-                        
-                    </li>
-            
+  <div class="footer-wrapper">
+  <div class="left-content"></div>
+  <div class="right-content">
+    <div>Copyright &copy;2025</div>
+    <div>Powered By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> - Theme <a target="_blank" rel="noopener" href="https://github.com/thomasyu929/hexo-theme-peomas">Peomas</a></div>
+  </div>
+</div>
 
-            
-            
+  <div id="searchModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Search</h5>
+        <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-wrapper">
+          <i class="fas fa-search"></i>
+          <input id="search" class="search-input" type="text" placeholder="Input content to search..." />
+        </div>
+        <ul id="result" class="list-group result-wrapper">
         </ul>
-
-        <div class="statistics flex justify-around my-2.5">
-    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">62</div>
-        <div class="label text-third-text-color text-sm">Tags</div>
-    </a>
-    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
-        <div class="label text-third-text-color text-sm">Categories</div>
-    </a>
-    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">153</div>
-        <div class="label text-third-text-color text-sm">Posts</div>
-    </a>
-</div>
+      </div>
     </div>
-
-    <div class="window-mask"></div>
-
-</header>
-
-
-		</div>
-
-		<div class="main-content-body transition-fade-up">
-			
-
-			<div class="main-content">
-				<div class="archive-container shadow-none hover:shadow-none sm:shadow-redefine sm:hover:shadow-redefine-hover">
-	
-<div class="archive-list-container">
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2025</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">4</span>
-            </div>
-            
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-                
-                    
-                    
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-13'>
-                    
-                    <a href="/2025/09/13/cadence-compute-platform-2023-2026/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">2023-2026 Cadence Compute Platform</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-07'>
-                    
-                    <a href="/2025/09/07/How-to-partition-a-new-disk-drive/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">How to Partition a New Disk Drive</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-22'>
-                    
-                    <a href="/2025/07/22/LSF10-1-Installation/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">LSF10.1 Installation</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-20'>
-                    
-                    <a href="/2025/05/20/Synopsys-Computing-Platforms-Roadmap-2025/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Synopsys Computing Platforms Roadmap 2025</span>
-                    </a>
-                    
-                
-                </li> <!-- Ensure the last item is properly closed -->
-            </ul>
-        </section>
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2024</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">28</span>
-            </div>
-            
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-                
-                    
-                    
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-11'>
-                    
-                    <a href="/2024/09/11/Useful-Business-Dialogs/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Useful Business Dialogs</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-08'>
-                    
-                    <a href="/2024/09/08/vitamin-cheat-sheet/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Vitamin Cheat Sheet</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-04'>
-                    
-                    <a href="/2024/09/04/Calibre-Platform-Support-2024/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Calibre Platform Support - 2024</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-03'>
-                    
-                    <a href="/2024/09/03/install-linux-editor-atom/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install Linux Editor Atom</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-29'>
-                    
-                    <a href="/2024/08/29/Vim-move-cursor-with-command-f-F-t-T/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Vim: Move Cursor With Command &#34;f|F|t|T&#34;</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-28'>
-                    
-                    <a href="/2024/08/28/%E4%B8%AD%E5%9B%BD%E7%AE%80%E5%8F%B2%E5%9B%BE%E8%B0%B1/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">中国简史图谱</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-25'>
-                    
-                    <a href="/2024/08/25/%E5%BC%80%E5%AD%A6%E5%AF%84%E8%AF%AD/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">开学寄语</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-20'>
-                    
-                    <a href="/2024/08/20/Tmux-Quick-Guidance/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Tmux Quick Guidance</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-20'>
-                    
-                    <a href="/2024/07/20/%E9%85%8D%E7%BD%AEssh-%E9%99%90%E5%88%B6-%E5%85%81%E8%AE%B8IP/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">RHEL7配置ssh - 限制/允许IP</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-16'>
-                    
-                    <a href="/2024/07/16/Install-Xfce-Lightdm/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install Xfce &amp; Lightdm</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-10'>
-                    
-                    <a href="/2024/07/10/EDA-Collections/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">EDA Collections</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-09'>
-                    
-                    <a href="/2024/07/09/Road-To-Fudan-University/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Road to Fudan University Through GaoKao</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-05'>
-                    
-                    <a href="/2024/07/05/Platform-Road-Map-for-MATLAB-and-Simulink/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Platform Road Map for MATLAB and Simulink</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-17'>
-                    
-                    <a href="/2024/06/17/Linux-File-System-Explained/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Linux File System Explained</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-07'>
-                    
-                    <a href="/2024/06/07/Tmux-customization-tmux-conf/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Tmux Customization: .tmux.conf</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-22'>
-                    
-                    <a href="/2024/05/22/Win11%E6%8C%82%E8%BD%BDNAS%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8%E5%99%A8/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Win11挂载NAS网络驱动器</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-19'>
-                    
-                    <a href="/2024/05/19/Smartctl-Disk-Checking-Command-in-Linux/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Smartctl: Disk Checking Command in Linux</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-12'>
-                    
-                    <a href="/2024/05/12/iStoreOS-Configurations/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">iStoreOS Configurations</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-03'>
-                    
-                    <a href="/2024/05/03/Redhat7-NFS-NIS-Configuration-and-Setup/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Setup Redhat7 NFS &amp; NIS</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-29'>
-                    
-                    <a href="/2024/04/29/Redhat%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Redhat根目录/root扩容</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-24'>
-                    
-                    <a href="/2024/03/24/Linux-Commands-Cheat-Sheet/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Linux Commands Cheat Sheet</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-27'>
-                    
-                    <a href="/2024/02/27/Input-special-characters-in-VIM/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Input Special Characters in VIM</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-26'>
-                    
-                    <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">How to Solve Segfault on VCS Linux</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2024/02/26/how-to-solve-segfault-on-VCS-linux64/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">How to Solve Segfault on VCS Linux64</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-22'>
-                    
-                    <a href="/2024/02/22/Tmux-Cheat-Sheet/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Tmux Cheat Sheet</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-21'>
-                    
-                    <a href="/2024/02/21/Tmux-clipboard-to-from-system-clipboard/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Tmux Clipboard To/from System Clipboard</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-17'>
-                    
-                    <a href="/2024/02/17/Perl-function-strftime/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Perl Function Strftime</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-30'>
-                    
-                    <a href="/2024/01/30/Environment-Modules/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Environment-Modules</span>
-                    </a>
-                    
-                
-                </li> <!-- Ensure the last item is properly closed -->
-            </ul>
-        </section>
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2023</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">31</span>
-            </div>
-            
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-                
-                    
-                    
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='12-10'>
-                    
-                    <a href="/2023/12/10/Low-Power-Techniques-in-VLSI/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Low Power Techniques in VLSI</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='12-09'>
-                    
-                    <a href="/2023/12/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Excel%E5%9C%A8Timing-Closure%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">记录一次Excel在Timing Closure中的应用</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='12-07'>
-                    
-                    <a href="/2023/12/07/types-of-power-in-an-SoC-design/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Types of Power in a SoC Design</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-22'>
-                    
-                    <a href="/2023/09/22/set-data-check/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Set_data_check</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-16'>
-                    
-                    <a href="/2023/09/16/PrimeTime-Multicycle-Path/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">PrimeTime Multicycle Path</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-15'>
-                    
-                    <a href="/2023/09/15/Schedule-could-be-beautiful/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Schedule Could Be Beautiful</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-06'>
-                    
-                    <a href="/2023/09/06/GTECH-Flip-flop-Cell/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">GTECH Flip-Flop Cell</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-22'>
-                    
-                    <a href="/2023/08/22/Challenge-Spot-a-Snow-Leopard-in-15-Sec/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Challenge: Spot a Snow Leopard in 15 Sec</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-11'>
-                    
-                    <a href="/2023/08/11/Synopsys-Command-report-timing/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Synopsys Command: Report_timing</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-07'>
-                    
-                    <a href="/2023/08/07/Setup-License-Server-with-Systemctl-in-Redhat7/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Setup License Server With Systemctl in Redhat7</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2023/08/07/Beginning-of-SLS-Usage/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Beginning of SLS Usage</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-06'>
-                    
-                    <a href="/2023/07/06/SPI-mode-CPOL-and-CPHA/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">SPI Mode: CPOL and CPHA</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-29'>
-                    
-                    <a href="/2023/04/29/Tips-New-Installation-of-RHEL7-9/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Tips: New Installation of RHEL7.9</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-09'>
-                    
-                    <a href="/2023/04/09/redhat-adjust-lvm-partition-size/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Redhat: Adjust LVM Partition Size</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-23'>
-                    
-                    <a href="/2023/03/23/how-to-enable-XDMCP-service-GDM/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">How to Enable XDMCP Service (GDM)</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-19'>
-                    
-                    <a href="/2023/03/19/nomachine-server-admin/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Nomachine Server Admin</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-17'>
-                    
-                    <a href="/2023/03/17/writing-aliases-in-csh-and-tcsh/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Writing Aliases in Csh and Tcsh</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-16'>
-                    
-                    <a href="/2023/03/16/disable-VNC-copy-paste/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Disable VNC Copy&amp;paste</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2023/03/16/install-perl-PAR-Packer-in-RHEL7/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install Perl PAR::Packer in RHEL7</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2023/03/16/%E9%85%8D%E7%BD%AERedhat7%E9%81%87%E5%88%B0%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">配置Redhat7遇到的若干问题</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-15'>
-                    
-                    <a href="/2023/03/15/failed-to-install-redhat-7-dracut-initqueue-timeout/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Failed to Install Redhat 7: Dracut-Initqueue Timeout</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-13'>
-                    
-                    <a href="/2023/03/13/U%E7%9B%98%E6%97%A0%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">U盘无法格式化</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-12'>
-                    
-                    <a href="/2023/03/12/umask/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Umask</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-09'>
-                    
-                    <a href="/2023/03/09/definition-of-TSMC-metal-layer-map/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Definition of TSMC Metal Layer Map</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-23'>
-                    
-                    <a href="/2023/02/23/update-synopsys-computer-platforms/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Update: Synopsys Computer Platforms</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='02-22'>
-                    
-                    <a href="/2023/02/22/Chop-and-Chomp/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Chop and Chomp</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-31'>
-                    
-                    <a href="/2023/01/31/Update-Calibre-Platform-Support-Overview-and-Roadmap/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Calibre Platform Support Overview and Roadmap - Updated 2022.1</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-30'>
-                    
-                    <a href="/2023/01/30/2021-2024-cadence-compute-platform-roadmap/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">2021-2024 Cadence Compute Platform Roadmap</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-18'>
-                    
-                    <a href="/2023/01/18/vim-open-files/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Vim: Open Files</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2023/01/18/group-path/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Group_path</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='01-14'>
-                    
-                    <a href="/2023/01/14/verdi-configuration-file-novas-rc/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Verdi Configuration File novas.rc</span>
-                    </a>
-                    
-                
-                </li> <!-- Ensure the last item is properly closed -->
-            </ul>
-        </section>
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2022</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">90</span>
-            </div>
-            
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
-                
-                    
-                    
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='12-27'>
-                    
-                    <a href="/2022/12/27/automount-NFS-share-in-linux-using-autofs/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Automount NFS Share in Linux Using Autofs</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='11-15'>
-                    
-                    <a href="/2022/11/15/Snap2HTML/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Snap2HTML</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='11-09'>
-                    
-                    <a href="/2022/11/09/Too-Many-Open-Files%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4VNC%E7%81%B0%E5%B1%8F%E9%97%AE%E9%A2%98/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Too Many Open Files错误导致VNC灰屏问题</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='10-22'>
-                    
-                    <a href="/2022/10/22/install-perl-PAR-Packer/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install Perl PAR::Packer</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='10-11'>
-                    
-                    <a href="/2022/10/11/script-add-a-linux-user/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Script: Add a Linux User</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='10-07'>
-                    
-                    <a href="/2022/10/07/install-perl-module/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install Perl Module</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='10-06'>
-                    
-                    <a href="/2022/10/06/integrate-SOS-in-virtuoso/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Integrate SOS in Virtuoso</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='09-26'>
-                    
-                    <a href="/2022/09/26/Linux-Command-ip/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Linux Command: Ip</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-28'>
-                    
-                    <a href="/2022/07/28/upgrade-gcc-to-7-3-0/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Upgrade GCC to 7.3.0</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-22'>
-                    
-                    <a href="/2022/07/22/a-man-s-most-powerful-capacity/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">A Man&#39;s Most Powerful Capacity</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-20'>
-                    
-                    <a href="/2022/07/20/visualization-matters/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Visualization Matters</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/07/20/Coloring-the-C-shell-Prompt/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Coloring the C-Shell Prompt</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-17'>
-                    
-                    <a href="/2022/07/17/Disable-Clipboard-in-NoMachine/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Disable Clipboard in NoMachine</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/07/17/Activate%20the%20Feature%20of%20Tabbed%20File%20Explorer/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Activate the Feature of Tabbed File Explorer</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-16'>
-                    
-                    <a href="/2022/07/16/Update-GLIBC-2-17-in-RHEL6/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Update GLIBC 2.17 in RHEL6</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-13'>
-                    
-                    <a href="/2022/07/13/NIS-Commands/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">NIS Commands</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-08'>
-                    
-                    <a href="/2022/07/08/vim-generate-and-increment-numbers/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Vim: Generate and Increment Numbers</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/07/08/synopsys-safety-aware-solution-for-automotive/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Synopsys Safety-Aware Solution for Automotive</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-07'>
-                    
-                    <a href="/2022/07/07/install-vim9-supporting-python3/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install Vim9 Supporting Python3</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/07/07/approaches-to-disable-SSH/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Approaches to Disable SSH</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-29'>
-                    
-                    <a href="/2022/06/29/ISO-26262-hardware-dev-requirement/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">ISO 26262 Hardware Dev Requirement</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-17'>
-                    
-                    <a href="/2022/06/17/This-beta-version-of-Tyora-is-expired/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">This Beta Version of Tyora Is Expired</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-14'>
-                    
-                    <a href="/2022/06/14/ftp-commands/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">FTP Commands</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/06/14/hide-unused-quick-links-in-windows/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Hide Unused Quick Links in Windows</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-10'>
-                    
-                    <a href="/2022/06/10/how-many-birds-do-cats-kill-every-year/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">How Many Birds Do Cats Kill Every Year</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-07'>
-                    
-                    <a href="/2022/06/07/chipgun-new-logo-2022-06-06/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Chipgun New Logo 2022-06-06</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-02'>
-                    
-                    <a href="/2022/06/02/install-specific-version-of-python/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install Specific Version of Python</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/06/02/update-alternatives/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Update Alternatives</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='06-01'>
-                    
-                    <a href="/2022/06/01/SH-re-open-after-70-days-lockdown/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">SH Re-Open After 70 Days Lockdown</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-31'>
-                    
-                    <a href="/2022/05/31/Special-File-Permissions-of-SUID-GUID-and-Sticky-Bit/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Special File Permissions of SUID GUID and Sticky Bit</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-29'>
-                    
-                    <a href="/2022/05/29/first-day-of-workout-after-2-months-lockdown/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">First Day of Workout After 2 Months Lockdown</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/05/29/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-28/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-28</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-28'>
-                    
-                    <a href="/2022/05/28/set-up-a-cron-job-in-linux/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Set Up a Cron Job in Linux</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-24'>
-                    
-                    <a href="/2022/05/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-23/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-23</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-21'>
-                    
-                    <a href="/2022/05/21/No-is-not-the-abbreviation-of-number/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">No. Is Not the Abbreviation of Number</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-19'>
-                    
-                    <a href="/2022/05/19/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-18/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-18</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-16'>
-                    
-                    <a href="/2022/05/16/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-15/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-15</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-12'>
-                    
-                    <a href="/2022/05/12/manage-disk-quota-step-by-step/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Manage Disk Quota Step by Step</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/05/12/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-11/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-11</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-10'>
-                    
-                    <a href="/2022/05/10/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-9/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-9</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-08'>
-                    
-                    <a href="/2022/05/08/new-chipgun-logo-8may2022/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">New Chipgun Logo 8May2022</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/05/08/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-7/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-7</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-07'>
-                    
-                    <a href="/2022/05/07/PrimeTime-PX-flow/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">PrimeTime-PX Flow</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/05/07/PrimeTime-and-OCV/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">PrimeTime and Timing Derate</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-06'>
-                    
-                    <a href="/2022/05/06/what-is-OCV-AOCV-POCV-SOCV-LVF/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">What Is OCV/AOCV/POCV/SOCV/LVF?</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/05/06/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-5/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-5</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-05'>
-                    
-                    <a href="/2022/05/05/synopsys-computer-platforms-roadmap/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Synopsys Computer Platforms Roadmap</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-04'>
-                    
-                    <a href="/2022/05/04/OCV-evolution/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">OCV Evolution</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/05/04/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-3/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-3</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-03'>
-                    
-                    <a href="/2022/05/03/UVM-online-documentation/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">UVM Online Documentation</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='05-02'>
-                    
-                    <a href="/2022/05/02/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-5-1/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-5-1</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-30'>
-                    
-                    <a href="/2022/04/30/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-29/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-4-29</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/30/Calibre-Platform-Support-2022/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Calibre Platform Support - 2022</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/30/calibre-platform-support-overview-and-roadmap/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Calibre Platform Support -2022</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-28'>
-                    
-                    <a href="/2022/04/28/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-27/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-4-27</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-26'>
-                    
-                    <a href="/2022/04/26/linux-shell-system-variables/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Linux Shell System Variables</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/26/get-strings-within-current-commandline/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Get Strings Within Commandline</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/26/deploy-github-pages-at-vercel/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Deploy Github Pages at Vercel</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/26/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-25/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-4-25</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-25'>
-                    
-                    <a href="/2022/04/25/expand-tab-in-emacs-verilog-auto-code/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Expand Tab in Emacs-Verilog Auto Code</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-24'>
-                    
-                    <a href="/2022/04/24/%E4%B8%8A%E6%B5%B7%E6%AF%8F%E6%97%A5%E7%96%AB%E6%83%85%E8%B5%B0%E5%8A%BF2022-4-23/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">上海每日疫情走势2022-4-23</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-23'>
-                    
-                    <a href="/2022/04/23/we-glow-while-grow/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">We Glow While Grow</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-22'>
-                    
-                    <a href="/2022/04/22/understanding-AMBA-bus-architechture-and-protocols/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Understanding AMBA Architechture and Protocols</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/22/AMBA-APB-revisions/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">AMBA APB Revisions</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-20'>
-                    
-                    <a href="/2022/04/20/add-a-new-disk-in-linux-with-parted/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Add a New Disk in Linux With Parted</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/20/add-a-new-disk-in-linux-with-fdisk/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Add a New Disk in Linux With Fdisk</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/20/how-to-enable-sudo-for-a-user/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">How to Enable Sudo for a User</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-19'>
-                    
-                    <a href="/2022/04/19/modify-linux-system-date-and-time/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Modify Linux System Date and Time</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/19/install-and-configure-vsftpd-server-in-RHEL7/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install and Configure VSFTPD Server in RHEL7</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/19/install-and-configure-VNC-Server-in-RHEL7/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install and Configure VNC Server in RHEL7</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-18'>
-                    
-                    <a href="/2022/04/18/start-flexLM-on-RHEL7-bootup/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Start FlexLM on RHEL7 Bootup</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/18/expand-redhat-root-dir-partition/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">RedHat根目录/分区扩容（LVM+非LVM）</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-15'>
-                    
-                    <a href="/2022/04/15/greek-alphabet-quick-reference/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Greek Alphabet Quick Reference</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-13'>
-                    
-                    <a href="/2022/04/13/spyglass-constraint-convert-from-SDC-to-SGDC/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Spyglass Constraint Convert From SDC to SGDC</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-12'>
-                    
-                    <a href="/2022/04/12/symbolic-links-in-windows/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Symbolic Links in Windows</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-10'>
-                    
-                    <a href="/2022/04/10/enlarge-linux-swap/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Enlarge Linux Swap Space</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-09'>
-                    
-                    <a href="/2022/04/09/decision-feedback-equalizer-3/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">判决反馈均衡器（下）</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/09/decision-feedback-equalizer-2/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">判决反馈均衡器（中）</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/09/decision-feedback-equalizer-1/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">判决反馈均衡器（上）</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-08'>
-                    
-                    <a href="/2022/04/08/install-ic618/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Install Cadence IC6.1.8</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-03'>
-                    
-                    <a href="/2022/04/03/write-formatting-characters-in-markdown/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Write Formatting Characters in Markdown</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/03/vim-cheat-sheet/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Vim Cheat Sheet</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/03/what-is-entropy/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">What Is Entropy?</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-02'>
-                    
-                    <a href="/2022/04/02/greek-alphabet-letters/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Greek Alphabet Letters</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/04/02/python-cheat-sheet/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Python Cheat Sheet</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-01'>
-                    
-                    <a href="/2022/04/01/get-snps-newer-than-2018-to-properly-work/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Get Synopsys Newer Than 2018 to Properly Work</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-31'>
-                    
-                    <a href="/2022/03/31/emacs-verilog-mode/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Emacs Verilog-Mode</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/03/31/perl-cheat-sheet/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Perl Cheat Sheet</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2022/03/31/ascii-table/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">ASCII Table</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='03-30'>
-                    
-                    <a href="/2022/03/30/markdown-cheat-sheet/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Markdown Cheat Sheet</span>
-                    </a>
-                    
-                
-                </li> <!-- Ensure the last item is properly closed -->
-            </ul>
-        </section>
-    
-</div>
-</div>
-			</div>
-
-			
-		</div>
-
-		<div class="main-content-footer">
-			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
-    <div class="info-container py-3 text-center">
-        
-        <div class="text-center">
-            &copy;
-            
-              <span>2022</span>
-              -
-            
-            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">n i b a i x</a>
-            
-                
-                <p class="post-count space-x-0.5">
-                    <span>
-                        153 posts in total
-                    </span>
-                    
-                </p>
-            
-        </div>
-        
-            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
-            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
-                
-                    <span id="busuanzi_container_site_uv" class="lg:!block">
-                        <span class="text-sm">VISITOR COUNT</span>
-                        <span id="busuanzi_value_site_uv"></span>
-                    </span>
-                
-                
-                    <span id="busuanzi_container_site_pv" class="lg:!block">
-                        <span class="text-sm">TOTAL PAGE VIEWS</span>
-                        <span id="busuanzi_value_site_pv"></span>
-                    </span>
-                
-            </div>
-        
-        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
-            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.5</a></span>
-        </div>
-        
-        
-            <div>
-                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
-            </div>
-        
-        
-            <script data-swup-reload-script>
-                try {
-                    function odometer_init() {
-                    const elements = document.querySelectorAll('.odometer');
-                    elements.forEach(el => {
-                        new Odometer({
-                            el,
-                            format: '( ddd).dd',
-                            duration: 200
-                        });
-                    });
-                    }
-                    odometer_init();
-                } catch (error) {}
-            </script>
-        
-        
-        
-    </div>  
-</footer>
-		</div>
-	</div>
-
-	
-
-	<div class="right-side-tools-container">
-		<div class="side-tools-container">
-	<ul class="hidden-tools-list">
-		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
-			<i class="fa-regular fa-magnifying-glass-plus"></i>
-		</li>
-
-		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
-			<i class="fa-regular fa-magnifying-glass-minus"></i>
-		</li>
-
-		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
-			<i class="fa-regular fa-moon"></i>
-		</li>
-
-		<!-- rss -->
-		
-
-		
-
-		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
-			<i class="fa-regular fa-arrow-down"></i>
-		</li>
-	</ul>
-
-	<ul class="visible-tools-list">
-		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
-			<i class="fa-regular fa-cog fa-spin"></i>
-		</li>
-		
-		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
-			<i class="arrow-up fas fa-arrow-up"></i>
-			<span class="percent"></span>
-		</li>
-		
-		
-	</ul>
-</div>
-	</div>
-
-	<div class="image-viewer-container">
-	<img src="">
+  </div>
 </div>
 
-	
-
-</main>
-
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 
 
-<script src="/js/build/libs/Swup.min.js"></script>
-
-<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
-
-<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
-
-<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
-
-<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
-
-<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
-
-<script>
-    const swup = new Swup({
-        plugins: [
-            new SwupScriptsPlugin({
-                optin: true,
-            }),
-            new SwupProgressPlugin(),
-            new SwupScrollPlugin({
-                offset: 80,
-            }),
-            new SwupSlideTheme({
-                mainElement: ".main-content-body",
-            }),
-            new SwupPreloadPlugin(),
-        ],
-        containers: ["#swup"],
-    });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.min.js"></script>
 
 
-
-	
-<script src="/js/build/tools/imageViewer.js" type="module"></script>
-
-<script src="/js/build/utils.js" type="module"></script>
-
-<script src="/js/build/main.js" type="module"></script>
-
-<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
-
-<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/build/layouts/categoryList.js" type="module"></script>
-
-
-
-
-
-    
-<script src="/js/build/tools/codeBlock.js" type="module"></script>
-
-
-
-
-    
-<script src="/js/build/layouts/lazyload.js" type="module"></script>
-
-
-
-
-    
-<script src="/js/build/tools/runtime.js"></script>
-
-    
-<script src="/js/build/libs/odometer.min.js"></script>
-
-    
-<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
-
+<script src="/js/prism.js"></script>
 
 
 
   
-<script src="/js/build/libs/Typed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
 
   
-<script src="/js/build/plugins/typed.js" type="module"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
+
+  
+<script src="/js/nprogress.js"></script>
 
 
 
+ 
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+
+ 
+
+
+<script src="/js/event.js"></script>
+
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/plugin.js"></script>
 
 
 
-
-
-    
-<script src="/js/build/libs/anime.min.js"></script>
-
-
-
-
-
-    
-<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
-
-<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
-
-<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
-
-
-
-
-<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
-
-
-<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
-
-
-
-
-
-	
 </body>
 
 </html>
