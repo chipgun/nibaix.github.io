@@ -88,6 +88,58 @@
       
       <div class="col-12 col-md-12 mx-auto post-intro">
         <div class="post-header ">
+          <a href="/2022/04/10/enlarge-linux-swap/" target="_self">
+            <h3>Enlarge Linux Swap Space</h3>
+          </a>
+          
+        </div>
+        <div class="description">
+          
+            查看当前swap  
+1free -h
+
+停用所有swap 
+
+
+1swapoff -a
+
+创建文件夹作为虚拟swap分区 
+1mkdir /home/swap
+
+创建swap分区 
+1dd if=/dev/zero of=/home/swap/swapfile bs=1G count=64
+
+格式化swap分区 
+1mkswap /home/swap/swapfile
+mkswap会产生一个UU...
+          
+        </div>
+        <div class="post-footer">
+          <time datetime="2022-04-10 15:18" pubdate>
+            2022-04-10
+          </time>
+          <div>
+            
+               
+                <a class="tag" href="/categories/DEFAULT/">DEFAULT</a>
+               
+             
+            
+               
+                <a class="tag" href="/tags/linux/">linux</a>
+               
+                <a class="tag" href="/tags/IT/">IT</a>
+               
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  
+    <article class="row index-post-wrapper">
+      
+      <div class="col-12 col-md-12 mx-auto post-intro">
+        <div class="post-header ">
           <a href="/2022/04/09/decision-feedback-equalizer-3/" target="_self">
             <h3>判决反馈均衡器（下）</h3>
           </a>
@@ -477,42 +529,6 @@ Python is open-source and has...
                 <a class="tag" href="/tags/script/">script</a>
                
                 <a class="tag" href="/tags/python/">python</a>
-               
-            
-          </div>
-        </div>
-      </div>
-    </article>
-  
-    <article class="row index-post-wrapper">
-      
-      <div class="col-12 col-md-12 mx-auto post-intro">
-        <div class="post-header ">
-          <a href="/2022/04/01/get-snps-newer-than-2018-to-properly-work/" target="_self">
-            <h3>Get Synopsys Newer Than 2018 to Properly Work</h3>
-          </a>
-          
-        </div>
-        <div class="description">
-          
-            It looks like there are still users who do not manage to get the most recent syn@psys tools (version newer than 2018.12) to properly work even after the great realease of the proper patcher which you ...
-          
-        </div>
-        <div class="post-footer">
-          <time datetime="2022-04-01 16:53" pubdate>
-            2022-04-01
-          </time>
-          <div>
-            
-               
-                <a class="tag" href="/categories/VLSI/">VLSI</a>
-               
-             
-            
-               
-                <a class="tag" href="/tags/eda/">eda</a>
-               
-                <a class="tag" href="/tags/synopsys/">synopsys</a>
                
             
           </div>
